@@ -1,0 +1,5 @@
+project_name: yolo-visdrone-small-object-detection
+seed: 42
+default_dataset: configs/dataset/visdrone.yaml
+default_train_config: configs/train/baseline_yolo11n.yaml
+

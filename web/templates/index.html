@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>YOLO VisDrone Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <main class="workspace">
+      <section class="control-panel">
+        <div class="heading">
+          <p class="eyebrow">VisDrone detector</p>
+          <h1>YOLO11n-P2 small-object detection</h1>
+          <p class="model-path">{{ weights_path }}</p>
+        </div>
+
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="alert">{{ messages[0] }}</div>
+          {% endif %}
+        {% endwith %}
+
+        <form class="upload-form" action="{{ url_for('detect') }}" method="post" enctype="multipart/form-data">
+          <label class="file-drop">
+            <span class="file-title">Choose image or video</span>
+            <input type="file" name="file" accept="image/*,video/*" required>
+          </label>
+
+          <label class="field">
+            <span>Confidence</span>
+            <input type="number" name="conf" min="0.01" max="0.95" step="0.01" value="{{ '%.2f'|format(default_conf) }}">
+          </label>
+
+          <button class="primary-button" type="submit">Run detection</button>
+        </form>
+      </section>
+
+      <section class="result-panel">
+        {% if result_path %}
+          <div class="result-header">
+            <p class="eyebrow">Result</p>
+            <h2>{{ original_name }}</h2>
+          </div>
+
+          {% if media_type == "video" %}
+            <video class="result-media" controls src="{{ result_path }}"></video>
+          {% else %}
+            <img class="result-media" src="{{ result_path }}" alt="Detection result for {{ original_name }}">
+          {% endif %}
+        {% else %}
+          <div class="empty-state">
+            <p class="eyebrow">Ready</p>
+            <h2>Upload a VisDrone image or video</h2>
+          </div>
+        {% endif %}
+      </section>
+    </main>
+  </body>
+</html>
+
