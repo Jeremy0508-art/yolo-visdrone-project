@@ -9,12 +9,13 @@
 | Baseline 训练过程 | `experiments/figures/curves/baseline_results.png` | Baseline 实验 |
 | ECA 训练过程 | `experiments/figures/curves/eca_results.png` | ECA 消融实验 |
 | P2 训练过程 | `experiments/figures/curves/p2_results.png` | P2 消融实验 |
+| P2+CoordAttention 训练过程 | `experiments/figures/curves/p2_coordatt_results.png` | 当前最佳模型 |
 
 写作建议：
 
 - 说明训练整体收敛趋势是否稳定。
-- 对比 baseline、ECA、P2 的 mAP50 和 mAP50-95 曲线。
-- 强调 P2 最终在小目标检测场景中取得当前最佳结果。
+- 对比 baseline、ECA、P2、P2+CoordAttention 的 mAP50 和 mAP50-95 曲线。
+- 强调 P2 是主要有效结构改进，P2+CoordAttention 在其基础上取得当前最佳结果。
 
 ## PR 曲线
 
@@ -23,6 +24,7 @@
 | Baseline PR 曲线 | `experiments/figures/curves/baseline_pr_curve.png` | 评价指标分析 |
 | ECA PR 曲线 | `experiments/figures/curves/eca_pr_curve.png` | 消融对比 |
 | P2 PR 曲线 | `experiments/figures/curves/p2_pr_curve.png` | 消融对比 |
+| P2+CoordAttention PR 曲线 | `experiments/figures/curves/p2_coordatt_pr_curve.png` | 当前最佳模型 |
 
 写作建议：
 
@@ -37,6 +39,7 @@
 | Baseline 归一化混淆矩阵 | `experiments/figures/confusion/baseline_confusion_matrix_normalized.png` | 错误分析 |
 | ECA 归一化混淆矩阵 | `experiments/figures/confusion/eca_confusion_matrix_normalized.png` | 错误分析 |
 | P2 归一化混淆矩阵 | `experiments/figures/confusion/p2_confusion_matrix_normalized.png` | 错误分析 |
+| P2+CoordAttention 归一化混淆矩阵 | `experiments/figures/confusion/p2_coordatt_confusion_matrix_normalized.png` | 当前最佳模型错误分析 |
 
 写作建议：
 
@@ -51,6 +54,9 @@
 | P2 验证集预测样例 1 | `experiments/figures/qualitative/p2_val_batch0_pred.jpg` | 可视化结果 |
 | P2 验证集预测样例 2 | `experiments/figures/qualitative/p2_val_batch1_pred.jpg` | 可视化结果 |
 | P2 验证集预测样例 3 | `experiments/figures/qualitative/p2_val_batch2_pred.jpg` | 可视化结果 |
+| P2+CoordAttention 验证集预测样例 1 | `experiments/figures/qualitative/p2_coordatt_val_batch0_pred.jpg` | 当前最佳模型可视化 |
+| P2+CoordAttention 验证集预测样例 2 | `experiments/figures/qualitative/p2_coordatt_val_batch1_pred.jpg` | 当前最佳模型可视化 |
+| P2+CoordAttention 验证集预测样例 3 | `experiments/figures/qualitative/p2_coordatt_val_batch2_pred.jpg` | 当前最佳模型可视化 |
 
 完整 P2 图片检测结果位于：
 
@@ -72,13 +78,13 @@ experiments/cases/p2_case_contact_sheet.jpg
 如果篇幅有限，建议至少放置以下 6 类材料：
 
 1. `baseline_results.png`：说明 baseline 训练过程。
-2. `p2_results.png`：说明最佳改进模型训练过程。
+2. `p2_coordatt_results.png`：说明当前最佳改进模型训练过程。
 3. `baseline_pr_curve.png`：说明 baseline 各类别检测能力。
-4. `p2_pr_curve.png`：展示 P2 改进后的类别表现。
-5. `p2_confusion_matrix_normalized.png`：分析类别混淆问题。
-6. `p2_val_batch0_pred.jpg` 或检测样例：展示系统实际检测效果。
+4. `p2_coordatt_pr_curve.png`：展示当前最佳模型的类别表现。
+5. `p2_coordatt_confusion_matrix_normalized.png`：分析类别混淆问题。
+6. `p2_coordatt_val_batch0_pred.jpg` 或检测样例：展示系统实际检测效果。
 7. `p2_case_contact_sheet.jpg`：展示 P2 的成功、密集和失败案例。
 
 ## 当前结论可写入报告
 
-在三组实验中，YOLO11n-P2 是当前最佳模型。相比 YOLO11n baseline，P2 的 Best mAP50 从 0.32153 提升到 0.33013，Best mAP50-95 从 0.18238 提升到 0.19012。说明增加高分辨率小目标检测层能够改善 VisDrone 航拍小目标检测效果。
+在当前实验中，YOLO11n-P2-CoordAttention 是当前最佳模型。相比 YOLO11n baseline，P2+CoordAttention 的 Best mAP50 从 0.32153 提升到 0.33073，Best mAP50-95 从 0.18238 提升到 0.19044。说明增加高分辨率小目标检测层能够改善 VisDrone 航拍小目标检测效果，CoordAttention 在 P2 基础上带来轻微正提升。

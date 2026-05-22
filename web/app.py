@@ -16,7 +16,7 @@ from src.utils.paths import resolve_project_path
 WEB_ROOT = Path(__file__).resolve().parent
 UPLOAD_DIR = WEB_ROOT / "uploads"
 RESULT_DIR = WEB_ROOT / "static" / "results"
-DEFAULT_WEIGHTS = resolve_project_path("runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt")
+DEFAULT_WEIGHTS = resolve_project_path("runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt")
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
 VIDEO_EXTENSIONS = {".mp4", ".avi", ".mov", ".mkv", ".wmv"}
 ALLOWED_EXTENSIONS = IMAGE_EXTENSIONS | VIDEO_EXTENSIONS
@@ -151,4 +151,3 @@ def to_static_result_path(path: Path) -> str:
 
 if __name__ == "__main__":
     create_app().run(host="0.0.0.0", port=5000, debug=False)
-

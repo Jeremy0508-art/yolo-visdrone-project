@@ -24,7 +24,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dataset-root", default="data/processed/visdrone_yolo", help="YOLO-format dataset root.")
     parser.add_argument(
         "--weights",
-        default="runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt",
+        default="runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt",
         help="Primary model weights used for demo.",
     )
     parser.add_argument("--strict", action="store_true", help="Return non-zero exit code when warnings exist.")
@@ -150,9 +150,12 @@ def build_checks(args: argparse.Namespace) -> list[CheckResult]:
             check_path("configs/dataset/visdrone.yaml", "dataset config"),
             check_path("configs/train/baseline_yolo11n.yaml", "baseline train config"),
             check_path("configs/train/yolo11n_eca.yaml", "eca train config"),
+            check_path("configs/train/yolo11n_eca_fair.yaml", "eca fair train config"),
             check_path("configs/train/yolo11n_p2.yaml", "p2 train config"),
+            check_path("configs/train/yolo11n_p2_coordatt.yaml", "p2 coordatt train config"),
             check_path("configs/models/yolo11n_eca.yaml", "eca model config"),
             check_path("configs/models/yolo11n_p2.yaml", "p2 model config"),
+            check_path("configs/models/yolo11n_p2_coordatt.yaml", "p2 coordatt model config"),
             check_path("scripts/convert_visdrone_to_yolo.py", "conversion script"),
             check_path("scripts/check_dataset.py", "dataset check script"),
             check_path("tools/train_baseline.py", "training script"),

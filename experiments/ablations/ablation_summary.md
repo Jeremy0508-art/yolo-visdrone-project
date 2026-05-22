@@ -7,6 +7,8 @@
 | YOLO11n baseline | Original YOLO11n | `runs/detect/baseline_yolo11n_visdrone` | `weights/best.pt` |
 | YOLO11n-ECA | Add ECA attention on P3/P4/P5 | `runs/detect/yolo11n_eca_pretrained_adamw_visdrone` | `weights/best.pt` |
 | YOLO11n-P2 | Add P2 small-object detection head | `runs/detect/yolo11n_p2_pretrained_visdrone` | `weights/best.pt` |
+| YOLO11n-ECA fair | Add ECA attention with explicit SGD optimizer | `runs/detect/yolo11n_eca_fair_visdrone-2` | `weights/best.pt` |
+| YOLO11n-P2-CoordAttention | Add CoordAttention on P4/P5 of P2 model | `runs/detect/yolo11n_p2_coordatt_visdrone` | `weights/best.pt` |
 
 ## Final Epoch Metrics
 
@@ -15,6 +17,8 @@
 | YOLO11n baseline | 0.45440 | 0.33922 | 0.31985 | 0.18066 |
 | YOLO11n-ECA | 0.43047 | 0.32856 | 0.30236 | 0.17121 |
 | YOLO11n-P2 | 0.44771 | 0.35475 | 0.32695 | 0.18689 |
+| YOLO11n-ECA fair | 0.43028 | 0.33301 | 0.30780 | 0.17418 |
+| YOLO11n-P2-CoordAttention | 0.45375 | 0.34961 | 0.32709 | 0.18764 |
 
 ## Best Metrics
 
@@ -23,6 +27,8 @@
 | YOLO11n baseline | 0.32153 | 80 | 0.18238 | 79 |
 | YOLO11n-ECA | 0.30417 | 78 | 0.17239 | 88 |
 | YOLO11n-P2 | 0.33013 | 86 | 0.19012 | 89 |
+| YOLO11n-ECA fair | 0.30958 | 61 | 0.17564 | 61 |
+| YOLO11n-P2-CoordAttention | 0.33073 | 90 | 0.19044 | 89 |
 
 ## Deltas vs Baseline
 
@@ -30,20 +36,28 @@
 | --- | ---: | ---: |
 | YOLO11n-ECA | -0.01736 | -0.00999 |
 | YOLO11n-P2 | +0.00860 | +0.00774 |
+| YOLO11n-ECA fair | -0.01195 | -0.00674 |
+| YOLO11n-P2-CoordAttention | +0.00920 | +0.00806 |
+
+## Deltas vs YOLO11n-P2
+
+| Model | Best mAP50 Delta | Best mAP50-95 Delta |
+| --- | ---: | ---: |
+| YOLO11n-P2-CoordAttention | +0.00060 | +0.00032 |
 
 ## Conclusion
 
-The P2 detection head is the strongest current improvement. It improves both mAP50 and mAP50-95 over the YOLO11n baseline, while the standalone ECA attention variant reduces performance under the current training setup.
+The P2 detection head is the strongest structural improvement. The fair ECA rerun improved over the earlier AdamW ECA result but still did not exceed the YOLO11n baseline. Adding CoordAttention on top of P2 gives a very small positive gain over the P2-only model, so it is the current best checkpoint by Best mAP50 and Best mAP50-95.
 
 For the application demo and Flask Web interface, use:
 
 ```text
-runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt
+runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
 ```
 
 ## Suggested Next Experiments
 
-- Combine P2 with ECA to test whether channel attention helps after adding the high-resolution detection head.
 - Try a larger input size, such as 960, if GPU memory allows.
 - Tune augmentations for VisDrone small objects, especially mosaic closing schedule, copy-paste, and scale range.
 
+CoordAttention experiment details are documented in `experiments/ablations/yolo11n_p2_coordatt_visdrone_summary.md`.

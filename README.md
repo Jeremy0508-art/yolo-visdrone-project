@@ -1,6 +1,6 @@
 # 基于改进 YOLO 的 VisDrone 无人机航拍小目标检测系统
 
-本项目面向 VisDrone 图像目标检测任务，构建一个可复现实验、可扩展改进模块、可部署 Web 演示的 YOLO 小目标检测工程。当前已经完成数据转换、baseline 训练、ECA 注意力消融、P2 小目标检测层消融、图片/视频推理脚本，以及 Flask 上传检测页面。
+本项目面向 VisDrone 图像目标检测任务，构建一个可复现实验、可扩展改进模块、可部署 Web 演示的 YOLO 小目标检测工程。当前已经完成数据转换、baseline 训练、ECA 注意力消融、P2 小目标检测层消融、P2+CoordAttention 注意力实验、图片/视频推理脚本，以及 Flask 上传检测页面。
 
 ## 项目结构
 
@@ -10,6 +10,7 @@
 │   ├── dataset/visdrone.yaml
 │   ├── models/yolo11n_eca.yaml
 │   ├── models/yolo11n_p2.yaml
+│   ├── models/yolo11n_p2_coordatt.yaml
 │   └── train/
 ├── data/
 │   ├── raw/VisDrone/         # VisDrone 原始数据
@@ -94,10 +95,16 @@ python tools/train_baseline.py --config configs/train/yolo11n_eca.yaml
 python tools/train_baseline.py --config configs/train/yolo11n_p2.yaml
 ```
 
+训练 P2 + CoordAttention 改进模型：
+
+```powershell
+python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt.yaml --pretrained-weights yolo11n.pt --pretrained-mode p2 --init-output weights/yolo11n_p2_coordatt_pretrained_init.pt
+```
+
 验证模型：
 
 ```powershell
-python tools/val.py --weights runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt --data configs/dataset/visdrone.yaml
+python tools/val.py --weights runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt --data configs/dataset/visdrone.yaml
 ```
 
 ## 推理
@@ -105,13 +112,13 @@ python tools/val.py --weights runs/detect/yolo11n_p2_pretrained_visdrone/weights
 图片检测：
 
 ```powershell
-python tools/detect_image.py --weights runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt --source data/processed/visdrone_yolo/images/val --save-dir runs/detect_image/p2_val_samples
+python tools/detect_image.py --weights runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt --source data/processed/visdrone_yolo/images/val --save-dir runs/detect_image/p2_coordatt_val_samples
 ```
 
 视频检测：
 
 ```powershell
-python tools/detect_video.py --weights runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt --source path/to/video.mp4 --save-dir runs/detect_video/p2_video
+python tools/detect_video.py --weights runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt --source path/to/video.mp4 --save-dir runs/detect_video/p2_coordatt_video
 ```
 
 ## Web 演示
@@ -128,10 +135,10 @@ python web/app.py
 http://127.0.0.1:5000
 ```
 
-Web 页面默认使用当前效果最好的 P2 模型：
+Web 页面默认使用当前效果最好的 P2 + CoordAttention 模型：
 
 ```text
-runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt
+runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
 ```
 
 支持上传图片或视频，并在页面中展示检测结果。
@@ -143,6 +150,7 @@ runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt
 | YOLO11n baseline | 原始 YOLO11n | 0.45440 | 0.33922 | 0.31985 | 0.18066 |
 | YOLO11n-ECA | P3/P4/P5 加入 ECA 注意力 | 0.43047 | 0.32856 | 0.30236 | 0.17121 |
 | YOLO11n-P2 | 增加 P2 小目标检测层 | 0.44771 | 0.35475 | 0.32695 | 0.18689 |
+| YOLO11n-P2-CoordAttention | P2 基础上在 P4/P5 加入 CoordAttention | 0.45375 | 0.34961 | 0.32709 | 0.18764 |
 
 最佳指标对比：
 
@@ -151,8 +159,9 @@ runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt
 | YOLO11n baseline | 0.32153 | 80 | 0.18238 | 79 |
 | YOLO11n-ECA | 0.30417 | 78 | 0.17239 | 88 |
 | YOLO11n-P2 | 0.33013 | 86 | 0.19012 | 89 |
+| YOLO11n-P2-CoordAttention | 0.33073 | 90 | 0.19044 | 89 |
 
-当前结论：单独加入 ECA 在现有训练设置下没有带来提升；增加 P2 小目标检测层提升了 mAP50 和 mAP50-95，更适合作为后续系统演示和进一步改进的主模型。
+当前结论：单独加入 ECA 在现有训练设置下没有带来提升；增加 P2 小目标检测层明显提升了 mAP50 和 mAP50-95；在 P2 基础上加入 CoordAttention 后，Best mAP50 和 Best mAP50-95 相比 P2 有轻微正提升，因此当前 Web 演示默认使用 P2 + CoordAttention 权重。
 
 ## 实验材料
 
@@ -169,6 +178,7 @@ experiments/ablations/
 experiments/baseline/baseline_yolo11n_visdrone_summary.md
 experiments/ablations/yolo11n_eca_pretrained_adamw_visdrone_summary.md
 experiments/ablations/yolo11n_p2_pretrained_visdrone_summary.md
+experiments/ablations/yolo11n_p2_coordatt_visdrone_summary.md
 experiments/ablations/ablation_summary.md
 ```
 
@@ -184,6 +194,6 @@ experiments/case_study.md
 
 后续建议实验：
 
-- P2 + ECA 组合改进，验证注意力机制在高分辨率检测头下是否有效。
 - 尝试更大输入尺寸，例如 `imgsz=960`，进一步改善小目标检测。
+- 在 P2 或 P2+CoordAttention 基础上调整小目标友好的数据增强策略。
 - 针对 VisDrone 调整数据增强策略，例如 mosaic 关闭时机、scale 范围、copy-paste 等。

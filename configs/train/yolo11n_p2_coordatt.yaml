@@ -1,0 +1,17 @@
+model: configs/models/yolo11n_p2_coordatt.yaml
+data: configs/dataset/visdrone.yaml
+project: runs/detect
+name: yolo11n_p2_coordatt_visdrone
+
+epochs: 100
+imgsz: 640
+batch: 8
+device: 0
+workers: 0
+patience: 30
+seed: 42
+
+optimizer: auto
+lr0: 0.01
+cos_lr: true
+close_mosaic: 10
