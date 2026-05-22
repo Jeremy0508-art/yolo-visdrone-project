@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Train the first full YOLO11n baseline on VisDrone2019-DET. This run is the reference experiment for later improvements such as ECA attention, small-object detection layers, and data augmentation ablations.
+Train the first full YOLO11n baseline on VisDrone2019-DET. This run is the reference experiment for later improvements such as small-object detection layers, attention modules, and data augmentation ablations.
 
 ## Command
 
@@ -60,6 +60,5 @@ This experiment should be used as the baseline for reporting mAP50, mAP50-95, pr
 ## Next Experiments
 
 1. Add a reproducible validation/report script for baseline weights.
-2. Add ECA attention to a YOLO model variant.
-3. Add a small-object detection head or higher-resolution training comparison.
-4. Compare baseline, ECA, and small-object variants using the same VisDrone val split.
+2. Add a small-object detection head or higher-resolution training comparison.
+3. Compare baseline and small-object variants using the same VisDrone val split.

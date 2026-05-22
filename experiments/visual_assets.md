@@ -7,14 +7,13 @@
 | 用途 | 图片 | 建议章节 |
 | --- | --- | --- |
 | Baseline 训练过程 | `experiments/figures/curves/baseline_results.png` | Baseline 实验 |
-| ECA 训练过程 | `experiments/figures/curves/eca_results.png` | ECA 消融实验 |
 | P2 训练过程 | `experiments/figures/curves/p2_results.png` | P2 消融实验 |
 | P2+CoordAttention 训练过程 | `experiments/figures/curves/p2_coordatt_results.png` | 当前最佳模型 |
 
 写作建议：
 
 - 说明训练整体收敛趋势是否稳定。
-- 对比 baseline、ECA、P2、P2+CoordAttention 的 mAP50 和 mAP50-95 曲线。
+- 对比 baseline、P2、P2+CoordAttention 的 mAP50 和 mAP50-95 曲线。
 - 强调 P2 是主要有效结构改进，P2+CoordAttention 在其基础上取得当前最佳结果。
 
 ## PR 曲线
@@ -22,7 +21,6 @@
 | 用途 | 图片 | 建议章节 |
 | --- | --- | --- |
 | Baseline PR 曲线 | `experiments/figures/curves/baseline_pr_curve.png` | 评价指标分析 |
-| ECA PR 曲线 | `experiments/figures/curves/eca_pr_curve.png` | 消融对比 |
 | P2 PR 曲线 | `experiments/figures/curves/p2_pr_curve.png` | 消融对比 |
 | P2+CoordAttention PR 曲线 | `experiments/figures/curves/p2_coordatt_pr_curve.png` | 当前最佳模型 |
 
@@ -37,7 +35,6 @@
 | 用途 | 图片 | 建议章节 |
 | --- | --- | --- |
 | Baseline 归一化混淆矩阵 | `experiments/figures/confusion/baseline_confusion_matrix_normalized.png` | 错误分析 |
-| ECA 归一化混淆矩阵 | `experiments/figures/confusion/eca_confusion_matrix_normalized.png` | 错误分析 |
 | P2 归一化混淆矩阵 | `experiments/figures/confusion/p2_confusion_matrix_normalized.png` | 错误分析 |
 | P2+CoordAttention 归一化混淆矩阵 | `experiments/figures/confusion/p2_coordatt_confusion_matrix_normalized.png` | 当前最佳模型错误分析 |
 
@@ -84,6 +81,7 @@ experiments/cases/p2_case_contact_sheet.jpg
 5. `p2_coordatt_confusion_matrix_normalized.png`：分析类别混淆问题。
 6. `p2_coordatt_val_batch0_pred.jpg` 或检测样例：展示系统实际检测效果。
 7. `p2_case_contact_sheet.jpg`：展示 P2 的成功、密集和失败案例。
+8. `web_demo.png`：展示 Flask Web 检测页面。
 
 ## 当前结论可写入报告
 

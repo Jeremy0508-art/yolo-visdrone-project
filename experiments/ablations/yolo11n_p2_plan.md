@@ -2,7 +2,7 @@
 
 ## Goal
 
-Evaluate whether adding a P2 high-resolution detection head improves VisDrone small-object detection compared with the YOLO11n baseline and the YOLO11n-ECA variant.
+Evaluate whether adding a P2 high-resolution detection head improves VisDrone small-object detection compared with the YOLO11n baseline.
 
 ## Motivation
 
@@ -48,7 +48,6 @@ python tools/train_baseline.py --config configs/train/yolo11n_p2.yaml --pretrain
 | Model | Best mAP50 | Best mAP50-95 |
 | --- | ---: | ---: |
 | YOLO11n baseline | 0.32153 | 0.18238 |
-| YOLO11n-ECA | 0.30417 | 0.17239 |
 | YOLO11n-P2 | 0.33013 | 0.19012 |
 
 ## Full Training Result

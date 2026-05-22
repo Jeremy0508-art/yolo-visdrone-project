@@ -32,13 +32,13 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--pretrained-mode",
-        choices=["auto", "eca", "p2"],
+        choices=["auto", "p2"],
         default="auto",
         help="Layer remapping mode for --pretrained-weights.",
     )
     parser.add_argument(
         "--init-output",
-        default="weights/yolo11n_eca_pretrained_init.pt",
+        default="weights/yolo11n_p2_pretrained_init.pt",
         help="Where to save the remapped initialization checkpoint when --pretrained-weights is used.",
     )
     return parser.parse_args()
@@ -57,33 +57,10 @@ def infer_pretrained_mode(model_name: str, requested_mode: str) -> str:
     lowered = model_name.lower()
     if "p2" in lowered:
         return "p2"
-    if "eca" in lowered:
-        return "eca"
-    raise ValueError("Could not infer pretrained mode. Pass --pretrained-mode eca or --pretrained-mode p2.")
+    raise ValueError("Could not infer pretrained mode. Pass --pretrained-mode p2.")
 
 
 def get_layer_map(mode: str) -> dict[int, int]:
-    if mode == "eca":
-        return {
-            0: 0,
-            1: 1,
-            2: 2,
-            3: 3,
-            4: 4,
-            5: 5,
-            6: 6,
-            7: 7,
-            8: 8,
-            9: 9,
-            10: 10,
-            13: 13,
-            16: 16,
-            17: 18,
-            19: 20,
-            20: 22,
-            22: 24,
-            23: 26,
-        }
     if mode == "p2":
         return {
             0: 0,

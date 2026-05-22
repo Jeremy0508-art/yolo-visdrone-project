@@ -1,6 +1,6 @@
 # 基于改进 YOLO 的 VisDrone 无人机航拍小目标检测系统
 
-本项目面向 VisDrone 图像目标检测任务，构建一个可复现实验、可扩展改进模块、可部署 Web 演示的 YOLO 小目标检测工程。当前已经完成数据转换、baseline 训练、ECA 注意力消融、P2 小目标检测层消融、P2+CoordAttention 注意力实验、图片/视频推理脚本，以及 Flask 上传检测页面。
+针对无人机航拍场景中小目标尺度小、分布密集、遮挡严重、类别外观相近导致 YOLO 模型漏检和误检的问题，提出并实现了一个基于改进 YOLO11n 的 VisDrone 小目标检测系统。系统完成 VisDrone2019-DET 数据转换、YOLO 格式数据校验、baseline 训练、P2 高分辨率小目标检测层扩展、CoordAttention 注意力增强、消融实验对比、图片/视频推理和 Flask Web 可视化检测页面；当前数据集包含 6,471 张训练图像、548 张验证图像和 343,204 个训练标注框，覆盖 pedestrian、people、car、motor 等 10 类航拍目标。在 100 epoch 训练设置下，YOLO11n-P2-CoordAttention 的 Best mAP50 达到 0.33073，Best mAP50-95 达到 0.19044，相比 YOLO11n baseline 分别提升 0.00920 和 0.00806；项目最终形成了一个可复现、可评估、可展示的无人机航拍小目标检测实验闭环。
 
 ## 项目结构
 
@@ -8,7 +8,6 @@
 .
 ├── configs/                 # 数据集、模型结构、训练配置
 │   ├── dataset/visdrone.yaml
-│   ├── models/yolo11n_eca.yaml
 │   ├── models/yolo11n_p2.yaml
 │   ├── models/yolo11n_p2_coordatt.yaml
 │   └── train/
@@ -83,12 +82,6 @@ python scripts/check_dataset.py --dataset-root data/processed/visdrone_yolo
 python tools/train_baseline.py --config configs/train/baseline_yolo11n.yaml
 ```
 
-训练 ECA 注意力改进模型：
-
-```powershell
-python tools/train_baseline.py --config configs/train/yolo11n_eca.yaml
-```
-
 训练 P2 小目标检测层改进模型：
 
 ```powershell
@@ -143,12 +136,13 @@ runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
 
 支持上传图片或视频，并在页面中展示检测结果。
 
+![Web demo](experiments/figures/web_demo.png)
+
 ## 当前实验结果
 
 | Model | Main Change | Precision | Recall | mAP50 | mAP50-95 |
 | --- | --- | ---: | ---: | ---: | ---: |
 | YOLO11n baseline | 原始 YOLO11n | 0.45440 | 0.33922 | 0.31985 | 0.18066 |
-| YOLO11n-ECA | P3/P4/P5 加入 ECA 注意力 | 0.43047 | 0.32856 | 0.30236 | 0.17121 |
 | YOLO11n-P2 | 增加 P2 小目标检测层 | 0.44771 | 0.35475 | 0.32695 | 0.18689 |
 | YOLO11n-P2-CoordAttention | P2 基础上在 P4/P5 加入 CoordAttention | 0.45375 | 0.34961 | 0.32709 | 0.18764 |
 
@@ -157,11 +151,10 @@ runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
 | Model | Best mAP50 | Epoch | Best mAP50-95 | Epoch |
 | --- | ---: | ---: | ---: | ---: |
 | YOLO11n baseline | 0.32153 | 80 | 0.18238 | 79 |
-| YOLO11n-ECA | 0.30417 | 78 | 0.17239 | 88 |
 | YOLO11n-P2 | 0.33013 | 86 | 0.19012 | 89 |
 | YOLO11n-P2-CoordAttention | 0.33073 | 90 | 0.19044 | 89 |
 
-当前结论：单独加入 ECA 在现有训练设置下没有带来提升；增加 P2 小目标检测层明显提升了 mAP50 和 mAP50-95；在 P2 基础上加入 CoordAttention 后，Best mAP50 和 Best mAP50-95 相比 P2 有轻微正提升，因此当前 Web 演示默认使用 P2 + CoordAttention 权重。
+当前结论：增加 P2 小目标检测层能够提升 VisDrone 航拍小目标检测效果；在 P2 基础上加入 CoordAttention 后，Best mAP50 和 Best mAP50-95 相比 P2 有轻微正提升，因此当前 Web 演示默认使用 P2 + CoordAttention 权重。
 
 ## 实验材料
 
@@ -176,7 +169,6 @@ experiments/ablations/
 
 ```text
 experiments/baseline/baseline_yolo11n_visdrone_summary.md
-experiments/ablations/yolo11n_eca_pretrained_adamw_visdrone_summary.md
 experiments/ablations/yolo11n_p2_pretrained_visdrone_summary.md
 experiments/ablations/yolo11n_p2_coordatt_visdrone_summary.md
 experiments/ablations/ablation_summary.md

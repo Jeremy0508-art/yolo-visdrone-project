@@ -149,11 +149,8 @@ def build_checks(args: argparse.Namespace) -> list[CheckResult]:
         [
             check_path("configs/dataset/visdrone.yaml", "dataset config"),
             check_path("configs/train/baseline_yolo11n.yaml", "baseline train config"),
-            check_path("configs/train/yolo11n_eca.yaml", "eca train config"),
-            check_path("configs/train/yolo11n_eca_fair.yaml", "eca fair train config"),
             check_path("configs/train/yolo11n_p2.yaml", "p2 train config"),
             check_path("configs/train/yolo11n_p2_coordatt.yaml", "p2 coordatt train config"),
-            check_path("configs/models/yolo11n_eca.yaml", "eca model config"),
             check_path("configs/models/yolo11n_p2.yaml", "p2 model config"),
             check_path("configs/models/yolo11n_p2_coordatt.yaml", "p2 coordatt model config"),
             check_path("scripts/convert_visdrone_to_yolo.py", "conversion script"),
