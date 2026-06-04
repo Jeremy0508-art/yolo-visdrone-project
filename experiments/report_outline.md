@@ -56,7 +56,7 @@
 - 训练模块：统一配置驱动训练。
 - 推理模块：图片检测、视频检测。
 - Web 模块：Flask 上传图片/视频并展示结果。
-- 默认部署权重：`runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt`。
+- 默认部署权重：`runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt`。
 
 ## 7. 可视化与案例分析
 

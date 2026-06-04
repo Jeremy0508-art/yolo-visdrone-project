@@ -1,6 +1,6 @@
 # 基于改进 YOLO 的 VisDrone 无人机航拍小目标检测系统
 
-针对无人机航拍场景中小目标尺度小、分布密集、遮挡严重、类别外观相近导致 YOLO 模型漏检和误检的问题，提出并实现了一个基于改进 YOLO11n 的 VisDrone 小目标检测系统。系统完成 VisDrone2019-DET 数据转换、YOLO 格式数据校验、baseline 训练、P2 高分辨率小目标检测层扩展、CoordAttention 注意力增强、消融实验对比、图片/视频推理和 Flask Web 可视化检测页面；当前数据集包含 6,471 张训练图像、548 张验证图像和 343,204 个训练标注框，覆盖 pedestrian、people、car、motor 等 10 类航拍目标。在 100 epoch 训练设置下，YOLO11n-P2-CoordAttention 的 Best mAP50 达到 0.33073，Best mAP50-95 达到 0.19044，相比 YOLO11n baseline 分别提升 0.00920 和 0.00806；项目最终形成了一个可复现、可评估、可展示的无人机航拍小目标检测实验闭环。
+针对无人机航拍场景中小目标尺度小、分布密集、遮挡严重、类别外观相近导致 YOLO 模型漏检和误检的问题，提出并实现了一个基于改进 YOLO11n 的 VisDrone 小目标检测系统。系统完成 VisDrone2019-DET 数据转换、YOLO 格式数据校验、baseline 训练、P2 高分辨率小目标检测层扩展、CoordAttention 注意力增强、960 输入尺寸实验、消融实验对比、图片/视频推理和 Flask Web 可视化检测页面；当前数据集包含 6,471 张训练图像、548 张验证图像和 343,204 个训练标注框，覆盖 pedestrian、people、car、motor 等 10 类航拍目标。在 100 epoch 训练设置下，YOLO11n-P2-CoordAttention-960 的 Best mAP50 达到 0.41996，Best mAP50-95 达到 0.25174，相比 YOLO11n baseline 分别提升 0.09843 和 0.06936；项目最终形成了一个可复现、可评估、可展示的无人机航拍小目标检测实验闭环。
 
 ## 项目结构
 
@@ -97,7 +97,7 @@ python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt.yaml -
 验证模型：
 
 ```powershell
-python tools/val.py --weights runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt --data configs/dataset/visdrone.yaml
+python tools/val.py --weights runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt --data configs/dataset/visdrone.yaml
 ```
 
 ## 推理
@@ -105,13 +105,13 @@ python tools/val.py --weights runs/detect/yolo11n_p2_coordatt_visdrone/weights/b
 图片检测：
 
 ```powershell
-python tools/detect_image.py --weights runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt --source data/processed/visdrone_yolo/images/val --save-dir runs/detect_image/p2_coordatt_val_samples
+python tools/detect_image.py --weights runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt --source data/processed/visdrone_yolo/images/val --save-dir runs/detect_image/p2_coordatt_960_val_samples
 ```
 
 视频检测：
 
 ```powershell
-python tools/detect_video.py --weights runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt --source path/to/video.mp4 --save-dir runs/detect_video/p2_coordatt_video
+python tools/detect_video.py --weights runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt --source path/to/video.mp4 --save-dir runs/detect_video/p2_coordatt_960_video
 ```
 
 ## Web 演示
@@ -131,7 +131,7 @@ http://127.0.0.1:5000
 Web 页面默认使用当前效果最好的 P2 + CoordAttention 模型：
 
 ```text
-runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
+runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt
 ```
 
 支持上传图片或视频，并在页面中展示检测结果。
@@ -145,6 +145,7 @@ runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
 | YOLO11n baseline | 原始 YOLO11n | 0.45440 | 0.33922 | 0.31985 | 0.18066 |
 | YOLO11n-P2 | 增加 P2 小目标检测层 | 0.44771 | 0.35475 | 0.32695 | 0.18689 |
 | YOLO11n-P2-CoordAttention | P2 基础上在 P4/P5 加入 CoordAttention | 0.45375 | 0.34961 | 0.32709 | 0.18764 |
+| YOLO11n-P2-CoordAttention-960 | 输入尺寸提升到 960 | 0.53390 | 0.42849 | 0.41732 | 0.24945 |
 
 最佳指标对比：
 
@@ -153,8 +154,9 @@ runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
 | YOLO11n baseline | 0.32153 | 80 | 0.18238 | 79 |
 | YOLO11n-P2 | 0.33013 | 86 | 0.19012 | 89 |
 | YOLO11n-P2-CoordAttention | 0.33073 | 90 | 0.19044 | 89 |
+| YOLO11n-P2-CoordAttention-960 | 0.41996 | 90 | 0.25174 | 90 |
 
-当前结论：增加 P2 小目标检测层能够提升 VisDrone 航拍小目标检测效果；在 P2 基础上加入 CoordAttention 后，Best mAP50 和 Best mAP50-95 相比 P2 有轻微正提升，因此当前 Web 演示默认使用 P2 + CoordAttention 权重。
+当前结论：增加 P2 小目标检测层能够提升 VisDrone 航拍小目标检测效果；在 P2 基础上加入 CoordAttention 后，Best mAP50 和 Best mAP50-95 相比 P2 有轻微正提升；进一步将输入尺寸提升到 960 后，小目标检测指标显著提升，当前效果最好的权重位于 `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt`。
 
 ## 实验材料
 
@@ -171,6 +173,9 @@ experiments/ablations/
 experiments/baseline/baseline_yolo11n_visdrone_summary.md
 experiments/ablations/yolo11n_p2_pretrained_visdrone_summary.md
 experiments/ablations/yolo11n_p2_coordatt_visdrone_summary.md
+experiments/ablations/yolo11n_p2_coordatt_960_plan.md
+experiments/ablations/yolo11n_p2_coordatt_960_summary.md
+experiments/ablations/yolo11n_p2_coordatt_smallobj_aug_plan.md
 experiments/ablations/ablation_summary.md
 ```
 
@@ -184,8 +189,8 @@ experiments/visual_assets.md
 experiments/case_study.md
 ```
 
-后续建议实验：
+后续改进实验：
 
-- 尝试更大输入尺寸，例如 `imgsz=960`，进一步改善小目标检测。
-- 在 P2 或 P2+CoordAttention 基础上调整小目标友好的数据增强策略。
-- 针对 VisDrone 调整数据增强策略，例如 mosaic 关闭时机、scale 范围、copy-paste 等。
+- `configs/train/yolo11n_p2_coordatt_960.yaml` 已完成正式 100 epoch 训练，输出目录为 `runs/detect/yolo11n_p2_coordatt_960_visdrone_full`。
+- 已新增 `configs/train/yolo11n_p2_coordatt_smallobj_aug.yaml`，用于测试小目标友好的 mosaic、scale、copy-paste 和 erasing 策略。
+- `runs/detect/yolo11n_p2_coordatt_smallobj_aug_smoke` 已完成 1 epoch 小样本 smoke test；小目标增强策略的正式 100 epoch 训练可作为后续对比实验。

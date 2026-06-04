@@ -203,7 +203,7 @@ http://127.0.0.1:5000
 默认权重：
 
 ```text
-runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt
+runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt
 ```
 
 讲述重点：

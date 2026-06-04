@@ -16,7 +16,7 @@ from src.utils.paths import resolve_project_path
 WEB_ROOT = Path(__file__).resolve().parent
 UPLOAD_DIR = WEB_ROOT / "uploads"
 RESULT_DIR = WEB_ROOT / "static" / "results"
-DEFAULT_WEIGHTS = resolve_project_path("runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt")
+DEFAULT_WEIGHTS = resolve_project_path("runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt")
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".webp"}
 VIDEO_EXTENSIONS = {".mp4", ".avi", ".mov", ".mkv", ".wmv"}
 ALLOWED_EXTENSIONS = IMAGE_EXTENSIONS | VIDEO_EXTENSIONS
@@ -88,7 +88,7 @@ def run_detection(source_path: Path, job_id: str, conf: float) -> Path:
     model = get_model()
     model.predict(
         source=str(source_path),
-        imgsz=640,
+        imgsz=960,
         conf=conf,
         project=str(RESULT_DIR),
         name=result_name,

@@ -32,4 +32,4 @@ python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt.yaml -
 
 - P2 remains the main effective structure change for VisDrone small-object detection.
 - CoordAttention gives a small positive gain over P2-only: Best mAP50 0.33073 vs 0.33013, Best mAP50-95 0.19044 vs 0.19012.
-- The Web demo and project verification default now use `runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt`.
+- The 640 CoordAttention checkpoint was the Web demo default before the completed 960 experiment.
