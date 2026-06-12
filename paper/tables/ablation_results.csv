@@ -1,0 +1,6 @@
+model,change,input_size,best_map50,best_map50_delta_vs_baseline,best_map50_delta_vs_p2,best_map50_95,best_map50_95_delta_vs_baseline,best_map50_95_delta_vs_p2,run_dir
+YOLO11n baseline,Original YOLO11n,640,0.32153,+0.00000,-0.00860,0.18238,+0.00000,-0.00774,runs/detect/baseline_yolo11n_visdrone
+YOLO11n-P2,Add P2 high-resolution detection head,640,0.33013,+0.00860,+0.00000,0.19012,+0.00774,+0.00000,runs/detect/yolo11n_p2_pretrained_visdrone
+YOLO11n-P2-CoordAttention,Add CoordAttention to the P2 model,640,0.33073,+0.00920,+0.00060,0.19044,+0.00806,+0.00032,runs/detect/yolo11n_p2_coordatt_visdrone
+YOLO11n-P2-CoordAttention-960,Increase input size to 960,960,0.41996,+0.09843,+0.08983,0.25174,+0.06936,+0.06162,runs/detect/yolo11n_p2_coordatt_960_visdrone_full
+YOLO11n-P2-CoordAttention-SmallObjAug,"Earlier mosaic closing, smaller scale range, light copy-paste, no erasing",640,0.32780,+0.00627,-0.00233,0.18699,+0.00461,-0.00313,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone

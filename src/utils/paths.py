@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from pathlib import Path
 
 from src.constants import PROJECT_ROOT

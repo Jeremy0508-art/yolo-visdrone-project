@@ -1,0 +1,6 @@
+model,input_size,params,gflops,weight_size_mb,precision,recall,final_map50,final_map50_95,best_map50,best_map50_epoch,best_map50_95,best_map50_95_epoch,run_dir
+YOLO11n baseline,640,2591790,6.5,5.21,0.45440,0.33922,0.31985,0.18066,0.32153,80,0.18238,79,runs/detect/baseline_yolo11n_visdrone
+YOLO11n-P2,640,2893672,10.7,5.91,0.44771,0.35475,0.32695,0.18689,0.33013,86,0.19012,89,runs/detect/yolo11n_p2_pretrained_visdrone
+YOLO11n-P2-CoordAttention,640,2903704,10.7,5.94,0.45375,0.34961,0.32709,0.18764,0.33073,90,0.19044,89,runs/detect/yolo11n_p2_coordatt_visdrone
+YOLO11n-P2-CoordAttention-960,960,2903704,10.7,6.09,0.53390,0.42849,0.41732,0.24945,0.41996,90,0.25174,90,runs/detect/yolo11n_p2_coordatt_960_visdrone_full
+YOLO11n-P2-CoordAttention-SmallObjAug,640,2903704,10.7,5.94,0.45208,0.34838,0.32417,0.18507,0.32780,80,0.18699,74,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone

@@ -14,6 +14,13 @@ env/
 data/raw/
 data/processed/
 *.pt
+*.zip
+*.tar
+*.tar.gz
+*.7z
+upload_chunks/
+upload_code_chunks/
+.tools/
 runs/*
 !runs/.gitkeep
 weights/*
@@ -28,3 +35,10 @@ web/static/results/*
 Thumbs.db
 .idea/
 .vscode/
+
+# LaTeX generated intermediates
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz

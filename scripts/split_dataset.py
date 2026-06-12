@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """Reserved for custom dataset splitting.
 
 VisDrone DET already provides official train/val/test-dev splits, so this script is

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from ultralytics.nn import tasks
 
 from src.models.attention import CoordAttention

@@ -1,0 +1,51 @@
+model,class,images,instances,precision,recall,map50,map50_95,run_dir,log_source
+YOLO11n baseline,pedestrian,520,8844,0.45100,0.38100,0.34500,0.14200,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,people,482,5125,0.50100,0.26100,0.26000,0.08740,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,bicycle,364,1287,0.23800,0.09870,0.07260,0.02760,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,car,515,14064,0.62200,0.77600,0.75100,0.49800,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,van,421,1975,0.48300,0.37100,0.36200,0.24300,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,truck,266,750,0.47000,0.29200,0.29000,0.19100,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,tricycle,337,1045,0.41000,0.22300,0.20400,0.11000,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,awning-tricycle,220,532,0.28100,0.14100,0.10800,0.06760,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,bus,131,251,0.56000,0.45400,0.45600,0.31500,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n baseline,motor,485,4886,0.46900,0.39900,0.35700,0.14200,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
+YOLO11n-P2,pedestrian,520,8844,0.46600,0.39700,0.37700,0.16300,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,people,482,5125,0.49200,0.30600,0.29700,0.10800,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,bicycle,364,1287,0.25500,0.12500,0.07840,0.03070,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,car,515,14064,0.64100,0.78900,0.77800,0.52500,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,van,421,1975,0.47800,0.39400,0.36800,0.25700,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,truck,266,750,0.46900,0.29300,0.27800,0.17700,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,tricycle,337,1045,0.40600,0.24200,0.19700,0.10800,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,awning-tricycle,220,532,0.24500,0.13300,0.08390,0.05360,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,bus,131,251,0.57800,0.44600,0.44300,0.31300,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2,motor,485,4886,0.48000,0.43100,0.39200,0.16400,runs/detect/yolo11n_p2_pretrained_visdrone,runs/logs/yolo11n_p2_pretrained_visdrone_resume.out.log
+YOLO11n-P2-CoordAttention,pedestrian,520,8844,0.47100,0.39300,0.37500,0.16300,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,people,482,5125,0.49000,0.30100,0.29800,0.10900,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,bicycle,364,1287,0.24100,0.12000,0.07790,0.03120,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,car,515,14064,0.62900,0.79200,0.77600,0.52300,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,van,421,1975,0.47600,0.38000,0.36000,0.25000,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,truck,266,750,0.45800,0.31100,0.28100,0.18100,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,tricycle,337,1045,0.40300,0.23500,0.20100,0.10900,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,awning-tricycle,220,532,0.25900,0.14700,0.09290,0.05770,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,bus,131,251,0.57300,0.44200,0.44600,0.31200,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention,motor,485,4886,0.47200,0.44500,0.39600,0.16700,runs/detect/yolo11n_p2_coordatt_visdrone,runs/logs/yolo11n_p2_coordatt_20260522_010820.stdout.log
+YOLO11n-P2-CoordAttention-960,pedestrian,520,8844,0.58000,0.50100,0.51300,0.24300,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,people,482,5125,0.58600,0.37900,0.39300,0.15700,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,bicycle,364,1287,0.33500,0.22100,0.17100,0.07600,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,car,515,14064,0.73600,0.83000,0.83700,0.59000,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,van,421,1975,0.52800,0.46000,0.45500,0.32100,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,truck,266,750,0.53800,0.39500,0.37500,0.24900,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,tricycle,337,1045,0.43500,0.31700,0.26800,0.15500,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,awning-tricycle,220,532,0.30000,0.19800,0.13300,0.08640,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,bus,131,251,0.72600,0.51800,0.54600,0.40800,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-960,motor,485,4886,0.56800,0.54300,0.52000,0.23900,runs/detect/yolo11n_p2_coordatt_960_visdrone_full,runs/logs/val_yolo11n_p2_coordatt_960_20260609_182415.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,pedestrian,520,8844,0.46600,0.40100,0.38100,0.16500,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,people,482,5125,0.48800,0.29800,0.28600,0.10500,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,bicycle,364,1287,0.24200,0.10700,0.08340,0.03310,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,car,515,14064,0.63500,0.78600,0.77200,0.51700,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,van,421,1975,0.46900,0.36500,0.34900,0.24400,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,truck,266,750,0.46100,0.29500,0.28100,0.18000,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,tricycle,337,1045,0.40800,0.22800,0.19500,0.10200,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,awning-tricycle,220,532,0.28000,0.14800,0.09130,0.05660,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,bus,131,251,0.57600,0.44600,0.42900,0.30400,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
+YOLO11n-P2-CoordAttention-SmallObjAug,motor,485,4886,0.48000,0.43200,0.39500,0.16400,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
