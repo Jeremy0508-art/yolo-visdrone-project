@@ -1,39 +1,42 @@
-# 基于改进 YOLO 的 VisDrone 无人机航拍小目标检测项目
+# 基于改进 YOLO 的 VisDrone 无人机航拍小目标检测系统
 
-本仓库围绕 VisDrone2019-DET 无人机航拍目标检测任务，整理了一个从数据转换、模型训练、验证评估、推理展示到论文材料生成的 YOLO 小目标检测项目。项目以 Ultralytics YOLO11n 为主线，包含 P2 高分辨率检测分支、CoordAttention 注意力增强、960 输入分辨率实验和小目标友好数据增强消融。
+针对无人机航拍场景中目标尺度小、分布密集、遮挡严重、类别外观相近，导致轻量化 YOLO 模型容易出现漏检和误检的问题，本项目提出并实现了一个基于改进 YOLO11n 的 VisDrone 小目标检测系统。
 
-项目同时整理了面向中文会议/小论文写作的材料。论文相关内容集中放在 [`paper/`](paper/README.md)，包括 LaTeX 稿件、PDF 预览、表格、图表、实验命令、证据审计和路线图。论文指标均对应真实训练日志、验证输出和 `paper/tables/` 汇总文件。
+项目以 Ultralytics YOLO11n 为基线，从三个方面提升航拍小目标检测能力：一是在检测头中引入 P2 高分辨率小目标检测分支，增强浅层空间细节利用；二是在特征融合结构中加入 CoordAttention 注意力模块，提高位置敏感特征表达；三是采用 960 输入分辨率和小目标友好数据增强策略，提升小目标在输入图像和特征图中的有效像素占比。
 
-## 项目能力
+系统完成了 VisDrone2019-DET 数据转换、YOLO 格式数据校验、baseline 训练、改进模型训练、消融实验、模型复杂度统计、推理速度测试、图片/视频推理、Flask Web 可视化检测页面和论文材料整理。当前数据集包含 6,471 张训练图像、548 张验证图像和 343,204 个训练标注框，覆盖 pedestrian、people、car、motor 等 10 类航拍目标。
 
-| 模块 | 内容 |
+在 100 epoch 训练设置下，YOLO11n-P2-CoordAttention-960 在 VisDrone 验证集上的 Best mAP50 达到 `0.41996`，Best mAP50-95 达到 `0.25174`，相比 YOLO11n baseline 分别提升 `0.09843` 和 `0.06936`；单图 wall-clock 推理速度为 `56.39 FPS`。项目最终形成了一个可复现、可评估、可展示，并可支撑中文会议/小论文写作的无人机航拍小目标检测实验闭环。
+
+## 方法思路
+
+| 模块 | 作用 |
 | --- | --- |
-| 数据处理 | VisDrone2019-DET 到 YOLO 格式的转换与数据校验 |
-| 模型结构 | YOLO11n、YOLO11n-P2、YOLO11n-P2-CoordAttention 系列配置 |
-| 实验评估 | 验证集指标、消融实验、模型复杂度、推理速度、类别级指标 |
-| 推理展示 | 图片推理、视频推理和 Flask Web 可视化检测页面 |
-| 论文材料 | Markdown 草稿、LaTeX 稿件、PDF 预览、表格、图表和复现实验命令 |
-| 扩展配置 | YOLOv8n、YOLO11s 等 baseline 配置，用于同协议扩展对比 |
+| YOLO11n baseline | 构建轻量化检测基线 |
+| P2 高分辨率检测分支 | 利用浅层高分辨率特征，增强小目标定位能力 |
+| CoordAttention | 引入方向位置信息，提高复杂背景下的特征表达能力 |
+| 960 输入分辨率 | 增加小目标有效像素占比，改善小目标检测稳定性 |
+| SmallObjAug | 调整 mosaic、scale、copy-paste 和 erasing，分析小目标友好增强效果 |
 
-在已整理的主线实验中，`YOLO11n-P2-CoordAttention-960` 在 VisDrone 验证集上取得 Best mAP50 `0.41996`、Best mAP50-95 `0.25174`，单图 wall-clock 推理速度为 `56.39 FPS`。这些数值来自已有 `runs/` 结果和 `paper/tables/` 汇总文件。
-
-## 仓库结构
+## 项目结构
 
 ```text
 .
-├── configs/                  # 数据集、模型结构、训练配置
+├── configs/                 # 数据集、模型结构、训练配置
 │   ├── dataset/visdrone.yaml
 │   ├── models/yolo11n_p2.yaml
 │   ├── models/yolo11n_p2_coordatt.yaml
 │   └── train/
-├── data/                     # 本地数据目录，GitHub 不上传
-├── paper/                    # 论文材料、表格、图表、PDF 和路线图
-├── runs/                     # 本地训练/验证/推理输出，GitHub 不上传
-├── scripts/                  # 数据转换与检查脚本
+├── data/
+│   ├── raw/VisDrone/         # VisDrone 原始数据
+│   └── processed/            # 转换后的 YOLO 格式数据
+├── paper/                    # 论文稿件、表格、图表、PDF 和复现实验命令
+├── runs/                     # Ultralytics 训练、验证、推理输出
+├── scripts/                  # 数据集转换与检查脚本
 ├── src/                      # 可复用数据、模型和工具模块
-├── tools/                    # 训练、验证、推理、论文表格导出脚本
+├── tools/                    # 训练、验证、推理、测速和论文表格导出脚本
 ├── web/                      # Flask Web 检测页面
-├── weights/                  # 本地权重目录，GitHub 不上传
+├── weights/                  # 模型权重目录
 └── requirements.txt
 ```
 
@@ -43,7 +46,7 @@
 pip install -r requirements.txt
 ```
 
-推荐使用支持 CUDA 的 PyTorch 环境训练。CPU 可用于代码检查和部分推理，但训练速度会明显较慢。
+推荐使用支持 CUDA 的 PyTorch 环境训练。若只做推理或 Web 展示，CPU 也可以运行，但速度会明显较慢。
 
 项目自检：
 
@@ -74,7 +77,7 @@ python scripts/convert_visdrone_to_yolo.py --raw-root data/raw/VisDrone --output
 python scripts/check_dataset.py --dataset-root data/processed/visdrone_yolo
 ```
 
-当前本地数据检查结果：
+数据检查结果：
 
 | Split | Images | Boxes |
 | --- | ---: | ---: |
@@ -82,27 +85,7 @@ python scripts/check_dataset.py --dataset-root data/processed/visdrone_yolo
 | val | 548 | 38759 |
 | test-dev | 1580 | 0 |
 
-## 已完成主实验
-
-| Model | Main Change | Input | Best mAP50 | Best mAP50-95 | FPS |
-| --- | --- | ---: | ---: | ---: | ---: |
-| YOLO11n | baseline | 640 | 0.32153 | 0.18238 | 72.54 |
-| YOLO11n-P2 | P2 high-resolution detection head | 640 | 0.33013 | 0.19012 | 68.74 |
-| YOLO11n-P2-CoordAttention | P2 + CoordAttention | 640 | 0.33073 | 0.19044 | 65.16 |
-| YOLO11n-P2-CoordAttention-960 | input size 960 | 960 | 0.41996 | 0.25174 | 56.39 |
-| YOLO11n-P2-CoordAttention-SmallObjAug | small-object-friendly augmentation | 640 | 0.32780 | 0.18699 | 64.81 |
-
-详细结果来源：
-
-```text
-paper/tables/main_results.csv
-paper/tables/ablation_results.csv
-paper/tables/model_complexity.csv
-paper/tables/speed_results.csv
-paper/tables/per_class_results.csv
-```
-
-## 训练命令
+## 训练与验证
 
 训练 YOLO11n baseline：
 
@@ -134,42 +117,11 @@ python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_960.ya
 python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_smallobj_aug.yaml --pretrained-weights yolo11n.pt --pretrained-mode p2 --init-output weights/yolo11n_p2_coordatt_smallobj_aug_init.pt
 ```
 
-扩展 baseline 配置：
-
-```powershell
-python tools/train_baseline.py --config configs/train/baseline_yolov8n.yaml
-python tools/train_baseline.py --config configs/train/baseline_yolo11s.yaml
-```
-
-这些配置用于在相同 VisDrone 数据和训练协议下扩展对比实验。
-
-## 验证、速度和论文表格
-
 验证模型：
 
 ```powershell
 python tools/val.py --weights runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt --data configs/dataset/visdrone.yaml --imgsz 960 --batch 4 --device 0
 ```
-
-导出论文表格：
-
-```powershell
-python tools/export_paper_tables.py
-```
-
-测速：
-
-```powershell
-python tools/benchmark_speed.py --warmup 10 --samples 100 --output paper/tables/speed_results.csv
-```
-
-收集类别级指标：
-
-```powershell
-python tools/collect_per_class_metrics.py
-```
-
-更多可复现实验命令见 [`paper/commands.md`](paper/commands.md)。
 
 ## 推理与 Web 演示
 
@@ -197,20 +149,54 @@ python web/app.py
 http://127.0.0.1:5000
 ```
 
+Web 页面支持上传图片或视频，并在页面中展示检测结果。
+
+![Web demo](paper/figures/web_demo.png)
+
+## 实验结果
+
+主实验验证集结果如下：
+
+| Model | Main Change | Input | Best mAP50 | Best mAP50-95 | FPS |
+| --- | --- | ---: | ---: | ---: | ---: |
+| YOLO11n | baseline | 640 | 0.32153 | 0.18238 | 72.54 |
+| YOLO11n-P2 | P2 high-resolution detection head | 640 | 0.33013 | 0.19012 | 68.74 |
+| YOLO11n-P2-CoordAttention | P2 + CoordAttention | 640 | 0.33073 | 0.19044 | 65.16 |
+| YOLO11n-P2-CoordAttention-960 | input size 960 | 960 | 0.41996 | 0.25174 | 56.39 |
+| YOLO11n-P2-CoordAttention-SmallObjAug | small-object-friendly augmentation | 640 | 0.32780 | 0.18699 | 64.81 |
+
+实验表明，P2 高分辨率检测分支能够提升浅层细节利用能力，CoordAttention 在 P2 基础上带来一定增益，而 960 输入分辨率是当前实验中最主要的性能提升来源。小目标友好增强相较 baseline 有提升，但低于 P2 和 CoordAttention 结构改进模型。
+
+详细实验表格位于：
+
+```text
+paper/tables/main_results.csv
+paper/tables/ablation_results.csv
+paper/tables/model_complexity.csv
+paper/tables/speed_results.csv
+paper/tables/per_class_results.csv
+```
+
 ## 论文材料
 
-论文工作区入口：
+论文相关材料集中整理在 `paper/` 目录：
 
 ```text
 paper/README.md
 paper/PROJECT_ROADMAP.md
+paper/manuscript_polished.md
+paper/manuscript_polished.html
 paper/manuscript_submission_candidate.tex
 paper/manuscript_submission_candidate.pdf
 paper/evidence_audit.md
-paper/submission_checklist.md
+paper/commands.md
+paper/figures/
+paper/tables/
 ```
 
-推荐使用 TeX Live 或 MiKTeX 编译 LaTeX PDF：
+其中 `paper/manuscript_submission_candidate.pdf` 是当前 LaTeX 预览版本，`paper/commands.md` 记录了复现实验命令，`paper/evidence_audit.md` 记录了论文数值来源。
+
+编译 LaTeX PDF：
 
 ```powershell
 cd paper
@@ -218,26 +204,6 @@ xelatex manuscript_submission_candidate.tex
 xelatex manuscript_submission_candidate.tex
 ```
 
-如果本地已经有 `.tools/tectonic/tectonic.exe` 轻量构建工具，也可以使用：
+## 结果可复现说明
 
-```powershell
-cd paper
-..\.tools\tectonic\tectonic.exe manuscript_submission_candidate.tex
-```
-
-## GitHub 上传范围
-
-GitHub 仓库保留代码、配置、论文材料、表格和必要图表。数据、权重和运行产物按常规保存在本地工作区：
-
-- `data/`：VisDrone 原始数据和转换后的 YOLO 数据；
-- `runs/`：训练、验证、推理输出；
-- `weights/` 和 `.pt`：模型权重；
-- `.zip`、`.tar` 和分片文件：服务器上传或数据传输包；
-- `.aux`、`.log`、`.out`：LaTeX 编译中间文件；
-- `.tools/`：本地辅助构建工具。
-
-这样可以保证仓库可读、可复现，同时避免上传超大文件或数据集版权相关内容。
-
-## 论文定位
-
-当前论文材料围绕 VisDrone 验证集结果、结构消融、速度复杂度、类别级分析和可视化案例展开，定位为一个证据可追溯、流程可复现的无人机航拍小目标检测改进实验。
+论文和 README 中的实验数值均来自真实训练日志、验证输出和 `paper/tables/` 汇总文件。项目保留训练、验证、测速、类别级指标收集和论文表格导出脚本，便于复现实验流程和继续扩展对比实验。
