@@ -2,6 +2,8 @@
 
 This directory contains the paper-facing materials for the YOLO VisDrone project.
 
+The repository-level overview is maintained in `../README.md`. Use this file for paper-specific navigation, evidence rules, and rebuild commands.
+
 ## Where to Read the Current Paper
 
 Main polished manuscript:
@@ -54,6 +56,8 @@ Do not add a paper-facing number unless it can be traced to:
 
 The current manuscript reports validation-set results only. Official VisDrone test-dev/test-challenge AP is not reported because the official server has not returned a result.
 
+Additional external baselines such as YOLOv8n/YOLO11s are being prepared or run separately. Their numbers must not be added to the manuscript until the full logs, result files, and table exports are available and audited.
+
 ## Regenerate HTML Preview
 
 ```powershell
@@ -82,17 +86,17 @@ Compiled PDF:
 paper/manuscript_submission_candidate.pdf
 ```
 
-Local lightweight build command:
-
-```powershell
-cd paper
-..\.tools\tectonic\tectonic.exe manuscript_submission_candidate.tex
-```
-
 Recommended build command if TeX Live or MiKTeX is installed:
 
 ```powershell
 cd paper
 xelatex manuscript_submission_candidate.tex
 xelatex manuscript_submission_candidate.tex
+```
+
+Local lightweight build command if `.tools/tectonic/tectonic.exe` exists:
+
+```powershell
+cd paper
+..\.tools\tectonic\tectonic.exe manuscript_submission_candidate.tex
 ```

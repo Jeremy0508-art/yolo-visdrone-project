@@ -128,11 +128,9 @@ Main output:
 runs/detect/yolo11n_p2_coordatt_960_visdrone_full
 ```
 
-## Running Training Job
-
 ### YOLO11n-P2-CoordAttention Small-Object Augmentation
 
-Started on 2026-06-08.
+Started on 2026-06-08 and completed as a 100-epoch ablation run.
 
 ```powershell
 python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_smallobj_aug.yaml --pretrained-weights yolo11n.pt --pretrained-mode p2 --init-output weights/yolo11n_p2_coordatt_smallobj_aug_init.pt
@@ -144,110 +142,71 @@ Main output:
 runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone
 ```
 
-Log files for the current run:
+Initial log files:
 
 ```text
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_full_20260608_171712.stdout.log
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_full_20260608_171712.stderr.log
 ```
 
-Process observed after launch:
-
-```text
-PID 12744
-```
-
-Paused on 2026-06-08 before computer sleep. The process was stopped at epoch 6/100 while the latest saved checkpoint was:
-
-```text
-runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/last.pt
-```
-
-Resume command:
+The run was resumed multiple times from `last.pt` during local workstation pauses. Generic resume command:
 
 ```powershell
 python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_smallobj_aug.yaml --resume runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/last.pt
 ```
 
-Resumed on 2026-06-08. The resume log reports:
-
-```text
-Resuming training ... from epoch 6 to 100 total epochs
-```
-
-Current resume log files:
+Resume logs:
 
 ```text
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260608_183539.stdout.log
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260608_183539.stderr.log
-```
-
-Resume process observed after launch:
-
-```text
-PID 32236
-```
-
-Paused again on 2026-06-08. At pause time, `results.csv` contained completed epoch 16, and the process was stopped during epoch 17. Latest checkpoint:
-
-```text
-runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/last.pt
-```
-
-Resume again with:
-
-```powershell
-python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_smallobj_aug.yaml --resume runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/last.pt
-```
-
-Resumed again on 2026-06-08. The resume log reports:
-
-```text
-Resuming training ... from epoch 17 to 100 total epochs
-```
-
-Current resume log files:
-
-```text
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260608_213035.stdout.log
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260608_213035.stderr.log
-```
-
-Resume process observed after launch:
-
-```text
-PID 39324
-```
-
-Paused for the night on 2026-06-08. At pause time, `results.csv` contained completed epoch 31, and the process was stopped during epoch 32. Latest checkpoint:
-
-```text
-runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/last.pt
-```
-
-Resume next time with:
-
-```powershell
-python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_smallobj_aug.yaml --resume runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/last.pt
-```
-
-Resumed on 2026-06-09. The resume log reports:
-
-```text
-Resuming training ... from epoch 32 to 100 total epochs
-```
-
-Current resume log files:
-
-```text
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stdout.log
 runs/logs/yolo11n_p2_coordatt_smallobj_aug_resume_20260609_072221.stderr.log
 ```
 
-Resume process observed after launch:
+Paper-facing result:
 
 ```text
-PID 13736
+Best mAP50: 0.32780 at epoch 80
+Best mAP50-95: 0.18699 at epoch 74
+Metric source: runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/results.csv
+Table source: paper/tables/main_results.csv
+```
+
+## External Baseline Runs
+
+These runs are intended to strengthen the paper with broader comparisons. Do not report their numbers in the manuscript until the full run, validation, speed test, and table export are complete.
+
+### YOLOv8n Baseline
+
+```powershell
+python tools/train_baseline.py --config configs/train/baseline_yolov8n.yaml
+```
+
+Expected output:
+
+```text
+runs/detect/baseline_yolov8n_visdrone
+```
+
+Server-side run status:
+
+```text
+Launched on the rented GPU server. Await completion before adding metrics to paper tables.
+```
+
+### YOLO11s Baseline
+
+```powershell
+python tools/train_baseline.py --config configs/train/baseline_yolo11s.yaml
+```
+
+Expected output:
+
+```text
+runs/detect/baseline_yolo11s_visdrone
 ```
 
 ## Validation Examples

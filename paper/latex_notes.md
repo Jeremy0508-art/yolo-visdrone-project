@@ -28,6 +28,8 @@ Tectonic 0.16.9 was downloaded locally to:
 .tools/tectonic/tectonic.exe
 ```
 
+The `.tools/` directory is ignored by Git and is not uploaded to GitHub. This path documents the local helper used on this workstation, not a repository dependency.
+
 This lightweight LaTeX engine successfully compiled the manuscript to:
 
 ```text

@@ -121,13 +121,19 @@ Prepare this YOLO VisDrone project for a Chinese conference-style paper. The wor
 - External baseline configs added:
   - `configs/train/baseline_yolov8n.yaml`
   - `configs/train/baseline_yolo11s.yaml`
+- Server-side external baseline status:
+  - `configs/train/baseline_yolov8n.yaml` has been launched on the rented GPU server.
+  - Do not add YOLOv8n metrics to the manuscript until the run finishes and its logs/results are copied back and audited.
+  - YOLO11s is prepared as an additional baseline config but should be treated as pending until a complete run exists.
 
 ## Immediate Next Actions
 
-1. Finish a readable LaTeX/PDF review version.
-2. Run additional local baselines such as YOLOv8n and YOLO11s if GPU time is acceptable.
-3. Update paper tables, speed tests, and discussion after the new baselines finish.
-4. Convert `paper/manuscript_submission_candidate.tex` into the target conference template once the template is known.
+1. Wait for the server-side YOLOv8n baseline to finish.
+2. Copy back the completed server logs, `results.csv`, weights metadata, and validation outputs.
+3. Audit the new results before adding them to `paper/tables/` or the manuscript.
+4. Decide whether to run YOLO11s or other baselines based on GPU budget and the YOLOv8n outcome.
+5. Update paper tables, speed tests, and discussion after each new baseline is complete.
+6. Convert `paper/manuscript_submission_candidate.tex` into the target conference template once the template is known.
 
 ## Current Run Notes
 
