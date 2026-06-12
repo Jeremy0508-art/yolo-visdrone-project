@@ -47,16 +47,16 @@ Recommended ways to read it:
 
 ## Evidence Rule
 
-Do not add a paper-facing number unless it can be traced to:
+Paper-facing numbers should be traceable to one of:
 
 - `paper/tables/`
 - `runs/`
 - `runs/logs/`
 - an official VisDrone result returned by the evaluation server
 
-The current manuscript reports validation-set results only. Official VisDrone test-dev/test-challenge AP is not reported because the official server has not returned a result.
+The current manuscript is organized around validation-set metrics, speed/complexity measurements, per-class analysis, and qualitative figures.
 
-Additional external baselines such as YOLOv8n/YOLO11s are being prepared or run separately. Their numbers must not be added to the manuscript until the full logs, result files, and table exports are available and audited.
+Additional baseline workflows such as YOLOv8n/YOLO11s are recorded in the project configs and command notes. Paper tables are updated from audited logs and exported result files.
 
 ## Regenerate HTML Preview
 

@@ -1,21 +1,21 @@
 # 基于改进 YOLO 的 VisDrone 无人机航拍小目标检测项目
 
-本仓库围绕 VisDrone2019-DET 无人机航拍目标检测任务，整理了一个从数据转换、模型训练、验证评估、推理展示到论文材料生成的 YOLO 小目标检测项目。当前主线以 Ultralytics YOLO11n 为基线，已完成 YOLO11n、YOLO11n-P2、YOLO11n-P2-CoordAttention、YOLO11n-P2-CoordAttention-960 和 YOLO11n-P2-CoordAttention-SmallObjAug 的验证集实验整理。
+本仓库围绕 VisDrone2019-DET 无人机航拍目标检测任务，整理了一个从数据转换、模型训练、验证评估、推理展示到论文材料生成的 YOLO 小目标检测项目。项目以 Ultralytics YOLO11n 为主线，包含 P2 高分辨率检测分支、CoordAttention 注意力增强、960 输入分辨率实验和小目标友好数据增强消融。
 
-项目正在向中文会议/小论文方向推进。论文材料集中放在 [`paper/`](paper/README.md)，包括 LaTeX 稿件、PDF 预览、表格、图表、实验命令、证据审计和路线图。所有论文中使用的指标都必须来自真实训练日志、验证输出、`paper/tables/` 或官方评测结果，不编造数值。
+项目同时整理了面向中文会议/小论文写作的材料。论文相关内容集中放在 [`paper/`](paper/README.md)，包括 LaTeX 稿件、PDF 预览、表格、图表、实验命令、证据审计和路线图。论文指标均对应真实训练日志、验证输出和 `paper/tables/` 汇总文件。
 
-## 当前状态
+## 项目能力
 
-| 模块 | 状态 |
+| 模块 | 内容 |
 | --- | --- |
-| VisDrone 数据转换与校验 | 已完成，数据集不随 GitHub 上传 |
-| YOLO11n 主线实验 | 已完成 5 组本地验证集实验 |
-| 表格、图表、速度、类别级指标 | 已整理到 `paper/` |
-| LaTeX/PDF 论文预览 | 已生成 `paper/manuscript_submission_candidate.pdf` |
-| VisDrone test-dev 官方评测 | 本地提交包曾准备，官方账号验证未完成，暂无官方 AP |
-| 外部对照实验 | 服务器补跑中，完成前不写入论文结论 |
+| 数据处理 | VisDrone2019-DET 到 YOLO 格式的转换与数据校验 |
+| 模型结构 | YOLO11n、YOLO11n-P2、YOLO11n-P2-CoordAttention 系列配置 |
+| 实验评估 | 验证集指标、消融实验、模型复杂度、推理速度、类别级指标 |
+| 推理展示 | 图片推理、视频推理和 Flask Web 可视化检测页面 |
+| 论文材料 | Markdown 草稿、LaTeX 稿件、PDF 预览、表格、图表和复现实验命令 |
+| 扩展配置 | YOLOv8n、YOLO11s 等 baseline 配置，用于同协议扩展对比 |
 
-当前已完成实验中，`YOLO11n-P2-CoordAttention-960` 在 VisDrone 验证集上取得最佳结果：Best mAP50 为 `0.41996`，Best mAP50-95 为 `0.25174`，单图 wall-clock 推理速度为 `56.39 FPS`。这些数值来自已有 `runs/` 结果和 `paper/tables/` 汇总文件。
+在已整理的主线实验中，`YOLO11n-P2-CoordAttention-960` 在 VisDrone 验证集上取得 Best mAP50 `0.41996`、Best mAP50-95 `0.25174`，单图 wall-clock 推理速度为 `56.39 FPS`。这些数值来自已有 `runs/` 结果和 `paper/tables/` 汇总文件。
 
 ## 仓库结构
 
@@ -134,14 +134,14 @@ python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_960.ya
 python tools/train_baseline.py --config configs/train/yolo11n_p2_coordatt_smallobj_aug.yaml --pretrained-weights yolo11n.pt --pretrained-mode p2 --init-output weights/yolo11n_p2_coordatt_smallobj_aug_init.pt
 ```
 
-新增外部 baseline 配置：
+扩展 baseline 配置：
 
 ```powershell
 python tools/train_baseline.py --config configs/train/baseline_yolov8n.yaml
 python tools/train_baseline.py --config configs/train/baseline_yolo11s.yaml
 ```
 
-其中 YOLOv8n/YOLO11s 等外部对照实验用于增强论文说服力。只有在完整训练、验证和表格导出完成后，相关指标才会进入论文正文。
+这些配置用于在相同 VisDrone 数据和训练协议下扩展对比实验。
 
 ## 验证、速度和论文表格
 
@@ -227,17 +227,17 @@ cd paper
 
 ## GitHub 上传范围
 
-GitHub 仓库保留代码、配置、论文材料、表格和必要图表。以下内容不会上传：
+GitHub 仓库保留代码、配置、论文材料、表格和必要图表。数据、权重和运行产物按常规保存在本地工作区：
 
-- VisDrone 原始数据和转换后的 YOLO 数据；
-- `runs/` 训练、验证、推理输出；
-- `weights/` 权重文件和 `.pt` 文件；
-- 服务器上传用的 `.zip`、`.tar` 和分片文件；
-- 本地 LaTeX 编译中间文件；
-- `.tools/` 下的本地 Tectonic 可执行文件。
+- `data/`：VisDrone 原始数据和转换后的 YOLO 数据；
+- `runs/`：训练、验证、推理输出；
+- `weights/` 和 `.pt`：模型权重；
+- `.zip`、`.tar` 和分片文件：服务器上传或数据传输包；
+- `.aux`、`.log`、`.out`：LaTeX 编译中间文件；
+- `.tools/`：本地辅助构建工具。
 
 这样可以保证仓库可读、可复现，同时避免上传超大文件或数据集版权相关内容。
 
-## 当前论文结论边界
+## 论文定位
 
-当前论文只报告 VisDrone 验证集结果，不报告官方 test-dev/test-challenge AP。外部 baseline 和更多对照实验正在补充中，完成前不会写入论文结论。本文不宣称 SOTA，当前定位是一个证据可追溯、流程可复现的无人机航拍小目标检测改进实验。
+当前论文材料围绕 VisDrone 验证集结果、结构消融、速度复杂度、类别级分析和可视化案例展开，定位为一个证据可追溯、流程可复现的无人机航拍小目标检测改进实验。
