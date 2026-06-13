@@ -202,6 +202,12 @@ Check server-side fair-comparison progress without copying partial results:
 .\tools\check_cea_server_status.ps1
 ```
 
+Generated file:
+
+```text
+paper/cea_server_status_snapshot.md
+```
+
 Before using synced results in the manuscript, follow:
 
 ```text

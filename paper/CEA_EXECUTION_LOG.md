@@ -84,6 +84,11 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Verified the script against the server. It reported `baseline_yolo11n_960_visdrone` as `PARTIAL` with 13 completed epochs, while subsequent queued run directories had not started yet.
   - Training PID `43554` and queue PID `43842` were both still active.
   - No partial metrics were synchronized into paper tables.
+- Server status snapshot update:
+  - Extended `tools/check_cea_server_status.ps1` to write `paper/cea_server_status_snapshot.md`.
+  - Latest generated snapshot reports `baseline_yolo11n_960_visdrone` as `PARTIAL` with 15 completed epochs.
+  - Subsequent fair-comparison run directories had not started yet.
+  - The snapshot explicitly states that partial or missing runs are progress information only and must not be copied into paper tables.
 - Local consistency-audit update:
   - Added `tools/check_paper_consistency.py` to scan manuscript-facing files and paper tables for stale speed values, placeholders, missing table rows, and traceability gaps.
   - Generated `paper/paper_consistency_audit.md`.
