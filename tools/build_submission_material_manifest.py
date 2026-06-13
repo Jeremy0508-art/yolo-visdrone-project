@@ -111,6 +111,7 @@ def build_materials() -> list[Material]:
         ("LaTeX reference audit", "paper/tex_reference_audit.md"),
         ("LaTeX figure audit", "paper/tex_figure_audit.md"),
         ("LaTeX table-source audit", "paper/tex_table_source_audit.md"),
+        ("Section evidence map audit", "paper/section_evidence_map_audit.md"),
         ("Reproducibility command audit", "paper/repro_commands_audit.md"),
         ("Config inventory audit", "paper/config_inventory_audit.md"),
         ("Text hygiene audit", "paper/text_hygiene_audit.md"),

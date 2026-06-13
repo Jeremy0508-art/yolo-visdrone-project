@@ -322,6 +322,10 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_SECTION_EVIDENCE_MAP.md` to map each planned journal-manuscript section to allowed claims, required evidence sources, current status, and writing boundaries.
   - Integrated the evidence map into the material manifest, submission readiness audit, text hygiene audit, and paper workspace README.
   - Latest server status reached `baseline_yolo11n_960_visdrone` at 33 completed epochs; this remains partial progress and has not been synchronized into paper-facing result tables.
+- Section evidence map audit:
+  - Added `tools/check_section_evidence_map.py` and generated `paper/section_evidence_map_audit.md`.
+  - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, and `paper/README.md`.
+  - Current section evidence map audit result: 21 checks, 21 ready, 0 missing.
 
 ## Evidence Rules
 

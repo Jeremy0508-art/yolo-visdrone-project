@@ -6,8 +6,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 ## Summary
 
-- Total materials: 43
-- Ready: 43
+- Total materials: 44
+- Ready: 44
 - Missing: 0
 
 ## Materials
@@ -16,7 +16,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | --- | --- | --- | --- | --- |
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 38.5 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.64 MB |
-| Core Documents | Paper workspace README | READY | `paper/README.md` | 7.2 KB |
+| Core Documents | Paper workspace README | READY | `paper/README.md` | 7.3 KB |
 | Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
 | Core Documents | CEA result interpretation matrix | READY | `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` | 6.6 KB |
 | Core Documents | CEA section evidence map | READY | `paper/CEA_SECTION_EVIDENCE_MAP.md` | 6.6 KB |
@@ -24,7 +24,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | Reproducibility commands | READY | `paper/commands.md` | 12.6 KB |
 | Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
 | Core Documents | Post-sync manuscript update checklist | READY | `paper/post_sync_update_checklist.md` | 4.1 KB |
-| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 26.4 KB |
+| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 26.8 KB |
 | Core Documents | Server status snapshot | READY | `paper/cea_server_status_snapshot.md` | 1.5 KB |
 | Core Documents | Server progress report | READY | `paper/cea_server_progress_report.md` | 1.7 KB |
 | Tables | Main comparison table | READY | `paper/tables/main_comparison_for_paper.csv` | 7 data rows |
@@ -36,7 +36,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Tables | Scale-group matching table | READY | `paper/tables/scale_group_results.csv` | 6 data rows |
 | Tables | Accuracy-speed trade-off table | READY | `paper/tables/accuracy_speed_tradeoff.csv` | 7 data rows |
 | Tables | Fair experiment status table | READY | `paper/tables/cea_experiment_status.csv` | 5 data rows |
-| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 45 data rows |
+| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 50 data rows |
 | Figures | Method overview figure | READY | `paper/figures/method/hrpca_yolo11n_overview.png` | 127.7 KB |
 | Figures | Training curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_results.png` | 243.1 KB |
 | Figures | PR curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | 333.9 KB |
@@ -46,14 +46,15 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Figures | Object-scale distribution figure | READY | `paper/figures/scale_analysis/object_scale_distribution.png` | 33.2 KB |
 | Figures | Scale-group recall figure | READY | `paper/figures/scale_analysis/scale_group_recall.png` | 44.7 KB |
 | Figures | Accuracy-speed trade-off figure | READY | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | 105.6 KB |
-| Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 2.0 KB |
-| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 8.4 KB |
+| Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 2.2 KB |
+| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 8.7 KB |
 | Audits | Evidence audit | READY | `paper/evidence_audit.md` | 10.7 KB |
 | Audits | Journal manuscript gap audit | READY | `paper/manuscript_journal_gap_audit.md` | 2.8 KB |
 | Audits | Paper consistency audit | READY | `paper/paper_consistency_audit.md` | 1.7 KB |
 | Audits | LaTeX reference audit | READY | `paper/tex_reference_audit.md` | 1.1 KB |
 | Audits | LaTeX figure audit | READY | `paper/tex_figure_audit.md` | 1.1 KB |
 | Audits | LaTeX table-source audit | READY | `paper/tex_table_source_audit.md` | 1.9 KB |
+| Audits | Section evidence map audit | READY | `paper/section_evidence_map_audit.md` | 2.4 KB |
 | Audits | Reproducibility command audit | READY | `paper/repro_commands_audit.md` | 3.6 KB |
 | Audits | Config inventory audit | READY | `paper/config_inventory_audit.md` | 2.3 KB |
 | Audits | Text hygiene audit | READY | `paper/text_hygiene_audit.md` | 1.6 KB |

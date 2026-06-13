@@ -66,6 +66,7 @@ Recommended ways to read it:
 | `tex_reference_audit.md` | Generated LaTeX citation and bibliography consistency audit |
 | `tex_figure_audit.md` | Generated LaTeX figure path and float-layout audit |
 | `tex_table_source_audit.md` | Generated LaTeX table label and source-provenance audit |
+| `section_evidence_map_audit.md` | Generated audit for section-level claim-to-evidence mapping |
 | `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
 | `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
 | `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |

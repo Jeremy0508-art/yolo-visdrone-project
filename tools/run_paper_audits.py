@@ -16,6 +16,7 @@ AUDIT_STEPS = [
     ("Reproducibility command audit", "tools/check_repro_commands.py"),
     ("Configuration inventory audit", "tools/check_config_inventory.py"),
     ("Evidence audit", "tools/build_evidence_audit.py"),
+    ("Section evidence map audit", "tools/check_section_evidence_map.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
     ("CEA server progress report", "tools/build_cea_server_progress_report.py"),
     ("Post-sync manuscript update checklist", "tools/build_post_sync_update_checklist.py"),
