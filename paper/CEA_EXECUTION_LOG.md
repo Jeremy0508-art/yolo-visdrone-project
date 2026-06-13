@@ -314,6 +314,10 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` as the highest-priority route for pushing the project to formal 《计算机工程与应用》 submission readiness.
   - Integrated the final plan into `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, and `paper/README.md`.
   - Latest server status reached `baseline_yolo11n_960_visdrone` at 32 completed epochs; this is still partial progress and has not been synchronized into paper-facing result tables.
+- Result interpretation matrix:
+  - Added `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` to define how the manuscript should change under different fair-comparison outcomes.
+  - Integrated the matrix into the material manifest, submission readiness audit, text hygiene audit, and paper workspace README.
+  - The matrix adds no new result values; it is a pre-registered writing and evidence decision rule for post-sync manuscript updates.
 
 ## Evidence Rules
 

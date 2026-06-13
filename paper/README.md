@@ -29,6 +29,7 @@ Recommended ways to read it:
 | File | Purpose |
 | --- | --- |
 | `CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | Highest-priority execution plan for pushing the project to formal 《计算机工程与应用》 submission readiness |
+| `CEA_RESULT_INTERPRETATION_MATRIX.md` | Decision matrix for rewriting claims after fair-comparison results are complete |
 | `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
