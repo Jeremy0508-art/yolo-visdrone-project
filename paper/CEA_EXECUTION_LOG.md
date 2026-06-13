@@ -174,6 +174,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Generated `paper/tex_reference_audit.md`.
   - Current reference audit result: 7 checks, 6 ready, 1 partial, 0 missing.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the reference audit is indexed and checked.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 21 completed epochs.
+  - Latest partial row: epoch 21, `mAP50=0.0271639`, `mAP50-95=0.00905463`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- LaTeX figure-audit update:
+  - Added `tools/check_tex_figures.py` to verify LaTeX figure paths, figure labels, FloatBarrier placement, PDF existence, and PDF freshness.
+  - Generated `paper/tex_figure_audit.md`.
+  - Current figure audit result: 6 checks, 6 ready, 0 partial, 0 missing.
+  - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the figure audit is indexed and checked.
 
 ## Evidence Rules
 

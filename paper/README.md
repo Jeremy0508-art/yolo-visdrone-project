@@ -59,6 +59,7 @@ Recommended ways to read it:
 | `paper_consistency_audit.md` | Generated consistency audit for manuscript-facing text and paper tables |
 | `manuscript_journal_gap_audit.md` | Generated structural gap audit between the LaTeX candidate and journal manuscript blueprint |
 | `tex_reference_audit.md` | Generated LaTeX citation and bibliography consistency audit |
+| `tex_figure_audit.md` | Generated LaTeX figure path and float-layout audit |
 | `references.md` | Reference list draft |
 | `commands.md` | Reproducibility commands |
 | `experiment_protocol.md` | Experimental protocol and evidence rules |
