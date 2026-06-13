@@ -63,8 +63,8 @@ Recommended local baselines:
 
 1. Fix LaTeX/PDF formatting warnings enough for readable review.
 2. Build a literature comparison table from primary papers and official documentation.
-3. Wait for the server-side YOLOv8n baseline to finish, then copy back and audit its logs/results.
-4. Decide whether to run YOLO11s/YOLOv8s after the YOLOv8n result and GPU budget are clear.
+3. Use the completed YOLOv8n baseline as the first external comparison after copied-back logs and exported tables have been audited.
+4. Monitor the launched YOLO11s stronger-capacity baseline until a complete 100-epoch result exists.
 5. Re-export paper tables and update the manuscript after each new complete run.
 6. Revisit official VisDrone upload only if account verification becomes possible.
 

@@ -25,6 +25,11 @@ class BenchmarkTarget:
 
 TARGETS = [
     BenchmarkTarget(
+        model="YOLOv8n baseline",
+        weights="runs/detect/baseline_yolov8n_visdrone/weights/best.pt",
+        imgsz=640,
+    ),
+    BenchmarkTarget(
         model="YOLO11n baseline",
         weights="runs/detect/baseline_yolo11n_visdrone/weights/best.pt",
         imgsz=640,

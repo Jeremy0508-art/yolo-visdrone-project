@@ -177,7 +177,7 @@ Table source: paper/tables/main_results.csv
 
 ## External Baseline Runs
 
-These runs are intended to strengthen the paper with broader comparisons. Do not report their numbers in the manuscript until the full run, validation, speed test, and table export are complete.
+These runs are intended to strengthen the paper with broader comparisons. Report only results that have completed training, copied-back logs, audited result files, and exported paper tables.
 
 ### YOLOv8n Baseline
 
@@ -185,16 +185,30 @@ These runs are intended to strengthen the paper with broader comparisons. Do not
 python tools/train_baseline.py --config configs/train/baseline_yolov8n.yaml
 ```
 
-Expected output:
+Main output:
 
 ```text
 runs/detect/baseline_yolov8n_visdrone
 ```
 
-Server-side run status:
+Archived evidence:
 
 ```text
-Launched on the rented GPU server. Await completion before adding metrics to paper tables.
+runs/detect/baseline_yolov8n_visdrone/results.csv
+runs/logs/train_baseline_yolov8n_20260612_194313.log
+paper/tables/main_results.csv
+paper/tables/model_complexity.csv
+paper/tables/per_class_results.csv
+paper/tables/speed_results.csv
+```
+
+Paper-facing result:
+
+```text
+Best mAP50: 0.32520 at epoch 78
+Best mAP50-95: 0.18386 at epoch 84
+Metric source: runs/detect/baseline_yolov8n_visdrone/results.csv
+Log source: runs/logs/train_baseline_yolov8n_20260612_194313.log
 ```
 
 ### YOLO11s Baseline
@@ -207,6 +221,14 @@ Expected output:
 
 ```text
 runs/detect/baseline_yolo11s_visdrone
+```
+
+Current server-side run:
+
+```text
+PID: 26015
+Log: runs/logs/train_baseline_yolo11s_20260613_100711.log
+Status: running; do not report metrics until the 100-epoch run has completed and its artifacts have been copied back and audited.
 ```
 
 ## Validation Examples

@@ -122,16 +122,17 @@ Prepare this YOLO VisDrone project for a Chinese conference-style paper. The wor
   - `configs/train/baseline_yolov8n.yaml`
   - `configs/train/baseline_yolo11s.yaml`
 - Server-side external baseline status:
-  - `configs/train/baseline_yolov8n.yaml` has been launched on the rented GPU server.
-  - Do not add YOLOv8n metrics to the manuscript until the run finishes and its logs/results are copied back and audited.
-  - YOLO11s is prepared as an additional baseline config but should be treated as pending until a complete run exists.
+  - YOLOv8n baseline has completed 100 epochs on the rented GPU server.
+  - YOLOv8n logs, weights metadata, per-class metrics, model complexity, and speed benchmark have been copied back and exported into `paper/tables/`.
+  - YOLO11s baseline has been launched on the rented GPU server and should be treated as running until a complete 100-epoch result exists.
+  - Current YOLO11s server log: `runs/logs/train_baseline_yolo11s_20260613_100711.log`.
 
 ## Immediate Next Actions
 
-1. Wait for the server-side YOLOv8n baseline to finish.
-2. Copy back the completed server logs, `results.csv`, weights metadata, and validation outputs.
-3. Audit the new results before adding them to `paper/tables/` or the manuscript.
-4. Decide whether to run YOLO11s or other baselines based on GPU budget and the YOLOv8n outcome.
+1. Monitor the server-side YOLO11s run until it completes 100 epochs.
+2. Copy back the completed YOLO11s logs, `results.csv`, weights metadata, and validation outputs.
+3. Audit the YOLO11s result before adding it to `paper/tables/` or the manuscript.
+4. Run the same speed benchmark after YOLO11s weights are copied back.
 5. Update paper tables, speed tests, and discussion after each new baseline is complete.
 6. Convert `paper/manuscript_submission_candidate.tex` into the target conference template once the template is known.
 

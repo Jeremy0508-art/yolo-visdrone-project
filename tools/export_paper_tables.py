@@ -34,6 +34,14 @@ class Experiment:
 
 EXPERIMENTS = [
     Experiment(
+        model="YOLOv8n baseline",
+        change="Ultralytics YOLOv8n baseline",
+        config="configs/train/baseline_yolov8n.yaml",
+        run_dir="runs/detect/baseline_yolov8n_visdrone",
+        imgsz=640,
+        paper_role="external_baseline",
+    ),
+    Experiment(
         model="YOLO11n baseline",
         change="Original YOLO11n",
         config="configs/train/baseline_yolo11n.yaml",
@@ -131,6 +139,8 @@ def find_model_summary(run_name: str, model_name: str) -> tuple[str, str, str]:
 
     search_terms = [run_name]
     lowered_model = model_name.lower()
+    if "yolov8n" in lowered_model:
+        search_terms.append("baseline_yolov8n")
     if "baseline" in lowered_model:
         search_terms.append("baseline_yolo11n_visdrone")
     if "coordattention-960" in lowered_model:
@@ -281,7 +291,11 @@ def build_paper_comparison_rows(
 
 
 def build_ablation_rows(result_rows: list[dict[str, str]]) -> list[dict[str, str]]:
-    completed = [row for row in result_rows if row["status"] == "completed"]
+    completed = [
+        row
+        for row in result_rows
+        if row["status"] == "completed" and row["paper_role"] != "external_baseline"
+    ]
     baseline = next((row for row in completed if row["paper_role"] == "baseline"), None)
     p2 = next((row for row in completed if row["model"] == "YOLO11n-P2"), None)
 

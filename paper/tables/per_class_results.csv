@@ -1,4 +1,14 @@
 model,class,images,instances,precision,recall,map50,map50_95,run_dir,log_source
+YOLOv8n baseline,pedestrian,520,8844,0.44300,0.37200,0.33700,0.13800,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,people,482,5125,0.48800,0.26500,0.25800,0.08560,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,bicycle,364,1287,0.24600,0.11300,0.07760,0.02980,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,car,515,14064,0.63200,0.76700,0.74500,0.49300,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,van,421,1975,0.50800,0.39100,0.37700,0.25700,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,truck,266,750,0.47200,0.32400,0.30100,0.19600,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,tricycle,337,1045,0.37600,0.24200,0.21800,0.11800,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,awning-tricycle,220,532,0.30100,0.16100,0.11200,0.06760,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,bus,131,251,0.54900,0.43700,0.44700,0.30600,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
+YOLOv8n baseline,motor,485,4886,0.48800,0.39300,0.37200,0.14600,runs/detect/baseline_yolov8n_visdrone,runs/logs/train_baseline_yolov8n_20260612_194313.log
 YOLO11n baseline,pedestrian,520,8844,0.45100,0.38100,0.34500,0.14200,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
 YOLO11n baseline,people,482,5125,0.50100,0.26100,0.26000,0.08740,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
 YOLO11n baseline,bicycle,364,1287,0.23800,0.09870,0.07260,0.02760,runs/detect/baseline_yolo11n_visdrone,runs/logs/baseline_yolo11n_visdrone_resume_20260516.log
