@@ -140,6 +140,7 @@ def audit() -> list[Check]:
         ("Guarded server result sync", "tools/sync_cea_server_results.ps1"),
         ("Paper table exporter", "tools/export_paper_tables.py"),
         ("Readiness audit script", "tools/audit_submission_readiness.py"),
+        ("Paper consistency audit script", "tools/check_paper_consistency.py"),
     ]
     for item, path in tool_files:
         checks.append(

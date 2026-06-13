@@ -84,6 +84,12 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Verified the script against the server. It reported `baseline_yolo11n_960_visdrone` as `PARTIAL` with 13 completed epochs, while subsequent queued run directories had not started yet.
   - Training PID `43554` and queue PID `43842` were both still active.
   - No partial metrics were synchronized into paper tables.
+- Local consistency-audit update:
+  - Added `tools/check_paper_consistency.py` to scan manuscript-facing files and paper tables for stale speed values, placeholders, missing table rows, and traceability gaps.
+  - Generated `paper/paper_consistency_audit.md`.
+  - Current consistency audit result: 13 checks, 13 ready, 0 partial, 0 missing.
+  - Updated `tools/audit_submission_readiness.py` so the consistency audit script is included in readiness checks.
+  - Current readiness audit result: 44 checks, 5 pending fair experiments, 0 missing items.
 
 ## Evidence Rules
 

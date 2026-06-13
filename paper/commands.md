@@ -335,6 +335,18 @@ Generated file:
 paper/submission_readiness_audit.md
 ```
 
+Generate a manuscript/table consistency audit:
+
+```powershell
+python tools/check_paper_consistency.py
+```
+
+Generated file:
+
+```text
+paper/paper_consistency_audit.md
+```
+
 Object scale distribution from YOLO-format labels:
 
 ```powershell

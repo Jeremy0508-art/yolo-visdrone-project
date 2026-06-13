@@ -1,0 +1,186 @@
+from __future__ import annotations
+
+import csv
+import re
+from dataclasses import dataclass
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+REPORT = ROOT / "paper/paper_consistency_audit.md"
+
+
+@dataclass
+class Check:
+    item: str
+    status: str
+    evidence: str
+    action: str = ""
+
+
+MANUSCRIPT_FILES = [
+    "paper/manuscript_submission_candidate.tex",
+    "paper/manuscript_submission_candidate.md",
+    "paper/manuscript_polished.md",
+    "paper/manuscript_draft.md",
+]
+
+TABLE_FILES = [
+    "paper/tables/main_comparison_for_paper.csv",
+    "paper/tables/ablation_results.csv",
+    "paper/tables/speed_results.csv",
+    "paper/tables/model_complexity.csv",
+    "paper/tables/per_class_results.csv",
+    "paper/tables/object_scale_distribution.csv",
+    "paper/tables/scale_group_results.csv",
+]
+
+FORBIDDEN_PATTERNS = [
+    ("TODO", re.compile(r"TODO", re.IGNORECASE)),
+    ("待补充", re.compile(r"待补充")),
+    ("stale YOLO11n latency 13.785", re.compile(r"\b13\.785\b")),
+    ("stale YOLO11n FPS 72.54", re.compile(r"\b72\.54\b")),
+    ("stale 960 latency 17.733", re.compile(r"\b17\.733\b")),
+    ("stale 960 FPS 56.39", re.compile(r"\b56\.39\b")),
+]
+
+
+def read_text(path: Path) -> str:
+    return path.read_text(encoding="utf-8", errors="ignore")
+
+
+def read_csv(path: Path) -> list[dict[str, str]]:
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8-sig") as f:
+        return list(csv.DictReader(f))
+
+
+def status_label(status: str) -> str:
+    return status.upper()
+
+
+def check_manuscript_forbidden_patterns() -> list[Check]:
+    checks: list[Check] = []
+    for rel in MANUSCRIPT_FILES:
+        path = ROOT / rel
+        if not path.exists():
+            checks.append(Check(rel, "missing", rel, "Restore or regenerate manuscript file"))
+            continue
+
+        text = read_text(path)
+        hits = []
+        for label, pattern in FORBIDDEN_PATTERNS:
+            if pattern.search(text):
+                hits.append(label)
+        checks.append(
+            Check(
+                f"Forbidden manuscript markers in {rel}",
+                "ready" if not hits else "partial",
+                "none found" if not hits else ", ".join(hits),
+                "" if not hits else "Remove forbidden markers or stale values from manuscript-facing text",
+            )
+        )
+    return checks
+
+
+def check_table_files() -> list[Check]:
+    checks: list[Check] = []
+    for rel in TABLE_FILES:
+        path = ROOT / rel
+        rows = read_csv(path)
+        checks.append(
+            Check(
+                f"Table exists and has rows: {rel}",
+                "ready" if rows else "missing",
+                f"{len(rows)} rows" if rows else rel,
+                "" if rows else "Regenerate from audited artifacts",
+            )
+        )
+    return checks
+
+
+def check_completed_run_traceability() -> list[Check]:
+    rows = read_csv(ROOT / "paper/tables/main_comparison_for_paper.csv")
+    missing_sources = []
+    for row in rows:
+        run_dir = row.get("run_dir", "")
+        if not run_dir:
+            continue
+        results = ROOT / run_dir / "results.csv"
+        weights = ROOT / run_dir / "weights" / "best.pt"
+        if not results.exists() or not weights.exists():
+            missing_sources.append(run_dir)
+
+    return [
+        Check(
+            "Completed comparison rows trace to local results and best weights",
+            "ready" if not missing_sources else "partial",
+            "all completed comparison rows trace to local run artifacts"
+            if not missing_sources
+            else "; ".join(missing_sources),
+            "" if not missing_sources else "Sync or restore missing run artifacts before using these rows",
+        )
+    ]
+
+
+def check_speed_table_consistency() -> list[Check]:
+    speed_rows = read_csv(ROOT / "paper/tables/speed_results.csv")
+    comparison_rows = read_csv(ROOT / "paper/tables/main_comparison_for_paper.csv")
+    speed_models = {row.get("model", "") for row in speed_rows}
+    completed_models = {row.get("model", "") for row in comparison_rows if row.get("model")}
+    missing_speed = sorted(completed_models - speed_models)
+    return [
+        Check(
+            "Completed comparison models have speed rows",
+            "ready" if not missing_speed else "partial",
+            "all completed comparison models have speed rows" if not missing_speed else ", ".join(missing_speed),
+            "" if not missing_speed else "Run tools/benchmark_speed.py for missing completed models",
+        )
+    ]
+
+
+def build_report(checks: list[Check]) -> str:
+    total = len(checks)
+    ready = sum(1 for check in checks if check.status == "ready")
+    partial = sum(1 for check in checks if check.status == "partial")
+    missing = sum(1 for check in checks if check.status == "missing")
+
+    lines = [
+        "# Paper Consistency Audit",
+        "",
+        "This report is generated by `tools/check_paper_consistency.py`. It checks manuscript-facing files and paper tables for stale values, placeholders, and traceability gaps.",
+        "",
+        "## Summary",
+        "",
+        f"- Total checks: {total}",
+        f"- Ready: {ready}",
+        f"- Partial: {partial}",
+        f"- Missing: {missing}",
+        "",
+        "## Checks",
+        "",
+        "| Item | Status | Evidence | Action |",
+        "| --- | --- | --- | --- |",
+    ]
+    for check in checks:
+        lines.append(
+            f"| {check.item} | {status_label(check.status)} | `{check.evidence}` | {check.action} |"
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def main() -> None:
+    checks: list[Check] = []
+    checks.extend(check_manuscript_forbidden_patterns())
+    checks.extend(check_table_files())
+    checks.extend(check_completed_run_traceability())
+    checks.extend(check_speed_table_consistency())
+
+    REPORT.write_text(build_report(checks), encoding="utf-8")
+    print(f"Wrote {REPORT.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()
