@@ -367,6 +367,7 @@ Generated or refreshed files:
 paper/manuscript_journal_gap_audit.md
 paper/tex_reference_audit.md
 paper/tex_figure_audit.md
+paper/tex_cross_reference_audit.md
 paper/tex_table_source_audit.md
 paper/repro_commands_audit.md
 paper/config_inventory_audit.md
@@ -419,6 +420,18 @@ Generated file:
 
 ```text
 paper/text_hygiene_audit.md
+```
+
+Check whether LaTeX figures and tables are captioned, labeled, referenced, and resolvable:
+
+```powershell
+python tools/check_tex_cross_references.py
+```
+
+Generated file:
+
+```text
+paper/tex_cross_reference_audit.md
 ```
 
 Check the compiled PDF text extraction for core tokens and text-corruption markers:

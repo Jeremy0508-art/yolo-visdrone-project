@@ -22,6 +22,7 @@ AUDIT_REPORTS = [
     ("LaTeX references", "paper/tex_reference_audit.md"),
     ("Reference verification", "paper/reference_verification_audit.md"),
     ("LaTeX figures", "paper/tex_figure_audit.md"),
+    ("LaTeX cross references", "paper/tex_cross_reference_audit.md"),
     ("LaTeX table sources", "paper/tex_table_source_audit.md"),
     ("Reproducibility commands", "paper/repro_commands_audit.md"),
     ("Config inventory", "paper/config_inventory_audit.md"),

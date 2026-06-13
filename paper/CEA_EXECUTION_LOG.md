@@ -390,6 +390,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The audit estimates LaTeX manuscript Chinese character volume, English/technical token volume, section count, subsection count, table count, figure count, and reference count.
   - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
   - Current result: 7 checks, 6 ready, 1 partial, 0 missing. The partial item is Chinese character volume: 6727 characters against the local CEA-oriented planning target of 7500.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 40 completed epochs.
+  - Latest partial row: epoch 40, `mAP50=0.0201803`, `mAP50-95=0.00672675`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- LaTeX cross-reference audit:
+  - Added `tools/check_tex_cross_references.py` to verify that manuscript figures and tables have captions, labels, resolvable references, and body discussion links.
+  - Added explicit body references for the method overview figure and training curve figure in `paper/manuscript_submission_candidate.tex`.
+  - Integrated the audit into the paper audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, command notes, and paper workspace README.
 
 ## Evidence Rules
 

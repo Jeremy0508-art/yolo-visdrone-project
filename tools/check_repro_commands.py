@@ -38,6 +38,7 @@ REQUIRED_COMMANDS = [
     ("Claim boundary audit", r"python\s+tools/check_claim_boundaries\.py"),
     ("Evidence audit builder", r"python\s+tools/build_evidence_audit\.py"),
     ("Reference verification audit", r"python\s+tools/check_reference_verification_matrix\.py"),
+    ("LaTeX cross-reference audit", r"python\s+tools/check_tex_cross_references\.py"),
     ("Manuscript number trace audit", r"python\s+tools/check_manuscript_number_trace\.py"),
     ("Manuscript length audit", r"python\s+tools/check_manuscript_length\.py"),
     ("Section evidence map audit", r"python\s+tools/check_section_evidence_map\.py"),

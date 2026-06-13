@@ -13,6 +13,7 @@ AUDIT_STEPS = [
     ("LaTeX reference audit", "tools/check_tex_references.py"),
     ("Reference verification audit", "tools/check_reference_verification_matrix.py"),
     ("LaTeX figure audit", "tools/check_tex_figures.py"),
+    ("LaTeX cross-reference audit", "tools/check_tex_cross_references.py"),
     ("LaTeX table-source audit", "tools/check_tex_table_sources.py"),
     ("Reproducibility command audit", "tools/check_repro_commands.py"),
     ("Configuration inventory audit", "tools/check_config_inventory.py"),
