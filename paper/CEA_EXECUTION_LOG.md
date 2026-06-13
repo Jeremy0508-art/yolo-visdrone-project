@@ -133,6 +133,11 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Generated `paper/manuscript_journal_gap_audit.md`.
   - The report checks current LaTeX structure against the journal rewrite blueprint and records which items are ready, partial, pending, or missing.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the gap audit is indexed and checked.
+- Manuscript discussion-section update:
+  - Added a dedicated `讨论` section to `paper/manuscript_submission_candidate.tex` before the conclusion.
+  - The new discussion summarizes the roles and limits of 960 input, P2, CoordAttention, category confusion, failure cases, and the missing official test-dev/fair-comparison evidence.
+  - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully with `tools/build_paper_pdf.ps1`.
+  - Regenerated `paper/manuscript_journal_gap_audit.md`; the journal gap audit now reports 17 checks, 12 ready, 4 partial, 1 pending, and 0 missing.
 
 ## Evidence Rules
 

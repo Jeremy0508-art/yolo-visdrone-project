@@ -112,7 +112,7 @@ def audit() -> list[GapCheck]:
         ("Related work", r"\\section\{相关工作\}", "ready", "Keep and expand related work."),
         ("Method", r"\\section\{方法\}", "ready", "Keep and expand method details."),
         ("Experiments", r"\\section\{实验", "ready", "Split experimental setup and result analysis in the journal draft."),
-        ("Discussion", r"\\section\{讨论\}", "missing", "Add a discussion section after result analysis."),
+        ("Discussion", r"\\section\{讨论\}", "ready", "Add a discussion section after result analysis."),
         ("Conclusion", r"\\section\{结论\}", "ready", "Rewrite conclusion after fair experiments finish."),
     ]
     for item, pattern, ok_status, action in required_sections:
