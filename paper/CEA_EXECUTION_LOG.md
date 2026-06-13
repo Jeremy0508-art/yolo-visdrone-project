@@ -262,6 +262,14 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Fixed the full audit order so generated evidence text is created before `tools/check_text_hygiene.py` scans reader-facing files.
   - Regenerated `paper/evidence_audit.md`; current evidence audit result: 75 checks, 75 ready, 0 missing.
   - Current submission readiness audit result: 67 checks, 62 ready, 0 partial, 5 pending, 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 27 completed epochs.
+  - Latest partial row: epoch 27, `mAP50=0.0253155`, `mAP50-95=0.00843851`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Text hygiene robustness update:
+  - Updated `tools/check_text_hygiene.py` so common mojibake patterns are encoded with Unicode escapes in source code.
+  - This keeps the audit stable across terminals or editors with different display encodings.
 
 ## Evidence Rules
 

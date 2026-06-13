@@ -28,12 +28,11 @@ PATTERNS = [
     ("replacement character", re.compile("\ufffd")),
     ("soft hyphen", re.compile("\u00ad")),
     ("noncharacter U+FFFE", re.compile("\ufffe")),
-    ("common mojibake token: 銆", re.compile("銆")),
-    ("common mojibake token: 鐨", re.compile("鐨")),
-    ("common mojibake token: 鐩", re.compile("鐩")),
-    ("common mojibake token: 鏈", re.compile("鏈")),
-    ("common mojibake token: 绋", re.compile("绋")),
-    ("common mojibake token: 妫", re.compile("妫")),
+    ("common mojibake token: U+9286", re.compile("\u9286")),
+    ("common mojibake token: U+9428", re.compile("\u9428")),
+    ("common mojibake token: U+9429", re.compile("\u9429")),
+    ("common mojibake token: U+93C8", re.compile("\u93c8")),
+    ("common mojibake token: U+59AB", re.compile("\u59ab")),
 ]
 
 
