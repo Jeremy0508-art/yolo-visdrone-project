@@ -183,6 +183,13 @@ These runs are intended to strengthen the paper with broader comparisons. Report
 
 These experiments are required before treating the manuscript as a serious `Computer Engineering and Applications` journal candidate. They should be launched on the rented GPU server and reported only after complete 100-epoch logs and result files are copied back.
 
+Server-side sequential queue:
+
+```bash
+chmod +x tools/run_cea_server_queue.sh
+WAIT_PID=<current_training_pid> nohup tools/run_cea_server_queue.sh > runs/logs/cea_server_queue_$(date +%Y%m%d_%H%M%S).log 2>&1 &
+```
+
 ### YOLO11n 960 Baseline
 
 ```powershell

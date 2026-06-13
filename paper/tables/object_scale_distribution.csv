@@ -1,0 +1,7 @@
+split,images,missing_images,scale,instances,ratio
+train,6471,0,small,207604,0.604900
+train,6471,0,medium,116620,0.339798
+train,6471,0,large,18980,0.055302
+val,548,0,small,26586,0.685931
+val,548,0,medium,11105,0.286514
+val,548,0,large,1068,0.027555
