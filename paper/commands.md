@@ -295,6 +295,20 @@ paper/tables/accuracy_speed_tradeoff.csv
 paper/figures/tradeoff/accuracy_speed_tradeoff.png
 ```
 
+## Method Overview Figure
+
+Generate the method overview schematic used by the journal manuscript plan:
+
+```powershell
+python tools/draw_method_overview.py
+```
+
+Generated file:
+
+```text
+paper/figures/method/hrpca_yolo11n_overview.png
+```
+
 Object scale distribution from YOLO-format labels:
 
 ```powershell

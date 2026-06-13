@@ -6,6 +6,7 @@ This file records paper-facing figures copied from real experiment outputs. Do n
 
 | Paper Use | Figure File | Source | Suggested Caption |
 | --- | --- | --- | --- |
+| Method overview | `paper/figures/method/hrpca_yolo11n_overview.png` | `tools/draw_method_overview.py` | Overview of the HRPCA-YOLO11n pipeline with high-resolution P2 branch, CoordAttention, and four-scale detection heads. |
 | Training convergence comparison | `paper/figures/training_curves/p2_coordatt_960_results.png` | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/results.png` | Training and validation curves of the best completed YOLO11n-P2-CoordAttention-960 model on VisDrone. |
 | PR curve of best model | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/BoxPR_curve.png` | Precision-recall curve of the best completed model on the validation set. |
 | Normalized confusion matrix | `paper/figures/confusion_matrices/p2_coordatt_960_confusion_matrix_normalized.png` | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/confusion_matrix_normalized.png` | Normalized confusion matrix of the best completed model. |
@@ -14,6 +15,12 @@ This file records paper-facing figures copied from real experiment outputs. Do n
 | Accuracy-speed-parameter trade-off | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | `paper/tables/accuracy_speed_tradeoff.csv` | Accuracy-speed-parameter trade-off of completed validation experiments. |
 | Qualitative detection results | `paper/figures/qualitative/p2_coordatt_960_val_batch0_pred.jpg` | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/val_batch0_pred.jpg` | Representative detection results on VisDrone validation images. |
 | Failure/error analysis | `paper/figures/failure_cases/p2_case_contact_sheet.jpg` | Existing visual asset under `experiments/figures/` | Example failure cases for qualitative analysis. |
+
+## Method Figures
+
+| Figure File | Source Script | Notes |
+| --- | --- | --- |
+| `paper/figures/method/hrpca_yolo11n_overview.png` | `tools/draw_method_overview.py` | Schematic figure for manuscript method section; no experimental metric is encoded. |
 
 ## Training Curves and PR Curves
 
