@@ -31,6 +31,15 @@ def contains(pattern: str, text: str) -> bool:
     return re.search(pattern, text, flags=re.MULTILINE) is not None
 
 
+def has_failure_case_analysis(text: str) -> bool:
+    required_patterns = [
+        r"\\label\{fig:failure\}",
+        r"\\label\{tab:failure_reason\}",
+        r"失败案例主要来自尺度、遮挡、类别边界和背景干扰",
+    ]
+    return all(contains(pattern, text) for pattern in required_patterns)
+
+
 def status_symbol(status: str) -> str:
     return {
         "ready": "READY",
@@ -131,7 +140,6 @@ def audit() -> list[GapCheck]:
         ("Fair-resolution comparison", r"分辨率公平|公平分辨率|YOLO11n-960|YOLO11n-P2-960", "pending", "pending", "Write after server 100-epoch fair experiments are synced."),
         ("Mainstream YOLO comparison", r"YOLOv5n|YOLOv8n|YOLO11s", "partial", "missing", "Complete after YOLOv5n and 960 baselines finish."),
         ("Scale-group analysis", r"尺度分组|small|medium|large", "ready", "missing", "Keep scale-group metric definition explicit."),
-        ("Failure-case analysis", r"失败|漏检|误检|混淆|遮挡", "partial", "missing", "Expand qualitative cases into categorized failure analysis."),
         ("Speed-complexity trade-off", r"FPS|推理速度|复杂度|Latency|延迟", "ready", "missing", "Update after new server models are benchmarked."),
         ("Official test-dev boundary", r"test-dev|官方", "ready", "missing", "Keep wording clear that no official AP is available yet."),
     ]
@@ -146,6 +154,18 @@ def audit() -> list[GapCheck]:
                 action,
             )
         )
+
+    failure_ready = has_failure_case_analysis(text)
+    failure_mentioned = contains(r"失败|漏检|误检|混淆|遮挡", text)
+    checks.append(
+        GapCheck(
+            "Content",
+            "Failure-case analysis",
+            "ready" if failure_ready else ("partial" if failure_mentioned else "missing"),
+            "figure, table, and attribution paragraph found" if failure_ready else ("mentioned" if failure_mentioned else "not mentioned"),
+            "" if failure_ready else "Expand qualitative cases into categorized failure analysis.",
+        )
+    )
 
     return checks
 

@@ -155,6 +155,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Split the previous `实验与分析` section into `实验设置` and `实验结果与分析` in `paper/manuscript_submission_candidate.tex`.
   - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
   - Regenerated `paper/manuscript_journal_gap_audit.md`; the journal gap audit now reports 17 checks, 13 ready, 3 partial, 1 pending, and 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 20 completed epochs.
+  - Latest partial row: epoch 20, `mAP50=0.0274321`, `mAP50-95=0.00914405`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Failure-case analysis update:
+  - Expanded the qualitative analysis in `paper/manuscript_submission_candidate.tex` with categorized attribution for scale, occlusion, class-boundary ambiguity, and background interference.
+  - Updated `tools/check_journal_manuscript_gaps.py` so failure-case analysis is marked ready only when the failure figure, failure-reason table, and attribution paragraph are all present.
+  - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
+  - Regenerated `paper/manuscript_journal_gap_audit.md`; the journal gap audit now reports 17 checks, 14 ready, 2 partial, 1 pending, and 0 missing.
 
 ## Evidence Rules
 
