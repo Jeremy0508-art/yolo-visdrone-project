@@ -380,6 +380,7 @@ paper/text_hygiene_audit.md
 paper/pdf_text_readability_audit.md
 paper/advisor_progress_brief.md
 paper/advisor_progress_brief_audit.md
+paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md
 paper/evidence_audit.md
 paper/submission_material_manifest.md
 paper/paper_consistency_audit.md
@@ -463,6 +464,18 @@ Generated files:
 ```text
 paper/advisor_progress_brief.md
 paper/advisor_progress_brief_audit.md
+```
+
+Build the CEA-oriented submission package checklist:
+
+```powershell
+python tools/build_cea_submission_package_checklist.py
+```
+
+Generated file:
+
+```text
+paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md
 ```
 
 Regenerate the evidence audit from paper-facing result tables and figure files:

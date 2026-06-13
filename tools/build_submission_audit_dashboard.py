@@ -29,6 +29,7 @@ AUDIT_REPORTS = [
     ("Text hygiene", "paper/text_hygiene_audit.md"),
     ("PDF text readability", "paper/pdf_text_readability_audit.md"),
     ("Advisor progress brief", "paper/advisor_progress_brief_audit.md"),
+    ("CEA submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),
     ("Post-sync update checklist", "paper/post_sync_update_checklist.md"),
     ("Server status snapshot", "paper/cea_server_status_snapshot.md"),
 ]

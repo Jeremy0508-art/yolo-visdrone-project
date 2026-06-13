@@ -20,6 +20,7 @@ CHECKED_FILES = [
     "paper/CEA_RESULT_INTERPRETATION_MATRIX.md",
     "paper/CEA_SECTION_EVIDENCE_MAP.md",
     "paper/CEA_SUBMISSION_RISK_REGISTER.md",
+    "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md",
     "paper/reference_verification_matrix.md",
     "paper/reference_verification_audit.md",
     "paper/manuscript_length_audit.md",

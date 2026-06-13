@@ -409,6 +409,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added more explicit motivation for UAV small-object detection, lightweight YOLO trade-offs, P2 feature-scale design, \CoordAtt{} as an auxiliary lightweight attention module, and the interpretation value of the small-object augmentation result.
   - Rebuilt `paper/manuscript_submission_candidate.pdf` and regenerated the full audit set.
   - Current manuscript length audit result: 7 checks, 7 ready, 0 partial, 0 missing; the Chinese character estimate is now 8041 against the local 7500-character CEA-oriented planning gate.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 42 completed epochs.
+  - Latest partial row: epoch 42, `mAP50=0.019293`, `mAP50-95=0.00643101`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- CEA submission package checklist:
+  - Added `tools/build_cea_submission_package_checklist.py` and generated `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md`.
+  - The checklist organizes the local manuscript package into manuscript files, tables, figures, evidence audits, fair-experiment gates, supporting materials, and external submission verification.
+  - Integrated the checklist into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, command notes, and paper workspace README.
+  - The checklist explicitly keeps the official journal-template/upload-form verification as a manual pending item and does not claim final submission readiness before fair-comparison experiments finish.
 
 ## Evidence Rules
 
