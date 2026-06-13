@@ -31,6 +31,7 @@ Recommended ways to read it:
 | `CEA_JOURNAL_MASTER_PLAN.md` | Master plan for the 《计算机工程与应用》 journal submission track |
 | `CEA_REVIEW_GAP_ANALYSIS.md` | Gap analysis against Chinese YOLO journal-paper writing patterns |
 | `CEA_JOURNAL_MANUSCRIPT_OUTLINE.md` | Section-by-section outline for expanding the paper into a journal manuscript |
+| `advisor_progress_brief.md` | Short Chinese progress brief for advisor communication |
 | `PROJECT_ROADMAP.md` | Main project-to-paper roadmap and current status |
 | `CEA_SUBMISSION_PLAN.md` | Earlier journal-strengthening plan and experiment matrix |
 | `manuscript_polished.md` | Earlier polished Markdown manuscript draft |

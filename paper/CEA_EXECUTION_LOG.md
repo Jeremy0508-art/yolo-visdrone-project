@@ -32,6 +32,13 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - command: `.\tools\sync_cea_server_results.ps1 -MinEpochs 100`
   - verified behavior: skips partial runs such as `PARTIAL:3` and regenerates
     paper tables only from local completed artifacts.
+- Later status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 6 completed epochs.
+  - Last recorded row timestamp on the server: `2026-06-13 22:47:56`.
+  - Training PID `43554` was still active and the queue PID `43842` was still
+    waiting for subsequent experiments.
+  - No 960 fair-comparison result has been copied into paper tables yet because
+    the run is still partial.
 
 ## Evidence Rules
 
