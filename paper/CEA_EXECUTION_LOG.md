@@ -70,6 +70,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` to define the evidence gate for server results.
   - Updated `tools/audit_submission_readiness.py` so the full submission execution plan, execution log, and integration protocol are part of the readiness audit.
   - Updated `tools/sync_cea_server_results.ps1` so a successful guarded sync also regenerates the readiness audit.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` still recorded 12 completed epochs.
+  - Training PID `43554` was still active with elapsed time about 1 hour 34 minutes.
+  - Queue PID `43842` was still waiting for subsequent experiments.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Local manuscript-planning update:
+  - Added `paper/CEA_MANUSCRIPT_UPDATE_QUEUE.md` to define the exact manuscript update order after fair-comparison results finish.
+  - Updated `tools/audit_submission_readiness.py` so the manuscript update queue is audited.
+  - Regenerated `paper/submission_readiness_audit.md`; the audit now checks 39 items, with 5 pending fair experiments and 0 missing items.
 
 ## Evidence Rules
 

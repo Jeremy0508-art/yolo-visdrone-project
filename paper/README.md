@@ -30,6 +30,7 @@ Recommended ways to read it:
 | --- | --- |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
+| `CEA_MANUSCRIPT_UPDATE_QUEUE.md` | Ordered manuscript update queue after fair-comparison results finish |
 | `CEA_JOURNAL_MASTER_PLAN.md` | Master plan for the 《计算机工程与应用》 journal submission track |
 | `CEA_REVIEW_GAP_ANALYSIS.md` | Gap analysis against Chinese YOLO journal-paper writing patterns |
 | `CEA_JOURNAL_MANUSCRIPT_OUTLINE.md` | Section-by-section outline for expanding the paper into a journal manuscript |

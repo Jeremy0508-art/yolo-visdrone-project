@@ -56,6 +56,7 @@ def audit() -> list[Check]:
         ("Journal manuscript outline", "paper/CEA_JOURNAL_MANUSCRIPT_OUTLINE.md"),
         ("CEA execution log", "paper/CEA_EXECUTION_LOG.md"),
         ("CEA result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
+        ("CEA manuscript update queue", "paper/CEA_MANUSCRIPT_UPDATE_QUEUE.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
         ("Submission checklist", "paper/submission_checklist.md"),
