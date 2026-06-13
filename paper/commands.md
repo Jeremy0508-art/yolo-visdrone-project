@@ -373,6 +373,7 @@ paper/config_inventory_audit.md
 paper/manuscript_number_trace_audit.md
 paper/section_evidence_map_audit.md
 paper/text_hygiene_audit.md
+paper/pdf_text_readability_audit.md
 paper/evidence_audit.md
 paper/submission_material_manifest.md
 paper/paper_consistency_audit.md
@@ -412,6 +413,18 @@ Generated file:
 
 ```text
 paper/text_hygiene_audit.md
+```
+
+Check the compiled PDF text extraction for core tokens and text-corruption markers:
+
+```powershell
+python tools/check_pdf_text_readability.py
+```
+
+Generated file:
+
+```text
+paper/pdf_text_readability_audit.md
 ```
 
 Regenerate the evidence audit from paper-facing result tables and figure files:

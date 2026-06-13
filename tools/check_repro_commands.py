@@ -39,6 +39,7 @@ REQUIRED_COMMANDS = [
     ("Manuscript number trace audit", r"python\s+tools/check_manuscript_number_trace\.py"),
     ("Section evidence map audit", r"python\s+tools/check_section_evidence_map\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
+    ("PDF text readability audit", r"python\s+tools/check_pdf_text_readability\.py"),
     ("Submission material manifest", r"python\s+tools/build_submission_material_manifest\.py"),
     ("Paper consistency audit", r"python\s+tools/check_paper_consistency\.py"),
     ("Per-class validation", r"python\s+tools/val\.py"),

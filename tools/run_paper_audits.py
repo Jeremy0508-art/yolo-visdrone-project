@@ -19,6 +19,7 @@ AUDIT_STEPS = [
     ("Manuscript number trace audit", "tools/check_manuscript_number_trace.py"),
     ("Section evidence map audit", "tools/check_section_evidence_map.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
+    ("PDF text readability audit", "tools/check_pdf_text_readability.py"),
     ("CEA server progress report", "tools/build_cea_server_progress_report.py"),
     ("Post-sync manuscript update checklist", "tools/build_post_sync_update_checklist.py"),
     ("Submission material manifest", "tools/build_submission_material_manifest.py"),

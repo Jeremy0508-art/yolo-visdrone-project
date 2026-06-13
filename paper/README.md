@@ -71,6 +71,7 @@ Recommended ways to read it:
 | `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
 | `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
 | `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |
+| `pdf_text_readability_audit.md` | Generated audit for compiled PDF text extraction and basic readability tokens |
 | `submission_material_manifest.md` | Generated index of current submission-facing documents, tables, figures, and audits |
 | `submission_audit_dashboard.md` | Generated one-page dashboard summarizing paper-facing audits |
 | `references.md` | Reference list draft |

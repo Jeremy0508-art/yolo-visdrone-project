@@ -22,6 +22,7 @@ AUDIT_REPORTS = [
     ("Reproducibility commands", "paper/repro_commands_audit.md"),
     ("Config inventory", "paper/config_inventory_audit.md"),
     ("Text hygiene", "paper/text_hygiene_audit.md"),
+    ("PDF text readability", "paper/pdf_text_readability_audit.md"),
     ("Post-sync update checklist", "paper/post_sync_update_checklist.md"),
     ("Server status snapshot", "paper/cea_server_status_snapshot.md"),
 ]

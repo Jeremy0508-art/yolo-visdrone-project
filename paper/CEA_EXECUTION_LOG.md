@@ -333,6 +333,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/check_manuscript_number_trace.py` and generated `paper/manuscript_number_trace_audit.md`.
   - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
   - Current manuscript number trace result: 218 decimal-value checks, 218 ready, 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 35 completed epochs.
+  - Latest partial row: epoch 35, `mAP50=0.022304`, `mAP50-95=0.00743468`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- PDF text readability audit:
+  - Added `tools/check_pdf_text_readability.py` and generated `paper/pdf_text_readability_audit.md`.
+  - The audit extracts text from `paper/manuscript_submission_candidate.pdf` with PyMuPDF and checks the title phrase, `YOLO11n`, `VisDrone`, `mAP50`, PDF freshness, text length, and common text-corruption markers.
+  - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current PDF text readability result: 9 checks, 9 ready, 0 missing.
 
 ## Evidence Rules
 

@@ -116,6 +116,7 @@ def build_materials() -> list[Material]:
         ("Reproducibility command audit", "paper/repro_commands_audit.md"),
         ("Config inventory audit", "paper/config_inventory_audit.md"),
         ("Text hygiene audit", "paper/text_hygiene_audit.md"),
+        ("PDF text readability audit", "paper/pdf_text_readability_audit.md"),
     ]:
         add_file(materials, "Audits", item, path)
 
