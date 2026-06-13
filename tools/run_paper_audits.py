@@ -35,6 +35,7 @@ AUDIT_STEPS = [
     ("Submission material manifest", "tools/build_submission_material_manifest.py"),
     ("Paper consistency audit", "tools/check_paper_consistency.py"),
     ("Claim boundary audit", "tools/check_claim_boundaries.py"),
+    ("Result interpretation matrix audit", "tools/check_result_interpretation_matrix.py"),
     ("Submission readiness audit", "tools/audit_submission_readiness.py"),
     ("Submission audit dashboard", "tools/build_submission_audit_dashboard.py"),
 ]

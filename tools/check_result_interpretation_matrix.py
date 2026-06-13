@@ -1,0 +1,177 @@
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+MATRIX_PATH = ROOT / "paper/CEA_RESULT_INTERPRETATION_MATRIX.md"
+REPORT_PATH = ROOT / "paper/result_interpretation_matrix_audit.md"
+
+
+@dataclass
+class MatrixCheck:
+    item: str
+    status: str
+    evidence: str
+    action: str = ""
+
+
+def status_symbol(status: str) -> str:
+    return {
+        "ready": "READY",
+        "missing": "MISSING",
+    }[status]
+
+
+def contains(text: str, pattern: str) -> bool:
+    return re.search(pattern, text, flags=re.MULTILINE | re.IGNORECASE) is not None
+
+
+def audit() -> list[MatrixCheck]:
+    if not MATRIX_PATH.exists():
+        return [
+            MatrixCheck(
+                "Result interpretation matrix exists",
+                "missing",
+                str(MATRIX_PATH.relative_to(ROOT)),
+                "Restore the result interpretation matrix before integrating fair-comparison results.",
+            )
+        ]
+
+    text = MATRIX_PATH.read_text(encoding="utf-8")
+    checks: list[MatrixCheck] = [
+        MatrixCheck(
+            "Result interpretation matrix exists",
+            "ready",
+            str(MATRIX_PATH.relative_to(ROOT)),
+        )
+    ]
+
+    required_pairs = [
+        ("YOLO11n-640 vs YOLO11n-960", r"YOLO11n-640\s+vs\s+YOLO11n-960"),
+        ("YOLO11n-960 vs YOLO11n-P2-960", r"YOLO11n-960\s+vs\s+YOLO11n-P2-960"),
+        ("YOLO11n-P2-960 vs YOLO11n-P2-CA-960", r"YOLO11n-P2-960\s+vs\s+YOLO11n-P2-CA-960"),
+        ("YOLO11n-P2-CA-960 vs YOLOv8n-960", r"YOLO11n-P2-CA-960\s+vs\s+YOLOv8n-960"),
+        ("YOLO11n-P2-CA-960 vs YOLO11s-960", r"YOLO11n-P2-CA-960\s+vs\s+YOLO11s-960"),
+        ("YOLO11n-P2-CA-960 vs YOLOv5n-640", r"YOLO11n-P2-CA-960\s+vs\s+YOLOv5n-640"),
+    ]
+    for item, pattern in required_pairs:
+        found = contains(text, pattern)
+        checks.append(
+            MatrixCheck(
+                f"Comparison pair: {item}",
+                "ready" if found else "missing",
+                item if found else "not found",
+                "" if found else "Add this comparison relation and its evidence table to the matrix.",
+            )
+        )
+
+    required_scenarios = [
+        ("A: proposed method better than YOLO11n-960", r"情况\s*A|鎯呭喌\s*A"),
+        ("B: proposed method close to YOLO11n-960", r"情况\s*B|鎯呭喌\s*B"),
+        ("C: P2 works but CA limited", r"情况\s*C|鎯呭喌\s*C"),
+        ("D: YOLO11s-960 stronger", r"情况\s*D|鎯呭喌\s*D"),
+        ("E: YOLOv8n-960 close or stronger", r"情况\s*E|鎯呭喌\s*E"),
+        ("F: SmallObjAug underperforms", r"情况\s*F|鎯呭喌\s*F"),
+    ]
+    for item, pattern in required_scenarios:
+        found = contains(text, pattern)
+        checks.append(
+            MatrixCheck(
+                f"Scenario branch: {item}",
+                "ready" if found else "missing",
+                item if found else "not found",
+                "" if found else "Add a branch for this possible result outcome.",
+            )
+        )
+
+    required_boundary_tokens = [
+        ("100-epoch evidence boundary", "100 epoch", "boundary:100-epoch"),
+        ("No partial metrics in claims", "半程", "boundary:no-partial-metrics"),
+        ("Negative results must be preserved", "负向", "boundary:negative-results"),
+        ("Abstract updated last", "摘要", "boundary:abstract-last"),
+        ("Conclusion updated last", "结论", "boundary:conclusion-last"),
+        ("No universal YOLO superiority", "全面优于", "boundary:no-universal-superiority"),
+        ("Official test-dev boundary", "test-dev", "boundary:test-dev"),
+        ("Speed and complexity cost", "GFLOPs", "boundary:speed-complexity"),
+    ]
+    for item, token, evidence in required_boundary_tokens:
+        found = token in text
+        checks.append(
+            MatrixCheck(
+                f"Boundary rule: {item}",
+                "ready" if found else "missing",
+                evidence if found else "not found",
+                "" if found else "Add an explicit boundary rule for this writing risk.",
+            )
+        )
+
+    table_refs = [
+        "main_comparison_for_paper.csv",
+        "model_complexity.csv",
+        "speed_results.csv",
+    ]
+    for ref in table_refs:
+        found = ref in text
+        checks.append(
+            MatrixCheck(
+                f"Evidence table reference: {ref}",
+                "ready" if found else "missing",
+                ref if found else "not found",
+                "" if found else "Reference the table needed to support this interpretation branch.",
+            )
+        )
+
+    return checks
+
+
+def write_report(checks: list[MatrixCheck]) -> None:
+    total = len(checks)
+    ready = sum(1 for c in checks if c.status == "ready")
+    missing = sum(1 for c in checks if c.status == "missing")
+
+    lines = [
+        "# Result Interpretation Matrix Audit",
+        "",
+        "This report is generated by `tools/check_result_interpretation_matrix.py`. It checks whether the CEA result-interpretation matrix covers the main fair-comparison outcomes and writing boundaries needed after server experiments finish.",
+        "",
+        "It does not inspect experiment metrics or choose a conclusion; it only verifies that the decision framework exists before post-sync manuscript rewriting.",
+        "",
+        "## Summary",
+        "",
+        f"- Total checks: {total}",
+        f"- Ready: {ready}",
+        f"- Missing: {missing}",
+        "",
+        "## Checks",
+        "",
+        "| Item | Status | Evidence | Action |",
+        "| --- | --- | --- | --- |",
+    ]
+    for check in checks:
+        lines.append(
+            f"| {check.item} | {status_symbol(check.status)} | `{check.evidence}` | {check.action} |"
+        )
+
+    lines.extend(
+        [
+            "",
+            "## Interpretation",
+            "",
+            "- `READY` means the matrix contains the expected comparison, outcome branch, or boundary rule.",
+            "- `MISSING` means the matrix should be expanded before fair-comparison results are used to rewrite the manuscript.",
+        ]
+    )
+    REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def main() -> None:
+    checks = audit()
+    write_report(checks)
+    print(f"Wrote {REPORT_PATH.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()

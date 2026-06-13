@@ -14,6 +14,7 @@ AUDIT_REPORTS = [
     ("Journal manuscript gaps", "paper/manuscript_journal_gap_audit.md"),
     ("Paper consistency", "paper/paper_consistency_audit.md"),
     ("Claim boundaries", "paper/claim_boundary_audit.md"),
+    ("Result interpretation matrix", "paper/result_interpretation_matrix_audit.md"),
     ("Evidence audit", "paper/evidence_audit.md"),
     ("Manuscript number trace", "paper/manuscript_number_trace_audit.md"),
     ("Manuscript length", "paper/manuscript_length_audit.md"),

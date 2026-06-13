@@ -6,8 +6,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 
 ## Summary
 
-- Total checks: 25
-- Ready: 22
+- Total checks: 26
+- Ready: 23
 - Pending: 3
 - Missing: 0
 
@@ -30,6 +30,7 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Evidence | Evidence audit | READY | `paper/evidence_audit.md` |  |
 | Evidence | Number trace audit | READY | `paper/manuscript_number_trace_audit.md` |  |
 | Evidence | Claim boundary audit | READY | `paper/claim_boundary_audit.md` |  |
+| Evidence | Result interpretation matrix audit | READY | `paper/result_interpretation_matrix_audit.md` |  |
 | Evidence | PDF readability audit | READY | `paper/pdf_text_readability_audit.md` |  |
 | Evidence | PDF layout health audit | READY | `paper/pdf_layout_health_audit.md` |  |
 | Evidence | Synced fair-experiment artifacts audit | READY | `paper/synced_fair_experiment_artifacts_audit.md` |  |

@@ -449,6 +449,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The audit reads `paper/tables/cea_experiment_status.csv` and verifies that any experiment marked completed has a local run directory, `results.csv`, `args.yaml`, `weights/best.pt`, `weights/last.pt`, at least 100 result epochs, and a training/server log.
   - Current result: 6 checks, 1 ready, 5 pending, 0 missing; the pending checks correspond to the running or queued fair-comparison experiments.
   - Integrated the audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 45 completed epochs.
+  - Latest partial row: epoch 45, `mAP50=0.0179326`, `mAP50-95=0.00597754`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- Result interpretation matrix audit:
+  - Added `tools/check_result_interpretation_matrix.py` and generated `paper/result_interpretation_matrix_audit.md`.
+  - The audit verifies that `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` covers the fair-comparison pairs, A-F outcome branches, evidence-table references, and writing boundaries needed after server results finish.
+  - Current result: 24 checks, 24 ready, 0 missing.
+  - Integrated the audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
 
 ## Evidence Rules
 

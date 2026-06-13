@@ -388,6 +388,7 @@ paper/evidence_audit.md
 paper/submission_material_manifest.md
 paper/paper_consistency_audit.md
 paper/claim_boundary_audit.md
+paper/result_interpretation_matrix_audit.md
 paper/submission_readiness_audit.md
 paper/submission_audit_dashboard.md
 ```
@@ -623,6 +624,18 @@ Generated file:
 
 ```text
 paper/claim_boundary_audit.md
+```
+
+Check the post-sync result interpretation decision matrix:
+
+```powershell
+python tools/check_result_interpretation_matrix.py
+```
+
+Generated file:
+
+```text
+paper/result_interpretation_matrix_audit.md
 ```
 
 Object scale distribution from YOLO-format labels:

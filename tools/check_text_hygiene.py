@@ -31,6 +31,7 @@ CHECKED_FILES = [
     "paper/project_readme_presentation_audit.md",
     "paper/submission_audit_dashboard.md",
     "paper/claim_boundary_audit.md",
+    "paper/result_interpretation_matrix_audit.md",
     "paper/pdf_text_readability_audit.md",
     "paper/pdf_layout_health_audit.md",
     "paper/submission_risk_register_audit.md",
