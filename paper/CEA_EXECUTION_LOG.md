@@ -203,6 +203,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Generated `paper/repro_commands_audit.md`.
   - Current reproducibility command audit result: 24 checks, 24 ready, 0 missing.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the command audit is indexed and checked.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 23 completed epochs.
+  - Latest partial row: epoch 23, `mAP50=0.0265921`, `mAP50-95=0.00886404`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Config inventory audit update:
+  - Added `tools/check_config_inventory.py` to verify dataset, model, training, server-experiment, and paper-export configuration/script files.
+  - Generated `paper/config_inventory_audit.md`.
+  - Current config inventory audit result: 23 checks, 23 ready, 0 missing.
+  - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the config audit is indexed and checked.
 
 ## Evidence Rules
 
