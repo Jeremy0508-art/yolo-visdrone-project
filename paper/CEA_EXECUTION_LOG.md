@@ -194,6 +194,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Generated `paper/tex_table_source_audit.md`.
   - Current table-source audit result: 12 checks, 12 ready, 0 partial, 0 missing.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the table-source audit is indexed and checked.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` still recorded 22 completed epochs.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Reproducibility command audit update:
+  - Added `tools/check_repro_commands.py` to verify that `paper/commands.md` covers training, validation, speed benchmarking, server sync, paper table export, audits, and PDF generation.
+  - Generated `paper/repro_commands_audit.md`.
+  - Current reproducibility command audit result: 24 checks, 24 ready, 0 missing.
+  - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the command audit is indexed and checked.
 
 ## Evidence Rules
 

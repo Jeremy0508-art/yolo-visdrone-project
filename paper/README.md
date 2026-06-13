@@ -61,6 +61,7 @@ Recommended ways to read it:
 | `tex_reference_audit.md` | Generated LaTeX citation and bibliography consistency audit |
 | `tex_figure_audit.md` | Generated LaTeX figure path and float-layout audit |
 | `tex_table_source_audit.md` | Generated LaTeX table label and source-provenance audit |
+| `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
 | `references.md` | Reference list draft |
 | `commands.md` | Reproducibility commands |
 | `experiment_protocol.md` | Experimental protocol and evidence rules |
