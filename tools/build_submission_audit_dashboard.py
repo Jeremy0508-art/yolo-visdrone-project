@@ -22,6 +22,7 @@ AUDIT_REPORTS = [
     ("Submission risk register", "paper/submission_risk_register_audit.md"),
     ("CEA reviewer response prep", "paper/cea_reviewer_response_prep_audit.md"),
     ("CEA post-result rewrite playbook", "paper/cea_post_result_rewrite_playbook_audit.md"),
+    ("CEA official requirements tracker", "paper/cea_official_requirements_tracker_audit.md"),
     ("LaTeX references", "paper/tex_reference_audit.md"),
     ("Reference verification", "paper/reference_verification_audit.md"),
     ("LaTeX figures", "paper/tex_figure_audit.md"),

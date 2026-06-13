@@ -132,6 +132,7 @@ def build_checks() -> list[PackageCheck]:
         ("Result interpretation matrix audit", "paper/result_interpretation_matrix_audit.md"),
         ("Reviewer response prep audit", "paper/cea_reviewer_response_prep_audit.md"),
         ("Post-result rewrite playbook audit", "paper/cea_post_result_rewrite_playbook_audit.md"),
+        ("Official requirements tracker audit", "paper/cea_official_requirements_tracker_audit.md"),
         ("PDF readability audit", "paper/pdf_text_readability_audit.md"),
         ("PDF layout health audit", "paper/pdf_layout_health_audit.md"),
         ("Synced fair-experiment artifacts audit", "paper/synced_fair_experiment_artifacts_audit.md"),

@@ -24,6 +24,8 @@ CHECKED_FILES = [
     "paper/cea_reviewer_response_prep_audit.md",
     "paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md",
     "paper/cea_post_result_rewrite_playbook_audit.md",
+    "paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md",
+    "paper/cea_official_requirements_tracker_audit.md",
     "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md",
     "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md",
     "paper/reference_verification_matrix.md",

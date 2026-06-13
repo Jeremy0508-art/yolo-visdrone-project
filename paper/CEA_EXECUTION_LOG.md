@@ -486,6 +486,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/build_cea_post_result_rewrite_playbook.py`, `tools/check_cea_post_result_rewrite_playbook.py`, `paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md`, and `paper/cea_post_result_rewrite_playbook_audit.md`.
   - The playbook turns final-result integration into section-by-section rewrite gates covering abstract, introduction, related work, method, experiment setup, main results, ablation, small-object analysis, efficiency, discussion, conclusion, and final PDF/GitHub sync.
   - Integrated the playbook and audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and README files.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 48 completed epochs.
+  - Latest partial row: epoch 48, `mAP50=0.0165475`, `mAP50-95=0.00551584`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- CEA official requirements tracker:
+  - Added `tools/build_cea_official_requirements_tracker.py`, `tools/check_cea_official_requirements_tracker.py`, `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md`, and `paper/cea_official_requirements_tracker_audit.md`.
+  - The tracker records official-candidate source URLs, cross-reference and third-party caution boundaries, and manual fields for template file, upload type, author metadata, declarations, length/format, submission-system behavior, and fees/attachments.
+  - Integrated the tracker and audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and README files.
 
 ## Evidence Rules
 

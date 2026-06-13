@@ -606,6 +606,20 @@ paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md
 paper/cea_post_result_rewrite_playbook_audit.md
 ```
 
+Build and audit the CEA official-requirements tracker:
+
+```powershell
+python tools/build_cea_official_requirements_tracker.py
+python tools/check_cea_official_requirements_tracker.py
+```
+
+Generated files:
+
+```text
+paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md
+paper/cea_official_requirements_tracker_audit.md
+```
+
 Check local artifact completeness for synced fair-comparison experiments:
 
 ```powershell

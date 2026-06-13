@@ -26,6 +26,8 @@ AUDIT_STEPS = [
     ("CEA reviewer response prep audit", "tools/check_cea_reviewer_response_prep.py"),
     ("CEA post-result rewrite playbook", "tools/build_cea_post_result_rewrite_playbook.py"),
     ("CEA post-result rewrite playbook audit", "tools/check_cea_post_result_rewrite_playbook.py"),
+    ("CEA official requirements tracker", "tools/build_cea_official_requirements_tracker.py"),
+    ("CEA official requirements tracker audit", "tools/check_cea_official_requirements_tracker.py"),
     ("CEA manual submission preflight", "tools/build_cea_manual_submission_preflight.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
     ("Project README presentation audit", "tools/check_project_readme_presentation.py"),
