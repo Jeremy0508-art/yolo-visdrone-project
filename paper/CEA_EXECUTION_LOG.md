@@ -147,6 +147,14 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Expanded the related-work discussion in `paper/manuscript_submission_candidate.tex` with verified classic references for YOLO lineage, FPN/PANet multi-scale fusion, and SE/CBAM attention modules.
   - Added the corresponding bibliography entries to the LaTeX manuscript and registered them in `paper/reference_verification_matrix.md`.
   - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` still recorded 19 completed epochs.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Manuscript section-structure update:
+  - Split the previous `实验与分析` section into `实验设置` and `实验结果与分析` in `paper/manuscript_submission_candidate.tex`.
+  - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
+  - Regenerated `paper/manuscript_journal_gap_audit.md`; the journal gap audit now reports 17 checks, 13 ready, 3 partial, 1 pending, and 0 missing.
 
 ## Evidence Rules
 

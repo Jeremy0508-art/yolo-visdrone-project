@@ -136,9 +136,9 @@ $\downarrow$ \\
 
 此外，本文设计了小目标友好数据增强消融实验，设置包括 \texttt{close\_mosaic: 20}、\texttt{scale: 0.35}、\texttt{copy\_paste: 0.1} 和 \texttt{erasing: 0.0}。其中，较早关闭 mosaic 用于减少训练后期合成图像分布影响，较小 scale 用于降低小目标被过度缩小的风险，关闭 erasing 用于避免破坏小目标可见区域。当前结果显示该增强策略未超过 \YOLOPtwoCA{}，因此本文仅将其作为训练策略消融进行讨论。
 
-\section{实验与分析}
+\section{实验设置}
 
-\subsection{实验设置}
+本节说明数据集、训练配置、评价指标和速度测试协议。所有实验结果均从训练日志、验证输出或 `paper/tables/` 汇总文件中整理得到，未完成的服务器公平对照实验不进入本文结果表。
 
 实验基于 Ultralytics YOLO 框架，在 VisDrone2019-DET 数据集上进行。数据配置文件为 \texttt{configs/dataset/visdrone.yaml}，训练集、验证集和 test-dev 图像均转换为 YOLO 格式组织。所有已完成主实验均训练 100 个 epoch，并使用各实验输出目录中的 \texttt{results.csv} 统计最终指标与最佳指标。当前未获得 VisDrone 官方 test-dev/test-challenge 返回结果，因此本文仅报告验证集结果。
 
@@ -173,6 +173,8 @@ NMS 设置 & 采用 Ultralytics 默认验证流程；现有日志记录 \texttt{
 \bottomrule
 \end{tabular}
 \end{table}
+
+\section{实验结果与分析}
 
 \subsection{主实验结果}
 
