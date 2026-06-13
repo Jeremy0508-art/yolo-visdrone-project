@@ -124,6 +124,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md` to map the current LaTeX candidate into a full journal manuscript structure.
   - The blueprint defines section expansion, figure/table placement, result-dependent rewrite order, and statements that must wait for fair-comparison evidence.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the blueprint is indexed and audited.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` still recorded 17 completed epochs.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Journal manuscript gap-audit update:
+  - Added `tools/check_journal_manuscript_gaps.py`.
+  - Generated `paper/manuscript_journal_gap_audit.md`.
+  - The report checks current LaTeX structure against the journal rewrite blueprint and records which items are ready, partial, pending, or missing.
+  - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the gap audit is indexed and checked.
 
 ## Evidence Rules
 

@@ -57,6 +57,7 @@ Recommended ways to read it:
 | `submission_checklist.md` | Pre-submission checklist and template migration notes |
 | `submission_readiness_audit.md` | Generated local readiness audit for paper-facing artifacts and pending fair experiments |
 | `paper_consistency_audit.md` | Generated consistency audit for manuscript-facing text and paper tables |
+| `manuscript_journal_gap_audit.md` | Generated structural gap audit between the LaTeX candidate and journal manuscript blueprint |
 | `references.md` | Reference list draft |
 | `commands.md` | Reproducibility commands |
 | `experiment_protocol.md` | Experimental protocol and evidence rules |
