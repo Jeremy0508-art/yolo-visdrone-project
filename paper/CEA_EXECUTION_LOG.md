@@ -138,6 +138,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The new discussion summarizes the roles and limits of 960 input, P2, CoordAttention, category confusion, failure cases, and the missing official test-dev/fair-comparison evidence.
   - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully with `tools/build_paper_pdf.ps1`.
   - Regenerated `paper/manuscript_journal_gap_audit.md`; the journal gap audit now reports 17 checks, 12 ready, 4 partial, 1 pending, and 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 19 completed epochs.
+  - Latest partial row: epoch 19, `mAP50=0.0276883`, `mAP50-95=0.00922942`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Manuscript reference expansion:
+  - Expanded the related-work discussion in `paper/manuscript_submission_candidate.tex` with verified classic references for YOLO lineage, FPN/PANet multi-scale fusion, and SE/CBAM attention modules.
+  - Added the corresponding bibliography entries to the LaTeX manuscript and registered them in `paper/reference_verification_matrix.md`.
+  - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
 
 ## Evidence Rules
 

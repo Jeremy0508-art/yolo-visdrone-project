@@ -65,15 +65,15 @@ YOLO 系列检测器具有端到端推理、速度快和部署方便等特点，
 
 \subsection{YOLO 系列轻量化检测器}
 
-YOLO 系列方法以端到端检测和较快推理速度为主要特点，适合实时检测和边缘部署任务。对于无人机场景，轻量模型能够降低计算开销和存储成本，但也更容易受到特征容量和空间分辨率限制。本文选择 \YOLOBase{} 作为基线，是因为其参数量较小、推理速度较快，便于在可接受复杂度下评估小目标增强策略。
+YOLO 系列方法将目标检测建模为单阶段密集预测任务，早期 YOLO 和 YOLOv3 等工作推动了实时检测在工程场景中的应用\cite{redmon2016yolo,redmon2018yolov3}。相较两阶段检测器，YOLO 系列通常具有更高推理效率，适合实时检测和边缘部署任务。对于无人机场景，轻量模型能够降低计算开销和存储成本，但也更容易受到特征容量和空间分辨率限制。本文选择 \YOLOBase{} 作为基线，是因为其参数量较小、推理速度较快，便于在可接受复杂度下评估小目标增强策略。
 
-轻量模型的主要问题在于深层特征图分辨率有限。经过多次下采样后，小目标在高层语义特征中的空间占比进一步降低，可能影响定位精度和召回率。因此，许多小目标检测改进会通过多尺度检测头、浅层特征融合或高分辨率输入来增强细粒度信息。本文的 P2 分支设计即沿着这一思路，将更高空间分辨率的浅层特征引入检测输出。
+轻量模型的主要问题在于深层特征图分辨率有限。经过多次下采样后，小目标在高层语义特征中的空间占比进一步降低，可能影响定位精度和召回率。因此，许多小目标检测改进会通过多尺度检测头、浅层特征融合或高分辨率输入来增强细粒度信息。FPN 通过自顶向下路径和横向连接融合不同层级特征，PANet 进一步引入自底向上的路径增强定位信息传播\cite{lin2017fpn,liu2018panet}。本文的 P2 分支设计即沿着多尺度特征融合思路，将更高空间分辨率的浅层特征引入检测输出。
 
 \subsection{小目标检测增强策略}
 
 小目标检测常见增强策略包括高分辨率输入、多尺度检测头、浅层特征融合、注意力机制和数据增强等。高分辨率输入能够直接增加小目标在原图中的像素占比，通常对航拍小目标检测较为关键；多尺度检测头和浅层特征融合则试图在网络内部保留更多细粒度空间信息。
 
-注意力机制能够通过重新分配特征响应提升网络表达能力。\CoordAtt{} 将位置信息嵌入通道注意力建模过程，在保持轻量化的同时引入方向感知和位置敏感特征表达\cite{hou2021coordinate}。对于无人机图像中的小目标、密集目标和复杂背景，该机制可能有助于增强目标区域响应。不过，注意力模块的实际收益需要结合消融结果谨慎判断。本文实验显示，\CoordAtt{} 在 P2 基础上带来的是小幅补充提升，而非主要增益来源。
+注意力机制能够通过重新分配特征响应提升网络表达能力。SE 模块通过建模通道依赖实现特征重标定，CBAM 进一步串联通道注意力和空间注意力以增强特征表达\cite{hu2018senet,woo2018cbam}。\CoordAtt{} 将位置信息嵌入通道注意力建模过程，在保持轻量化的同时引入方向感知和位置敏感特征表达\cite{hou2021coordinate}。对于无人机图像中的小目标、密集目标和复杂背景，该机制可能有助于增强目标区域响应。不过，注意力模块的实际收益需要结合消融结果谨慎判断。本文实验显示，\CoordAtt{} 在 P2 基础上带来的是小幅补充提升，而非主要增益来源。
 
 数据增强也可能影响小目标检测效果，例如 mosaic 关闭时机、缩放范围、copy-paste 和 erasing 等设置均会改变训练样本分布。本文保留小目标友好增强作为训练策略消融，但当前结果显示该策略未超过 \YOLOPtwoCA{}，说明增强策略需要与数据集分布和模型结构进一步匹配。
 
@@ -427,6 +427,24 @@ bicycle / motor 混淆 & 非机动车在航拍视角下轮廓相似 \\
 
 \bibitem{du2019visdrone}
 Du D, Zhu P, Wen L, et al. VisDrone-DET2019: The Vision Meets Drone Object Detection in Image Challenge[C]//Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops. 2019.
+
+\bibitem{redmon2016yolo}
+Redmon J, Divvala S, Girshick R, et al. You Only Look Once: Unified, Real-Time Object Detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2016: 779--788.
+
+\bibitem{redmon2018yolov3}
+Redmon J, Farhadi A. YOLOv3: An Incremental Improvement[EB/OL]. arXiv:1804.02767, 2018.
+
+\bibitem{lin2017fpn}
+Lin T Y, Dollár P, Girshick R, et al. Feature Pyramid Networks for Object Detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2117--2125.
+
+\bibitem{liu2018panet}
+Liu S, Qi L, Qin H, et al. Path Aggregation Network for Instance Segmentation[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2018: 8759--8768.
+
+\bibitem{hu2018senet}
+Hu J, Shen L, Sun G. Squeeze-and-Excitation Networks[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2018: 7132--7141.
+
+\bibitem{woo2018cbam}
+Woo S, Park J, Lee J Y, et al. CBAM: Convolutional Block Attention Module[C]//Proceedings of the European Conference on Computer Vision. 2018: 3--19.
 
 \bibitem{hou2021coordinate}
 Hou Q, Zhou D, Feng J. Coordinate Attention for Efficient Mobile Network \mbox{Design}[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern \mbox{Recognition}. 2021: 13713--13722.

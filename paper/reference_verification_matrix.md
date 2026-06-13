@@ -12,6 +12,12 @@ This matrix tracks candidate references for the 《计算机工程与应用》 j
 | R04 | YOLO11 framework | Ultralytics YOLO11 documentation | https://docs.ultralytics.com/models/yolo11/ | Framework/model-family background | Official documentation |
 | R05 | VisDrone data config | Ultralytics VisDrone documentation | https://docs.ultralytics.com/datasets/detect/visdrone/ | Dataset organization and class context | Official documentation |
 | R06 | YOLO11 overview | YOLOv11: An Overview of the Key Architectural Enhancements | https://arxiv.org/abs/2410.17725 | YOLO11 architecture context, if retained | arXiv source; still verify final citation style |
+| R07 | YOLO lineage | You Only Look Once: Unified, Real-Time Object Detection | https://openaccess.thecvf.com/content_cvpr_2016/html/Redmon_You_Only_Look_CVPR_2016_paper.html | YOLO series background | CVF source link |
+| R08 | YOLO lineage | YOLOv3: An Incremental Improvement | https://arxiv.org/abs/1804.02767 | YOLO series background | arXiv source |
+| R09 | Multi-scale fusion | Feature Pyramid Networks for Object Detection | https://openaccess.thecvf.com/content_cvpr_2017/papers/Lin_Feature_Pyramid_Networks_CVPR_2017_paper.pdf | Multi-scale feature fusion background | CVF source link |
+| R10 | Multi-scale fusion | Path Aggregation Network for Instance Segmentation | https://openaccess.thecvf.com/content_cvpr_2018/papers/Liu_Path_Aggregation_Network_CVPR_2018_paper.pdf | Neck/path aggregation background | CVF source link |
+| R11 | Attention module | Squeeze-and-Excitation Networks | https://openaccess.thecvf.com/content_cvpr_2018/html/Hu_Squeeze-and-Excitation_Networks_CVPR_2018_paper.html | Channel attention background | CVF source link |
+| R12 | Attention module | CBAM: Convolutional Block Attention Module | https://openaccess.thecvf.com/content_ECCV_2018/papers/Sanghyun_Woo_Convolutional_Block_Attention_ECCV_2018_paper.pdf | Channel/spatial attention background | CVF source link |
 
 ## UAV and Small-Object YOLO Candidates
 
