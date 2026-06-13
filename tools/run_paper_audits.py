@@ -28,6 +28,7 @@ AUDIT_STEPS = [
     ("Post-sync manuscript update checklist", "tools/build_post_sync_update_checklist.py"),
     ("Submission material manifest", "tools/build_submission_material_manifest.py"),
     ("Paper consistency audit", "tools/check_paper_consistency.py"),
+    ("Claim boundary audit", "tools/check_claim_boundaries.py"),
     ("Submission readiness audit", "tools/audit_submission_readiness.py"),
     ("Submission audit dashboard", "tools/build_submission_audit_dashboard.py"),
 ]

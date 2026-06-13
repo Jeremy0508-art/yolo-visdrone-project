@@ -369,6 +369,17 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The generated brief summarizes the research goal, completed 100-epoch runs, current best completed model, small-object evidence, server fair-comparison progress, current audit dashboard status, advisor-facing risks, and next steps.
   - Integrated the advisor brief builder and audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
   - Current advisor brief audit result: 15 checks, 15 ready, 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 38 completed epochs.
+  - Latest partial row: epoch 38, `mAP50=0.0210476`, `mAP50-95=0.00701588`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- Claim boundary audit:
+  - Added `tools/check_claim_boundaries.py` and generated `paper/claim_boundary_audit.md`.
+  - The audit scans paper-facing text files for unsupported overclaims, premature official test-dev claims, completed-fair-experiment claims, and leakage of partial server mAP values.
+  - The audit intentionally excludes planning documents that contain forbidden phrases as examples, while still requiring boundary statements in the advisor brief.
+  - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current claim boundary audit result: 15 checks, 15 ready, 0 missing.
 
 ## Evidence Rules
 

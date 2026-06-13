@@ -66,6 +66,7 @@ Recommended ways to read it:
 | `submission_checklist.md` | Pre-submission checklist and template migration notes |
 | `submission_readiness_audit.md` | Generated local readiness audit for paper-facing artifacts and pending fair experiments |
 | `paper_consistency_audit.md` | Generated consistency audit for manuscript-facing text and paper tables |
+| `claim_boundary_audit.md` | Generated audit for unsupported overclaims and partial-result leakage in paper-facing text |
 | `manuscript_journal_gap_audit.md` | Generated structural gap audit between the LaTeX candidate and journal manuscript blueprint |
 | `tex_reference_audit.md` | Generated LaTeX citation and bibliography consistency audit |
 | `tex_figure_audit.md` | Generated LaTeX figure path and float-layout audit |

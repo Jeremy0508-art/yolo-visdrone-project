@@ -381,6 +381,7 @@ paper/advisor_progress_brief_audit.md
 paper/evidence_audit.md
 paper/submission_material_manifest.md
 paper/paper_consistency_audit.md
+paper/claim_boundary_audit.md
 paper/submission_readiness_audit.md
 paper/submission_audit_dashboard.md
 ```
@@ -532,6 +533,18 @@ Generated file:
 
 ```text
 paper/paper_consistency_audit.md
+```
+
+Check paper-facing text for unsupported overclaims and partial server metrics:
+
+```powershell
+python tools/check_claim_boundaries.py
+```
+
+Generated file:
+
+```text
+paper/claim_boundary_audit.md
 ```
 
 Object scale distribution from YOLO-format labels:

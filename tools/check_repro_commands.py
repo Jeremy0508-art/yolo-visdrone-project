@@ -35,6 +35,7 @@ REQUIRED_COMMANDS = [
     ("Paper PDF build", r"\.\\tools\\build_paper_pdf\.ps1"),
     ("Full paper audit runner", r"python\s+tools/run_paper_audits\.py"),
     ("Submission readiness audit", r"python\s+tools/audit_submission_readiness\.py"),
+    ("Claim boundary audit", r"python\s+tools/check_claim_boundaries\.py"),
     ("Evidence audit builder", r"python\s+tools/build_evidence_audit\.py"),
     ("Reference verification audit", r"python\s+tools/check_reference_verification_matrix\.py"),
     ("Manuscript number trace audit", r"python\s+tools/check_manuscript_number_trace\.py"),

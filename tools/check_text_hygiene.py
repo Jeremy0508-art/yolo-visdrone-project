@@ -26,6 +26,7 @@ CHECKED_FILES = [
     "paper/manuscript_journal_gap_audit.md",
     "paper/tex_reference_audit.md",
     "paper/submission_audit_dashboard.md",
+    "paper/claim_boundary_audit.md",
     "paper/pdf_text_readability_audit.md",
     "paper/submission_risk_register_audit.md",
     "paper/advisor_progress_brief.md",

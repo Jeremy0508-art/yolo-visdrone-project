@@ -13,6 +13,7 @@ AUDIT_REPORTS = [
     ("Submission readiness", "paper/submission_readiness_audit.md"),
     ("Journal manuscript gaps", "paper/manuscript_journal_gap_audit.md"),
     ("Paper consistency", "paper/paper_consistency_audit.md"),
+    ("Claim boundaries", "paper/claim_boundary_audit.md"),
     ("Evidence audit", "paper/evidence_audit.md"),
     ("Manuscript number trace", "paper/manuscript_number_trace_audit.md"),
     ("Section evidence map", "paper/section_evidence_map_audit.md"),
