@@ -14,7 +14,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 | Category | Item | Status | Path | Note |
 | --- | --- | --- | --- | --- |
-| Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 38.7 KB |
+| Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 42.9 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
 | Core Documents | Paper workspace README | READY | `paper/README.md` | 8.3 KB |
 | Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
@@ -38,7 +38,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Tables | Scale-group matching table | READY | `paper/tables/scale_group_results.csv` | 6 data rows |
 | Tables | Accuracy-speed trade-off table | READY | `paper/tables/accuracy_speed_tradeoff.csv` | 7 data rows |
 | Tables | Fair experiment status table | READY | `paper/tables/cea_experiment_status.csv` | 5 data rows |
-| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 100 data rows |
+| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 105 data rows |
 | Figures | Method overview figure | READY | `paper/figures/method/hrpca_yolo11n_overview.png` | 127.7 KB |
 | Figures | Training curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_results.png` | 243.1 KB |
 | Figures | PR curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | 333.9 KB |
@@ -48,11 +48,11 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Figures | Object-scale distribution figure | READY | `paper/figures/scale_analysis/object_scale_distribution.png` | 33.2 KB |
 | Figures | Scale-group recall figure | READY | `paper/figures/scale_analysis/scale_group_recall.png` | 44.7 KB |
 | Figures | Accuracy-speed trade-off figure | READY | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | 105.6 KB |
-| Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 3.0 KB |
-| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 10.3 KB |
+| Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 3.1 KB |
+| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 10.4 KB |
 | Audits | Evidence audit | READY | `paper/evidence_audit.md` | 10.7 KB |
 | Audits | Manuscript number trace audit | READY | `paper/manuscript_number_trace_audit.md` | 42.1 KB |
-| Audits | Manuscript length audit | READY | `paper/manuscript_length_audit.md` | 1.4 KB |
+| Audits | Manuscript length audit | READY | `paper/manuscript_length_audit.md` | 1.2 KB |
 | Audits | Journal manuscript gap audit | READY | `paper/manuscript_journal_gap_audit.md` | 2.8 KB |
 | Audits | Paper consistency audit | READY | `paper/paper_consistency_audit.md` | 1.7 KB |
 | Audits | Claim boundary audit | READY | `paper/claim_boundary_audit.md` | 2.4 KB |

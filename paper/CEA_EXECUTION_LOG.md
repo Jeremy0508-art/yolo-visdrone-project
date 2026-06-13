@@ -399,6 +399,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/check_tex_cross_references.py` to verify that manuscript figures and tables have captions, labels, resolvable references, and body discussion links.
   - Added explicit body references for the method overview figure and training curve figure in `paper/manuscript_submission_candidate.tex`.
   - Integrated the audit into the paper audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, command notes, and paper workspace README.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 41 completed epochs.
+  - Latest partial row: epoch 41, `mAP50=0.0197389`, `mAP50-95=0.00657963`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- Manuscript journal-length expansion:
+  - Expanded `paper/manuscript_submission_candidate.tex` in the introduction, related work, method rationale, and discussion sections without adding new experiment values.
+  - Added more explicit motivation for UAV small-object detection, lightweight YOLO trade-offs, P2 feature-scale design, \CoordAtt{} as an auxiliary lightweight attention module, and the interpretation value of the small-object augmentation result.
+  - Rebuilt `paper/manuscript_submission_candidate.pdf` and regenerated the full audit set.
+  - Current manuscript length audit result: 7 checks, 7 ready, 0 partial, 0 missing; the Chinese character estimate is now 8041 against the local 7500-character CEA-oriented planning gate.
 
 ## Evidence Rules
 
