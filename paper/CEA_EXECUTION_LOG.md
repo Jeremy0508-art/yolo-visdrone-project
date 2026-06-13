@@ -39,6 +39,10 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
     waiting for subsequent experiments.
   - No 960 fair-comparison result has been copied into paper tables yet because
     the run is still partial.
+- Follow-up status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 8 completed epochs.
+  - Last recorded row timestamp on the server: `2026-06-13 23:02:19`.
+  - Training PID `43554` was still active.
 
 ## Evidence Rules
 
