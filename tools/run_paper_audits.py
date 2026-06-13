@@ -18,6 +18,7 @@ AUDIT_STEPS = [
     ("Configuration inventory audit", "tools/check_config_inventory.py"),
     ("Evidence audit", "tools/build_evidence_audit.py"),
     ("Manuscript number trace audit", "tools/check_manuscript_number_trace.py"),
+    ("Manuscript length audit", "tools/check_manuscript_length.py"),
     ("Section evidence map audit", "tools/check_section_evidence_map.py"),
     ("Submission risk register audit", "tools/check_submission_risk_register.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),

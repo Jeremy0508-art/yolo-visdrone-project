@@ -109,6 +109,7 @@ def build_materials() -> list[Material]:
         ("Submission readiness audit", "paper/submission_readiness_audit.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
         ("Manuscript number trace audit", "paper/manuscript_number_trace_audit.md"),
+        ("Manuscript length audit", "paper/manuscript_length_audit.md"),
         ("Journal manuscript gap audit", "paper/manuscript_journal_gap_audit.md"),
         ("Paper consistency audit", "paper/paper_consistency_audit.md"),
         ("Claim boundary audit", "paper/claim_boundary_audit.md"),

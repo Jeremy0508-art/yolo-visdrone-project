@@ -380,6 +380,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The audit intentionally excludes planning documents that contain forbidden phrases as examples, while still requiring boundary statements in the advisor brief.
   - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
   - Current claim boundary audit result: 15 checks, 15 ready, 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 39 completed epochs.
+  - Latest partial row: epoch 39, `mAP50=0.0206166`, `mAP50-95=0.00687222`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- Manuscript length audit:
+  - Added `tools/check_manuscript_length.py` and generated `paper/manuscript_length_audit.md`.
+  - The audit estimates LaTeX manuscript Chinese character volume, English/technical token volume, section count, subsection count, table count, figure count, and reference count.
+  - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current result: 7 checks, 6 ready, 1 partial, 0 missing. The partial item is Chinese character volume: 6727 characters against the local CEA-oriented planning target of 7500.
 
 ## Evidence Rules
 

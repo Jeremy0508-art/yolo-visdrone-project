@@ -372,6 +372,7 @@ paper/repro_commands_audit.md
 paper/config_inventory_audit.md
 paper/reference_verification_audit.md
 paper/manuscript_number_trace_audit.md
+paper/manuscript_length_audit.md
 paper/section_evidence_map_audit.md
 paper/submission_risk_register_audit.md
 paper/text_hygiene_audit.md
@@ -485,6 +486,18 @@ Generated file:
 
 ```text
 paper/manuscript_number_trace_audit.md
+```
+
+Check journal-oriented manuscript length and structural density:
+
+```powershell
+python tools/check_manuscript_length.py
+```
+
+Generated file:
+
+```text
+paper/manuscript_length_audit.md
 ```
 
 Check the section-level claim-to-evidence map:
