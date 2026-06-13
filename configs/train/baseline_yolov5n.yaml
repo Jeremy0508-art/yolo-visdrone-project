@@ -1,0 +1,17 @@
+model: yolov5n.pt
+data: configs/dataset/visdrone.yaml
+project: runs/detect
+name: baseline_yolov5n_visdrone
+
+epochs: 100
+imgsz: 640
+batch: 8
+device: 0
+workers: 0
+patience: 30
+seed: 42
+
+optimizer: auto
+lr0: 0.01
+cos_lr: true
+close_mosaic: 10

@@ -179,6 +179,70 @@ Table source: paper/tables/main_results.csv
 
 These runs are intended to strengthen the paper with broader comparisons. Report only results that have completed training, copied-back logs, audited result files, and exported paper tables.
 
+## CEA Fair-Comparison Experiment Queue
+
+These experiments are required before treating the manuscript as a serious `Computer Engineering and Applications` journal candidate. They should be launched on the rented GPU server and reported only after complete 100-epoch logs and result files are copied back.
+
+### YOLO11n 960 Baseline
+
+```powershell
+python tools/train_baseline.py --config configs/train/baseline_yolo11n_960.yaml
+```
+
+Expected output:
+
+```text
+runs/detect/baseline_yolo11n_960_visdrone
+```
+
+### YOLO11n-P2 960
+
+```powershell
+python tools/train_baseline.py --config configs/train/yolo11n_p2_960.yaml --pretrained-weights yolo11n.pt --pretrained-mode p2 --init-output weights/yolo11n_p2_960_pretrained_init.pt
+```
+
+Expected output:
+
+```text
+runs/detect/yolo11n_p2_960_visdrone
+```
+
+### YOLOv8n 960 Baseline
+
+```powershell
+python tools/train_baseline.py --config configs/train/baseline_yolov8n_960.yaml
+```
+
+Expected output:
+
+```text
+runs/detect/baseline_yolov8n_960_visdrone
+```
+
+### YOLO11s 960 Baseline
+
+```powershell
+python tools/train_baseline.py --config configs/train/baseline_yolo11s_960.yaml
+```
+
+Expected output:
+
+```text
+runs/detect/baseline_yolo11s_960_visdrone
+```
+
+### YOLOv5n Baseline
+
+```powershell
+python tools/train_baseline.py --config configs/train/baseline_yolov5n.yaml
+```
+
+Expected output:
+
+```text
+runs/detect/baseline_yolov5n_visdrone
+```
+
 ### YOLOv8n Baseline
 
 ```powershell
