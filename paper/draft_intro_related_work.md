@@ -12,7 +12,7 @@
 
 1. 构建面向 VisDrone 航拍小目标检测的 YOLO11n-P2-CoordAttention 改进模型，在轻量化基础上增强小目标特征表达能力。
 2. 系统比较 YOLO11n、YOLO11n-P2、YOLO11n-P2-CoordAttention、YOLO11n-P2-CoordAttention-960 和小目标增强策略模型，所有结果均来自真实训练日志和验证结果文件。
-3. 从检测精度、模型复杂度、推理速度、类别级指标和可视化结果等方面开展实验分析，为中文会议论文提供可复现实验材料。
+3. 从检测精度、模型复杂度、推理速度、类别级指标和可视化结果等方面开展实验分析，为中文期刊论文提供可复现实验材料。
 
 ## 相关工作
 
@@ -42,7 +42,7 @@ YOLO 系列检测器将目标分类和边界框回归整合到统一网络中，
 
 ## 参考来源占位
 
-正式论文中建议至少引用以下来源，并按目标会议模板统一格式化：
+正式论文中建议至少引用以下来源，并按目标期刊格式统一格式化：
 
 1. VisDrone2019-DET challenge paper: https://openaccess.thecvf.com/content_ICCVW_2019/papers/VISDrone/Du_VisDrone-DET2019_The_Vision_Meets_Drone_Object_Detection_in_Image_Challenge_ICCVW_2019_paper.pdf
 2. CoordAttention paper: https://openaccess.thecvf.com/content/CVPR2021/papers/Hou_Coordinate_Attention_for_Efficient_Mobile_Network_Design_CVPR_2021_paper.pdf

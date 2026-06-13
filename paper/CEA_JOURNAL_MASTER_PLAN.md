@@ -200,6 +200,7 @@
 
 - `paper/figures/` 完整图表集
 - 规范参考文献列表
+- `paper/reference_verification_matrix.md` 中的候选文献核验记录
 - 编译通过的 PDF
 
 ### Phase 6：投稿前审计

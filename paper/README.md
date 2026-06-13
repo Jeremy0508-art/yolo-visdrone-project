@@ -33,6 +33,7 @@ Recommended ways to read it:
 | `CEA_JOURNAL_MANUSCRIPT_OUTLINE.md` | Section-by-section outline for expanding the paper into a journal manuscript |
 | `advisor_progress_brief.md` | Short Chinese progress brief for advisor communication |
 | `failure_case_taxonomy.md` | Failure-mode taxonomy for qualitative manuscript discussion |
+| `reference_verification_matrix.md` | Candidate reference matrix with verification status and manuscript use |
 | `PROJECT_ROADMAP.md` | Main project-to-paper roadmap and current status |
 | `CEA_SUBMISSION_PLAN.md` | Earlier journal-strengthening plan and experiment matrix |
 | `manuscript_polished.md` | Earlier polished Markdown manuscript draft |
@@ -53,6 +54,7 @@ Recommended ways to read it:
 | `tables/object_scale_distribution.csv` | Object scale distribution from YOLO-format VisDrone labels |
 | `tables/scale_group_results.csv` | Thresholded scale-group validation matching results |
 | `tables/accuracy_speed_tradeoff.csv` | Source table for the accuracy-speed-parameter trade-off figure |
+| `references.md` | Reference candidates and citation-use notes for the journal manuscript |
 
 ## Evidence Rule
 
