@@ -32,6 +32,7 @@ Recommended ways to read it:
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
 | `CEA_MANUSCRIPT_UPDATE_QUEUE.md` | Ordered manuscript update queue after fair-comparison results finish |
+| `post_sync_update_checklist.md` | Generated checklist for manuscript/table updates after completed server-result sync |
 | `CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md` | Section-by-section blueprint for expanding the LaTeX candidate into a journal manuscript |
 | `cea_server_status_snapshot.md` | Generated read-only snapshot of server fair-comparison progress |
 | `cea_server_progress_report.md` | Generated progress summary from the server status history table |

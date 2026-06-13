@@ -22,6 +22,7 @@ REQUIRED_COMMANDS = [
     ("YOLO11s baseline training", r"python\s+tools/train_baseline\.py\s+--config\s+configs/train/baseline_yolo11s\.yaml"),
     ("Server status checker", r"\.\\tools\\check_cea_server_status\.ps1"),
     ("CEA server progress report", r"python\s+tools/build_cea_server_progress_report\.py"),
+    ("Post-sync update checklist", r"python\s+tools/build_post_sync_update_checklist\.py"),
     ("Guarded server sync", r"\.\\tools\\sync_cea_server_results\.ps1"),
     ("Fair YOLO11n 960 training", r"python\s+tools/train_baseline\.py\s+--config\s+configs/train/baseline_yolo11n_960\.yaml"),
     ("Fair P2 960 training", r"python\s+tools/train_baseline\.py\s+--config\s+configs/train/yolo11n_p2_960\.yaml"),

@@ -222,6 +222,18 @@ Generated file:
 paper/cea_server_progress_report.md
 ```
 
+Build the post-sync manuscript update checklist:
+
+```powershell
+python tools/build_post_sync_update_checklist.py
+```
+
+Generated file:
+
+```text
+paper/post_sync_update_checklist.md
+```
+
 Before using synced results in the manuscript, follow:
 
 ```text

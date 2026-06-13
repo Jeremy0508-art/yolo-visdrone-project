@@ -64,6 +64,7 @@ def build_materials() -> list[Material]:
         ("Submission checklist", "paper/submission_checklist.md"),
         ("Reproducibility commands", "paper/commands.md"),
         ("Result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
+        ("Post-sync manuscript update checklist", "paper/post_sync_update_checklist.md"),
         ("Execution log", "paper/CEA_EXECUTION_LOG.md"),
         ("Server status snapshot", "paper/cea_server_status_snapshot.md"),
         ("Server progress report", "paper/cea_server_progress_report.md"),

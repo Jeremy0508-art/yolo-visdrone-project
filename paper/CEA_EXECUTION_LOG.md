@@ -301,6 +301,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/build_cea_server_progress_report.py` to summarize `paper/tables/cea_server_status_history.csv`.
   - Generated `paper/cea_server_progress_report.md`; current report tracks 5 server runs with 1 partial and 4 missing.
   - Integrated the progress report into `tools/run_paper_audits.py`, `tools/audit_submission_readiness.py`, `tools/build_submission_material_manifest.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 30 completed epochs.
+  - Latest partial row: epoch 30, `mAP50=0.0242517`, `mAP50-95=0.00808389`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Post-sync manuscript update checklist:
+  - Added `tools/build_post_sync_update_checklist.py` to turn the post-server-result manuscript update plan into a generated checklist.
+  - Generated `paper/post_sync_update_checklist.md`; current result: 19 checks, 2 ready, 17 pending, 0 missing.
+  - Integrated the checklist into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/audit_submission_readiness.py`, `tools/build_submission_material_manifest.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
 
 ## Evidence Rules
 
