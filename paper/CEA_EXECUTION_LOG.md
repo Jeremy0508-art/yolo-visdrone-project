@@ -165,6 +165,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Updated `tools/check_journal_manuscript_gaps.py` so failure-case analysis is marked ready only when the failure figure, failure-reason table, and attribution paragraph are all present.
   - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
   - Regenerated `paper/manuscript_journal_gap_audit.md`; the journal gap audit now reports 17 checks, 14 ready, 2 partial, 1 pending, and 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` still recorded 20 completed epochs.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- LaTeX reference-audit update:
+  - Added `tools/check_tex_references.py` to check citation/bibliography consistency in the LaTeX candidate.
+  - Generated `paper/tex_reference_audit.md`.
+  - Current reference audit result: 7 checks, 6 ready, 1 partial, 0 missing.
+  - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the reference audit is indexed and checked.
 
 ## Evidence Rules
 

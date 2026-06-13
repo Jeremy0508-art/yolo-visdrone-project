@@ -62,6 +62,7 @@ def audit() -> list[Check]:
         ("CEA manuscript update queue", "paper/CEA_MANUSCRIPT_UPDATE_QUEUE.md"),
         ("CEA manuscript rewrite blueprint", "paper/CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md"),
         ("Journal manuscript gap audit", "paper/manuscript_journal_gap_audit.md"),
+        ("LaTeX reference audit", "paper/tex_reference_audit.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
         ("Submission checklist", "paper/submission_checklist.md"),
@@ -148,6 +149,7 @@ def audit() -> list[Check]:
         ("Readiness audit script", "tools/audit_submission_readiness.py"),
         ("Paper consistency audit script", "tools/check_paper_consistency.py"),
         ("Journal manuscript gap audit script", "tools/check_journal_manuscript_gaps.py"),
+        ("LaTeX reference audit script", "tools/check_tex_references.py"),
     ]
     for item, path in tool_files:
         checks.append(
