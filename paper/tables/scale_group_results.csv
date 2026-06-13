@@ -1,0 +1,7 @@
+model,weights,split,imgsz,conf,iou,scale,gt_instances,matched_gt,recall,predictions,true_positive_predictions,precision
+YOLO11n baseline,runs/detect/baseline_yolo11n_visdrone/weights/best.pt,val,640,0.25,0.5,small,26586,8180,0.307681,12844,8136,0.633448
+YOLO11n baseline,runs/detect/baseline_yolo11n_visdrone/weights/best.pt,val,640,0.25,0.5,medium,11105,7906,0.711932,10472,7944,0.758594
+YOLO11n baseline,runs/detect/baseline_yolo11n_visdrone/weights/best.pt,val,640,0.25,0.5,large,1068,929,0.869850,1080,935,0.865741
+YOLO11n-P2-CoordAttention-960,runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt,val,960,0.25,0.5,small,26586,12099,0.455089,17981,11976,0.666036
+YOLO11n-P2-CoordAttention-960,runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt,val,960,0.25,0.5,medium,11105,8678,0.781450,11144,8794,0.789124
+YOLO11n-P2-CoordAttention-960,runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt,val,960,0.25,0.5,large,1068,942,0.882022,1125,949,0.843556

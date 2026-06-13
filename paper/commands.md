@@ -250,6 +250,24 @@ Expected output:
 runs/detect/baseline_yolov5n_visdrone
 ```
 
+## Scale Analysis
+
+Object scale distribution from YOLO-format labels:
+
+```powershell
+python tools/analyze_object_scales.py --splits train val --output-dir paper/tables --plot-dir paper/figures/scale_analysis
+```
+
+Scale-group prediction matching on the VisDrone validation split:
+
+```powershell
+python tools/evaluate_scale_groups.py --device 0 --output paper/tables/scale_group_results.csv
+```
+
+The scale-group matching table uses `conf=0.25` and `IoU=0.5` by default. It
+reports thresholded precision/recall by GT scale group and should not be
+described as official AP.
+
 ### YOLOv8n Baseline
 
 ```powershell

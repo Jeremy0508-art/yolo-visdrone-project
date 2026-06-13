@@ -21,6 +21,12 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - `paper/tables/object_scale_distribution.csv`
   - `paper/tables/class_scale_distribution.csv`
   - `paper/figures/scale_analysis/object_scale_distribution.png`
+- Scale-group prediction matching has been generated from existing validation
+  weights:
+  - `paper/tables/scale_group_results.csv`
+  - `paper/figures/scale_analysis/scale_group_recall.png`
+  - command: `python tools/evaluate_scale_groups.py --device 0 --output paper/tables/scale_group_results.csv`
+  - default protocol: `conf=0.25`, `IoU=0.5`
 
 ## Evidence Rules
 
@@ -28,3 +34,5 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   `args.yaml`, weights and logs have been copied back and audited.
 - Do not use official VisDrone test-dev numbers unless they come from a returned
   official evaluation result.
+- Do not describe `scale_group_results.csv` as official AP; it is a thresholded
+  prediction-matching analysis by GT object scale.
