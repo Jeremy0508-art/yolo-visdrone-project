@@ -67,6 +67,7 @@ def audit() -> list[Check]:
         ("LaTeX table source audit", "paper/tex_table_source_audit.md"),
         ("Reproducibility commands audit", "paper/repro_commands_audit.md"),
         ("Config inventory audit", "paper/config_inventory_audit.md"),
+        ("Submission audit dashboard", "paper/submission_audit_dashboard.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
         ("Submission checklist", "paper/submission_checklist.md"),
@@ -158,6 +159,7 @@ def audit() -> list[Check]:
         ("LaTeX table source audit script", "tools/check_tex_table_sources.py"),
         ("Reproducibility commands audit script", "tools/check_repro_commands.py"),
         ("Config inventory audit script", "tools/check_config_inventory.py"),
+        ("Submission audit dashboard script", "tools/build_submission_audit_dashboard.py"),
     ]
     for item, path in tool_files:
         checks.append(

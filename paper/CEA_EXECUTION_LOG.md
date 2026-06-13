@@ -213,6 +213,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Generated `paper/config_inventory_audit.md`.
   - Current config inventory audit result: 23 checks, 23 ready, 0 missing.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the config audit is indexed and checked.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` still recorded 23 completed epochs.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Submission audit dashboard update:
+  - Added `tools/build_submission_audit_dashboard.py` to summarize the paper-facing audit reports in one place.
+  - Generated `paper/submission_audit_dashboard.md`.
+  - Current dashboard summary: 10 reports, 6 ready, 1 partial, 3 pending, 0 missing.
+  - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the dashboard is indexed and checked.
 
 ## Evidence Rules
 
