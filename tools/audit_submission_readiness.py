@@ -60,6 +60,7 @@ def audit() -> list[Check]:
         ("CEA server status snapshot", "paper/cea_server_status_snapshot.md"),
         ("CEA result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
         ("CEA manuscript update queue", "paper/CEA_MANUSCRIPT_UPDATE_QUEUE.md"),
+        ("CEA manuscript rewrite blueprint", "paper/CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
         ("Submission checklist", "paper/submission_checklist.md"),

@@ -115,6 +115,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_JOURNAL_STYLE_BENCHMARK.md` to translate CEA-style YOLO small-object paper patterns into manuscript and experiment requirements.
   - Added Chinese-journal candidate references to `paper/reference_verification_matrix.md`.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the benchmark checklist is indexed and audited.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 17 completed epochs.
+  - Latest partial row: epoch 17, `mAP50=0.0281632`, `mAP50-95=0.00938772`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Journal manuscript rewrite blueprint update:
+  - Added `paper/CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md` to map the current LaTeX candidate into a full journal manuscript structure.
+  - The blueprint defines section expansion, figure/table placement, result-dependent rewrite order, and statements that must wait for fair-comparison evidence.
+  - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the blueprint is indexed and audited.
 
 ## Evidence Rules
 
