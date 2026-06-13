@@ -35,6 +35,9 @@ TABLE_FILES = [
     "paper/tables/scale_group_results.csv",
 ]
 
+PDF_FILE = "paper/manuscript_submission_candidate.pdf"
+TEX_FILE = "paper/manuscript_submission_candidate.tex"
+
 FORBIDDEN_PATTERNS = [
     ("TODO", re.compile(r"TODO", re.IGNORECASE)),
     ("待补充", re.compile(r"待补充")),
@@ -140,6 +143,25 @@ def check_speed_table_consistency() -> list[Check]:
     ]
 
 
+def check_pdf_freshness() -> list[Check]:
+    pdf = ROOT / PDF_FILE
+    tex = ROOT / TEX_FILE
+    if not pdf.exists():
+        return [Check("LaTeX PDF exists", "missing", PDF_FILE, "Run tools/build_paper_pdf.ps1")]
+    if not tex.exists():
+        return [Check("LaTeX source exists for PDF freshness check", "missing", TEX_FILE, "Restore source file")]
+    if pdf.stat().st_mtime + 1 < tex.stat().st_mtime:
+        return [
+            Check(
+                "LaTeX PDF is not older than source",
+                "partial",
+                f"{PDF_FILE} is older than {TEX_FILE}",
+                "Run tools/build_paper_pdf.ps1",
+            )
+        ]
+    return [Check("LaTeX PDF is not older than source", "ready", "PDF timestamp is current")]
+
+
 def build_report(checks: list[Check]) -> str:
     total = len(checks)
     ready = sum(1 for check in checks if check.status == "ready")
@@ -177,6 +199,7 @@ def main() -> None:
     checks.extend(check_table_files())
     checks.extend(check_completed_run_traceability())
     checks.extend(check_speed_table_consistency())
+    checks.extend(check_pdf_freshness())
 
     REPORT.write_text(build_report(checks), encoding="utf-8")
     print(f"Wrote {REPORT.relative_to(ROOT)}")

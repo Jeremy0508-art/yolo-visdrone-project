@@ -110,6 +110,12 @@ xelatex manuscript_submission_candidate.tex
 xelatex manuscript_submission_candidate.tex
 ```
 
+Project build helper:
+
+```powershell
+.\tools\build_paper_pdf.ps1
+```
+
 Local lightweight build command if `.tools/tectonic/tectonic.exe` exists:
 
 ```powershell

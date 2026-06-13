@@ -90,6 +90,12 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Current consistency audit result: 13 checks, 13 ready, 0 partial, 0 missing.
   - Updated `tools/audit_submission_readiness.py` so the consistency audit script is included in readiness checks.
   - Current readiness audit result: 44 checks, 5 pending fair experiments, 0 missing items.
+- Local PDF-build update:
+  - Added `tools/build_paper_pdf.ps1` to compile `paper/manuscript_submission_candidate.tex` with the bundled Tectonic engine when available, falling back to `xelatex` if installed.
+  - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
+  - Extended `tools/check_paper_consistency.py` with a PDF freshness check so the compiled PDF must not be older than the LaTeX source.
+  - Current consistency audit result: 14 checks, 14 ready, 0 partial, 0 missing.
+  - Current readiness audit result: 45 checks, 5 pending fair experiments, 0 missing items.
 
 ## Evidence Rules
 

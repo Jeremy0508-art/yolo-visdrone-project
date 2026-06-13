@@ -323,6 +323,16 @@ paper/figures/method/hrpca_yolo11n_overview.png
 
 ## Submission Readiness Audit
 
+## Build Paper PDF
+
+Compile the current LaTeX submission candidate:
+
+```powershell
+.\tools\build_paper_pdf.ps1
+```
+
+The helper uses `.tools/tectonic/tectonic.exe` when available and falls back to `xelatex` if installed.
+
 Generate a local readiness audit for paper-facing artifacts and pending fair-comparison experiments:
 
 ```powershell
