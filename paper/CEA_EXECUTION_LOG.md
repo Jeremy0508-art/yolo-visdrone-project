@@ -43,6 +43,19 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - `baseline_yolo11n_960_visdrone/results.csv` recorded 8 completed epochs.
   - Last recorded row timestamp on the server: `2026-06-13 23:02:19`.
   - Training PID `43554` was still active.
+- Follow-up status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 10 completed epochs.
+  - Last recorded result row: epoch 10, `mAP50=0.0294104`, `mAP50-95=0.00980345`.
+  - Training PID `43554` was still active with elapsed time about 1 hour 22 minutes.
+  - Queue PID `43842` was still waiting for subsequent experiments.
+  - This is still a partial run and has not been synchronized into paper tables.
+- Local paper-material update:
+  - Added `paper/CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` as the acceptance-oriented execution plan for the 《计算机工程与应用》 submission track.
+  - Updated `paper/README.md` to index the new plan.
+  - Replaced stale speed values in Markdown drafts and regenerated HTML previews so they match `paper/tables/speed_results.csv`.
+  - Verified that old speed values `13.785`, `72.54`, `17.733`, and `56.39` no longer appear in Markdown, LaTeX, or HTML paper files.
+  - Ran `python tools/audit_submission_readiness.py`; the audit report was regenerated successfully.
+  - Pushed GitHub commit `e1e4b0f` with message `Add CEA full submission execution plan`.
 
 ## Evidence Rules
 
