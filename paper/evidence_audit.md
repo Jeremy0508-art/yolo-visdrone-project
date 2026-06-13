@@ -16,6 +16,10 @@ This audit checks the main paper-facing numbers in `paper/manuscript_polished.md
 | YOLO11n-P2-CoordAttention-960 best mAP50-95 | 0.25174 | `paper/tables/main_comparison_for_paper.csv` | Verified |
 | YOLO11n-P2-CoordAttention-SmallObjAug best mAP50 | 0.32780 | `paper/tables/main_comparison_for_paper.csv` | Verified |
 | YOLO11n-P2-CoordAttention-SmallObjAug best mAP50-95 | 0.18699 | `paper/tables/main_comparison_for_paper.csv` | Verified |
+| YOLOv8n baseline best mAP50 | 0.32520 | `paper/tables/main_comparison_for_paper.csv` | Verified external baseline |
+| YOLOv8n baseline best mAP50-95 | 0.18386 | `paper/tables/main_comparison_for_paper.csv` | Verified external baseline |
+| YOLO11s baseline best mAP50 | 0.38937 | `paper/tables/main_comparison_for_paper.csv` | Verified external baseline |
+| YOLO11s baseline best mAP50-95 | 0.22719 | `paper/tables/main_comparison_for_paper.csv` | Verified external baseline |
 
 ## Ablation Delta Claims
 
@@ -38,12 +42,14 @@ This audit checks the main paper-facing numbers in `paper/manuscript_polished.md
 | YOLO11n GFLOPs | 6.5 | `paper/tables/main_comparison_for_paper.csv`, `paper/tables/model_complexity.csv` | Verified |
 | YOLO11n-P2-CoordAttention-960 params | 2.904 M | `paper/tables/main_comparison_for_paper.csv`, `paper/tables/model_complexity.csv` | Verified |
 | YOLO11n-P2-CoordAttention-960 GFLOPs | 10.7 | `paper/tables/main_comparison_for_paper.csv`, `paper/tables/model_complexity.csv` | Verified |
-| YOLO11n average wall-clock latency | 13.785 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n FPS | 72.54 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention latency | 15.347 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention FPS | 65.16 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention-960 latency | 17.733 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention-960 FPS | 56.39 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n average wall-clock latency | 40.092 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n FPS | 24.94 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention latency | 45.768 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention FPS | 21.85 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention-960 latency | 50.811 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention-960 FPS | 19.68 | `paper/tables/speed_results.csv` | Verified |
+| YOLOv8n FPS | 23.65 | `paper/tables/speed_results.csv` | Verified external baseline |
+| YOLO11s FPS | 25.66 | `paper/tables/speed_results.csv` | Verified external baseline |
 
 ## Figure Claims
 

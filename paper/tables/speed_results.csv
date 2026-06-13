@@ -1,7 +1,8 @@
 model,weights,imgsz,device,warmup,samples,mean_latency_ms_wall,median_latency_ms_wall,fps_wall,mean_preprocess_ms_ultralytics,mean_inference_ms_ultralytics,mean_postprocess_ms_ultralytics,source
-YOLOv8n baseline,runs/detect/baseline_yolov8n_visdrone/weights/best.pt,640,0,10,100,33.744,35.145,29.63,1.918,6.829,2.105,single-image model.predict wall-clock timing and Ultralytics result.speed
-YOLO11n baseline,runs/detect/baseline_yolo11n_visdrone/weights/best.pt,640,0,10,100,18.198,16.307,54.95,1.545,8.520,2.421,single-image model.predict wall-clock timing and Ultralytics result.speed
-YOLO11n-P2,runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt,640,0,10,100,20.670,18.718,48.38,1.608,11.468,1.856,single-image model.predict wall-clock timing and Ultralytics result.speed
-YOLO11n-P2-CoordAttention,runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt,640,0,10,100,21.058,19.031,47.49,1.876,11.665,1.822,single-image model.predict wall-clock timing and Ultralytics result.speed
-YOLO11n-P2-CoordAttention-SmallObjAug,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/best.pt,640,0,10,100,20.555,19.425,48.65,1.622,11.351,1.852,single-image model.predict wall-clock timing and Ultralytics result.speed
-YOLO11n-P2-CoordAttention-960,runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt,960,0,10,100,23.084,21.865,43.32,3.045,12.629,1.737,single-image model.predict wall-clock timing and Ultralytics result.speed
+YOLOv8n baseline,runs/detect/baseline_yolov8n_visdrone/weights/best.pt,640,0,10,100,42.292,40.576,23.65,2.964,15.310,2.874,single-image model.predict wall-clock timing and Ultralytics result.speed
+YOLO11s baseline,runs/detect/baseline_yolo11s_visdrone/weights/best.pt,640,0,10,100,38.974,36.022,25.66,2.718,19.280,2.612,single-image model.predict wall-clock timing and Ultralytics result.speed
+YOLO11n baseline,runs/detect/baseline_yolo11n_visdrone/weights/best.pt,640,0,10,100,40.092,37.624,24.94,2.907,19.575,2.878,single-image model.predict wall-clock timing and Ultralytics result.speed
+YOLO11n-P2,runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt,640,0,10,100,43.642,41.466,22.91,2.893,23.174,2.966,single-image model.predict wall-clock timing and Ultralytics result.speed
+YOLO11n-P2-CoordAttention,runs/detect/yolo11n_p2_coordatt_visdrone/weights/best.pt,640,0,10,100,45.768,43.336,21.85,2.958,25.133,2.946,single-image model.predict wall-clock timing and Ultralytics result.speed
+YOLO11n-P2-CoordAttention-SmallObjAug,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone/weights/best.pt,640,0,10,100,49.962,44.747,20.02,2.995,28.422,3.312,single-image model.predict wall-clock timing and Ultralytics result.speed
+YOLO11n-P2-CoordAttention-960,runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt,960,0,10,100,50.811,47.541,19.68,6.342,26.108,3.073,single-image model.predict wall-clock timing and Ultralytics result.speed

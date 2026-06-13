@@ -40,6 +40,11 @@ TARGETS = [
         logs=("runs/logs/train_baseline_yolov8n_20260612_194313.log",),
     ),
     PerClassTarget(
+        model="YOLO11s baseline",
+        run_dir="runs/detect/baseline_yolo11s_visdrone",
+        logs=("runs/logs/train_baseline_yolo11s_20260613_100711.log",),
+    ),
+    PerClassTarget(
         model="YOLO11n baseline",
         run_dir="runs/detect/baseline_yolo11n_visdrone",
         logs=("runs/logs/baseline_yolo11n_visdrone_resume_20260516.log",),

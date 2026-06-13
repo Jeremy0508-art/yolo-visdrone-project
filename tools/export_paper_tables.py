@@ -42,6 +42,14 @@ EXPERIMENTS = [
         paper_role="external_baseline",
     ),
     Experiment(
+        model="YOLO11s baseline",
+        change="Ultralytics YOLO11s baseline",
+        config="configs/train/baseline_yolo11s.yaml",
+        run_dir="runs/detect/baseline_yolo11s_visdrone",
+        imgsz=640,
+        paper_role="external_baseline",
+    ),
+    Experiment(
         model="YOLO11n baseline",
         change="Original YOLO11n",
         config="configs/train/baseline_yolo11n.yaml",
@@ -141,6 +149,8 @@ def find_model_summary(run_name: str, model_name: str) -> tuple[str, str, str]:
     lowered_model = model_name.lower()
     if "yolov8n" in lowered_model:
         search_terms.append("baseline_yolov8n")
+    if "yolo11s" in lowered_model:
+        search_terms.append("baseline_yolo11s")
     if "baseline" in lowered_model:
         search_terms.append("baseline_yolo11n_visdrone")
     if "coordattention-960" in lowered_model:

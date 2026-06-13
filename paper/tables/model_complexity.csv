@@ -1,5 +1,6 @@
 model,status,run_dir,layers,parameters,gflops,weight_size_mb,source
 YOLOv8n baseline,completed,runs/detect/baseline_yolov8n_visdrone,130,3012798,8.2,5.95,runs/logs and weights/best.pt
+YOLO11s baseline,completed,runs/detect/baseline_yolo11s_visdrone,182,9431662,21.6,18.28,runs/logs and weights/best.pt
 YOLO11n baseline,completed,runs/detect/baseline_yolo11n_visdrone,182,2591790,6.5,5.21,runs/logs and weights/best.pt
 YOLO11n-P2,completed,runs/detect/yolo11n_p2_pretrained_visdrone,217,2893672,10.7,5.91,runs/logs and weights/best.pt
 YOLO11n-P2-CoordAttention,completed,runs/detect/yolo11n_p2_coordatt_visdrone,233,2903704,10.7,5.94,runs/logs and weights/best.pt

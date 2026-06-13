@@ -6,7 +6,7 @@
 
 系统完成了 VisDrone2019-DET 数据转换、YOLO 格式数据校验、baseline 训练、改进模型训练、消融实验、模型复杂度统计、推理速度测试、图片/视频推理、Flask Web 可视化检测页面和论文材料整理。当前数据集包含 6,471 张训练图像、548 张验证图像和 343,204 个训练标注框，覆盖 pedestrian、people、car、motor 等 10 类航拍目标。
 
-在 100 epoch 训练设置下，YOLO11n-P2-CoordAttention-960 在 VisDrone 验证集上的 Best mAP50 达到 `0.41996`，Best mAP50-95 达到 `0.25174`，相比 YOLO11n baseline 分别提升 `0.09843` 和 `0.06936`；单图 wall-clock 推理速度为 `56.39 FPS`。项目最终形成了一个可复现、可评估、可展示，并可支撑中文会议/小论文写作的无人机航拍小目标检测实验闭环。
+在 100 epoch 训练设置下，YOLO11n-P2-CoordAttention-960 在 VisDrone 验证集上的 Best mAP50 达到 `0.41996`，Best mAP50-95 达到 `0.25174`，相比 YOLO11n baseline 分别提升 `0.09843` 和 `0.06936`；当前单图 wall-clock 推理速度测试为 `19.68 FPS`。项目最终形成了一个可复现、可评估、可展示，并可支撑中文会议/小论文写作的无人机航拍小目标检测实验闭环。
 
 ## 方法思路
 
@@ -159,13 +159,20 @@ Web 页面支持上传图片或视频，并在页面中展示检测结果。
 
 | Model | Main Change | Input | Best mAP50 | Best mAP50-95 | FPS |
 | --- | --- | ---: | ---: | ---: | ---: |
-| YOLO11n | baseline | 640 | 0.32153 | 0.18238 | 72.54 |
-| YOLO11n-P2 | P2 high-resolution detection head | 640 | 0.33013 | 0.19012 | 68.74 |
-| YOLO11n-P2-CoordAttention | P2 + CoordAttention | 640 | 0.33073 | 0.19044 | 65.16 |
-| YOLO11n-P2-CoordAttention-960 | input size 960 | 960 | 0.41996 | 0.25174 | 56.39 |
-| YOLO11n-P2-CoordAttention-SmallObjAug | small-object-friendly augmentation | 640 | 0.32780 | 0.18699 | 64.81 |
+| YOLO11n | baseline | 640 | 0.32153 | 0.18238 | 24.94 |
+| YOLO11n-P2 | P2 high-resolution detection head | 640 | 0.33013 | 0.19012 | 22.91 |
+| YOLO11n-P2-CoordAttention | P2 + CoordAttention | 640 | 0.33073 | 0.19044 | 21.85 |
+| YOLO11n-P2-CoordAttention-960 | input size 960 | 960 | 0.41996 | 0.25174 | 19.68 |
+| YOLO11n-P2-CoordAttention-SmallObjAug | small-object-friendly augmentation | 640 | 0.32780 | 0.18699 | 20.02 |
 
 实验表明，P2 高分辨率检测分支能够提升浅层细节利用能力，CoordAttention 在 P2 基础上带来一定增益，而 960 输入分辨率是当前实验中最主要的性能提升来源。小目标友好增强相较 baseline 有提升，但低于 P2 和 CoordAttention 结构改进模型。
+
+外部参考基线结果如下，用于辅助分析不同 YOLO 版本和模型容量下的精度-速度关系，不作为 YOLO11n 改进模块的单因素消融：
+
+| Model | Input | Params/M | Best mAP50 | Best mAP50-95 | FPS |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| YOLOv8n baseline | 640 | 3.013 | 0.32520 | 0.18386 | 23.65 |
+| YOLO11s baseline | 640 | 9.432 | 0.38937 | 0.22719 | 25.66 |
 
 详细实验表格位于：
 

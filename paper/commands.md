@@ -217,18 +217,30 @@ Log source: runs/logs/train_baseline_yolov8n_20260612_194313.log
 python tools/train_baseline.py --config configs/train/baseline_yolo11s.yaml
 ```
 
-Expected output:
+Main output:
 
 ```text
 runs/detect/baseline_yolo11s_visdrone
 ```
 
-Current server-side run:
+Archived evidence:
 
 ```text
-PID: 26015
-Log: runs/logs/train_baseline_yolo11s_20260613_100711.log
-Status: running; do not report metrics until the 100-epoch run has completed and its artifacts have been copied back and audited.
+runs/detect/baseline_yolo11s_visdrone/results.csv
+runs/logs/train_baseline_yolo11s_20260613_100711.log
+paper/tables/main_results.csv
+paper/tables/model_complexity.csv
+paper/tables/per_class_results.csv
+paper/tables/speed_results.csv
+```
+
+Paper-facing result:
+
+```text
+Best mAP50: 0.38937 at epoch 79
+Best mAP50-95: 0.22719 at epoch 79
+Metric source: runs/detect/baseline_yolo11s_visdrone/results.csv
+Log source: runs/logs/train_baseline_yolo11s_20260613_100711.log
 ```
 
 ## Validation Examples
