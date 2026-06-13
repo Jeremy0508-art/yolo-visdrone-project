@@ -329,6 +329,26 @@ paper/figures/method/hrpca_yolo11n_overview.png
 
 ## Submission Readiness Audit
 
+Run all paper-facing audits in the standard order:
+
+```powershell
+python tools/run_paper_audits.py
+```
+
+Generated or refreshed files:
+
+```text
+paper/manuscript_journal_gap_audit.md
+paper/tex_reference_audit.md
+paper/tex_figure_audit.md
+paper/tex_table_source_audit.md
+paper/repro_commands_audit.md
+paper/config_inventory_audit.md
+paper/paper_consistency_audit.md
+paper/submission_readiness_audit.md
+paper/submission_audit_dashboard.md
+```
+
 ## Build Paper PDF
 
 Compile the current LaTeX submission candidate:

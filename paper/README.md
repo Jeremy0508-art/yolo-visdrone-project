@@ -127,6 +127,12 @@ Project build helper:
 .\tools\build_paper_pdf.ps1
 ```
 
+Run the full paper-facing audit sequence:
+
+```powershell
+python tools/run_paper_audits.py
+```
+
 Local lightweight build command if `.tools/tectonic/tectonic.exe` exists:
 
 ```powershell

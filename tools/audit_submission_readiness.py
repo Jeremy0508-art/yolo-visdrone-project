@@ -159,6 +159,7 @@ def audit() -> list[Check]:
         ("LaTeX table source audit script", "tools/check_tex_table_sources.py"),
         ("Reproducibility commands audit script", "tools/check_repro_commands.py"),
         ("Config inventory audit script", "tools/check_config_inventory.py"),
+        ("Paper audit runner", "tools/run_paper_audits.py"),
         ("Submission audit dashboard script", "tools/build_submission_audit_dashboard.py"),
     ]
     for item, path in tool_files:

@@ -31,6 +31,7 @@ REQUIRED_COMMANDS = [
     ("Scale-group evaluation", r"python\s+tools/evaluate_scale_groups\.py"),
     ("VisDrone test-dev export", r"python\s+tools/export_visdrone_testdev\.py"),
     ("Paper PDF build", r"\.\\tools\\build_paper_pdf\.ps1"),
+    ("Full paper audit runner", r"python\s+tools/run_paper_audits\.py"),
     ("Submission readiness audit", r"python\s+tools/audit_submission_readiness\.py"),
     ("Paper consistency audit", r"python\s+tools/check_paper_consistency\.py"),
     ("Per-class validation", r"python\s+tools/val\.py"),

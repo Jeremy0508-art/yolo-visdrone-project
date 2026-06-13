@@ -222,6 +222,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Generated `paper/submission_audit_dashboard.md`.
   - Current dashboard summary: 10 reports, 6 ready, 1 partial, 3 pending, 0 missing.
   - Updated `paper/README.md` and `tools/audit_submission_readiness.py` so the dashboard is indexed and checked.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 24 completed epochs.
+  - Latest partial row: epoch 24, `mAP50=0.0262891`, `mAP50-95=0.00876305`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Paper audit runner update:
+  - Added `tools/run_paper_audits.py` to run the manuscript gap, LaTeX reference, LaTeX figure, LaTeX table-source, reproducibility command, config inventory, paper consistency, submission readiness, and dashboard audits in order.
+  - Updated `paper/commands.md` and `paper/README.md` with the full audit command.
+  - Updated `tools/check_repro_commands.py` and `tools/audit_submission_readiness.py` so the new runner is itself covered by local audits.
 
 ## Evidence Rules
 
