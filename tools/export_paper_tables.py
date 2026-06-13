@@ -42,12 +42,36 @@ EXPERIMENTS = [
         paper_role="external_baseline",
     ),
     Experiment(
+        model="YOLOv5n baseline",
+        change="Ultralytics YOLOv5n baseline",
+        config="configs/train/baseline_yolov5n.yaml",
+        run_dir="runs/detect/baseline_yolov5n_visdrone",
+        imgsz=640,
+        paper_role="external_baseline_pending",
+    ),
+    Experiment(
+        model="YOLOv8n baseline 960",
+        change="Ultralytics YOLOv8n baseline at 960 input",
+        config="configs/train/baseline_yolov8n_960.yaml",
+        run_dir="runs/detect/baseline_yolov8n_960_visdrone",
+        imgsz=960,
+        paper_role="fair_resolution_pending",
+    ),
+    Experiment(
         model="YOLO11s baseline",
         change="Ultralytics YOLO11s baseline",
         config="configs/train/baseline_yolo11s.yaml",
         run_dir="runs/detect/baseline_yolo11s_visdrone",
         imgsz=640,
         paper_role="external_baseline",
+    ),
+    Experiment(
+        model="YOLO11s baseline 960",
+        change="Ultralytics YOLO11s baseline at 960 input",
+        config="configs/train/baseline_yolo11s_960.yaml",
+        run_dir="runs/detect/baseline_yolo11s_960_visdrone",
+        imgsz=960,
+        paper_role="fair_resolution_pending",
     ),
     Experiment(
         model="YOLO11n baseline",
@@ -58,12 +82,28 @@ EXPERIMENTS = [
         paper_role="baseline",
     ),
     Experiment(
+        model="YOLO11n baseline 960",
+        change="Original YOLO11n at 960 input",
+        config="configs/train/baseline_yolo11n_960.yaml",
+        run_dir="runs/detect/baseline_yolo11n_960_visdrone",
+        imgsz=960,
+        paper_role="fair_resolution_pending",
+    ),
+    Experiment(
         model="YOLO11n-P2",
         change="Add P2 high-resolution detection head",
         config="configs/train/yolo11n_p2.yaml",
         run_dir="runs/detect/yolo11n_p2_pretrained_visdrone",
         imgsz=640,
         paper_role="ablation",
+    ),
+    Experiment(
+        model="YOLO11n-P2-960",
+        change="Add P2 high-resolution detection head at 960 input",
+        config="configs/train/yolo11n_p2_960.yaml",
+        run_dir="runs/detect/yolo11n_p2_960_visdrone",
+        imgsz=960,
+        paper_role="fair_resolution_pending",
     ),
     Experiment(
         model="YOLO11n-P2-CoordAttention",
@@ -252,9 +292,16 @@ def build_result_rows() -> list[dict[str, str]]:
 def build_complexity_rows(result_rows: list[dict[str, str]]) -> list[dict[str, str]]:
     rows = []
     for row in result_rows:
-        run_name = Path(row["run_dir"]).name
-        layers, params, gflops = find_model_summary(run_name, row["model"])
-        weight_path = resolve_project_path(row["weights"])
+        if row["status"] == "completed":
+            run_name = Path(row["run_dir"]).name
+            layers, params, gflops = find_model_summary(run_name, row["model"])
+            weight_path = resolve_project_path(row["weights"])
+            weight_size = f"{weight_path.stat().st_size / (1024 * 1024):.2f}" if weight_path.exists() else ""
+            source = "runs/logs and weights/best.pt" if layers or weight_path.exists() else ""
+        else:
+            layers, params, gflops = "", "", ""
+            weight_size = ""
+            source = ""
         rows.append(
             {
                 "model": row["model"],
@@ -263,8 +310,8 @@ def build_complexity_rows(result_rows: list[dict[str, str]]) -> list[dict[str, s
                 "layers": layers,
                 "parameters": params,
                 "gflops": gflops,
-                "weight_size_mb": f"{weight_path.stat().st_size / (1024 * 1024):.2f}" if weight_path.exists() else "",
-                "source": "runs/logs and weights/best.pt" if layers or weight_path.exists() else "",
+                "weight_size_mb": weight_size,
+                "source": source,
             }
         )
     return rows

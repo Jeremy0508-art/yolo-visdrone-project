@@ -27,6 +27,11 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - `paper/figures/scale_analysis/scale_group_recall.png`
   - command: `python tools/evaluate_scale_groups.py --device 0 --output paper/tables/scale_group_results.csv`
   - default protocol: `conf=0.25`, `IoU=0.5`
+- Server-result synchronization script added:
+  - `tools/sync_cea_server_results.ps1`
+  - command: `.\tools\sync_cea_server_results.ps1 -MinEpochs 100`
+  - verified behavior: skips partial runs such as `PARTIAL:3` and regenerates
+    paper tables only from local completed artifacts.
 
 ## Evidence Rules
 
