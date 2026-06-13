@@ -36,6 +36,8 @@ REQUIRED_COMMANDS = [
     ("Full paper audit runner", r"python\s+tools/run_paper_audits\.py"),
     ("Submission readiness audit", r"python\s+tools/audit_submission_readiness\.py"),
     ("Evidence audit builder", r"python\s+tools/build_evidence_audit\.py"),
+    ("Manuscript number trace audit", r"python\s+tools/check_manuscript_number_trace\.py"),
+    ("Section evidence map audit", r"python\s+tools/check_section_evidence_map\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("Submission material manifest", r"python\s+tools/build_submission_material_manifest\.py"),
     ("Paper consistency audit", r"python\s+tools/check_paper_consistency\.py"),

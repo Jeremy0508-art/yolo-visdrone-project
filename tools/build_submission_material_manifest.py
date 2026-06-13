@@ -106,6 +106,7 @@ def build_materials() -> list[Material]:
         ("Submission audit dashboard", "paper/submission_audit_dashboard.md"),
         ("Submission readiness audit", "paper/submission_readiness_audit.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
+        ("Manuscript number trace audit", "paper/manuscript_number_trace_audit.md"),
         ("Journal manuscript gap audit", "paper/manuscript_journal_gap_audit.md"),
         ("Paper consistency audit", "paper/paper_consistency_audit.md"),
         ("LaTeX reference audit", "paper/tex_reference_audit.md"),

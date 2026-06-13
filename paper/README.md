@@ -59,6 +59,7 @@ Recommended ways to read it:
 | `selected_figures.md` | Recommended figures for the manuscript body |
 | `figure_index.md` | Full figure provenance index |
 | `evidence_audit.md` | Paper-facing number and evidence audit |
+| `manuscript_number_trace_audit.md` | Generated trace audit for decimal values in the LaTeX manuscript |
 | `submission_checklist.md` | Pre-submission checklist and template migration notes |
 | `submission_readiness_audit.md` | Generated local readiness audit for paper-facing artifacts and pending fair experiments |
 | `paper_consistency_audit.md` | Generated consistency audit for manuscript-facing text and paper tables |

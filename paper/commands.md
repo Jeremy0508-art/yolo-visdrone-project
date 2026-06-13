@@ -370,6 +370,8 @@ paper/tex_figure_audit.md
 paper/tex_table_source_audit.md
 paper/repro_commands_audit.md
 paper/config_inventory_audit.md
+paper/manuscript_number_trace_audit.md
+paper/section_evidence_map_audit.md
 paper/text_hygiene_audit.md
 paper/evidence_audit.md
 paper/submission_material_manifest.md
@@ -422,6 +424,30 @@ Generated file:
 
 ```text
 paper/evidence_audit.md
+```
+
+Trace decimal values in the LaTeX manuscript back to paper tables or documented configuration constants:
+
+```powershell
+python tools/check_manuscript_number_trace.py
+```
+
+Generated file:
+
+```text
+paper/manuscript_number_trace_audit.md
+```
+
+Check the section-level claim-to-evidence map:
+
+```powershell
+python tools/check_section_evidence_map.py
+```
+
+Generated file:
+
+```text
+paper/section_evidence_map_audit.md
 ```
 
 Regenerate the submission material manifest:

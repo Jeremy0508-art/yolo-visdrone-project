@@ -14,6 +14,7 @@ AUDIT_REPORTS = [
     ("Journal manuscript gaps", "paper/manuscript_journal_gap_audit.md"),
     ("Paper consistency", "paper/paper_consistency_audit.md"),
     ("Evidence audit", "paper/evidence_audit.md"),
+    ("Manuscript number trace", "paper/manuscript_number_trace_audit.md"),
     ("Section evidence map", "paper/section_evidence_map_audit.md"),
     ("LaTeX references", "paper/tex_reference_audit.md"),
     ("LaTeX figures", "paper/tex_figure_audit.md"),

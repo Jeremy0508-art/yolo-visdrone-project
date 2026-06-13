@@ -329,6 +329,10 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
 - Paper consistency audit robustness update:
   - Updated `tools/check_paper_consistency.py` so the Chinese placeholder-marker pattern is encoded with Unicode escapes for stable display across terminals.
   - Latest server status reached `baseline_yolo11n_960_visdrone` at 34 completed epochs; this remains partial progress and has not been synchronized into paper-facing result tables.
+- Manuscript number trace audit:
+  - Added `tools/check_manuscript_number_trace.py` and generated `paper/manuscript_number_trace_audit.md`.
+  - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current manuscript number trace result: 218 decimal-value checks, 218 ready, 0 missing.
 
 ## Evidence Rules
 
