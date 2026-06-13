@@ -1,61 +1,72 @@
-# 投稿前检查清单
+# 《计算机工程与应用》投稿前检查清单
 
-本清单用于把 `paper/manuscript_polished.md` 推进到正式中文会议投稿稿。当前阶段已经有完整论文文本、表格、图像、参考文献草案和证据审计，后续重点是模板适配与人工审阅。
+本清单用于把当前 YOLO-VisDrone 项目从论文候选稿推进到期刊投稿材料。检查时必须遵守证据规则：论文中所有数值均来自真实训练日志、验证输出、`paper/tables/` 汇总文件或官方评测返回结果。
 
-## 已完成
+## 1. 稿件完整性
 
-| 项目 | 状态 | 位置 |
+| 检查项 | 要求 | 状态记录 |
 | --- | --- | --- |
-| 完整中文论文润色稿 | 已完成 | `paper/manuscript_polished.md` |
-| 精简投稿候选稿 | 已完成 | `paper/manuscript_submission_candidate.md` |
-| LaTeX 投稿候选稿 | 已完成 | `paper/manuscript_submission_candidate.tex` |
-| LaTeX PDF 预览 | 已完成 | `paper/manuscript_submission_candidate.pdf` |
-| HTML 浏览器预览 | 已完成 | `paper/manuscript_polished.html` |
-| 主结果表、消融表、速度表 | 已完成 | `paper/manuscript_tables.md` |
-| 正文推荐图 | 已完成 | `paper/selected_figures.md` |
-| 数值证据审计 | 已完成 | `paper/evidence_audit.md` |
-| 参考文献草案 | 已完成 | `paper/references.md` |
-| 复现实验命令 | 已完成 | `paper/commands.md` |
+| 题名 | 准确体现 VisDrone、无人机小目标检测、YOLO11n 改进方法 | 待最终定稿 |
+| 中文摘要 | 包含研究目的、方法、实验结果和结论 | 待长文重写 |
+| 英文摘要 | 与中文摘要信息一致 | 待长文重写 |
+| 关键词 | 覆盖 YOLO、VisDrone、无人机目标检测、小目标检测、注意力机制 | 待最终定稿 |
+| 引言 | 明确无人机小目标检测痛点和本文贡献 | 待扩写 |
+| 相关工作 | 覆盖 YOLO、无人机检测、小目标检测、多尺度融合、注意力机制 | 待扩写 |
+| 方法 | 按 P2、CoordAttention、高分辨率输入和训练策略组织 | 待扩写 |
+| 实验 | 包含公平对照、主流基线、消融、尺度分析、速度复杂度和可视化 | 等服务器完整结果 |
+| 讨论 | 说明适用场景、速度成本、失败案例和局限性 | 待扩写 |
+| 结论 | 基于真实结果总结，不夸大优势 | 待最终定稿 |
 
-## 投稿前必须检查
+## 2. 实验完整性
 
-| 检查项 | 当前建议 |
+| 实验类别 | 必须包含 | 证据要求 |
+| --- | --- | --- |
+| 主线消融 | YOLO11n、YOLO11n-P2、YOLO11n-P2-CA、YOLO11n-P2-CA-960、SmallObjAug | 100 epoch `results.csv`、日志、配置 |
+| 分辨率公平对照 | YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960 | 服务器完整训练后同步 |
+| 主流轻量基线 | YOLOv5n、YOLOv8n、YOLO11n、YOLO11s | 同协议训练或明确说明协议差异 |
+| 尺度分析 | small/medium/large 目标分布和匹配统计 | `object_scale_distribution.csv`、`scale_group_results.csv` |
+| 类别分析 | 至少列出代表性类别 AP/Precision/Recall | `per_class_results.csv` |
+| 速度复杂度 | Params、GFLOPs、Latency、FPS | `model_complexity.csv`、`speed_results.csv` |
+| 可视化 | 训练曲线、尺度图、检测示例、失败案例 | `paper/figures/` 和 `figure_index.md` |
+
+## 3. 证据审计
+
+| 检查项 | 要求 |
 | --- | --- |
-| 会议模板 | 等确定目标会议后，将 `manuscript_polished.md` 迁移到 Word 或 LaTeX 模板 |
-| 篇幅 | 若模板限制较紧，优先保留表 1、表 2、表 3 和 3 张核心图 |
-| 图像 | 正文建议使用 `selected_figures.md` 中的图 1、图 4、图 5，篇幅允许再加 PR 曲线和混淆矩阵 |
-| 参考文献 | 目前为 GB/T 7714 风格草案，需按会议要求统一 |
-| 官方测试集 | 当前不能写官方 AP，只能写“本地提交包已准备，官方结果后续补充” |
-| 创新性表述 | 保持“构建并评估”“实验验证”“轻量化改进”这类稳健措辞 |
-| 实验数值 | 任何新增数值都必须先加入 `paper/tables/` 或在 `evidence_audit.md` 中补证据 |
+| 数值来源 | 每个正文数值都能追溯到 `runs/`、日志或 `paper/tables/` |
+| 半程实验 | 不把未完成 100 epoch 的训练结果写入主表 |
+| 官方 test-dev | 只有官方平台返回结果后才能写 AP |
+| 文献数值 | 明确标注为文献报道结果，不与本项目复现实验混用 |
+| 表格一致性 | 表内模型名称、输入分辨率、指标单位和小数位统一 |
+| 图表来源 | 每张图都在 `paper/figure_index.md` 记录来源 |
 
-## 建议保留图表
+## 4. 排版与格式
 
-短篇会议版本建议正文保留：
+| 检查项 | 要求 |
+| --- | --- |
+| PDF 编译 | LaTeX 稳定编译，无明显图表错位 |
+| 图表编号 | 正文引用与图表编号一致 |
+| 表格宽度 | 不超出页面，必要时使用缩小字号或横排 |
+| 参考文献 | 格式统一，无异常断词和乱码 |
+| 占位内容 | 正文不出现占位符、未确认数值或临时标记 |
+| 中英文混排 | 模型名、指标名和英文缩写保持一致 |
 
-1. 表 1：主实验结果。
-2. 表 2：消融实验结果。
-3. 表 3：速度与复杂度结果。
-4. 图 1：最佳模型训练曲线。
-5. 图 4：验证集检测示例。
-6. 图 5：困难样例或误差分析。
+## 5. GitHub 展示
 
-PR 曲线和混淆矩阵可作为篇幅充足时的补充图。
+| 检查项 | 要求 |
+| --- | --- |
+| 根目录 README | 介绍项目问题、方法、结果、运行方式和论文材料 |
+| paper README | 说明论文材料、表格、图表和证据规则 |
+| 复现命令 | `paper/commands.md` 覆盖训练、验证、测速、表格导出 |
+| 计划文档 | `paper/CEA_JOURNAL_MASTER_PLAN.md` 作为内部执行主线 |
+| 项目语气 | README 面向读者和导师，不写过程性进度汇报 |
 
-当前 `paper/manuscript_polished.md` 已嵌入 5 张推荐图。若目标会议篇幅较短，可删除正文中的图 2 和图 3，仅保留训练曲线、检测示例和困难样例。
+## 6. 投稿前最终动作
 
-`paper/manuscript_submission_candidate.md` 已按短篇会议思路保留 3 张核心图，可作为模板适配的优先版本。
-
-当前已有通用 `ctexart` LaTeX 版本：`paper/manuscript_submission_candidate.tex`。如果目标会议提供专用 LaTeX 模板，优先把该文件中的正文、表格、图和参考文献迁移到模板中。
-
-当前也已使用本地 Tectonic 引擎生成 PDF：`paper/manuscript_submission_candidate.pdf`。正式投稿前仍建议用目标会议模板重新编译并人工检查版面。
-
-当前 LaTeX 预览版仍有少量 underfull 行距警告和一个 figure/table 分页相关的 overfull vbox 警告，但 PDF 可以稳定生成。正式模板适配时需要重新检查图表浮动位置。
-
-## HTML 预览生成命令
-
-```powershell
-python tools/render_markdown_preview.py --input paper/manuscript_polished.md --output paper/manuscript_polished.html
-```
-
-该 HTML 只是阅读预览，不是正式投稿格式。
+1. 同步所有完整服务器实验结果。
+2. 运行 `python tools/export_paper_tables.py` 更新论文表格。
+3. 运行速度、复杂度、类别级和尺度分析脚本补齐新模型。
+4. 更新 `paper/evidence_audit.md`。
+5. 重写并编译期刊长文 PDF。
+6. 人工通读 PDF，检查图表、参考文献和结论措辞。
+7. 更新 GitHub README 并提交最终版本。
