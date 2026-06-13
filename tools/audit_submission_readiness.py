@@ -161,6 +161,7 @@ def audit() -> list[Check]:
         ("Reproducibility commands audit script", "tools/check_repro_commands.py"),
         ("Config inventory audit script", "tools/check_config_inventory.py"),
         ("Text hygiene audit script", "tools/check_text_hygiene.py"),
+        ("Evidence audit builder", "tools/build_evidence_audit.py"),
         ("Paper audit runner", "tools/run_paper_audits.py"),
         ("Submission audit dashboard script", "tools/build_submission_audit_dashboard.py"),
     ]

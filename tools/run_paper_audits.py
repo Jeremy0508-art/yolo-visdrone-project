@@ -15,6 +15,7 @@ AUDIT_STEPS = [
     ("LaTeX table-source audit", "tools/check_tex_table_sources.py"),
     ("Reproducibility command audit", "tools/check_repro_commands.py"),
     ("Configuration inventory audit", "tools/check_config_inventory.py"),
+    ("Evidence audit", "tools/build_evidence_audit.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
     ("Paper consistency audit", "tools/check_paper_consistency.py"),
     ("Submission readiness audit", "tools/audit_submission_readiness.py"),

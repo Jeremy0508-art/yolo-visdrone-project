@@ -256,6 +256,12 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Integrated the text hygiene audit into `tools/run_paper_audits.py`, `tools/audit_submission_readiness.py`, `tools/build_submission_audit_dashboard.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
   - Current text hygiene audit result: 11 checks, 11 ready, 0 missing.
   - Current submission audit dashboard result: 11 reports, 8 ready, 0 partial, 3 pending, 0 missing.
+- Evidence-audit automation update:
+  - Added `tools/build_evidence_audit.py` to regenerate `paper/evidence_audit.md` from paper-facing CSV tables and figure files.
+  - Integrated the evidence audit builder into `tools/run_paper_audits.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, and `paper/commands.md`.
+  - Fixed the full audit order so generated evidence text is created before `tools/check_text_hygiene.py` scans reader-facing files.
+  - Regenerated `paper/evidence_audit.md`; current evidence audit result: 75 checks, 75 ready, 0 missing.
+  - Current submission readiness audit result: 67 checks, 62 ready, 0 partial, 5 pending, 0 missing.
 
 ## Evidence Rules
 

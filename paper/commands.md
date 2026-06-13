@@ -345,6 +345,7 @@ paper/tex_table_source_audit.md
 paper/repro_commands_audit.md
 paper/config_inventory_audit.md
 paper/text_hygiene_audit.md
+paper/evidence_audit.md
 paper/paper_consistency_audit.md
 paper/submission_readiness_audit.md
 paper/submission_audit_dashboard.md
@@ -382,6 +383,18 @@ Generated file:
 
 ```text
 paper/text_hygiene_audit.md
+```
+
+Regenerate the evidence audit from paper-facing result tables and figure files:
+
+```powershell
+python tools/build_evidence_audit.py
+```
+
+Generated file:
+
+```text
+paper/evidence_audit.md
 ```
 
 Generate a manuscript/table consistency audit:
