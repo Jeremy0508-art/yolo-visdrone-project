@@ -1,8 +1,8 @@
-# YOLO VisDrone Chinese Conference Roadmap
+# YOLO VisDrone Journal Submission Roadmap
 
 ## Goal
 
-Prepare this YOLO VisDrone project for a Chinese conference-style paper. The work should remain reproducible, evidence-based, and compatible with the existing training, validation, inference, and web demo workflows.
+Prepare this YOLO VisDrone project for a Chinese journal submission, with 《计算机工程与应用》 as the target journal. The work should remain reproducible, evidence-based, and compatible with the existing training, validation, inference, and web demo workflows.
 
 ## Non-Negotiable Rules
 
@@ -13,7 +13,7 @@ Prepare this YOLO VisDrone project for a Chinese conference-style paper. The wor
 
 ## Confirmed Paper Direction
 
-- Target: Chinese conference paper.
+- Target: 《计算机工程与应用》 journal submission.
 - Dataset: VisDrone2019-DET.
 - Base model: Ultralytics YOLO11n.
 - Main task: UAV aerial small-object detection.
@@ -130,10 +130,11 @@ Prepare this YOLO VisDrone project for a Chinese conference-style paper. The wor
 
 ## Immediate Next Actions
 
-1. Audit how YOLOv8n and YOLO11s should be discussed fairly against the YOLO11n mainline experiments.
-2. Update the manuscript comparison/discussion only with completed and audited external baseline results.
-3. Check whether another fairer control experiment is needed, such as a high-resolution YOLO11s or a YOLO11n-P2-CA speed/accuracy clarification.
-4. Convert `paper/manuscript_submission_candidate.tex` into the target conference template once the template is known.
+1. Follow the master journal plan in `paper/CEA_JOURNAL_MASTER_PLAN.md`.
+2. Monitor the server queue and sync only complete 100-epoch fair-comparison results.
+3. Audit how YOLOv8n, YOLO11s, YOLO11n-960, and YOLO11n-P2-960 should be discussed fairly against the YOLO11n mainline experiments.
+4. Update the manuscript comparison/discussion only with completed and audited results.
+5. Expand `paper/manuscript_submission_candidate.tex` into a journal-length submission draft after the fair-comparison results are available.
 
 ## Current Run Notes
 

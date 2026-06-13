@@ -6,30 +6,32 @@ The repository-level overview is maintained in `../README.md`. Use this file for
 
 ## Where to Read the Current Paper
 
-Main polished manuscript:
+Main LaTeX submission candidate:
 
 ```text
-paper/manuscript_polished.md
+paper/manuscript_submission_candidate.tex
 ```
 
-HTML preview:
+Compiled PDF:
 
 ```text
-paper/manuscript_polished.html
+paper/manuscript_submission_candidate.pdf
 ```
 
 Recommended ways to read it:
 
-1. In VS Code/Cursor, open `paper/manuscript_polished.md` and use Markdown Preview.
-2. Open `paper/manuscript_polished.html` in a browser for a more paper-like view.
-3. Keep `paper/manuscript_draft.md` as the earlier full draft and `paper/manuscript_polished.md` as the current writing baseline.
+1. Open `paper/manuscript_submission_candidate.pdf` for the current paper preview.
+2. Edit `paper/manuscript_submission_candidate.tex` for the LaTeX source.
+3. Keep the Markdown drafts as earlier writing material and use the LaTeX file as the current submission-oriented baseline.
 
 ## Important Files
 
 | File | Purpose |
 | --- | --- |
+| `CEA_JOURNAL_MASTER_PLAN.md` | Master plan for the 《计算机工程与应用》 journal submission track |
 | `PROJECT_ROADMAP.md` | Main project-to-paper roadmap and current status |
-| `manuscript_polished.md` | Current Chinese conference manuscript draft |
+| `CEA_SUBMISSION_PLAN.md` | Earlier journal-strengthening plan and experiment matrix |
+| `manuscript_polished.md` | Earlier polished Markdown manuscript draft |
 | `manuscript_polished.html` | Browser preview of the polished manuscript |
 | `manuscript_submission_candidate.md` | Shorter submission-oriented candidate draft |
 | `manuscript_submission_candidate.tex` | Generic LaTeX version of the submission candidate |
@@ -44,6 +46,8 @@ Recommended ways to read it:
 | `commands.md` | Reproducibility commands |
 | `experiment_protocol.md` | Experimental protocol and evidence rules |
 | `testdev_submission.md` | VisDrone local submission package notes |
+| `tables/object_scale_distribution.csv` | Object scale distribution from YOLO-format VisDrone labels |
+| `tables/scale_group_results.csv` | Thresholded scale-group validation matching results |
 
 ## Evidence Rule
 
@@ -54,7 +58,7 @@ Paper-facing numbers should be traceable to one of:
 - `runs/logs/`
 - an official VisDrone result returned by the evaluation server
 
-The current manuscript is organized around validation-set metrics, speed/complexity measurements, per-class analysis, and qualitative figures.
+The current manuscript is organized around validation-set metrics, speed/complexity measurements, scale-group analysis, per-class analysis, and qualitative figures.
 
 Additional baseline workflows such as YOLOv8n/YOLO11s are recorded in the project configs and command notes. Paper tables are updated from audited logs and exported result files.
 
