@@ -439,6 +439,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The audit checks compiled-PDF freshness, page count, page-size consistency, blank pages, low-text non-media pages, figure-dominant pages, image-heavy pages, and extracted text volume.
   - Current PDF layout health result: 9 checks, 9 ready, 0 partial, 0 missing.
   - Integrated the audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 44 completed epochs.
+  - Latest partial row: epoch 44, `mAP50=0.0183894`, `mAP50-95=0.00612981`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- Synced fair-experiment artifacts audit:
+  - Added `tools/check_synced_fair_experiment_artifacts.py` and generated `paper/synced_fair_experiment_artifacts_audit.md`.
+  - The audit reads `paper/tables/cea_experiment_status.csv` and verifies that any experiment marked completed has a local run directory, `results.csv`, `args.yaml`, `weights/best.pt`, `weights/last.pt`, at least 100 result epochs, and a training/server log.
+  - Current result: 6 checks, 1 ready, 5 pending, 0 missing; the pending checks correspond to the running or queued fair-comparison experiments.
+  - Integrated the audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
 
 ## Evidence Rules
 

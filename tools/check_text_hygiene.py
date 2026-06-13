@@ -34,6 +34,7 @@ CHECKED_FILES = [
     "paper/pdf_text_readability_audit.md",
     "paper/pdf_layout_health_audit.md",
     "paper/submission_risk_register_audit.md",
+    "paper/synced_fair_experiment_artifacts_audit.md",
     "paper/advisor_progress_brief.md",
     "paper/advisor_progress_brief_audit.md",
 ]

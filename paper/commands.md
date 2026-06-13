@@ -376,6 +376,7 @@ paper/manuscript_number_trace_audit.md
 paper/manuscript_length_audit.md
 paper/section_evidence_map_audit.md
 paper/submission_risk_register_audit.md
+paper/synced_fair_experiment_artifacts_audit.md
 paper/text_hygiene_audit.md
 paper/project_readme_presentation_audit.md
 paper/pdf_text_readability_audit.md
@@ -574,6 +575,18 @@ Generated file:
 
 ```text
 paper/submission_risk_register_audit.md
+```
+
+Check local artifact completeness for synced fair-comparison experiments:
+
+```powershell
+python tools/check_synced_fair_experiment_artifacts.py
+```
+
+Generated file:
+
+```text
+paper/synced_fair_experiment_artifacts_audit.md
 ```
 
 Regenerate the submission material manifest:

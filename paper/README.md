@@ -76,6 +76,7 @@ Recommended ways to read it:
 | `tex_table_source_audit.md` | Generated LaTeX table label and source-provenance audit |
 | `section_evidence_map_audit.md` | Generated audit for section-level claim-to-evidence mapping |
 | `submission_risk_register_audit.md` | Generated audit for submission risk IDs, evidence paths, and mitigation coverage |
+| `synced_fair_experiment_artifacts_audit.md` | Generated audit for local artifacts required by completed fair-comparison experiments |
 | `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
 | `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
 | `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |
