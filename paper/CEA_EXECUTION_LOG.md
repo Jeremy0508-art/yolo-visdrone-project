@@ -270,6 +270,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
 - Text hygiene robustness update:
   - Updated `tools/check_text_hygiene.py` so common mojibake patterns are encoded with Unicode escapes in source code.
   - This keeps the audit stable across terminals or editors with different display encodings.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 28 completed epochs.
+  - Latest partial row: epoch 28, `mAP50=0.0249705`, `mAP50-95=0.00832349`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Submission material manifest update:
+  - Added `tools/build_submission_material_manifest.py` to generate a paper-facing material index.
+  - Generated `paper/submission_material_manifest.md`; current result: 37 materials, 37 ready, 0 missing.
+  - Integrated the manifest into `tools/run_paper_audits.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
+  - Regenerated all paper-facing audits with `python tools/run_paper_audits.py`.
 
 ## Evidence Rules
 

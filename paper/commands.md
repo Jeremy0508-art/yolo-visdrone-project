@@ -346,6 +346,7 @@ paper/repro_commands_audit.md
 paper/config_inventory_audit.md
 paper/text_hygiene_audit.md
 paper/evidence_audit.md
+paper/submission_material_manifest.md
 paper/paper_consistency_audit.md
 paper/submission_readiness_audit.md
 paper/submission_audit_dashboard.md
@@ -395,6 +396,18 @@ Generated file:
 
 ```text
 paper/evidence_audit.md
+```
+
+Regenerate the submission material manifest:
+
+```powershell
+python tools/build_submission_material_manifest.py
+```
+
+Generated file:
+
+```text
+paper/submission_material_manifest.md
 ```
 
 Generate a manuscript/table consistency audit:

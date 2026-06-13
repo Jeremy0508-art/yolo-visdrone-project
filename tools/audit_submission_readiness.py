@@ -68,6 +68,7 @@ def audit() -> list[Check]:
         ("Reproducibility commands audit", "paper/repro_commands_audit.md"),
         ("Config inventory audit", "paper/config_inventory_audit.md"),
         ("Text hygiene audit", "paper/text_hygiene_audit.md"),
+        ("Submission material manifest", "paper/submission_material_manifest.md"),
         ("Submission audit dashboard", "paper/submission_audit_dashboard.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
@@ -162,6 +163,7 @@ def audit() -> list[Check]:
         ("Config inventory audit script", "tools/check_config_inventory.py"),
         ("Text hygiene audit script", "tools/check_text_hygiene.py"),
         ("Evidence audit builder", "tools/build_evidence_audit.py"),
+        ("Submission material manifest builder", "tools/build_submission_material_manifest.py"),
         ("Paper audit runner", "tools/run_paper_audits.py"),
         ("Submission audit dashboard script", "tools/build_submission_audit_dashboard.py"),
     ]

@@ -17,6 +17,7 @@ AUDIT_STEPS = [
     ("Configuration inventory audit", "tools/check_config_inventory.py"),
     ("Evidence audit", "tools/build_evidence_audit.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
+    ("Submission material manifest", "tools/build_submission_material_manifest.py"),
     ("Paper consistency audit", "tools/check_paper_consistency.py"),
     ("Submission readiness audit", "tools/audit_submission_readiness.py"),
     ("Submission audit dashboard", "tools/build_submission_audit_dashboard.py"),

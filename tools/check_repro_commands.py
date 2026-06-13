@@ -35,6 +35,7 @@ REQUIRED_COMMANDS = [
     ("Submission readiness audit", r"python\s+tools/audit_submission_readiness\.py"),
     ("Evidence audit builder", r"python\s+tools/build_evidence_audit\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
+    ("Submission material manifest", r"python\s+tools/build_submission_material_manifest\.py"),
     ("Paper consistency audit", r"python\s+tools/check_paper_consistency\.py"),
     ("Per-class validation", r"python\s+tools/val\.py"),
 ]
