@@ -256,6 +256,62 @@ NMS 设置 & 采用 Ultralytics 默认验证流程；现有日志记录 \texttt{
 }
 \end{table}
 
+\subsection{小目标尺度分布与召回分析}
+
+为进一步验证 VisDrone 场景中小目标占比较高这一问题设定，本文基于 YOLO 格式标注文件统计训练集和验证集目标框面积分布。尺度划分采用常见的 COCO 面积阈值：small 表示目标框面积小于 $32^2$ 像素，medium 表示面积位于 $32^2$ 至 $96^2$ 像素之间，large 表示面积不小于 $96^2$ 像素。统计结果如表 \ref{tab:scale_distribution} 和图 \ref{fig:scale_distribution} 所示。验证集中 small 目标共有 26586 个，占全部验证集标注实例的 68.59\%；训练集中 small 目标共有 207604 个，占比 60.49\%。这说明 VisDrone 验证集具有明显的小目标主导特征，也解释了高分辨率输入和 P2 高分辨率检测分支对该任务的重要性。
+
+\begin{table}[htbp]
+\centering
+\caption{VisDrone YOLO 格式标注中的目标尺度分布}
+\label{tab:scale_distribution}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+数据划分 & small & medium & large & small 占比 \\
+\midrule
+train & 207604 & 116620 & 18980 & 60.49\% \\
+val & 26586 & 11105 & 1068 & 68.59\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/scale_analysis/object_scale_distribution.png}
+\caption{VisDrone 训练集和验证集目标尺度分布}
+\label{fig:scale_distribution}
+\end{figure}
+
+在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于官方 AP 指标。结果如表 \ref{tab:scale_group_results} 和图 \ref{fig:scale_group_recall} 所示。与 \YOLOBase{} 相比，\YOLOPtwoCANine{} 在 small 目标上的召回率由 0.308 提升至 0.455，提升幅度为 14.74 个百分点；medium 目标召回率由 0.712 提升至 0.781；large 目标召回率变化较小。该结果表明，最终模型的主要收益集中在 small 和 medium 目标，符合本文面向无人机航拍小目标检测的设计目标。
+
+\begin{table}[htbp]
+\centering
+\caption{不同尺度目标的验证集匹配结果}
+\label{tab:scale_group_results}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcrrrrr}
+\toprule
+模型 & 尺度 & 标注实例数 & 匹配标注数 & Recall@0.5 & 预测数 & Precision@0.5 \\
+\midrule
+\YOLOBase{} & small & 26586 & 8180 & 0.308 & 12844 & 0.633 \\
+\YOLOBase{} & medium & 11105 & 7906 & 0.712 & 10472 & 0.759 \\
+\YOLOBase{} & large & 1068 & 929 & 0.870 & 1080 & 0.866 \\
+\YOLOPtwoCANine{} & small & 26586 & 12099 & 0.455 & 17981 & 0.666 \\
+\YOLOPtwoCANine{} & medium & 11105 & 8678 & 0.781 & 11144 & 0.789 \\
+\YOLOPtwoCANine{} & large & 1068 & 942 & 0.882 & 1125 & 0.844 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.78\linewidth]{figures/scale_analysis/scale_group_recall.png}
+\caption{\YOLOBase{} 与 \YOLOPtwoCANine{} 在不同尺度目标上的召回率对比}
+\label{fig:scale_group_recall}
+\end{figure}
+
 \subsection{类别级结果分析}
 
 项目中已整理每类指标和验证日志，因此本文进一步给出 \YOLOPtwoCANine{} 的类别级结果，如表 \ref{tab:per_class} 所示。car、bus 和 motor 等类别的 mAP50 相对较高，说明在目标外观较稳定或实例数量较多时模型更容易学习有效特征。bicycle、tricycle 和 awning-tricycle 的 mAP50 较低，可能与非机动车在俯视视角下外观相似、实例尺度较小和遮挡较多有关。pedestrian 与 people 两类也存在一定混淆风险，这与人体目标在航拍视角下尺度小、姿态信息不足有关。
