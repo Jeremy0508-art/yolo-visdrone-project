@@ -24,7 +24,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | Reproducibility commands | READY | `paper/commands.md` | 13.3 KB |
 | Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
 | Core Documents | Post-sync manuscript update checklist | READY | `paper/post_sync_update_checklist.md` | 4.1 KB |
-| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 28.7 KB |
+| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 29.1 KB |
 | Core Documents | Server status snapshot | READY | `paper/cea_server_status_snapshot.md` | 1.5 KB |
 | Core Documents | Server progress report | READY | `paper/cea_server_progress_report.md` | 1.7 KB |
 | Tables | Main comparison table | READY | `paper/tables/main_comparison_for_paper.csv` | 7 data rows |
@@ -36,7 +36,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Tables | Scale-group matching table | READY | `paper/tables/scale_group_results.csv` | 6 data rows |
 | Tables | Accuracy-speed trade-off table | READY | `paper/tables/accuracy_speed_tradeoff.csv` | 7 data rows |
 | Tables | Fair experiment status table | READY | `paper/tables/cea_experiment_status.csv` | 5 data rows |
-| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 65 data rows |
+| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 70 data rows |
 | Figures | Method overview figure | READY | `paper/figures/method/hrpca_yolo11n_overview.png` | 127.7 KB |
 | Figures | Training curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_results.png` | 243.1 KB |
 | Figures | PR curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | 333.9 KB |
