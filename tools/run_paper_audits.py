@@ -22,6 +22,7 @@ AUDIT_STEPS = [
     ("Manuscript length audit", "tools/check_manuscript_length.py"),
     ("Section evidence map audit", "tools/check_section_evidence_map.py"),
     ("Submission risk register audit", "tools/check_submission_risk_register.py"),
+    ("CEA manual submission preflight", "tools/build_cea_manual_submission_preflight.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
     ("Project README presentation audit", "tools/check_project_readme_presentation.py"),
     ("PDF text readability audit", "tools/check_pdf_text_readability.py"),

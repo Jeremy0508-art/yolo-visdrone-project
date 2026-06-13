@@ -51,6 +51,7 @@ REQUIRED_COMMANDS = [
     ("Advisor progress brief builder", r"python\s+tools/build_advisor_progress_brief\.py"),
     ("Advisor progress brief audit", r"python\s+tools/check_advisor_progress_brief\.py"),
     ("CEA submission package checklist", r"python\s+tools/build_cea_submission_package_checklist\.py"),
+    ("CEA manual submission preflight", r"python\s+tools/build_cea_manual_submission_preflight\.py"),
     ("Submission material manifest", r"python\s+tools/build_submission_material_manifest\.py"),
     ("Paper consistency audit", r"python\s+tools/check_paper_consistency\.py"),
     ("Result interpretation matrix audit", r"python\s+tools/check_result_interpretation_matrix\.py"),

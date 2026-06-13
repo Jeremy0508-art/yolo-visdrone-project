@@ -6,8 +6,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 
 ## Summary
 
-- Total checks: 26
-- Ready: 23
+- Total checks: 27
+- Ready: 24
 - Pending: 3
 - Missing: 0
 
@@ -35,6 +35,7 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Evidence | PDF layout health audit | READY | `paper/pdf_layout_health_audit.md` |  |
 | Evidence | Synced fair-experiment artifacts audit | READY | `paper/synced_fair_experiment_artifacts_audit.md` |  |
 | Evidence | Reference verification audit | READY | `paper/reference_verification_audit.md` |  |
+| Evidence | Manual submission preflight | READY | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` |  |
 | Experiment Gate | Fair-comparison server experiments | PENDING | `post-sync checklist reports 0/5 completed experiments` | Wait for complete 100-epoch runs, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
 | Experiment Gate | Post-sync manuscript rewrite | PENDING | `abstract, fair-resolution section, mainstream YOLO section, and conclusion depend on audited synced results` | Rewrite only after refreshed tables and audits are complete. |
 | Supporting Materials | Reproducibility commands | READY | `paper/commands.md` |  |

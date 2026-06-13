@@ -33,6 +33,7 @@ AUDIT_REPORTS = [
     ("PDF layout health", "paper/pdf_layout_health_audit.md"),
     ("Advisor progress brief", "paper/advisor_progress_brief_audit.md"),
     ("CEA submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),
+    ("CEA manual submission preflight", "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md"),
     ("Synced fair-experiment artifacts", "paper/synced_fair_experiment_artifacts_audit.md"),
     ("Post-sync update checklist", "paper/post_sync_update_checklist.md"),
     ("Server status snapshot", "paper/cea_server_status_snapshot.md"),

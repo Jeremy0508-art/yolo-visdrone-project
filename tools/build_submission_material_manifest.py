@@ -70,6 +70,7 @@ def build_materials() -> list[Material]:
         ("Result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
         ("Post-sync manuscript update checklist", "paper/post_sync_update_checklist.md"),
         ("CEA submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),
+        ("CEA manual submission preflight", "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Execution log", "paper/CEA_EXECUTION_LOG.md"),
         ("Server status snapshot", "paper/cea_server_status_snapshot.md"),

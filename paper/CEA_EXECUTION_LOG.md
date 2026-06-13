@@ -459,6 +459,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The audit verifies that `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` covers the fair-comparison pairs, A-F outcome branches, evidence-table references, and writing boundaries needed after server results finish.
   - Current result: 24 checks, 24 ready, 0 missing.
   - Integrated the audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 46 completed epochs.
+  - Latest partial row: epoch 46, `mAP50=0.0174731`, `mAP50-95=0.00582435`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- CEA manual submission preflight:
+  - Added `tools/build_cea_manual_submission_preflight.py` and generated `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md`.
+  - The checklist records final manual gates that scripts cannot prove, including official template verification, submission file type, author metadata, funding/statements, final PDF page-by-page review, completed fair-experiment integration, and GitHub public rendering.
+  - Integrated the preflight checklist into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
 
 ## Evidence Rules
 

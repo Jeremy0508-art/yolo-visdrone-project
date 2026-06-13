@@ -638,6 +638,18 @@ Generated file:
 paper/result_interpretation_matrix_audit.md
 ```
 
+Build the manual preflight checklist for final CEA submission preparation:
+
+```powershell
+python tools/build_cea_manual_submission_preflight.py
+```
+
+Generated file:
+
+```text
+paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md
+```
+
 Object scale distribution from YOLO-format labels:
 
 ```powershell

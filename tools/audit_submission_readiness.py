@@ -67,6 +67,7 @@ def audit() -> list[Check]:
         ("CEA manuscript update queue", "paper/CEA_MANUSCRIPT_UPDATE_QUEUE.md"),
         ("Post-sync manuscript update checklist", "paper/post_sync_update_checklist.md"),
         ("CEA submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),
+        ("CEA manual submission preflight", "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md"),
         ("Advisor progress brief audit", "paper/advisor_progress_brief_audit.md"),
         ("CEA manuscript rewrite blueprint", "paper/CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md"),
         ("Journal manuscript gap audit", "paper/manuscript_journal_gap_audit.md"),
@@ -204,6 +205,7 @@ def audit() -> list[Check]:
         ("Paper audit runner", "tools/run_paper_audits.py"),
         ("Submission audit dashboard script", "tools/build_submission_audit_dashboard.py"),
         ("CEA submission package checklist builder", "tools/build_cea_submission_package_checklist.py"),
+        ("CEA manual submission preflight builder", "tools/build_cea_manual_submission_preflight.py"),
     ]
     for item, path in tool_files:
         checks.append(
