@@ -20,6 +20,8 @@ class RunProgress:
     completion_gate: int
     first_timestamp: str
     latest_timestamp: str
+    history_records: int
+    recent_epoch_gain: int
     latest_map50: str
     latest_map50_95: str
     train_process: str
@@ -59,6 +61,7 @@ def summarize(rows: list[dict[str, str]]) -> list[RunProgress]:
     for run, items in grouped.items():
         first = items[0]
         latest = items[-1]
+        previous = items[-2] if len(items) >= 2 else first
         progress.append(
             RunProgress(
                 run=run,
@@ -68,6 +71,8 @@ def summarize(rows: list[dict[str, str]]) -> list[RunProgress]:
                 completion_gate=to_int(latest.get("completion_gate_epochs", "")),
                 first_timestamp=first.get("timestamp", ""),
                 latest_timestamp=latest.get("timestamp", ""),
+                history_records=len(items),
+                recent_epoch_gain=to_int(latest.get("epochs", "")) - to_int(previous.get("epochs", "")),
                 latest_map50=latest.get("last_map50", ""),
                 latest_map50_95=latest.get("last_map50_95", ""),
                 train_process=latest.get("train_process", ""),
@@ -104,13 +109,13 @@ def write_report(progress: list[RunProgress]) -> None:
         "",
         "## Run Progress",
         "",
-        "| Run | Status | Epochs | Completion | Epoch Gain In History | Latest mAP50 | Latest mAP50-95 | First Seen | Latest Seen |",
-        "| --- | --- | ---: | ---: | ---: | ---: | ---: | --- | --- |",
+        "| Run | Status | Epochs | Completion | History Records | Total Epoch Gain | Recent Epoch Gain | Latest mAP50 | Latest mAP50-95 | First Seen | Latest Seen |",
+        "| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- | --- |",
     ]
     for item in sorted(progress, key=status_rank):
         completion = f"{item.completion_ratio * 100:.1f}%"
         lines.append(
-            f"| {item.run} | {item.status} | {item.latest_epochs}/{item.completion_gate} | {completion} | {item.gained_epochs} | {item.latest_map50} | {item.latest_map50_95} | {item.first_timestamp} | {item.latest_timestamp} |"
+            f"| {item.run} | {item.status} | {item.latest_epochs}/{item.completion_gate} | {completion} | {item.history_records} | {item.gained_epochs} | {item.recent_epoch_gain} | {item.latest_map50} | {item.latest_map50_95} | {item.first_timestamp} | {item.latest_timestamp} |"
         )
 
     lines.extend(

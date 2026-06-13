@@ -310,6 +310,10 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/build_post_sync_update_checklist.py` to turn the post-server-result manuscript update plan into a generated checklist.
   - Generated `paper/post_sync_update_checklist.md`; current result: 19 checks, 2 ready, 17 pending, 0 missing.
   - Integrated the checklist into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/audit_submission_readiness.py`, `tools/build_submission_material_manifest.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
+- Final CEA submission execution plan:
+  - Added `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` as the highest-priority route for pushing the project to formal 《计算机工程与应用》 submission readiness.
+  - Integrated the final plan into `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, and `paper/README.md`.
+  - Latest server status remained `baseline_yolo11n_960_visdrone` at 31 completed epochs; this is still partial progress and has not been synchronized into paper-facing result tables.
 
 ## Evidence Rules
 

@@ -6,8 +6,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 ## Summary
 
-- Total materials: 40
-- Ready: 40
+- Total materials: 41
+- Ready: 41
 - Missing: 0
 
 ## Materials
@@ -16,14 +16,15 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | --- | --- | --- | --- | --- |
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 38.5 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.64 MB |
-| Core Documents | Paper workspace README | READY | `paper/README.md` | 6.8 KB |
+| Core Documents | Paper workspace README | READY | `paper/README.md` | 7.0 KB |
+| Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
 | Core Documents | Submission checklist | READY | `paper/submission_checklist.md` | 4.2 KB |
 | Core Documents | Reproducibility commands | READY | `paper/commands.md` | 12.6 KB |
 | Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
 | Core Documents | Post-sync manuscript update checklist | READY | `paper/post_sync_update_checklist.md` | 4.1 KB |
-| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 25.0 KB |
+| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 25.5 KB |
 | Core Documents | Server status snapshot | READY | `paper/cea_server_status_snapshot.md` | 1.5 KB |
-| Core Documents | Server progress report | READY | `paper/cea_server_progress_report.md` | 1.6 KB |
+| Core Documents | Server progress report | READY | `paper/cea_server_progress_report.md` | 1.7 KB |
 | Tables | Main comparison table | READY | `paper/tables/main_comparison_for_paper.csv` | 7 data rows |
 | Tables | Ablation table | READY | `paper/tables/ablation_results.csv` | 5 data rows |
 | Tables | Speed table | READY | `paper/tables/speed_results.csv` | 7 data rows |
@@ -33,7 +34,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Tables | Scale-group matching table | READY | `paper/tables/scale_group_results.csv` | 6 data rows |
 | Tables | Accuracy-speed trade-off table | READY | `paper/tables/accuracy_speed_tradeoff.csv` | 7 data rows |
 | Tables | Fair experiment status table | READY | `paper/tables/cea_experiment_status.csv` | 5 data rows |
-| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 20 data rows |
+| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 30 data rows |
 | Figures | Method overview figure | READY | `paper/figures/method/hrpca_yolo11n_overview.png` | 127.7 KB |
 | Figures | Training curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_results.png` | 243.1 KB |
 | Figures | PR curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | 333.9 KB |
@@ -44,7 +45,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Figures | Scale-group recall figure | READY | `paper/figures/scale_analysis/scale_group_recall.png` | 44.7 KB |
 | Figures | Accuracy-speed trade-off figure | READY | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | 105.6 KB |
 | Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 2.0 KB |
-| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 8.2 KB |
+| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 8.3 KB |
 | Audits | Evidence audit | READY | `paper/evidence_audit.md` | 10.7 KB |
 | Audits | Journal manuscript gap audit | READY | `paper/manuscript_journal_gap_audit.md` | 2.8 KB |
 | Audits | Paper consistency audit | READY | `paper/paper_consistency_audit.md` | 1.7 KB |
