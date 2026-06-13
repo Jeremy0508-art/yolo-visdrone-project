@@ -372,6 +372,7 @@ paper/repro_commands_audit.md
 paper/config_inventory_audit.md
 paper/manuscript_number_trace_audit.md
 paper/section_evidence_map_audit.md
+paper/submission_risk_register_audit.md
 paper/text_hygiene_audit.md
 paper/pdf_text_readability_audit.md
 paper/evidence_audit.md
@@ -461,6 +462,18 @@ Generated file:
 
 ```text
 paper/section_evidence_map_audit.md
+```
+
+Check the CEA submission risk register:
+
+```powershell
+python tools/check_submission_risk_register.py
+```
+
+Generated file:
+
+```text
+paper/submission_risk_register_audit.md
 ```
 
 Regenerate the submission material manifest:

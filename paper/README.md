@@ -31,6 +31,7 @@ Recommended ways to read it:
 | `CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | Highest-priority execution plan for pushing the project to formal 《计算机工程与应用》 submission readiness |
 | `CEA_RESULT_INTERPRETATION_MATRIX.md` | Decision matrix for rewriting claims after fair-comparison results are complete |
 | `CEA_SECTION_EVIDENCE_MAP.md` | Section-level claim and evidence map for journal manuscript rewriting |
+| `CEA_SUBMISSION_RISK_REGISTER.md` | Submission risk register for CEA-facing reviewer questions and mitigation actions |
 | `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
@@ -68,6 +69,7 @@ Recommended ways to read it:
 | `tex_figure_audit.md` | Generated LaTeX figure path and float-layout audit |
 | `tex_table_source_audit.md` | Generated LaTeX table label and source-provenance audit |
 | `section_evidence_map_audit.md` | Generated audit for section-level claim-to-evidence mapping |
+| `submission_risk_register_audit.md` | Generated audit for submission risk IDs, evidence paths, and mitigation coverage |
 | `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
 | `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
 | `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |

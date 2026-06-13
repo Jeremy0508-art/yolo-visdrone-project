@@ -16,6 +16,7 @@ AUDIT_REPORTS = [
     ("Evidence audit", "paper/evidence_audit.md"),
     ("Manuscript number trace", "paper/manuscript_number_trace_audit.md"),
     ("Section evidence map", "paper/section_evidence_map_audit.md"),
+    ("Submission risk register", "paper/submission_risk_register_audit.md"),
     ("LaTeX references", "paper/tex_reference_audit.md"),
     ("LaTeX figures", "paper/tex_figure_audit.md"),
     ("LaTeX table sources", "paper/tex_table_source_audit.md"),

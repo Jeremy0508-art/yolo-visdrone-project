@@ -348,6 +348,11 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Latest partial row: epoch 36, `mAP50=0.0218918`, `mAP50-95=0.00729725`.
   - Training PID `43554` and queue PID `43842` were still active.
   - This remains a partial run and has not been synchronized into paper-facing result tables.
+- Submission risk register:
+  - Added `paper/CEA_SUBMISSION_RISK_REGISTER.md` to track reviewer-facing risks for the CEA submission route, including fair comparison, method novelty, external baselines, small-object evidence, speed/complexity, number traceability, references, PDF quality, official test-dev availability, server continuity, GitHub presentation, and conclusion boundaries.
+  - Added `tools/check_submission_risk_register.py` and generated `paper/submission_risk_register_audit.md`.
+  - Integrated the risk-register audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current risk-register audit result: 9 checks, 8 ready, 1 partial, 0 missing. The partial gate is expected because high-risk items R1, R3, and R12 depend on the pending fair-comparison experiments.
 
 ## Evidence Rules
 

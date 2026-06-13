@@ -38,6 +38,7 @@ REQUIRED_COMMANDS = [
     ("Evidence audit builder", r"python\s+tools/build_evidence_audit\.py"),
     ("Manuscript number trace audit", r"python\s+tools/check_manuscript_number_trace\.py"),
     ("Section evidence map audit", r"python\s+tools/check_section_evidence_map\.py"),
+    ("Submission risk register audit", r"python\s+tools/check_submission_risk_register\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("PDF text readability audit", r"python\s+tools/check_pdf_text_readability\.py"),
     ("Submission material manifest", r"python\s+tools/build_submission_material_manifest\.py"),
