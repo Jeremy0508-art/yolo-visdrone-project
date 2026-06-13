@@ -40,7 +40,7 @@ TEX_FILE = "paper/manuscript_submission_candidate.tex"
 
 FORBIDDEN_PATTERNS = [
     ("TODO", re.compile(r"TODO", re.IGNORECASE)),
-    ("待补充", re.compile(r"待补充")),
+    ("placeholder marker", re.compile("\u5f85\u8865\u5145")),
     ("stale YOLO11n latency 13.785", re.compile(r"\b13\.785\b")),
     ("stale YOLO11n FPS 72.54", re.compile(r"\b72\.54\b")),
     ("stale 960 latency 17.733", re.compile(r"\b17\.733\b")),

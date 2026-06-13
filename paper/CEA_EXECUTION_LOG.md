@@ -326,6 +326,9 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/check_section_evidence_map.py` and generated `paper/section_evidence_map_audit.md`.
   - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, and `paper/README.md`.
   - Current section evidence map audit result: 21 checks, 21 ready, 0 missing.
+- Paper consistency audit robustness update:
+  - Updated `tools/check_paper_consistency.py` so the Chinese placeholder-marker pattern is encoded with Unicode escapes for stable display across terminals.
+  - Latest server status reached `baseline_yolo11n_960_visdrone` at 34 completed epochs; this remains partial progress and has not been synchronized into paper-facing result tables.
 
 ## Evidence Rules
 
