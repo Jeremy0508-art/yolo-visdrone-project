@@ -24,9 +24,9 @@
 
 ## 推理速度与复杂度分析
 
-速度测试结果显示，原始 YOLO11n 的平均 wall-clock 延迟为 13.785 ms，FPS 为 72.54。YOLO11n-P2 的平均延迟为 14.548 ms，FPS 为 68.74；YOLO11n-P2-CoordAttention 的平均延迟为 15.347 ms，FPS 为 65.16。可以看出，P2 检测头和 CoordAttention 带来了一定推理开销，但整体仍保持较高速度。
+速度测试结果显示，原始 YOLO11n 的平均 wall-clock 延迟为 40.092 ms，FPS 为 24.94。YOLO11n-P2 的平均延迟为 43.642 ms，FPS 为 22.91；YOLO11n-P2-CoordAttention 的平均延迟为 45.768 ms，FPS 为 21.85。可以看出，P2 检测头和 CoordAttention 带来了一定推理开销，但整体仍保持可接受的单图推理速度。
 
-YOLO11n-P2-CoordAttention-960 由于输入分辨率更高，平均 wall-clock 延迟增加到 17.733 ms，FPS 降至 56.39，但其最佳 mAP50 和 mAP50-95 均显著高于 640 输入模型。因此，该模型体现出更偏向精度的折中：在仍具备实时推理潜力的前提下，明显增强了无人机小目标检测性能。
+YOLO11n-P2-CoordAttention-960 由于输入分辨率更高，平均 wall-clock 延迟增加到 50.811 ms，FPS 降至 19.68，但其最佳 mAP50 和 mAP50-95 均显著高于 640 输入模型。因此，该模型体现出更偏向精度的折中：在仍具备较快推理能力的前提下，明显增强了无人机小目标检测性能。
 
 ## 可视化与误差分析
 
