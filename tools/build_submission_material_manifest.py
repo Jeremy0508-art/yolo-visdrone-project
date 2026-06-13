@@ -69,6 +69,7 @@ def build_materials() -> list[Material]:
         ("Reproducibility commands", "paper/commands.md"),
         ("Result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
         ("Post-sync manuscript update checklist", "paper/post_sync_update_checklist.md"),
+        ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Execution log", "paper/CEA_EXECUTION_LOG.md"),
         ("Server status snapshot", "paper/cea_server_status_snapshot.md"),
         ("Server progress report", "paper/cea_server_progress_report.md"),
@@ -120,6 +121,7 @@ def build_materials() -> list[Material]:
         ("Config inventory audit", "paper/config_inventory_audit.md"),
         ("Text hygiene audit", "paper/text_hygiene_audit.md"),
         ("PDF text readability audit", "paper/pdf_text_readability_audit.md"),
+        ("Advisor progress brief audit", "paper/advisor_progress_brief_audit.md"),
     ]:
         add_file(materials, "Audits", item, path)
 

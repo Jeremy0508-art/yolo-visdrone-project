@@ -42,6 +42,8 @@ REQUIRED_COMMANDS = [
     ("Submission risk register audit", r"python\s+tools/check_submission_risk_register\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("PDF text readability audit", r"python\s+tools/check_pdf_text_readability\.py"),
+    ("Advisor progress brief builder", r"python\s+tools/build_advisor_progress_brief\.py"),
+    ("Advisor progress brief audit", r"python\s+tools/check_advisor_progress_brief\.py"),
     ("Submission material manifest", r"python\s+tools/build_submission_material_manifest\.py"),
     ("Paper consistency audit", r"python\s+tools/check_paper_consistency\.py"),
     ("Per-class validation", r"python\s+tools/val\.py"),

@@ -22,6 +22,8 @@ AUDIT_STEPS = [
     ("Submission risk register audit", "tools/check_submission_risk_register.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
     ("PDF text readability audit", "tools/check_pdf_text_readability.py"),
+    ("Advisor progress brief", "tools/build_advisor_progress_brief.py"),
+    ("Advisor progress brief audit", "tools/check_advisor_progress_brief.py"),
     ("CEA server progress report", "tools/build_cea_server_progress_report.py"),
     ("Post-sync manuscript update checklist", "tools/build_post_sync_update_checklist.py"),
     ("Submission material manifest", "tools/build_submission_material_manifest.py"),

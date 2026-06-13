@@ -376,6 +376,8 @@ paper/section_evidence_map_audit.md
 paper/submission_risk_register_audit.md
 paper/text_hygiene_audit.md
 paper/pdf_text_readability_audit.md
+paper/advisor_progress_brief.md
+paper/advisor_progress_brief_audit.md
 paper/evidence_audit.md
 paper/submission_material_manifest.md
 paper/paper_consistency_audit.md
@@ -427,6 +429,25 @@ Generated file:
 
 ```text
 paper/pdf_text_readability_audit.md
+```
+
+Regenerate the advisor-facing progress brief:
+
+```powershell
+python tools/build_advisor_progress_brief.py
+```
+
+Check the advisor-facing progress brief:
+
+```powershell
+python tools/check_advisor_progress_brief.py
+```
+
+Generated files:
+
+```text
+paper/advisor_progress_brief.md
+paper/advisor_progress_brief_audit.md
 ```
 
 Regenerate the evidence audit from paper-facing result tables and figure files:

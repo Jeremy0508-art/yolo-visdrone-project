@@ -28,6 +28,8 @@ CHECKED_FILES = [
     "paper/submission_audit_dashboard.md",
     "paper/pdf_text_readability_audit.md",
     "paper/submission_risk_register_audit.md",
+    "paper/advisor_progress_brief.md",
+    "paper/advisor_progress_brief_audit.md",
 ]
 
 

@@ -45,6 +45,7 @@ Recommended ways to read it:
 | `CEA_JOURNAL_STYLE_BENCHMARK.md` | Journal-style benchmark checklist for CEA YOLO small-object papers |
 | `CEA_JOURNAL_MANUSCRIPT_OUTLINE.md` | Section-by-section outline for expanding the paper into a journal manuscript |
 | `advisor_progress_brief.md` | Short Chinese progress brief for advisor communication |
+| `advisor_progress_brief_audit.md` | Generated audit for advisor brief freshness and evidence-boundary statements |
 | `failure_case_taxonomy.md` | Failure-mode taxonomy for qualitative manuscript discussion |
 | `reference_verification_matrix.md` | Candidate reference matrix with verification status and manuscript use |
 | `reference_verification_audit.md` | Generated audit linking the reference verification matrix to the LaTeX bibliography |

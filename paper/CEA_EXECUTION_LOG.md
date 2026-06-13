@@ -363,6 +363,12 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - The audit links `paper/reference_verification_matrix.md` to the LaTeX bibliography and checks core row count, source URLs, verification-oriented statuses, duplicate IDs, candidate-literature separation, and bibliography coverage.
   - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
   - Current reference verification audit result: 8 checks, 8 ready, 0 partial, 0 missing; all 25 LaTeX bibliography entries are covered by matrix rows.
+- Advisor progress brief:
+  - Added `tools/build_advisor_progress_brief.py` to generate `paper/advisor_progress_brief.md` from current paper tables, scale-analysis tables, server status snapshot, and audit dashboard.
+  - Added `tools/check_advisor_progress_brief.py` and generated `paper/advisor_progress_brief_audit.md`.
+  - The generated brief summarizes the research goal, completed 100-epoch runs, current best completed model, small-object evidence, server fair-comparison progress, current audit dashboard status, advisor-facing risks, and next steps.
+  - Integrated the advisor brief builder and audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current advisor brief audit result: 15 checks, 15 ready, 0 missing.
 
 ## Evidence Rules
 
