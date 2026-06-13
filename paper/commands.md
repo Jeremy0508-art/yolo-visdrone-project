@@ -377,6 +377,7 @@ paper/manuscript_length_audit.md
 paper/section_evidence_map_audit.md
 paper/submission_risk_register_audit.md
 paper/text_hygiene_audit.md
+paper/project_readme_presentation_audit.md
 paper/pdf_text_readability_audit.md
 paper/advisor_progress_brief.md
 paper/advisor_progress_brief_audit.md
@@ -421,6 +422,18 @@ Generated file:
 
 ```text
 paper/text_hygiene_audit.md
+```
+
+Check that the repository-level README reads like a project introduction:
+
+```powershell
+python tools/check_project_readme_presentation.py
+```
+
+Generated file:
+
+```text
+paper/project_readme_presentation_audit.md
 ```
 
 Check whether LaTeX figures and tables are captioned, labeled, referenced, and resolvable:

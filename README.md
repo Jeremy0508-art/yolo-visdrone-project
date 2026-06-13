@@ -202,18 +202,18 @@ paper/tables/scale_group_results.csv
 ```text
 paper/README.md
 paper/CEA_JOURNAL_MASTER_PLAN.md
+paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md
 paper/PROJECT_ROADMAP.md
-paper/manuscript_polished.md
-paper/manuscript_polished.html
 paper/manuscript_submission_candidate.tex
 paper/manuscript_submission_candidate.pdf
+paper/submission_audit_dashboard.md
 paper/evidence_audit.md
 paper/commands.md
 paper/figures/
 paper/tables/
 ```
 
-其中 `paper/manuscript_submission_candidate.pdf` 是当前 LaTeX 预览版本，`paper/commands.md` 记录了复现实验命令，`paper/evidence_audit.md` 记录了论文数值来源。
+其中 `paper/manuscript_submission_candidate.pdf` 是当前 LaTeX 预览版本，`paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` 汇总投稿材料包，`paper/submission_audit_dashboard.md` 汇总审计状态，`paper/commands.md` 记录复现实验命令，`paper/evidence_audit.md` 记录论文数值来源。
 
 编译 LaTeX PDF：
 

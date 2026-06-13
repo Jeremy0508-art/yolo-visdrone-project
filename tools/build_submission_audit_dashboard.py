@@ -27,6 +27,7 @@ AUDIT_REPORTS = [
     ("Reproducibility commands", "paper/repro_commands_audit.md"),
     ("Config inventory", "paper/config_inventory_audit.md"),
     ("Text hygiene", "paper/text_hygiene_audit.md"),
+    ("Project README presentation", "paper/project_readme_presentation_audit.md"),
     ("PDF text readability", "paper/pdf_text_readability_audit.md"),
     ("Advisor progress brief", "paper/advisor_progress_brief_audit.md"),
     ("CEA submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),

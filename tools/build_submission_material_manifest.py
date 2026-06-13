@@ -124,6 +124,7 @@ def build_materials() -> list[Material]:
         ("Reproducibility command audit", "paper/repro_commands_audit.md"),
         ("Config inventory audit", "paper/config_inventory_audit.md"),
         ("Text hygiene audit", "paper/text_hygiene_audit.md"),
+        ("Project README presentation audit", "paper/project_readme_presentation_audit.md"),
         ("PDF text readability audit", "paper/pdf_text_readability_audit.md"),
         ("Advisor progress brief audit", "paper/advisor_progress_brief_audit.md"),
     ]:
