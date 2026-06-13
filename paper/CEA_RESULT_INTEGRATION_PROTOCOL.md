@@ -94,7 +94,7 @@ Before marking the manuscript as submission-ready, run:
 
 ```powershell
 python tools/audit_submission_readiness.py
-rg -n "待补充|TODO|13\.785|72\.54|17\.733|56\.39" paper README.md tools
+rg -n "<placeholder-marker>|<internal-note-marker>|13\.785|72\.54|17\.733|56\.39" paper README.md tools
 git status --short
 ```
 

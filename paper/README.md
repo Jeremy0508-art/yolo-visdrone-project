@@ -28,6 +28,7 @@ Recommended ways to read it:
 
 | File | Purpose |
 | --- | --- |
+| `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
 | `CEA_MANUSCRIPT_UPDATE_QUEUE.md` | Ordered manuscript update queue after fair-comparison results finish |

@@ -45,6 +45,7 @@
 
 - LaTeX 投稿候选稿：`paper/manuscript_submission_candidate.tex`
 - PDF 预览：`paper/manuscript_submission_candidate.pdf`
+- 投稿就绪执行计划：`paper/CEA_SUBMISSION_READINESS_100_PLAN.md`
 - 投稿主控计划：`paper/CEA_JOURNAL_MASTER_PLAN.md`
 - 期刊差距分析：`paper/CEA_REVIEW_GAP_ANALYSIS.md`
 - 期刊长文提纲：`paper/CEA_JOURNAL_MANUSCRIPT_OUTLINE.md`

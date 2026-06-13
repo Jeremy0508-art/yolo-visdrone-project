@@ -53,7 +53,7 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` as the acceptance-oriented execution plan for the 《计算机工程与应用》 submission track.
   - Updated `paper/README.md` to index the new plan.
   - Replaced stale speed values in Markdown drafts and regenerated HTML previews so they match `paper/tables/speed_results.csv`.
-  - Verified that old speed values `13.785`, `72.54`, `17.733`, and `56.39` no longer appear in Markdown, LaTeX, or HTML paper files.
+  - Verified that the previously stale latency/FPS values no longer appear in Markdown, LaTeX, or HTML paper files.
   - Ran `python tools/audit_submission_readiness.py`; the audit report was regenerated successfully.
   - Pushed GitHub commit `e1e4b0f` with message `Add CEA full submission execution plan`.
 - Latest server status check:
@@ -101,6 +101,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Extended `tools/check_paper_consistency.py` with a PDF freshness check so the compiled PDF must not be older than the LaTeX source.
   - Current consistency audit result: 14 checks, 14 ready, 0 partial, 0 missing.
   - Current readiness audit result: 45 checks, 5 pending fair experiments, 0 missing items.
+- Submission-readiness planning update:
+  - Added `paper/CEA_SUBMISSION_READINESS_100_PLAN.md` as the active execution plan for reaching formal 《计算机工程与应用》 submission readiness.
+  - The plan defines submission-readiness as complete materials, fair experiments, traceable evidence, journal-style manuscript structure, and GitHub presentation quality; it does not promise journal acceptance.
+  - Updated `paper/README.md` so the new plan is visible in the paper workspace index.
+  - Updated `tools/audit_submission_readiness.py` so the new plan is checked in every readiness audit.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 16 completed epochs.
+  - Latest partial row: epoch 16, `mAP50=0.0283814`, `mAP50-95=0.00946048`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
 
 ## Evidence Rules
 
