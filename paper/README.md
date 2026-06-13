@@ -29,6 +29,7 @@ Recommended ways to read it:
 | File | Purpose |
 | --- | --- |
 | `CEA_JOURNAL_MASTER_PLAN.md` | Master plan for the 《计算机工程与应用》 journal submission track |
+| `CEA_REVIEW_GAP_ANALYSIS.md` | Gap analysis against Chinese YOLO journal-paper writing patterns |
 | `PROJECT_ROADMAP.md` | Main project-to-paper roadmap and current status |
 | `CEA_SUBMISSION_PLAN.md` | Earlier journal-strengthening plan and experiment matrix |
 | `manuscript_polished.md` | Earlier polished Markdown manuscript draft |
@@ -48,6 +49,7 @@ Recommended ways to read it:
 | `testdev_submission.md` | VisDrone local submission package notes |
 | `tables/object_scale_distribution.csv` | Object scale distribution from YOLO-format VisDrone labels |
 | `tables/scale_group_results.csv` | Thresholded scale-group validation matching results |
+| `tables/accuracy_speed_tradeoff.csv` | Source table for the accuracy-speed-parameter trade-off figure |
 
 ## Evidence Rule
 

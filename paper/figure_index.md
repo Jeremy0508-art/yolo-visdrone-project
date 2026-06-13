@@ -11,6 +11,7 @@ This file records paper-facing figures copied from real experiment outputs. Do n
 | Normalized confusion matrix | `paper/figures/confusion_matrices/p2_coordatt_960_confusion_matrix_normalized.png` | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/confusion_matrix_normalized.png` | Normalized confusion matrix of the best completed model. |
 | Object scale distribution | `paper/figures/scale_analysis/object_scale_distribution.png` | `paper/tables/object_scale_distribution.csv` | Distribution of small, medium, and large objects in the VisDrone train and validation sets. |
 | Scale-group recall comparison | `paper/figures/scale_analysis/scale_group_recall.png` | `paper/tables/scale_group_results.csv` | Thresholded scale-group recall comparison between YOLO11n baseline and YOLO11n-P2-CoordAttention-960. |
+| Accuracy-speed-parameter trade-off | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | `paper/tables/accuracy_speed_tradeoff.csv` | Accuracy-speed-parameter trade-off of completed validation experiments. |
 | Qualitative detection results | `paper/figures/qualitative/p2_coordatt_960_val_batch0_pred.jpg` | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/val_batch0_pred.jpg` | Representative detection results on VisDrone validation images. |
 | Failure/error analysis | `paper/figures/failure_cases/p2_case_contact_sheet.jpg` | Existing visual asset under `experiments/figures/` | Example failure cases for qualitative analysis. |
 
@@ -40,6 +41,12 @@ This file records paper-facing figures copied from real experiment outputs. Do n
 | --- | --- | --- |
 | `paper/figures/scale_analysis/object_scale_distribution.png` | `paper/tables/object_scale_distribution.csv` | `tools/analyze_object_scales.py` |
 | `paper/figures/scale_analysis/scale_group_recall.png` | `paper/tables/scale_group_results.csv` | `tools/evaluate_scale_groups.py` |
+
+## Trade-off Figures
+
+| Figure File | Source Data | Source Script |
+| --- | --- | --- |
+| `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | `paper/tables/accuracy_speed_tradeoff.csv` | `tools/plot_accuracy_speed_tradeoff.py` |
 
 ## Qualitative Figures
 

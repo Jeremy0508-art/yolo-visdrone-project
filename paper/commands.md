@@ -258,6 +258,43 @@ runs/detect/baseline_yolov5n_visdrone
 
 ## Scale Analysis
 
+Analyze object scale distribution from YOLO-format VisDrone labels:
+
+```powershell
+python tools/analyze_object_scales.py
+```
+
+Evaluate thresholded scale-group matching for completed validation models:
+
+```powershell
+python tools/evaluate_scale_groups.py --device 0 --output paper/tables/scale_group_results.csv
+```
+
+Generated files:
+
+```text
+paper/tables/object_scale_distribution.csv
+paper/tables/class_scale_distribution.csv
+paper/tables/scale_group_results.csv
+paper/figures/scale_analysis/object_scale_distribution.png
+paper/figures/scale_analysis/scale_group_recall.png
+```
+
+## Accuracy-Speed Trade-off
+
+Generate the accuracy-speed-parameter trade-off figure from audited result tables:
+
+```powershell
+python tools/plot_accuracy_speed_tradeoff.py
+```
+
+Generated files:
+
+```text
+paper/tables/accuracy_speed_tradeoff.csv
+paper/figures/tradeoff/accuracy_speed_tradeoff.png
+```
+
 Object scale distribution from YOLO-format labels:
 
 ```powershell

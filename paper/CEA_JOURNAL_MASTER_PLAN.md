@@ -127,6 +127,7 @@
 产出：
 
 - `paper/CEA_JOURNAL_MASTER_PLAN.md`
+- `paper/CEA_REVIEW_GAP_ANALYSIS.md`
 - 更新后的 README 和 paper README
 - GitHub 同步提交
 

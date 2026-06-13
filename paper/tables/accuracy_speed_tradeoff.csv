@@ -1,0 +1,8 @@
+model,input_size,params_m,best_map50_95,fps_wall
+YOLOv8n baseline,640,3.013,0.18386,23.65
+YOLO11s baseline,640,9.432,0.22719,25.66
+YOLO11n baseline,640,2.592,0.18238,24.94
+YOLO11n-P2,640,2.894,0.19012,22.91
+YOLO11n-P2-CoordAttention,640,2.904,0.19044,21.85
+YOLO11n-P2-CoordAttention-960,960,2.904,0.25174,19.68
+YOLO11n-P2-CoordAttention-SmallObjAug,640,2.904,0.18699,20.02
