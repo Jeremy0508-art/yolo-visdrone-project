@@ -231,6 +231,14 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/run_paper_audits.py` to run the manuscript gap, LaTeX reference, LaTeX figure, LaTeX table-source, reproducibility command, config inventory, paper consistency, submission readiness, and dashboard audits in order.
   - Updated `paper/commands.md` and `paper/README.md` with the full audit command.
   - Updated `tools/check_repro_commands.py` and `tools/audit_submission_readiness.py` so the new runner is itself covered by local audits.
+- Reference-breadth update:
+  - Expanded `paper/manuscript_submission_candidate.tex` with verified detector, YOLO lineage, feature-fusion, attention, UAV small-object, and dense-scene post-processing references.
+  - Rebuilt `paper/manuscript_submission_candidate.pdf` successfully.
+  - Updated `paper/reference_verification_matrix.md` with source links for the added references.
+  - Updated `tools/check_journal_manuscript_gaps.py` so citation-density readiness is based on bibliography breadth rather than only raw `\cite{}` command count.
+  - Regenerated all paper-facing audits with `python tools/run_paper_audits.py`.
+  - Current LaTeX reference audit result: 7 checks, 7 ready, 0 partial, 0 missing.
+  - Current journal manuscript gap audit result: 17 checks, 15 ready, 1 partial, 1 pending, 0 missing.
 
 ## Evidence Rules
 

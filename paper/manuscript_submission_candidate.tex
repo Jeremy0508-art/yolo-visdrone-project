@@ -65,15 +65,19 @@ YOLO 系列检测器具有端到端推理、速度快和部署方便等特点，
 
 \subsection{YOLO 系列轻量化检测器}
 
-YOLO 系列方法将目标检测建模为单阶段密集预测任务，早期 YOLO 和 YOLOv3 等工作推动了实时检测在工程场景中的应用\cite{redmon2016yolo,redmon2018yolov3}。相较两阶段检测器，YOLO 系列通常具有更高推理效率，适合实时检测和边缘部署任务。对于无人机场景，轻量模型能够降低计算开销和存储成本，但也更容易受到特征容量和空间分辨率限制。本文选择 \YOLOBase{} 作为基线，是因为其参数量较小、推理速度较快，便于在可接受复杂度下评估小目标增强策略。
+通用目标检测方法大体可分为两阶段和单阶段两类。Faster R-CNN 通过区域建议网络提升候选框生成效率，SSD 和 RetinaNet 则代表了单阶段密集预测路线，其中 RetinaNet 进一步通过 Focal Loss 缓解前景与背景样本不均衡问题\cite{ren2015fasterrcnn,liu2016ssd,lin2017retinanet}。相较两阶段检测器，单阶段检测器通常具有更高推理效率，更适合实时检测和边缘部署任务。
 
-轻量模型的主要问题在于深层特征图分辨率有限。经过多次下采样后，小目标在高层语义特征中的空间占比进一步降低，可能影响定位精度和召回率。因此，许多小目标检测改进会通过多尺度检测头、浅层特征融合或高分辨率输入来增强细粒度信息。FPN 通过自顶向下路径和横向连接融合不同层级特征，PANet 进一步引入自底向上的路径增强定位信息传播\cite{lin2017fpn,liu2018panet}。本文的 P2 分支设计即沿着多尺度特征融合思路，将更高空间分辨率的浅层特征引入检测输出。
+YOLO 系列方法将目标检测建模为单阶段密集预测任务，早期 YOLO 和 YOLOv3 等工作推动了实时检测在工程场景中的应用\cite{redmon2016yolo,redmon2018yolov3}。后续 YOLOv4 和 YOLOv7 进一步从骨干网络、特征融合、训练策略和实时性等方面扩展 YOLO 系列的工程可用性\cite{bochkovskiy2020yolov4,wang2022yolov7}。对于无人机场景，轻量模型能够降低计算开销和存储成本，但也更容易受到特征容量和空间分辨率限制。本文选择 \YOLOBase{} 作为基线，是因为其参数量较小、推理速度较快，便于在可接受复杂度下评估小目标增强策略。
+
+轻量模型的主要问题在于深层特征图分辨率有限。经过多次下采样后，小目标在高层语义特征中的空间占比进一步降低，可能影响定位精度和召回率。因此，许多小目标检测改进会通过多尺度检测头、浅层特征融合或高分辨率输入来增强细粒度信息。FPN 通过自顶向下路径和横向连接融合不同层级特征，PANet 进一步引入自底向上的路径增强定位信息传播\cite{lin2017fpn,liu2018panet}。EfficientDet 中的 BiFPN 则通过加权双向特征融合进一步强调不同尺度特征的有效组合\cite{tan2020efficientdet}。本文的 P2 分支设计即沿着多尺度特征融合思路，将更高空间分辨率的浅层特征引入检测输出。
 
 \subsection{小目标检测增强策略}
 
 小目标检测常见增强策略包括高分辨率输入、多尺度检测头、浅层特征融合、注意力机制和数据增强等。高分辨率输入能够直接增加小目标在原图中的像素占比，通常对航拍小目标检测较为关键；多尺度检测头和浅层特征融合则试图在网络内部保留更多细粒度空间信息。
 
-注意力机制能够通过重新分配特征响应提升网络表达能力。SE 模块通过建模通道依赖实现特征重标定，CBAM 进一步串联通道注意力和空间注意力以增强特征表达\cite{hu2018senet,woo2018cbam}。\CoordAtt{} 将位置信息嵌入通道注意力建模过程，在保持轻量化的同时引入方向感知和位置敏感特征表达\cite{hou2021coordinate}。对于无人机图像中的小目标、密集目标和复杂背景，该机制可能有助于增强目标区域响应。不过，注意力模块的实际收益需要结合消融结果谨慎判断。本文实验显示，\CoordAtt{} 在 P2 基础上带来的是小幅补充提升，而非主要增益来源。
+注意力机制能够通过重新分配特征响应提升网络表达能力。SE 模块通过建模通道依赖实现特征重标定，CBAM 进一步串联通道注意力和空间注意力以增强特征表达\cite{hu2018senet,woo2018cbam}。ECA-Net 和 SimAM 等轻量注意力方法也说明，降低额外参数或避免复杂空间建模是轻量检测器中常见的设计取向\cite{wang2020eca,yang2021simam}。\CoordAtt{} 将位置信息嵌入通道注意力建模过程，在保持轻量化的同时引入方向感知和位置敏感特征表达\cite{hou2021coordinate}。对于无人机图像中的小目标、密集目标和复杂背景，该机制可能有助于增强目标区域响应。不过，注意力模块的实际收益需要结合消融结果谨慎判断。本文实验显示，\CoordAtt{} 在 P2 基础上带来的是小幅补充提升，而非主要增益来源。
+
+近年来，无人机小目标检测相关研究也多围绕浅层检测头、多尺度特征融合、注意力增强和轻量化展开。例如 TPH-YOLOv5 针对无人机场景引入额外预测头和注意力结构，SOD-YOLO、SMA-YOLO、BPD-YOLO 和 CF-YOLO 等工作分别从改进 YOLOv8、参数友好注意力、多尺度特征融合或 YOLO11 框架出发增强小目标表征\cite{zhu2021tphyolov5,li2024sodyolo,qu2025smayolo,chao2025bpdyolo,wang2025cfyolo}。这些工作说明，面向无人机小目标的 YOLO 改进通常需要在浅层空间信息、语义融合和推理复杂度之间取得平衡。本文采用 P2 分支、\CoordAtt{} 和 960 输入分辨率的组合，也属于该设计脉络下的轻量化小目标增强尝试。
 
 数据增强也可能影响小目标检测效果，例如 mosaic 关闭时机、缩放范围、copy-paste 和 erasing 等设置均会改变训练样本分布。本文保留小目标友好增强作为训练策略消融，但当前结果显示该策略未超过 \YOLOPtwoCA{}，说明增强策略需要与数据集分布和模型结构进一步匹配。
 
@@ -389,7 +393,7 @@ motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\
 
 结合图 \ref{fig:failure} 与表 \ref{tab:failure_reason} 可以看出，当前模型的失败案例主要来自尺度、遮挡、类别边界和背景干扰四类因素。第一，远距离极小目标在原图中占据像素较少，即使输入分辨率提高到 960，目标纹理、边缘和形状线索仍可能不足，导致置信度偏低或定位框不稳定。第二，密集车辆和人群场景中，相邻实例之间距离较近，预测框重叠程度较高，后处理阶段可能抑制部分真实目标，从而影响召回。第三，pedestrian 与 people、bicycle 与 motor 等类别在俯视视角下外观差异有限，特别是在目标被遮挡或仅保留局部轮廓时，类别判别容易受到干扰。第四，道路标识、树影、车辆局部纹理等背景结构可能与小目标边缘相似，造成少量误检。
 
-这些失败现象说明，本文方法虽然通过高分辨率输入和 P2 分支增强了小目标可见性，但仍主要改善可见细节尚可保留的小目标；对于极小、严重遮挡或类别外观高度相似的实例，仅依靠输入分辨率和浅层检测头仍然有限。后续改进可以考虑更适合密集目标的后处理策略、面向小目标的定位损失、跨尺度上下文建模，以及在不显著增加参数量的前提下引入更稳定的特征融合机制。
+这些失败现象说明，本文方法虽然通过高分辨率输入和 P2 分支增强了小目标可见性，但仍主要改善可见细节尚可保留的小目标；对于极小、严重遮挡或类别外观高度相似的实例，仅依靠输入分辨率和浅层检测头仍然有限。后续改进可以考虑更适合密集目标的后处理策略，例如在传统 NMS 基础上探索更平滑的框抑制方式\cite{bodla2017softnms}，也可以继续研究面向小目标的定位损失、跨尺度上下文建模，以及在不显著增加参数量的前提下引入更稳定的特征融合机制。
 
 \begin{table}[htbp]
 \centering
@@ -440,11 +444,29 @@ Redmon J, Divvala S, Girshick R, et al. You Only Look Once: Unified, Real-Time O
 \bibitem{redmon2018yolov3}
 Redmon J, Farhadi A. YOLOv3: An Incremental Improvement[EB/OL]. arXiv:1804.02767, 2018.
 
+\bibitem{ren2015fasterrcnn}
+Ren S, He K, Girshick R, et al. Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks[C]//Advances in Neural Information Processing Systems. 2015: 91--99.
+
+\bibitem{liu2016ssd}
+Liu W, Anguelov D, Erhan D, et al. SSD: Single Shot MultiBox Detector[C]//Proceedings of the European Conference on Computer Vision. 2016: 21--37.
+
+\bibitem{lin2017retinanet}
+Lin T Y, Goyal P, Girshick R, et al. Focal Loss for Dense Object Detection[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 2980--2988.
+
+\bibitem{bochkovskiy2020yolov4}
+Bochkovskiy A, Wang C Y, Liao H Y M. YOLOv4: Optimal Speed and Accuracy of Object Detection[EB/OL]. arXiv:2004.10934, 2020.
+
+\bibitem{wang2022yolov7}
+Wang C Y, Bochkovskiy A, Liao H Y M. YOLOv7: Trainable Bag-of-Freebies Sets New State-of-the-Art for Real-Time Object Detectors[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2023: 7464--7475.
+
 \bibitem{lin2017fpn}
 Lin T Y, Dollár P, Girshick R, et al. Feature Pyramid Networks for Object Detection[C]//Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017: 2117--2125.
 
 \bibitem{liu2018panet}
 Liu S, Qi L, Qin H, et al. Path Aggregation Network for Instance Segmentation[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2018: 8759--8768.
+
+\bibitem{tan2020efficientdet}
+Tan M, Pang R, Le Q V. EfficientDet: Scalable and Efficient Object Detection[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2020: 10781--10790.
 
 \bibitem{hu2018senet}
 Hu J, Shen L, Sun G. Squeeze-and-Excitation Networks[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2018: 7132--7141.
@@ -452,8 +474,32 @@ Hu J, Shen L, Sun G. Squeeze-and-Excitation Networks[C]//Proceedings of the IEEE
 \bibitem{woo2018cbam}
 Woo S, Park J, Lee J Y, et al. CBAM: Convolutional Block Attention Module[C]//Proceedings of the European Conference on Computer Vision. 2018: 3--19.
 
+\bibitem{wang2020eca}
+Wang Q, Wu B, Zhu P, et al. ECA-Net: Efficient Channel Attention for Deep Convolutional Neural Networks[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition. 2020: 11531--11539.
+
+\bibitem{yang2021simam}
+Yang L, Zhang R Y, Li L, et al. SimAM: A Simple, Parameter-Free Attention Module for Convolutional Neural Networks[C]//Proceedings of the 38th International Conference on Machine Learning. 2021: 11863--11874.
+
 \bibitem{hou2021coordinate}
 Hou Q, Zhou D, Feng J. Coordinate Attention for Efficient Mobile Network \mbox{Design}[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern \mbox{Recognition}. 2021: 13713--13722.
+
+\bibitem{zhu2021tphyolov5}
+Zhu X, Lyu S, Wang X, et al. TPH-YOLOv5: Improved YOLOv5 Based on Transformer Prediction Head for Object Detection on Drone-Captured Scenarios[C]//Proceedings of the IEEE/CVF International Conference on Computer Vision Workshops. 2021: 2778--2788.
+
+\bibitem{li2024sodyolo}
+Li Y, Li Q, Pan J, et al. SOD-YOLO: Small-Object-Detection Algorithm Based on Improved YOLOv8 for UAV Images[J]. Remote Sensing, 2024, 16(16): 3057.
+
+\bibitem{qu2025smayolo}
+Qu S, Dang C, Chen W, et al. SMA-YOLO: An Improved YOLOv8 Algorithm Based on Parameter-Free Attention Mechanism and Multi-Scale Feature Fusion for Small Object Detection in UAV Images[J]. Remote Sensing, 2025, 17(14): 2421.
+
+\bibitem{chao2025bpdyolo}
+Chao M, Peng C, Yun L, et al. A Lightweight Small Object Detection Model for UAV Images Based on Deep Semantic Integration[J]. Scientific Reports, 2025, 15: 31888.
+
+\bibitem{wang2025cfyolo}
+Wang C, Han Y, Yang C, et al. CF-YOLO for Small Target Detection in Drone Imagery Based on YOLOv11 Algorithm[J]. Scientific Reports, 2025, 15: 16741.
+
+\bibitem{bodla2017softnms}
+Bodla N, Singh B, Chellappa R, et al. Soft-NMS: Improving Object Detection with One Line of Code[C]//Proceedings of the IEEE International Conference on Computer Vision. 2017: 5561--5569.
 
 \bibitem{khanam2024yolov11}
 Khanam R, Hussain M. YOLOv11: An Overview of the Key Architectural \mbox{Enhancements}[EB/OL]. arXiv:2410.17725, 2024.

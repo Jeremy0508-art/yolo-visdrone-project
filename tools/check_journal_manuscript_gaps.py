@@ -69,6 +69,7 @@ def audit() -> list[GapCheck]:
     table_count = count(r"\\begin\{table\}", text)
     figure_count = count(r"\\begin\{figure\}", text)
     citation_count = count(r"\\cite\{", text)
+    bibitem_count = count(r"\\bibitem\{", text)
 
     checks.append(
         GapCheck(
@@ -110,8 +111,8 @@ def audit() -> list[GapCheck]:
         GapCheck(
             "References",
             "Citation density",
-            "ready" if citation_count >= 20 else "partial",
-            f"{citation_count} citation commands",
+            "ready" if bibitem_count >= 25 else "partial",
+            f"{citation_count} citation commands, {bibitem_count} bibitem entries",
             "Increase verified references before final submission; target 25-35 bibliography entries.",
         )
     )
