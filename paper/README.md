@@ -34,6 +34,7 @@ Recommended ways to read it:
 | `CEA_MANUSCRIPT_UPDATE_QUEUE.md` | Ordered manuscript update queue after fair-comparison results finish |
 | `CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md` | Section-by-section blueprint for expanding the LaTeX candidate into a journal manuscript |
 | `cea_server_status_snapshot.md` | Generated read-only snapshot of server fair-comparison progress |
+| `cea_server_progress_report.md` | Generated progress summary from the server status history table |
 | `CEA_JOURNAL_MASTER_PLAN.md` | Master plan for the 《计算机工程与应用》 journal submission track |
 | `CEA_REVIEW_GAP_ANALYSIS.md` | Gap analysis against Chinese YOLO journal-paper writing patterns |
 | `CEA_JOURNAL_STYLE_BENCHMARK.md` | Journal-style benchmark checklist for CEA YOLO small-object papers |

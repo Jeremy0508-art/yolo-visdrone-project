@@ -210,6 +210,18 @@ paper/cea_server_status_snapshot.md
 paper/tables/cea_server_status_history.csv
 ```
 
+Build a readable progress report from the local server-status history:
+
+```powershell
+python tools/build_cea_server_progress_report.py
+```
+
+Generated file:
+
+```text
+paper/cea_server_progress_report.md
+```
+
 Before using synced results in the manuscript, follow:
 
 ```text

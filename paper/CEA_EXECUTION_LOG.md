@@ -297,6 +297,10 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Updated `tools/check_cea_server_status.ps1` so each status check still writes `paper/cea_server_status_snapshot.md` and also appends rows to `paper/tables/cea_server_status_history.csv`.
   - The history table records timestamp, run name, status, epochs, latest validation metrics, expected artifact paths, and observed training/queue process states.
   - Added the history table to `paper/submission_material_manifest.md` and `paper/submission_readiness_audit.md`.
+- Server-progress report update:
+  - Added `tools/build_cea_server_progress_report.py` to summarize `paper/tables/cea_server_status_history.csv`.
+  - Generated `paper/cea_server_progress_report.md`; current report tracks 5 server runs with 1 partial and 4 missing.
+  - Integrated the progress report into `tools/run_paper_audits.py`, `tools/audit_submission_readiness.py`, `tools/build_submission_material_manifest.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
 
 ## Evidence Rules
 

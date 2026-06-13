@@ -66,6 +66,7 @@ def build_materials() -> list[Material]:
         ("Result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
         ("Execution log", "paper/CEA_EXECUTION_LOG.md"),
         ("Server status snapshot", "paper/cea_server_status_snapshot.md"),
+        ("Server progress report", "paper/cea_server_progress_report.md"),
     ]:
         add_file(materials, "Core Documents", item, path)
 
