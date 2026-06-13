@@ -79,6 +79,7 @@ def build_materials() -> list[Material]:
         ("Scale-group matching table", "paper/tables/scale_group_results.csv"),
         ("Accuracy-speed trade-off table", "paper/tables/accuracy_speed_tradeoff.csv"),
         ("Fair experiment status table", "paper/tables/cea_experiment_status.csv"),
+        ("Server status history table", "paper/tables/cea_server_status_history.csv"),
     ]:
         rows = count_csv_rows(path)
         add_file(materials, "Tables", item, path, f"{rows} data rows")

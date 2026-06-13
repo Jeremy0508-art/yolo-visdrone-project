@@ -8,6 +8,7 @@ param(
     [int]$TrainPid = 43554,
     [int]$QueuePid = 43842,
     [string]$OutputPath = "paper\cea_server_status_snapshot.md",
+    [string]$HistoryPath = "paper\tables\cea_server_status_history.csv",
     [string[]]$RunNames = @(
         "baseline_yolo11n_960_visdrone",
         "yolo11n_p2_960_visdrone",
@@ -226,4 +227,37 @@ if (![string]::IsNullOrWhiteSpace($OutputPath)) {
     $report | Set-Content -Path $outputFullPath -Encoding UTF8
     Write-Host ""
     Write-Host "Wrote status snapshot: $outputFullPath"
+}
+
+if (![string]::IsNullOrWhiteSpace($HistoryPath)) {
+    $historyFullPath = Join-Path (Resolve-Path (Join-Path $PSScriptRoot "..")) $HistoryPath
+    $historyDir = Split-Path $historyFullPath -Parent
+    New-Item -ItemType Directory -Force -Path $historyDir | Out-Null
+
+    $trainState = ($procRows | Where-Object { $_.Name -eq "train" } | Select-Object -First 1).State
+    $queueState = ($procRows | Where-Object { $_.Name -eq "queue" } | Select-Object -First 1).State
+    $historyRows = foreach ($row in $runRows) {
+        [pscustomobject]@{
+            timestamp = $timestamp
+            remote_root = $remoteRootValue
+            completion_gate_epochs = $minEpochsValue
+            run = $row.Run
+            status = $row.Status
+            epochs = $row.Epochs
+            last_epoch = $row.LastEpoch
+            last_map50 = $row.LastMap50
+            last_map50_95 = $row.LastMap5095
+            args = $row.Args
+            best = $row.Best
+            train_process = $trainState
+            queue_process = $queueState
+        }
+    }
+    if (Test-Path -LiteralPath $historyFullPath) {
+        $historyRows | Export-Csv -Path $historyFullPath -NoTypeInformation -Encoding UTF8 -Append
+    }
+    else {
+        $historyRows | Export-Csv -Path $historyFullPath -NoTypeInformation -Encoding UTF8
+    }
+    Write-Host "Appended status history: $historyFullPath"
 }

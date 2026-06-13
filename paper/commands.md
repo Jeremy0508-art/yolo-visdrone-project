@@ -207,6 +207,7 @@ Generated file:
 
 ```text
 paper/cea_server_status_snapshot.md
+paper/tables/cea_server_status_history.csv
 ```
 
 Before using synced results in the manuscript, follow:

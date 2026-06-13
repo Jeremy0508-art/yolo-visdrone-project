@@ -115,6 +115,7 @@ def audit() -> list[Check]:
         ("Object scale distribution", "paper/tables/object_scale_distribution.csv", 2),
         ("Scale-group matching", "paper/tables/scale_group_results.csv", 6),
         ("Accuracy-speed trade-off source", "paper/tables/accuracy_speed_tradeoff.csv", 5),
+        ("Server status history", "paper/tables/cea_server_status_history.csv", 1),
     ]
     for item, path, min_rows in table_expectations:
         rows = count_csv_rows(path)

@@ -288,6 +288,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
 - Server-result sync workflow update:
   - Updated `tools/sync_cea_server_results.ps1` so successful guarded sync now runs `python tools/run_paper_audits.py` after regenerating paper tables.
   - Updated `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` to distinguish automatic post-sync table/audit regeneration from hardware-dependent speed, per-class, scale-group, and trade-off regeneration.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 29 completed epochs.
+  - Latest partial row: epoch 29, `mAP50=0.0246157`, `mAP50-95=0.00820525`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Server-status history update:
+  - Updated `tools/check_cea_server_status.ps1` so each status check still writes `paper/cea_server_status_snapshot.md` and also appends rows to `paper/tables/cea_server_status_history.csv`.
+  - The history table records timestamp, run name, status, epochs, latest validation metrics, expected artifact paths, and observed training/queue process states.
+  - Added the history table to `paper/submission_material_manifest.md` and `paper/submission_readiness_audit.md`.
 
 ## Evidence Rules
 
