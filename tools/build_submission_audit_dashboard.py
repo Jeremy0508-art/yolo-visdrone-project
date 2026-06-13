@@ -21,6 +21,7 @@ AUDIT_REPORTS = [
     ("Section evidence map", "paper/section_evidence_map_audit.md"),
     ("Submission risk register", "paper/submission_risk_register_audit.md"),
     ("CEA reviewer response prep", "paper/cea_reviewer_response_prep_audit.md"),
+    ("CEA post-result rewrite playbook", "paper/cea_post_result_rewrite_playbook_audit.md"),
     ("LaTeX references", "paper/tex_reference_audit.md"),
     ("Reference verification", "paper/reference_verification_audit.md"),
     ("LaTeX figures", "paper/tex_figure_audit.md"),

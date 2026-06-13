@@ -203,6 +203,7 @@ paper/tables/scale_group_results.csv
 paper/README.md
 paper/CEA_JOURNAL_MASTER_PLAN.md
 paper/CEA_REVIEWER_RESPONSE_PREP.md
+paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md
 paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md
 paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md
 paper/PROJECT_ROADMAP.md
@@ -215,7 +216,7 @@ paper/figures/
 paper/tables/
 ```
 
-其中 `paper/manuscript_submission_candidate.pdf` 是当前 LaTeX 预览版本，`paper/CEA_REVIEWER_RESPONSE_PREP.md` 整理审稿问题应答准备，`paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` 汇总投稿材料包，`paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` 记录最终提交前人工核对项，`paper/submission_audit_dashboard.md` 汇总审计状态，`paper/commands.md` 记录复现实验命令，`paper/evidence_audit.md` 记录论文数值来源。
+其中 `paper/manuscript_submission_candidate.pdf` 是当前 LaTeX 预览版本，`paper/CEA_REVIEWER_RESPONSE_PREP.md` 整理审稿问题应答准备，`paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md` 记录最终结果同步后的逐节改稿路线，`paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` 汇总投稿材料包，`paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` 记录最终提交前人工核对项，`paper/submission_audit_dashboard.md` 汇总审计状态，`paper/commands.md` 记录复现实验命令，`paper/evidence_audit.md` 记录论文数值来源。
 
 编译 LaTeX PDF：
 

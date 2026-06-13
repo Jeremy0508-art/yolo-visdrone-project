@@ -592,6 +592,20 @@ paper/CEA_REVIEWER_RESPONSE_PREP.md
 paper/cea_reviewer_response_prep_audit.md
 ```
 
+Build and audit the post-result manuscript rewrite playbook:
+
+```powershell
+python tools/build_cea_post_result_rewrite_playbook.py
+python tools/check_cea_post_result_rewrite_playbook.py
+```
+
+Generated files:
+
+```text
+paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md
+paper/cea_post_result_rewrite_playbook_audit.md
+```
+
 Check local artifact completeness for synced fair-comparison experiments:
 
 ```powershell

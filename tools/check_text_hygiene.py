@@ -22,6 +22,8 @@ CHECKED_FILES = [
     "paper/CEA_SUBMISSION_RISK_REGISTER.md",
     "paper/CEA_REVIEWER_RESPONSE_PREP.md",
     "paper/cea_reviewer_response_prep_audit.md",
+    "paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md",
+    "paper/cea_post_result_rewrite_playbook_audit.md",
     "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md",
     "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md",
     "paper/reference_verification_matrix.md",

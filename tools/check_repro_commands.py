@@ -45,6 +45,8 @@ REQUIRED_COMMANDS = [
     ("Submission risk register audit", r"python\s+tools/check_submission_risk_register\.py"),
     ("CEA reviewer response prep builder", r"python\s+tools/build_cea_reviewer_response_prep\.py"),
     ("CEA reviewer response prep audit", r"python\s+tools/check_cea_reviewer_response_prep\.py"),
+    ("CEA post-result rewrite playbook builder", r"python\s+tools/build_cea_post_result_rewrite_playbook\.py"),
+    ("CEA post-result rewrite playbook audit", r"python\s+tools/check_cea_post_result_rewrite_playbook\.py"),
     ("Synced fair-experiment artifacts audit", r"python\s+tools/check_synced_fair_experiment_artifacts\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("Project README presentation audit", r"python\s+tools/check_project_readme_presentation\.py"),

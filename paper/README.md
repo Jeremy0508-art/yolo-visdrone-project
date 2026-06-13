@@ -33,6 +33,7 @@ Recommended ways to read it:
 | `CEA_SECTION_EVIDENCE_MAP.md` | Section-level claim and evidence map for journal manuscript rewriting |
 | `CEA_SUBMISSION_RISK_REGISTER.md` | Submission risk register for CEA-facing reviewer questions and mitigation actions |
 | `CEA_REVIEWER_RESPONSE_PREP.md` | Reviewer-question preparation matrix for CEA-facing manuscript revision and response planning |
+| `CEA_POST_RESULT_REWRITE_PLAYBOOK.md` | Section-by-section rewrite playbook for after completed fair-comparison results are synced |
 | `CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | Generated checklist for the local CEA-oriented manuscript package and remaining submission gates |
 | `CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | Generated manual preflight checklist for final journal-system and package verification |
 | `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
@@ -80,6 +81,7 @@ Recommended ways to read it:
 | `section_evidence_map_audit.md` | Generated audit for section-level claim-to-evidence mapping |
 | `submission_risk_register_audit.md` | Generated audit for submission risk IDs, evidence paths, and mitigation coverage |
 | `cea_reviewer_response_prep_audit.md` | Generated audit for reviewer-question coverage, evidence paths, and response boundaries |
+| `cea_post_result_rewrite_playbook_audit.md` | Generated audit for post-result rewrite-section coverage and claim boundaries |
 | `synced_fair_experiment_artifacts_audit.md` | Generated audit for local artifacts required by completed fair-comparison experiments |
 | `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
 | `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
