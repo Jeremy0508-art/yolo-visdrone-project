@@ -56,6 +56,11 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Verified that old speed values `13.785`, `72.54`, `17.733`, and `56.39` no longer appear in Markdown, LaTeX, or HTML paper files.
   - Ran `python tools/audit_submission_readiness.py`; the audit report was regenerated successfully.
   - Pushed GitHub commit `e1e4b0f` with message `Add CEA full submission execution plan`.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 11 completed epochs.
+  - Training PID `43554` was still active with elapsed time about 1 hour 29 minutes.
+  - Queue PID `43842` was still waiting for subsequent experiments.
+  - This remains a partial run and has not been synchronized into paper tables.
 
 ## Evidence Rules
 
