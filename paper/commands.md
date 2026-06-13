@@ -196,6 +196,12 @@ Copy completed server runs back to the local project and regenerate paper tables
 .\tools\sync_cea_server_results.ps1 -MinEpochs 100
 ```
 
+Check server-side fair-comparison progress without copying partial results:
+
+```powershell
+.\tools\check_cea_server_status.ps1
+```
+
 Before using synced results in the manuscript, follow:
 
 ```text

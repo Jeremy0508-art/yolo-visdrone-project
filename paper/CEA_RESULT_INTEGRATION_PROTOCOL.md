@@ -37,6 +37,12 @@ Use the guarded sync script from the local workstation:
 
 The script checks each remote run before copying. A run marked `PARTIAL:<epochs>` is skipped. This behavior is required and should not be bypassed for paper-facing tables.
 
+To inspect progress without copying partial outputs, use:
+
+```powershell
+.\tools\check_cea_server_status.ps1
+```
+
 ## 4. Post-Sync Regeneration
 
 After at least one completed run is copied back, regenerate the evidence set:

@@ -79,6 +79,11 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_MANUSCRIPT_UPDATE_QUEUE.md` to define the exact manuscript update order after fair-comparison results finish.
   - Updated `tools/audit_submission_readiness.py` so the manuscript update queue is audited.
   - Regenerated `paper/submission_readiness_audit.md`; the audit now checks 39 items, with 5 pending fair experiments and 0 missing items.
+- Local server-monitoring update:
+  - Added `tools/check_cea_server_status.ps1` to check server-side fair-comparison progress without copying partial runs.
+  - Verified the script against the server. It reported `baseline_yolo11n_960_visdrone` as `PARTIAL` with 13 completed epochs, while subsequent queued run directories had not started yet.
+  - Training PID `43554` and queue PID `43842` were both still active.
+  - No partial metrics were synchronized into paper tables.
 
 ## Evidence Rules
 

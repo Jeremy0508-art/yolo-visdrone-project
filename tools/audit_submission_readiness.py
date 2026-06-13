@@ -135,6 +135,23 @@ def audit() -> list[Check]:
             )
         )
 
+    tool_files = [
+        ("Server status checker", "tools/check_cea_server_status.ps1"),
+        ("Guarded server result sync", "tools/sync_cea_server_results.ps1"),
+        ("Paper table exporter", "tools/export_paper_tables.py"),
+        ("Readiness audit script", "tools/audit_submission_readiness.py"),
+    ]
+    for item, path in tool_files:
+        checks.append(
+            Check(
+                "Tools",
+                item,
+                "ready" if exists(path) else "missing",
+                path,
+                "" if exists(path) else f"Create {path}",
+            )
+        )
+
     exp_rows = read_csv("paper/tables/cea_experiment_status.csv")
     for row in exp_rows:
         status = row.get("status", "")
