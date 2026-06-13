@@ -24,6 +24,8 @@
 \newcommand{\YOLOPtwoCA}{\mbox{YOLO11n-P2-CA}}
 \newcommand{\YOLOPtwoCANine}{\mbox{YOLO11n-P2-CA-960}}
 \newcommand{\YOLOPtwoCASmall}{\mbox{YOLO11n-P2-CA-SmallObjAug}}
+\newcommand{\YOLOEightN}{\mbox{YOLOv8n}}
+\newcommand{\YOLOElevenS}{\mbox{YOLO11s}}
 \newcommand{\CoordAtt}{\mbox{CoordAttention}}
 
 \title{\heiti 面向无人机航拍小目标检测的轻量化 YOLO11n 改进方法}
@@ -34,7 +36,7 @@
 \maketitle
 
 \begin{abstract}
-无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的轻量化改进模型。该方法通过 P2 分支增强浅层高分辨率特征利用，通过 \CoordAtt{} 引入方向位置敏感信息，并通过较高输入分辨率提高小目标在输入图像和特征图中的有效像素占比。实验结果表明，在当前实验设置下，960 输入分辨率是性能增益的主要来源，P2 分支和 \CoordAtt{} 提供轻量级结构补充。最终，\YOLOPtwoCANine{} 在 VisDrone 验证集上取得最佳 mAP50 0.420 和 mAP50-95 0.252，较 \YOLOBase{} 基线分别提升 9.84 和 6.94 个百分点；单图推理测试达到 56.39 FPS，体现出一定的精度与速度折中。
+无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的轻量化改进模型。该方法通过 P2 分支增强浅层高分辨率特征利用，通过 \CoordAtt{} 引入方向位置敏感信息，并通过较高输入分辨率提高小目标在输入图像和特征图中的有效像素占比。实验结果表明，在当前实验设置下，960 输入分辨率是性能增益的主要来源，P2 分支和 \CoordAtt{} 提供轻量级结构补充。最终，\YOLOPtwoCANine{} 在 VisDrone 验证集上取得最佳 mAP50 0.420 和 mAP50-95 0.252，较 \YOLOBase{} 基线分别提升 9.84 和 6.94 个百分点；单图推理测试达到 19.68 FPS，体现出一定的精度与速度折中。
 
 \noindent\textbf{关键词：}无人机目标检测；小目标检测；\YOLOBase{}；\CoordAtt{}；VisDrone
 \end{abstract}
@@ -50,7 +52,7 @@ YOLO 系列检测器具有端到端推理、速度快和部署方便等特点，
 \begin{enumerate}
   \item 构建 \YOLOPtwoCA{} 模型，在轻量化基线基础上引入 P2 高分辨率检测分支和 \CoordAtt{} 注意力模块，以增强浅层高分辨率特征和位置敏感表达。
   \item 系统比较 \YOLOBase{}、\YOLOPtwo{}、\YOLOPtwoCA{}、\YOLOPtwoCANine{} 和 \YOLOPtwoCASmall{}，所有数值均来自真实训练日志、验证结果文件或速度测试脚本。
-  \item 从检测精度、消融实验、模型复杂度、推理速度、类别级结果和可视化案例等方面整理可复现实验材料，并讨论不同改进项在当前实验设置下的作用边界。
+  \item 从检测精度、消融实验、模型复杂度、推理速度、类别级结果和可视化案例等方面整理可复现实验材料，并补充 \YOLOEightN{} 与 \YOLOElevenS{} 外部参考基线，讨论不同改进项在当前实验设置下的作用边界。
 \end{enumerate}
 
 \section{相关工作}
@@ -154,7 +156,7 @@ $\downarrow$ \\
 数据集 & VisDrone2019-DET \\
 训练轮数 & 100 epochs \\
 输入尺寸 & 640 / 960 \\
-GPU & NVIDIA GeForce RTX 4060 Laptop GPU, 8 GB \\
+GPU & 本地测速环境为 NVIDIA GeForce RTX 4060 Laptop GPU, 8 GB；外部基线训练使用租用服务器 NVIDIA GeForce RTX 4090 D \\
 CUDA 版本 & 12.8 \\
 Python 版本 & 3.12.7 \\
 PyTorch 版本 & 2.7.0+cu128 \\
@@ -174,7 +176,7 @@ NMS 设置 & 采用 Ultralytics 默认验证流程；现有日志记录 \texttt{
 
 \subsection{主实验结果}
 
-表 \ref{tab:main_results} 给出了不同模型在 VisDrone 验证集上的检测结果。引入 P2 检测头后，最佳 mAP50 从 0.322 提升到 0.330，最佳 mAP50-95 从 0.182 提升到 0.190，说明浅层高分辨率特征对无人机小目标检测有一定帮助。加入 \CoordAtt{} 后，最佳 mAP50 和 mAP50-95 分别达到 0.331 和 0.190，较 P2 模型继续小幅提升。进一步将输入尺寸提升至 960 后，\YOLOPtwoCANine{} 取得当前已完成实验中的最佳性能，mAP50 为 0.420，mAP50-95 为 0.252。该结果表明，在当前实验设置下，高分辨率输入是性能提升的主要来源。
+表 \ref{tab:main_results} 给出了不同模型在 VisDrone 验证集上的检测结果。引入 P2 检测头后，最佳 mAP50 从 0.322 提升到 0.330，最佳 mAP50-95 从 0.182 提升到 0.190，说明浅层高分辨率特征对无人机小目标检测有一定帮助。加入 \CoordAtt{} 后，最佳 mAP50 和 mAP50-95 分别达到 0.331 和 0.190，较 P2 模型继续小幅提升。进一步将输入尺寸提升至 960 后，\YOLOPtwoCANine{} 取得当前已完成 \YOLOBase{} 主线实验中的最佳性能，mAP50 为 0.420，mAP50-95 为 0.252。该结果表明，在当前实验设置下，高分辨率输入是性能提升的主要来源。
 
 \begin{table}[htbp]
 \centering
@@ -197,6 +199,31 @@ NMS 设置 & 采用 Ultralytics 默认验证流程；现有日志记录 \texttt{
 \end{table}
 
 表中 GFLOPs@640 表示模型结构在 640 输入尺寸下的统计结果。对于 960 输入实验，实际计算量会随输入分辨率增加；由于当前已有日志仅可靠记录 640 统计值，本文不将 10.7 GFLOPs 表述为 960 输入下的实际计算量。
+
+\subsection{外部参考基线对比}
+
+为避免仅在 \YOLOBase{} 内部进行比较带来的局限，本文补充训练了 \YOLOEightN{} 和 \YOLOElevenS{} 两个外部参考基线，结果如表 \ref{tab:external_baseline} 所示。其中，\YOLOEightN{} 用于提供常见轻量 YOLO 模型参考，\YOLOElevenS{} 用于观察更大模型容量对 VisDrone 验证集结果的影响。需要说明的是，表 \ref{tab:external_baseline} 并不作为 P2 分支、\CoordAtt{} 或 960 输入分辨率的单因素消融依据，因为这些模型在基础架构、参数量和输入设置上并不完全一致。
+
+从结果看，\YOLOEightN{} 与 \YOLOBase{} 的性能接近，其最佳 mAP50 和 mAP50-95 分别为 0.325 和 0.184，略高于 \YOLOBase{} 的 0.322 和 0.182。\YOLOElevenS{} 的最佳 mAP50 和 mAP50-95 分别达到 0.389 和 0.227，明显高于 nano 级基线，说明增加模型容量能够提升 VisDrone 检测精度。但 \YOLOElevenS{} 的参数量约为 9.432M，高于 \YOLOPtwoCANine{} 的 2.904M；而 \YOLOPtwoCANine{} 在更高输入分辨率下取得 0.420 mAP50 和 0.252 mAP50-95。该结果说明本文最终模型体现的是结构增强与高分辨率输入共同作用下的整体效果，而不能简单解释为单个模块相对外部基线的绝对优势。
+
+\begin{table}[htbp]
+\centering
+\caption{外部参考基线在 VisDrone 验证集上的结果}
+\label{tab:external_baseline}
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+方法 & 输入尺寸 & Params/M & GFLOPs@640 & P & R & mAP50 / mAP50-95 \\
+\midrule
+\YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 0.448 & 0.346 & 0.325 / 0.184 \\
+\YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 0.524 & 0.393 & 0.389 / 0.227 \\
+\YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\
+\YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}
 
 \begin{figure}[htbp]
 \centering
@@ -260,7 +287,7 @@ motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\
 
 \subsection{推理速度与模型复杂度}
 
-表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。原始 \YOLOBase{} 的平均延迟为 13.79 ms，FPS 为 72.54。\YOLOPtwoCA{} 在 640 输入下平均延迟为 15.35 ms，FPS 为 65.16，说明 P2 分支和注意力模块带来一定额外开销，但整体仍保持较高速度。\YOLOPtwoCANine{} 的平均延迟为 17.73 ms，FPS 为 56.39。虽然 960 输入降低了推理速度，但其验证集精度提升更明显，因此更适合对小目标检测精度要求较高且仍需较快推理速度的场景。
+表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时，包含预处理、推理和后处理开销。原始 \YOLOBase{} 的平均延迟为 40.09 ms，FPS 为 24.94。\YOLOPtwoCA{} 在 640 输入下平均延迟为 45.77 ms，FPS 为 21.85，说明 P2 分支和注意力模块会带来一定额外开销。\YOLOPtwoCANine{} 的平均延迟为 50.81 ms，FPS 为 19.68。虽然 960 输入降低了推理速度，但其验证集精度提升更明显，因此更适合对小目标检测精度要求较高且仍需保持一定推理效率的场景。
 
 \begin{table}[htbp]
 \centering
@@ -272,11 +299,13 @@ motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\
 \toprule
 方法 & 输入尺寸 & Params/M & GFLOPs@640 & 权重/MB & 平均延迟/ms & FPS \\
 \midrule
-\YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 13.79 & 72.54 \\
-\YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 14.55 & 68.74 \\
-\YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 15.35 & 65.16 \\
-\YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 15.43 & 64.81 \\
-\YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 17.73 & 56.39 \\
+\YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 42.29 & 23.65 \\
+\YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 38.97 & 25.66 \\
+\YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 40.09 & 24.94 \\
+\YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 43.64 & 22.91 \\
+\YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 45.77 & 21.85 \\
+\YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 49.96 & 20.02 \\
+\YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 50.81 & 19.68 \\
 \bottomrule
 \end{tabular}
 }
@@ -322,7 +351,7 @@ bicycle / motor 混淆 & 非机动车在航拍视角下轮廓相似 \\
 
 \section{结论}
 
-本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，\CoordAtt{} 在 P2 基础上带来一定但相对有限的补充提升，而 960 输入分辨率是当前实验设置中最主要的性能增益来源。最终，\YOLOPtwoCANine{} 在 VisDrone 验证集上取得最佳 mAP50 0.420 和 mAP50-95 0.252，并保持 56.39 FPS 的单图推理速度。
+本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，\CoordAtt{} 在 P2 基础上带来一定但相对有限的补充提升，而 960 输入分辨率是当前实验设置中最主要的性能增益来源。最终，\YOLOPtwoCANine{} 在 VisDrone 验证集上取得最佳 mAP50 0.420 和 mAP50-95 0.252，并保持 19.68 FPS 的单图推理速度。外部基线结果显示，\YOLOElevenS{} 作为更大容量模型能够显著提升检测精度，但本文最终模型在更小参数规模下结合高分辨率输入取得了更高验证集指标；该比较主要用于说明精度--速度--模型规模关系，而不作为单一模块有效性的直接证明。
 
 当前结果说明，高分辨率输入对无人机小目标检测非常关键，轻量级 P2 分支和位置敏感注意力可以作为结构层面的辅助增强。后续工作可进一步探索更稳定的小目标损失函数、面向密集目标的后处理优化以及官方测试集评估，以增强方法在不同评测协议下的说服力。
 
