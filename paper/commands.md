@@ -309,6 +309,20 @@ Generated file:
 paper/figures/method/hrpca_yolo11n_overview.png
 ```
 
+## Submission Readiness Audit
+
+Generate a local readiness audit for paper-facing artifacts and pending fair-comparison experiments:
+
+```powershell
+python tools/audit_submission_readiness.py
+```
+
+Generated file:
+
+```text
+paper/submission_readiness_audit.md
+```
+
 Object scale distribution from YOLO-format labels:
 
 ```powershell

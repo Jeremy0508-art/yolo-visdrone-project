@@ -47,6 +47,7 @@ Recommended ways to read it:
 | `figure_index.md` | Full figure provenance index |
 | `evidence_audit.md` | Paper-facing number and evidence audit |
 | `submission_checklist.md` | Pre-submission checklist and template migration notes |
+| `submission_readiness_audit.md` | Generated local readiness audit for paper-facing artifacts and pending fair experiments |
 | `references.md` | Reference list draft |
 | `commands.md` | Reproducibility commands |
 | `experiment_protocol.md` | Experimental protocol and evidence rules |
@@ -54,7 +55,6 @@ Recommended ways to read it:
 | `tables/object_scale_distribution.csv` | Object scale distribution from YOLO-format VisDrone labels |
 | `tables/scale_group_results.csv` | Thresholded scale-group validation matching results |
 | `tables/accuracy_speed_tradeoff.csv` | Source table for the accuracy-speed-parameter trade-off figure |
-| `references.md` | Reference candidates and citation-use notes for the journal manuscript |
 
 ## Evidence Rule
 
