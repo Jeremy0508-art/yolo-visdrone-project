@@ -46,6 +46,7 @@ REQUIRED_COMMANDS = [
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("Project README presentation audit", r"python\s+tools/check_project_readme_presentation\.py"),
     ("PDF text readability audit", r"python\s+tools/check_pdf_text_readability\.py"),
+    ("PDF layout health audit", r"python\s+tools/check_pdf_layout_health\.py"),
     ("Advisor progress brief builder", r"python\s+tools/build_advisor_progress_brief\.py"),
     ("Advisor progress brief audit", r"python\s+tools/check_advisor_progress_brief\.py"),
     ("CEA submission package checklist", r"python\s+tools/build_cea_submission_package_checklist\.py"),

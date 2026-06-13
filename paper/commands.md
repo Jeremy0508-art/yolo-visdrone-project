@@ -379,6 +379,7 @@ paper/submission_risk_register_audit.md
 paper/text_hygiene_audit.md
 paper/project_readme_presentation_audit.md
 paper/pdf_text_readability_audit.md
+paper/pdf_layout_health_audit.md
 paper/advisor_progress_brief.md
 paper/advisor_progress_brief_audit.md
 paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md
@@ -458,6 +459,18 @@ Generated file:
 
 ```text
 paper/pdf_text_readability_audit.md
+```
+
+Check the compiled PDF for basic layout health:
+
+```powershell
+python tools/check_pdf_layout_health.py
+```
+
+Generated file:
+
+```text
+paper/pdf_layout_health_audit.md
 ```
 
 Regenerate the advisor-facing progress brief:

@@ -81,6 +81,7 @@ Recommended ways to read it:
 | `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |
 | `project_readme_presentation_audit.md` | Generated audit for repository-level README presentation quality |
 | `pdf_text_readability_audit.md` | Generated audit for compiled PDF text extraction and basic readability tokens |
+| `pdf_layout_health_audit.md` | Generated audit for compiled PDF page count, page size, blank pages, and figure-heavy pages |
 | `submission_material_manifest.md` | Generated index of current submission-facing documents, tables, figures, and audits |
 | `submission_audit_dashboard.md` | Generated one-page dashboard summarizing paper-facing audits |
 | `references.md` | Reference list draft |

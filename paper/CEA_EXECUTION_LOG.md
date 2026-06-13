@@ -429,6 +429,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/check_project_readme_presentation.py` and generated `paper/project_readme_presentation_audit.md`.
   - The audit checks that the repository-level README reads like a project introduction for advisors or reviewers, includes key project sections and paper-material links, and avoids placeholder/progress-report/unsupported-certainty wording.
   - Integrated the audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, command notes, and paper workspace README.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 43 completed epochs.
+  - Latest partial row: epoch 43, `mAP50=0.018843`, `mAP50-95=0.00628101`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- PDF layout health audit:
+  - Added `tools/check_pdf_layout_health.py` and generated `paper/pdf_layout_health_audit.md`.
+  - The audit checks compiled-PDF freshness, page count, page-size consistency, blank pages, low-text non-media pages, figure-dominant pages, image-heavy pages, and extracted text volume.
+  - Current PDF layout health result: 9 checks, 9 ready, 0 partial, 0 missing.
+  - Integrated the audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
 
 ## Evidence Rules
 

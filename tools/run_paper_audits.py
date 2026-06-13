@@ -25,6 +25,7 @@ AUDIT_STEPS = [
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
     ("Project README presentation audit", "tools/check_project_readme_presentation.py"),
     ("PDF text readability audit", "tools/check_pdf_text_readability.py"),
+    ("PDF layout health audit", "tools/check_pdf_layout_health.py"),
     ("Advisor progress brief", "tools/build_advisor_progress_brief.py"),
     ("Advisor progress brief audit", "tools/check_advisor_progress_brief.py"),
     ("CEA submission package checklist", "tools/build_cea_submission_package_checklist.py"),
