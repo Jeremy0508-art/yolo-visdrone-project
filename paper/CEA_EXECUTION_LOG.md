@@ -313,7 +313,7 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
 - Final CEA submission execution plan:
   - Added `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` as the highest-priority route for pushing the project to formal 《计算机工程与应用》 submission readiness.
   - Integrated the final plan into `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, and `paper/README.md`.
-  - Latest server status remained `baseline_yolo11n_960_visdrone` at 31 completed epochs; this is still partial progress and has not been synchronized into paper-facing result tables.
+  - Latest server status reached `baseline_yolo11n_960_visdrone` at 32 completed epochs; this is still partial progress and has not been synchronized into paper-facing result tables.
 
 ## Evidence Rules
 

@@ -34,7 +34,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Tables | Scale-group matching table | READY | `paper/tables/scale_group_results.csv` | 6 data rows |
 | Tables | Accuracy-speed trade-off table | READY | `paper/tables/accuracy_speed_tradeoff.csv` | 7 data rows |
 | Tables | Fair experiment status table | READY | `paper/tables/cea_experiment_status.csv` | 5 data rows |
-| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 30 data rows |
+| Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 35 data rows |
 | Figures | Method overview figure | READY | `paper/figures/method/hrpca_yolo11n_overview.png` | 127.7 KB |
 | Figures | Training curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_results.png` | 243.1 KB |
 | Figures | PR curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | 333.9 KB |
