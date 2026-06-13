@@ -18,6 +18,7 @@ CHECKED_FILES = [
     "paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md",
     "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md",
     "paper/CEA_RESULT_INTERPRETATION_MATRIX.md",
+    "paper/CEA_SECTION_EVIDENCE_MAP.md",
     "paper/reference_verification_matrix.md",
     "paper/manuscript_submission_candidate.tex",
     "paper/manuscript_journal_gap_audit.md",

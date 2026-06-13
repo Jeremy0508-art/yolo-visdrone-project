@@ -63,6 +63,7 @@ def build_materials() -> list[Material]:
         ("Paper workspace README", "paper/README.md"),
         ("Final CEA submission execution plan", "paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md"),
         ("CEA result interpretation matrix", "paper/CEA_RESULT_INTERPRETATION_MATRIX.md"),
+        ("CEA section evidence map", "paper/CEA_SECTION_EVIDENCE_MAP.md"),
         ("Submission checklist", "paper/submission_checklist.md"),
         ("Reproducibility commands", "paper/commands.md"),
         ("Result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),

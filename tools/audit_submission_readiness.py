@@ -52,6 +52,7 @@ def audit() -> list[Check]:
     required_docs = [
         ("Final CEA submission execution plan", "paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md"),
         ("CEA result interpretation matrix", "paper/CEA_RESULT_INTERPRETATION_MATRIX.md"),
+        ("CEA section evidence map", "paper/CEA_SECTION_EVIDENCE_MAP.md"),
         ("CEA submission readiness 100 plan", "paper/CEA_SUBMISSION_READINESS_100_PLAN.md"),
         ("CEA full submission execution plan", "paper/CEA_FULL_SUBMISSION_EXECUTION_PLAN.md"),
         ("Master journal plan", "paper/CEA_JOURNAL_MASTER_PLAN.md"),

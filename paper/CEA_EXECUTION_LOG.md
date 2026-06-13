@@ -318,6 +318,10 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` to define how the manuscript should change under different fair-comparison outcomes.
   - Integrated the matrix into the material manifest, submission readiness audit, text hygiene audit, and paper workspace README.
   - The matrix adds no new result values; it is a pre-registered writing and evidence decision rule for post-sync manuscript updates.
+- Section evidence map:
+  - Added `paper/CEA_SECTION_EVIDENCE_MAP.md` to map each planned journal-manuscript section to allowed claims, required evidence sources, current status, and writing boundaries.
+  - Integrated the evidence map into the material manifest, submission readiness audit, text hygiene audit, and paper workspace README.
+  - Latest server status reached `baseline_yolo11n_960_visdrone` at 33 completed epochs; this remains partial progress and has not been synchronized into paper-facing result tables.
 
 ## Evidence Rules
 
