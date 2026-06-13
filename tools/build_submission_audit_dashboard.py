@@ -18,6 +18,7 @@ AUDIT_REPORTS = [
     ("Section evidence map", "paper/section_evidence_map_audit.md"),
     ("Submission risk register", "paper/submission_risk_register_audit.md"),
     ("LaTeX references", "paper/tex_reference_audit.md"),
+    ("Reference verification", "paper/reference_verification_audit.md"),
     ("LaTeX figures", "paper/tex_figure_audit.md"),
     ("LaTeX table sources", "paper/tex_table_source_audit.md"),
     ("Reproducibility commands", "paper/repro_commands_audit.md"),

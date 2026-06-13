@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIT_STEPS = [
     ("Journal manuscript gap audit", "tools/check_journal_manuscript_gaps.py"),
     ("LaTeX reference audit", "tools/check_tex_references.py"),
+    ("Reference verification audit", "tools/check_reference_verification_matrix.py"),
     ("LaTeX figure audit", "tools/check_tex_figures.py"),
     ("LaTeX table-source audit", "tools/check_tex_table_sources.py"),
     ("Reproducibility command audit", "tools/check_repro_commands.py"),

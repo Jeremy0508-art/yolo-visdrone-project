@@ -47,6 +47,7 @@ Recommended ways to read it:
 | `advisor_progress_brief.md` | Short Chinese progress brief for advisor communication |
 | `failure_case_taxonomy.md` | Failure-mode taxonomy for qualitative manuscript discussion |
 | `reference_verification_matrix.md` | Candidate reference matrix with verification status and manuscript use |
+| `reference_verification_audit.md` | Generated audit linking the reference verification matrix to the LaTeX bibliography |
 | `PROJECT_ROADMAP.md` | Main project-to-paper roadmap and current status |
 | `CEA_SUBMISSION_PLAN.md` | Earlier journal-strengthening plan and experiment matrix |
 | `manuscript_polished.md` | Earlier polished Markdown manuscript draft |

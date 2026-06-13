@@ -370,6 +370,7 @@ paper/tex_figure_audit.md
 paper/tex_table_source_audit.md
 paper/repro_commands_audit.md
 paper/config_inventory_audit.md
+paper/reference_verification_audit.md
 paper/manuscript_number_trace_audit.md
 paper/section_evidence_map_audit.md
 paper/submission_risk_register_audit.md
@@ -438,6 +439,18 @@ Generated file:
 
 ```text
 paper/evidence_audit.md
+```
+
+Check whether the reference verification matrix covers the LaTeX bibliography:
+
+```powershell
+python tools/check_reference_verification_matrix.py
+```
+
+Generated file:
+
+```text
+paper/reference_verification_audit.md
 ```
 
 Trace decimal values in the LaTeX manuscript back to paper tables or documented configuration constants:

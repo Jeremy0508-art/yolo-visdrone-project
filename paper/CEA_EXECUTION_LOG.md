@@ -353,6 +353,16 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/check_submission_risk_register.py` and generated `paper/submission_risk_register_audit.md`.
   - Integrated the risk-register audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
   - Current risk-register audit result: 9 checks, 8 ready, 1 partial, 0 missing. The partial gate is expected because high-risk items R1, R3, and R12 depend on the pending fair-comparison experiments.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 37 completed epochs.
+  - Latest partial row: epoch 37, `mAP50=0.0214728`, `mAP50-95=0.00715761`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- Reference verification audit:
+  - Added `tools/check_reference_verification_matrix.py` and generated `paper/reference_verification_audit.md`.
+  - The audit links `paper/reference_verification_matrix.md` to the LaTeX bibliography and checks core row count, source URLs, verification-oriented statuses, duplicate IDs, candidate-literature separation, and bibliography coverage.
+  - Integrated the audit into `tools/run_paper_audits.py`, `tools/build_submission_audit_dashboard.py`, `tools/build_submission_material_manifest.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `tools/check_text_hygiene.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current reference verification audit result: 8 checks, 8 ready, 0 partial, 0 missing; all 25 LaTeX bibliography entries are covered by matrix rows.
 
 ## Evidence Rules
 
