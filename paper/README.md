@@ -60,6 +60,7 @@ Recommended ways to read it:
 | `manuscript_journal_gap_audit.md` | Generated structural gap audit between the LaTeX candidate and journal manuscript blueprint |
 | `tex_reference_audit.md` | Generated LaTeX citation and bibliography consistency audit |
 | `tex_figure_audit.md` | Generated LaTeX figure path and float-layout audit |
+| `tex_table_source_audit.md` | Generated LaTeX table label and source-provenance audit |
 | `references.md` | Reference list draft |
 | `commands.md` | Reproducibility commands |
 | `experiment_protocol.md` | Experimental protocol and evidence rules |
