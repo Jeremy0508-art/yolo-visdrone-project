@@ -61,6 +61,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Training PID `43554` was still active with elapsed time about 1 hour 29 minutes.
   - Queue PID `43842` was still waiting for subsequent experiments.
   - This remains a partial run and has not been synchronized into paper tables.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 12 completed epochs.
+  - Training PID `43554` was still active with elapsed time about 1 hour 32 minutes.
+  - Queue PID `43842` was still waiting for subsequent experiments.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Local integration safeguard update:
+  - Added `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` to define the evidence gate for server results.
+  - Updated `tools/audit_submission_readiness.py` so the full submission execution plan, execution log, and integration protocol are part of the readiness audit.
+  - Updated `tools/sync_cea_server_results.ps1` so a successful guarded sync also regenerates the readiness audit.
 
 ## Evidence Rules
 

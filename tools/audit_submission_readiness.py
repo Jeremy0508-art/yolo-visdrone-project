@@ -50,9 +50,12 @@ def audit() -> list[Check]:
     checks: list[Check] = []
 
     required_docs = [
+        ("CEA full submission execution plan", "paper/CEA_FULL_SUBMISSION_EXECUTION_PLAN.md"),
         ("Master journal plan", "paper/CEA_JOURNAL_MASTER_PLAN.md"),
         ("CEA gap analysis", "paper/CEA_REVIEW_GAP_ANALYSIS.md"),
         ("Journal manuscript outline", "paper/CEA_JOURNAL_MANUSCRIPT_OUTLINE.md"),
+        ("CEA execution log", "paper/CEA_EXECUTION_LOG.md"),
+        ("CEA result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
         ("Submission checklist", "paper/submission_checklist.md"),

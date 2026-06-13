@@ -96,4 +96,7 @@ Sync-RemoteGlob "$RemoteRoot/runs/logs/cea_server_queue_.log" "runs\logs\"
 Write-Host "Regenerate paper tables from local artifacts."
 Invoke-Checked @("python", "tools\export_paper_tables.py")
 
+Write-Host "Regenerate submission readiness audit."
+Invoke-Checked @("python", "tools\audit_submission_readiness.py")
+
 Write-Host "Done."

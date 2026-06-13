@@ -196,6 +196,12 @@ Copy completed server runs back to the local project and regenerate paper tables
 .\tools\sync_cea_server_results.ps1 -MinEpochs 100
 ```
 
+Before using synced results in the manuscript, follow:
+
+```text
+paper/CEA_RESULT_INTEGRATION_PROTOCOL.md
+```
+
 ### YOLO11n 960 Baseline
 
 ```powershell
