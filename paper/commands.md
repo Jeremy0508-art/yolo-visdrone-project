@@ -578,6 +578,20 @@ Generated file:
 paper/submission_risk_register_audit.md
 ```
 
+Build and audit the reviewer-response preparation matrix:
+
+```powershell
+python tools/build_cea_reviewer_response_prep.py
+python tools/check_cea_reviewer_response_prep.py
+```
+
+Generated files:
+
+```text
+paper/CEA_REVIEWER_RESPONSE_PREP.md
+paper/cea_reviewer_response_prep_audit.md
+```
+
 Check local artifact completeness for synced fair-comparison experiments:
 
 ```powershell

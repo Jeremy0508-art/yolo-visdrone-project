@@ -130,6 +130,7 @@ def build_checks() -> list[PackageCheck]:
         ("Number trace audit", "paper/manuscript_number_trace_audit.md"),
         ("Claim boundary audit", "paper/claim_boundary_audit.md"),
         ("Result interpretation matrix audit", "paper/result_interpretation_matrix_audit.md"),
+        ("Reviewer response prep audit", "paper/cea_reviewer_response_prep_audit.md"),
         ("PDF readability audit", "paper/pdf_text_readability_audit.md"),
         ("PDF layout health audit", "paper/pdf_layout_health_audit.md"),
         ("Synced fair-experiment artifacts audit", "paper/synced_fair_experiment_artifacts_audit.md"),

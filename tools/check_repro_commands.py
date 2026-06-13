@@ -43,6 +43,8 @@ REQUIRED_COMMANDS = [
     ("Manuscript length audit", r"python\s+tools/check_manuscript_length\.py"),
     ("Section evidence map audit", r"python\s+tools/check_section_evidence_map\.py"),
     ("Submission risk register audit", r"python\s+tools/check_submission_risk_register\.py"),
+    ("CEA reviewer response prep builder", r"python\s+tools/build_cea_reviewer_response_prep\.py"),
+    ("CEA reviewer response prep audit", r"python\s+tools/check_cea_reviewer_response_prep\.py"),
     ("Synced fair-experiment artifacts audit", r"python\s+tools/check_synced_fair_experiment_artifacts\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("Project README presentation audit", r"python\s+tools/check_project_readme_presentation\.py"),

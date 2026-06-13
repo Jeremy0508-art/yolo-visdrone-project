@@ -468,6 +468,15 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Added `tools/build_cea_manual_submission_preflight.py` and generated `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md`.
   - The checklist records final manual gates that scripts cannot prove, including official template verification, submission file type, author metadata, funding/statements, final PDF page-by-page review, completed fair-experiment integration, and GitHub public rendering.
   - Integrated the preflight checklist into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and paper workspace README.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 47 completed epochs.
+  - Latest partial row: epoch 47, `mAP50=0.0170112`, `mAP50-95=0.0056704`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper-facing result tables.
+- CEA reviewer response preparation:
+  - Added `tools/build_cea_reviewer_response_prep.py`, `tools/check_cea_reviewer_response_prep.py`, `paper/CEA_REVIEWER_RESPONSE_PREP.md`, and `paper/cea_reviewer_response_prep_audit.md`.
+  - The matrix prepares evidence-bounded answers for likely reviewer questions about novelty, fairness, external baselines, small-object evidence, negative augmentation results, efficiency, reproducibility, validation/test-dev protocol, failure cases, and journal packaging.
+  - Integrated the matrix and audit into the full audit runner, dashboard, material manifest, readiness audit, reproducibility command audit, text hygiene audit, submission package checklist, command notes, and README files.
 
 ## Evidence Rules
 
