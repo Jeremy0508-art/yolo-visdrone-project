@@ -33,6 +33,7 @@ REQUIRED_COMMANDS = [
     ("Paper PDF build", r"\.\\tools\\build_paper_pdf\.ps1"),
     ("Full paper audit runner", r"python\s+tools/run_paper_audits\.py"),
     ("Submission readiness audit", r"python\s+tools/audit_submission_readiness\.py"),
+    ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("Paper consistency audit", r"python\s+tools/check_paper_consistency\.py"),
     ("Per-class validation", r"python\s+tools/val\.py"),
 ]

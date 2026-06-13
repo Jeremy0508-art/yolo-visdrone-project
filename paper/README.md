@@ -63,6 +63,7 @@ Recommended ways to read it:
 | `tex_table_source_audit.md` | Generated LaTeX table label and source-provenance audit |
 | `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
 | `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
+| `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |
 | `submission_audit_dashboard.md` | Generated one-page dashboard summarizing paper-facing audits |
 | `references.md` | Reference list draft |
 | `commands.md` | Reproducibility commands |

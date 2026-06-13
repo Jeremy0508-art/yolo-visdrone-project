@@ -344,6 +344,7 @@ paper/tex_figure_audit.md
 paper/tex_table_source_audit.md
 paper/repro_commands_audit.md
 paper/config_inventory_audit.md
+paper/text_hygiene_audit.md
 paper/paper_consistency_audit.md
 paper/submission_readiness_audit.md
 paper/submission_audit_dashboard.md
@@ -369,6 +370,18 @@ Generated file:
 
 ```text
 paper/submission_readiness_audit.md
+```
+
+Check reader-facing text files for hidden characters and common mojibake fragments:
+
+```powershell
+python tools/check_text_hygiene.py
+```
+
+Generated file:
+
+```text
+paper/text_hygiene_audit.md
 ```
 
 Generate a manuscript/table consistency audit:

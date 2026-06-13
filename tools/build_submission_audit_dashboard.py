@@ -19,6 +19,7 @@ AUDIT_REPORTS = [
     ("LaTeX table sources", "paper/tex_table_source_audit.md"),
     ("Reproducibility commands", "paper/repro_commands_audit.md"),
     ("Config inventory", "paper/config_inventory_audit.md"),
+    ("Text hygiene", "paper/text_hygiene_audit.md"),
     ("Server status snapshot", "paper/cea_server_status_snapshot.md"),
 ]
 

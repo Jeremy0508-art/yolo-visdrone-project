@@ -244,6 +244,18 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Latest partial row: epoch 25, `mAP50=0.0259752`, `mAP50-95=0.00865839`.
   - Training PID `43554` and queue PID `43842` were still active.
   - This remains a partial run and has not been synchronized into paper tables.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 26 completed epochs.
+  - Latest partial row: epoch 26, `mAP50=0.0256505`, `mAP50-95=0.00855018`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Text hygiene audit update:
+  - Rewrote `paper/submission_checklist.md` as a clean Chinese pre-submission checklist.
+  - Added `tools/check_text_hygiene.py` to scan reader-facing paper materials for hidden characters and common mojibake fragments.
+  - Generated `paper/text_hygiene_audit.md`.
+  - Integrated the text hygiene audit into `tools/run_paper_audits.py`, `tools/audit_submission_readiness.py`, `tools/build_submission_audit_dashboard.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
+  - Current text hygiene audit result: 11 checks, 11 ready, 0 missing.
+  - Current submission audit dashboard result: 11 reports, 8 ready, 0 partial, 3 pending, 0 missing.
 
 ## Evidence Rules
 
