@@ -190,7 +190,8 @@ chmod +x tools/run_cea_server_queue.sh
 WAIT_PID=<current_training_pid> nohup tools/run_cea_server_queue.sh > runs/logs/cea_server_queue_$(date +%Y%m%d_%H%M%S).log 2>&1 &
 ```
 
-Copy completed server runs back to the local project and regenerate paper tables:
+Copy completed server runs back to the local project, regenerate paper tables,
+and refresh paper-facing audits:
 
 ```powershell
 .\tools\sync_cea_server_results.ps1 -MinEpochs 100

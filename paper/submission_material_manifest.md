@@ -18,9 +18,9 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.64 MB |
 | Core Documents | Paper workspace README | READY | `paper/README.md` | 6.6 KB |
 | Core Documents | Submission checklist | READY | `paper/submission_checklist.md` | 4.2 KB |
-| Core Documents | Reproducibility commands | READY | `paper/commands.md` | 12.1 KB |
-| Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 4.9 KB |
-| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 22.1 KB |
+| Core Documents | Reproducibility commands | READY | `paper/commands.md` | 12.2 KB |
+| Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
+| Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 22.8 KB |
 | Core Documents | Server status snapshot | READY | `paper/cea_server_status_snapshot.md` | 1.5 KB |
 | Tables | Main comparison table | READY | `paper/tables/main_comparison_for_paper.csv` | 7 data rows |
 | Tables | Ablation table | READY | `paper/tables/ablation_results.csv` | 5 data rows |

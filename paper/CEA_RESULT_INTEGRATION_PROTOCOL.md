@@ -45,15 +45,24 @@ To inspect progress without copying partial outputs, use:
 
 ## 4. Post-Sync Regeneration
 
-After at least one completed run is copied back, regenerate the evidence set:
+After at least one completed run is copied back, `tools/sync_cea_server_results.ps1`
+automatically regenerates the paper tables and then runs the full paper-facing audit
+sequence:
 
 ```powershell
 python tools/export_paper_tables.py
+python tools/run_paper_audits.py
+```
+
+If newly synced models should appear in speed, per-class, scale-group, or trade-off
+analyses, regenerate those specific artifacts before the final manuscript rewrite:
+
+```powershell
 python tools/benchmark_speed.py --warmup 10 --samples 100 --output paper/tables/speed_results.csv
 python tools/collect_per_class_metrics.py
 python tools/evaluate_scale_groups.py --device 0 --output paper/tables/scale_group_results.csv
 python tools/plot_accuracy_speed_tradeoff.py
-python tools/audit_submission_readiness.py
+python tools/run_paper_audits.py
 ```
 
 Speed tests should be rerun under one consistent local hardware setting when possible. If a model cannot be speed-tested locally because of missing weights or memory limits, leave its speed cell out of the paper-facing comparison rather than estimating it.

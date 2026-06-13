@@ -280,6 +280,14 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Generated `paper/submission_material_manifest.md`; current result: 37 materials, 37 ready, 0 missing.
   - Integrated the manifest into `tools/run_paper_audits.py`, `tools/audit_submission_readiness.py`, `tools/check_repro_commands.py`, `paper/commands.md`, and `paper/README.md`.
   - Regenerated all paper-facing audits with `python tools/run_paper_audits.py`.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 28 completed epochs.
+  - Latest partial row: epoch 28, `mAP50=0.0249705`, `mAP50-95=0.00832349`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
+- Server-result sync workflow update:
+  - Updated `tools/sync_cea_server_results.ps1` so successful guarded sync now runs `python tools/run_paper_audits.py` after regenerating paper tables.
+  - Updated `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` to distinguish automatic post-sync table/audit regeneration from hardware-dependent speed, per-class, scale-group, and trade-off regeneration.
 
 ## Evidence Rules
 
