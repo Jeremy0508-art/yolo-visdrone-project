@@ -35,6 +35,19 @@ This matrix tracks candidate references for the 《计算机工程与应用》 j
 | Chinese journal references | Recent Chinese improved-YOLO target-detection papers | Prefer 《计算机工程与应用》 or similar Chinese journals, but verify title and metadata manually |
 | Dense detection post-processing | NMS/Soft-NMS or dense-scene post-processing | Useful only if discussion expands post-processing limitations |
 
+## Chinese Journal Candidates
+
+These items were found through web search as relevant 《计算机工程与应用》 or adjacent Chinese-journal leads. They are useful for positioning, but must be verified against CNKI, Wanfang, the journal site, or an institutional database before entering the final bibliography.
+
+| ID | Topic | Candidate Source | URL or Search Lead | Manuscript Use | Status |
+| --- | --- | --- | --- | --- | --- |
+| CJ01 | YOLO survey | 面向通用目标检测的YOLO方法研究综述，《计算机工程与应用》，2024，60(21):38-54 | https://dianda.cqvip.com/Qikan/Article/Detail?id=7113226431 | YOLO family related work and taxonomy | Search lead found; verify metadata |
+| CJ02 | UAV YOLOv8 | 优化改进YOLOv8无人机视角下目标检测算法，《计算机工程与应用》相关引用条目 | https://front-sci.com/journal/article?doi=10.12238%2Facair.v3i1.11894 | UAV-view YOLO comparison framing | Search lead found; verify metadata |
+| CJ03 | UAV small object YOLOv5 | 改进YOLOv5的无人机影像小目标检测算法，《计算机工程与应用》，2023，59(9):198-206 | https://search.ebscohost.com/login.aspx?AN=163829120 | UAV small-object writing and experiment matrix | Search lead found; verify metadata |
+| CJ04 | UAV small object YOLOv8 | 改进YOLOv8的无人机航拍小目标检测算法，《计算机工程与应用》，2025年第11期检索条目 | https://cnki.istiz.org.cn/kcms/detail/detail.aspx?dbcode=CJFD&dbname=CJFD2025&filename=JSGG202511009 | Multi-scale fusion and lightweight UAV small-object positioning | Search lead found; verify metadata |
+| CJ05 | Lightweight object detection | LMUAV-YOLOv8: low-altitude UAV lightweight network, 《计算机工程与应用》，2025，61(3):94-110 | Search result from PDF reference list | Lightweight UAV detection comparison | Search lead found; verify metadata |
+| CJ06 | Improved YOLOv5 UAV small object | 改进YOLOv5的无人机小目标检测方法研究，《计算机工程与应用》，2024，60(10):276-284 | Search result from PDF reference list | Related work for UAV small targets | Search lead found; verify metadata |
+
 ## Rules
 
 1. Do not copy literature-reported metrics into the main experiment table unless the training and evaluation protocol is identical.

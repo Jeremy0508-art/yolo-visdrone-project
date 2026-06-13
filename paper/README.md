@@ -35,6 +35,7 @@ Recommended ways to read it:
 | `cea_server_status_snapshot.md` | Generated read-only snapshot of server fair-comparison progress |
 | `CEA_JOURNAL_MASTER_PLAN.md` | Master plan for the 《计算机工程与应用》 journal submission track |
 | `CEA_REVIEW_GAP_ANALYSIS.md` | Gap analysis against Chinese YOLO journal-paper writing patterns |
+| `CEA_JOURNAL_STYLE_BENCHMARK.md` | Journal-style benchmark checklist for CEA YOLO small-object papers |
 | `CEA_JOURNAL_MANUSCRIPT_OUTLINE.md` | Section-by-section outline for expanding the paper into a journal manuscript |
 | `advisor_progress_brief.md` | Short Chinese progress brief for advisor communication |
 | `failure_case_taxonomy.md` | Failure-mode taxonomy for qualitative manuscript discussion |

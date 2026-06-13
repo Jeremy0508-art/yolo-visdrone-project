@@ -54,6 +54,7 @@ def audit() -> list[Check]:
         ("CEA full submission execution plan", "paper/CEA_FULL_SUBMISSION_EXECUTION_PLAN.md"),
         ("Master journal plan", "paper/CEA_JOURNAL_MASTER_PLAN.md"),
         ("CEA gap analysis", "paper/CEA_REVIEW_GAP_ANALYSIS.md"),
+        ("CEA journal style benchmark", "paper/CEA_JOURNAL_STYLE_BENCHMARK.md"),
         ("Journal manuscript outline", "paper/CEA_JOURNAL_MANUSCRIPT_OUTLINE.md"),
         ("CEA execution log", "paper/CEA_EXECUTION_LOG.md"),
         ("CEA server status snapshot", "paper/cea_server_status_snapshot.md"),
