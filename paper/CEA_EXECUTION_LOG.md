@@ -239,6 +239,11 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Regenerated all paper-facing audits with `python tools/run_paper_audits.py`.
   - Current LaTeX reference audit result: 7 checks, 7 ready, 0 partial, 0 missing.
   - Current journal manuscript gap audit result: 17 checks, 15 ready, 1 partial, 1 pending, 0 missing.
+- Latest server status check:
+  - `baseline_yolo11n_960_visdrone/results.csv` recorded 25 completed epochs.
+  - Latest partial row: epoch 25, `mAP50=0.0259752`, `mAP50-95=0.00865839`.
+  - Training PID `43554` and queue PID `43842` were still active.
+  - This remains a partial run and has not been synchronized into paper tables.
 
 ## Evidence Rules
 
