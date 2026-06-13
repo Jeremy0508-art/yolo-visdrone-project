@@ -128,6 +128,7 @@
 
 - `paper/CEA_JOURNAL_MASTER_PLAN.md`
 - `paper/CEA_REVIEW_GAP_ANALYSIS.md`
+- `paper/CEA_JOURNAL_MANUSCRIPT_OUTLINE.md`
 - 更新后的 README 和 paper README
 - GitHub 同步提交
 
