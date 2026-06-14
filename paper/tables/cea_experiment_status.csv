@@ -1,5 +1,5 @@
 experiment,priority,config,run_dir,status,server_log,metric_source,notes
-YOLO11n-960,A1,configs/train/baseline_yolo11n_960.yaml,runs/detect/baseline_yolo11n_960_visdrone,running,runs/logs/train_baseline_yolo11n_960_20260613_220108.log,,Fair resolution baseline for YOLO11n
+YOLO11n-960,A1,configs/train/baseline_yolo11n_960.yaml,runs/detect/baseline_yolo11n_960_visdrone,completed,runs/logs/train_baseline_yolo11n_960_20260613_220108.log,runs/detect/baseline_yolo11n_960_visdrone/results.csv,Fair resolution baseline for YOLO11n
 YOLO11n-P2-960,A2,configs/train/yolo11n_p2_960.yaml,runs/detect/yolo11n_p2_960_visdrone,queued,runs/logs/cea_server_queue_.log,,Fair high-resolution P2 comparison
 YOLOv8n-960,A4,configs/train/baseline_yolov8n_960.yaml,runs/detect/baseline_yolov8n_960_visdrone,queued,runs/logs/cea_server_queue_.log,,High-resolution YOLOv8n external baseline
 YOLO11s-960,A5,configs/train/baseline_yolo11s_960.yaml,runs/detect/baseline_yolo11s_960_visdrone,queued,runs/logs/cea_server_queue_.log,,High-resolution stronger-capacity YOLO11 baseline

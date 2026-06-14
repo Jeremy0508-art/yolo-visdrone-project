@@ -6,9 +6,9 @@ Pending/running/queued experiments are treated as progress gates, not missing lo
 
 ## Summary
 
-- Total checks: 6
-- Ready: 1
-- Pending: 5
+- Total checks: 13
+- Ready: 9
+- Pending: 4
 - Missing: 0
 
 ## Checks
@@ -16,7 +16,14 @@ Pending/running/queued experiments are treated as progress gates, not missing lo
 | Experiment | Item | Status | Evidence | Action |
 | --- | --- | --- | --- | --- |
 | fair-experiment-matrix | Experiment status table | READY | `paper\tables\cea_experiment_status.csv (5 rows)` |  |
-| YOLO11n-960 | Completion status | PENDING | `running | runs/detect/baseline_yolo11n_960_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
+| YOLO11n-960 | Completion status | READY | `completed | runs/detect/baseline_yolo11n_960_visdrone` |  |
+| YOLO11n-960 | Run directory | READY | `runs/detect/baseline_yolo11n_960_visdrone` |  |
+| YOLO11n-960 | results.csv | READY | `runs/detect/baseline_yolo11n_960_visdrone/results.csv` |  |
+| YOLO11n-960 | args.yaml | READY | `runs/detect/baseline_yolo11n_960_visdrone/args.yaml` |  |
+| YOLO11n-960 | best.pt | READY | `runs/detect/baseline_yolo11n_960_visdrone/weights/best.pt` |  |
+| YOLO11n-960 | last.pt | READY | `runs/detect/baseline_yolo11n_960_visdrone/weights/last.pt` |  |
+| YOLO11n-960 | Minimum result epochs | READY | `100/100 epochs in runs/detect/baseline_yolo11n_960_visdrone/results.csv` |  |
+| YOLO11n-960 | Training/server log | READY | `runs/logs/train_baseline_yolo11n_960_20260613_220108.log` |  |
 | YOLO11n-P2-960 | Completion status | PENDING | `queued | runs/detect/yolo11n_p2_960_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
 | YOLOv8n-960 | Completion status | PENDING | `queued | runs/detect/baseline_yolov8n_960_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
 | YOLO11s-960 | Completion status | PENDING | `queued | runs/detect/baseline_yolo11s_960_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |

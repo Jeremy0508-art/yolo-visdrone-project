@@ -15,15 +15,15 @@ It is a mechanical preflight check, not a substitute for manual visual inspectio
 
 | Item | Status | Evidence | Action |
 | --- | --- | --- | --- |
-| Compiled PDF exists | READY | `paper\manuscript_submission_candidate.pdf (1694.7 KB)` |  |
-| PDF freshness | READY | `pdf_mtime=1781377475, tex_mtime=1781377441` |  |
+| Compiled PDF exists | READY | `paper\manuscript_submission_candidate.pdf (1695.3 KB)` |  |
+| PDF freshness | READY | `pdf_mtime=1781405501, tex_mtime=1781405301` |  |
 | Page count | READY | `15 pages` |  |
 | Page size consistency | READY | `595.3x841.9` |  |
 | Blank pages | READY | `none` |  |
 | Low-text non-media pages | READY | `none` |  |
 | Figure-dominant pages | READY | `12` |  |
 | Image-heavy pages | READY | `none` |  |
-| Extracted text volume | READY | `19366 extracted characters across 15 pages` |  |
+| Extracted text volume | READY | `19752 extracted characters across 15 pages` |  |
 
 ## Interpretation
 

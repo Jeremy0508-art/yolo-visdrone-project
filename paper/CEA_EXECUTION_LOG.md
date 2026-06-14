@@ -504,3 +504,19 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   official evaluation result.
 - Do not describe `scale_group_results.csv` as official AP; it is a thresholded
   prediction-matching analysis by GT object scale.
+
+## 2026-06-14 Fair Baseline Integration
+
+- Server synchronization:
+  - `baseline_yolo11n_960_visdrone` reached the 100-epoch completion gate and was synchronized locally.
+  - Local evidence now includes `runs/detect/baseline_yolo11n_960_visdrone/results.csv`, `args.yaml`, `weights/best.pt`, `weights/last.pt`, and `runs/logs/train_baseline_yolo11n_960_20260613_220108.log`.
+  - `yolo11n_p2_960_visdrone` is still partial on the server and must not enter paper result tables until it reaches 100 epochs and is synchronized through the guarded script.
+- Result interpretation:
+  - `YOLO11n baseline 960` reached best mAP50 `0.42136` and best mAP50-95 `0.25067`.
+  - `YOLO11n-P2-CoordAttention-960` remains best on mAP50-95 among synchronized 960-input rows with `0.25174`, but its mAP50 `0.41996` is slightly lower than `YOLO11n baseline 960`.
+  - Paper claims were adjusted from a broad “best improved model” reading to a more defensible “high-resolution-input-dominant, structure-supplemented accuracy/complexity trade-off” reading.
+- Local paper material updates:
+  - Regenerated `paper/tables/main_results.csv`, `experiment_registry.csv`, `model_complexity.csv`, `main_comparison_for_paper.csv`, and `ablation_results.csv`.
+  - Re-ran `tools/benchmark_speed.py` on the local RTX 4060 Laptop GPU and updated `paper/tables/speed_results.csv`.
+  - Regenerated `paper/tables/accuracy_speed_tradeoff.csv` and `paper/figures/tradeoff/accuracy_speed_tradeoff.png`.
+  - Updated README, LaTeX manuscript, Markdown manuscript previews, table draft, and CEA submission plan to reflect the fair baseline result without adding unsupported claims.

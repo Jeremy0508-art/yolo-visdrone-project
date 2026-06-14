@@ -6,8 +6,8 @@ The current target track is the 《计算机工程与应用》 journal submissio
 
 ## Summary
 
-- Total checks: 75
-- Ready: 75
+- Total checks: 81
+- Ready: 81
 - Missing: 0
 
 ## Main Result Claims
@@ -20,6 +20,8 @@ The current target track is the 《计算机工程与应用》 journal submissio
 | YOLO11s baseline best mAP50-95 | 0.22719 | `paper/tables/main_comparison_for_paper.csv` | Verified external baseline |
 | YOLO11n baseline best mAP50 | 0.32153 | `paper/tables/main_comparison_for_paper.csv` | Verified |
 | YOLO11n baseline best mAP50-95 | 0.18238 | `paper/tables/main_comparison_for_paper.csv` | Verified |
+| YOLO11n baseline 960 best mAP50 | 0.42136 | `paper/tables/main_comparison_for_paper.csv` | Verified |
+| YOLO11n baseline 960 best mAP50-95 | 0.25067 | `paper/tables/main_comparison_for_paper.csv` | Verified |
 | YOLO11n-P2 best mAP50 | 0.33013 | `paper/tables/main_comparison_for_paper.csv` | Verified |
 | YOLO11n-P2 best mAP50-95 | 0.19012 | `paper/tables/main_comparison_for_paper.csv` | Verified |
 | YOLO11n-P2-CoordAttention best mAP50 | 0.33073 | `paper/tables/main_comparison_for_paper.csv` | Verified |
@@ -35,6 +37,8 @@ The current target track is the 《计算机工程与应用》 journal submissio
 | --- | ---: | --- | --- |
 | YOLO11n baseline mAP50 gain over baseline | +0.00000 | `paper/tables/ablation_results.csv` | Verified |
 | YOLO11n baseline mAP50-95 gain over baseline | +0.00000 | `paper/tables/ablation_results.csv` | Verified |
+| YOLO11n baseline 960 mAP50 gain over baseline | +0.09983 | `paper/tables/ablation_results.csv` | Verified |
+| YOLO11n baseline 960 mAP50-95 gain over baseline | +0.06829 | `paper/tables/ablation_results.csv` | Verified |
 | YOLO11n-P2 mAP50 gain over baseline | +0.00860 | `paper/tables/ablation_results.csv` | Verified |
 | YOLO11n-P2 mAP50-95 gain over baseline | +0.00774 | `paper/tables/ablation_results.csv` | Verified |
 | YOLO11n-P2-CoordAttention mAP50 gain over baseline | +0.00920 | `paper/tables/ablation_results.csv` | Verified |
@@ -52,20 +56,22 @@ The current target track is the 《计算机工程与应用》 journal submissio
 | YOLO11n baseline GFLOPs | 6.5 | `paper/tables/model_complexity.csv` | Verified |
 | YOLO11n-P2-CoordAttention-960 params | 2.904 M | `paper/tables/model_complexity.csv` | Verified |
 | YOLO11n-P2-CoordAttention-960 GFLOPs | 10.7 | `paper/tables/model_complexity.csv` | Verified |
-| YOLOv8n baseline average wall-clock latency | 42.292 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLOv8n baseline FPS | 23.65 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11s baseline average wall-clock latency | 38.974 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11s baseline FPS | 25.66 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n baseline average wall-clock latency | 40.092 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n baseline FPS | 24.94 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2 average wall-clock latency | 43.642 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2 FPS | 22.91 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention average wall-clock latency | 45.768 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention FPS | 21.85 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention-SmallObjAug average wall-clock latency | 49.962 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention-SmallObjAug FPS | 20.02 | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention-960 average wall-clock latency | 50.811 ms | `paper/tables/speed_results.csv` | Verified |
-| YOLO11n-P2-CoordAttention-960 FPS | 19.68 | `paper/tables/speed_results.csv` | Verified |
+| YOLOv8n baseline average wall-clock latency | 27.972 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLOv8n baseline FPS | 35.75 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11s baseline average wall-clock latency | 15.122 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11s baseline FPS | 66.13 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n baseline average wall-clock latency | 14.885 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n baseline FPS | 67.18 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n baseline 960 average wall-clock latency | 16.855 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n baseline 960 FPS | 59.33 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2 average wall-clock latency | 15.943 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2 FPS | 62.72 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention average wall-clock latency | 16.568 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention FPS | 60.36 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention-SmallObjAug average wall-clock latency | 16.707 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention-SmallObjAug FPS | 59.85 | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention-960 average wall-clock latency | 18.697 ms | `paper/tables/speed_results.csv` | Verified |
+| YOLO11n-P2-CoordAttention-960 FPS | 53.49 | `paper/tables/speed_results.csv` | Verified |
 
 ## Scale Analysis Claims
 
