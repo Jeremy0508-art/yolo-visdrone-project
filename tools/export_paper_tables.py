@@ -199,6 +199,8 @@ def find_model_summary(run_name: str, model_name: str) -> tuple[str, str, str]:
         search_terms.append("yolo11n_p2_coordatt_20260522")
     if lowered_model == "yolo11n-p2":
         search_terms.append("yolo11n_p2_pretrained_visdrone")
+    if lowered_model == "yolo11n-p2-960":
+        search_terms.append("yolo11n_p2_960")
 
     candidates = []
     for term in search_terms:

@@ -520,3 +520,17 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
   - Re-ran `tools/benchmark_speed.py` on the local RTX 4060 Laptop GPU and updated `paper/tables/speed_results.csv`.
   - Regenerated `paper/tables/accuracy_speed_tradeoff.csv` and `paper/figures/tradeoff/accuracy_speed_tradeoff.png`.
   - Updated README, LaTeX manuscript, Markdown manuscript previews, table draft, and CEA submission plan to reflect the fair baseline result without adding unsupported claims.
+
+## 2026-06-15 Fair-Comparison Stage Integration
+
+- Server synchronization:
+  - `yolo11n_p2_960_visdrone` and `baseline_yolov8n_960_visdrone` reached the 100-epoch completion gate and were synchronized locally.
+  - Local evidence now includes their `results.csv`, `args.yaml`, `weights/best.pt`, `weights/last.pt`, and training logs.
+  - `baseline_yolo11s_960_visdrone` remains partial and `baseline_yolov5n_visdrone` has not yet completed; neither should enter final paper conclusions.
+- Stage results:
+  - `YOLO11n-P2-960` reached best mAP50 `0.42361` and best mAP50-95 `0.25552`.
+  - `YOLOv8n baseline 960` reached best mAP50 `0.42016` and best mAP50-95 `0.25121`.
+  - Current interpretation changed from “CoordAttention-960 as final best model” to “high-resolution input is dominant, P2 remains useful at 960, CoordAttention has limited high-resolution gain in the current run.”
+- Local paper material updates:
+  - Regenerated paper tables, speed table, and accuracy-speed trade-off figure.
+  - Updated README, CEA submission plan, LaTeX manuscript, Markdown previews, and table draft to use the new stage results while keeping final conclusions provisional until remaining baselines finish.

@@ -6,9 +6,9 @@ Pending/running/queued experiments are treated as progress gates, not missing lo
 
 ## Summary
 
-- Total checks: 13
-- Ready: 9
-- Pending: 4
+- Total checks: 27
+- Ready: 25
+- Pending: 2
 - Missing: 0
 
 ## Checks
@@ -24,8 +24,22 @@ Pending/running/queued experiments are treated as progress gates, not missing lo
 | YOLO11n-960 | last.pt | READY | `runs/detect/baseline_yolo11n_960_visdrone/weights/last.pt` |  |
 | YOLO11n-960 | Minimum result epochs | READY | `100/100 epochs in runs/detect/baseline_yolo11n_960_visdrone/results.csv` |  |
 | YOLO11n-960 | Training/server log | READY | `runs/logs/train_baseline_yolo11n_960_20260613_220108.log` |  |
-| YOLO11n-P2-960 | Completion status | PENDING | `queued | runs/detect/yolo11n_p2_960_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
-| YOLOv8n-960 | Completion status | PENDING | `queued | runs/detect/baseline_yolov8n_960_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
+| YOLO11n-P2-960 | Completion status | READY | `completed | runs/detect/yolo11n_p2_960_visdrone` |  |
+| YOLO11n-P2-960 | Run directory | READY | `runs/detect/yolo11n_p2_960_visdrone` |  |
+| YOLO11n-P2-960 | results.csv | READY | `runs/detect/yolo11n_p2_960_visdrone/results.csv` |  |
+| YOLO11n-P2-960 | args.yaml | READY | `runs/detect/yolo11n_p2_960_visdrone/args.yaml` |  |
+| YOLO11n-P2-960 | best.pt | READY | `runs/detect/yolo11n_p2_960_visdrone/weights/best.pt` |  |
+| YOLO11n-P2-960 | last.pt | READY | `runs/detect/yolo11n_p2_960_visdrone/weights/last.pt` |  |
+| YOLO11n-P2-960 | Minimum result epochs | READY | `100/100 epochs in runs/detect/yolo11n_p2_960_visdrone/results.csv` |  |
+| YOLO11n-P2-960 | Training/server log | READY | `runs/logs/train_yolo11n_p2_960_20260614_100356.log` |  |
+| YOLOv8n-960 | Completion status | READY | `completed | runs/detect/baseline_yolov8n_960_visdrone` |  |
+| YOLOv8n-960 | Run directory | READY | `runs/detect/baseline_yolov8n_960_visdrone` |  |
+| YOLOv8n-960 | results.csv | READY | `runs/detect/baseline_yolov8n_960_visdrone/results.csv` |  |
+| YOLOv8n-960 | args.yaml | READY | `runs/detect/baseline_yolov8n_960_visdrone/args.yaml` |  |
+| YOLOv8n-960 | best.pt | READY | `runs/detect/baseline_yolov8n_960_visdrone/weights/best.pt` |  |
+| YOLOv8n-960 | last.pt | READY | `runs/detect/baseline_yolov8n_960_visdrone/weights/last.pt` |  |
+| YOLOv8n-960 | Minimum result epochs | READY | `100/100 epochs in runs/detect/baseline_yolov8n_960_visdrone/results.csv` |  |
+| YOLOv8n-960 | Training/server log | READY | `runs/logs/train_baseline_yolov8n_960_20260614_232453.log` |  |
 | YOLO11s-960 | Completion status | PENDING | `queued | runs/detect/baseline_yolo11s_960_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
 | YOLOv5n-640 | Completion status | PENDING | `queued | runs/detect/baseline_yolov5n_visdrone` | Wait for complete 100-epoch run, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
 

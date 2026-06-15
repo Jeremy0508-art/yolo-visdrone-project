@@ -8,12 +8,14 @@
 
 ## 2. 已完成实验和材料
 
-- 已完成 100 epoch 本地训练/验证的模型数：8。
+- 已完成 100 epoch 本地训练/验证的模型数：10。
 - YOLOv8n baseline：imgsz=640，best mAP50=0.32520，best mAP50-95=0.18386，结果目录 `runs/detect/baseline_yolov8n_visdrone`。
+- YOLOv8n baseline 960：imgsz=960，best mAP50=0.42016，best mAP50-95=0.25121，结果目录 `runs/detect/baseline_yolov8n_960_visdrone`。
 - YOLO11s baseline：imgsz=640，best mAP50=0.38937，best mAP50-95=0.22719，结果目录 `runs/detect/baseline_yolo11s_visdrone`。
 - YOLO11n baseline：imgsz=640，best mAP50=0.32153，best mAP50-95=0.18238，结果目录 `runs/detect/baseline_yolo11n_visdrone`。
 - YOLO11n baseline 960：imgsz=960，best mAP50=0.42136，best mAP50-95=0.25067，结果目录 `runs/detect/baseline_yolo11n_960_visdrone`。
 - YOLO11n-P2：imgsz=640，best mAP50=0.33013，best mAP50-95=0.19012，结果目录 `runs/detect/yolo11n_p2_pretrained_visdrone`。
+- YOLO11n-P2-960：imgsz=960，best mAP50=0.42361，best mAP50-95=0.25552，结果目录 `runs/detect/yolo11n_p2_960_visdrone`。
 - YOLO11n-P2-CoordAttention：imgsz=640，best mAP50=0.33073，best mAP50-95=0.19044，结果目录 `runs/detect/yolo11n_p2_coordatt_visdrone`。
 - YOLO11n-P2-CoordAttention-960：imgsz=960，best mAP50=0.41996，best mAP50-95=0.25174，结果目录 `runs/detect/yolo11n_p2_coordatt_960_visdrone_full`。
 - YOLO11n-P2-CoordAttention-SmallObjAug：imgsz=640，best mAP50=0.32780，best mAP50-95=0.18699，结果目录 `runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone`。
@@ -33,7 +35,7 @@
 ## 5. 服务器公平对比实验
 
 为回答审稿人最可能追问的公平性问题，服务器正在按队列补跑以下实验：YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960、YOLOv5n-640。
-- 最近服务器状态时间：2026-06-14 10:43:42 +08:00
+- 最近服务器状态时间：2026-06-15 16:08:20 +08:00
 - 当前 YOLO11n-960 状态：READY，100/100 epoch
 - 训练进程：`STOPPED pid=43554`
 - 未完成 100 epoch 的服务器结果只作为进度信息，不能进入论文结果表、摘要或结论。

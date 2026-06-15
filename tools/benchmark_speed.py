@@ -30,6 +30,11 @@ TARGETS = [
         imgsz=640,
     ),
     BenchmarkTarget(
+        model="YOLOv8n baseline 960",
+        weights="runs/detect/baseline_yolov8n_960_visdrone/weights/best.pt",
+        imgsz=960,
+    ),
+    BenchmarkTarget(
         model="YOLO11s baseline",
         weights="runs/detect/baseline_yolo11s_visdrone/weights/best.pt",
         imgsz=640,
@@ -48,6 +53,11 @@ TARGETS = [
         model="YOLO11n-P2",
         weights="runs/detect/yolo11n_p2_pretrained_visdrone/weights/best.pt",
         imgsz=640,
+    ),
+    BenchmarkTarget(
+        model="YOLO11n-P2-960",
+        weights="runs/detect/yolo11n_p2_960_visdrone/weights/best.pt",
+        imgsz=960,
     ),
     BenchmarkTarget(
         model="YOLO11n-P2-CoordAttention",
