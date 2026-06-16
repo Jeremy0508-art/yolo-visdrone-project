@@ -692,6 +692,19 @@ Generated file:
 paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md
 ```
 
+Build the advisor-facing review package:
+
+```powershell
+python tools/build_advisor_review_package.py
+```
+
+Generated files:
+
+```text
+paper/advisor_review_package.zip
+paper/advisor_review_package_manifest.md
+```
+
 Object scale distribution from YOLO-format labels:
 
 ```powershell

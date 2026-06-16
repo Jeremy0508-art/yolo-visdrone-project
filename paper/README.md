@@ -41,6 +41,8 @@ Recommended ways to read it:
 | `CEA_PDF_VISUAL_REVIEW_FORM.md` | Page-by-page manual PDF inspection form |
 | `CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | Manual checklist for verifying GitHub rendering before sharing the repository |
 | `CEA_TEMPLATE_MIGRATION_RECORD.md` | Record sheet for migrating the current LaTeX/PDF candidate into the official CEA template |
+| `advisor_review_package_manifest.md` | Manifest for the lightweight advisor-review zip package |
+| `advisor_review_package.zip` | Lightweight advisor-review bundle excluding datasets, runs, and weights |
 | `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
@@ -164,6 +166,12 @@ Run the full paper-facing audit sequence:
 
 ```powershell
 python tools/run_paper_audits.py
+```
+
+Build the lightweight advisor-review package:
+
+```powershell
+python tools/build_advisor_review_package.py
 ```
 
 Local lightweight build command if `.tools/tectonic/tectonic.exe` exists:
