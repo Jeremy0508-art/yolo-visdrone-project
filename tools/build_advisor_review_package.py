@@ -31,6 +31,7 @@ PACKAGE_ITEMS = [
     PackageItem("paper/github_public_view_audit.md", "Automated public GitHub reachability and raw README audit."),
     PackageItem("paper/CEA_TEMPLATE_MIGRATION_RECORD.md", "Official template migration record sheet."),
     PackageItem("paper/CEA_SUBMISSION_METADATA_WORKSHEET.md", "Worksheet for author, affiliation, funding, declaration, and upload metadata."),
+    PackageItem("paper/CEA_COVER_LETTER_DRAFT.md", "Bounded draft for editor-facing submission notes."),
     PackageItem("paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md", "Manual submission preflight checklist."),
     PackageItem("paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md", "Local submission package checklist."),
     PackageItem("paper/submission_audit_dashboard.md", "Current audit dashboard."),

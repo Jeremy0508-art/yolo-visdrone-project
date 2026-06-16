@@ -79,6 +79,11 @@ def build_checks() -> list[PreflightCheck]:
             "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md",
             "Create the worksheet for author, affiliation, funding, declaration, and upload metadata.",
         ),
+        (
+            "Cover letter draft",
+            "paper/CEA_COVER_LETTER_DRAFT.md",
+            "Create a bounded draft for editor-facing submission notes.",
+        ),
     ]:
         status = local_status(path)
         checks.append(

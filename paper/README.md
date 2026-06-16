@@ -38,6 +38,7 @@ Recommended ways to read it:
 | `CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | Generated checklist for the local CEA-oriented manuscript package and remaining submission gates |
 | `CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | Generated manual preflight checklist for final journal-system and package verification |
 | `CEA_FINAL_HANDOFF_CHECKLIST.md` | Final advisor/submission handoff checklist for local materials, manual gates, and claim boundaries |
+| `CEA_COVER_LETTER_DRAFT.md` | Draft cover letter / editor-facing submission note for advisor revision |
 | `CEA_PDF_VISUAL_REVIEW_FORM.md` | Page-by-page manual PDF inspection form |
 | `CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | Manual checklist for verifying GitHub rendering before sharing the repository |
 | `github_public_view_audit.md` | Automated public GitHub reachability and raw README audit |
