@@ -475,6 +475,19 @@ Generated file:
 paper/pdf_layout_health_audit.md
 ```
 
+Render a contact sheet for manual PDF visual review:
+
+```powershell
+python tools/render_pdf_review_contact_sheet.py
+```
+
+Generated files:
+
+```text
+paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg
+paper/pdf_visual_contact_sheet.md
+```
+
 Regenerate the advisor-facing progress brief:
 
 ```powershell

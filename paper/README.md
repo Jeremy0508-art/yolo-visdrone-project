@@ -45,6 +45,7 @@ Recommended ways to read it:
 | `advisor_review_package_manifest.md` | Manifest for the lightweight advisor-review zip package |
 | `advisor_review_package.zip` | Lightweight advisor-review bundle excluding datasets, runs, and weights |
 | `advisor_review_note.md` | Cover note for sending the current paper package to an advisor |
+| `pdf_visual_contact_sheet.md` | Generated report for the PDF visual-review contact sheet |
 | `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
@@ -99,6 +100,7 @@ Recommended ways to read it:
 | `project_readme_presentation_audit.md` | Generated audit for repository-level README presentation quality |
 | `pdf_text_readability_audit.md` | Generated audit for compiled PDF text extraction and basic readability tokens |
 | `pdf_layout_health_audit.md` | Generated audit for compiled PDF page count, page size, blank pages, and figure-heavy pages |
+| `figures/pdf_review/manuscript_pages_contact_sheet.jpg` | Contact sheet of all current manuscript PDF pages for visual review |
 | `submission_material_manifest.md` | Generated index of current submission-facing documents, tables, figures, and audits |
 | `submission_audit_dashboard.md` | Generated one-page dashboard summarizing paper-facing audits |
 | `references.md` | Reference list draft |

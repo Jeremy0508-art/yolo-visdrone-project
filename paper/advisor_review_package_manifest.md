@@ -7,22 +7,24 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 ## Package
 
 - Zip file: `paper/advisor_review_package.zip`
-- Ready files: 30
+- Ready files: 32
 - Missing files: 0
-- Zip size: 3.09 MB
+- Zip size: 3.32 MB
 
 ## Included Files
 
 | Path | Size | Note |
 | --- | ---: | --- |
 | `README.md` | 10.6 KB | Repository-level project introduction. |
-| `paper/README.md` | 10.9 KB | Paper workspace navigation. |
+| `paper/README.md` | 11.1 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
 | `paper/advisor_review_note.md` | 5.6 KB | Short cover note for advisor review. |
 | `paper/advisor_progress_brief.md` | 5.3 KB | Short advisor-facing progress brief. |
 | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 4.8 KB | Final handoff checklist and claim boundaries. |
 | `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 2.7 KB | Manual page-by-page PDF review form. |
+| `paper/pdf_visual_contact_sheet.md` | 872 B | Generated contact-sheet report for PDF visual review. |
+| `paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg` | 271.6 KB | Contact sheet of all manuscript PDF pages. |
 | `paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | 1.8 KB | Manual GitHub public rendering checklist. |
 | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 2.5 KB | Official template migration record sheet. |
 | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 5.7 KB | Worksheet for author, affiliation, funding, declaration, and upload metadata. |
@@ -31,7 +33,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/submission_audit_dashboard.md` | 4.4 KB | Current audit dashboard. |
 | `paper/evidence_audit.md` | 13.7 KB | Paper-facing number provenance audit. |
 | `paper/manuscript_number_trace_audit.md` | 56.4 KB | Trace audit for manuscript numbers. |
-| `paper/commands.md` | 17.3 KB | Reproducibility commands. |
+| `paper/commands.md` | 17.6 KB | Reproducibility commands. |
 | `paper/tables/main_comparison_for_paper.csv` | 1.8 KB | Main comparison table. |
 | `paper/tables/ablation_results.csv` | 1.7 KB | Ablation table. |
 | `paper/tables/speed_results.csv` | 2.6 KB | Speed benchmark table. |

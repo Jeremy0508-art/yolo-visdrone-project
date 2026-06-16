@@ -77,6 +77,7 @@ def build_materials() -> list[Material]:
         ("CEA submission metadata worksheet", "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md"),
         ("CEA final handoff checklist", "paper/CEA_FINAL_HANDOFF_CHECKLIST.md"),
         ("CEA PDF visual review form", "paper/CEA_PDF_VISUAL_REVIEW_FORM.md"),
+        ("PDF visual contact sheet report", "paper/pdf_visual_contact_sheet.md"),
         ("CEA GitHub public view checklist", "paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md"),
         ("CEA template migration record", "paper/CEA_TEMPLATE_MIGRATION_RECORD.md"),
         ("Advisor review package manifest", "paper/advisor_review_package_manifest.md"),
@@ -114,6 +115,7 @@ def build_materials() -> list[Material]:
         ("Object-scale distribution figure", "paper/figures/scale_analysis/object_scale_distribution.png"),
         ("Scale-group recall figure", "paper/figures/scale_analysis/scale_group_recall.png"),
         ("Accuracy-speed trade-off figure", "paper/figures/tradeoff/accuracy_speed_tradeoff.png"),
+        ("PDF visual contact sheet", "paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg"),
     ]:
         add_file(materials, "Figures", item, path)
 
