@@ -37,6 +37,7 @@ Recommended ways to read it:
 | `CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | Source tracker for official template, upload-format, and manual journal-system requirements |
 | `CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | Generated checklist for the local CEA-oriented manuscript package and remaining submission gates |
 | `CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | Generated manual preflight checklist for final journal-system and package verification |
+| `CEA_FINAL_HANDOFF_CHECKLIST.md` | Final advisor/submission handoff checklist for local materials, manual gates, and claim boundaries |
 | `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
@@ -70,7 +71,7 @@ Recommended ways to read it:
 | `manuscript_number_trace_audit.md` | Generated trace audit for decimal values in the LaTeX manuscript |
 | `manuscript_length_audit.md` | Generated audit for journal-oriented manuscript length and structural density |
 | `submission_checklist.md` | Pre-submission checklist and template migration notes |
-| `submission_readiness_audit.md` | Generated local readiness audit for paper-facing artifacts and pending fair experiments |
+| `submission_readiness_audit.md` | Generated local readiness audit for paper-facing artifacts and remaining manual submission gates |
 | `paper_consistency_audit.md` | Generated consistency audit for manuscript-facing text and paper tables |
 | `claim_boundary_audit.md` | Generated audit for unsupported overclaims and partial-result leakage in paper-facing text |
 | `result_interpretation_matrix_audit.md` | Generated audit for post-sync result interpretation branches and writing boundaries |

@@ -100,6 +100,13 @@ def write_report() -> None:
     lines.extend(
         [
             "",
+            "## Latest Online Check Note",
+            "",
+            "- Current date for this workspace: 2026-06-16.",
+            "- Web search still finds the editorial-office candidate page `https://jsjgcyyy.juqk.net/` and related submission notice candidate `https://jsjgcyyy.juqk.net/buy/`.",
+            "- Direct access to `https://cea.ceaj.org/CN/column/column18.shtml` may be unstable from this environment; do not assume the local package matches the current official template until a browser/manual download confirms it.",
+            "- Keep all official-template and upload-format fields as PENDING until the final submission-system check is performed.",
+            "",
             "## Manual Requirement Fields",
             "",
             "| ID | Field | What to record before final upload | Status |",
