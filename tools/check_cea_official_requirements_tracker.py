@@ -16,6 +16,8 @@ REQUIRED_TOKENS = [
     "third-party",
     "not authoritative",
     "manually verified",
+    "Online Check Log",
+    "502-style",
     "Template file",
     "Upload file type",
     "Author metadata",

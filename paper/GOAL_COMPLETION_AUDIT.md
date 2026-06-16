@@ -27,7 +27,7 @@ It intentionally does not mark the overall objective complete while external/man
 | 官方期刊模板和投稿系统要求 | PENDING | `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 当前只能记录官方候选来源和人工核对字段，不能由本地脚本证明最新模板、上传格式或投稿系统要求。 | 正式投稿前由作者/导师打开期刊官网或投稿系统，下载当前模板并确认上传文件类型。 |
 | 作者、单位、基金、声明和最终人工页检 | PENDING | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 作者顺序、通信作者、单位、基金、声明、摘要关键词最终确认和 PDF 逐页视觉检查仍需人工完成。 | 由用户和导师填写元信息、完成 PDF 页检，并确认是否进入投稿系统。 |
 | 官方 VisDrone test-dev 结果 | PENDING | `paper/testdev_submission.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 当前论文只可报告验证集结果；官方 test-dev 平台可用并返回结果前，不能写官方 test-dev AP。 | 若官方平台恢复可用，再提交导出的 test-dev zip 并按真实返回值更新论文。 |
-| 总目标完成判定 | PENDING | `paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit` | 本地可控材料已高度完整：审计面板 29/32 ready，材料清单 81/81 ready。仍不能标记总目标完成，因为存在官方模板、作者信息、人工页检和官方 test-dev 等外部/人工门槛。 | 完成 remaining manual/external gates 后再进行最终完成审计。 |
+| 总目标完成判定 | PENDING | `paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit` | 本地可控材料已高度完整：审计面板 29/32 ready，材料清单 80/80 ready。仍不能标记总目标完成，因为存在官方模板、作者信息、人工页检和官方 test-dev 等外部/人工门槛。 | 完成 remaining manual/external gates 后再进行最终完成审计。 |
 
 ## Completion Rule
 

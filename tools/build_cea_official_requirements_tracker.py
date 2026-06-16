@@ -18,6 +18,15 @@ class SourceItem:
     manual_check: str
 
 
+@dataclass
+class OnlineCheck:
+    cid: str
+    source_id: str
+    date: str
+    result: str
+    implication: str
+
+
 SOURCES = [
     SourceItem(
         "S1",
@@ -58,6 +67,44 @@ SOURCES = [
         "third-party",
         "Use only as weak background for common submission-process questions.",
         "Never treat third-party fee, cycle, template, or formatting claims as authoritative without official-site confirmation.",
+    ),
+]
+
+ONLINE_CHECKS = [
+    OnlineCheck(
+        "C1",
+        "S1",
+        "2026-06-16",
+        "Direct open attempt for `https://cea.ceaj.org/CN/column/column18.shtml` returned an unavailable/502-style result from this environment.",
+        "Do not assume the current local manuscript matches the official CEA template; manual browser download remains required.",
+    ),
+    OnlineCheck(
+        "C2",
+        "S2",
+        "2026-06-16",
+        "Web search found `https://jsjgcyyy.juqk.net/` with CEA editorial-office/homepage wording and author-contact reminders.",
+        "Use only as a source candidate until the user or advisor confirms it is the current official editorial-office route.",
+    ),
+    OnlineCheck(
+        "C3",
+        "S3",
+        "2026-06-16",
+        "Web search found `https://jsjgcyyy.juqk.net/buy/` with submission-notice snippets including column/category and manuscript requirement wording.",
+        "Record as a manual-check lead, not as final upload-format evidence.",
+    ),
+    OnlineCheck(
+        "C4",
+        "S4",
+        "2026-06-16",
+        "CCF WISA search result mentions the CEA template URL `http://cea.ceaj.org/CN/column/column18.shtml` for Chinese paper formatting.",
+        "This cross-reference supports the template URL as a lead but cannot define CEA journal submission requirements.",
+    ),
+    OnlineCheck(
+        "C5",
+        "S5",
+        "2026-06-16",
+        "Search results include multiple third-party guide or journal-info pages with fees, contact details, and template claims.",
+        "Treat third-party pages as non-authoritative background only; do not copy their fee, schedule, or formatting claims into the submission package.",
     ),
 ]
 
@@ -103,9 +150,22 @@ def write_report() -> None:
             "## Latest Online Check Note",
             "",
             "- Current date for this workspace: 2026-06-16.",
-            "- Web search still finds the editorial-office candidate page `https://jsjgcyyy.juqk.net/` and related submission notice candidate `https://jsjgcyyy.juqk.net/buy/`.",
-            "- Direct access to `https://cea.ceaj.org/CN/column/column18.shtml` may be unstable from this environment; do not assume the local package matches the current official template until a browser/manual download confirms it.",
+            "- Web search finds the editorial-office candidate page `https://jsjgcyyy.juqk.net/` and related submission notice candidate `https://jsjgcyyy.juqk.net/buy/`, but direct page access from this environment is unstable.",
+            "- Direct access to `https://cea.ceaj.org/CN/column/column18.shtml` returned an unavailable/502-style result in this environment; do not assume the local package matches the current official template until a browser/manual download confirms it.",
+            "- Search snippets indicate author-contact information and column/category requirement reminders, but snippets are not sufficient evidence for final upload format.",
             "- Keep all official-template and upload-format fields as PENDING until the final submission-system check is performed.",
+            "",
+            "## Online Check Log",
+            "",
+            "| ID | Source ID | Date | Result | Implication |",
+            "| --- | --- | --- | --- | --- |",
+        ]
+    )
+    for item in ONLINE_CHECKS:
+        lines.append(f"| {item.cid} | {item.source_id} | {item.date} | {item.result} | {item.implication} |")
+
+    lines.extend(
+        [
             "",
             "## Manual Requirement Fields",
             "",

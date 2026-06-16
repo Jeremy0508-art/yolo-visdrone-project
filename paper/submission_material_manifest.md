@@ -23,7 +23,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | CEA submission risk register | READY | `paper/CEA_SUBMISSION_RISK_REGISTER.md` | 5.8 KB |
 | Core Documents | CEA reviewer response prep | READY | `paper/CEA_REVIEWER_RESPONSE_PREP.md` | 5.2 KB |
 | Core Documents | CEA post-result rewrite playbook | READY | `paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md` | 5.7 KB |
-| Core Documents | CEA official requirements tracker | READY | `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 4.3 KB |
+| Core Documents | CEA official requirements tracker | READY | `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 6.0 KB |
 | Core Documents | Submission checklist | READY | `paper/submission_checklist.md` | 4.2 KB |
 | Core Documents | Reproducibility commands | READY | `paper/commands.md` | 18.0 KB |
 | Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
