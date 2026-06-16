@@ -80,6 +80,7 @@ def build_materials() -> list[Material]:
         ("CEA template migration record", "paper/CEA_TEMPLATE_MIGRATION_RECORD.md"),
         ("Advisor review package manifest", "paper/advisor_review_package_manifest.md"),
         ("Advisor review package zip", "paper/advisor_review_package.zip"),
+        ("Advisor review note", "paper/advisor_review_note.md"),
         ("Advisor progress brief", "paper/advisor_progress_brief.md"),
         ("Execution log", "paper/CEA_EXECUTION_LOG.md"),
         ("Server status snapshot", "paper/cea_server_status_snapshot.md"),

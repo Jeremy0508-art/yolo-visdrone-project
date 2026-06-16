@@ -21,6 +21,7 @@ PACKAGE_ITEMS = [
     PackageItem("paper/README.md", "Paper workspace navigation."),
     PackageItem("paper/manuscript_submission_candidate.pdf", "Current PDF manuscript preview."),
     PackageItem("paper/manuscript_submission_candidate.tex", "Current LaTeX source."),
+    PackageItem("paper/advisor_review_note.md", "Short cover note for advisor review."),
     PackageItem("paper/advisor_progress_brief.md", "Short advisor-facing progress brief."),
     PackageItem("paper/CEA_FINAL_HANDOFF_CHECKLIST.md", "Final handoff checklist and claim boundaries."),
     PackageItem("paper/CEA_PDF_VISUAL_REVIEW_FORM.md", "Manual page-by-page PDF review form."),

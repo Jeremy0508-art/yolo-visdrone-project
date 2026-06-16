@@ -77,6 +77,7 @@ def audit() -> list[Check]:
         ("CEA template migration record", "paper/CEA_TEMPLATE_MIGRATION_RECORD.md"),
         ("Advisor review package manifest", "paper/advisor_review_package_manifest.md"),
         ("Advisor review package zip", "paper/advisor_review_package.zip"),
+        ("Advisor review note", "paper/advisor_review_note.md"),
         ("Advisor progress brief audit", "paper/advisor_progress_brief_audit.md"),
         ("CEA manuscript rewrite blueprint", "paper/CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md"),
         ("Journal manuscript gap audit", "paper/manuscript_journal_gap_audit.md"),

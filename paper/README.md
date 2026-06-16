@@ -43,6 +43,7 @@ Recommended ways to read it:
 | `CEA_TEMPLATE_MIGRATION_RECORD.md` | Record sheet for migrating the current LaTeX/PDF candidate into the official CEA template |
 | `advisor_review_package_manifest.md` | Manifest for the lightweight advisor-review zip package |
 | `advisor_review_package.zip` | Lightweight advisor-review bundle excluding datasets, runs, and weights |
+| `advisor_review_note.md` | Cover note for sending the current paper package to an advisor |
 | `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
 | `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
 | `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |

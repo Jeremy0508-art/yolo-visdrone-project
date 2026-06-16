@@ -7,7 +7,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 ## Package
 
 - Zip file: `paper/advisor_review_package.zip`
-- Ready files: 28
+- Ready files: 29
 - Missing files: 0
 - Zip size: 3.08 MB
 
@@ -19,6 +19,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/README.md` | 10.7 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
+| `paper/advisor_review_note.md` | 5.6 KB | Short cover note for advisor review. |
 | `paper/advisor_progress_brief.md` | 5.3 KB | Short advisor-facing progress brief. |
 | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 4.8 KB | Final handoff checklist and claim boundaries. |
 | `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 2.7 KB | Manual page-by-page PDF review form. |

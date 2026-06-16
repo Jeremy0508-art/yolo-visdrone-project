@@ -6,8 +6,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 ## Summary
 
-- Total materials: 72
-- Ready: 72
+- Total materials: 73
+- Ready: 73
 - Missing: 0
 
 ## Materials
@@ -34,8 +34,9 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | CEA PDF visual review form | READY | `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 2.7 KB |
 | Core Documents | CEA GitHub public view checklist | READY | `paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | 1.8 KB |
 | Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 2.5 KB |
-| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 3.3 KB |
+| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 3.4 KB |
 | Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 3.08 MB |
+| Core Documents | Advisor review note | READY | `paper/advisor_review_note.md` | 5.6 KB |
 | Core Documents | Advisor progress brief | READY | `paper/advisor_progress_brief.md` | 5.3 KB |
 | Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 49.8 KB |
 | Core Documents | Server status snapshot | READY | `paper/cea_server_status_snapshot.md` | 1.5 KB |
