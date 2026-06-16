@@ -45,6 +45,7 @@ AUDIT_STEPS = [
     ("Claim boundary audit", "tools/check_claim_boundaries.py"),
     ("Result interpretation matrix audit", "tools/check_result_interpretation_matrix.py"),
     ("Submission readiness audit", "tools/audit_submission_readiness.py"),
+    ("Goal completion audit", "tools/build_goal_completion_audit.py"),
     ("Submission audit dashboard", "tools/build_submission_audit_dashboard.py"),
 ]
 

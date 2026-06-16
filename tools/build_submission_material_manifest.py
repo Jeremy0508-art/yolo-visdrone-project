@@ -124,6 +124,7 @@ def build_materials() -> list[Material]:
     for item, path in [
         ("Submission audit dashboard", "paper/submission_audit_dashboard.md"),
         ("Submission readiness audit", "paper/submission_readiness_audit.md"),
+        ("Goal completion audit", "paper/GOAL_COMPLETION_AUDIT.md"),
         ("Evidence audit", "paper/evidence_audit.md"),
         ("Manuscript number trace audit", "paper/manuscript_number_trace_audit.md"),
         ("Manuscript length audit", "paper/manuscript_length_audit.md"),

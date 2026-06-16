@@ -69,6 +69,7 @@ def audit() -> list[Check]:
         ("CEA result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),
         ("CEA manuscript update queue", "paper/CEA_MANUSCRIPT_UPDATE_QUEUE.md"),
         ("Post-sync manuscript update checklist", "paper/post_sync_update_checklist.md"),
+        ("Goal completion audit", "paper/GOAL_COMPLETION_AUDIT.md"),
         ("CEA submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),
         ("CEA manual submission preflight", "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md"),
         ("CEA submission metadata worksheet", "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md"),
@@ -231,6 +232,7 @@ def audit() -> list[Check]:
         ("Submission material manifest builder", "tools/build_submission_material_manifest.py"),
         ("Paper audit runner", "tools/run_paper_audits.py"),
         ("Submission audit dashboard script", "tools/build_submission_audit_dashboard.py"),
+        ("Goal completion audit builder", "tools/build_goal_completion_audit.py"),
         ("CEA submission package checklist builder", "tools/build_cea_submission_package_checklist.py"),
         ("CEA manual submission preflight builder", "tools/build_cea_manual_submission_preflight.py"),
     ]

@@ -6,8 +6,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 ## Summary
 
-- Total materials: 79
-- Ready: 79
+- Total materials: 80
+- Ready: 80
 - Missing: 0
 
 ## Materials
@@ -16,7 +16,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | --- | --- | --- | --- | --- |
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.9 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
-| Core Documents | Paper workspace README | READY | `paper/README.md` | 11.4 KB |
+| Core Documents | Paper workspace README | READY | `paper/README.md` | 11.6 KB |
 | Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
 | Core Documents | CEA result interpretation matrix | READY | `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` | 6.6 KB |
 | Core Documents | CEA section evidence map | READY | `paper/CEA_SECTION_EVIDENCE_MAP.md` | 6.6 KB |
@@ -25,7 +25,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | CEA post-result rewrite playbook | READY | `paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md` | 5.7 KB |
 | Core Documents | CEA official requirements tracker | READY | `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 4.3 KB |
 | Core Documents | Submission checklist | READY | `paper/submission_checklist.md` | 4.2 KB |
-| Core Documents | Reproducibility commands | READY | `paper/commands.md` | 17.8 KB |
+| Core Documents | Reproducibility commands | READY | `paper/commands.md` | 18.0 KB |
 | Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
 | Core Documents | Post-sync manuscript update checklist | READY | `paper/post_sync_update_checklist.md` | 4.1 KB |
 | Core Documents | CEA submission package checklist | READY | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 3.9 KB |
@@ -38,8 +38,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | CEA GitHub public view checklist | READY | `paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | 1.8 KB |
 | Core Documents | GitHub public view audit | READY | `paper/github_public_view_audit.md` | 2.1 KB |
 | Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 2.5 KB |
-| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 3.9 KB |
-| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 3.32 MB |
+| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 4.1 KB |
+| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 3.33 MB |
 | Core Documents | Advisor review note | READY | `paper/advisor_review_note.md` | 5.6 KB |
 | Core Documents | Advisor progress brief | READY | `paper/advisor_progress_brief.md` | 5.3 KB |
 | Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 49.8 KB |
@@ -65,8 +65,9 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Figures | Scale-group recall figure | READY | `paper/figures/scale_analysis/scale_group_recall.png` | 44.7 KB |
 | Figures | Accuracy-speed trade-off figure | READY | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | 122.6 KB |
 | Figures | PDF visual contact sheet | READY | `paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg` | 271.6 KB |
-| Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 4.5 KB |
-| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 14.3 KB |
+| Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 4.6 KB |
+| Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 14.5 KB |
+| Audits | Goal completion audit | READY | `paper/GOAL_COMPLETION_AUDIT.md` | 4.5 KB |
 | Audits | Evidence audit | READY | `paper/evidence_audit.md` | 13.7 KB |
 | Audits | Manuscript number trace audit | READY | `paper/manuscript_number_trace_audit.md` | 56.4 KB |
 | Audits | Manuscript length audit | READY | `paper/manuscript_length_audit.md` | 1.2 KB |
@@ -85,7 +86,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Audits | CEA post-result rewrite playbook audit | READY | `paper/cea_post_result_rewrite_playbook_audit.md` | 1.2 KB |
 | Audits | CEA official requirements tracker audit | READY | `paper/cea_official_requirements_tracker_audit.md` | 1.0 KB |
 | Audits | Synced fair-experiment artifacts audit | READY | `paper/synced_fair_experiment_artifacts_audit.md` | 5.1 KB |
-| Audits | Reproducibility command audit | READY | `paper/repro_commands_audit.md` | 6.1 KB |
+| Audits | Reproducibility command audit | READY | `paper/repro_commands_audit.md` | 6.2 KB |
 | Audits | Config inventory audit | READY | `paper/config_inventory_audit.md` | 2.3 KB |
 | Audits | Text hygiene audit | READY | `paper/text_hygiene_audit.md` | 3.3 KB |
 | Audits | Project README presentation audit | READY | `paper/project_readme_presentation_audit.md` | 1.9 KB |

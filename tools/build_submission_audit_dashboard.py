@@ -11,6 +11,7 @@ REPORT_PATH = ROOT / "paper/submission_audit_dashboard.md"
 
 AUDIT_REPORTS = [
     ("Submission readiness", "paper/submission_readiness_audit.md"),
+    ("Goal completion", "paper/GOAL_COMPLETION_AUDIT.md"),
     ("Journal manuscript gaps", "paper/manuscript_journal_gap_audit.md"),
     ("Paper consistency", "paper/paper_consistency_audit.md"),
     ("Claim boundaries", "paper/claim_boundary_audit.md"),

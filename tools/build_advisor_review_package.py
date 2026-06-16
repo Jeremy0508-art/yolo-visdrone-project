@@ -34,6 +34,7 @@ PACKAGE_ITEMS = [
     PackageItem("paper/CEA_COVER_LETTER_DRAFT.md", "Bounded draft for editor-facing submission notes."),
     PackageItem("paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md", "Manual submission preflight checklist."),
     PackageItem("paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md", "Local submission package checklist."),
+    PackageItem("paper/GOAL_COMPLETION_AUDIT.md", "Requirement-to-evidence audit for the active project objective."),
     PackageItem("paper/submission_audit_dashboard.md", "Current audit dashboard."),
     PackageItem("paper/evidence_audit.md", "Paper-facing number provenance audit."),
     PackageItem("paper/manuscript_number_trace_audit.md", "Trace audit for manuscript numbers."),

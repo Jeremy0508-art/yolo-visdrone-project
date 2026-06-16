@@ -35,6 +35,7 @@ Recommended ways to read it:
 | `CEA_REVIEWER_RESPONSE_PREP.md` | Reviewer-question preparation matrix for CEA-facing manuscript revision and response planning |
 | `CEA_POST_RESULT_REWRITE_PLAYBOOK.md` | Section-by-section rewrite playbook for after completed fair-comparison results are synced |
 | `CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | Source tracker for official template, upload-format, and manual journal-system requirements |
+| `GOAL_COMPLETION_AUDIT.md` | Requirement-to-evidence audit for the active project objective and remaining gates |
 | `CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | Generated checklist for the local CEA-oriented manuscript package and remaining submission gates |
 | `CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | Generated manual preflight checklist for final journal-system and package verification |
 | `CEA_FINAL_HANDOFF_CHECKLIST.md` | Final advisor/submission handoff checklist for local materials, manual gates, and claim boundaries |
@@ -106,6 +107,7 @@ Recommended ways to read it:
 | `figures/pdf_review/manuscript_pages_contact_sheet.jpg` | Contact sheet of all current manuscript PDF pages for visual review |
 | `submission_material_manifest.md` | Generated index of current submission-facing documents, tables, figures, and audits |
 | `submission_audit_dashboard.md` | Generated one-page dashboard summarizing paper-facing audits |
+| `GOAL_COMPLETION_AUDIT.md` | Generated audit mapping the full project objective to evidence and remaining manual/external gates |
 | `references.md` | Reference list draft |
 | `commands.md` | Reproducibility commands |
 | `experiment_protocol.md` | Experimental protocol and evidence rules |

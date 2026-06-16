@@ -7,16 +7,16 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 ## Package
 
 - Zip file: `paper/advisor_review_package.zip`
-- Ready files: 34
+- Ready files: 35
 - Missing files: 0
-- Zip size: 3.32 MB
+- Zip size: 3.33 MB
 
 ## Included Files
 
 | Path | Size | Note |
 | --- | ---: | --- |
 | `README.md` | 10.6 KB | Repository-level project introduction. |
-| `paper/README.md` | 11.4 KB | Paper workspace navigation. |
+| `paper/README.md` | 11.6 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
 | `paper/advisor_review_note.md` | 5.6 KB | Short cover note for advisor review. |
@@ -32,10 +32,11 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/CEA_COVER_LETTER_DRAFT.md` | 4.5 KB | Bounded draft for editor-facing submission notes. |
 | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.3 KB | Manual submission preflight checklist. |
 | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 3.9 KB | Local submission package checklist. |
-| `paper/submission_audit_dashboard.md` | 4.5 KB | Current audit dashboard. |
+| `paper/GOAL_COMPLETION_AUDIT.md` | 4.5 KB | Requirement-to-evidence audit for the active project objective. |
+| `paper/submission_audit_dashboard.md` | 4.6 KB | Current audit dashboard. |
 | `paper/evidence_audit.md` | 13.7 KB | Paper-facing number provenance audit. |
 | `paper/manuscript_number_trace_audit.md` | 56.4 KB | Trace audit for manuscript numbers. |
-| `paper/commands.md` | 17.8 KB | Reproducibility commands. |
+| `paper/commands.md` | 18.0 KB | Reproducibility commands. |
 | `paper/tables/main_comparison_for_paper.csv` | 1.8 KB | Main comparison table. |
 | `paper/tables/ablation_results.csv` | 1.7 KB | Ablation table. |
 | `paper/tables/speed_results.csv` | 2.6 KB | Speed benchmark table. |

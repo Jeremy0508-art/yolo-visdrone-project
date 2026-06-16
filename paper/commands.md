@@ -669,6 +669,18 @@ Generated file:
 paper/submission_material_manifest.md
 ```
 
+Build the requirement-to-evidence audit for the active project objective:
+
+```powershell
+python tools/build_goal_completion_audit.py
+```
+
+Generated file:
+
+```text
+paper/GOAL_COMPLETION_AUDIT.md
+```
+
 Generate a manuscript/table consistency audit:
 
 ```powershell
