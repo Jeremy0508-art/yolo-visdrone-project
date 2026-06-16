@@ -40,6 +40,7 @@ Recommended ways to read it:
 | `CEA_FINAL_HANDOFF_CHECKLIST.md` | Final advisor/submission handoff checklist for local materials, manual gates, and claim boundaries |
 | `CEA_PDF_VISUAL_REVIEW_FORM.md` | Page-by-page manual PDF inspection form |
 | `CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | Manual checklist for verifying GitHub rendering before sharing the repository |
+| `github_public_view_audit.md` | Automated public GitHub reachability and raw README audit |
 | `CEA_TEMPLATE_MIGRATION_RECORD.md` | Record sheet for migrating the current LaTeX/PDF candidate into the official CEA template |
 | `CEA_SUBMISSION_METADATA_WORKSHEET.md` | Worksheet for author, affiliation, funding, declaration, and upload metadata |
 | `advisor_review_package_manifest.md` | Manifest for the lightweight advisor-review zip package |
@@ -98,6 +99,7 @@ Recommended ways to read it:
 | `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
 | `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |
 | `project_readme_presentation_audit.md` | Generated audit for repository-level README presentation quality |
+| `github_public_view_audit.md` | Generated audit for public GitHub reachability, raw README content, and key paper links |
 | `pdf_text_readability_audit.md` | Generated audit for compiled PDF text extraction and basic readability tokens |
 | `pdf_layout_health_audit.md` | Generated audit for compiled PDF page count, page size, blank pages, and figure-heavy pages |
 | `figures/pdf_review/manuscript_pages_contact_sheet.jpg` | Contact sheet of all current manuscript PDF pages for visual review |

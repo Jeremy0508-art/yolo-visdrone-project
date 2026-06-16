@@ -28,6 +28,7 @@ PACKAGE_ITEMS = [
     PackageItem("paper/pdf_visual_contact_sheet.md", "Generated contact-sheet report for PDF visual review."),
     PackageItem("paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg", "Contact sheet of all manuscript PDF pages."),
     PackageItem("paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md", "Manual GitHub public rendering checklist."),
+    PackageItem("paper/github_public_view_audit.md", "Automated public GitHub reachability and raw README audit."),
     PackageItem("paper/CEA_TEMPLATE_MIGRATION_RECORD.md", "Official template migration record sheet."),
     PackageItem("paper/CEA_SUBMISSION_METADATA_WORKSHEET.md", "Worksheet for author, affiliation, funding, declaration, and upload metadata."),
     PackageItem("paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md", "Manual submission preflight checklist."),

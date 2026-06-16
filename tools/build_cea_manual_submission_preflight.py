@@ -145,8 +145,8 @@ def build_checks() -> list[PreflightCheck]:
         (
             "GitHub public view",
             "pending",
-            "manual verification required",
-            "Open the repository page after the final push and verify that README, paper links, and command notes render cleanly.",
+            "paper/github_public_view_audit.md",
+            "Automated public-link checks pass, but open the repository page after the final push and verify that README, paper links, images, and command notes render cleanly in a browser.",
         ),
     ]
     for item, status, evidence, action in manual_items:

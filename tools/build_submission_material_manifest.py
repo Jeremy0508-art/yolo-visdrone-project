@@ -79,6 +79,7 @@ def build_materials() -> list[Material]:
         ("CEA PDF visual review form", "paper/CEA_PDF_VISUAL_REVIEW_FORM.md"),
         ("PDF visual contact sheet report", "paper/pdf_visual_contact_sheet.md"),
         ("CEA GitHub public view checklist", "paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md"),
+        ("GitHub public view audit", "paper/github_public_view_audit.md"),
         ("CEA template migration record", "paper/CEA_TEMPLATE_MIGRATION_RECORD.md"),
         ("Advisor review package manifest", "paper/advisor_review_package_manifest.md"),
         ("Advisor review package zip", "paper/advisor_review_package.zip"),
@@ -146,6 +147,7 @@ def build_materials() -> list[Material]:
         ("Project README presentation audit", "paper/project_readme_presentation_audit.md"),
         ("PDF text readability audit", "paper/pdf_text_readability_audit.md"),
         ("PDF layout health audit", "paper/pdf_layout_health_audit.md"),
+        ("GitHub public view audit", "paper/github_public_view_audit.md"),
         ("Advisor progress brief audit", "paper/advisor_progress_brief_audit.md"),
     ]:
         add_file(materials, "Audits", item, path)

@@ -52,6 +52,7 @@ REQUIRED_COMMANDS = [
     ("Synced fair-experiment artifacts audit", r"python\s+tools/check_synced_fair_experiment_artifacts\.py"),
     ("Text hygiene audit", r"python\s+tools/check_text_hygiene\.py"),
     ("Project README presentation audit", r"python\s+tools/check_project_readme_presentation\.py"),
+    ("GitHub public view audit", r"python\s+tools/check_github_public_view\.py"),
     ("PDF text readability audit", r"python\s+tools/check_pdf_text_readability\.py"),
     ("PDF layout health audit", r"python\s+tools/check_pdf_layout_health\.py"),
     ("PDF visual contact sheet", r"python\s+tools/render_pdf_review_contact_sheet\.py"),

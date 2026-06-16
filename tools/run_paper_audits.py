@@ -31,6 +31,7 @@ AUDIT_STEPS = [
     ("CEA manual submission preflight", "tools/build_cea_manual_submission_preflight.py"),
     ("Text hygiene audit", "tools/check_text_hygiene.py"),
     ("Project README presentation audit", "tools/check_project_readme_presentation.py"),
+    ("GitHub public view audit", "tools/check_github_public_view.py"),
     ("PDF text readability audit", "tools/check_pdf_text_readability.py"),
     ("PDF layout health audit", "tools/check_pdf_layout_health.py"),
     ("Advisor progress brief", "tools/build_advisor_progress_brief.py"),

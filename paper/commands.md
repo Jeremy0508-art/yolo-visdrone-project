@@ -439,6 +439,18 @@ Generated file:
 paper/project_readme_presentation_audit.md
 ```
 
+Check public GitHub reachability and raw README content:
+
+```powershell
+python tools/check_github_public_view.py
+```
+
+Generated file:
+
+```text
+paper/github_public_view_audit.md
+```
+
 Check whether LaTeX figures and tables are captioned, labeled, referenced, and resolvable:
 
 ```powershell

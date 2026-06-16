@@ -29,7 +29,7 @@ It records the final manual checks that cannot be proven by local scripts. It is
 | Manual Submission Gate | Chinese and English abstracts and keywords | PENDING | `manual verification required` | Manually check wording, length, and keyword consistency after the final result rewrite. |
 | Manual Submission Gate | Final PDF page-by-page visual review | PENDING | `manual verification required` | Inspect the compiled PDF for figure placement, table width, captions, references, blank pages, and unreadable labels. |
 | Manual Submission Gate | Completed fair-comparison experiment integration | READY | `synced artifacts and paper consistency audits` |  |
-| Manual Submission Gate | GitHub public view | PENDING | `manual verification required` | Open the repository page after the final push and verify that README, paper links, and command notes render cleanly. |
+| Manual Submission Gate | GitHub public view | PENDING | `paper/github_public_view_audit.md` | Automated public-link checks pass, but open the repository page after the final push and verify that README, paper links, images, and command notes render cleanly in a browser. |
 
 ## Interpretation
 
