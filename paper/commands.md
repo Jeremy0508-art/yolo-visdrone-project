@@ -729,6 +729,18 @@ Generated file:
 paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md
 ```
 
+Build the final advisor/submission handoff checklist:
+
+```powershell
+python tools/build_cea_final_handoff_checklist.py
+```
+
+Generated file:
+
+```text
+paper/CEA_FINAL_HANDOFF_CHECKLIST.md
+```
+
 Build the advisor-facing review package:
 
 ```powershell

@@ -60,6 +60,7 @@ REQUIRED_COMMANDS = [
     ("Advisor progress brief audit", r"python\s+tools/check_advisor_progress_brief\.py"),
     ("CEA submission package checklist", r"python\s+tools/build_cea_submission_package_checklist\.py"),
     ("CEA manual submission preflight", r"python\s+tools/build_cea_manual_submission_preflight\.py"),
+    ("CEA final handoff checklist", r"python\s+tools/build_cea_final_handoff_checklist\.py"),
     ("Submission material manifest", r"python\s+tools/build_submission_material_manifest\.py"),
     ("Goal completion audit", r"python\s+tools/build_goal_completion_audit\.py"),
     ("Advisor review package", r"python\s+tools/build_advisor_review_package\.py"),

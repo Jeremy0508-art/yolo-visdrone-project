@@ -47,6 +47,7 @@ AUDIT_STEPS = [
     ("Submission readiness audit", "tools/audit_submission_readiness.py"),
     ("Goal completion audit", "tools/build_goal_completion_audit.py"),
     ("Submission audit dashboard", "tools/build_submission_audit_dashboard.py"),
+    ("CEA final handoff checklist", "tools/build_cea_final_handoff_checklist.py"),
 ]
 
 

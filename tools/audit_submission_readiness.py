@@ -235,6 +235,7 @@ def audit() -> list[Check]:
         ("Goal completion audit builder", "tools/build_goal_completion_audit.py"),
         ("CEA submission package checklist builder", "tools/build_cea_submission_package_checklist.py"),
         ("CEA manual submission preflight builder", "tools/build_cea_manual_submission_preflight.py"),
+        ("CEA final handoff checklist builder", "tools/build_cea_final_handoff_checklist.py"),
     ]
     for item, path in tool_files:
         checks.append(
