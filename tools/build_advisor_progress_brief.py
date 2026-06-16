@@ -121,16 +121,19 @@ def build_brief() -> str:
     rows = read_csv_rows("paper/tables/main_results.csv")
     runs = completed_runs(rows)
     baseline = find_row(rows, "YOLO11n baseline")
-    best = find_row(rows, "YOLO11n-P2-CoordAttention-960")
+    best_accuracy = find_row(rows, "YOLO11s baseline 960")
+    best_lightweight = find_row(rows, "YOLO11n-P2-960")
     server_time, server_status, train_process = read_server_snapshot()
     total_reports, ready_reports, partial_reports, pending_reports, missing_reports = dashboard_summary()
 
-    best_map50 = to_float(best.get("best_map50", ""))
-    best_map50_95 = to_float(best.get("best_map50_95", ""))
+    best_acc_map50 = to_float(best_accuracy.get("best_map50", ""))
+    best_acc_map50_95 = to_float(best_accuracy.get("best_map50_95", ""))
+    best_lw_map50 = to_float(best_lightweight.get("best_map50", ""))
+    best_lw_map50_95 = to_float(best_lightweight.get("best_map50_95", ""))
     base_map50 = to_float(baseline.get("best_map50", ""))
     base_map50_95 = to_float(baseline.get("best_map50_95", ""))
-    delta_map50 = best_map50 - base_map50
-    delta_map50_95 = best_map50_95 - base_map50_95
+    delta_map50 = best_lw_map50 - base_map50
+    delta_map50_95 = best_lw_map50_95 - base_map50_95
 
     lines = [
         "# 导师汇报简版",
@@ -153,11 +156,11 @@ def build_brief() -> str:
     lines.extend(
         [
             "",
-            "## 3. 当前最强已完成模型",
+            "## 3. 当前核心结果",
             "",
-            f"当前已完成实验中，`YOLO11n-P2-CoordAttention-960` 在 VisDrone 验证集上取得 best mAP50={best_map50:.5f}、best mAP50-95={best_map50_95:.5f}。与 `YOLO11n baseline` 的 best mAP50={base_map50:.5f}、best mAP50-95={base_map50_95:.5f} 相比，分别提升 {points(delta_map50)} 和 {points(delta_map50_95)}。",
+            f"当前已完成实验中，`YOLO11s baseline 960` 取得最高验证精度，best mAP50={best_acc_map50:.5f}、best mAP50-95={best_acc_map50_95:.5f}，说明更大模型容量仍是提升 VisDrone 检测精度的重要因素。",
             "",
-            "需要注意：这一结论目前只说明当前已完成实验中的表现。由于 960 输入分辨率本身可能贡献较大，最终论文结论必须等待 YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960 等公平对比实验完成后再定稿。",
+            f"在 nano 级轻量模型中，`YOLO11n-P2-960` 取得 best mAP50={best_lw_map50:.5f}、best mAP50-95={best_lw_map50_95:.5f}。与 `YOLO11n baseline` 的 best mAP50={base_map50:.5f}、best mAP50-95={base_map50_95:.5f} 相比，分别提升 {points(delta_map50)} 和 {points(delta_map50_95)}。该结果支持把论文主张定位为轻量模型中的精度-速度-参数量折中，而不是对大容量模型的全面超越。",
             "",
             "## 4. 小目标证据",
             "",
@@ -167,32 +170,31 @@ def build_brief() -> str:
             "",
             "## 5. 服务器公平对比实验",
             "",
-            "为回答审稿人最可能追问的公平性问题，服务器正在按队列补跑以下实验：YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960、YOLOv5n-640。",
+            "为回答审稿人最可能追问的公平性问题，服务器补跑的 YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960、YOLOv5n-640 已达到 100 epoch 并同步到本地证据链。",
             f"- 最近服务器状态时间：{server_time}",
             f"- 当前 YOLO11n-960 状态：{server_status}",
             f"- 训练进程：`{train_process}`",
-            "- 未完成 100 epoch 的服务器结果只作为进度信息，不能进入论文结果表、摘要或结论。",
+            "- 所有进入论文结果表的公平对比数值均来自本地 `runs/`、训练日志和 `paper/tables/` 汇总文件。",
             "",
             "## 6. 投稿准备状态",
             "",
             f"- 当前审计仪表盘：共 {total_reports} 个报告，{ready_reports} ready，{partial_reports} partial，{pending_reports} pending，{missing_reports} missing。",
             "- 已建立 LaTeX/PDF、图表、复现命令、证据审计、参考文献核验、投稿风险登记表和服务器状态追踪。",
-            "- 当前核心阻塞仍是公平对比实验尚未全部完成；实验完成后需要同步完整日志和结果、重建表格、补测速度/复杂度，并按结果解释矩阵重写摘要、结果分析和结论。",
+            "- 当前核心阻塞已从实验训练转为期刊投稿前人工检查，包括官方模板、作者信息、最终 PDF 目视检查和投稿材料包整理。",
             "",
             "## 7. 给导师的风险说明",
             "",
-            "- 目前不建议使用“全面优于主流 YOLO”这类绝对表述。",
-            "- 如果 YOLO11n-960 接近主方法，论文应强调高分辨率输入是主要贡献来源，P2/CA 是结构补充。",
-            "- 如果 YOLO11s-960 更强，论文应转向轻量化折中、参数效率和部署成本分析。",
-            "- 如果新增对照结果整体不支持方法优势，论文仍可转为系统评估和实证分析型稿件，但必须如实呈现负结果。",
+            "- 不建议使用“全面领先主流 YOLO”这类绝对表述。",
+            "- YOLO11s-960 精度最高，论文应明确其作为容量上限参考。",
+            "- YOLO11n-P2-960 是当前 nano 级轻量模型中较好的折中点，应强调参数规模、速度和精度之间的平衡。",
+            "- CoordAttention 在 960 输入下未超过 P2-960，论文中应把它解释为辅助设计和负向/边界结果，而不是决定性增益来源。",
             "",
             "## 8. 下一步",
             "",
-            "1. 等服务器公平对比实验完成 100 epoch。",
-            "2. 用 `tools/sync_cea_server_results.ps1 -MinEpochs 100` 同步完整结果。",
-            "3. 重新生成 `paper/tables/`、速度/复杂度/尺度分析和审计报告。",
-            "4. 按 `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` 重写论文主张。",
-            "5. 编译 PDF，检查排版、引用、图表和数值追溯后再给导师审阅。",
+            "1. 按 `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` 完成投稿版结果讨论和结论边界打磨。",
+            "2. 对照《计算机工程与应用》模板做版式、篇幅、参考文献和图表源文件检查。",
+            "3. 完成最终 PDF 目视检查，确认图表浮动、页码、引用和数值追溯。",
+            "4. 整理投稿材料包和 GitHub 展示页，再提交给导师审阅。",
         ]
     )
     return "\n".join(lines) + "\n"

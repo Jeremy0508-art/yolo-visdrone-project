@@ -124,12 +124,25 @@ def write_dashboard(summaries: list[AuditSummary]) -> None:
     for s in summaries:
         lines.append(f"| {s.name} | {s.status} | {s.summary} | `{s.path}` | {s.note} |")
 
+    fair_artifacts = next((s for s in summaries if s.name == "Synced fair-experiment artifacts"), None)
+    if fair_artifacts and fair_artifacts.status == "READY":
+        current_gate = (
+            "Fair-comparison experiments have been synchronized and traced to local artifacts. "
+            "The remaining submission gates are journal-format/manual preflight items, final visual PDF inspection, "
+            "author metadata, and official VisDrone test-dev results if the platform becomes usable."
+        )
+    else:
+        current_gate = (
+            "The project is not yet final-submission-ready while fair-comparison experiments remain pending. "
+            "Partial server runs are progress information only and must not be copied into paper result tables."
+        )
+
     lines.extend(
         [
             "",
             "## Current Gate",
             "",
-            "The project is not yet final-submission-ready while fair-comparison experiments remain pending. Partial server runs are progress information only and must not be copied into paper result tables.",
+            current_gate,
         ]
     )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

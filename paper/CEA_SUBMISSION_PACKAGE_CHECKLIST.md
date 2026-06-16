@@ -7,8 +7,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 ## Summary
 
 - Total checks: 30
-- Ready: 27
-- Pending: 3
+- Ready: 29
+- Pending: 1
 - Missing: 0
 
 ## Checks
@@ -19,9 +19,9 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Manuscript | Compiled PDF preview | READY | `paper/manuscript_submission_candidate.pdf` |  |
 | Manuscript | Paper workspace README | READY | `paper/README.md` |  |
 | Manuscript | Project README | READY | `README.md` |  |
-| Tables | Main result table | READY | `paper/tables/main_comparison_for_paper.csv; 10 data rows` |  |
-| Tables | Ablation table | READY | `paper/tables/ablation_results.csv; 8 data rows` |  |
-| Tables | Speed table | READY | `paper/tables/speed_results.csv; 10 data rows` |  |
+| Tables | Main result table | READY | `paper/tables/main_comparison_for_paper.csv; 12 data rows` |  |
+| Tables | Ablation table | READY | `paper/tables/ablation_results.csv; 10 data rows` |  |
+| Tables | Speed table | READY | `paper/tables/speed_results.csv; 12 data rows` |  |
 | Tables | Complexity table | READY | `paper/tables/model_complexity.csv; 12 data rows` |  |
 | Tables | Per-class table | READY | `paper/tables/per_class_results.csv; 70 data rows` |  |
 | Tables | Scale-group table | READY | `paper/tables/scale_group_results.csv; 6 data rows` |  |
@@ -39,8 +39,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Evidence | Synced fair-experiment artifacts audit | READY | `paper/synced_fair_experiment_artifacts_audit.md` |  |
 | Evidence | Reference verification audit | READY | `paper/reference_verification_audit.md` |  |
 | Evidence | Manual submission preflight | READY | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` |  |
-| Experiment Gate | Fair-comparison server experiments | PENDING | `3/5 completed experiments` | Wait for complete 100-epoch runs, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
-| Experiment Gate | Post-sync manuscript rewrite | PENDING | `abstract, fair-resolution section, mainstream YOLO section, and conclusion depend on audited synced results` | Rewrite only after refreshed tables and audits are complete. |
+| Experiment Gate | Fair-comparison server experiments | READY | `5/5 completed experiments` | Wait for complete 100-epoch runs, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
+| Experiment Gate | Post-sync manuscript rewrite | READY | `abstract, fair-resolution section, mainstream YOLO section, and conclusion depend on audited synced results` | Rewrite only after refreshed tables and audits are complete. |
 | Supporting Materials | Reproducibility commands | READY | `paper/commands.md` |  |
 | Supporting Materials | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` |  |
 | Supporting Materials | Advisor progress brief | READY | `paper/advisor_progress_brief.md` |  |

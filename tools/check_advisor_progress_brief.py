@@ -13,16 +13,17 @@ REPORT_PATH = ROOT / "paper/advisor_progress_brief_audit.md"
 
 REQUIRED_PHRASES = [
     "《计算机工程与应用》",
-    "YOLO11n-P2-CoordAttention-960",
-    "未完成 100 epoch",
-    "不能进入论文结果表",
-    "YOLO11n-960",
+    "YOLO11s baseline 960",
     "YOLO11n-P2-960",
+    "100 epoch 并同步",
+    "paper/tables",
+    "YOLO11n-960",
     "YOLOv8n-960",
     "YOLO11s-960",
     "YOLOv5n-640",
     "不等同于官方 AP",
     "CEA_RESULT_INTERPRETATION_MATRIX.md",
+    "官方模板",
 ]
 
 

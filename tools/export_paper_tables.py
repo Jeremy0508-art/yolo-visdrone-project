@@ -189,6 +189,8 @@ def find_model_summary(run_name: str, model_name: str) -> tuple[str, str, str]:
     lowered_model = model_name.lower()
     if "yolov8n" in lowered_model:
         search_terms.append("baseline_yolov8n")
+    if "yolov5n" in lowered_model:
+        search_terms.append("baseline_yolov5n")
     if "yolo11s" in lowered_model:
         search_terms.append("baseline_yolo11s")
     if "baseline" in lowered_model:

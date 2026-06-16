@@ -534,3 +534,19 @@ submission-strengthening stage. It is an audit log, not a manuscript source.
 - Local paper material updates:
   - Regenerated paper tables, speed table, and accuracy-speed trade-off figure.
   - Updated README, CEA submission plan, LaTeX manuscript, Markdown previews, and table draft to use the new stage results while keeping final conclusions provisional until remaining baselines finish.
+
+## 2026-06-16 Final Fair-Comparison Integration
+
+- Server synchronization:
+  - `baseline_yolo11s_960_visdrone` and `baseline_yolov5n_visdrone` reached the 100-epoch completion gate and were synchronized locally.
+  - Local evidence now includes their `results.csv`, `args.yaml`, `weights/best.pt`, `weights/last.pt`, and training logs.
+- Final fair-comparison results:
+  - `YOLO11s baseline 960` reached best mAP50 `0.48901` and best mAP50-95 `0.29812`, the highest validation accuracy among the synchronized experiments.
+  - `YOLOv5n baseline` reached best mAP50 `0.31030` and best mAP50-95 `0.17513`.
+  - `YOLO11n-P2-960` remains the strongest nano-level lightweight candidate in the current matrix, with best mAP50 `0.42361`, best mAP50-95 `0.25552`, and `55.68 FPS` under the local speed protocol.
+- Interpretation update:
+  - The paper should not claim universal superiority over larger YOLO models.
+  - The defensible claim is that high-resolution input is the dominant gain, P2 remains useful at 960 input, CoordAttention has limited gain in this high-resolution run, and `YOLO11n-P2-960` provides a lightweight accuracy-speed-parameter trade-off.
+- Local material updates:
+  - Regenerated `paper/tables/`, refreshed speed results with `tools/benchmark_speed.py`, and regenerated the accuracy-speed trade-off figure.
+  - Updated README, CEA submission plan, LaTeX manuscript, Markdown manuscript preview, and table draft to reflect the final synchronized results.

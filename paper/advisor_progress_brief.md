@@ -8,10 +8,12 @@
 
 ## 2. 已完成实验和材料
 
-- 已完成 100 epoch 本地训练/验证的模型数：10。
+- 已完成 100 epoch 本地训练/验证的模型数：12。
 - YOLOv8n baseline：imgsz=640，best mAP50=0.32520，best mAP50-95=0.18386，结果目录 `runs/detect/baseline_yolov8n_visdrone`。
+- YOLOv5n baseline：imgsz=640，best mAP50=0.31030，best mAP50-95=0.17513，结果目录 `runs/detect/baseline_yolov5n_visdrone`。
 - YOLOv8n baseline 960：imgsz=960，best mAP50=0.42016，best mAP50-95=0.25121，结果目录 `runs/detect/baseline_yolov8n_960_visdrone`。
 - YOLO11s baseline：imgsz=640，best mAP50=0.38937，best mAP50-95=0.22719，结果目录 `runs/detect/baseline_yolo11s_visdrone`。
+- YOLO11s baseline 960：imgsz=960，best mAP50=0.48901，best mAP50-95=0.29812，结果目录 `runs/detect/baseline_yolo11s_960_visdrone`。
 - YOLO11n baseline：imgsz=640，best mAP50=0.32153，best mAP50-95=0.18238，结果目录 `runs/detect/baseline_yolo11n_visdrone`。
 - YOLO11n baseline 960：imgsz=960，best mAP50=0.42136，best mAP50-95=0.25067，结果目录 `runs/detect/baseline_yolo11n_960_visdrone`。
 - YOLO11n-P2：imgsz=640，best mAP50=0.33013，best mAP50-95=0.19012，结果目录 `runs/detect/yolo11n_p2_pretrained_visdrone`。
@@ -20,11 +22,11 @@
 - YOLO11n-P2-CoordAttention-960：imgsz=960，best mAP50=0.41996，best mAP50-95=0.25174，结果目录 `runs/detect/yolo11n_p2_coordatt_960_visdrone_full`。
 - YOLO11n-P2-CoordAttention-SmallObjAug：imgsz=640，best mAP50=0.32780，best mAP50-95=0.18699，结果目录 `runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone`。
 
-## 3. 当前最强已完成模型
+## 3. 当前核心结果
 
-当前已完成实验中，`YOLO11n-P2-CoordAttention-960` 在 VisDrone 验证集上取得 best mAP50=0.41996、best mAP50-95=0.25174。与 `YOLO11n baseline` 的 best mAP50=0.32153、best mAP50-95=0.18238 相比，分别提升 9.84 个百分点 和 6.94 个百分点。
+当前已完成实验中，`YOLO11s baseline 960` 取得最高验证精度，best mAP50=0.48901、best mAP50-95=0.29812，说明更大模型容量仍是提升 VisDrone 检测精度的重要因素。
 
-需要注意：这一结论目前只说明当前已完成实验中的表现。由于 960 输入分辨率本身可能贡献较大，最终论文结论必须等待 YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960 等公平对比实验完成后再定稿。
+在 nano 级轻量模型中，`YOLO11n-P2-960` 取得 best mAP50=0.42361、best mAP50-95=0.25552。与 `YOLO11n baseline` 的 best mAP50=0.32153、best mAP50-95=0.18238 相比，分别提升 10.21 个百分点 和 7.31 个百分点。该结果支持把论文主张定位为轻量模型中的精度-速度-参数量折中，而不是对大容量模型的全面超越。
 
 ## 4. 小目标证据
 
@@ -34,29 +36,28 @@
 
 ## 5. 服务器公平对比实验
 
-为回答审稿人最可能追问的公平性问题，服务器正在按队列补跑以下实验：YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960、YOLOv5n-640。
-- 最近服务器状态时间：2026-06-15 16:08:20 +08:00
+为回答审稿人最可能追问的公平性问题，服务器补跑的 YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960、YOLOv5n-640 已达到 100 epoch 并同步到本地证据链。
+- 最近服务器状态时间：2026-06-16 13:16:44 +08:00
 - 当前 YOLO11n-960 状态：READY，100/100 epoch
 - 训练进程：`STOPPED pid=43554`
-- 未完成 100 epoch 的服务器结果只作为进度信息，不能进入论文结果表、摘要或结论。
+- 所有进入论文结果表的公平对比数值均来自本地 `runs/`、训练日志和 `paper/tables/` 汇总文件。
 
 ## 6. 投稿准备状态
 
-- 当前审计仪表盘：共 30 个报告，23 ready，1 partial，6 pending，0 missing。
+- 当前审计仪表盘：共 30 个报告，26 ready，1 partial，3 pending，0 missing。
 - 已建立 LaTeX/PDF、图表、复现命令、证据审计、参考文献核验、投稿风险登记表和服务器状态追踪。
-- 当前核心阻塞仍是公平对比实验尚未全部完成；实验完成后需要同步完整日志和结果、重建表格、补测速度/复杂度，并按结果解释矩阵重写摘要、结果分析和结论。
+- 当前核心阻塞已从实验训练转为期刊投稿前人工检查，包括官方模板、作者信息、最终 PDF 目视检查和投稿材料包整理。
 
 ## 7. 给导师的风险说明
 
-- 目前不建议使用“全面优于主流 YOLO”这类绝对表述。
-- 如果 YOLO11n-960 接近主方法，论文应强调高分辨率输入是主要贡献来源，P2/CA 是结构补充。
-- 如果 YOLO11s-960 更强，论文应转向轻量化折中、参数效率和部署成本分析。
-- 如果新增对照结果整体不支持方法优势，论文仍可转为系统评估和实证分析型稿件，但必须如实呈现负结果。
+- 不建议使用“全面领先主流 YOLO”这类绝对表述。
+- YOLO11s-960 精度最高，论文应明确其作为容量上限参考。
+- YOLO11n-P2-960 是当前 nano 级轻量模型中较好的折中点，应强调参数规模、速度和精度之间的平衡。
+- CoordAttention 在 960 输入下未超过 P2-960，论文中应把它解释为辅助设计和负向/边界结果，而不是决定性增益来源。
 
 ## 8. 下一步
 
-1. 等服务器公平对比实验完成 100 epoch。
-2. 用 `tools/sync_cea_server_results.ps1 -MinEpochs 100` 同步完整结果。
-3. 重新生成 `paper/tables/`、速度/复杂度/尺度分析和审计报告。
-4. 按 `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` 重写论文主张。
-5. 编译 PDF，检查排版、引用、图表和数值追溯后再给导师审阅。
+1. 按 `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` 完成投稿版结果讨论和结论边界打磨。
+2. 对照《计算机工程与应用》模板做版式、篇幅、参考文献和图表源文件检查。
+3. 完成最终 PDF 目视检查，确认图表浮动、页码、引用和数值追溯。
+4. 整理投稿材料包和 GitHub 展示页，再提交给导师审阅。

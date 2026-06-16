@@ -6,8 +6,8 @@ This audit is intentionally conservative. It checks decimal values only; integer
 
 ## Summary
 
-- Total checks: 267
-- Ready: 267
+- Total checks: 295
+- Ready: 295
 - Missing: 0
 
 ## Checks
@@ -20,7 +20,9 @@ This audit is intentionally conservative. It checks decimal values only; integer
 | 0.251 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
 | 0.420 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
 | 0.252 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 55.71 | 5 | READY | `paper/tables/speed_results.csv:fps_wall` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
+| 55.68 | 5 | READY | `paper/tables/speed_results.csv:fps_wall` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
+| 0.489 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
+| 0.298 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
 | 0.35 | 117 | READY | `documented augmentation/configuration value` | 此外，本文设计了小目标友好数据增强消融实验，设置包括 \texttt{close\_mosaic: 20}、\texttt{scale: 0.35}、\texttt{copy\_paste: 0.1} 和 \texttt{erasing: 0.0}。其中，较早关闭 mosaic  |
 | 0.1 | 117 | READY | `documented augmentation/configuration value` | 此外，本文设计了小目标友好数据增强消融实验，设置包括 \texttt{close\_mosaic: 20}、\texttt{scale: 0.35}、\texttt{copy\_paste: 0.1} 和 \texttt{erasing: 0.0}。其中，较早关闭 mosaic  |
 | 0.0 | 117 | READY | `documented augmentation/configuration value` | 此外，本文设计了小目标友好数据增强消融实验，设置包括 \texttt{close\_mosaic: 20}、\texttt{scale: 0.35}、\texttt{copy\_paste: 0.1} 和 \texttt{erasing: 0.0}。其中，较早关闭 mosaic  |
@@ -89,6 +91,8 @@ This audit is intentionally conservative. It checks decimal values only; integer
 | 0.251 | 193 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 从结果看，640 输入下 \YOLOEightN{} 与 \YOLOBase{} 的性能接近；在 960 输入下，\YOLOEightN{} baseline 达到 0.420 mAP50 和 0.251 mAP50-95，接近 \YOLOBase{}-960，但仍低于 \YOL |
 | 0.424 | 193 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 从结果看，640 输入下 \YOLOEightN{} 与 \YOLOBase{} 的性能接近；在 960 输入下，\YOLOEightN{} baseline 达到 0.420 mAP50 和 0.251 mAP50-95，接近 \YOLOBase{}-960，但仍低于 \YOL |
 | 0.256 | 193 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 从结果看，640 输入下 \YOLOEightN{} 与 \YOLOBase{} 的性能接近；在 960 输入下，\YOLOEightN{} baseline 达到 0.420 mAP50 和 0.251 mAP50-95，接近 \YOLOBase{}-960，但仍低于 \YOL |
+| 0.489 | 193 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 从结果看，640 输入下 \YOLOEightN{} 与 \YOLOBase{} 的性能接近；在 960 输入下，\YOLOEightN{} baseline 达到 0.420 mAP50 和 0.251 mAP50-95，接近 \YOLOBase{}-960，但仍低于 \YOL |
+| 0.298 | 193 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 从结果看，640 输入下 \YOLOEightN{} 与 \YOLOBase{} 的性能接近；在 960 输入下，\YOLOEightN{} baseline 达到 0.420 mAP50 和 0.251 mAP50-95，接近 \YOLOBase{}-960，但仍低于 \YOL |
 | 3.013 | 205 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 0.448 & 0.346 & 0.325 / 0.184 \\ |
 | 8.2 | 205 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 0.448 & 0.346 & 0.325 / 0.184 \\ |
 | 0.448 | 205 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 0.448 & 0.346 & 0.325 / 0.184 \\ |
@@ -107,180 +111,204 @@ This audit is intentionally conservative. It checks decimal values only; integer
 | 0.393 | 207 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 0.524 & 0.393 & 0.389 / 0.227 \\ |
 | 0.389 | 207 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 0.524 & 0.393 & 0.389 / 0.227 \\ |
 | 0.227 | 207 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 0.524 & 0.393 & 0.389 / 0.227 \\ |
-| 2.592 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
-| 6.5 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
-| 0.454 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
-| 0.339 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
-| 0.322 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
-| 0.182 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
-| 2.592 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
-| 6.5 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
-| 0.533 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
-| 0.420 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
-| 0.421 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
-| 0.251 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
-| 2.894 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
-| 10.7 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
-| 0.538 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
-| 0.421 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
-| 0.424 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
-| 0.256 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
-| 2.904 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
-| 10.7 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
-| 0.534 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
-| 0.428 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
-| 0.420 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
-| 0.252 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
-| 0.009 | 228 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
-| 0.008 | 228 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
-| 9.84 | 228 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
-| 6.94 | 228 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
-| 0.322 | 240 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
-| 0.000 | 240 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
-| 0.182 | 240 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
-| 0.000 | 240 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
-| 0.330 | 241 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
-| 0.009 | 241 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
-| 0.190 | 241 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
-| 0.008 | 241 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
-| 0.331 | 242 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
-| 0.009 | 242 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
-| 0.190 | 242 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
-| 0.008 | 242 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
-| 0.420 | 243 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
-| 0.098 | 243 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
-| 0.252 | 243 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
-| 0.069 | 243 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
-| 0.328 | 244 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
-| 0.006 | 244 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
-| 0.187 | 244 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
-| 0.005 | 244 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
-| 68.59 | 252 | READY | `paper/tables/object_scale_distribution.csv:ratio` | 为进一步验证 VisDrone 场景中小目标占比较高这一问题设定，本文基于 YOLO 格式标注文件统计训练集和验证集目标框面积分布。尺度划分采用常见的 COCO 面积阈值：small 表示目标框面积小于 $32^2$ 像素，medium 表示面积位于 $32^2$ 至 $96^2 |
-| 60.49 | 252 | READY | `paper/tables/object_scale_distribution.csv:ratio` | 为进一步验证 VisDrone 场景中小目标占比较高这一问题设定，本文基于 YOLO 格式标注文件统计训练集和验证集目标框面积分布。尺度划分采用常见的 COCO 面积阈值：small 表示目标框面积小于 $32^2$ 像素，medium 表示面积位于 $32^2$ 至 $96^2 |
-| 60.49 | 263 | READY | `paper/tables/object_scale_distribution.csv:ratio` | train & 207604 & 116620 & 18980 & 60.49\% \\ |
-| 68.59 | 264 | READY | `paper/tables/object_scale_distribution.csv:ratio` | val & 26586 & 11105 & 1068 & 68.59\% \\ |
-| 0.25 | 276 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
-| 0.5 | 276 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
-| 0.308 | 276 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
-| 0.455 | 276 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
-| 14.74 | 276 | READY | `derived difference between paper/tables/main_comparison_for_paper.csv:recall and paper/tables/per_class_results.csv:map50` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
-| 0.712 | 276 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
-| 0.781 | 276 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
-| 0.5 | 286 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | 模型 & 尺度 & 标注实例数 & 匹配标注数 & Recall@0.5 & 预测数 & Precision@0.5 \\ |
-| 0.5 | 286 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | 模型 & 尺度 & 标注实例数 & 匹配标注数 & Recall@0.5 & 预测数 & Precision@0.5 \\ |
-| 0.308 | 288 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOBase{} & small & 26586 & 8180 & 0.308 & 12844 & 0.633 \\ |
-| 0.633 | 288 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOBase{} & small & 26586 & 8180 & 0.308 & 12844 & 0.633 \\ |
-| 0.712 | 289 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOBase{} & medium & 11105 & 7906 & 0.712 & 10472 & 0.759 \\ |
-| 0.759 | 289 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOBase{} & medium & 11105 & 7906 & 0.712 & 10472 & 0.759 \\ |
-| 0.870 | 290 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOBase{} & large & 1068 & 929 & 0.870 & 1080 & 0.866 \\ |
-| 0.866 | 290 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOBase{} & large & 1068 & 929 & 0.870 & 1080 & 0.866 \\ |
-| 0.455 | 291 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOPtwoCANine{} & small & 26586 & 12099 & 0.455 & 17981 & 0.666 \\ |
-| 0.666 | 291 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOPtwoCANine{} & small & 26586 & 12099 & 0.455 & 17981 & 0.666 \\ |
-| 0.781 | 292 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOPtwoCANine{} & medium & 11105 & 8678 & 0.781 & 11144 & 0.789 \\ |
-| 0.789 | 292 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOPtwoCANine{} & medium & 11105 & 8678 & 0.781 & 11144 & 0.789 \\ |
-| 0.882 | 293 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOPtwoCANine{} & large & 1068 & 942 & 0.882 & 1125 & 0.844 \\ |
-| 0.844 | 293 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOPtwoCANine{} & large & 1068 & 942 & 0.882 & 1125 & 0.844 \\ |
-| 0.580 | 320 | READY | `paper/tables/per_class_results.csv:precision` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
-| 0.501 | 320 | READY | `paper/tables/per_class_results.csv:precision` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
-| 0.513 | 320 | READY | `paper/tables/per_class_results.csv:map50` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
-| 0.243 | 320 | READY | `paper/tables/per_class_results.csv:map50_95` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
-| 0.586 | 321 | READY | `paper/tables/per_class_results.csv:precision` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
-| 0.379 | 321 | READY | `paper/tables/per_class_results.csv:recall` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
-| 0.393 | 321 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
-| 0.157 | 321 | READY | `paper/tables/per_class_results.csv:map50_95` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
-| 0.335 | 322 | READY | `paper/tables/per_class_results.csv:precision` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
-| 0.221 | 322 | READY | `paper/tables/per_class_results.csv:recall` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
-| 0.171 | 322 | READY | `paper/tables/per_class_results.csv:map50` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
-| 0.076 | 322 | READY | `paper/tables/per_class_results.csv:map50_95` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
-| 0.736 | 323 | READY | `paper/tables/per_class_results.csv:precision` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
-| 0.830 | 323 | READY | `paper/tables/per_class_results.csv:recall` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
-| 0.837 | 323 | READY | `paper/tables/per_class_results.csv:map50` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
-| 0.590 | 323 | READY | `paper/tables/per_class_results.csv:map50_95` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
-| 0.528 | 324 | READY | `paper/tables/per_class_results.csv:precision` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
-| 0.460 | 324 | READY | `paper/tables/per_class_results.csv:recall` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
-| 0.455 | 324 | READY | `paper/tables/scale_group_results.csv:recall` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
-| 0.321 | 324 | READY | `paper/tables/per_class_results.csv:map50_95` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
-| 0.538 | 325 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
-| 0.395 | 325 | READY | `paper/tables/per_class_results.csv:recall` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
-| 0.375 | 325 | READY | `paper/tables/per_class_results.csv:map50` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
-| 0.249 | 325 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
-| 0.435 | 326 | READY | `paper/tables/per_class_results.csv:map50` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
-| 0.317 | 326 | READY | `paper/tables/per_class_results.csv:recall` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
-| 0.268 | 326 | READY | `paper/tables/per_class_results.csv:map50` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
-| 0.155 | 326 | READY | `paper/tables/per_class_results.csv:map50_95` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
-| 0.300 | 327 | READY | `paper/tables/per_class_results.csv:precision` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
-| 0.198 | 327 | READY | `paper/tables/per_class_results.csv:recall` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
-| 0.133 | 327 | READY | `paper/tables/per_class_results.csv:recall` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
-| 0.086 | 327 | READY | `paper/tables/per_class_results.csv:map50_95` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
-| 0.726 | 328 | READY | `paper/tables/per_class_results.csv:precision` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
-| 0.518 | 328 | READY | `paper/tables/per_class_results.csv:recall` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
-| 0.546 | 328 | READY | `paper/tables/per_class_results.csv:map50` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
-| 0.408 | 328 | READY | `paper/tables/per_class_results.csv:map50_95` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
-| 0.568 | 329 | READY | `paper/tables/per_class_results.csv:precision` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
-| 0.543 | 329 | READY | `paper/tables/per_class_results.csv:map50_95` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
-| 0.520 | 329 | READY | `paper/tables/per_class_results.csv:map50` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
-| 0.239 | 329 | READY | `paper/tables/per_class_results.csv:map50_95` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
-| 14.22 | 337 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 70.35 | 337 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 16.96 | 337 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 58.95 | 337 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 17.95 | 337 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 55.71 | 337 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 18.20 | 337 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 54.94 | 337 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
-| 3.013 | 349 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 26.82 & 37.29 \\ |
-| 8.2 | 349 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 26.82 & 37.29 \\ |
-| 5.95 | 349 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 26.82 & 37.29 \\ |
-| 26.82 | 349 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 26.82 & 37.29 \\ |
-| 37.29 | 349 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 26.82 & 37.29 \\ |
-| 3.013 | 350 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.68 & 68.10 \\ |
-| 8.2 | 350 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.68 & 68.10 \\ |
-| 5.99 | 350 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.68 & 68.10 \\ |
-| 14.68 | 350 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.68 & 68.10 \\ |
-| 68.10 | 350 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.68 & 68.10 \\ |
-| 9.432 | 351 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.36 & 69.66 \\ |
-| 21.6 | 351 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.36 & 69.66 \\ |
-| 18.28 | 351 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.36 & 69.66 \\ |
-| 14.36 | 351 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.36 & 69.66 \\ |
-| 69.66 | 351 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.36 & 69.66 \\ |
-| 2.592 | 352 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.22 & 70.35 \\ |
-| 6.5 | 352 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.22 & 70.35 \\ |
-| 5.21 | 352 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.22 & 70.35 \\ |
-| 14.22 | 352 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.22 & 70.35 \\ |
-| 70.35 | 352 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.22 & 70.35 \\ |
-| 2.592 | 353 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.96 & 58.95 \\ |
-| 6.5 | 353 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.96 & 58.95 \\ |
-| 5.25 | 353 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.96 & 58.95 \\ |
-| 16.96 | 353 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.96 & 58.95 \\ |
-| 58.95 | 353 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.96 & 58.95 \\ |
-| 2.894 | 354 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.34 & 65.18 \\ |
-| 10.7 | 354 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.34 & 65.18 \\ |
-| 5.91 | 354 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.34 & 65.18 \\ |
-| 15.34 | 354 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.34 & 65.18 \\ |
-| 65.18 | 354 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.34 & 65.18 \\ |
-| 2.894 | 355 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.95 & 55.71 \\ |
-| 10.7 | 355 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.95 & 55.71 \\ |
-| 6.06 | 355 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.95 & 55.71 \\ |
-| 17.95 | 355 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.95 & 55.71 \\ |
-| 55.71 | 355 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.95 & 55.71 \\ |
-| 2.904 | 356 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.09 & 62.14 \\ |
-| 10.7 | 356 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.09 & 62.14 \\ |
-| 5.94 | 356 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.09 & 62.14 \\ |
-| 16.09 | 356 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.09 & 62.14 \\ |
-| 62.14 | 356 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.09 & 62.14 \\ |
-| 2.904 | 357 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.67 & 60.00 \\ |
-| 10.7 | 357 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.67 & 60.00 \\ |
-| 5.94 | 357 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.67 & 60.00 \\ |
-| 16.67 | 357 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.67 & 60.00 \\ |
-| 60.00 | 357 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.67 & 60.00 \\ |
-| 2.904 | 358 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 18.20 & 54.94 \\ |
-| 10.7 | 358 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 18.20 & 54.94 \\ |
-| 6.09 | 358 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 18.20 & 54.94 \\ |
-| 18.20 | 358 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 18.20 & 54.94 \\ |
-| 54.94 | 358 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 18.20 & 54.94 \\ |
-| 0.424 | 422 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
-| 0.256 | 422 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
-| 55.71 | 422 | READY | `paper/tables/speed_results.csv:fps_wall` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
+| 9.432 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 0.590 & 0.476 & 0.489 / 0.298 \\ |
+| 21.6 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 0.590 & 0.476 & 0.489 / 0.298 \\ |
+| 0.590 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 0.590 & 0.476 & 0.489 / 0.298 \\ |
+| 0.476 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 0.590 & 0.476 & 0.489 / 0.298 \\ |
+| 0.489 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 0.590 & 0.476 & 0.489 / 0.298 \\ |
+| 0.298 | 208 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 0.590 & 0.476 & 0.489 / 0.298 \\ |
+| 2.510 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 0.436 & 0.329 & 0.310 / 0.175 \\ |
+| 7.2 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 0.436 & 0.329 & 0.310 / 0.175 \\ |
+| 0.436 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 0.436 & 0.329 & 0.310 / 0.175 \\ |
+| 0.329 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 0.436 & 0.329 & 0.310 / 0.175 \\ |
+| 0.310 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 0.436 & 0.329 & 0.310 / 0.175 \\ |
+| 0.175 | 209 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 0.436 & 0.329 & 0.310 / 0.175 \\ |
+| 2.592 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
+| 6.5 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
+| 0.454 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
+| 0.339 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
+| 0.322 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
+| 0.182 | 210 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | \YOLOBase{} baseline & 640 & 2.592 & 6.5 & 0.454 & 0.339 & 0.322 / 0.182 \\ |
+| 2.592 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
+| 6.5 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
+| 0.533 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
+| 0.420 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
+| 0.421 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
+| 0.251 | 211 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOBase{} baseline 960 & 960 & 2.592 & 6.5 & 0.533 & 0.420 & 0.421 / 0.251 \\ |
+| 2.894 | 212 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
+| 10.7 | 212 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
+| 0.538 | 212 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
+| 0.421 | 212 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
+| 0.424 | 212 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
+| 0.256 | 212 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 0.538 & 0.421 & 0.424 / 0.256 \\ |
+| 2.904 | 213 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
+| 10.7 | 213 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
+| 0.534 | 213 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
+| 0.428 | 213 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
+| 0.420 | 213 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
+| 0.252 | 213 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 0.534 & 0.428 & 0.420 / 0.252 \\ |
+| 0.009 | 230 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
+| 0.008 | 230 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
+| 9.84 | 230 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
+| 6.94 | 230 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | 表 \ref{tab:ablation} 展示了各改进项相对基线模型的贡献。P2 分支带来 0.009 的 mAP50 提升和 0.008 的 mAP50-95 提升，说明浅层高分辨率特征对小目标检测具有积极作用。\CoordAtt{} 在 P2 基础上继续带来小幅提升，但提升幅 |
+| 0.322 | 242 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
+| 0.000 | 242 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
+| 0.182 | 242 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
+| 0.000 | 242 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOBase{} & 基线模型 & 640 & 0.322 & +0.000 & 0.182 & +0.000 \\ |
+| 0.330 | 243 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
+| 0.009 | 243 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
+| 0.190 | 243 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
+| 0.008 | 243 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwo{} & 增加 P2 检测头 & 640 & 0.330 & +0.009 & 0.190 & +0.008 \\ |
+| 0.331 | 244 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
+| 0.009 | 244 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
+| 0.190 | 244 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
+| 0.008 | 244 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwoCA{} & 增加 \CoordAtt{} & 640 & 0.331 & +0.009 & 0.190 & +0.008 \\ |
+| 0.420 | 245 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
+| 0.098 | 245 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
+| 0.252 | 245 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
+| 0.069 | 245 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwoCANine{} & 输入尺寸提升至 960 & 960 & 0.420 & +0.098 & 0.252 & +0.069 \\ |
+| 0.328 | 246 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
+| 0.006 | 246 | READY | `paper/tables/ablation_results.csv:best_map50_delta_vs_baseline` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
+| 0.187 | 246 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
+| 0.005 | 246 | READY | `paper/tables/ablation_results.csv:best_map50_95_delta_vs_baseline` | \YOLOPtwoCASmall{} & 小目标友好增强 & 640 & 0.328 & +0.006 & 0.187 & +0.005 \\ |
+| 68.59 | 254 | READY | `paper/tables/object_scale_distribution.csv:ratio` | 为进一步验证 VisDrone 场景中小目标占比较高这一问题设定，本文基于 YOLO 格式标注文件统计训练集和验证集目标框面积分布。尺度划分采用常见的 COCO 面积阈值：small 表示目标框面积小于 $32^2$ 像素，medium 表示面积位于 $32^2$ 至 $96^2 |
+| 60.49 | 254 | READY | `paper/tables/object_scale_distribution.csv:ratio` | 为进一步验证 VisDrone 场景中小目标占比较高这一问题设定，本文基于 YOLO 格式标注文件统计训练集和验证集目标框面积分布。尺度划分采用常见的 COCO 面积阈值：small 表示目标框面积小于 $32^2$ 像素，medium 表示面积位于 $32^2$ 至 $96^2 |
+| 60.49 | 265 | READY | `paper/tables/object_scale_distribution.csv:ratio` | train & 207604 & 116620 & 18980 & 60.49\% \\ |
+| 68.59 | 266 | READY | `paper/tables/object_scale_distribution.csv:ratio` | val & 26586 & 11105 & 1068 & 68.59\% \\ |
+| 0.25 | 278 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
+| 0.5 | 278 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
+| 0.308 | 278 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
+| 0.455 | 278 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
+| 14.74 | 278 | READY | `derived difference between paper/tables/main_comparison_for_paper.csv:final_map50 and paper/tables/main_comparison_for_paper.csv:best_map50_95` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
+| 0.712 | 278 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
+| 0.781 | 278 | READY | `paper/tables/scale_group_results.csv:recall` | 在此基础上，本文进一步使用验证集预测结果进行尺度分组匹配分析。该分析采用 \texttt{conf=0.25} 和 IoU=0.5 的阈值设置，将预测框与同类别标注框进行一对一匹配，并按标注框尺度统计召回率和预测精度。需要说明的是，该结果用于分析不同尺度目标的匹配情况，并不等同于 |
+| 0.5 | 288 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | 模型 & 尺度 & 标注实例数 & 匹配标注数 & Recall@0.5 & 预测数 & Precision@0.5 \\ |
+| 0.5 | 288 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | 模型 & 尺度 & 标注实例数 & 匹配标注数 & Recall@0.5 & 预测数 & Precision@0.5 \\ |
+| 0.308 | 290 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOBase{} & small & 26586 & 8180 & 0.308 & 12844 & 0.633 \\ |
+| 0.633 | 290 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOBase{} & small & 26586 & 8180 & 0.308 & 12844 & 0.633 \\ |
+| 0.712 | 291 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOBase{} & medium & 11105 & 7906 & 0.712 & 10472 & 0.759 \\ |
+| 0.759 | 291 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOBase{} & medium & 11105 & 7906 & 0.712 & 10472 & 0.759 \\ |
+| 0.870 | 292 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOBase{} & large & 1068 & 929 & 0.870 & 1080 & 0.866 \\ |
+| 0.866 | 292 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOBase{} & large & 1068 & 929 & 0.870 & 1080 & 0.866 \\ |
+| 0.455 | 293 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOPtwoCANine{} & small & 26586 & 12099 & 0.455 & 17981 & 0.666 \\ |
+| 0.666 | 293 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOPtwoCANine{} & small & 26586 & 12099 & 0.455 & 17981 & 0.666 \\ |
+| 0.781 | 294 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOPtwoCANine{} & medium & 11105 & 8678 & 0.781 & 11144 & 0.789 \\ |
+| 0.789 | 294 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOPtwoCANine{} & medium & 11105 & 8678 & 0.781 & 11144 & 0.789 \\ |
+| 0.882 | 295 | READY | `paper/tables/scale_group_results.csv:recall` | \YOLOPtwoCANine{} & large & 1068 & 942 & 0.882 & 1125 & 0.844 \\ |
+| 0.844 | 295 | READY | `paper/tables/scale_group_results.csv:precision` | \YOLOPtwoCANine{} & large & 1068 & 942 & 0.882 & 1125 & 0.844 \\ |
+| 0.580 | 322 | READY | `paper/tables/per_class_results.csv:precision` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
+| 0.501 | 322 | READY | `paper/tables/per_class_results.csv:precision` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
+| 0.513 | 322 | READY | `paper/tables/per_class_results.csv:map50` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
+| 0.243 | 322 | READY | `paper/tables/per_class_results.csv:map50_95` | pedestrian & 520 & 8844 & 0.580 & 0.501 & 0.513 & 0.243 \\ |
+| 0.586 | 323 | READY | `paper/tables/per_class_results.csv:precision` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
+| 0.379 | 323 | READY | `paper/tables/per_class_results.csv:recall` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
+| 0.393 | 323 | READY | `paper/tables/main_comparison_for_paper.csv:recall` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
+| 0.157 | 323 | READY | `paper/tables/per_class_results.csv:map50_95` | people & 482 & 5125 & 0.586 & 0.379 & 0.393 & 0.157 \\ |
+| 0.335 | 324 | READY | `paper/tables/per_class_results.csv:precision` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
+| 0.221 | 324 | READY | `paper/tables/per_class_results.csv:recall` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
+| 0.171 | 324 | READY | `paper/tables/per_class_results.csv:map50` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
+| 0.076 | 324 | READY | `paper/tables/per_class_results.csv:map50_95` | bicycle & 364 & 1287 & 0.335 & 0.221 & 0.171 & 0.076 \\ |
+| 0.736 | 325 | READY | `paper/tables/per_class_results.csv:precision` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
+| 0.830 | 325 | READY | `paper/tables/per_class_results.csv:recall` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
+| 0.837 | 325 | READY | `paper/tables/per_class_results.csv:map50` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
+| 0.590 | 325 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | car & 515 & 14064 & 0.736 & 0.830 & 0.837 & 0.590 \\ |
+| 0.528 | 326 | READY | `paper/tables/per_class_results.csv:precision` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
+| 0.460 | 326 | READY | `paper/tables/per_class_results.csv:recall` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
+| 0.455 | 326 | READY | `paper/tables/scale_group_results.csv:recall` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
+| 0.321 | 326 | READY | `paper/tables/per_class_results.csv:map50_95` | van & 421 & 1975 & 0.528 & 0.460 & 0.455 & 0.321 \\ |
+| 0.538 | 327 | READY | `paper/tables/main_comparison_for_paper.csv:precision` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
+| 0.395 | 327 | READY | `paper/tables/per_class_results.csv:recall` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
+| 0.375 | 327 | READY | `paper/tables/per_class_results.csv:map50` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
+| 0.249 | 327 | READY | `paper/tables/main_comparison_for_paper.csv:final_map50_95` | truck & 266 & 750 & 0.538 & 0.395 & 0.375 & 0.249 \\ |
+| 0.435 | 328 | READY | `paper/tables/per_class_results.csv:map50` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
+| 0.317 | 328 | READY | `paper/tables/per_class_results.csv:recall` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
+| 0.268 | 328 | READY | `paper/tables/per_class_results.csv:map50` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
+| 0.155 | 328 | READY | `paper/tables/per_class_results.csv:map50_95` | tricycle & 337 & 1045 & 0.435 & 0.317 & 0.268 & 0.155 \\ |
+| 0.300 | 329 | READY | `paper/tables/per_class_results.csv:precision` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
+| 0.198 | 329 | READY | `paper/tables/per_class_results.csv:recall` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
+| 0.133 | 329 | READY | `paper/tables/per_class_results.csv:recall` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
+| 0.086 | 329 | READY | `paper/tables/per_class_results.csv:map50_95` | awning-tricycle & 220 & 532 & 0.300 & 0.198 & 0.133 & 0.086 \\ |
+| 0.726 | 330 | READY | `paper/tables/per_class_results.csv:precision` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
+| 0.518 | 330 | READY | `paper/tables/per_class_results.csv:recall` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
+| 0.546 | 330 | READY | `paper/tables/per_class_results.csv:map50` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
+| 0.408 | 330 | READY | `paper/tables/per_class_results.csv:map50_95` | bus & 131 & 251 & 0.726 & 0.518 & 0.546 & 0.408 \\ |
+| 0.568 | 331 | READY | `paper/tables/per_class_results.csv:precision` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
+| 0.543 | 331 | READY | `paper/tables/per_class_results.csv:map50_95` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
+| 0.520 | 331 | READY | `paper/tables/per_class_results.csv:map50` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
+| 0.239 | 331 | READY | `paper/tables/per_class_results.csv:map50_95` | motor & 485 & 4886 & 0.568 & 0.543 & 0.520 & 0.239 \\ |
+| 14.27 | 339 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 70.09 | 339 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 16.37 | 339 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 61.09 | 339 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 17.96 | 339 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 55.68 | 339 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 16.10 | 339 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 62.13 | 339 | READY | `paper/tables/speed_results.csv:fps_wall` | 表 \ref{tab:speed} 给出了不同模型的复杂度和推理速度。所有速度结果均由 \texttt{tools/benchmark\_speed.py} 在同一台本地 GPU 上重新测试得到，采用单图 \texttt{model.predict} wall-clock 计时， |
+| 3.013 | 351 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 29.58 & 33.81 \\ |
+| 8.2 | 351 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 29.58 & 33.81 \\ |
+| 5.95 | 351 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 29.58 & 33.81 \\ |
+| 29.58 | 351 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 29.58 & 33.81 \\ |
+| 33.81 | 351 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOEightN{} baseline & 640 & 3.013 & 8.2 & 5.95 & 29.58 & 33.81 \\ |
+| 3.013 | 352 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.30 & 69.91 \\ |
+| 8.2 | 352 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.30 & 69.91 \\ |
+| 5.99 | 352 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.30 & 69.91 \\ |
+| 14.30 | 352 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.30 & 69.91 \\ |
+| 69.91 | 352 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOEightN{} baseline 960 & 960 & 3.013 & 8.2 & 5.99 & 14.30 & 69.91 \\ |
+| 9.432 | 353 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.23 & 70.29 \\ |
+| 21.6 | 353 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.23 & 70.29 \\ |
+| 18.28 | 353 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.23 & 70.29 \\ |
+| 14.23 | 353 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.23 & 70.29 \\ |
+| 70.29 | 353 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOElevenS{} baseline & 640 & 9.432 & 21.6 & 18.28 & 14.23 & 70.29 \\ |
+| 9.432 | 354 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 18.32 & 16.10 & 62.13 \\ |
+| 21.6 | 354 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 18.32 & 16.10 & 62.13 \\ |
+| 18.32 | 354 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 18.32 & 16.10 & 62.13 \\ |
+| 16.10 | 354 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 18.32 & 16.10 & 62.13 \\ |
+| 62.13 | 354 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOElevenS{} baseline 960 & 960 & 9.432 & 21.6 & 18.32 & 16.10 & 62.13 \\ |
+| 2.510 | 355 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 5.02 & 13.00 & 76.95 \\ |
+| 7.2 | 355 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 5.02 & 13.00 & 76.95 \\ |
+| 5.02 | 355 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 5.02 & 13.00 & 76.95 \\ |
+| 13.00 | 355 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 5.02 & 13.00 & 76.95 \\ |
+| 76.95 | 355 | READY | `paper/tables/speed_results.csv:fps_wall` | \mbox{YOLOv5n} baseline & 640 & 2.510 & 7.2 & 5.02 & 13.00 & 76.95 \\ |
+| 2.592 | 356 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.27 & 70.09 \\ |
+| 6.5 | 356 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.27 & 70.09 \\ |
+| 5.21 | 356 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.27 & 70.09 \\ |
+| 14.27 | 356 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.27 & 70.09 \\ |
+| 70.09 | 356 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOBase{} & 640 & 2.592 & 6.5 & 5.21 & 14.27 & 70.09 \\ |
+| 2.592 | 357 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.37 & 61.09 \\ |
+| 6.5 | 357 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.37 & 61.09 \\ |
+| 5.25 | 357 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.37 & 61.09 \\ |
+| 16.37 | 357 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.37 & 61.09 \\ |
+| 61.09 | 357 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOBase{}-960 & 960 & 2.592 & 6.5 & 5.25 & 16.37 & 61.09 \\ |
+| 2.894 | 358 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.30 & 65.38 \\ |
+| 10.7 | 358 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.30 & 65.38 \\ |
+| 5.91 | 358 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.30 & 65.38 \\ |
+| 15.30 | 358 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.30 & 65.38 \\ |
+| 65.38 | 358 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwo{} & 640 & 2.894 & 10.7 & 5.91 & 15.30 & 65.38 \\ |
+| 2.894 | 359 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.96 & 55.68 \\ |
+| 10.7 | 359 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.96 & 55.68 \\ |
+| 6.06 | 359 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.96 & 55.68 \\ |
+| 17.96 | 359 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.96 & 55.68 \\ |
+| 55.68 | 359 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoNine{} & 960 & 2.894 & 10.7 & 6.06 & 17.96 & 55.68 \\ |
+| 2.904 | 360 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.03 & 62.39 \\ |
+| 10.7 | 360 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.03 & 62.39 \\ |
+| 5.94 | 360 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.03 & 62.39 \\ |
+| 16.03 | 360 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.03 & 62.39 \\ |
+| 62.39 | 360 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoCA{} & 640 & 2.904 & 10.7 & 5.94 & 16.03 & 62.39 \\ |
+| 2.904 | 361 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.49 & 60.63 \\ |
+| 10.7 | 361 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.49 & 60.63 \\ |
+| 5.94 | 361 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.49 & 60.63 \\ |
+| 16.49 | 361 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.49 & 60.63 \\ |
+| 60.63 | 361 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoCASmall{} & 640 & 2.904 & 10.7 & 5.94 & 16.49 & 60.63 \\ |
+| 2.904 | 362 | READY | `paper/tables/main_comparison_for_paper.csv:params` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 19.00 & 52.63 \\ |
+| 10.7 | 362 | READY | `paper/tables/main_comparison_for_paper.csv:gflops` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 19.00 & 52.63 \\ |
+| 6.09 | 362 | READY | `paper/tables/main_comparison_for_paper.csv:weight_size_mb` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 19.00 & 52.63 \\ |
+| 19.00 | 362 | READY | `paper/tables/speed_results.csv:mean_latency_ms_wall` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 19.00 & 52.63 \\ |
+| 52.63 | 362 | READY | `paper/tables/speed_results.csv:fps_wall` | \YOLOPtwoCANine{} & 960 & 2.904 & 10.7 & 6.09 & 19.00 & 52.63 \\ |
+| 0.424 | 426 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
+| 0.256 | 426 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
+| 55.68 | 426 | READY | `paper/tables/speed_results.csv:fps_wall` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
+| 0.489 | 426 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
+| 0.298 | 426 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 本文针对无人机航拍小目标检测问题，在 \YOLOBase{} 基础上构建并评估了结合 P2 高分辨率检测分支、\CoordAtt{} 注意力机制和 960 输入分辨率的改进模型。实验结果表明，P2 分支能够增强浅层高分辨率特征利用，960 输入分辨率是当前实验设置中最主要的性能增 |
 
 ## Interpretation
 
