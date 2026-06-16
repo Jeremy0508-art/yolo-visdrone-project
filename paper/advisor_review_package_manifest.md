@@ -7,16 +7,16 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 ## Package
 
 - Zip file: `paper/advisor_review_package.zip`
-- Ready files: 29
+- Ready files: 30
 - Missing files: 0
-- Zip size: 3.08 MB
+- Zip size: 3.09 MB
 
 ## Included Files
 
 | Path | Size | Note |
 | --- | ---: | --- |
 | `README.md` | 10.6 KB | Repository-level project introduction. |
-| `paper/README.md` | 10.7 KB | Paper workspace navigation. |
+| `paper/README.md` | 10.9 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
 | `paper/advisor_review_note.md` | 5.6 KB | Short cover note for advisor review. |
@@ -25,7 +25,8 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 2.7 KB | Manual page-by-page PDF review form. |
 | `paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | 1.8 KB | Manual GitHub public rendering checklist. |
 | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 2.5 KB | Official template migration record sheet. |
-| `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.0 KB | Manual submission preflight checklist. |
+| `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 5.7 KB | Worksheet for author, affiliation, funding, declaration, and upload metadata. |
+| `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.1 KB | Manual submission preflight checklist. |
 | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 3.9 KB | Local submission package checklist. |
 | `paper/submission_audit_dashboard.md` | 4.4 KB | Current audit dashboard. |
 | `paper/evidence_audit.md` | 13.7 KB | Paper-facing number provenance audit. |

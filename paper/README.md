@@ -41,6 +41,7 @@ Recommended ways to read it:
 | `CEA_PDF_VISUAL_REVIEW_FORM.md` | Page-by-page manual PDF inspection form |
 | `CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | Manual checklist for verifying GitHub rendering before sharing the repository |
 | `CEA_TEMPLATE_MIGRATION_RECORD.md` | Record sheet for migrating the current LaTeX/PDF candidate into the official CEA template |
+| `CEA_SUBMISSION_METADATA_WORKSHEET.md` | Worksheet for author, affiliation, funding, declaration, and upload metadata |
 | `advisor_review_package_manifest.md` | Manifest for the lightweight advisor-review zip package |
 | `advisor_review_package.zip` | Lightweight advisor-review bundle excluding datasets, runs, and weights |
 | `advisor_review_note.md` | Cover note for sending the current paper package to an advisor |

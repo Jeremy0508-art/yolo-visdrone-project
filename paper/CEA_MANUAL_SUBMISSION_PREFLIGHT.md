@@ -6,8 +6,8 @@ It records the final manual checks that cannot be proven by local scripts. It is
 
 ## Summary
 
-- Total checks: 14
-- Ready: 7
+- Total checks: 15
+- Ready: 8
 - Pending: 7
 - Missing: 0
 
@@ -21,6 +21,7 @@ It records the final manual checks that cannot be proven by local scripts. It is
 | Local Package | Submission package checklist | READY | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` |  |
 | Local Package | Evidence audit | READY | `paper/evidence_audit.md` |  |
 | Local Package | Reproducibility commands | READY | `paper/commands.md` |  |
+| Local Package | Submission metadata worksheet | READY | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` |  |
 | Manual Submission Gate | Official CEA template | PENDING | `manual verification required` | Download and compare against the current official template or upload instructions before final submission. |
 | Manual Submission Gate | Submission file type | PENDING | `manual verification required` | Confirm whether the journal system requires Word, PDF, LaTeX source, figures, or a combined package. |
 | Manual Submission Gate | Title, authors, affiliations, and email | PENDING | `manual verification required` | Verify final author order, corresponding author, institution names, and contact email in the submission system. |

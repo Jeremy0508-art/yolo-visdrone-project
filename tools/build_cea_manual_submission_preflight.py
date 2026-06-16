@@ -74,6 +74,11 @@ def build_checks() -> list[PreflightCheck]:
             "paper/commands.md",
             "Restore the reproducibility command notes.",
         ),
+        (
+            "Submission metadata worksheet",
+            "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md",
+            "Create the worksheet for author, affiliation, funding, declaration, and upload metadata.",
+        ),
     ]:
         status = local_status(path)
         checks.append(

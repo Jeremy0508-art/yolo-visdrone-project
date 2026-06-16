@@ -71,6 +71,7 @@ def audit() -> list[Check]:
         ("Post-sync manuscript update checklist", "paper/post_sync_update_checklist.md"),
         ("CEA submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),
         ("CEA manual submission preflight", "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md"),
+        ("CEA submission metadata worksheet", "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md"),
         ("CEA final handoff checklist", "paper/CEA_FINAL_HANDOFF_CHECKLIST.md"),
         ("CEA PDF visual review form", "paper/CEA_PDF_VISUAL_REVIEW_FORM.md"),
         ("CEA GitHub public view checklist", "paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md"),
