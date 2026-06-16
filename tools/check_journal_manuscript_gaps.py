@@ -138,10 +138,10 @@ def audit() -> list[GapCheck]:
         )
 
     expected_topics = [
-        ("Fair-resolution comparison", r"分辨率公平|公平分辨率|YOLO11n-960|YOLO11n-P2-960", "pending", "pending", "Write after server 100-epoch fair experiments are synced."),
-        ("Mainstream YOLO comparison", r"YOLOv5n|YOLOv8n|YOLO11s", "partial", "missing", "Complete after YOLOv5n and 960 baselines finish."),
+        ("Fair-resolution comparison", r"YOLO11n-960|YOLO11n-P2-960|高分辨率输入下仍具有增益", "ready", "missing", "Keep the fair-resolution discussion tied to completed 100-epoch evidence."),
+        ("Mainstream YOLO comparison", r"YOLOv5n|YOLOv8n|YOLO11s", "ready", "missing", "Keep mainstream YOLO comparison bounded as external reference, not single-factor ablation."),
         ("Scale-group analysis", r"尺度分组|small|medium|large", "ready", "missing", "Keep scale-group metric definition explicit."),
-        ("Speed-complexity trade-off", r"FPS|推理速度|复杂度|Latency|延迟", "ready", "missing", "Update after new server models are benchmarked."),
+        ("Speed-complexity trade-off", r"FPS|推理速度|复杂度|Latency|延迟", "ready", "missing", "Keep the speed protocol and hardware description explicit."),
         ("Official test-dev boundary", r"test-dev|官方", "ready", "missing", "Keep wording clear that no official AP is available yet."),
     ]
     for item, pattern, if_found_status, if_missing_status, action in expected_topics:
@@ -208,10 +208,10 @@ def write_report(checks: list[GapCheck]) -> None:
             "",
             "- `READY` means the current manuscript already contains enough structure for this item at the present stage.",
             "- `PARTIAL` means the item exists but needs expansion for a journal-length paper.",
-            "- `PENDING` means the item depends on completed fair-comparison experiments.",
+            "- `PENDING` means the item depends on an external or not-yet-available gate.",
             "- `MISSING` means the current LaTeX candidate lacks the expected structure or discussion.",
             "",
-            "The current LaTeX file should be treated as a candidate draft, not the final journal manuscript, until the missing and partial items are resolved after fair experiments finish.",
+            "The current LaTeX file should be treated as a submission candidate draft until remaining external/manual submission gates are resolved.",
         ]
     )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

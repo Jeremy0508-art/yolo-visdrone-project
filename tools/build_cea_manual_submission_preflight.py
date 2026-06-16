@@ -21,6 +21,13 @@ def exists(rel_path: str) -> bool:
     return (ROOT / rel_path).exists()
 
 
+def read_text(rel_path: str) -> str:
+    path = ROOT / rel_path
+    if not path.exists():
+        return ""
+    return path.read_text(encoding="utf-8-sig")
+
+
 def local_status(rel_path: str) -> str:
     return "ready" if exists(rel_path) else "missing"
 
@@ -79,47 +86,71 @@ def build_checks() -> list[PreflightCheck]:
             )
         )
 
+    synced_text = read_text("paper/synced_fair_experiment_artifacts_audit.md")
+    consistency_text = read_text("paper/paper_consistency_audit.md")
+    fair_integration_ready = (
+        "Pending: 0" in synced_text
+        and "Missing: 0" in synced_text
+        and "Completed comparison rows trace to local results and best weights" in consistency_text
+    )
+
     manual_items = [
         (
             "Official CEA template",
+            "pending",
+            "manual verification required",
             "Download and compare against the current official template or upload instructions before final submission.",
         ),
         (
             "Submission file type",
+            "pending",
+            "manual verification required",
             "Confirm whether the journal system requires Word, PDF, LaTeX source, figures, or a combined package.",
         ),
         (
             "Title, authors, affiliations, and email",
+            "pending",
+            "manual verification required",
             "Verify final author order, corresponding author, institution names, and contact email in the submission system.",
         ),
         (
             "Funding and acknowledgement statements",
+            "pending",
+            "manual verification required",
             "Confirm whether funding, acknowledgement, conflict-of-interest, and data-availability statements are required.",
         ),
         (
             "Chinese and English abstracts and keywords",
+            "pending",
+            "manual verification required",
             "Manually check wording, length, and keyword consistency after the final result rewrite.",
         ),
         (
             "Final PDF page-by-page visual review",
+            "pending",
+            "manual verification required",
             "Inspect the compiled PDF for figure placement, table width, captions, references, blank pages, and unreadable labels.",
         ),
         (
             "Completed fair-comparison experiment integration",
-            "Only mark ready after all 100-epoch server runs are synced, audited, and reflected in tables and manuscript text.",
+            "ready" if fair_integration_ready else "pending",
+            "synced artifacts and paper consistency audits" if fair_integration_ready else "manual verification required",
+            "" if fair_integration_ready else "Only mark ready after all 100-epoch server runs are synced, audited, and reflected in tables and manuscript text.",
         ),
         (
             "GitHub public view",
+            "pending",
+            "manual verification required",
             "Open the repository page after the final push and verify that README, paper links, and command notes render cleanly.",
         ),
     ]
-    for item, action in manual_items:
+    for item, status, evidence, action in manual_items:
         checks.append(
             PreflightCheck(
                 "Manual Submission Gate",
                 item,
-                "pending",
-                "manual verification required",
+                status,
+                evidence,
                 action,
             )
         )
@@ -163,7 +194,7 @@ def write_report(checks: list[PreflightCheck]) -> None:
             "## Interpretation",
             "",
             "- `READY` means the local package item exists.",
-            "- `PENDING` means a human must verify the item after final experiments, final manuscript edits, or journal-system login.",
+            "- `PENDING` means a human must verify the item in the final manuscript, GitHub page, or journal-system login.",
             "- `MISSING` means a required local package file is absent.",
             "",
             "This report intentionally keeps manual journal-system checks as `PENDING` until the final upload preparation stage.",

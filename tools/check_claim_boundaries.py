@@ -33,7 +33,7 @@ NEGATING_CONTEXT = re.compile("不建议|避免|不能|不得|禁止|尚未|未.
 
 
 REQUIRED_BOUNDARY_PHRASES = [
-    ("partial server results excluded", "未完成 100 epoch"),
+    ("fair-comparison synchronization stated", "100 epoch 并同步"),
     ("fair-comparison gate stated", "公平对比"),
     ("paper tables evidence boundary", "paper/tables"),
 ]
@@ -177,7 +177,7 @@ def write_report(checks: list[ClaimCheck]) -> None:
             "",
             "- `READY` means no configured unsupported claim pattern was found, or a required boundary statement exists.",
             "- `MISSING` means paper-facing text should be revised before sharing or submission.",
-            "- Partial server metrics remain progress information only and must not appear in manuscript claims.",
+            "- Completed fair-comparison metrics must remain tied to local runs, logs, and paper tables.",
         ]
     )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

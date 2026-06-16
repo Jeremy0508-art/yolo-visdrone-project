@@ -156,17 +156,19 @@ def build_checks() -> list[PackageCheck]:
             "Fair-comparison server experiments",
             "ready" if total > 0 and complete == total else "pending",
             evidence,
-            "Wait for complete 100-epoch runs, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100.",
+            "" if total > 0 and complete == total else "Wait for complete 100-epoch runs, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100.",
         )
     )
 
+    post_sync_text = read_text("paper/post_sync_update_checklist.md")
+    post_sync_ready = "READY" in post_sync_text and ("Pending=0" in post_sync_text or "Pending: 0" in post_sync_text)
     checks.append(
         PackageCheck(
             "Experiment Gate",
             "Post-sync manuscript rewrite",
-            "pending" if complete != total else "ready",
-            "abstract, fair-resolution section, mainstream YOLO section, and conclusion depend on audited synced results",
-            "Rewrite only after refreshed tables and audits are complete.",
+            "ready" if complete == total and post_sync_ready else "pending",
+            "abstract, fair-resolution section, mainstream YOLO section, and conclusion reflect audited synced results",
+            "" if complete == total and post_sync_ready else "Rewrite only after refreshed tables and audits are complete.",
         )
     )
 
@@ -234,7 +236,7 @@ def write_report(checks: list[PackageCheck]) -> None:
             "## Interpretation",
             "",
             "- `READY` means the local package item exists or the local gate is satisfied.",
-            "- `PENDING` means the item depends on completed server experiments or external journal-system verification.",
+            "- `PENDING` means the item depends on external journal-system verification or a remaining local gate.",
             "- `MISSING` means a local file is absent and should be regenerated before final submission preparation.",
         ]
     )

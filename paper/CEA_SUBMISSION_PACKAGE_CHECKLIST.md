@@ -39,8 +39,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Evidence | Synced fair-experiment artifacts audit | READY | `paper/synced_fair_experiment_artifacts_audit.md` |  |
 | Evidence | Reference verification audit | READY | `paper/reference_verification_audit.md` |  |
 | Evidence | Manual submission preflight | READY | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` |  |
-| Experiment Gate | Fair-comparison server experiments | READY | `5/5 completed experiments` | Wait for complete 100-epoch runs, then sync with tools/sync_cea_server_results.ps1 -MinEpochs 100. |
-| Experiment Gate | Post-sync manuscript rewrite | READY | `abstract, fair-resolution section, mainstream YOLO section, and conclusion depend on audited synced results` | Rewrite only after refreshed tables and audits are complete. |
+| Experiment Gate | Fair-comparison server experiments | READY | `5/5 completed experiments` |  |
+| Experiment Gate | Post-sync manuscript rewrite | READY | `abstract, fair-resolution section, mainstream YOLO section, and conclusion reflect audited synced results` |  |
 | Supporting Materials | Reproducibility commands | READY | `paper/commands.md` |  |
 | Supporting Materials | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` |  |
 | Supporting Materials | Advisor progress brief | READY | `paper/advisor_progress_brief.md` |  |
@@ -49,5 +49,5 @@ It is not an official journal instruction page. Before final upload, manually ve
 ## Interpretation
 
 - `READY` means the local package item exists or the local gate is satisfied.
-- `PENDING` means the item depends on completed server experiments or external journal-system verification.
+- `PENDING` means the item depends on external journal-system verification or a remaining local gate.
 - `MISSING` means a local file is absent and should be regenerated before final submission preparation.

@@ -7,8 +7,8 @@ It records the final manual checks that cannot be proven by local scripts. It is
 ## Summary
 
 - Total checks: 14
-- Ready: 6
-- Pending: 8
+- Ready: 7
+- Pending: 7
 - Missing: 0
 
 ## Checks
@@ -27,13 +27,13 @@ It records the final manual checks that cannot be proven by local scripts. It is
 | Manual Submission Gate | Funding and acknowledgement statements | PENDING | `manual verification required` | Confirm whether funding, acknowledgement, conflict-of-interest, and data-availability statements are required. |
 | Manual Submission Gate | Chinese and English abstracts and keywords | PENDING | `manual verification required` | Manually check wording, length, and keyword consistency after the final result rewrite. |
 | Manual Submission Gate | Final PDF page-by-page visual review | PENDING | `manual verification required` | Inspect the compiled PDF for figure placement, table width, captions, references, blank pages, and unreadable labels. |
-| Manual Submission Gate | Completed fair-comparison experiment integration | PENDING | `manual verification required` | Only mark ready after all 100-epoch server runs are synced, audited, and reflected in tables and manuscript text. |
+| Manual Submission Gate | Completed fair-comparison experiment integration | READY | `synced artifacts and paper consistency audits` |  |
 | Manual Submission Gate | GitHub public view | PENDING | `manual verification required` | Open the repository page after the final push and verify that README, paper links, and command notes render cleanly. |
 
 ## Interpretation
 
 - `READY` means the local package item exists.
-- `PENDING` means a human must verify the item after final experiments, final manuscript edits, or journal-system login.
+- `PENDING` means a human must verify the item in the final manuscript, GitHub page, or journal-system login.
 - `MISSING` means a required local package file is absent.
 
 This report intentionally keeps manual journal-system checks as `PENDING` until the final upload preparation stage.
