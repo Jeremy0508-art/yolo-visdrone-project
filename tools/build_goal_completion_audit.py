@@ -170,9 +170,9 @@ def audit() -> list[GoalCheck]:
         GoalCheck(
             "官方期刊模板和投稿系统要求",
             "pending",
-            "paper/templates/计算机工程与应用论文模版.docx; paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md",
-            "用户已提供投稿要求链接和 CEA Word 模板，模板文件与格式要求摘要已可本地追踪；但上传文件类型、投稿系统行为和最终模板迁移仍需人工确认。",
-            "正式投稿前由作者/导师打开期刊官网或投稿系统，确认当前上传文件类型，并将论文迁入官方模板或系统要求的最终格式。",
+            "paper/templates/计算机工程与应用论文模版.docx; paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md; paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md",
+            "用户已提供投稿要求链接和 CEA Word 模板，且已生成第一版 CEA Word 迁移稿；但上传文件类型、投稿系统行为、作者元信息和 Word/WPS 人工终审仍需确认。",
+            "正式投稿前由作者/导师打开期刊官网或投稿系统，确认当前上传文件类型，并对 Word 迁移稿进行人工排版终审。",
         )
     )
 
@@ -202,7 +202,7 @@ def audit() -> list[GoalCheck]:
             "总目标完成判定",
             overall_status,
             "paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit",
-            f"本地可控材料已高度完整：审计面板 {dashboard.get('ready', 0)}/{dashboard.get('total', 0)} ready，材料清单 {material.get('Ready', 0)}/{material.get('Total checks', material.get('Ready', 0))} ready。仍不能标记总目标完成，因为存在模板迁移、投稿系统上传格式、作者信息、人工页检和官方 test-dev 等外部/人工门槛。",
+            f"本地可控材料已高度完整：审计面板 {dashboard.get('ready', 0)}/{dashboard.get('total', 0)} ready，材料清单 {material.get('Ready', 0)}/{material.get('Total checks', material.get('Ready', 0))} ready。仍不能标记总目标完成，因为存在 Word 模板人工终审、投稿系统上传格式、作者信息、人工页检和官方 test-dev 等外部/人工门槛。",
             "完成 remaining manual/external gates 后再进行最终完成审计。",
         )
     )

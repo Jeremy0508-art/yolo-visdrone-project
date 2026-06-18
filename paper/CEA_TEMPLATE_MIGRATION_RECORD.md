@@ -39,15 +39,17 @@
 | --- | --- | --- |
 | 取得官方 Word 模板并纳入项目 | READY | `paper/templates/计算机工程与应用论文模版.docx` |
 | 抽取模板格式要求摘要 | READY | `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` |
-| 将中文题名、英文题名迁入官方模板 | PENDING |  |
-| 将作者、单位、通信作者和邮箱补齐 | PENDING |  |
-| 将中英文摘要和关键词迁入模板 | PENDING |  |
+| 生成 CEA Word 迁移初稿 | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx`；由 `tools/build_cea_word_draft.py` 从当前 LaTeX 候选稿生成 |
+| 生成 CEA Word 迁移审计 | READY | `paper/cea_template_migration/cea_word_migration_audit.md` |
+| 将中文题名、英文题名迁入官方模板 | READY | 已迁入初稿，仍需导师确认题名 |
+| 将作者、单位、通信作者和邮箱补齐 | PENDING | 当前仅保留占位，需用户/导师提供 |
+| 将中英文摘要和关键词迁入模板 | READY | 已迁入初稿；英文摘要为翻译草稿，需导师确认 |
 | 按模板调整一级/二级标题格式 | PENDING |  |
 | 按模板调整图题、表题和编号格式 | PENDING |  |
 | 按模板调整参考文献格式 | PENDING |  |
 | 补齐基金、致谢、声明或作者简介 | PENDING |  |
 | 检查公式、表格和图片在模板中的版式 | PENDING |  |
-| 重新生成最终 PDF 或 Word 文件 | PENDING |  |
+| 重新生成最终 PDF 或 Word 文件 | PENDING | 已有 Word 初稿，最终稿需人工终审后另存 |
 | 重新做逐页目视检查 | PENDING |  |
 
 ## 当前稿件迁移注意事项

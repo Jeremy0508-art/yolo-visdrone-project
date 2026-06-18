@@ -60,6 +60,8 @@ def build_materials() -> list[Material]:
     for item, path in [
         ("LaTeX source", "paper/manuscript_submission_candidate.tex"),
         ("Compiled PDF", "paper/manuscript_submission_candidate.pdf"),
+        ("CEA Word migration draft", "paper/cea_template_migration/manuscript_cea_template_draft.docx"),
+        ("CEA Word migration audit", "paper/cea_template_migration/cea_word_migration_audit.md"),
         ("Paper workspace README", "paper/README.md"),
         ("Final CEA submission execution plan", "paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md"),
         ("CEA result interpretation matrix", "paper/CEA_RESULT_INTERPRETATION_MATRIX.md"),

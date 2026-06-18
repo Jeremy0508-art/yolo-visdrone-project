@@ -6,8 +6,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 ## Summary
 
-- Total materials: 82
-- Ready: 82
+- Total materials: 84
+- Ready: 84
 - Missing: 0
 
 ## Materials
@@ -16,7 +16,9 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | --- | --- | --- | --- | --- |
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.9 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
-| Core Documents | Paper workspace README | READY | `paper/README.md` | 11.9 KB |
+| Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.62 MB |
+| Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 1.7 KB |
+| Core Documents | Paper workspace README | READY | `paper/README.md` | 12.1 KB |
 | Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
 | Core Documents | CEA result interpretation matrix | READY | `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` | 6.6 KB |
 | Core Documents | CEA section evidence map | READY | `paper/CEA_SECTION_EVIDENCE_MAP.md` | 6.6 KB |
@@ -30,18 +32,18 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | Reproducibility commands | READY | `paper/commands.md` | 18.1 KB |
 | Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
 | Core Documents | Post-sync manuscript update checklist | READY | `paper/post_sync_update_checklist.md` | 4.1 KB |
-| Core Documents | CEA submission package checklist | READY | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.2 KB |
-| Core Documents | CEA manual submission preflight | READY | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.5 KB |
+| Core Documents | CEA submission package checklist | READY | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.5 KB |
+| Core Documents | CEA manual submission preflight | READY | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.8 KB |
 | Core Documents | CEA submission metadata worksheet | READY | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 5.7 KB |
 | Core Documents | CEA cover letter draft | READY | `paper/CEA_COVER_LETTER_DRAFT.md` | 4.5 KB |
-| Core Documents | CEA final handoff checklist | READY | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 5.6 KB |
+| Core Documents | CEA final handoff checklist | READY | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 5.8 KB |
 | Core Documents | CEA PDF visual review form | READY | `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 2.7 KB |
 | Core Documents | PDF visual contact sheet report | READY | `paper/pdf_visual_contact_sheet.md` | 872 B |
 | Core Documents | CEA GitHub public view checklist | READY | `paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | 1.8 KB |
 | Core Documents | GitHub public view audit | READY | `paper/github_public_view_audit.md` | 2.1 KB |
-| Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 3.8 KB |
-| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 4.3 KB |
-| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 3.41 MB |
+| Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 4.3 KB |
+| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 4.6 KB |
+| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 5.03 MB |
 | Core Documents | Advisor review note | READY | `paper/advisor_review_note.md` | 5.6 KB |
 | Core Documents | Advisor progress brief | READY | `paper/advisor_progress_brief.md` | 5.3 KB |
 | Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 49.8 KB |
@@ -69,7 +71,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Figures | PDF visual contact sheet | READY | `paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg` | 271.6 KB |
 | Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 4.6 KB |
 | Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 14.6 KB |
-| Audits | Goal completion audit | READY | `paper/GOAL_COMPLETION_AUDIT.md` | 4.7 KB |
+| Audits | Goal completion audit | READY | `paper/GOAL_COMPLETION_AUDIT.md` | 4.8 KB |
 | Audits | Evidence audit | READY | `paper/evidence_audit.md` | 13.7 KB |
 | Audits | Manuscript number trace audit | READY | `paper/manuscript_number_trace_audit.md` | 56.4 KB |
 | Audits | Manuscript length audit | READY | `paper/manuscript_length_audit.md` | 1.2 KB |

@@ -75,6 +75,8 @@ Recommended ways to read it:
 | `manuscript_submission_candidate.md` | Shorter submission-oriented candidate draft |
 | `manuscript_submission_candidate.tex` | Generic LaTeX version of the submission candidate |
 | `manuscript_submission_candidate.pdf` | Compiled PDF generated from the LaTeX candidate |
+| `cea_template_migration/manuscript_cea_template_draft.docx` | First-pass CEA Word-template migration draft |
+| `cea_template_migration/cea_word_migration_audit.md` | Audit report for the CEA Word-template migration draft |
 | `draft_journal_intro_related_work.md` | Expanded journal-style introduction and related-work draft |
 | `latex_notes.md` | LaTeX compilation and template migration notes |
 | `manuscript_tables.md` | Paper-ready Markdown and LaTeX table drafts |

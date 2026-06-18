@@ -73,6 +73,8 @@ def build_checks() -> list[PackageCheck]:
     for item, path in [
         ("LaTeX candidate source", "paper/manuscript_submission_candidate.tex"),
         ("Compiled PDF preview", "paper/manuscript_submission_candidate.pdf"),
+        ("CEA Word migration draft", "paper/cea_template_migration/manuscript_cea_template_draft.docx"),
+        ("CEA Word migration audit", "paper/cea_template_migration/cea_word_migration_audit.md"),
         ("Paper workspace README", "paper/README.md"),
         ("Project README", "README.md"),
     ]:
@@ -194,8 +196,8 @@ def build_checks() -> list[PackageCheck]:
             "External Submission",
             "CEA upload form and final template migration",
             "pending",
-            "official Word template is local; upload file type and final migrated manuscript still require manual verification",
-            "Confirm the journal-system file type, then migrate this LaTeX/PDF package into the CEA Word template or the required final format.",
+            "official Word template and first-pass Word draft are local; upload file type and final manual formatting still require verification",
+            "Confirm the journal-system file type, then manually inspect and polish the CEA Word draft in Word/WPS before final upload.",
         )
     )
 

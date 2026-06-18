@@ -6,8 +6,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 
 ## Summary
 
-- Total checks: 32
-- Ready: 31
+- Total checks: 34
+- Ready: 33
 - Pending: 1
 - Missing: 0
 
@@ -17,6 +17,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 | --- | --- | --- | --- | --- |
 | Manuscript | LaTeX candidate source | READY | `paper/manuscript_submission_candidate.tex` |  |
 | Manuscript | Compiled PDF preview | READY | `paper/manuscript_submission_candidate.pdf` |  |
+| Manuscript | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` |  |
+| Manuscript | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` |  |
 | Manuscript | Paper workspace README | READY | `paper/README.md` |  |
 | Manuscript | Project README | READY | `README.md` |  |
 | Tables | Main result table | READY | `paper/tables/main_comparison_for_paper.csv; 12 data rows` |  |
@@ -46,7 +48,7 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Supporting Materials | Advisor progress brief | READY | `paper/advisor_progress_brief.md` |  |
 | Supporting Materials | CEA Word template | READY | `paper/templates/计算机工程与应用论文模版.docx` |  |
 | Supporting Materials | CEA template requirements summary | READY | `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` |  |
-| External Submission | CEA upload form and final template migration | PENDING | `official Word template is local; upload file type and final migrated manuscript still require manual verification` | Confirm the journal-system file type, then migrate this LaTeX/PDF package into the CEA Word template or the required final format. |
+| External Submission | CEA upload form and final template migration | PENDING | `official Word template and first-pass Word draft are local; upload file type and final manual formatting still require verification` | Confirm the journal-system file type, then manually inspect and polish the CEA Word draft in Word/WPS before final upload. |
 
 ## Interpretation
 

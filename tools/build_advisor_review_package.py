@@ -21,6 +21,8 @@ PACKAGE_ITEMS = [
     PackageItem("paper/README.md", "Paper workspace navigation."),
     PackageItem("paper/manuscript_submission_candidate.pdf", "Current PDF manuscript preview."),
     PackageItem("paper/manuscript_submission_candidate.tex", "Current LaTeX source."),
+    PackageItem("paper/cea_template_migration/manuscript_cea_template_draft.docx", "First-pass CEA Word-template migration draft."),
+    PackageItem("paper/cea_template_migration/cea_word_migration_audit.md", "Audit report for the CEA Word migration draft."),
     PackageItem("paper/advisor_review_note.md", "Short cover note for advisor review."),
     PackageItem("paper/advisor_progress_brief.md", "Short advisor-facing progress brief."),
     PackageItem("paper/CEA_FINAL_HANDOFF_CHECKLIST.md", "Final handoff checklist and claim boundaries."),

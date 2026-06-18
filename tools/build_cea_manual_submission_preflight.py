@@ -36,6 +36,12 @@ def template_available() -> bool:
     return any((ROOT / "paper/templates").glob("*.docx")) and exists("paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md")
 
 
+def word_draft_available() -> bool:
+    return exists("paper/cea_template_migration/manuscript_cea_template_draft.docx") and exists(
+        "paper/cea_template_migration/cea_word_migration_audit.md"
+    )
+
+
 def status_symbol(status: str) -> str:
     return {
         "ready": "READY",
@@ -93,6 +99,16 @@ def build_checks() -> list[PreflightCheck]:
             "paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md",
             "Copy the current CEA Word template into paper/templates/ and extract its requirement summary.",
         ),
+        (
+            "CEA Word migration draft",
+            "paper/cea_template_migration/manuscript_cea_template_draft.docx",
+            "Generate the first-pass CEA Word migration draft.",
+        ),
+        (
+            "CEA Word migration audit",
+            "paper/cea_template_migration/cea_word_migration_audit.md",
+            "Generate the migration audit for the Word draft.",
+        ),
     ]:
         status = local_status(path)
         checks.append(
@@ -114,6 +130,7 @@ def build_checks() -> list[PreflightCheck]:
     )
 
     has_template = template_available()
+    has_word_draft = word_draft_available()
     manual_items = [
         (
             "Official CEA template",
@@ -122,10 +139,14 @@ def build_checks() -> list[PreflightCheck]:
             "" if has_template else "Download and compare against the current official template or upload instructions before final submission.",
         ),
         (
-            "CEA template migration",
+            "CEA template migration final review",
             "pending",
-            "paper/CEA_TEMPLATE_MIGRATION_RECORD.md",
-            "Migrate the current manuscript into the official Word template or the exact format required by the submission system.",
+            "paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/CEA_TEMPLATE_MIGRATION_RECORD.md"
+            if has_word_draft
+            else "manual verification required",
+            "First-pass Word draft exists; inspect and polish it in Word/WPS before final upload."
+            if has_word_draft
+            else "Migrate the current manuscript into the official Word template or the exact format required by the submission system.",
         ),
         (
             "Submission file type",

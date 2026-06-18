@@ -6,8 +6,8 @@ It records the final manual checks that cannot be proven by local scripts. It is
 
 ## Summary
 
-- Total checks: 18
-- Ready: 11
+- Total checks: 20
+- Ready: 13
 - Pending: 7
 - Missing: 0
 
@@ -24,8 +24,10 @@ It records the final manual checks that cannot be proven by local scripts. It is
 | Local Package | Submission metadata worksheet | READY | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` |  |
 | Local Package | Cover letter draft | READY | `paper/CEA_COVER_LETTER_DRAFT.md` |  |
 | Local Package | CEA Word template | READY | `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` |  |
+| Local Package | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` |  |
+| Local Package | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` |  |
 | Manual Submission Gate | Official CEA template | READY | `paper/templates/; paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` |  |
-| Manual Submission Gate | CEA template migration | PENDING | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | Migrate the current manuscript into the official Word template or the exact format required by the submission system. |
+| Manual Submission Gate | CEA template migration final review | PENDING | `paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | First-pass Word draft exists; inspect and polish it in Word/WPS before final upload. |
 | Manual Submission Gate | Submission file type | PENDING | `manual verification required` | Confirm whether the journal system requires Word, PDF, LaTeX source, figures, or a combined package. |
 | Manual Submission Gate | Title, authors, affiliations, and email | PENDING | `manual verification required` | Verify final author order, corresponding author, institution names, and contact email in the submission system. |
 | Manual Submission Gate | Funding and acknowledgement statements | PENDING | `manual verification required` | Confirm whether funding, acknowledgement, conflict-of-interest, and data-availability statements are required. |
