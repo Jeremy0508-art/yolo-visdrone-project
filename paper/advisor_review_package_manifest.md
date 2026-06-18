@@ -7,7 +7,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 ## Package
 
 - Zip file: `paper/advisor_review_package.zip`
-- Ready files: 40
+- Ready files: 41
 - Missing files: 0
 - Zip size: 5.03 MB
 
@@ -16,27 +16,28 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | Path | Size | Note |
 | --- | ---: | --- |
 | `README.md` | 11.1 KB | Repository-level project introduction. |
-| `paper/README.md` | 12.2 KB | Paper workspace navigation. |
+| `paper/README.md` | 12.3 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.62 MB | First-pass CEA Word-template migration draft. |
-| `paper/cea_template_migration/cea_word_migration_audit.md` | 1.7 KB | Audit report for the CEA Word migration draft. |
-| `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 1.9 KB | Mechanical quality audit for the CEA Word draft. |
-| `paper/advisor_review_note.md` | 5.6 KB | Short cover note for advisor review. |
-| `paper/advisor_progress_brief.md` | 5.3 KB | Short advisor-facing progress brief. |
-| `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 5.8 KB | Final handoff checklist and claim boundaries. |
+| `paper/cea_template_migration/cea_word_migration_audit.md` | 1.8 KB | Audit report for the CEA Word migration draft. |
+| `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.0 KB | Mechanical quality audit for the CEA Word draft. |
+| `paper/advisor_review_note.md` | 5.9 KB | Short cover note for advisor review. |
+| `paper/advisor_progress_brief.md` | 5.8 KB | Short advisor-facing progress brief. |
+| `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 6.2 KB | Final handoff checklist and claim boundaries. |
 | `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 2.7 KB | Manual page-by-page PDF review form. |
+| `paper/CEA_WORD_VISUAL_REVIEW_FORM.md` | 2.7 KB | Manual Word/WPS review form for the CEA Word draft. |
 | `paper/pdf_visual_contact_sheet.md` | 872 B | Generated contact-sheet report for PDF visual review. |
 | `paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg` | 271.6 KB | Contact sheet of all manuscript PDF pages. |
 | `paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | 1.8 KB | Manual GitHub public rendering checklist. |
 | `paper/github_public_view_audit.md` | 2.1 KB | Automated public GitHub reachability and raw README audit. |
-| `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 4.3 KB | Official template migration record sheet. |
+| `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 5.3 KB | Official template migration record sheet. |
 | `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` | 2.7 KB | Extracted CEA Word-template requirement summary. |
 | `paper/templates/计算机工程与应用论文模版.docx` | 88.0 KB | Local copy of the CEA Word manuscript template provided by the user. |
-| `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 5.7 KB | Worksheet for author, affiliation, funding, declaration, and upload metadata. |
+| `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 6.3 KB | Worksheet for author, affiliation, funding, declaration, and upload metadata. |
 | `paper/CEA_COVER_LETTER_DRAFT.md` | 4.5 KB | Bounded draft for editor-facing submission notes. |
-| `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.8 KB | Manual submission preflight checklist. |
-| `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.6 KB | Local submission package checklist. |
+| `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.9 KB | Manual submission preflight checklist. |
+| `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.7 KB | Local submission package checklist. |
 | `paper/GOAL_COMPLETION_AUDIT.md` | 4.8 KB | Requirement-to-evidence audit for the active project objective. |
 | `paper/submission_audit_dashboard.md` | 4.9 KB | Current audit dashboard. |
 | `paper/evidence_audit.md` | 13.7 KB | Paper-facing number provenance audit. |

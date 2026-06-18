@@ -141,6 +141,7 @@ def build_checks() -> list[PackageCheck]:
         ("Synced fair-experiment artifacts audit", "paper/synced_fair_experiment_artifacts_audit.md"),
         ("Reference verification audit", "paper/reference_verification_audit.md"),
         ("Manual submission preflight", "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md"),
+        ("CEA Word visual review form", "paper/CEA_WORD_VISUAL_REVIEW_FORM.md"),
     ]:
         checks.append(
             PackageCheck(

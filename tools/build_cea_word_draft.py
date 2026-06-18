@@ -325,7 +325,6 @@ def parse_blocks(tex: str, citation_map: dict[str, int], label_map: dict[str, st
             title_text = clean_latex(extract_braced(line, r"\section"), citation_map, label_map)
             if title_text == "引言":
                 intro_mode = True
-                blocks.append(ParagraphBlock("intro_note", "引言部分按《计算机工程与应用》模板要求不单独编号。"))
             else:
                 intro_mode = False
                 section_counter += 1
@@ -497,6 +496,32 @@ def table_xml(rows: list[list[str]]) -> str:
     )
 
 
+def section_break_xml(columns: int) -> str:
+    cols = '<w:cols w:space="397"/>' if columns == 1 else '<w:cols w:num="2" w:space="397"/>'
+    return (
+        "<w:p><w:pPr>"
+        "<w:sectPr>"
+        '<w:pgSz w:w="11906" w:h="16838"/>'
+        '<w:pgMar w:top="1440" w:right="900" w:bottom="900" w:left="900" w:header="720" w:footer="720" w:gutter="0"/>'
+        f"{cols}"
+        '<w:docGrid w:type="lines" w:linePitch="290"/>'
+        "</w:sectPr>"
+        "</w:pPr></w:p>"
+    )
+
+
+def final_section_xml(columns: int) -> str:
+    cols = '<w:cols w:space="397"/>' if columns == 1 else '<w:cols w:num="2" w:space="397"/>'
+    return (
+        "<w:sectPr>"
+        '<w:pgSz w:w="11906" w:h="16838"/>'
+        '<w:pgMar w:top="1440" w:right="900" w:bottom="900" w:left="900" w:header="720" w:footer="720" w:gutter="0"/>'
+        f"{cols}"
+        '<w:docGrid w:type="lines" w:linePitch="290"/>'
+        "</w:sectPr>"
+    )
+
+
 def build_document_xml(title: str, abstract: str, blocks: list[Block], references: list[tuple[int, str]], image_rels: dict[str, tuple[str, str]]) -> tuple[str, list[tuple[str, Path]]]:
     body: list[str] = []
     media: list[tuple[str, Path]] = []
@@ -512,6 +537,7 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
     body.append(paragraph_xml("1. Department, University, City ZipCode, China (to be confirmed)", align="center", size=18))
     body.append(paragraph_xml("Abstract: " + EN_ABSTRACT, size=19))
     body.append(paragraph_xml("Key words: UAV object detection; small object detection; YOLO11n; CoordAttention; VisDrone", size=19))
+    body.append(section_break_xml(columns=1))
 
     table_idx = 0
     fig_idx = 0
@@ -524,8 +550,6 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
                 body.append(paragraph_xml(block.text, style="Heading1", bold=True, size=24))
             elif block.kind == "heading2":
                 body.append(paragraph_xml(block.text, style="Heading2", bold=True, size=22))
-            elif block.kind == "intro_note":
-                body.append(paragraph_xml(block.text, size=18))
             elif block.kind == "list":
                 body.append(paragraph_xml(block.text, size=20))
             else:
@@ -566,14 +590,7 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
 
     body.append(paragraph_xml("联系人：待确认；通讯地址（邮政编码）：待确认；电子信箱、电话：待确认。", size=18))
 
-    sect_pr = (
-        '<w:sectPr>'
-        '<w:pgSz w:w="11906" w:h="16838"/>'
-        '<w:pgMar w:top="1440" w:right="900" w:bottom="900" w:left="900" w:header="720" w:footer="720" w:gutter="0"/>'
-        '<w:cols w:num="2" w:space="397"/>'
-        '<w:docGrid w:type="lines" w:linePitch="290"/>'
-        '</w:sectPr>'
-    )
+    sect_pr = final_section_xml(columns=2)
 
     document = (
         '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>'
@@ -689,6 +706,7 @@ def write_report(stats: dict[str, int | str]) -> None:
         f"- Embedded images: {stats['images']}",
         f"- References: {stats['references']}",
         f"- Missing images: {missing_images if missing_images else 'none'}",
+        "- Layout: front matter is generated as a single-column section; the main text section is generated as two columns.",
         "",
         "## Manual Gates Remaining",
         "",

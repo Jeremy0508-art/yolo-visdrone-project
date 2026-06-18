@@ -109,6 +109,11 @@ def build_checks() -> list[PreflightCheck]:
             "paper/cea_template_migration/cea_word_migration_audit.md",
             "Generate the migration audit for the Word draft.",
         ),
+        (
+            "CEA Word visual review form",
+            "paper/CEA_WORD_VISUAL_REVIEW_FORM.md",
+            "Create the manual Word/WPS review checklist.",
+        ),
     ]:
         status = local_status(path)
         checks.append(

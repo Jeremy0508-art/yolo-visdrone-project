@@ -45,8 +45,10 @@
 ## 6. 投稿准备状态
 
 - 当前审计仪表盘：共 34 个报告，30 ready，0 partial，4 pending，0 missing。
-- 已建立 LaTeX/PDF、图表、复现命令、证据审计、参考文献核验、投稿风险登记表和服务器状态追踪。
-- 当前核心阻塞已从实验训练转为期刊投稿前人工检查，包括官方模板、作者信息、最终 PDF 目视检查和投稿材料包整理。
+- 已建立 LaTeX/PDF、CEA Word 迁移初稿、图表、复现命令、证据审计、参考文献核验、投稿风险登记表和服务器状态追踪。
+- 官方模板相关材料已归档并生成迁移证据，包括 `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md`、`paper/cea_template_migration/manuscript_cea_template_draft.docx` 和 Word/WPS 人工终审表。
+- 结果解释边界已整理在 `paper/CEA_RESULT_INTERPRETATION_MATRIX.md`，用于说明 YOLO11s-960、YOLO11n-P2-960、CoordAttention 等结果如何进入论文论述。
+- 当前核心阻塞已从实验训练转为期刊投稿前人工检查，包括 Word/WPS 人工终审、作者信息、投稿系统上传格式确认、最终 PDF/Word 目视检查和投稿材料包整理。
 
 ## 7. 给导师的风险说明
 
@@ -57,7 +59,7 @@
 
 ## 8. 下一步
 
-1. 按 `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` 完成投稿版结果讨论和结论边界打磨。
-2. 对照《计算机工程与应用》模板做版式、篇幅、参考文献和图表源文件检查。
-3. 完成最终 PDF 目视检查，确认图表浮动、页码、引用和数值追溯。
-4. 整理投稿材料包和 GitHub 展示页，再提交给导师审阅。
+1. 打开 `paper/cea_template_migration/manuscript_cea_template_draft.docx`，在 Word/WPS 中做人工排版终审。
+2. 由导师确认作者、单位、通信作者、基金、致谢、声明和投稿系统上传文件类型。
+3. 完成最终 Word/PDF 目视检查，确认图表、页码、引用、参考文献和数值追溯。
+4. 用 `paper/advisor_review_package.zip` 交导师审阅，并在确认后准备正式投稿系统上传。

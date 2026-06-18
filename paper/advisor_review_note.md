@@ -11,16 +11,19 @@
 1. `paper/manuscript_submission_candidate.pdf`
    当前论文 PDF 预览，包含方法、实验、消融、可视化、失败案例和结论。
 
-2. `paper/advisor_progress_brief.md`
+2. `paper/cea_template_migration/manuscript_cea_template_draft.docx`
+   已迁入《计算机工程与应用》Word 模板的初稿，包含题名、摘要、正文、图表和参考文献；作者、单位、通信作者和基金等信息仍需人工补齐。
+
+3. `paper/advisor_progress_brief.md`
    面向导师的简版进度说明，适合先快速了解研究定位、实验完成情况和主要结论。
 
-3. `paper/tables/main_comparison_for_paper.csv`
+4. `paper/tables/main_comparison_for_paper.csv`
    主结果表。所有关键数值均应以该表和对应 `runs/` 结果为准。
 
-4. `paper/evidence_audit.md` 与 `paper/manuscript_number_trace_audit.md`
+5. `paper/evidence_audit.md` 与 `paper/manuscript_number_trace_audit.md`
    用于核对论文中的数值来源，避免论文中出现没有日志或表格支撑的指标。
 
-5. `paper/submission_audit_dashboard.md`
+6. `paper/submission_audit_dashboard.md`
    当前投稿材料审计总览，可快速看到哪些本地材料已经 ready，哪些仍需人工确认。
 
 ## 当前最重要的实验结论边界
@@ -91,7 +94,7 @@
 
 4. 是否继续尝试 VisDrone test-dev 官方评测。当前论文只能报告验证集结果，不能写官方 test-dev AP。
 
-5. 是否需要迁移到《计算机工程与应用》官方 Word/LaTeX 模板。当前本地 PDF 是投稿候选稿，不等同于已满足官方上传格式。
+5. CEA Word 初稿的排版、图表、参考文献和首页元信息是否满足导师要求；当前 Word 初稿仍不等同于已可直接上传的最终稿。
 
 ## 不建议在论文中使用的表述
 
@@ -103,4 +106,4 @@
 
 ## 当前可交付状态
 
-本地论文材料、实验表格、图表、审计报告和导师审阅包已经整理完成；剩余关键步骤主要是人工项：导师确认论文主线、确认作者与基金信息、下载并核对期刊官方模板、逐页检查最终 PDF、确认 GitHub 页面渲染，以及在官方 VisDrone 平台可用时再提交 test-dev。
+本地论文材料、实验表格、图表、CEA Word 迁移初稿、审计报告和导师审阅包已经整理完成；剩余关键步骤主要是人工项：导师确认论文主线、确认作者与基金信息、在 Word/WPS 中逐页检查最终 Word/PDF、确认投稿系统上传格式、确认 GitHub 页面渲染，以及在官方 VisDrone 平台可用时再提交 test-dev。

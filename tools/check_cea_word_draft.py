@@ -24,9 +24,9 @@ def status_symbol(status: str) -> str:
     return {"ready": "READY", "partial": "PARTIAL", "pending": "PENDING", "missing": "MISSING"}[status]
 
 
-def read_docx_text() -> tuple[str, int, int, bool]:
+def read_docx_text() -> tuple[str, int, int, list[int], bool]:
     if not DOCX_PATH.exists():
-        return "", 0, 0, False
+        return "", 0, 0, [], False
     try:
         with zipfile.ZipFile(DOCX_PATH) as archive:
             document = archive.read("word/document.xml")
@@ -39,9 +39,17 @@ def read_docx_text() -> tuple[str, int, int, bool]:
                     paragraphs.append("".join(parts))
             table_count = len(root.findall(".//w:tbl", ns))
             media_count = len([name for name in archive.namelist() if name.startswith("word/media/")])
-        return "\n".join(paragraphs), table_count, media_count, True
+            section_cols: list[int] = []
+            for sect in root.findall(".//w:sectPr", ns):
+                cols = sect.find("w:cols", ns)
+                if cols is None:
+                    section_cols.append(1)
+                    continue
+                raw = cols.attrib.get(f"{{{ns['w']}}}num")
+                section_cols.append(int(raw) if raw else 1)
+        return "\n".join(paragraphs), table_count, media_count, section_cols, True
     except Exception as exc:  # pragma: no cover - report generation path
-        return f"ERROR: {exc}", 0, 0, False
+        return f"ERROR: {exc}", 0, 0, [], False
 
 
 def count_cjk(text: str) -> int:
@@ -60,7 +68,7 @@ def extract_between(text: str, start: str, end: str) -> str:
 
 
 def audit() -> list[Check]:
-    text, table_count, media_count, valid = read_docx_text()
+    text, table_count, media_count, section_cols, valid = read_docx_text()
     checks: list[Check] = [
         Check(
             "CEA Word draft exists",
@@ -87,6 +95,15 @@ def audit() -> list[Check]:
             "ready" if title and title_cjk <= 25 else "partial",
             f"{title_cjk} Chinese characters; title=`{title}`",
             "" if title and title_cjk <= 25 else "Shorten the title to match the CEA template recommendation.",
+        )
+    )
+
+    checks.append(
+        Check(
+            "CEA section layout",
+            "ready" if section_cols[:2] == [1, 2] else "partial",
+            f"section columns={section_cols}",
+            "" if section_cols[:2] == [1, 2] else "Use single-column front matter and two-column main text.",
         )
     )
 
@@ -162,6 +179,16 @@ def audit() -> list[Check]:
             "ready" if not broken_tokens else "missing",
             "none" if not broken_tokens else ", ".join(broken_tokens),
             "" if not broken_tokens else "Fix LaTeX macro conversion or unfinished placeholders.",
+        )
+    )
+
+    internal_notes = [token for token in ["引言部分按", "机械审计", "内部说明"] if token in text]
+    checks.append(
+        Check(
+            "Internal notes removed from manuscript text",
+            "ready" if not internal_notes else "partial",
+            "none" if not internal_notes else ", ".join(internal_notes),
+            "" if not internal_notes else "Move workflow notes out of the Word manuscript body.",
         )
     )
 

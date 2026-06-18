@@ -28,6 +28,7 @@ PACKAGE_ITEMS = [
     PackageItem("paper/advisor_progress_brief.md", "Short advisor-facing progress brief."),
     PackageItem("paper/CEA_FINAL_HANDOFF_CHECKLIST.md", "Final handoff checklist and claim boundaries."),
     PackageItem("paper/CEA_PDF_VISUAL_REVIEW_FORM.md", "Manual page-by-page PDF review form."),
+    PackageItem("paper/CEA_WORD_VISUAL_REVIEW_FORM.md", "Manual Word/WPS review form for the CEA Word draft."),
     PackageItem("paper/pdf_visual_contact_sheet.md", "Generated contact-sheet report for PDF visual review."),
     PackageItem("paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg", "Contact sheet of all manuscript PDF pages."),
     PackageItem("paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md", "Manual GitHub public rendering checklist."),

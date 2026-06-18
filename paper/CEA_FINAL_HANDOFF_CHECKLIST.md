@@ -9,11 +9,12 @@
 | 投稿候选 PDF | `paper/manuscript_submission_candidate.pdf` | READY | 已重新编译，机械版式审计通过 |
 | LaTeX 源文件 | `paper/manuscript_submission_candidate.tex` | READY | 当前论文主源文件 |
 | CEA Word 迁移初稿 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | READY | 已从当前 LaTeX 候选稿迁入 CEA Word 模板，仍需人工排版终审 |
+| CEA Word 终审表 | `paper/CEA_WORD_VISUAL_REVIEW_FORM.md` | READY | 用于 Word/WPS 人工检查首页、正文、图表、参考文献和投稿声明 |
 | 项目 README | `README.md` | READY | 面向导师/读者的项目介绍版 |
 | 导师汇报简版 | `paper/advisor_progress_brief.md` | READY | 简要说明研究目标、最终实验结果和风险边界 |
-| 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 85/85 ready，0 missing |
+| 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 86/86 ready，0 missing |
 | 审计仪表盘 | `paper/submission_audit_dashboard.md` | READY | 当前 30/34 ready，0 partial，4 pending，0 missing |
-| 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 40 files ready，0 missing，排除数据集、runs 和权重 |
+| 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 41 files ready，0 missing，排除数据集、runs 和权重 |
 | 总目标完成审计 | `paper/GOAL_COMPLETION_AUDIT.md` | PENDING | 本地可控材料高度完整，但仍保留人工/外部门槛 |
 | 数值证据审计 | `paper/evidence_audit.md` | READY | 论文数值与表格/日志对应 |
 | 数值追踪审计 | `paper/manuscript_number_trace_audit.md` | READY | LaTeX 正文小数均可追踪 |
@@ -56,9 +57,10 @@
 ## 建议交导师审阅的顺序
 
 1. 先看 `paper/advisor_review_note.md` 和 `paper/advisor_progress_brief.md`，快速理解研究定位和最终结果。
-2. 再看 `paper/manuscript_submission_candidate.pdf`，审阅论文正文、图表和结论。
-3. 如导师追问数值来源，再打开 `paper/evidence_audit.md` 和 `paper/manuscript_number_trace_audit.md`。
-4. 如导师追问投稿准备情况，再打开 `paper/GOAL_COMPLETION_AUDIT.md`、`paper/submission_audit_dashboard.md` 和 `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md`。
+2. 再看 `paper/cea_template_migration/manuscript_cea_template_draft.docx` 和 `paper/manuscript_submission_candidate.pdf`，分别审阅 CEA Word 初稿和 PDF 预览。
+3. 按 `paper/CEA_WORD_VISUAL_REVIEW_FORM.md` 检查 Word 初稿首页、正文、图表、参考文献和投稿声明。
+4. 如导师追问数值来源，再打开 `paper/evidence_audit.md` 和 `paper/manuscript_number_trace_audit.md`。
+5. 如导师追问投稿准备情况，再打开 `paper/GOAL_COMPLETION_AUDIT.md`、`paper/submission_audit_dashboard.md` 和 `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md`。
 
 ## 当前不能关闭的事项
 

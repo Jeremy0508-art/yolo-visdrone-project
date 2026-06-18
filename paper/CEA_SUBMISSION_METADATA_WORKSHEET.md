@@ -11,7 +11,8 @@
 | 投稿栏目 | 待填写 | 根据期刊最新栏目选择，如模式识别与人工智能、图形图像处理、工程与应用等 |
 | 稿件类型 | 待填写 | 研究论文、应用研究、工程应用或期刊系统可选类型 |
 | 当前 PDF | `paper/manuscript_submission_candidate.pdf` | 投稿前需按官方模板重新核对 |
-| 当前 LaTeX 源 | `paper/manuscript_submission_candidate.tex` | 若期刊要求 Word，需要人工迁移 |
+| 当前 LaTeX 源 | `paper/manuscript_submission_candidate.tex` | 作为论文内容和数值来源的主源之一 |
+| CEA Word 迁移初稿 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 已生成初稿，正式投稿前需在 Word/WPS 中人工终审 |
 | 当前主要数据集 | VisDrone2019-DET | 当前论文只报告验证集结果，不报告官方 test-dev AP |
 
 ## 2. 作者与单位信息
@@ -58,7 +59,8 @@
 | 文件/附件 | 当前路径或状态 | 核对说明 |
 | --- | --- | --- |
 | 投稿候选 PDF | `paper/manuscript_submission_candidate.pdf` | 已有本地预览，但正式投稿前需人工逐页检查 |
-| LaTeX 源文件 | `paper/manuscript_submission_candidate.tex` | 若官方只收 Word，应迁移到 Word 模板 |
+| CEA Word 迁移初稿 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 若官方收 Word，应以此为基础补齐作者信息并人工终审 |
+| LaTeX 源文件 | `paper/manuscript_submission_candidate.tex` | 用于追踪正文内容和必要时重新生成 Word/PDF |
 | 导师审阅包 | `paper/advisor_review_package.zip` | 仅用于导师审阅，不作为官方投稿压缩包 |
 | 图表源文件 | `paper/figures/`, `paper/tables/` | 如系统要求单独上传图表，可从这些目录整理 |
 | 证据审计 | `paper/evidence_audit.md` | 用于核对论文数值来源 |
@@ -68,8 +70,9 @@
 
 | 确认项 | 状态 | 负责人 | 日期 | 备注 |
 | --- | --- | --- | --- | --- |
-| 官方模板已经下载并核对 | PENDING | 待填写 | 待填写 | 记录模板文件名、版本和 URL |
-| 论文已迁移到官方要求格式 | PENDING | 待填写 | 待填写 | Word/PDF/LaTeX 以系统要求为准 |
+| 官方模板已经下载并核对 | READY | Codex 本地归档 | 2026-06-18 | 模板路径 `paper/templates/计算机工程与应用论文模版.docx`；投稿系统仍需人工确认 |
+| 论文已生成 CEA Word 迁移初稿 | READY | Codex 自动迁移 | 2026-06-18 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` |
+| CEA Word 初稿已人工终审 | PENDING | 待填写 | 待填写 | 需在 Word/WPS 中检查排版、图表、参考文献、页眉页脚和分页 |
 | 作者顺序和通信作者已确认 | PENDING | 待填写 | 待填写 | 由导师最终确认 |
 | 基金、致谢和声明已确认 | PENDING | 待填写 | 待填写 | 不确定时不要自行编写 |
 | PDF 已逐页人工检查 | PENDING | 待填写 | 待填写 | 配合 `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` |
@@ -82,4 +85,4 @@
 - 不要在本表中填写未经导师确认的作者、基金或声明信息。
 - 不要把第三方网页的模板、费用或周期信息当作官方要求。
 - 不要在官方 test-dev 平台返回结果前填写 test-dev AP。
-- 若正式投稿格式与当前 LaTeX PDF 不一致，应先更新 `paper/CEA_TEMPLATE_MIGRATION_RECORD.md`，再迁移正文和图表。
+- 若正式投稿格式与当前 Word 初稿不一致，应先更新 `paper/CEA_TEMPLATE_MIGRATION_RECORD.md`，再调整正文、图表和附件。

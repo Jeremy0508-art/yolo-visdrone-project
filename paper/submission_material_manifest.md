@@ -6,8 +6,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 ## Summary
 
-- Total materials: 85
-- Ready: 85
+- Total materials: 86
+- Ready: 86
 - Missing: 0
 
 ## Materials
@@ -17,9 +17,9 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.9 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
 | Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.62 MB |
-| Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 1.7 KB |
-| Core Documents | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 1.9 KB |
-| Core Documents | Paper workspace README | READY | `paper/README.md` | 12.2 KB |
+| Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 1.8 KB |
+| Core Documents | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.0 KB |
+| Core Documents | Paper workspace README | READY | `paper/README.md` | 12.3 KB |
 | Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
 | Core Documents | CEA result interpretation matrix | READY | `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` | 6.6 KB |
 | Core Documents | CEA section evidence map | READY | `paper/CEA_SECTION_EVIDENCE_MAP.md` | 6.6 KB |
@@ -33,20 +33,21 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | Reproducibility commands | READY | `paper/commands.md` | 18.1 KB |
 | Core Documents | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` | 5.2 KB |
 | Core Documents | Post-sync manuscript update checklist | READY | `paper/post_sync_update_checklist.md` | 4.1 KB |
-| Core Documents | CEA submission package checklist | READY | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.6 KB |
-| Core Documents | CEA manual submission preflight | READY | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.8 KB |
-| Core Documents | CEA submission metadata worksheet | READY | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 5.7 KB |
+| Core Documents | CEA submission package checklist | READY | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.7 KB |
+| Core Documents | CEA manual submission preflight | READY | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.9 KB |
+| Core Documents | CEA submission metadata worksheet | READY | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 6.3 KB |
 | Core Documents | CEA cover letter draft | READY | `paper/CEA_COVER_LETTER_DRAFT.md` | 4.5 KB |
-| Core Documents | CEA final handoff checklist | READY | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 5.8 KB |
+| Core Documents | CEA final handoff checklist | READY | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 6.2 KB |
 | Core Documents | CEA PDF visual review form | READY | `paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 2.7 KB |
+| Core Documents | CEA Word visual review form | READY | `paper/CEA_WORD_VISUAL_REVIEW_FORM.md` | 2.7 KB |
 | Core Documents | PDF visual contact sheet report | READY | `paper/pdf_visual_contact_sheet.md` | 872 B |
 | Core Documents | CEA GitHub public view checklist | READY | `paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | 1.8 KB |
 | Core Documents | GitHub public view audit | READY | `paper/github_public_view_audit.md` | 2.1 KB |
-| Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 4.3 KB |
-| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 4.7 KB |
+| Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 5.3 KB |
+| Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 4.8 KB |
 | Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 5.03 MB |
-| Core Documents | Advisor review note | READY | `paper/advisor_review_note.md` | 5.6 KB |
-| Core Documents | Advisor progress brief | READY | `paper/advisor_progress_brief.md` | 5.3 KB |
+| Core Documents | Advisor review note | READY | `paper/advisor_review_note.md` | 5.9 KB |
+| Core Documents | Advisor progress brief | READY | `paper/advisor_progress_brief.md` | 5.8 KB |
 | Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 49.8 KB |
 | Core Documents | Server status snapshot | READY | `paper/cea_server_status_snapshot.md` | 1.5 KB |
 | Core Documents | Server progress report | READY | `paper/cea_server_progress_report.md` | 1.8 KB |

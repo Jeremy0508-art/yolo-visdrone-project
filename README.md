@@ -213,6 +213,7 @@ paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md
 paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md
 paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md
 paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md
+paper/CEA_WORD_VISUAL_REVIEW_FORM.md
 paper/templates/计算机工程与应用论文模版.docx
 paper/PROJECT_ROADMAP.md
 paper/manuscript_submission_candidate.tex

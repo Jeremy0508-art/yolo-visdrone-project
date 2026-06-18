@@ -83,6 +83,7 @@ def build_materials() -> list[Material]:
         ("CEA cover letter draft", "paper/CEA_COVER_LETTER_DRAFT.md"),
         ("CEA final handoff checklist", "paper/CEA_FINAL_HANDOFF_CHECKLIST.md"),
         ("CEA PDF visual review form", "paper/CEA_PDF_VISUAL_REVIEW_FORM.md"),
+        ("CEA Word visual review form", "paper/CEA_WORD_VISUAL_REVIEW_FORM.md"),
         ("PDF visual contact sheet report", "paper/pdf_visual_contact_sheet.md"),
         ("CEA GitHub public view checklist", "paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md"),
         ("GitHub public view audit", "paper/github_public_view_audit.md"),

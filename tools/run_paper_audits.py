@@ -54,6 +54,17 @@ AUDIT_STEPS = [
     ("CEA final handoff checklist", "tools/build_cea_final_handoff_checklist.py"),
 ]
 
+FINAL_REFRESH_STEPS = [
+    ("Advisor progress brief final refresh", "tools/build_advisor_progress_brief.py"),
+    ("Advisor progress brief audit final refresh", "tools/check_advisor_progress_brief.py"),
+    ("Advisor review package final refresh", "tools/build_advisor_review_package.py"),
+    ("Submission material manifest final refresh", "tools/build_submission_material_manifest.py"),
+    ("CEA submission package checklist final refresh", "tools/build_cea_submission_package_checklist.py"),
+    ("Goal completion audit final refresh", "tools/build_goal_completion_audit.py"),
+    ("Submission audit dashboard final refresh", "tools/build_submission_audit_dashboard.py"),
+    ("CEA final handoff checklist final refresh", "tools/build_cea_final_handoff_checklist.py"),
+]
+
 
 def run_step(name: str, script: str) -> None:
     print(f"[audit] {name}: {script}", flush=True)
@@ -62,6 +73,8 @@ def run_step(name: str, script: str) -> None:
 
 def main() -> None:
     for name, script in AUDIT_STEPS:
+        run_step(name, script)
+    for name, script in FINAL_REFRESH_STEPS:
         run_step(name, script)
     print("[audit] complete", flush=True)
 

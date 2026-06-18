@@ -42,6 +42,7 @@ Recommended ways to read it:
 | `CEA_FINAL_HANDOFF_CHECKLIST.md` | Final advisor/submission handoff checklist for local materials, manual gates, and claim boundaries |
 | `CEA_COVER_LETTER_DRAFT.md` | Draft cover letter / editor-facing submission note for advisor revision |
 | `CEA_PDF_VISUAL_REVIEW_FORM.md` | Page-by-page manual PDF inspection form |
+| `CEA_WORD_VISUAL_REVIEW_FORM.md` | Manual Word/WPS inspection form for the CEA Word draft |
 | `CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | Manual checklist for verifying GitHub rendering before sharing the repository |
 | `github_public_view_audit.md` | Automated public GitHub reachability and raw README audit |
 | `CEA_TEMPLATE_MIGRATION_RECORD.md` | Record sheet for migrating the current LaTeX/PDF candidate into the official CEA template |

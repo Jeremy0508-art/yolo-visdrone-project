@@ -19,7 +19,7 @@ It is an automated public-link check, not a substitute for manual browser review
 | Repository owner/name | READY | `Jeremy0508-art/yolo-visdrone-project` |  |
 | Public repository marker | READY | `Public` |  |
 | README area | READY | `README` |  |
-| Raw README reachable | READY | `HTTP 200, 8254 characters` |  |
+| Raw README reachable | READY | `HTTP 200, 8315 characters` |  |
 | Current lightweight conclusion | READY | `YOLO11n-P2-960` |  |
 | Best nano mAP50 | READY | `0.42361` |  |
 | YOLO11s capacity reference | READY | `YOLO11s-960` |  |
