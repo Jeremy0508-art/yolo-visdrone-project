@@ -219,6 +219,7 @@ paper/manuscript_submission_candidate.tex
 paper/manuscript_submission_candidate.pdf
 paper/cea_template_migration/manuscript_cea_template_draft.docx
 paper/cea_template_migration/cea_word_migration_audit.md
+paper/cea_template_migration/cea_word_draft_quality_audit.md
 paper/submission_audit_dashboard.md
 paper/evidence_audit.md
 paper/commands.md

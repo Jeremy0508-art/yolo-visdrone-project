@@ -27,7 +27,7 @@ It intentionally does not mark the overall objective complete while external/man
 | 官方期刊模板和投稿系统要求 | PENDING | `paper/templates/计算机工程与应用论文模版.docx; paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md; paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 用户已提供投稿要求链接和 CEA Word 模板，且已生成第一版 CEA Word 迁移稿；但上传文件类型、投稿系统行为、作者元信息和 Word/WPS 人工终审仍需确认。 | 正式投稿前由作者/导师打开期刊官网或投稿系统，确认当前上传文件类型，并对 Word 迁移稿进行人工排版终审。 |
 | 作者、单位、基金、声明和最终人工页检 | PENDING | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 作者顺序、通信作者、单位、基金、声明、摘要关键词最终确认和 PDF 逐页视觉检查仍需人工完成。 | 由用户和导师填写元信息、完成 PDF 页检，并确认是否进入投稿系统。 |
 | 官方 VisDrone test-dev 结果 | PENDING | `paper/testdev_submission.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 当前论文只可报告验证集结果；官方 test-dev 平台可用并返回结果前，不能写官方 test-dev AP。 | 若官方平台恢复可用，再提交导出的 test-dev zip 并按真实返回值更新论文。 |
-| 总目标完成判定 | PENDING | `paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit` | 本地可控材料已高度完整：审计面板 29/32 ready，材料清单 84/84 ready。仍不能标记总目标完成，因为存在 Word 模板人工终审、投稿系统上传格式、作者信息、人工页检和官方 test-dev 等外部/人工门槛。 | 完成 remaining manual/external gates 后再进行最终完成审计。 |
+| 总目标完成判定 | PENDING | `paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit` | 本地可控材料已高度完整：审计面板 30/34 ready，材料清单 85/85 ready。仍不能标记总目标完成，因为存在 Word 模板人工终审、投稿系统上传格式、作者信息、人工页检和官方 test-dev 等外部/人工门槛。 | 完成 remaining manual/external gates 后再进行最终完成审计。 |
 
 ## Completion Rule
 

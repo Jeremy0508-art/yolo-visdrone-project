@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 AUDIT_STEPS = [
     ("CEA template requirement summary", "tools/extract_cea_template_requirements.py"),
     ("CEA Word template migration draft", "tools/build_cea_word_draft.py"),
+    ("CEA Word draft quality audit", "tools/check_cea_word_draft.py"),
     ("Journal manuscript gap audit", "tools/check_journal_manuscript_gaps.py"),
     ("LaTeX reference audit", "tools/check_tex_references.py"),
     ("Reference verification audit", "tools/check_reference_verification_matrix.py"),

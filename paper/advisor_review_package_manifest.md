@@ -7,7 +7,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 ## Package
 
 - Zip file: `paper/advisor_review_package.zip`
-- Ready files: 39
+- Ready files: 40
 - Missing files: 0
 - Zip size: 5.03 MB
 
@@ -15,12 +15,13 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 
 | Path | Size | Note |
 | --- | ---: | --- |
-| `README.md` | 11.0 KB | Repository-level project introduction. |
-| `paper/README.md` | 12.1 KB | Paper workspace navigation. |
+| `README.md` | 11.1 KB | Repository-level project introduction. |
+| `paper/README.md` | 12.2 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.62 MB | First-pass CEA Word-template migration draft. |
 | `paper/cea_template_migration/cea_word_migration_audit.md` | 1.7 KB | Audit report for the CEA Word migration draft. |
+| `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 1.9 KB | Mechanical quality audit for the CEA Word draft. |
 | `paper/advisor_review_note.md` | 5.6 KB | Short cover note for advisor review. |
 | `paper/advisor_progress_brief.md` | 5.3 KB | Short advisor-facing progress brief. |
 | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 5.8 KB | Final handoff checklist and claim boundaries. |
@@ -35,9 +36,9 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md` | 5.7 KB | Worksheet for author, affiliation, funding, declaration, and upload metadata. |
 | `paper/CEA_COVER_LETTER_DRAFT.md` | 4.5 KB | Bounded draft for editor-facing submission notes. |
 | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.8 KB | Manual submission preflight checklist. |
-| `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.5 KB | Local submission package checklist. |
+| `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.6 KB | Local submission package checklist. |
 | `paper/GOAL_COMPLETION_AUDIT.md` | 4.8 KB | Requirement-to-evidence audit for the active project objective. |
-| `paper/submission_audit_dashboard.md` | 4.6 KB | Current audit dashboard. |
+| `paper/submission_audit_dashboard.md` | 4.9 KB | Current audit dashboard. |
 | `paper/evidence_audit.md` | 13.7 KB | Paper-facing number provenance audit. |
 | `paper/manuscript_number_trace_audit.md` | 56.4 KB | Trace audit for manuscript numbers. |
 | `paper/commands.md` | 18.1 KB | Reproducibility commands. |

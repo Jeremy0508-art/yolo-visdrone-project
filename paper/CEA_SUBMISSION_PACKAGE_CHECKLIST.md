@@ -6,8 +6,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 
 ## Summary
 
-- Total checks: 34
-- Ready: 33
+- Total checks: 35
+- Ready: 34
 - Pending: 1
 - Missing: 0
 
@@ -19,6 +19,7 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Manuscript | Compiled PDF preview | READY | `paper/manuscript_submission_candidate.pdf` |  |
 | Manuscript | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` |  |
 | Manuscript | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` |  |
+| Manuscript | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` |  |
 | Manuscript | Paper workspace README | READY | `paper/README.md` |  |
 | Manuscript | Project README | READY | `README.md` |  |
 | Tables | Main result table | READY | `paper/tables/main_comparison_for_paper.csv; 12 data rows` |  |

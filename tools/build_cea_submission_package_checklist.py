@@ -75,6 +75,7 @@ def build_checks() -> list[PackageCheck]:
         ("Compiled PDF preview", "paper/manuscript_submission_candidate.pdf"),
         ("CEA Word migration draft", "paper/cea_template_migration/manuscript_cea_template_draft.docx"),
         ("CEA Word migration audit", "paper/cea_template_migration/cea_word_migration_audit.md"),
+        ("CEA Word draft quality audit", "paper/cea_template_migration/cea_word_draft_quality_audit.md"),
         ("Paper workspace README", "paper/README.md"),
         ("Project README", "README.md"),
     ]:

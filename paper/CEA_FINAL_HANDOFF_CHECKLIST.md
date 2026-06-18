@@ -11,9 +11,9 @@
 | CEA Word 迁移初稿 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | READY | 已从当前 LaTeX 候选稿迁入 CEA Word 模板，仍需人工排版终审 |
 | 项目 README | `README.md` | READY | 面向导师/读者的项目介绍版 |
 | 导师汇报简版 | `paper/advisor_progress_brief.md` | READY | 简要说明研究目标、最终实验结果和风险边界 |
-| 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 84/84 ready，0 missing |
-| 审计仪表盘 | `paper/submission_audit_dashboard.md` | READY | 当前 30/33 ready，0 partial，3 pending，0 missing |
-| 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 39 files ready，0 missing，排除数据集、runs 和权重 |
+| 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 85/85 ready，0 missing |
+| 审计仪表盘 | `paper/submission_audit_dashboard.md` | READY | 当前 30/34 ready，0 partial，4 pending，0 missing |
+| 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 40 files ready，0 missing，排除数据集、runs 和权重 |
 | 总目标完成审计 | `paper/GOAL_COMPLETION_AUDIT.md` | PENDING | 本地可控材料高度完整，但仍保留人工/外部门槛 |
 | 数值证据审计 | `paper/evidence_audit.md` | READY | 论文数值与表格/日志对应 |
 | 数值追踪审计 | `paper/manuscript_number_trace_audit.md` | READY | LaTeX 正文小数均可追踪 |
