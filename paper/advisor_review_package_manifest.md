@@ -38,7 +38,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/CEA_COVER_LETTER_DRAFT.md` | 4.5 KB | Bounded draft for editor-facing submission notes. |
 | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 3.9 KB | Manual submission preflight checklist. |
 | `paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | 4.7 KB | Local submission package checklist. |
-| `paper/GOAL_COMPLETION_AUDIT.md` | 4.8 KB | Requirement-to-evidence audit for the active project objective. |
+| `paper/GOAL_COMPLETION_AUDIT.md` | 5.7 KB | Requirement-to-evidence audit for the active project objective. |
 | `paper/submission_audit_dashboard.md` | 4.9 KB | Current audit dashboard. |
 | `paper/evidence_audit.md` | 13.7 KB | Paper-facing number provenance audit. |
 | `paper/manuscript_number_trace_audit.md` | 56.4 KB | Trace audit for manuscript numbers. |

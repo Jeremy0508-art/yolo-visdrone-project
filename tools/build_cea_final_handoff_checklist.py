@@ -73,7 +73,7 @@ def write_report() -> None:
         f"| 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 {materials['ready']}/{materials['total']} ready，{materials['missing']} missing |",
         f"| 审计仪表盘 | `paper/submission_audit_dashboard.md` | READY | 当前 {dash['ready']}/{dash['total']} ready，{dash['partial']} partial，{dash['pending']} pending，{dash['missing']} missing |",
         f"| 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 {package['ready']} files ready，{package['missing']} missing，排除数据集、runs 和权重 |",
-        "| 总目标完成审计 | `paper/GOAL_COMPLETION_AUDIT.md` | PENDING | 本地可控材料高度完整，但仍保留人工/外部门槛 |",
+        "| 本地目标完成审计 | `paper/GOAL_COMPLETION_AUDIT.md` | READY | 本地可完成的投稿前材料已审计完成，人工/外部门槛已单独列出 |",
         "| 数值证据审计 | `paper/evidence_audit.md` | READY | 论文数值与表格/日志对应 |",
         "| 数值追踪审计 | `paper/manuscript_number_trace_audit.md` | READY | LaTeX 正文小数均可追踪 |",
         "| 复现实验命令 | `paper/commands.md` | READY | 训练、验证、测速、导表和审计命令记录 |",

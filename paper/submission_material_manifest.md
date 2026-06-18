@@ -73,7 +73,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Figures | PDF visual contact sheet | READY | `paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg` | 271.6 KB |
 | Audits | Submission audit dashboard | READY | `paper/submission_audit_dashboard.md` | 4.9 KB |
 | Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 14.6 KB |
-| Audits | Goal completion audit | READY | `paper/GOAL_COMPLETION_AUDIT.md` | 4.8 KB |
+| Audits | Goal completion audit | READY | `paper/GOAL_COMPLETION_AUDIT.md` | 5.7 KB |
 | Audits | Evidence audit | READY | `paper/evidence_audit.md` | 13.7 KB |
 | Audits | Manuscript number trace audit | READY | `paper/manuscript_number_trace_audit.md` | 56.4 KB |
 | Audits | Manuscript length audit | READY | `paper/manuscript_length_audit.md` | 1.2 KB |

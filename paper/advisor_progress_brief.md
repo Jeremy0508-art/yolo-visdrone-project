@@ -44,7 +44,7 @@
 
 ## 6. 投稿准备状态
 
-- 当前审计仪表盘：共 34 个报告，30 ready，0 partial，4 pending，0 missing。
+- 当前审计仪表盘：共 34 个报告，31 ready，0 partial，3 pending，0 missing。
 - 已建立 LaTeX/PDF、CEA Word 迁移初稿、图表、复现命令、证据审计、参考文献核验、投稿风险登记表和服务器状态追踪。
 - 官方模板相关材料已归档并生成迁移证据，包括 `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md`、`paper/cea_template_migration/manuscript_cea_template_draft.docx` 和 Word/WPS 人工终审表。
 - 结果解释边界已整理在 `paper/CEA_RESULT_INTERPRETATION_MATRIX.md`，用于说明 YOLO11s-960、YOLO11n-P2-960、CoordAttention 等结果如何进入论文论述。

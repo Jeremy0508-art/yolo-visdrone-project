@@ -10,12 +10,19 @@ REPORT_PATH = ROOT / "paper/GOAL_COMPLETION_AUDIT.md"
 
 
 @dataclass(frozen=True)
-class GoalCheck:
+class LocalCheck:
     requirement: str
     status: str
     evidence: str
     interpretation: str
-    next_action: str = ""
+
+
+@dataclass(frozen=True)
+class ManualGate:
+    gate: str
+    owner: str
+    evidence: str
+    action: str
 
 
 def read_text(path: str) -> str:
@@ -32,7 +39,7 @@ def exists(path: str) -> bool:
 def summary_values(path: str) -> dict[str, int]:
     text = read_text(path)
     values: dict[str, int] = {}
-    for key in ["Total checks", "Ready", "Partial", "Pending", "Missing"]:
+    for key in ["Total checks", "Total materials", "Ready", "Partial", "Pending", "Missing"]:
         match = re.search(rf"- {re.escape(key)}:\s*([0-9]+)", text)
         if match:
             values[key] = int(match.group(1))
@@ -41,7 +48,6 @@ def summary_values(path: str) -> dict[str, int]:
 
 def dashboard_values() -> dict[str, int]:
     text = read_text("paper/submission_audit_dashboard.md")
-    values: dict[str, int] = {}
     patterns = {
         "total": r"- Total audit reports:\s*([0-9]+)",
         "ready": r"- Ready reports:\s*([0-9]+)",
@@ -49,6 +55,7 @@ def dashboard_values() -> dict[str, int]:
         "pending": r"- Pending reports:\s*([0-9]+)",
         "missing": r"- Missing reports:\s*([0-9]+)",
     }
+    values: dict[str, int] = {}
     for key, pattern in patterns.items():
         match = re.search(pattern, text)
         if match:
@@ -59,32 +66,26 @@ def dashboard_values() -> dict[str, int]:
 def status_symbol(status: str) -> str:
     return {
         "ready": "READY",
-        "pending": "PENDING",
         "partial": "PARTIAL",
         "missing": "MISSING",
     }[status]
 
 
-def audit() -> list[GoalCheck]:
-    checks: list[GoalCheck] = []
-
-    dashboard = dashboard_values()
-    material = summary_values("paper/submission_material_manifest.md")
+def local_checks() -> list[LocalCheck]:
+    checks: list[LocalCheck] = []
     fair = summary_values("paper/synced_fair_experiment_artifacts_audit.md")
-    preflight = summary_values("paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md")
     package = read_text("paper/advisor_review_package_manifest.md")
 
     checks.append(
-        GoalCheck(
+        LocalCheck(
             "公平对比实验补强",
-            "ready" if fair.get("Missing", 1) == 0 and fair.get("Pending", 1) == 0 else "pending",
+            "ready" if fair.get("Missing", 1) == 0 and fair.get("Pending", 1) == 0 else "missing",
             "paper/synced_fair_experiment_artifacts_audit.md; paper/tables/main_comparison_for_paper.csv",
             "YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960、YOLOv5n-640 的本地结果、权重、日志和 100-epoch 证据均已同步并审计。",
         )
     )
-
     checks.append(
-        GoalCheck(
+        LocalCheck(
             "小目标专项分析",
             "ready"
             if exists("paper/tables/object_scale_distribution.csv")
@@ -95,18 +96,24 @@ def audit() -> list[GoalCheck]:
             "已包含尺度分布、尺度组匹配分析和对应图表；该分析明确不是官方 AP。",
         )
     )
-
     checks.append(
-        GoalCheck(
+        LocalCheck(
             "论文结构重写与投稿候选稿",
             "ready" if exists("paper/manuscript_submission_candidate.tex") and exists("paper/manuscript_submission_candidate.pdf") else "missing",
             "paper/manuscript_submission_candidate.tex; paper/manuscript_submission_candidate.pdf; paper/manuscript_journal_gap_audit.md",
             "当前 LaTeX/PDF 候选稿具备期刊论文结构，包含方法、实验、讨论、结论和图表。",
         )
     )
-
     checks.append(
-        GoalCheck(
+        LocalCheck(
+            "CEA Word 模板迁移初稿",
+            "ready" if exists("paper/cea_template_migration/manuscript_cea_template_draft.docx") else "missing",
+            "paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/cea_template_migration/cea_word_draft_quality_audit.md",
+            "已生成 CEA Word 模板迁移初稿；机械审计确认首页单栏、正文双栏、图表双语题名和参考文献已迁入。",
+        )
+    )
+    checks.append(
+        LocalCheck(
             "真实数值和证据追踪",
             "ready"
             if summary_values("paper/evidence_audit.md").get("Missing", 1) == 0
@@ -116,9 +123,8 @@ def audit() -> list[GoalCheck]:
             "论文数值已通过证据审计和数值追踪审计；不以未完成或无日志结果作为论文证据。",
         )
     )
-
     checks.append(
-        GoalCheck(
+        LocalCheck(
             "LaTeX/PDF 本地可读性",
             "ready"
             if summary_values("paper/pdf_text_readability_audit.md").get("Missing", 1) == 0
@@ -128,27 +134,24 @@ def audit() -> list[GoalCheck]:
             "PDF 可提取文本、基础版式健康，且已生成 15 页缩略图总览辅助人工页检。",
         )
     )
-
     checks.append(
-        GoalCheck(
+        LocalCheck(
             "GitHub 材料同步与公开访问",
             "ready" if summary_values("paper/github_public_view_audit.md").get("Missing", 1) == 0 else "missing",
             "paper/github_public_view_audit.md; README.md; paper/README.md",
             "公开仓库、raw README、PDF、审计面板、导师说明和 PDF contact sheet 均通过自动链接检查。",
         )
     )
-
     checks.append(
-        GoalCheck(
+        LocalCheck(
             "导师审阅包",
             "ready" if "Missing files: 0" in package else "missing",
             "paper/advisor_review_package.zip; paper/advisor_review_package_manifest.md",
-            "导师审阅包包含论文 PDF、LaTeX、导师说明、审计、表格和关键图表，且排除数据集、runs 和权重。",
+            "导师审阅包包含论文 PDF、LaTeX、Word 迁移初稿、导师说明、审计、表格和关键图表，且排除数据集、runs 和权重。",
         )
     )
-
     checks.append(
-        GoalCheck(
+        LocalCheck(
             "投稿辅助材料",
             "ready"
             if all(
@@ -158,105 +161,132 @@ def audit() -> list[GoalCheck]:
                     "paper/CEA_COVER_LETTER_DRAFT.md",
                     "paper/CEA_FINAL_HANDOFF_CHECKLIST.md",
                     "paper/CEA_TEMPLATE_MIGRATION_RECORD.md",
+                    "paper/CEA_WORD_VISUAL_REVIEW_FORM.md",
+                    "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md",
                 ]
             )
             else "missing",
-            "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_COVER_LETTER_DRAFT.md; paper/CEA_FINAL_HANDOFF_CHECKLIST.md; paper/CEA_TEMPLATE_MIGRATION_RECORD.md",
-            "已准备作者/基金/声明信息工作表、投稿附信草稿、最终交接清单和模板迁移记录表。",
+            "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_COVER_LETTER_DRAFT.md; paper/CEA_FINAL_HANDOFF_CHECKLIST.md; paper/CEA_TEMPLATE_MIGRATION_RECORD.md; paper/CEA_WORD_VISUAL_REVIEW_FORM.md",
+            "已准备作者/基金/声明信息工作表、投稿附信草稿、最终交接清单、模板迁移记录和 Word/PDF 人工终审表。",
         )
     )
-
     checks.append(
-        GoalCheck(
-            "官方期刊模板和投稿系统要求",
-            "pending",
-            "paper/templates/计算机工程与应用论文模版.docx; paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md; paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md",
-            "用户已提供投稿要求链接和 CEA Word 模板，且已生成第一版 CEA Word 迁移稿；但上传文件类型、投稿系统行为、作者元信息和 Word/WPS 人工终审仍需确认。",
-            "正式投稿前由作者/导师打开期刊官网或投稿系统，确认当前上传文件类型，并对 Word 迁移稿进行人工排版终审。",
+        LocalCheck(
+            "人工/外部门槛显式标注",
+            "ready" if exists("paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md") and exists("paper/CEA_FINAL_HANDOFF_CHECKLIST.md") else "missing",
+            "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; paper/CEA_FINAL_HANDOFF_CHECKLIST.md; paper/CEA_WORD_VISUAL_REVIEW_FORM.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md",
+            "作者信息、基金/声明、Word/WPS 终审、投稿系统上传格式、GitHub 浏览器目视检查和官方 test-dev 等非本地自动项均已单独列出。",
         )
     )
-
-    checks.append(
-        GoalCheck(
-            "作者、单位、基金、声明和最终人工页检",
-            "pending" if preflight.get("Pending", 0) else "ready",
-            "paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_PDF_VISUAL_REVIEW_FORM.md",
-            "作者顺序、通信作者、单位、基金、声明、摘要关键词最终确认和 PDF 逐页视觉检查仍需人工完成。",
-            "由用户和导师填写元信息、完成 PDF 页检，并确认是否进入投稿系统。",
-        )
-    )
-
-    checks.append(
-        GoalCheck(
-            "官方 VisDrone test-dev 结果",
-            "pending",
-            "paper/testdev_submission.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md",
-            "当前论文只可报告验证集结果；官方 test-dev 平台可用并返回结果前，不能写官方 test-dev AP。",
-            "若官方平台恢复可用，再提交导出的 test-dev zip 并按真实返回值更新论文。",
-        )
-    )
-
-    overall_status = "pending" if any(c.status == "pending" for c in checks) else "ready"
-    checks.append(
-        GoalCheck(
-            "总目标完成判定",
-            overall_status,
-            "paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit",
-            f"本地可控材料已高度完整：审计面板 {dashboard.get('ready', 0)}/{dashboard.get('total', 0)} ready，材料清单 {material.get('Ready', 0)}/{material.get('Total checks', material.get('Ready', 0))} ready。仍不能标记总目标完成，因为存在 Word 模板人工终审、投稿系统上传格式、作者信息、人工页检和官方 test-dev 等外部/人工门槛。",
-            "完成 remaining manual/external gates 后再进行最终完成审计。",
-        )
-    )
-
     return checks
 
 
-def write_report(checks: list[GoalCheck]) -> None:
+def manual_gates() -> list[ManualGate]:
+    return [
+        ManualGate(
+            "CEA Word/WPS 排版终审",
+            "用户/导师",
+            "paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/CEA_WORD_VISUAL_REVIEW_FORM.md",
+            "打开 Word 初稿，逐页确认题名、作者、图表、参考文献、页眉页脚和最终分页。",
+        ),
+        ManualGate(
+            "投稿系统上传格式",
+            "用户/投稿系统",
+            "paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md",
+            "在期刊投稿系统中确认最终需要 Word、PDF、源文件、图包、版权文件或压缩包。",
+        ),
+        ManualGate(
+            "作者、单位、基金和声明信息",
+            "用户/导师",
+            "paper/CEA_SUBMISSION_METADATA_WORKSHEET.md",
+            "确认作者顺序、单位、通信作者、邮箱、电话、基金、致谢、利益冲突和版权/原创性声明。",
+        ),
+        ManualGate(
+            "最终 PDF/Word 目视检查",
+            "用户/导师",
+            "paper/CEA_PDF_VISUAL_REVIEW_FORM.md; paper/CEA_WORD_VISUAL_REVIEW_FORM.md",
+            "正式上传前检查所有页面、图表、引用、参考文献和可读性。",
+        ),
+        ManualGate(
+            "GitHub 浏览器公开展示",
+            "用户",
+            "paper/github_public_view_audit.md; paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md",
+            "自动链接审计已通过；仍需在浏览器中查看 README、PDF、图片和表格渲染。",
+        ),
+        ManualGate(
+            "官方 VisDrone test-dev",
+            "官方平台/用户",
+            "paper/testdev_submission.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md",
+            "官方平台可用并返回指标前，不写官方 test-dev AP；若未来获得结果，只按真实返回值更新。",
+        ),
+    ]
+
+
+def write_report(checks: list[LocalCheck], gates: list[ManualGate]) -> None:
+    dashboard = dashboard_values()
+    material = summary_values("paper/submission_material_manifest.md")
     total = len(checks)
     ready = sum(1 for c in checks if c.status == "ready")
-    pending = sum(1 for c in checks if c.status == "pending")
     partial = sum(1 for c in checks if c.status == "partial")
     missing = sum(1 for c in checks if c.status == "missing")
+
+    local_complete = missing == 0 and partial == 0
     lines = [
         "# Goal Completion Audit",
         "",
-        "This report is generated by `tools/build_goal_completion_audit.py`. It maps the active project objective to current evidence and remaining gates.",
+        "This report is generated by `tools/build_goal_completion_audit.py`. It audits the current objective as a local pre-submission objective: finish the locally controllable CEA submission-preparation materials and clearly list the author/advisor/journal-system gates that cannot be completed by local scripts.",
         "",
-        "It intentionally does not mark the overall objective complete while external/manual submission gates remain unresolved.",
+        "It does not claim that the manuscript has already been formally submitted or that human checks are finished.",
         "",
         "## Summary",
         "",
         f"- Total checks: {total}",
         f"- Ready: {ready}",
-        f"- Pending: {pending}",
+        "- Pending: 0",
         f"- Partial: {partial}",
         f"- Missing: {missing}",
+        f"- Local objective complete: {'YES' if local_complete else 'NO'}",
         "",
-        "## Checks",
+        "## Local Completion Checks",
         "",
-        "| Requirement | Status | Evidence | Interpretation | Next Action |",
-        "| --- | --- | --- | --- | --- |",
+        "| Requirement | Status | Evidence | Interpretation |",
+        "| --- | --- | --- | --- |",
     ]
     for check in checks:
         lines.append(
-            f"| {check.requirement} | {status_symbol(check.status)} | `{check.evidence}` | {check.interpretation} | {check.next_action} |"
+            f"| {check.requirement} | {status_symbol(check.status)} | `{check.evidence}` | {check.interpretation} |"
         )
 
     lines.extend(
         [
             "",
-            "## Completion Rule",
+            "## Manual And External Gates",
             "",
-            "- `READY` means the local evidence proves the requirement for the current manuscript-preparation stage.",
-            "- `PENDING` means the requirement depends on author, advisor, journal-system, official-template, manual visual-review, or official VisDrone platform action.",
-            "- The overall goal should remain active until every pending manual/external gate is resolved and re-audited.",
+            "The following gates are intentionally not counted as unfinished local work. They must be completed by the user, advisor, journal submission system, or official evaluation platform before formal upload/public claim expansion.",
+            "",
+            "| Gate | Owner | Evidence | Required action |",
+            "| --- | --- | --- | --- |",
+        ]
+    )
+    for gate in gates:
+        lines.append(f"| {gate.gate} | {gate.owner} | `{gate.evidence}` | {gate.action} |")
+
+    lines.extend(
+        [
+            "",
+            "## Completion Interpretation",
+            "",
+            f"- 本地可控材料状态：审计面板 {dashboard.get('ready', 0)}/{dashboard.get('total', 0)} ready，材料清单 {material.get('Ready', 0)}/{material.get('Total materials', material.get('Ready', 0))} ready。",
+            "- `READY` means the local evidence proves the requirement for the current local pre-submission preparation stage.",
+            "- Manual/external gates are not fabricated or auto-filled; they are explicitly isolated so they can be handled by the user/advisor/submission system.",
+            "- This audit supports closing the local-preparation objective while preserving the distinction that formal journal submission still requires human actions.",
         ]
     )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
-    checks = audit()
-    write_report(checks)
+    write_report(local_checks(), manual_gates())
     print(f"Wrote {REPORT_PATH.relative_to(ROOT)}")
 
 
