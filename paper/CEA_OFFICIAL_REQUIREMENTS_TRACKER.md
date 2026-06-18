@@ -25,15 +25,16 @@ It tracks external requirement sources for the `Computer Engineering and Applica
 ## Latest Online Check Note
 
 - Current date for this workspace: 2026-06-18.
-- The user provided the official submission-requirements link `http://cea.ceaj.org/CN/column/column16.shtml` and uploaded the Word template now stored under `paper/templates/`.
-- Direct browser/tool access to the official site may still be unstable in this environment, so final upload format and submission-system behavior remain manual gates.
-- The local template evidence is enough to start template migration, but it does not prove the submission system will accept a specific file package.
+- The official submission-guide URL `http://cea.ceaj.org/CN/column/column16.shtml` was reachable with a browser-like request and returned the page title `计算机工程与应用 投稿指南`.
+- The guide confirms a template-based academic-paper format, online author submission, ordered author metadata, detailed contact information, originality/copyright responsibilities, and post-submission caution about manuscript updates.
+- The uploaded local Word template remains the concrete formatting source for the manuscript draft; the live submission system still needs manual confirmation for accepted upload file types and attachments.
+- Because journal pages can change, these notes should be checked again in a browser immediately before final submission.
 
 ## Online Check Log
 
 | ID | Source ID | Date | Result | Implication |
 | --- | --- | --- | --- | --- |
-| C1 | S1 | 2026-06-18 | User provided the official submission-requirements link `http://cea.ceaj.org/CN/column/column16.shtml` and uploaded the Word template `paper/templates/计算机工程与应用论文模版.docx`. | The local package now has a concrete template file to migrate into, but the upload-system file type and final browser verification remain manual gates. |
+| C1 | S1 | 2026-06-18 | Browser-like request returned HTTP 200 for `http://cea.ceaj.org/CN/column/column16.shtml` with page title `计算机工程与应用 投稿指南`; the guide was mechanically summarized into this tracker. | The official guide confirms the paper should follow the writing template, use online author submission, provide ordered author/contact metadata, and treat post-submission manuscript updates cautiously; the exact upload package still requires final system confirmation. |
 | C2 | S2 | 2026-06-16 | Direct open attempt for `https://cea.ceaj.org/CN/column/column18.shtml` returned an unavailable/502-style result from this environment. | Keep this URL as an official-site lead only; do not assume it is the current template page. |
 | C3 | S3 | 2026-06-16 | Web search found `https://jsjgcyyy.juqk.net/` with CEA editorial-office/homepage wording and author-contact reminders. | Use only as a source candidate until the user or advisor confirms it is the current official editorial-office route. |
 | C4 | S4 | 2026-06-16 | Web search found `https://jsjgcyyy.juqk.net/buy/` with submission-notice snippets including column/category and manuscript requirement wording. | Record as a manual-check lead, not as final upload-format evidence. |
@@ -54,12 +55,12 @@ It tracks external requirement sources for the `Computer Engineering and Applica
 | ID | Field | What to record before final upload | Status |
 | --- | --- | --- | --- |
 | M1 | Template file | Current CEA Word template has been copied into `paper/templates/` and summarized in `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md`. | READY |
-| M2 | Upload file type | Whether initial submission requires Word, PDF, source package, figures, or separate attachment files. | PENDING |
-| M3 | Author metadata | Required author names, affiliations, corresponding author marker, email, phone, ORCID, postal address, and author order rules. | PENDING |
-| M4 | Declarations | Required funding, acknowledgement, conflict-of-interest, data availability, ethics, copyright, or originality statements. | PENDING |
-| M5 | Length and format | Template summary records title, abstract, keyword, figure, table, body-layout, reference, and contact-detail requirements; final migrated manuscript still needs manual verification. | READY |
-| M6 | Submission-system behavior | Whether uploaded manuscripts can be replaced after submission and what manuscript ID/contact process is used. | PENDING |
-| M7 | Fees and attachments | Any review fee, page fee, copyright transfer, membership discount, or signed document requirements. | PENDING |
+| M2 | Upload file type | The guide points authors to online submission and the writing template, but the exact upload package--Word, PDF, source package, figures, or attachments--must still be checked in the submission system. | PENDING |
+| M3 | Author metadata | The guide requires ordered author entry and detailed contact information; final author names, affiliations, corresponding author, email, phone, postal address, and optional ORCID still need user/advisor confirmation. | PENDING |
+| M4 | Declarations | The guide emphasizes originality, no duplicate submission, intellectual-property responsibility, confidentiality handling, copyright transfer after acceptance, and CCF membership marking when applicable; project-specific funding, acknowledgement, conflict-of-interest, data availability, and originality wording still need confirmation. | PENDING |
+| M5 | Length and format | The guide recommends general papers be over 7500 Chinese characters and records title, author, unit, abstract, keywords, funding, classification number, body, references, and author bio requirements; the local template summary records detailed figure/table/body-layout requirements. | READY |
+| M6 | Submission-system behavior | The guide states author order and metadata should be checked before upload and that successful submission does not provide a manuscript update function; still verify the live system behavior before final upload. | PENDING |
+| M7 | Fees and attachments | The guide gives review/page-fee, copyright-transfer, and CCF-discount notes, but fee standards and required signed files should be confirmed again near submission. | PENDING |
 
 ## Use Rule
 

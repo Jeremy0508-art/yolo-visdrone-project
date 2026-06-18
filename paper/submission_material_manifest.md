@@ -26,7 +26,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | CEA submission risk register | READY | `paper/CEA_SUBMISSION_RISK_REGISTER.md` | 5.8 KB |
 | Core Documents | CEA reviewer response prep | READY | `paper/CEA_REVIEWER_RESPONSE_PREP.md` | 5.2 KB |
 | Core Documents | CEA post-result rewrite playbook | READY | `paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md` | 5.7 KB |
-| Core Documents | CEA official requirements tracker | READY | `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 6.9 KB |
+| Core Documents | CEA official requirements tracker | READY | `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 7.9 KB |
 | Core Documents | CEA Word template | READY | `paper/templates/计算机工程与应用论文模版.docx` | 88.0 KB |
 | Core Documents | CEA template requirements summary | READY | `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` | 2.7 KB |
 | Core Documents | Submission checklist | READY | `paper/submission_checklist.md` | 4.2 KB |
