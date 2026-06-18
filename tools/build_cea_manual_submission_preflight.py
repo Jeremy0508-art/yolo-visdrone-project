@@ -32,6 +32,10 @@ def local_status(rel_path: str) -> str:
     return "ready" if exists(rel_path) else "missing"
 
 
+def template_available() -> bool:
+    return any((ROOT / "paper/templates").glob("*.docx")) and exists("paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md")
+
+
 def status_symbol(status: str) -> str:
     return {
         "ready": "READY",
@@ -84,6 +88,11 @@ def build_checks() -> list[PreflightCheck]:
             "paper/CEA_COVER_LETTER_DRAFT.md",
             "Create a bounded draft for editor-facing submission notes.",
         ),
+        (
+            "CEA Word template",
+            "paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md",
+            "Copy the current CEA Word template into paper/templates/ and extract its requirement summary.",
+        ),
     ]:
         status = local_status(path)
         checks.append(
@@ -104,12 +113,19 @@ def build_checks() -> list[PreflightCheck]:
         and "Completed comparison rows trace to local results and best weights" in consistency_text
     )
 
+    has_template = template_available()
     manual_items = [
         (
             "Official CEA template",
+            "ready" if has_template else "pending",
+            "paper/templates/; paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md" if has_template else "manual verification required",
+            "" if has_template else "Download and compare against the current official template or upload instructions before final submission.",
+        ),
+        (
+            "CEA template migration",
             "pending",
-            "manual verification required",
-            "Download and compare against the current official template or upload instructions before final submission.",
+            "paper/CEA_TEMPLATE_MIGRATION_RECORD.md",
+            "Migrate the current manuscript into the official Word template or the exact format required by the submission system.",
         ),
         (
             "Submission file type",

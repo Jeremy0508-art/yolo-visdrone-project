@@ -6,8 +6,8 @@ It is not an official journal instruction page. Before final upload, manually ve
 
 ## Summary
 
-- Total checks: 30
-- Ready: 29
+- Total checks: 32
+- Ready: 31
 - Pending: 1
 - Missing: 0
 
@@ -44,7 +44,9 @@ It is not an official journal instruction page. Before final upload, manually ve
 | Supporting Materials | Reproducibility commands | READY | `paper/commands.md` |  |
 | Supporting Materials | Result integration protocol | READY | `paper/CEA_RESULT_INTEGRATION_PROTOCOL.md` |  |
 | Supporting Materials | Advisor progress brief | READY | `paper/advisor_progress_brief.md` |  |
-| External Submission | CEA official template and upload form | PENDING | `manual verification required on the journal submission website before final upload` | Download the current official template and adapt this LaTeX/PDF package if the journal system requires Word or a specific format. |
+| Supporting Materials | CEA Word template | READY | `paper/templates/计算机工程与应用论文模版.docx` |  |
+| Supporting Materials | CEA template requirements summary | READY | `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` |  |
+| External Submission | CEA upload form and final template migration | PENDING | `official Word template is local; upload file type and final migrated manuscript still require manual verification` | Confirm the journal-system file type, then migrate this LaTeX/PDF package into the CEA Word template or the required final format. |
 
 ## Interpretation
 

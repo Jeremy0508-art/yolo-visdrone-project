@@ -68,6 +68,8 @@ def build_materials() -> list[Material]:
         ("CEA reviewer response prep", "paper/CEA_REVIEWER_RESPONSE_PREP.md"),
         ("CEA post-result rewrite playbook", "paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md"),
         ("CEA official requirements tracker", "paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md"),
+        ("CEA Word template", "paper/templates/计算机工程与应用论文模版.docx"),
+        ("CEA template requirements summary", "paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md"),
         ("Submission checklist", "paper/submission_checklist.md"),
         ("Reproducibility commands", "paper/commands.md"),
         ("Result integration protocol", "paper/CEA_RESULT_INTEGRATION_PROTOCOL.md"),

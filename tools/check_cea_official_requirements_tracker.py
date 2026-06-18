@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TRACKER_PATH = ROOT / "paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md"
 REPORT_PATH = ROOT / "paper/cea_official_requirements_tracker_audit.md"
 
-REQUIRED_SOURCE_IDS = {"S1", "S2", "S3", "S4", "S5"}
+REQUIRED_SOURCE_IDS = {"S1", "S2", "S3", "S4", "S5", "S6"}
 REQUIRED_MANUAL_IDS = {"M1", "M2", "M3", "M4", "M5", "M6", "M7"}
 REQUIRED_TOKENS = [
     "official-candidate",
@@ -18,6 +18,8 @@ REQUIRED_TOKENS = [
     "manually verified",
     "Online Check Log",
     "502-style",
+    "Local Template Evidence",
+    "CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md",
     "Template file",
     "Upload file type",
     "Author metadata",
@@ -87,12 +89,13 @@ def audit() -> list[TrackerCheck]:
     )
 
     pending_count = text.count("PENDING")
+    ready_count = text.count("READY")
     checks.append(
         TrackerCheck(
-            "Manual fields remain pending",
-            "ready" if pending_count >= len(REQUIRED_MANUAL_IDS) else "missing",
-            f"{pending_count} PENDING markers",
-            "" if pending_count >= len(REQUIRED_MANUAL_IDS) else "Keep manual fields pending until final upload verification.",
+            "Manual upload gates remain pending",
+            "ready" if pending_count >= 5 and ready_count >= 1 else "missing",
+            f"{ready_count} READY markers, {pending_count} PENDING markers",
+            "" if pending_count >= 5 and ready_count >= 1 else "Keep upload/author/declaration/system fields pending while allowing verified local template evidence.",
         )
     )
 

@@ -10,9 +10,9 @@
 | LaTeX 源文件 | `paper/manuscript_submission_candidate.tex` | READY | 当前论文主源文件 |
 | 项目 README | `README.md` | READY | 面向导师/读者的项目介绍版 |
 | 导师汇报简版 | `paper/advisor_progress_brief.md` | READY | 简要说明研究目标、最终实验结果和风险边界 |
-| 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 80/80 ready，0 missing |
+| 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 82/82 ready，0 missing |
 | 审计仪表盘 | `paper/submission_audit_dashboard.md` | READY | 当前 29/32 ready，0 partial，3 pending，0 missing |
-| 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 35 files ready，0 missing，排除数据集、runs 和权重 |
+| 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 37 files ready，0 missing，排除数据集、runs 和权重 |
 | 总目标完成审计 | `paper/GOAL_COMPLETION_AUDIT.md` | PENDING | 本地可控材料高度完整，但仍保留人工/外部门槛 |
 | 数值证据审计 | `paper/evidence_audit.md` | READY | 论文数值与表格/日志对应 |
 | 数值追踪审计 | `paper/manuscript_number_trace_audit.md` | READY | LaTeX 正文小数均可追踪 |
@@ -34,7 +34,8 @@
 
 | 项目 | 当前状态 | 人工动作 |
 | --- | --- | --- |
-| 官方模板 | PENDING | 临近投稿时打开期刊官网或投稿系统，下载当前 Word/LaTeX/写作模板，并记录模板文件名、日期和 URL |
+| 官方模板 | READY | 已取得并归档 `paper/templates/计算机工程与应用论文模版.docx`，模板要求摘要见 `paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` |
+| 模板迁移 | PENDING | 将当前 LaTeX/PDF 候选稿迁入 CEA Word 模板，或迁入投稿系统最终要求的格式 |
 | 投稿文件类型 | PENDING | 确认系统要求上传 Word、PDF、源文件、图表附件或压缩包 |
 | 作者信息 | PENDING | 确认作者顺序、单位、通信作者、邮箱、电话、邮编和可能的 ORCID 信息 |
 | 基金/致谢/声明 | PENDING | 确认是否需要基金项目、利益冲突、数据可用性、原创性或版权声明 |
@@ -60,7 +61,8 @@
 
 ## 当前不能关闭的事项
 
-- 官方模板和投稿系统要求未由当前会话人工确认。
+- 官方 Word 模板已取得，但当前论文尚未迁入该模板。
+- 投稿系统上传文件类型和最终格式要求仍需人工确认。
 - 作者、单位、基金和声明信息需要用户/导师提供最终版本。
 - PDF 逐页目视检查需要人工完成。
 - GitHub 公开页面浏览器渲染需要人工确认。

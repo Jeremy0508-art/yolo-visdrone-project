@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 AUDIT_STEPS = [
+    ("CEA template requirement summary", "tools/extract_cea_template_requirements.py"),
     ("Journal manuscript gap audit", "tools/check_journal_manuscript_gaps.py"),
     ("LaTeX reference audit", "tools/check_tex_references.py"),
     ("Reference verification audit", "tools/check_reference_verification_matrix.py"),
@@ -36,6 +37,7 @@ AUDIT_STEPS = [
     ("PDF layout health audit", "tools/check_pdf_layout_health.py"),
     ("Advisor progress brief", "tools/build_advisor_progress_brief.py"),
     ("Advisor progress brief audit", "tools/check_advisor_progress_brief.py"),
+    ("Advisor review package", "tools/build_advisor_review_package.py"),
     ("CEA submission package checklist", "tools/build_cea_submission_package_checklist.py"),
     ("Synced fair-experiment artifacts audit", "tools/check_synced_fair_experiment_artifacts.py"),
     ("CEA server progress report", "tools/build_cea_server_progress_report.py"),

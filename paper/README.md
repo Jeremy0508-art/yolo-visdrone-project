@@ -35,6 +35,7 @@ Recommended ways to read it:
 | `CEA_REVIEWER_RESPONSE_PREP.md` | Reviewer-question preparation matrix for CEA-facing manuscript revision and response planning |
 | `CEA_POST_RESULT_REWRITE_PLAYBOOK.md` | Section-by-section rewrite playbook for after completed fair-comparison results are synced |
 | `CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | Source tracker for official template, upload-format, and manual journal-system requirements |
+| `CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` | Extracted requirement summary from the local CEA Word template |
 | `GOAL_COMPLETION_AUDIT.md` | Requirement-to-evidence audit for the active project objective and remaining gates |
 | `CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | Generated checklist for the local CEA-oriented manuscript package and remaining submission gates |
 | `CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | Generated manual preflight checklist for final journal-system and package verification |
@@ -44,6 +45,7 @@ Recommended ways to read it:
 | `CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | Manual checklist for verifying GitHub rendering before sharing the repository |
 | `github_public_view_audit.md` | Automated public GitHub reachability and raw README audit |
 | `CEA_TEMPLATE_MIGRATION_RECORD.md` | Record sheet for migrating the current LaTeX/PDF candidate into the official CEA template |
+| `templates/计算机工程与应用论文模版.docx` | Local copy of the CEA Word manuscript template |
 | `CEA_SUBMISSION_METADATA_WORKSHEET.md` | Worksheet for author, affiliation, funding, declaration, and upload metadata |
 | `advisor_review_package_manifest.md` | Manifest for the lightweight advisor-review zip package |
 | `advisor_review_package.zip` | Lightweight advisor-review bundle excluding datasets, runs, and weights |

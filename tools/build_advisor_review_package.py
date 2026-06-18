@@ -30,6 +30,8 @@ PACKAGE_ITEMS = [
     PackageItem("paper/CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md", "Manual GitHub public rendering checklist."),
     PackageItem("paper/github_public_view_audit.md", "Automated public GitHub reachability and raw README audit."),
     PackageItem("paper/CEA_TEMPLATE_MIGRATION_RECORD.md", "Official template migration record sheet."),
+    PackageItem("paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md", "Extracted CEA Word-template requirement summary."),
+    PackageItem("paper/templates/计算机工程与应用论文模版.docx", "Local copy of the CEA Word manuscript template provided by the user."),
     PackageItem("paper/CEA_SUBMISSION_METADATA_WORKSHEET.md", "Worksheet for author, affiliation, funding, declaration, and upload metadata."),
     PackageItem("paper/CEA_COVER_LETTER_DRAFT.md", "Bounded draft for editor-facing submission notes."),
     PackageItem("paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md", "Manual submission preflight checklist."),
@@ -118,7 +120,7 @@ def write_manifest(ready: list[PackageItem], missing: list[PackageItem]) -> None
             "## Use",
             "",
             "1. Share the zip file only for review of the current paper package.",
-            "2. Keep official journal template, author metadata, and final upload requirements outside this zip until manually confirmed.",
+            "2. Use the included CEA Word template and template summary only as migration evidence; final upload requirements still need journal-system confirmation.",
             "3. Do not treat this package as an official submission archive; it is an advisor-review bundle.",
         ]
     )

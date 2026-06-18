@@ -24,10 +24,10 @@ It intentionally does not mark the overall objective complete while external/man
 | GitHub 材料同步与公开访问 | READY | `paper/github_public_view_audit.md; README.md; paper/README.md` | 公开仓库、raw README、PDF、审计面板、导师说明和 PDF contact sheet 均通过自动链接检查。 |  |
 | 导师审阅包 | READY | `paper/advisor_review_package.zip; paper/advisor_review_package_manifest.md` | 导师审阅包包含论文 PDF、LaTeX、导师说明、审计、表格和关键图表，且排除数据集、runs 和权重。 |  |
 | 投稿辅助材料 | READY | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_COVER_LETTER_DRAFT.md; paper/CEA_FINAL_HANDOFF_CHECKLIST.md; paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 已准备作者/基金/声明信息工作表、投稿附信草稿、最终交接清单和模板迁移记录表。 |  |
-| 官方期刊模板和投稿系统要求 | PENDING | `paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 当前只能记录官方候选来源和人工核对字段，不能由本地脚本证明最新模板、上传格式或投稿系统要求。 | 正式投稿前由作者/导师打开期刊官网或投稿系统，下载当前模板并确认上传文件类型。 |
+| 官方期刊模板和投稿系统要求 | PENDING | `paper/templates/计算机工程与应用论文模版.docx; paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | 用户已提供投稿要求链接和 CEA Word 模板，模板文件与格式要求摘要已可本地追踪；但上传文件类型、投稿系统行为和最终模板迁移仍需人工确认。 | 正式投稿前由作者/导师打开期刊官网或投稿系统，确认当前上传文件类型，并将论文迁入官方模板或系统要求的最终格式。 |
 | 作者、单位、基金、声明和最终人工页检 | PENDING | `paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_PDF_VISUAL_REVIEW_FORM.md` | 作者顺序、通信作者、单位、基金、声明、摘要关键词最终确认和 PDF 逐页视觉检查仍需人工完成。 | 由用户和导师填写元信息、完成 PDF 页检，并确认是否进入投稿系统。 |
 | 官方 VisDrone test-dev 结果 | PENDING | `paper/testdev_submission.md; paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | 当前论文只可报告验证集结果；官方 test-dev 平台可用并返回结果前，不能写官方 test-dev AP。 | 若官方平台恢复可用，再提交导出的 test-dev zip 并按真实返回值更新论文。 |
-| 总目标完成判定 | PENDING | `paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit` | 本地可控材料已高度完整：审计面板 29/32 ready，材料清单 80/80 ready。仍不能标记总目标完成，因为存在官方模板、作者信息、人工页检和官方 test-dev 等外部/人工门槛。 | 完成 remaining manual/external gates 后再进行最终完成审计。 |
+| 总目标完成判定 | PENDING | `paper/submission_audit_dashboard.md; paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md; this audit` | 本地可控材料已高度完整：审计面板 29/32 ready，材料清单 82/82 ready。仍不能标记总目标完成，因为存在模板迁移、投稿系统上传格式、作者信息、人工页检和官方 test-dev 等外部/人工门槛。 | 完成 remaining manual/external gates 后再进行最终完成审计。 |
 
 ## Completion Rule
 
