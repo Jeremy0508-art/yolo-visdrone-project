@@ -7,8 +7,8 @@ It is a mechanical preflight check, not a substitute for manual visual inspectio
 ## Summary
 
 - Total checks: 9
-- Ready: 9
-- Partial: 0
+- Ready: 8
+- Partial: 1
 - Missing: 0
 
 ## Checks
@@ -16,7 +16,7 @@ It is a mechanical preflight check, not a substitute for manual visual inspectio
 | Item | Status | Evidence | Action |
 | --- | --- | --- | --- |
 | Compiled PDF exists | READY | `paper\manuscript_submission_candidate.pdf (1694.1 KB)` |  |
-| PDF freshness | READY | `pdf_mtime=1781596615, tex_mtime=1781589191` |  |
+| PDF freshness | PARTIAL | `pdf_mtime=1781596615, tex_mtime=1781857785` | Rebuild the PDF after LaTeX edits. |
 | Page count | READY | `15 pages` |  |
 | Page size consistency | READY | `595.3x841.9` |  |
 | Blank pages | READY | `none` |  |

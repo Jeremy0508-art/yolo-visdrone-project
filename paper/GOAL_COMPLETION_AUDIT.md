@@ -7,11 +7,11 @@ It does not claim that the manuscript has already been formally submitted or tha
 ## Summary
 
 - Total checks: 10
-- Ready: 10
+- Ready: 9
 - Pending: 0
 - Partial: 0
-- Missing: 0
-- Local objective complete: YES
+- Missing: 1
+- Local objective complete: NO
 
 ## Local Completion Checks
 
@@ -22,7 +22,7 @@ It does not claim that the manuscript has already been formally submitted or tha
 | 论文结构重写与投稿候选稿 | READY | `paper/manuscript_submission_candidate.tex; paper/manuscript_submission_candidate.pdf; paper/manuscript_journal_gap_audit.md` | 当前 LaTeX/PDF 候选稿具备期刊论文结构，包含方法、实验、讨论、结论和图表。 |
 | CEA Word 模板迁移初稿 | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx; paper/cea_template_migration/cea_word_draft_quality_audit.md` | 已生成 CEA Word 模板迁移初稿；机械审计确认首页单栏、正文双栏、图表双语题名和参考文献已迁入。 |
 | 真实数值和证据追踪 | READY | `paper/evidence_audit.md; paper/manuscript_number_trace_audit.md; paper/tables/` | 论文数值已通过证据审计和数值追踪审计；不以未完成或无日志结果作为论文证据。 |
-| LaTeX/PDF 本地可读性 | READY | `paper/pdf_text_readability_audit.md; paper/pdf_layout_health_audit.md; paper/pdf_visual_contact_sheet.md` | PDF 可提取文本、基础版式健康，且已生成 15 页缩略图总览辅助人工页检。 |
+| LaTeX/PDF 本地可读性 | MISSING | `paper/pdf_text_readability_audit.md; paper/pdf_layout_health_audit.md; paper/pdf_visual_contact_sheet.md` | PDF 可提取文本、基础版式健康，且已生成 15 页缩略图总览辅助人工页检。 |
 | GitHub 材料同步与公开访问 | READY | `paper/github_public_view_audit.md; README.md; paper/README.md` | 公开仓库、raw README、PDF、审计面板、导师说明和 PDF contact sheet 均通过自动链接检查。 |
 | 导师审阅包 | READY | `paper/advisor_review_package.zip; paper/advisor_review_package_manifest.md` | 导师审阅包包含论文 PDF、LaTeX、Word 迁移初稿、导师说明、审计、表格和关键图表，且排除数据集、runs 和权重。 |
 | 投稿辅助材料 | READY | `paper/CEA_SUBMISSION_METADATA_WORKSHEET.md; paper/CEA_COVER_LETTER_DRAFT.md; paper/CEA_FINAL_HANDOFF_CHECKLIST.md; paper/CEA_TEMPLATE_MIGRATION_RECORD.md; paper/CEA_WORD_VISUAL_REVIEW_FORM.md` | 已准备作者/基金/声明信息工作表、投稿附信草稿、最终交接清单、模板迁移记录和 Word/PDF 人工终审表。 |
@@ -43,7 +43,7 @@ The following gates are intentionally not counted as unfinished local work. They
 
 ## Completion Interpretation
 
-- 本地可控材料状态：审计面板 31/34 ready，材料清单 86/86 ready。
+- 本地可控材料状态：审计面板 26/34 ready，材料清单 86/86 ready。
 - `READY` means the local evidence proves the requirement for the current local pre-submission preparation stage.
 - Manual/external gates are not fabricated or auto-filled; they are explicitly isolated so they can be handled by the user/advisor/submission system.
 - This audit supports closing the local-preparation objective while preserving the distinction that formal journal submission still requires human actions.

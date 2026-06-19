@@ -14,7 +14,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 
 | Category | Item | Status | Path | Note |
 | --- | --- | --- | --- | --- |
-| Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.9 KB |
+| Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.7 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
 | Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 2.28 MB |
 | Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.7 KB |
@@ -75,10 +75,10 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Audits | Submission readiness audit | READY | `paper/submission_readiness_audit.md` | 14.6 KB |
 | Audits | Goal completion audit | READY | `paper/GOAL_COMPLETION_AUDIT.md` | 5.7 KB |
 | Audits | Evidence audit | READY | `paper/evidence_audit.md` | 13.7 KB |
-| Audits | Manuscript number trace audit | READY | `paper/manuscript_number_trace_audit.md` | 56.4 KB |
+| Audits | Manuscript number trace audit | READY | `paper/manuscript_number_trace_audit.md` | 56.2 KB |
 | Audits | Manuscript length audit | READY | `paper/manuscript_length_audit.md` | 1.2 KB |
 | Audits | Journal manuscript gap audit | READY | `paper/manuscript_journal_gap_audit.md` | 2.8 KB |
-| Audits | Paper consistency audit | READY | `paper/paper_consistency_audit.md` | 1.7 KB |
+| Audits | Paper consistency audit | READY | `paper/paper_consistency_audit.md` | 1.8 KB |
 | Audits | Claim boundary audit | READY | `paper/claim_boundary_audit.md` | 1.7 KB |
 | Audits | Result interpretation matrix audit | READY | `paper/result_interpretation_matrix_audit.md` | 3.0 KB |
 | Audits | LaTeX reference audit | READY | `paper/tex_reference_audit.md` | 1.1 KB |
@@ -97,7 +97,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Audits | Text hygiene audit | READY | `paper/text_hygiene_audit.md` | 3.3 KB |
 | Audits | Project README presentation audit | READY | `paper/project_readme_presentation_audit.md` | 1.9 KB |
 | Audits | PDF text readability audit | READY | `paper/pdf_text_readability_audit.md` | 1.5 KB |
-| Audits | PDF layout health audit | READY | `paper/pdf_layout_health_audit.md` | 1.3 KB |
+| Audits | PDF layout health audit | READY | `paper/pdf_layout_health_audit.md` | 1.4 KB |
 | Audits | GitHub public view audit | READY | `paper/github_public_view_audit.md` | 2.1 KB |
 | Audits | Advisor progress brief audit | READY | `paper/advisor_progress_brief_audit.md` | 1.8 KB |
 

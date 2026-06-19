@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 import shutil
 import zipfile
+import os
 from dataclasses import dataclass, field
 from pathlib import Path
 from xml.sax.saxutils import escape
@@ -15,8 +16,18 @@ ROOT = Path(__file__).resolve().parents[1]
 TEMPLATE_DIR = ROOT / "paper/templates"
 TEX_PATH = ROOT / "paper/manuscript_submission_candidate.tex"
 OUTPUT_DIR = ROOT / "paper/cea_template_migration"
-OUTPUT_DOCX = OUTPUT_DIR / "manuscript_cea_template_draft.docx"
-REPORT_PATH = OUTPUT_DIR / "cea_word_migration_audit.md"
+
+
+def configured_path(env_name: str, default: Path) -> Path:
+    value = os.environ.get(env_name)
+    if not value:
+        return default
+    path = Path(value)
+    return path if path.is_absolute() else ROOT / path
+
+
+OUTPUT_DOCX = configured_path("CEA_OUTPUT_DOCX", OUTPUT_DIR / "manuscript_cea_template_draft.docx")
+REPORT_PATH = configured_path("CEA_REPORT_PATH", OUTPUT_DIR / "cea_word_migration_audit.md")
 GENERATED_FIGURE_DIR = OUTPUT_DIR / "_generated_word_figures"
 SAFE_FULL_IMAGE_WIDTH_IN = 6.35
 SAFE_MEDIUM_IMAGE_WIDTH_IN = 5.45
@@ -69,20 +80,20 @@ EN_FIGURE_CAPTIONS = {
 
 EN_TITLE = "Lightweight YOLO11n Improvement for Small Object Detection in UAV Aerial Images"
 EN_ABSTRACT = (
-    "UAV aerial images usually contain small-scale objects, dense distributions, frequent occlusion, "
-    "and complex backgrounds, which require real-time detectors to preserve fine spatial details. "
-    "For the VisDrone detection scenario, this study takes YOLO11n as the baseline and evaluates a "
-    "lightweight improved model that combines a P2 high-resolution detection branch, CoordAttention, "
-    "and a 960 input resolution. The P2 branch enhances shallow high-resolution features, CoordAttention "
-    "introduces direction-aware positional information, and the higher input resolution increases the "
-    "effective pixels of small objects. The validation results show that the 960 input resolution is the "
-    "dominant source of performance gain, while the P2 branch further improves localization quality. "
-    "Among nano-scale lightweight models, YOLO11n-P2-960 achieves the best mAP50 of 0.424 and mAP50-95 "
-    "of 0.256, outperforming YOLO11n-960 and YOLO11n-P2-CA-960 while maintaining 55.68 FPS. The larger "
-    "YOLO11s-960 obtains 0.489 mAP50 and 0.298 mAP50-95, indicating that model capacity remains an "
-    "important factor for accuracy improvement. Therefore, the results should be interpreted as an "
-    "accuracy-complexity trade-off dominated by high-resolution input, supplemented by the P2 branch, "
-    "with limited gains from the attention module under the current setting."
+    "To address insufficient recall of lightweight detectors caused by dense small objects, frequent "
+    "occlusion, and similar category appearances in VisDrone UAV aerial scenes, a small-object-oriented "
+    "YOLO11n improvement is constructed. The scheme introduces a P2 high-resolution detection branch into "
+    "YOLO11n to enhance shallow spatial details, combines a CoordAttention module to supplement "
+    "direction-aware positional information, and evaluates the effects of a 960 input resolution and a "
+    "small-object-friendly augmentation strategy. Based on the VisDrone2019-DET validation set and real "
+    "training logs, accuracy, parameter count, computation, and single-image inference speed are reported, "
+    "with YOLOv8n, YOLOv5n, and YOLO11s used as reference baselines. Results show that the 960 input "
+    "resolution is the main source of gain, while the P2 branch further improves localization quality under "
+    "high-resolution input. Among nano-scale models, YOLO11n-P2-960 obtains an mAP50 of 0.424 and an "
+    "mAP50-95 of 0.256, outperforming YOLO11n-960 with 0.421 / 0.251 and YOLO11n-P2-CA-960 with "
+    "0.420 / 0.252, while maintaining 55.68 FPS. The larger-capacity YOLO11s-960 reaches 0.489 / 0.298, "
+    "indicating that the current improvement is more suitable as an accuracy-speed-complexity trade-off "
+    "for lightweight models rather than a full replacement for larger-capacity models."
 )
 
 

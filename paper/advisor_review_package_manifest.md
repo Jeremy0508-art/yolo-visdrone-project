@@ -18,7 +18,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `README.md` | 11.1 KB | Repository-level project introduction. |
 | `paper/README.md` | 12.3 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
-| `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
+| `paper/manuscript_submission_candidate.tex` | 43.7 KB | Current LaTeX source. |
 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 2.28 MB | First-pass CEA Word-template migration draft. |
 | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.7 KB | Audit report for the CEA Word migration draft. |
 | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.4 KB | Mechanical quality audit for the CEA Word draft. |
@@ -41,7 +41,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/GOAL_COMPLETION_AUDIT.md` | 5.7 KB | Requirement-to-evidence audit for the active project objective. |
 | `paper/submission_audit_dashboard.md` | 4.9 KB | Current audit dashboard. |
 | `paper/evidence_audit.md` | 13.7 KB | Paper-facing number provenance audit. |
-| `paper/manuscript_number_trace_audit.md` | 56.4 KB | Trace audit for manuscript numbers. |
+| `paper/manuscript_number_trace_audit.md` | 56.2 KB | Trace audit for manuscript numbers. |
 | `paper/commands.md` | 18.1 KB | Reproducibility commands. |
 | `paper/tables/main_comparison_for_paper.csv` | 1.8 KB | Main comparison table. |
 | `paper/tables/ablation_results.csv` | 1.7 KB | Ablation table. |

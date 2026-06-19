@@ -14,15 +14,15 @@ This audit is intentionally conservative. It checks decimal values only; integer
 
 | Value | Line | Status | Evidence | Context |
 | ---: | ---: | --- | --- | --- |
-| 0.424 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 0.256 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 0.421 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 0.251 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 0.420 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 0.252 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 55.68 | 5 | READY | `paper/tables/speed_results.csv:fps_wall` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 0.489 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
-| 0.298 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 无人机航拍图像通常具有俯视视角、目标尺度小、分布密集、遮挡频繁和背景复杂等特点，对实时检测模型的小目标感知和定位能力提出了较高要求。针对 VisDrone 场景下的小目标检测问题，本文以 \YOLOBase{} 为基线，构建并评估了一种结合 P2 高分辨率检测分支、\CoordA |
+| 0.424 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 0.256 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 0.421 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 0.251 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 0.420 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 0.252 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 55.68 | 5 | READY | `paper/tables/speed_results.csv:fps_wall` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 0.489 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
+| 0.298 | 5 | READY | `paper/tables/main_comparison_for_paper.csv:best_map50_95` | 针对 VisDrone 无人机航拍场景中小目标密集、遮挡频繁、类别外观相似导致轻量检测模型召回不足和定位不稳定的问题，构建一种面向小目标的 \YOLOBase{} 改进方案。该方案在 \YOLOBase{} 基础上引入 P2 高分辨率检测分支，以增强浅层空间细节利用；结合 \Co |
 | 0.35 | 117 | READY | `documented augmentation/configuration value` | 此外，本文设计了小目标友好数据增强消融实验，设置包括 \texttt{close\_mosaic: 20}、\texttt{scale: 0.35}、\texttt{copy\_paste: 0.1} 和 \texttt{erasing: 0.0}。其中，较早关闭 mosaic  |
 | 0.1 | 117 | READY | `documented augmentation/configuration value` | 此外，本文设计了小目标友好数据增强消融实验，设置包括 \texttt{close\_mosaic: 20}、\texttt{scale: 0.35}、\texttt{copy\_paste: 0.1} 和 \texttt{erasing: 0.0}。其中，较早关闭 mosaic  |
 | 0.0 | 117 | READY | `documented augmentation/configuration value` | 此外，本文设计了小目标友好数据增强消融实验，设置包括 \texttt{close\_mosaic: 20}、\texttt{scale: 0.35}、\texttt{copy\_paste: 0.1} 和 \texttt{erasing: 0.0}。其中，较早关闭 mosaic  |

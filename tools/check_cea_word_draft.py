@@ -2,14 +2,25 @@ from __future__ import annotations
 
 import re
 import zipfile
+import os
 from dataclasses import dataclass
 from pathlib import Path
 import xml.etree.ElementTree as ET
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DOCX_PATH = ROOT / "paper/cea_template_migration/manuscript_cea_template_draft.docx"
-REPORT_PATH = ROOT / "paper/cea_template_migration/cea_word_draft_quality_audit.md"
+
+
+def configured_path(env_name: str, default: Path) -> Path:
+    value = os.environ.get(env_name)
+    if not value:
+        return default
+    path = Path(value)
+    return path if path.is_absolute() else ROOT / path
+
+
+DOCX_PATH = configured_path("CEA_DOCX_PATH", ROOT / "paper/cea_template_migration/manuscript_cea_template_draft.docx")
+REPORT_PATH = configured_path("CEA_QUALITY_REPORT_PATH", ROOT / "paper/cea_template_migration/cea_word_draft_quality_audit.md")
 
 
 @dataclass(frozen=True)

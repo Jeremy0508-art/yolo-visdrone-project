@@ -13,7 +13,7 @@
 | 项目 README | `README.md` | READY | 面向导师/读者的项目介绍版 |
 | 导师汇报简版 | `paper/advisor_progress_brief.md` | READY | 简要说明研究目标、最终实验结果和风险边界 |
 | 投稿材料清单 | `paper/submission_material_manifest.md` | READY | 当前 86/86 ready，0 missing |
-| 审计仪表盘 | `paper/submission_audit_dashboard.md` | READY | 当前 31/34 ready，0 partial，3 pending，0 missing |
+| 审计仪表盘 | `paper/submission_audit_dashboard.md` | READY | 当前 26/34 ready，3 partial，3 pending，2 missing |
 | 导师审阅包 | `paper/advisor_review_package.zip` | READY | 当前 41 files ready，0 missing，排除数据集、runs 和权重 |
 | 本地目标完成审计 | `paper/GOAL_COMPLETION_AUDIT.md` | READY | 本地可完成的投稿前材料已审计完成，人工/外部门槛已单独列出 |
 | 数值证据审计 | `paper/evidence_audit.md` | READY | 论文数值与表格/日志对应 |
