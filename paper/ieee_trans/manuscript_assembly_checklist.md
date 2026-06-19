@@ -27,6 +27,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `submission_metadata_workbench.md` | Ready | Author, funding, code/data, and submission-system metadata checklist |
 | `cover_letter_workbench.md` | Ready | Cover letter skeleton and ethics/claim boundaries |
 | `related_work_outline.md` | Ready | Related-work structure |
+| `page_budget_plan.md` | Ready | T-ITS Regular Paper page budget and main-paper table/figure selection |
 | `references_seed.bib` | Ready for planning | Seed citations only; verify metadata before final BibTeX |
 | `../ieee_number_trace_audit.md` | Ready | Numeric trace audit for the current English draft pack |
 | `tables/visdrone_main_results.tex` | Ready for current evidence route | Main VisDrone table |
@@ -78,6 +79,7 @@ Create `paper/ieee_trans/main.tex` only when all of the following are true:
 | Gate | Current Status | Evidence Needed |
 | --- | --- | --- |
 | Target IEEE Transactions journal selected | Pending | Advisor confirms T-ITS, TGRS, or another exact journal |
+| Page budget plan reviewed | Ready as planning | `page_budget_plan.md`; update after final TOFC/UAVDT result selection |
 | Final main method selected | Pending | TOFC or fallback route chosen from real metrics |
 | VisDrone final result table complete | Ready for current evidence | Existing generated table, refreshed after final model |
 | Cross-dataset evidence available | Pending | UAVDT conversion and completed runs |

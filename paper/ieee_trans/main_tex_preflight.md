@@ -12,6 +12,7 @@ Create `main.tex` only when these items are satisfied:
 | --- | --- | --- |
 | Exact IEEE Transactions target selected | Pending | Advisor confirms T-ITS, TGRS, or another exact journal |
 | Target author requirements checked | Ready for T-ITS | `paper/ieee_tits_author_requirements_audit.md`; re-check before final submission |
+| Page budget plan reviewed | Ready as planning | `paper/ieee_trans/page_budget_plan.md`; revise after final table/figure selection |
 | Final method route selected | Pending | `paper/ieee_method_selection_protocol.md` updated after TOFC or fallback decision |
 | TOFC decision complete | Pending | Complete run or explicit decision not to use TOFC |
 | Cross-dataset plan resolved | Pending | UAVDT results complete, or manuscript scope downgraded to VisDrone-only analysis |
@@ -33,6 +34,7 @@ When the gate passes, create or finalize:
 | `paper/ieee_trans/references.bib` | Verified BibTeX entries for final manuscript |
 | `paper/ieee_trans/tables/*.tex` | Generated evidence-backed table drafts |
 | `paper/ieee_trans/figures/` | Final English figures copied or generated for IEEE layout |
+| `paper/ieee_trans/page_budget_plan.md` | Page budget and figure/table selection guardrail |
 | `paper/ieee_trans/build/` | Optional build output directory, ignored if needed |
 | `paper/ieee_trans/cover_letter_draft.md` | Cover letter after target and claims are fixed |
 | `paper/ieee_trans/submission_metadata_workbench.md` | Manual submission metadata source; not compiled into the paper |

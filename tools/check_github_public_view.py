@@ -176,6 +176,10 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/submission_metadata_workbench.md",
         ),
         (
+            "IEEE page budget plan raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/page_budget_plan.md",
+        ),
+        (
             "IEEE reviewer response plan raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans_response_plan.md",
         ),

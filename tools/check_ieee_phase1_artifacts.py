@@ -53,6 +53,7 @@ REQUIRED_FILES = [
     ("Planning", "IEEE section draft pack", "paper/ieee_trans/section_draft_pack.md"),
     ("Planning", "IEEE manuscript assembly checklist", "paper/ieee_trans/manuscript_assembly_checklist.md"),
     ("Planning", "IEEE main.tex preflight checklist", "paper/ieee_trans/main_tex_preflight.md"),
+    ("Planning", "IEEE page budget plan", "paper/ieee_trans/page_budget_plan.md"),
     ("Planning", "IEEE seed bibliography", "paper/ieee_trans/references_seed.bib"),
     ("Planning", "IEEE citation plan", "paper/ieee_trans/citation_plan.md"),
     ("Planning", "IEEE evidence-to-section map", "paper/ieee_trans/evidence_to_sections.csv"),
