@@ -6,7 +6,7 @@
 
 系统完成了 VisDrone2019-DET 数据转换、YOLO 格式数据校验、baseline 训练、改进模型训练、消融实验、模型复杂度统计、推理速度测试、图片/视频推理、Flask Web 可视化检测页面和论文材料整理。当前数据集包含 6,471 张训练图像、548 张验证图像和 343,204 个训练标注框，覆盖 pedestrian、people、car、motor 等 10 类航拍目标。
 
-在 100 epoch 训练设置下，YOLO11n-P2-960 在 nano 级轻量模型中取得较好的精度-速度折中，Best mAP50 达到 `0.42361`，Best mAP50-95 达到 `0.25552`，高于 YOLO11n-960 的 `0.42136` / `0.25067` 和 YOLO11n-P2-CoordAttention-960 的 `0.41996` / `0.25174`，单图 wall-clock 推理速度为 `55.68 FPS`。更大容量的 YOLO11s-960 达到 `0.48901` / `0.29812`，说明模型容量仍是提升检测精度的重要因素。当前结果表明，960 输入分辨率是主要增益来源，P2 高分辨率检测分支在高分辨率设置下仍能带来额外提升，CoordAttention 在当前设置下更适合作为辅助设计而不是主要性能来源。项目最终形成了一个可复现、可评估、可展示，并可支撑中文期刊论文写作的无人机航拍小目标检测实验闭环。
+在 100 epoch 训练设置下，YOLO11n-P2-960 在 nano 级轻量模型中取得较好的精度-速度折中，Best mAP50 达到 `0.42361`，Best mAP50-95 达到 `0.25552`，高于 YOLO11n-960 的 `0.42136` / `0.25067` 和 YOLO11n-P2-CoordAttention-960 的 `0.41996` / `0.25174`，单图 wall-clock 推理速度为 `55.68 FPS`。更大容量的 YOLO11s-960 达到 `0.48901` / `0.29812`，说明模型容量仍是提升检测精度的重要因素。当前结果表明，960 输入分辨率是主要增益来源，P2 高分辨率检测分支在高分辨率设置下仍能带来额外提升，CoordAttention 在当前设置下更适合作为辅助设计而不是主要性能来源。项目最终形成了一个可复现、可评估、可展示，并可支撑 IEEE Transactions 英文论文准备的无人机航拍小目标检测实验闭环。
 
 ## 方法思路
 
@@ -202,33 +202,24 @@ paper/tables/scale_group_results.csv
 
 ## 论文材料
 
-论文相关材料集中整理在 `paper/` 目录：
+论文相关材料集中整理在 `paper/` 目录。当前英文投稿路线的核心材料包括：
 
 ```text
 paper/README.md
-paper/CEA_JOURNAL_MASTER_PLAN.md
-paper/CEA_REVIEWER_RESPONSE_PREP.md
-paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md
-paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md
-paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md
-paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md
-paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md
-paper/CEA_WORD_VISUAL_REVIEW_FORM.md
-paper/templates/计算机工程与应用论文模版.docx
-paper/PROJECT_ROADMAP.md
-paper/manuscript_submission_candidate.tex
-paper/manuscript_submission_candidate.pdf
-paper/cea_template_migration/manuscript_cea_template_draft.docx
-paper/cea_template_migration/cea_word_migration_audit.md
-paper/cea_template_migration/cea_word_draft_quality_audit.md
-paper/submission_audit_dashboard.md
-paper/evidence_audit.md
+paper/IEEE_TRANS_SUBMISSION_PLAN.md
+paper/ieee_submission_dashboard.md
+paper/ieee_target_journal_analysis.md
+paper/ieee_method_selection_protocol.md
+paper/ieee_reviewer_risk_register.md
+paper/ieee_scale_result_interpretation.md
+paper/ieee_scale_ap_interpretation.md
+paper/ieee_trans/
 paper/commands.md
 paper/figures/
 paper/tables/
 ```
 
-其中 `paper/manuscript_submission_candidate.pdf` 是当前 LaTeX 预览版本，`paper/cea_template_migration/manuscript_cea_template_draft.docx` 是《计算机工程与应用》Word 模板迁移初稿，`paper/CEA_REVIEWER_RESPONSE_PREP.md` 整理审稿问题应答准备，`paper/CEA_POST_RESULT_REWRITE_PLAYBOOK.md` 记录最终结果同步后的逐节改稿路线，`paper/CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` 记录官方投稿要求来源和人工核验项，`paper/CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` 整理《计算机工程与应用》Word 模板中的格式要求，`paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md` 汇总投稿材料包，`paper/CEA_MANUAL_SUBMISSION_PREFLIGHT.md` 记录最终提交前人工核对项，`paper/submission_audit_dashboard.md` 汇总审计状态，`paper/commands.md` 记录复现实验命令，`paper/evidence_audit.md` 记录论文数值来源。
+其中 `paper/ieee_trans/` 保存 IEEE 英文稿规划、章节草稿、表格草稿和 `main.tex` 创建前检查清单；`paper/ieee_submission_dashboard.md` 汇总当前证据状态和未完成门槛；`paper/ieee_scale_result_interpretation.md` 与 `paper/ieee_scale_ap_interpretation.md` 分别记录尺度召回/精度和本地 scale-bin AP 诊断结果。早期中文期刊路线材料仍保留在 `paper/` 中，作为历史写作和格式迁移资料。
 
 编译 LaTeX PDF：
 

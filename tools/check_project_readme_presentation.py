@@ -73,10 +73,12 @@ def audit() -> list[ReadmeCheck]:
         ("Baseline family", "YOLO11n"),
         ("P2 branch", "P2"),
         ("Attention module", "CoordAttention"),
-        ("Current paper PDF", "paper/manuscript_submission_candidate.pdf"),
-        ("Submission package checklist", "paper/CEA_SUBMISSION_PACKAGE_CHECKLIST.md"),
-        ("Audit dashboard", "paper/submission_audit_dashboard.md"),
-        ("Evidence audit", "paper/evidence_audit.md"),
+        ("IEEE route", "IEEE Transactions"),
+        ("IEEE dashboard", "paper/ieee_submission_dashboard.md"),
+        ("Method selection protocol", "paper/ieee_method_selection_protocol.md"),
+        ("Reviewer risk register", "paper/ieee_reviewer_risk_register.md"),
+        ("Scale AP interpretation", "paper/ieee_scale_ap_interpretation.md"),
+        ("IEEE manuscript workspace", "paper/ieee_trans/"),
         ("Reproducibility commands", "paper/commands.md"),
     ]
     for item, token in required_tokens:

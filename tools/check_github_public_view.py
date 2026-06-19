@@ -3,11 +3,9 @@ from __future__ import annotations
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
-from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[1]
-REPORT_PATH = ROOT / "paper/github_public_view_audit.md"
+REPORT_PATH = "paper/github_public_view_audit.md"
 
 REPO_URL = "https://github.com/Jeremy0508-art/yolo-visdrone-project"
 RAW_README_URL = "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/README.md"
@@ -111,11 +109,13 @@ def audit() -> list[Check]:
             ("Current lightweight conclusion", "YOLO11n-P2-960"),
             ("Best nano mAP50", "0.42361"),
             ("YOLO11s capacity reference", "YOLO11s-960"),
-            ("Paper PDF link", "paper/manuscript_submission_candidate.pdf"),
-            ("Submission dashboard link", "paper/submission_audit_dashboard.md"),
-            ("Evidence audit link", "paper/evidence_audit.md"),
+            ("IEEE route", "IEEE Transactions"),
+            ("IEEE dashboard link", "paper/ieee_submission_dashboard.md"),
+            ("Method selection protocol link", "paper/ieee_method_selection_protocol.md"),
+            ("Reviewer risk register link", "paper/ieee_reviewer_risk_register.md"),
+            ("Scale AP interpretation link", "paper/ieee_scale_ap_interpretation.md"),
+            ("IEEE workspace link", "paper/ieee_trans/"),
             ("Reproducibility command link", "paper/commands.md"),
-            ("Official test-dev boundary", "不等同于官方 AP"),
         ]
         for item, token in required_readme_tokens:
             found = token in readme_text
@@ -147,24 +147,24 @@ def audit() -> list[Check]:
 
     public_artifacts = [
         (
-            "PDF blob page",
-            "https://github.com/Jeremy0508-art/yolo-visdrone-project/blob/main/paper/manuscript_submission_candidate.pdf",
-        ),
-        (
             "Paper README raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/README.md",
         ),
         (
-            "Submission dashboard raw",
-            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/submission_audit_dashboard.md",
+            "IEEE dashboard raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_submission_dashboard.md",
         ),
         (
-            "Advisor review note raw",
-            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/advisor_review_note.md",
+            "IEEE workspace README raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/README.md",
         ),
         (
-            "PDF contact sheet raw",
-            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/figures/pdf_review/manuscript_pages_contact_sheet.jpg",
+            "IEEE scale AP interpretation raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_scale_ap_interpretation.md",
+        ),
+        (
+            "IEEE scale AP figure raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png",
         ),
     ]
     for item, url in public_artifacts:
@@ -217,13 +217,15 @@ def write_report(checks: list[Check]) -> None:
             "- Manual review is still needed to confirm visual rendering, image display, and browser-specific GitHub behavior.",
         ]
     )
-    REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    from pathlib import Path
+
+    Path(REPORT_PATH).write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def main() -> None:
     checks = audit()
     write_report(checks)
-    print(f"Wrote {REPORT_PATH.relative_to(ROOT)}")
+    print(f"Wrote {REPORT_PATH}")
 
 
 if __name__ == "__main__":
