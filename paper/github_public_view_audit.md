@@ -6,8 +6,8 @@ It is an automated public-link check, not a substitute for manual browser review
 
 ## Summary
 
-- Total checks: 22
-- Ready: 22
+- Total checks: 24
+- Ready: 24
 - Partial: 0
 - Missing: 0
 
@@ -19,24 +19,26 @@ It is an automated public-link check, not a substitute for manual browser review
 | Repository owner/name | READY | `Jeremy0508-art/yolo-visdrone-project` |  |
 | Public repository marker | READY | `Public` |  |
 | README area | READY | `README` |  |
-| Raw README reachable | READY | `HTTP 200, 8352 characters` |  |
+| Raw README reachable | READY | `HTTP 200, 7634 characters` |  |
 | Current lightweight conclusion | READY | `YOLO11n-P2-960` |  |
 | Best nano mAP50 | READY | `0.42361` |  |
 | YOLO11s capacity reference | READY | `YOLO11s-960` |  |
-| Paper PDF link | READY | `paper/manuscript_submission_candidate.pdf` |  |
-| Submission dashboard link | READY | `paper/submission_audit_dashboard.md` |  |
-| Evidence audit link | READY | `paper/evidence_audit.md` |  |
+| IEEE route | READY | `IEEE Transactions` |  |
+| IEEE dashboard link | READY | `paper/ieee_submission_dashboard.md` |  |
+| Method selection protocol link | READY | `paper/ieee_method_selection_protocol.md` |  |
+| Reviewer risk register link | READY | `paper/ieee_reviewer_risk_register.md` |  |
+| Scale AP interpretation link | READY | `paper/ieee_scale_ap_interpretation.md` |  |
+| IEEE workspace link | READY | `paper/ieee_trans/` |  |
 | Reproducibility command link | READY | `paper/commands.md` |  |
-| Official test-dev boundary | READY | `不等同于官方 AP` |  |
 | Stale unfinished wording | READY | ``还没完成` not found` |  |
 | Placeholder wording | READY | ``待补充` not found` |  |
 | Unsupported guarantee wording | READY | ``保证录用` not found` |  |
 | Old future-experiment wording | READY | ``后续建议实验` not found` |  |
-| PDF blob page | READY | `HTTP 200` |  |
 | Paper README raw | READY | `HTTP 200` |  |
-| Submission dashboard raw | READY | `HTTP 200` |  |
-| Advisor review note raw | READY | `HTTP 200` |  |
-| PDF contact sheet raw | READY | `HTTP 200` |  |
+| IEEE dashboard raw | READY | `HTTP 200` |  |
+| IEEE workspace README raw | READY | `HTTP 200` |  |
+| IEEE scale AP interpretation raw | READY | `HTTP 200` |  |
+| IEEE scale AP figure raw | READY | `HTTP 200` |  |
 
 ## Interpretation
 
