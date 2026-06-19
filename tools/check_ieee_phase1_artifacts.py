@@ -38,6 +38,7 @@ REQUIRED_FILES = [
     ("Planning", "IEEE table and figure plan", "paper/ieee_trans/table_figure_plan.md"),
     ("Planning", "IEEE claim audit report", "paper/ieee_claim_audit.md"),
     ("Planning", "IEEE server progress report", "paper/ieee_server_progress_report.md"),
+    ("Planning", "IEEE submission dashboard", "paper/ieee_submission_dashboard.md"),
     ("Planning", "Advisor transition brief", "paper/ieee_advisor_transition_brief.md"),
     ("Dataset", "UAVDT data YAML", "configs/dataset/uavdt.yaml"),
     ("Dataset", "UAVDT setup notes", "paper/datasets/uavdt_setup.md"),
@@ -51,6 +52,7 @@ REQUIRED_FILES = [
     ("Execution", "IEEE server status checker", "tools/check_ieee_server_status.ps1"),
     ("Execution", "IEEE server sync script", "tools/sync_ieee_server_results.ps1"),
     ("Execution", "IEEE server progress reporter", "tools/build_ieee_server_progress_report.py"),
+    ("Execution", "IEEE dashboard builder", "tools/build_ieee_submission_dashboard.py"),
 ]
 
 
