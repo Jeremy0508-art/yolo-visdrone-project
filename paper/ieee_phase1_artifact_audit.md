@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 102
-- Ready: 95
+- Total checks: 104
+- Ready: 97
 - Pending: 7
 - Missing: 0
 
@@ -76,6 +76,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Dataset | UAVDT data YAML | READY | `configs/dataset/uavdt.yaml` |  |
 | Dataset | UAVDT setup notes | READY | `paper/datasets/uavdt_setup.md` |  |
 | Dataset | UAVDT operational checklist | READY | `paper/datasets/uavdt_operational_checklist.md` |  |
+| Dataset | UAVDT conversion readiness audit | READY | `paper/datasets/uavdt_conversion_readiness_audit.md` |  |
 | Dataset | UAVDT converter | READY | `scripts/convert_uavdt_to_yolo.py` |  |
 | Method | TOFC source module | READY | `src/models/attention/tiny_object_feature_calibration.py` |  |
 | Method | TOFC model YAML | READY | `configs/models/yolo11n_p2_tofc.yaml` |  |
@@ -101,6 +102,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Execution | IEEE dashboard builder | READY | `tools/build_ieee_submission_dashboard.py` |  |
 | Execution | IEEE experiment registry builder | READY | `tools/build_ieee_experiment_registry.py` |  |
 | Execution | IEEE audit runner | READY | `tools/run_ieee_audits.py` |  |
+| Execution | UAVDT conversion readiness checker | READY | `tools/check_uavdt_conversion_readiness.py` |  |
 | Literature | Related-work seed coverage | READY | `25 rows in paper/ieee_related_work_matrix.csv` |  |
 | Dataset | Raw UAVDT dataset placement | PENDING | `data/raw/UAVDT` | Place raw UAVDT files under data/raw/UAVDT/. |
 | Dataset | Converted UAVDT YOLO train images | PENDING | `data/processed/uavdt_yolo/images/train` | Run scripts/convert_uavdt_to_yolo.py after raw data is available. |

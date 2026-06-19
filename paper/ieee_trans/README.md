@@ -47,6 +47,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `../ieee_result_interpretation_matrix_audit.md` | Generated check for the IEEE result interpretation matrix |
 | `../ieee_dataset_license_audit.md` | Dataset license, citation, and repository-release boundary notes |
 | `../ieee_dataset_compliance_audit.md` | Generated check for dataset boundary, seed citations, and submission-metadata wording |
+| `../datasets/uavdt_conversion_readiness_audit.md` | Generated local audit and synthetic conversion smoke test for UAVDT preparation |
 | `../ieee_server_resume_runbook.md` | Safe server restart, launch, monitoring, and sync procedure for IEEE experiments |
 | `../ieee_submission_dashboard.md` | Current IEEE readiness dashboard |
 

@@ -82,6 +82,7 @@ REQUIRED_FILES = [
     ("Dataset", "UAVDT data YAML", "configs/dataset/uavdt.yaml"),
     ("Dataset", "UAVDT setup notes", "paper/datasets/uavdt_setup.md"),
     ("Dataset", "UAVDT operational checklist", "paper/datasets/uavdt_operational_checklist.md"),
+    ("Dataset", "UAVDT conversion readiness audit", "paper/datasets/uavdt_conversion_readiness_audit.md"),
     ("Dataset", "UAVDT converter", "scripts/convert_uavdt_to_yolo.py"),
     ("Method", "TOFC source module", "src/models/attention/tiny_object_feature_calibration.py"),
     ("Method", "TOFC model YAML", "configs/models/yolo11n_p2_tofc.yaml"),
@@ -107,6 +108,7 @@ REQUIRED_FILES = [
     ("Execution", "IEEE dashboard builder", "tools/build_ieee_submission_dashboard.py"),
     ("Execution", "IEEE experiment registry builder", "tools/build_ieee_experiment_registry.py"),
     ("Execution", "IEEE audit runner", "tools/run_ieee_audits.py"),
+    ("Execution", "UAVDT conversion readiness checker", "tools/check_uavdt_conversion_readiness.py"),
 ]
 
 

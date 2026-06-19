@@ -220,6 +220,10 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_dataset_compliance_audit.md",
         ),
         (
+            "UAVDT conversion readiness audit raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/datasets/uavdt_conversion_readiness_audit.md",
+        ),
+        (
             "IEEE server resume runbook raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_server_resume_runbook.md",
         ),

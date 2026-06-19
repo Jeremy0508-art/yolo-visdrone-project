@@ -73,6 +73,7 @@ def build_dashboard() -> str:
     number_text = read_text("paper/ieee_number_trace_audit.md")
     dataset_text = read_text("paper/ieee_dataset_compliance_audit.md")
     interpretation_text = read_text("paper/ieee_result_interpretation_matrix_audit.md")
+    uavdt_text = read_text("paper/datasets/uavdt_conversion_readiness_audit.md")
     phase = parse_summary(phase_text)
     claim = parse_summary(claim_text)
     server = parse_summary(server_text)
@@ -84,6 +85,7 @@ def build_dashboard() -> str:
     number = parse_summary(number_text)
     dataset = parse_summary(dataset_text)
     interpretation = parse_summary(interpretation_text)
+    uavdt = parse_summary(uavdt_text)
     related_rows = count_csv_rows("paper/ieee_related_work_matrix.csv")
     section_rows = count_csv_rows("paper/ieee_trans/evidence_to_sections.csv")
 
@@ -148,6 +150,10 @@ def build_dashboard() -> str:
             f"{status_badge(dataset.get('Missing', 'n/a'))} | `paper/ieee_dataset_compliance_audit.md` |"
         ),
         (
+            f"| UAVDT conversion readiness | {uavdt.get('Ready', 'n/a')} | {uavdt.get('Pending', 'n/a')} | "
+            f"{status_badge(uavdt.get('Missing', 'n/a'))} | `paper/datasets/uavdt_conversion_readiness_audit.md` |"
+        ),
+        (
             f"| Result interpretation matrix | {interpretation.get('Ready', 'n/a')} | n/a | "
             f"{status_badge(interpretation.get('Missing', 'n/a'))} | `paper/ieee_result_interpretation_matrix_audit.md` |"
         ),
@@ -163,8 +169,8 @@ def build_dashboard() -> str:
         "- Experiment gap matrix: `paper/ieee_required_experiment_gap.md`",
         "- Experiment registry: `paper/tables/ieee_experiment_registry.csv`, `paper/ieee_experiment_registry_audit.md`",
         "- Dataset strategy: `paper/ieee_dataset_strategy.md`",
+        "- UAVDT setup, operational checklist, and conversion readiness audit: `paper/datasets/uavdt_setup.md`, `paper/datasets/uavdt_operational_checklist.md`, `paper/datasets/uavdt_conversion_readiness_audit.md`",
         "- Method design and selection protocol: `paper/ieee_method_design_notes.md`, `paper/ieee_method_selection_protocol.md`",
-        "- UAVDT setup and operational checklist: `paper/datasets/uavdt_setup.md`, `paper/datasets/uavdt_operational_checklist.md`",
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
         "- Reviewer risk register and response-prep plan: `paper/ieee_reviewer_risk_register.md`, `paper/ieee_trans_response_plan.md`",
         "- Manuscript blueprint, front-matter/submission workbenches, section draft pack, assembly checklist, page budget plan, and main.tex preflight: `paper/ieee_trans/manuscript_blueprint.md`, `paper/ieee_trans/abstract_contribution_workbench.md`, `paper/ieee_trans/title_abstract_index_terms_workbench.md`, `paper/ieee_trans/submission_metadata_workbench.md`, `paper/ieee_trans/cover_letter_workbench.md`, `paper/ieee_trans/section_draft_pack.md`, `paper/ieee_trans/manuscript_assembly_checklist.md`, `paper/ieee_trans/page_budget_plan.md`, `paper/ieee_trans/main_tex_preflight.md`",

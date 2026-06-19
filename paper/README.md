@@ -74,6 +74,14 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `figures/scale_analysis/ieee_scale_ap50_visdrone.png` | Local scale-bin AP50 figure |
 | `commands.md` | Reproducibility commands |
 
+## Dataset Preparation Audits
+
+| Artifact | Purpose |
+| --- | --- |
+| `datasets/uavdt_setup.md` | UAVDT source, layout, class mapping, and conversion instructions |
+| `datasets/uavdt_operational_checklist.md` | Step-by-step UAVDT placement, conversion, preview, training, and sync checklist |
+| `datasets/uavdt_conversion_readiness_audit.md` | Generated local audit and synthetic conversion smoke test for the UAVDT conversion chain |
+
 ## Legacy CEA Materials
 
 The CEA route materials remain available for reference, formatting history, and earlier Chinese writing drafts:
