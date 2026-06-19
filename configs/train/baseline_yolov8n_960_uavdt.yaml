@@ -1,0 +1,17 @@
+model: yolov8n.pt
+data: configs/dataset/uavdt.yaml
+project: runs/detect
+name: baseline_yolov8n_960_uavdt
+
+epochs: 100
+imgsz: 960
+batch: 4
+device: 0
+workers: 0
+patience: 30
+seed: 42
+
+optimizer: auto
+lr0: 0.01
+cos_lr: true
+close_mosaic: 10

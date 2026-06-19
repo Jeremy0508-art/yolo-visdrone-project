@@ -20,6 +20,7 @@ This audit records the first set of local artifacts created for the IEEE Transac
 | IEEE scale target list exists | READY | `paper/tables/ieee_scale_eval_targets.csv` |
 | Scale evaluation script accepts target CSV | READY | `tools/evaluate_scale_groups.py --targets-csv ...` |
 | Scale evaluation smoke check | READY | One-image CPU smoke output under ignored `runs/scale_group_smoke/` |
+| IEEE server queue script exists | READY | `tools/run_ieee_server_queue.sh`; dry-run by default |
 | TOFC training result exists | MISSING | No training has been launched yet |
 | UAVDT converted dataset exists | MISSING | Raw UAVDT has not been placed under `data/raw/UAVDT/` yet |
 

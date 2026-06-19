@@ -152,3 +152,13 @@ python tools/evaluate_scale_groups.py `
 ```
 
 A one-image CPU smoke check has passed and wrote ignored files under `runs/scale_group_smoke/`. Those smoke values are not valid paper results.
+
+## Server Queue
+
+A guarded server queue draft is available:
+
+```bash
+RUN_TRAINING=1 RUN_SCALE=1 ./tools/run_ieee_server_queue.sh
+```
+
+The script defaults to dry-run mode unless `RUN_TRAINING=1` is set. UAVDT jobs are additionally gated by `RUN_UAVDT=1` and require the converted UAVDT dataset to exist.

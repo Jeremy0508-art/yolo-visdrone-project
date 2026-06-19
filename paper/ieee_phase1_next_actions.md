@@ -21,6 +21,7 @@ The project has switched from the CEA route to the IEEE Transactions route. Phas
 | TOFC structure audit | Done | `paper/ieee_phase1_artifact_audit.md` |
 | IEEE scale-evaluation target list | Done | `paper/tables/ieee_scale_eval_targets.csv` |
 | Scale evaluation target-CSV support | Done | `tools/evaluate_scale_groups.py` |
+| Safe IEEE server queue draft | Done | `tools/run_ieee_server_queue.sh` |
 
 ## Immediate Technical Tasks
 
@@ -30,6 +31,8 @@ The project has switched from the CEA route to the IEEE Transactions route. Phas
 4. Fix any raw-layout assumptions in the converter after seeing the actual downloaded structure.
 5. Run the first TOFC full training only after GPU/server availability is confirmed.
 6. Run the full scale-wise evaluation on completed VisDrone models when compute time is available.
+
+The server queue is intentionally guarded. It exits as a dry run unless `RUN_TRAINING=1` is set.
 
 ## Immediate Research Tasks
 
