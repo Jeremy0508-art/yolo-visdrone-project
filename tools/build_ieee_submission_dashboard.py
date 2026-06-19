@@ -99,6 +99,7 @@ def build_dashboard() -> str:
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
         "- Manuscript blueprint: `paper/ieee_trans/manuscript_blueprint.md`",
         "- Related-work outline: `paper/ieee_trans/related_work_outline.md`",
+        "- Seed bibliography and citation plan: `paper/ieee_trans/references_seed.bib`, `paper/ieee_trans/citation_plan.md`",
         "- Table/figure plan: `paper/ieee_trans/table_figure_plan.md`",
         "- Server integration protocol: `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`",
         "- Guarded server queue: `tools/run_ieee_server_queue.sh`",

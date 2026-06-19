@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 44
-- Ready: 37
+- Total checks: 48
+- Ready: 41
 - Pending: 7
 - Missing: 0
 
@@ -28,11 +28,14 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE workspace README | READY | `paper/ieee_trans/README.md` |  |
 | Planning | IEEE manuscript blueprint | READY | `paper/ieee_trans/manuscript_blueprint.md` |  |
 | Planning | IEEE related-work outline | READY | `paper/ieee_trans/related_work_outline.md` |  |
+| Planning | IEEE seed bibliography | READY | `paper/ieee_trans/references_seed.bib` |  |
+| Planning | IEEE citation plan | READY | `paper/ieee_trans/citation_plan.md` |  |
 | Planning | IEEE evidence-to-section map | READY | `paper/ieee_trans/evidence_to_sections.csv` |  |
 | Planning | IEEE table and figure plan | READY | `paper/ieee_trans/table_figure_plan.md` |  |
 | Planning | IEEE claim audit report | READY | `paper/ieee_claim_audit.md` |  |
 | Planning | IEEE server progress report | READY | `paper/ieee_server_progress_report.md` |  |
 | Planning | IEEE submission dashboard | READY | `paper/ieee_submission_dashboard.md` |  |
+| Planning | IEEE reference audit | READY | `paper/ieee_reference_audit.md` |  |
 | Planning | Advisor transition brief | READY | `paper/ieee_advisor_transition_brief.md` |  |
 | Dataset | UAVDT data YAML | READY | `configs/dataset/uavdt.yaml` |  |
 | Dataset | UAVDT setup notes | READY | `paper/datasets/uavdt_setup.md` |  |
@@ -43,6 +46,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Analysis | Scale target list | READY | `paper/tables/ieee_scale_eval_targets.csv` |  |
 | Execution | Guarded server queue | READY | `tools/run_ieee_server_queue.sh` |  |
 | Execution | IEEE claim scanner | READY | `tools/check_ieee_claims.py` |  |
+| Execution | IEEE reference checker | READY | `tools/check_ieee_references.py` |  |
 | Execution | IEEE server status checker | READY | `tools/check_ieee_server_status.ps1` |  |
 | Execution | IEEE server sync script | READY | `tools/sync_ieee_server_results.ps1` |  |
 | Execution | IEEE server progress reporter | READY | `tools/build_ieee_server_progress_report.py` |  |
