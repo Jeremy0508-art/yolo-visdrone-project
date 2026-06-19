@@ -23,6 +23,7 @@ The project has switched from the CEA route to the IEEE Transactions route. Phas
 | Scale evaluation target-CSV support | Done | `tools/evaluate_scale_groups.py` |
 | Full VisDrone scale-wise recall/precision evaluation | Done | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/ieee_scale_result_interpretation.md` |
 | Evidence-bounded IEEE section draft pack | Done | `paper/ieee_trans/section_draft_pack.md` |
+| IEEE manuscript assembly checklist | Done | `paper/ieee_trans/manuscript_assembly_checklist.md` |
 | Safe IEEE server queue draft | Done | `tools/run_ieee_server_queue.sh` |
 
 ## Immediate Technical Tasks

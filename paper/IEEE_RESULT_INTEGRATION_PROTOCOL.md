@@ -66,7 +66,7 @@ python tools\check_ieee_phase1_artifacts.py
 python tools\build_ieee_server_progress_report.py
 ```
 
-If new final-model weights arrive, regenerate speed and complexity tables before writing final IEEE results.
+If new final-model weights arrive, regenerate speed and complexity tables before writing final IEEE results. Re-run scale-wise recall/precision evaluation for any new final-method candidate.
 
 ## Manuscript Update Order
 
@@ -95,5 +95,6 @@ As of the latest Phase 1 audit:
 
 - TOFC performance is locked.
 - UAVDT cross-dataset generalization is locked.
-- Full VisDrone scale-wise claims are locked.
+- VisDrone scale-wise recall/precision evidence is ready for completed models.
+- AP-specific small/medium/large claims are locked.
 - IEEE final manuscript drafting should remain evidence-bounded and planning-oriented until these gates change.

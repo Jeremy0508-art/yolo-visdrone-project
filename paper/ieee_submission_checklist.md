@@ -17,7 +17,7 @@
 | UAVDT dataset converted | Missing | `data/raw/UAVDT/` not available yet |
 | UAVDT baseline experiments | Missing | Required for cross-dataset validation |
 | New method experiment | Missing | TOFC structure exists but no training result |
-| Scale-wise results | Partial | Tooling ready; full IEEE table pending |
+| Scale-wise recall/precision | Ready | `paper/tables/ieee_scale_results_visdrone.csv`; AP-small remains missing |
 | Multi-seed stability | Missing | Needed for strong Transactions claims |
 | Speed/complexity | Ready for existing models | Must repeat for new models |
 
@@ -28,6 +28,8 @@
 | IEEEtran template | Pending | Use IEEE Template Selector after target journal selection |
 | English abstract | Pending | Write after final results |
 | Related work | Partial | Seed matrix exists |
+| Evidence-bounded section draft pack | Ready | `paper/ieee_trans/section_draft_pack.md` |
+| Manuscript assembly checklist | Ready | `paper/ieee_trans/manuscript_assembly_checklist.md` |
 | Method section | Pending | Depends on selected final method |
 | Results section | Pending | Depends on missing experiments |
 | Discussion and limitations | Pending | Must include YOLO11s capacity comparison and failure cases |
