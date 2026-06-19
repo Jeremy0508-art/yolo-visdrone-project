@@ -63,6 +63,7 @@ REQUIRED_FILES = [
     ("Planning", "IEEE server status history", "paper/tables/ieee_server_status_history.csv"),
     ("Planning", "IEEE submission dashboard", "paper/ieee_submission_dashboard.md"),
     ("Planning", "IEEE reference audit", "paper/ieee_reference_audit.md"),
+    ("Planning", "IEEE reference gap report", "paper/ieee_reference_gap_report.md"),
     ("Planning", "IEEE scale output audit", "paper/ieee_scale_output_audit.md"),
     ("Planning", "IEEE table audit", "paper/ieee_table_audit.md"),
     ("Planning", "IEEE figure audit", "paper/ieee_figure_audit.md"),
