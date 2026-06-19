@@ -9,7 +9,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 - Zip file: `paper/advisor_review_package.zip`
 - Ready files: 41
 - Missing files: 0
-- Zip size: 5.05 MB
+- Zip size: 6.33 MB
 
 ## Included Files
 
@@ -19,7 +19,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/README.md` | 12.3 KB | Paper workspace navigation. |
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
-| `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.64 MB | First-pass CEA Word-template migration draft. |
+| `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 2.28 MB | First-pass CEA Word-template migration draft. |
 | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.7 KB | Audit report for the CEA Word migration draft. |
 | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.4 KB | Mechanical quality audit for the CEA Word draft. |
 | `paper/advisor_review_note.md` | 5.9 KB | Short cover note for advisor review. |
@@ -50,7 +50,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/tables/object_scale_distribution.csv` | 255 B | Object scale distribution table. |
 | `paper/tables/scale_group_results.csv` | 1002 B | Scale-group matching table. |
 | `paper/tables/per_class_results.csv` | 12.0 KB | Per-class result table. |
-| `paper/figures/method/hrpca_yolo11n_overview.png` | 127.7 KB | Method overview figure. |
+| `paper/figures/method/hrpca_yolo11n_overview.png` | 772.3 KB | Method overview figure. |
 | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | 122.6 KB | Accuracy-speed trade-off figure. |
 | `paper/figures/scale_analysis/object_scale_distribution.png` | 33.2 KB | Object scale distribution figure. |
 | `paper/figures/scale_analysis/scale_group_recall.png` | 44.7 KB | Scale-group recall figure. |

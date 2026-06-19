@@ -16,7 +16,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | --- | --- | --- | --- | --- |
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.9 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
-| Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.64 MB |
+| Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 2.28 MB |
 | Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.7 KB |
 | Core Documents | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.4 KB |
 | Core Documents | Paper workspace README | READY | `paper/README.md` | 12.3 KB |
@@ -45,7 +45,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | GitHub public view audit | READY | `paper/github_public_view_audit.md` | 2.1 KB |
 | Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 5.3 KB |
 | Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 4.8 KB |
-| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 5.05 MB |
+| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 6.33 MB |
 | Core Documents | Advisor review note | READY | `paper/advisor_review_note.md` | 5.9 KB |
 | Core Documents | Advisor progress brief | READY | `paper/advisor_progress_brief.md` | 5.8 KB |
 | Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 49.8 KB |
@@ -61,7 +61,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Tables | Accuracy-speed trade-off table | READY | `paper/tables/accuracy_speed_tradeoff.csv` | 12 data rows |
 | Tables | Fair experiment status table | READY | `paper/tables/cea_experiment_status.csv` | 5 data rows |
 | Tables | Server status history table | READY | `paper/tables/cea_server_status_history.csv` | 195 data rows |
-| Figures | Method overview figure | READY | `paper/figures/method/hrpca_yolo11n_overview.png` | 127.7 KB |
+| Figures | Method overview figure | READY | `paper/figures/method/hrpca_yolo11n_overview.png` | 772.3 KB |
 | Figures | Training curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_results.png` | 243.1 KB |
 | Figures | PR curve figure | READY | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | 333.9 KB |
 | Figures | Confusion matrix figure | READY | `paper/figures/confusion_matrices/p2_coordatt_960_confusion_matrix_normalized.png` | 285.3 KB |
