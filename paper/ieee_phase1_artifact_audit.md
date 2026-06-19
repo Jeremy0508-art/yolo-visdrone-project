@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 80
-- Ready: 75
+- Total checks: 82
+- Ready: 77
 - Pending: 5
 - Missing: 0
 
@@ -37,6 +37,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE workspace README | READY | `paper/ieee_trans/README.md` |  |
 | Planning | IEEE manuscript blueprint | READY | `paper/ieee_trans/manuscript_blueprint.md` |  |
 | Planning | IEEE abstract/contribution workbench | READY | `paper/ieee_trans/abstract_contribution_workbench.md` |  |
+| Planning | IEEE title/abstract/index terms workbench | READY | `paper/ieee_trans/title_abstract_index_terms_workbench.md` |  |
 | Planning | IEEE related-work outline | READY | `paper/ieee_trans/related_work_outline.md` |  |
 | Planning | IEEE section draft pack | READY | `paper/ieee_trans/section_draft_pack.md` |  |
 | Planning | IEEE manuscript assembly checklist | READY | `paper/ieee_trans/manuscript_assembly_checklist.md` |  |
@@ -46,6 +47,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE evidence-to-section map | READY | `paper/ieee_trans/evidence_to_sections.csv` |  |
 | Planning | IEEE table and figure plan | READY | `paper/ieee_trans/table_figure_plan.md` |  |
 | Planning | IEEE figure source manifest | READY | `paper/ieee_trans/figure_source_manifest.md` |  |
+| Planning | IEEE cover letter workbench | READY | `paper/ieee_trans/cover_letter_workbench.md` |  |
 | Planning | IEEE generated table directory | READY | `paper/ieee_trans/tables/README.md` |  |
 | Planning | IEEE claim audit report | READY | `paper/ieee_claim_audit.md` |  |
 | Planning | IEEE server progress report | READY | `paper/ieee_server_progress_report.md` |  |

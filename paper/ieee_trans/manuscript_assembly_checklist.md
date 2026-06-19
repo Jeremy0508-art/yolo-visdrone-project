@@ -23,6 +23,8 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `manuscript_blueprint.md` | Ready | Section structure and contribution boundary |
 | `section_draft_pack.md` | Ready | Evidence-bounded English paragraphs |
 | `abstract_contribution_workbench.md` | Ready | Safe abstract skeleton and locked placeholders |
+| `title_abstract_index_terms_workbench.md` | Ready | T-ITS front-matter constraints and locked title/index-term options |
+| `cover_letter_workbench.md` | Ready | Cover letter skeleton and ethics/claim boundaries |
 | `related_work_outline.md` | Ready | Related-work structure |
 | `references_seed.bib` | Ready for planning | Seed citations only; verify metadata before final BibTeX |
 | `tables/visdrone_main_results.tex` | Ready for current evidence route | Main VisDrone table |
@@ -36,7 +38,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | Section | Current Draft Source | Current Status | Unlock Condition for Final `main.tex` |
 | --- | --- | --- | --- |
 | Title | `manuscript_blueprint.md` | Locked | Final method route selected from real results |
-| Abstract | `abstract_contribution_workbench.md` | Locked | TOFC/UAVDT decision complete; exact numbers audited |
+| Abstract | `abstract_contribution_workbench.md`, `title_abstract_index_terms_workbench.md` | Locked | TOFC/UAVDT decision complete; exact numbers audited |
 | Introduction | `section_draft_pack.md` | Partially ready | Contributions rewritten after final method selection |
 | Related Work | `related_work_outline.md`, `references_seed.bib` | Partially ready | Citation metadata verified; 25-row matrix reviewed |
 | Method Overview | `section_draft_pack.md` | Partially ready | Final architecture selected; TOFC included only if validated |
@@ -51,6 +53,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | Efficiency Analysis | `section_draft_pack.md`, `speed_complexity.tex` | Ready for existing models | Refresh after final method weights arrive |
 | Discussion | `section_draft_pack.md` | Partially ready | Add TOFC/UAVDT outcomes and limitations |
 | Conclusion | `section_draft_pack.md` | Locked | Write last after all accepted evidence is known |
+| Cover Letter | `cover_letter_workbench.md` | Locked | Target journal, article type, author metadata, and final evidence are confirmed |
 
 ## Result Intake Checklist
 

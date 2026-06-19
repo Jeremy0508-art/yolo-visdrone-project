@@ -40,6 +40,8 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_scale_ap_interpretation.md` | Local scale-bin AP diagnostic interpretation |
 | `ieee_phase1_artifact_audit.md` | Generated audit for IEEE planning and evidence artifacts |
 | `ieee_trans/README.md` | Navigation for the IEEE manuscript workspace |
+| `ieee_trans/title_abstract_index_terms_workbench.md` | T-ITS title, abstract, and index terms planning |
+| `ieee_trans/cover_letter_workbench.md` | IEEE cover-letter planning skeleton |
 | `ieee_trans/section_draft_pack.md` | Evidence-bounded English section drafts |
 | `ieee_trans/manuscript_assembly_checklist.md` | Gates and order for assembling a future IEEE manuscript |
 | `ieee_trans/main_tex_preflight.md` | Preflight checklist before creating final-facing `main.tex` |

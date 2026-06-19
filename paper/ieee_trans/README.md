@@ -16,6 +16,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | --- | --- | --- |
 | `manuscript_blueprint.md` | Evidence-bounded IEEE manuscript plan | Ready |
 | `abstract_contribution_workbench.md` | Safe and locked abstract/contribution wording | Ready |
+| `title_abstract_index_terms_workbench.md` | T-ITS title, abstract, and index terms workbench | Ready |
 | `related_work_outline.md` | IEEE related-work section outline and citation logic | Ready |
 | `section_draft_pack.md` | Evidence-bounded English section drafts for future IEEE manuscript assembly | Ready |
 | `manuscript_assembly_checklist.md` | Gates and order for assembling a future IEEEtran manuscript | Ready |
@@ -29,7 +30,8 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `references.bib` | IEEE-style bibliography | Pending |
 | `figures/` | English manuscript figures | Pending |
 | `tables/` | Generated LaTeX table drafts and source manifest | Ready |
-| `cover_letter_draft.md` | Cover letter draft | Pending |
+| `cover_letter_workbench.md` | Evidence-bounded cover letter planning skeleton | Ready |
+| `cover_letter_draft.md` | Final cover letter draft | Pending |
 
 ## Current Rule
 
