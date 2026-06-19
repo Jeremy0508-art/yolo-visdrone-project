@@ -34,6 +34,15 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `cover_letter_workbench.md` | Evidence-bounded cover letter planning skeleton | Ready |
 | `cover_letter_draft.md` | Final cover letter draft | Pending |
 
+## Related External Audits
+
+| File | Purpose |
+| --- | --- |
+| `../ieee_tits_scope_fit_checklist.md` | T-ITS scope and traffic-sensing framing checklist |
+| `../ieee_tits_author_requirements_audit.md` | Official-source T-ITS submission, abstract, keyword, and page-format requirements |
+| `../ieee_number_trace_audit.md` | Numeric trace audit for values in `section_draft_pack.md` |
+| `../ieee_submission_dashboard.md` | Current IEEE readiness dashboard |
+
 ## Current Rule
 
 Do not add a final-looking IEEE manuscript until experiments support the main claims. Placeholder drafts are allowed only if clearly marked as planning drafts.
