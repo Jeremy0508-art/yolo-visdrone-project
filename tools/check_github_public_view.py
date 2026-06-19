@@ -164,6 +164,14 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/README.md",
         ),
         (
+            "IEEE title/abstract workbench raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/title_abstract_index_terms_workbench.md",
+        ),
+        (
+            "IEEE cover letter workbench raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/cover_letter_workbench.md",
+        ),
+        (
             "IEEE scale AP interpretation raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_scale_ap_interpretation.md",
         ),
