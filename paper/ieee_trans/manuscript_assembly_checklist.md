@@ -28,6 +28,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `cover_letter_workbench.md` | Ready | Cover letter skeleton and ethics/claim boundaries |
 | `related_work_outline.md` | Ready | Related-work structure |
 | `references_seed.bib` | Ready for planning | Seed citations only; verify metadata before final BibTeX |
+| `../ieee_number_trace_audit.md` | Ready | Numeric trace audit for the current English draft pack |
 | `tables/visdrone_main_results.tex` | Ready for current evidence route | Main VisDrone table |
 | `tables/speed_complexity.tex` | Ready for existing models | Refresh after final model |
 | `tables/scale_recall_precision.tex` | Ready for completed VisDrone models | Recall/precision only |
@@ -81,6 +82,7 @@ Create `paper/ieee_trans/main.tex` only when all of the following are true:
 | VisDrone final result table complete | Ready for current evidence | Existing generated table, refreshed after final model |
 | Cross-dataset evidence available | Pending | UAVDT conversion and completed runs |
 | Speed/complexity refreshed for final model | Pending | New rows after final-model weights arrive |
+| Number trace audit passes | Ready for current draft pack | Zero non-ready numeric claims before moving draft text into `main.tex` |
 | Claim audit passes | Pending | `paper/ieee_claim_audit.md` after final-facing files exist |
 | Reference metadata verified | Pending | Final `references.bib` from verified entries |
 
@@ -111,5 +113,6 @@ Use this sequence when resuming after an interruption:
 1. `git status --short`
 2. `python tools/run_ieee_audits.py`
 3. Inspect `paper/ieee_submission_dashboard.md`
-4. Check server status only if SSH access is stable
-5. Integrate complete results only through `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`
+4. Inspect `paper/ieee_number_trace_audit.md` before moving any numerical paragraph
+5. Check server status only if SSH access is stable
+6. Integrate complete results only through `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`

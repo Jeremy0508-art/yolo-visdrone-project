@@ -42,6 +42,7 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_scale_result_interpretation.md` | Scale-wise recall/precision interpretation |
 | `ieee_scale_ap_interpretation.md` | Local scale-bin AP diagnostic interpretation |
 | `ieee_phase1_artifact_audit.md` | Generated audit for IEEE planning and evidence artifacts |
+| `ieee_number_trace_audit.md` | Generated trace audit for numerical claims in the English draft pack |
 | `ieee_trans/README.md` | Navigation for the IEEE manuscript workspace |
 | `ieee_trans/title_abstract_index_terms_workbench.md` | T-ITS title, abstract, and index terms planning |
 | `ieee_trans/submission_metadata_workbench.md` | Author, funding, code/data, and submission metadata worksheet |

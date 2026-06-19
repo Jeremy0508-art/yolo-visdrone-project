@@ -18,6 +18,7 @@ Create `main.tex` only when these items are satisfied:
 | Submission metadata workbench ready | Ready | `paper/ieee_trans/submission_metadata_workbench.md`; user/advisor fields remain manual |
 | Main result tables ready | Ready for current evidence | `paper/ieee_trans/tables/*.tex` generated and audited |
 | Scale diagnostics ready | Ready for current evidence | recall/precision and local scale-bin AP reports exist |
+| Number trace audit ready | Ready for current draft pack | `paper/ieee_number_trace_audit.md` shows zero non-ready numeric claims |
 | Claim audit ready | Pending final-facing files | `tools/check_ieee_claims.py` passes after `main.tex` exists |
 | Reference metadata verified | Pending | Final `references.bib` checked against publisher metadata |
 
@@ -60,6 +61,7 @@ Run these before sharing with the advisor:
 ```powershell
 python tools\run_ieee_audits.py
 python tools\check_ieee_claims.py
+python tools\build_ieee_number_trace_audit.py
 python tools\check_ieee_tables.py
 python tools\check_ieee_figures.py
 ```
@@ -71,6 +73,7 @@ If LaTeX tooling is installed, compile with the selected IEEE template workflow 
 - reference formatting,
 - title/abstract/conclusion claim strength,
 - exact metric consistency with source CSV files.
+- zero non-ready numeric claims in `paper/ieee_number_trace_audit.md`.
 
 ## Claim Safety Checklist
 

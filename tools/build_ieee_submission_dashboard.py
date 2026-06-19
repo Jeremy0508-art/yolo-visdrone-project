@@ -36,6 +36,10 @@ def parse_summary(text: str) -> dict[str, str]:
         "Partial",
         "Total entries",
         "Complete",
+        "Ready in draft",
+        "Non-ready numeric claims",
+        "Untracked decimal tokens",
+        "Untracked decimal tokens in draft",
     ]:
         match = re.search(rf"- {re.escape(key)}: ([^\n]+)", text)
         if match:
@@ -65,6 +69,7 @@ def build_dashboard() -> str:
     registry_text = read_text("paper/ieee_experiment_registry_audit.md")
     table_text = read_text("paper/ieee_table_audit.md")
     figure_text = read_text("paper/ieee_figure_audit.md")
+    number_text = read_text("paper/ieee_number_trace_audit.md")
     phase = parse_summary(phase_text)
     claim = parse_summary(claim_text)
     server = parse_summary(server_text)
@@ -72,6 +77,7 @@ def build_dashboard() -> str:
     registry = parse_summary(registry_text)
     table = parse_summary(table_text)
     figure = parse_summary(figure_text)
+    number = parse_summary(number_text)
     related_rows = count_csv_rows("paper/ieee_related_work_matrix.csv")
     section_rows = count_csv_rows("paper/ieee_trans/evidence_to_sections.csv")
 
@@ -122,6 +128,11 @@ def build_dashboard() -> str:
             f"| IEEE figure manifest | {figure.get('Ready', 'n/a')} | {figure.get('Pending', 'n/a')} | "
             f"{status_badge(figure.get('Missing', 'n/a'))} | `paper/ieee_figure_audit.md` |"
         ),
+        (
+            f"| Number trace audit | {number.get('Ready in draft', 'n/a')} | "
+            f"{number.get('Non-ready numeric claims', 'n/a')} | "
+            f"{number.get('Untracked decimal tokens in draft', number.get('Untracked decimal tokens', 'n/a'))} untracked | `paper/ieee_number_trace_audit.md` |"
+        ),
         f"| Related-work matrix | {related_rows} rows | n/a | n/a | `paper/ieee_related_work_matrix.csv` |",
         f"| Evidence-to-section map | {section_rows} rows | n/a | n/a | `paper/ieee_trans/evidence_to_sections.csv` |",
         "",
@@ -143,6 +154,7 @@ def build_dashboard() -> str:
         "- Table/figure plan: `paper/ieee_trans/table_figure_plan.md`",
         "- Generated IEEE table drafts and audit: `paper/ieee_trans/tables/`, `paper/ieee_table_audit.md`",
         "- Figure source manifest and audit: `paper/ieee_trans/figure_source_manifest.md`, `paper/ieee_figure_audit.md`",
+        "- Number trace audit for draft paragraphs: `paper/ieee_number_trace_audit.md`",
         "- Server integration protocol: `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`",
         "- Scale-wise evaluation protocol, local AP protocol, audits, and interpretations: `paper/ieee_scale_evaluation_protocol.md`, `paper/ieee_scale_ap_protocol.md`, `paper/ieee_scale_output_audit.md`, `paper/ieee_scale_result_interpretation.md`, `paper/ieee_scale_ap_interpretation.md`",
         "- Guarded server queue: `tools/run_ieee_server_queue.sh`",

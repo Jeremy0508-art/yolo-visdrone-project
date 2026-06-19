@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 87
-- Ready: 82
+- Total checks: 89
+- Ready: 84
 - Pending: 5
 - Missing: 0
 
@@ -54,6 +54,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE cover letter workbench | READY | `paper/ieee_trans/cover_letter_workbench.md` |  |
 | Planning | IEEE generated table directory | READY | `paper/ieee_trans/tables/README.md` |  |
 | Planning | IEEE claim audit report | READY | `paper/ieee_claim_audit.md` |  |
+| Planning | IEEE number trace audit | READY | `paper/ieee_number_trace_audit.md` |  |
 | Planning | IEEE server progress report | READY | `paper/ieee_server_progress_report.md` |  |
 | Planning | IEEE server status snapshot | READY | `paper/ieee_server_status_snapshot.md` |  |
 | Planning | IEEE server status history | READY | `paper/tables/ieee_server_status_history.csv` |  |
@@ -74,6 +75,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Analysis | Scale target list | READY | `paper/tables/ieee_scale_eval_targets.csv` |  |
 | Execution | Guarded server queue | READY | `tools/run_ieee_server_queue.sh` |  |
 | Execution | IEEE claim scanner | READY | `tools/check_ieee_claims.py` |  |
+| Execution | IEEE number trace audit builder | READY | `tools/build_ieee_number_trace_audit.py` |  |
 | Execution | IEEE reference checker | READY | `tools/check_ieee_references.py` |  |
 | Execution | IEEE scale output checker | READY | `tools/check_ieee_scale_outputs.py` |  |
 | Execution | IEEE scale interpretation builder | READY | `tools/build_ieee_scale_interpretation.py` |  |
