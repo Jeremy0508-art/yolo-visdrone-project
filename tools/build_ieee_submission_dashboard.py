@@ -26,7 +26,16 @@ def count_csv_rows(rel_path: str) -> int:
 
 def parse_summary(text: str) -> dict[str, str]:
     summary: dict[str, str] = {}
-    for key in ["Total checks", "Ready", "Pending", "Missing", "Tracked runs", "Partial"]:
+    for key in [
+        "Total checks",
+        "Ready",
+        "Pending",
+        "Missing",
+        "Tracked runs",
+        "Partial",
+        "Total entries",
+        "Complete",
+    ]:
         match = re.search(rf"- {re.escape(key)}: ([^\n]+)", text)
         if match:
             summary[key] = match.group(1).strip()
@@ -52,10 +61,12 @@ def build_dashboard() -> str:
     claim_text = read_text("paper/ieee_claim_audit.md")
     server_text = read_text("paper/ieee_server_progress_report.md")
     scale_text = read_text("paper/ieee_scale_output_audit.md")
+    registry_text = read_text("paper/ieee_experiment_registry_audit.md")
     phase = parse_summary(phase_text)
     claim = parse_summary(claim_text)
     server = parse_summary(server_text)
     scale = parse_summary(scale_text)
+    registry = parse_summary(registry_text)
     related_rows = count_csv_rows("paper/ieee_related_work_matrix.csv")
     section_rows = count_csv_rows("paper/ieee_trans/evidence_to_sections.csv")
 
@@ -93,6 +104,10 @@ def build_dashboard() -> str:
             f"| Scale-wise outputs | {scale.get('Ready', 'n/a')} | {scale.get('Pending', 'n/a')} | "
             f"{status_badge(scale.get('Missing', 'n/a'))} | `paper/ieee_scale_output_audit.md` |"
         ),
+        (
+            f"| Experiment registry | {registry.get('Complete', 'n/a')} complete | {registry.get('Pending', 'n/a')} | "
+            f"{registry.get('Partial', '0')} partial | `paper/ieee_experiment_registry_audit.md` |"
+        ),
         f"| Related-work matrix | {related_rows} rows | n/a | n/a | `paper/ieee_related_work_matrix.csv` |",
         f"| Evidence-to-section map | {section_rows} rows | n/a | n/a | `paper/ieee_trans/evidence_to_sections.csv` |",
         "",
@@ -101,6 +116,7 @@ def build_dashboard() -> str:
         "- IEEE route master plan: `paper/IEEE_TRANS_SUBMISSION_PLAN.md`",
         "- Target journal analysis: `paper/ieee_target_journal_analysis.md`",
         "- Experiment gap matrix: `paper/ieee_required_experiment_gap.md`",
+        "- Experiment registry: `paper/tables/ieee_experiment_registry.csv`, `paper/ieee_experiment_registry_audit.md`",
         "- Dataset strategy: `paper/ieee_dataset_strategy.md`",
         "- UAVDT setup and operational checklist: `paper/datasets/uavdt_setup.md`, `paper/datasets/uavdt_operational_checklist.md`",
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",

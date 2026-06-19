@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 52
-- Ready: 45
+- Total checks: 55
+- Ready: 48
 - Pending: 7
 - Missing: 0
 
@@ -18,6 +18,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE master plan | READY | `paper/IEEE_TRANS_SUBMISSION_PLAN.md` |  |
 | Planning | Target journal analysis | READY | `paper/ieee_target_journal_analysis.md` |  |
 | Planning | Experiment gap matrix | READY | `paper/ieee_required_experiment_gap.md` |  |
+| Planning | IEEE experiment registry | READY | `paper/tables/ieee_experiment_registry.csv` |  |
+| Planning | IEEE experiment registry audit | READY | `paper/ieee_experiment_registry_audit.md` |  |
 | Planning | Related-work seed matrix | READY | `paper/ieee_related_work_matrix.csv` |  |
 | Planning | Dataset strategy | READY | `paper/ieee_dataset_strategy.md` |  |
 | Planning | Method design notes | READY | `paper/ieee_method_design_notes.md` |  |
@@ -55,6 +57,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Execution | IEEE server sync script | READY | `tools/sync_ieee_server_results.ps1` |  |
 | Execution | IEEE server progress reporter | READY | `tools/build_ieee_server_progress_report.py` |  |
 | Execution | IEEE dashboard builder | READY | `tools/build_ieee_submission_dashboard.py` |  |
+| Execution | IEEE experiment registry builder | READY | `tools/build_ieee_experiment_registry.py` |  |
 | Literature | Related-work seed coverage | READY | `25 rows in paper/ieee_related_work_matrix.csv` |  |
 | Dataset | Raw UAVDT dataset placement | PENDING | `data/raw/UAVDT` | Place raw UAVDT files under data/raw/UAVDT/. |
 | Dataset | Converted UAVDT YOLO train images | PENDING | `data/processed/uavdt_yolo/images/train` | Run scripts/convert_uavdt_to_yolo.py after raw data is available. |

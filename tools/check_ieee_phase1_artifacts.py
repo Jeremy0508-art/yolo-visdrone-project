@@ -24,6 +24,8 @@ REQUIRED_FILES = [
     ("Planning", "IEEE master plan", "paper/IEEE_TRANS_SUBMISSION_PLAN.md"),
     ("Planning", "Target journal analysis", "paper/ieee_target_journal_analysis.md"),
     ("Planning", "Experiment gap matrix", "paper/ieee_required_experiment_gap.md"),
+    ("Planning", "IEEE experiment registry", "paper/tables/ieee_experiment_registry.csv"),
+    ("Planning", "IEEE experiment registry audit", "paper/ieee_experiment_registry_audit.md"),
     ("Planning", "Related-work seed matrix", "paper/ieee_related_work_matrix.csv"),
     ("Planning", "Dataset strategy", "paper/ieee_dataset_strategy.md"),
     ("Planning", "Method design notes", "paper/ieee_method_design_notes.md"),
@@ -61,6 +63,7 @@ REQUIRED_FILES = [
     ("Execution", "IEEE server sync script", "tools/sync_ieee_server_results.ps1"),
     ("Execution", "IEEE server progress reporter", "tools/build_ieee_server_progress_report.py"),
     ("Execution", "IEEE dashboard builder", "tools/build_ieee_submission_dashboard.py"),
+    ("Execution", "IEEE experiment registry builder", "tools/build_ieee_experiment_registry.py"),
 ]
 
 
