@@ -39,6 +39,8 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_trans_response_plan.md` | Preparatory response plan for likely IEEE reviewer concerns |
 | `ieee_reference_gap_report.md` | Reference coverage and pending recent-method citation gaps |
 | `ieee_literature_comparison_protocol.md` | Rules for separating reproduced and reported-only literature comparisons |
+| `ieee_dataset_license_audit.md` | Dataset license, citation, and repository-release boundary notes |
+| `ieee_dataset_compliance_audit.md` | Generated check for dataset boundary, seed citations, and submission-metadata wording |
 | `IEEE_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing complete server-side results |
 | `ieee_scale_result_interpretation.md` | Scale-wise recall/precision interpretation |
 | `ieee_scale_ap_interpretation.md` | Local scale-bin AP diagnostic interpretation |

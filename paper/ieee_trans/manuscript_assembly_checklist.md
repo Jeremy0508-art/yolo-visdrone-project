@@ -26,6 +26,8 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `title_abstract_index_terms_workbench.md` | Ready | T-ITS front-matter constraints and locked title/index-term options |
 | `submission_metadata_workbench.md` | Ready | Author, funding, code/data, and submission-system metadata checklist |
 | `../ieee_front_matter_audit.md` | Ready with one pending final-length item | T-ITS title, abstract, index-term, and metadata guard |
+| `../ieee_dataset_license_audit.md` | Ready as planning | Dataset citation, license, and repository-release boundary notes |
+| `../ieee_dataset_compliance_audit.md` | Ready with final human confirmation pending | Dataset/code-release boundary guard before final package assembly |
 | `cover_letter_workbench.md` | Ready | Cover letter skeleton and ethics/claim boundaries |
 | `related_work_outline.md` | Ready | Related-work structure |
 | `page_budget_plan.md` | Ready | T-ITS Regular Paper page budget and main-paper table/figure selection |
@@ -89,6 +91,7 @@ Create `paper/ieee_trans/main.tex` only when all of the following are true:
 | Number trace audit passes | Ready for current draft pack | Zero non-ready numeric claims before moving draft text into `main.tex` |
 | Claim audit passes | Pending | `paper/ieee_claim_audit.md` after final-facing files exist |
 | Reference metadata verified | Pending | Final `references.bib` from verified entries |
+| Dataset/code release boundary verified | Pending final human confirmation | `../ieee_dataset_compliance_audit.md` plus advisor/institution review |
 
 ## Figure Assembly Rules
 
@@ -119,5 +122,6 @@ Use this sequence when resuming after an interruption:
 3. Inspect `paper/ieee_submission_dashboard.md`
 4. Inspect `paper/ieee_front_matter_audit.md` before moving title/abstract/index terms
 5. Inspect `paper/ieee_number_trace_audit.md` before moving any numerical paragraph
-6. Check server status only if SSH access is stable
-7. Integrate complete results only through `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`
+6. Inspect `paper/ieee_dataset_compliance_audit.md` before drafting data/code availability wording
+7. Check server status only if SSH access is stable
+8. Integrate complete results only through `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`

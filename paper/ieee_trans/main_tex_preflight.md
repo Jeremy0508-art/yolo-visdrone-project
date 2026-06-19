@@ -14,6 +14,7 @@ Create `main.tex` only when these items are satisfied:
 | Target author requirements checked | Ready for T-ITS | `paper/ieee_tits_author_requirements_audit.md`; re-check before final submission |
 | Page budget plan reviewed | Ready as planning | `paper/ieee_trans/page_budget_plan.md`; revise after final table/figure selection |
 | Front matter audit ready | Ready as planning | `paper/ieee_front_matter_audit.md`; final abstract length remains pending until evidence is complete |
+| Dataset compliance audit ready | Ready as planning | `paper/ieee_dataset_compliance_audit.md`; final human license confirmation remains pending |
 | Final method route selected | Pending | `paper/ieee_method_selection_protocol.md` updated after TOFC or fallback decision |
 | TOFC decision complete | Pending | Complete run or explicit decision not to use TOFC |
 | Cross-dataset plan resolved | Pending | UAVDT results complete, or manuscript scope downgraded to VisDrone-only analysis |
@@ -39,6 +40,7 @@ When the gate passes, create or finalize:
 | `paper/ieee_trans/build/` | Optional build output directory, ignored if needed |
 | `paper/ieee_trans/cover_letter_draft.md` | Cover letter after target and claims are fixed |
 | `paper/ieee_trans/submission_metadata_workbench.md` | Manual submission metadata source; not compiled into the paper |
+| `paper/ieee_dataset_compliance_audit.md` | Dataset/code-release boundary check for final package review |
 
 Do not use CEA Word screenshots or PDF review contact sheets as IEEE figures.
 
@@ -67,6 +69,7 @@ python tools\run_ieee_audits.py
 python tools\check_ieee_claims.py
 python tools\check_ieee_front_matter.py
 python tools\build_ieee_number_trace_audit.py
+python tools\check_ieee_dataset_compliance.py
 python tools\check_ieee_tables.py
 python tools\check_ieee_figures.py
 ```

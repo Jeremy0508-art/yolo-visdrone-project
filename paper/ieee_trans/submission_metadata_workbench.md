@@ -52,10 +52,16 @@ Current project status:
 - Planned second dataset: UAVDT, pending raw dataset placement and conversion.
 - Training/evaluation commands: `paper/commands.md`
 - Evidence tables: `paper/tables/`
+- Dataset license audit: `paper/ieee_dataset_license_audit.md`
+- Dataset compliance audit: `paper/ieee_dataset_compliance_audit.md`
 
 Possible final wording, to revise after advisor approval:
 
 > The implementation code, configuration files, reproducibility commands, and result-summary scripts are maintained in a public repository. Dataset download and use follow the licenses and terms of the original dataset providers. Trained weights and additional artifacts will be released according to the authors' institutional and dataset-license constraints.
+
+Safe repository boundary:
+
+> Raw datasets, converted datasets, and trained weights are not redistributed in this repository. Dataset users should obtain VisDrone and UAVDT data from the original providers and follow the corresponding terms.
 
 Do not promise release of weights or private server logs until the advisor approves.
 
@@ -67,7 +73,7 @@ Do not promise release of weights or private server logs until the advisor appro
 | Prior dissemination | Repository is public; CEA draft materials exist locally | Disclose any public preprint/report if created later |
 | Overlap risk | Not yet checked on final IEEE text | Run overlap/plagiarism self-check after final manuscript is assembled |
 | AI/tool assistance disclosure | User/advisor decision required | Follow target journal and institution policy |
-| Dataset license compliance | Pending final dataset list | Confirm VisDrone/UAVDT license terms before submission |
+| Dataset license compliance | Audit documents ready; final confirmation pending | Use `paper/ieee_dataset_license_audit.md` and `paper/ieee_dataset_compliance_audit.md`; re-check VisDrone/UAVDT terms before submission |
 
 ## Suggested Reviewers / Opposed Reviewers
 
@@ -94,6 +100,7 @@ Only fill with advisor approval and after checking conflict-of-interest rules.
 | Response-prep risk register | `paper/ieee_reviewer_risk_register.md` | Ready |
 | Response-prep plan | `paper/ieee_trans_response_plan.md` | Ready |
 | Code/data statement | This workbench | Pending advisor confirmation |
+| Dataset compliance audit | `paper/ieee_dataset_compliance_audit.md` | Ready as repository-boundary check; final human confirmation pending |
 
 ## Manual Confirmation Checklist
 

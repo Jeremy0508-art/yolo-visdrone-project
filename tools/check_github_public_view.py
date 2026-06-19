@@ -204,6 +204,14 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_number_trace_audit.md",
         ),
         (
+            "IEEE dataset license audit raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_dataset_license_audit.md",
+        ),
+        (
+            "IEEE dataset compliance audit raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_dataset_compliance_audit.md",
+        ),
+        (
             "IEEE cover letter workbench raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/cover_letter_workbench.md",
         ),

@@ -43,6 +43,8 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `../ieee_tits_author_requirements_audit.md` | Official-source T-ITS submission, abstract, keyword, and page-format requirements |
 | `../ieee_front_matter_audit.md` | Generated guard for T-ITS title, abstract, index terms, and metadata workbenches |
 | `../ieee_number_trace_audit.md` | Numeric trace audit for values in `section_draft_pack.md` |
+| `../ieee_dataset_license_audit.md` | Dataset license, citation, and repository-release boundary notes |
+| `../ieee_dataset_compliance_audit.md` | Generated check for dataset boundary, seed citations, and submission-metadata wording |
 | `../ieee_submission_dashboard.md` | Current IEEE readiness dashboard |
 
 ## Current Rule

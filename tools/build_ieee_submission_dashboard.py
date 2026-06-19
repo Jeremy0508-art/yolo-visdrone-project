@@ -71,6 +71,7 @@ def build_dashboard() -> str:
     figure_text = read_text("paper/ieee_figure_audit.md")
     front_text = read_text("paper/ieee_front_matter_audit.md")
     number_text = read_text("paper/ieee_number_trace_audit.md")
+    dataset_text = read_text("paper/ieee_dataset_compliance_audit.md")
     phase = parse_summary(phase_text)
     claim = parse_summary(claim_text)
     server = parse_summary(server_text)
@@ -80,6 +81,7 @@ def build_dashboard() -> str:
     figure = parse_summary(figure_text)
     front = parse_summary(front_text)
     number = parse_summary(number_text)
+    dataset = parse_summary(dataset_text)
     related_rows = count_csv_rows("paper/ieee_related_work_matrix.csv")
     section_rows = count_csv_rows("paper/ieee_trans/evidence_to_sections.csv")
 
@@ -139,6 +141,10 @@ def build_dashboard() -> str:
             f"{number.get('Non-ready numeric claims', 'n/a')} | "
             f"{number.get('Untracked decimal tokens in draft', number.get('Untracked decimal tokens', 'n/a'))} untracked | `paper/ieee_number_trace_audit.md` |"
         ),
+        (
+            f"| Dataset compliance audit | {dataset.get('Ready', 'n/a')} | {dataset.get('Pending', 'n/a')} | "
+            f"{status_badge(dataset.get('Missing', 'n/a'))} | `paper/ieee_dataset_compliance_audit.md` |"
+        ),
         f"| Related-work matrix | {related_rows} rows | n/a | n/a | `paper/ieee_related_work_matrix.csv` |",
         f"| Evidence-to-section map | {section_rows} rows | n/a | n/a | `paper/ieee_trans/evidence_to_sections.csv` |",
         "",
@@ -163,6 +169,7 @@ def build_dashboard() -> str:
         "- Figure source manifest and audit: `paper/ieee_trans/figure_source_manifest.md`, `paper/ieee_figure_audit.md`",
         "- Front-matter audit for T-ITS title, abstract, index terms, and metadata: `paper/ieee_front_matter_audit.md`",
         "- Number trace audit for draft paragraphs: `paper/ieee_number_trace_audit.md`",
+        "- Dataset license and compliance audits: `paper/ieee_dataset_license_audit.md`, `paper/ieee_dataset_compliance_audit.md`",
         "- Server integration protocol: `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`",
         "- Scale-wise evaluation protocol, local AP protocol, audits, and interpretations: `paper/ieee_scale_evaluation_protocol.md`, `paper/ieee_scale_ap_protocol.md`, `paper/ieee_scale_output_audit.md`, `paper/ieee_scale_result_interpretation.md`, `paper/ieee_scale_ap_interpretation.md`",
         "- Guarded server queue: `tools/run_ieee_server_queue.sh`",
