@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 78
-- Ready: 73
+- Total checks: 80
+- Ready: 75
 - Pending: 5
 - Missing: 0
 
@@ -49,6 +49,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE generated table directory | READY | `paper/ieee_trans/tables/README.md` |  |
 | Planning | IEEE claim audit report | READY | `paper/ieee_claim_audit.md` |  |
 | Planning | IEEE server progress report | READY | `paper/ieee_server_progress_report.md` |  |
+| Planning | IEEE server status snapshot | READY | `paper/ieee_server_status_snapshot.md` |  |
+| Planning | IEEE server status history | READY | `paper/tables/ieee_server_status_history.csv` |  |
 | Planning | IEEE submission dashboard | READY | `paper/ieee_submission_dashboard.md` |  |
 | Planning | IEEE reference audit | READY | `paper/ieee_reference_audit.md` |  |
 | Planning | IEEE scale output audit | READY | `paper/ieee_scale_output_audit.md` |  |

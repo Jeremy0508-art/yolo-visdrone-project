@@ -55,6 +55,8 @@ REQUIRED_FILES = [
     ("Planning", "IEEE generated table directory", "paper/ieee_trans/tables/README.md"),
     ("Planning", "IEEE claim audit report", "paper/ieee_claim_audit.md"),
     ("Planning", "IEEE server progress report", "paper/ieee_server_progress_report.md"),
+    ("Planning", "IEEE server status snapshot", "paper/ieee_server_status_snapshot.md"),
+    ("Planning", "IEEE server status history", "paper/tables/ieee_server_status_history.csv"),
     ("Planning", "IEEE submission dashboard", "paper/ieee_submission_dashboard.md"),
     ("Planning", "IEEE reference audit", "paper/ieee_reference_audit.md"),
     ("Planning", "IEEE scale output audit", "paper/ieee_scale_output_audit.md"),

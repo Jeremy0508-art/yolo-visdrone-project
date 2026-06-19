@@ -1,0 +1,6 @@
+﻿"timestamp","remote_root","completion_gate_epochs","run","status","epochs","last_epoch","last_map50","last_map50_95","args","best","processes"
+"2026-06-19 19:13:16 +08:00","/root/autodl-tmp/yolo-visdrone-project","100","yolo11n_p2_tofc_960_visdrone","CONNECTION_FAILED","0","","","","","","status check failed: Failed to copy temporary status script to server."
+"2026-06-19 19:13:16 +08:00","/root/autodl-tmp/yolo-visdrone-project","100","baseline_yolo11n_960_uavdt","CONNECTION_FAILED","0","","","","","","status check failed: Failed to copy temporary status script to server."
+"2026-06-19 19:13:16 +08:00","/root/autodl-tmp/yolo-visdrone-project","100","yolo11n_p2_960_uavdt","CONNECTION_FAILED","0","","","","","","status check failed: Failed to copy temporary status script to server."
+"2026-06-19 19:13:16 +08:00","/root/autodl-tmp/yolo-visdrone-project","100","baseline_yolov8n_960_uavdt","CONNECTION_FAILED","0","","","","","","status check failed: Failed to copy temporary status script to server."
+"2026-06-19 19:13:16 +08:00","/root/autodl-tmp/yolo-visdrone-project","100","baseline_yolo11s_960_uavdt","CONNECTION_FAILED","0","","","","","","status check failed: Failed to copy temporary status script to server."

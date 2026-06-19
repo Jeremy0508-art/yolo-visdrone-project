@@ -31,6 +31,7 @@ def parse_summary(text: str) -> dict[str, str]:
         "Ready",
         "Pending",
         "Missing",
+        "Connection failed",
         "Tracked runs",
         "Partial",
         "Total entries",
@@ -101,7 +102,8 @@ def build_dashboard() -> str:
             f"{status_badge(claim.get('Missing', 'n/a'))} | `paper/ieee_claim_audit.md` |"
         ),
         (
-            f"| Server progress | {server.get('Ready', 'n/a')} | {server.get('Partial', 'n/a')} partial | "
+            f"| Server progress | {server.get('Ready', 'n/a')} | {server.get('Partial', 'n/a')} partial / "
+            f"{server.get('Connection failed', '0')} connection failed | "
             f"{server.get('Missing', 'n/a')} | `paper/ieee_server_progress_report.md` |"
         ),
         (

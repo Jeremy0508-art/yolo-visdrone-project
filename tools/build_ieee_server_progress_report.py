@@ -82,7 +82,7 @@ def summarize(rows: list[dict[str, str]]) -> list[RunProgress]:
 
 
 def status_rank(item: RunProgress) -> tuple[int, str]:
-    order = {"READY": 0, "PARTIAL": 1, "MISSING": 2}
+    order = {"READY": 0, "PARTIAL": 1, "MISSING": 2, "CONNECTION_FAILED": 3}
     return (order.get(item.status, 3), item.run)
 
 
@@ -91,6 +91,7 @@ def write_report(progress: list[RunProgress]) -> None:
     ready = sum(1 for item in progress if item.status == "READY")
     partial = sum(1 for item in progress if item.status == "PARTIAL")
     missing = sum(1 for item in progress if item.status == "MISSING")
+    unavailable = sum(1 for item in progress if item.status == "CONNECTION_FAILED")
     latest_timestamp = max((item.latest_timestamp for item in progress), default="")
 
     lines = [
@@ -104,6 +105,7 @@ def write_report(progress: list[RunProgress]) -> None:
         f"- Ready: {ready}",
         f"- Partial: {partial}",
         f"- Missing: {missing}",
+        f"- Connection failed: {unavailable}",
         f"- Latest status timestamp: {latest_timestamp or 'n/a'}",
         "",
         "## Run Progress",
