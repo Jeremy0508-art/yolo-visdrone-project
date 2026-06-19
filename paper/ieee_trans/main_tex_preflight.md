@@ -14,6 +14,8 @@ Create `main.tex` only when these items are satisfied:
 | Final method route selected | Pending | `paper/ieee_method_selection_protocol.md` updated after TOFC or fallback decision |
 | TOFC decision complete | Pending | Complete run or explicit decision not to use TOFC |
 | Cross-dataset plan resolved | Pending | UAVDT results complete, or manuscript scope downgraded to VisDrone-only analysis |
+| T-ITS front matter workbench ready | Ready | `paper/ieee_trans/title_abstract_index_terms_workbench.md` |
+| Submission metadata workbench ready | Ready | `paper/ieee_trans/submission_metadata_workbench.md`; user/advisor fields remain manual |
 | Main result tables ready | Ready for current evidence | `paper/ieee_trans/tables/*.tex` generated and audited |
 | Scale diagnostics ready | Ready for current evidence | recall/precision and local scale-bin AP reports exist |
 | Claim audit ready | Pending final-facing files | `tools/check_ieee_claims.py` passes after `main.tex` exists |
@@ -31,6 +33,7 @@ When the gate passes, create or finalize:
 | `paper/ieee_trans/figures/` | Final English figures copied or generated for IEEE layout |
 | `paper/ieee_trans/build/` | Optional build output directory, ignored if needed |
 | `paper/ieee_trans/cover_letter_draft.md` | Cover letter after target and claims are fixed |
+| `paper/ieee_trans/submission_metadata_workbench.md` | Manual submission metadata source; not compiled into the paper |
 
 Do not use CEA Word screenshots or PDF review contact sheets as IEEE figures.
 
@@ -38,14 +41,17 @@ Do not use CEA Word screenshots or PDF review contact sheets as IEEE figures.
 
 | IEEE Section | Source to Start From | Must Update Before Final |
 | --- | --- | --- |
-| Title | `manuscript_blueprint.md` | Final method and target journal |
-| Abstract | `abstract_contribution_workbench.md` | Exact final metrics and limitations |
+| Title | `manuscript_blueprint.md`, `title_abstract_index_terms_workbench.md` | Final method and target journal |
+| Abstract | `abstract_contribution_workbench.md`, `title_abstract_index_terms_workbench.md` | Exact final metrics and limitations |
+| Index Terms | `title_abstract_index_terms_workbench.md` | Target journal and contribution category |
 | Introduction | `section_draft_pack.md` | Final contributions and target-specific framing |
 | Related Work | `related_work_outline.md`, `references_seed.bib` | Verified citations and recent literature |
 | Method | `section_draft_pack.md`, method YAMLs | Final method decision, TOFC only if validated |
 | Experiments | `section_draft_pack.md`, generated tables | UAVDT/TOFC updates if available |
 | Discussion | `section_draft_pack.md`, `ieee_reviewer_risk_register.md` | Risks, limitations, YOLO11s boundary |
 | Conclusion | Write last | No unsupported generalization or best-performance claims |
+| Cover Letter | `cover_letter_workbench.md` | Target, title, authors, and evidence confirmed |
+| Submission Metadata | `submission_metadata_workbench.md` | Author/funding/code-data fields confirmed manually |
 
 ## Mandatory Checks After `main.tex` Exists
 

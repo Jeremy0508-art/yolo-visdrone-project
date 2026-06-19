@@ -1,4 +1,7 @@
 section,claim_or_content,status,required_evidence,current_source,next_action
+Front Matter,T-ITS-oriented title abstract and index terms,partially_ready,target journal and final method decision,"paper/ieee_trans/title_abstract_index_terms_workbench.md; paper/ieee_tits_scope_fit_checklist.md","Finalize only after advisor confirms target and method evidence"
+Front Matter,Submission metadata and author/funding information,locked,user/advisor confirmation,"paper/ieee_trans/submission_metadata_workbench.md","Fill manually after author order funding and release policy are confirmed"
+Cover Letter,Evidence-bounded cover letter,locked,target journal final title author metadata and audited claims,"paper/ieee_trans/cover_letter_workbench.md; paper/ieee_trans_response_plan.md","Create final draft only after final manuscript evidence is settled"
 Introduction,UAV aerial detection has small-object and dense-scene challenges,ready,dataset/source citation,"paper/ieee_related_work_matrix.csv; paper/ieee_dataset_strategy.md","Convert into polished English with citations"
 Introduction,The project targets lightweight UAV traffic-object detection,ready,scope decision,"paper/ieee_target_journal_analysis.md; paper/IEEE_TRANS_SUBMISSION_PLAN.md","Confirm target journal with advisor"
 Introduction,TOFC is the final proposed contribution,locked,TOFC training and validation evidence,"runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt missing","Do not include as final claim until evidence exists"
