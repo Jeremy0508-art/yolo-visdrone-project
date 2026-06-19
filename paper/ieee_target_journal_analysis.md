@@ -41,6 +41,8 @@ This choice is pragmatic:
 3. UAVDT can naturally act as a second traffic-UAV dataset.
 4. The project can discuss lightweight UAV-assisted traffic monitoring without pretending to beat large-capacity detectors.
 
+The T-ITS official page also makes one constraint explicit: a method paper must clearly address an application to transportation systems and explain how the proposed technique benefits that system. For this project, that means the final manuscript must not read as a generic YOLO tuning paper. It needs to keep UAV-assisted traffic sensing visible in the title, abstract, introduction, experiments, qualitative analysis, and conclusion. The working scope-fit checklist is maintained in `paper/ieee_tits_scope_fit_checklist.md`.
+
 ## Required Narrative Shift
 
 The previous CEA manuscript was framed as:
@@ -72,6 +74,7 @@ The contribution list should not claim broad SOTA unless proven. A safer contrib
 | Efficiency gate | Main method has comparable FPS/latency to lightweight baselines and lower complexity than YOLO11s. | Do not claim lightweight deployment advantage. |
 | Stability gate | Key results are repeated with multiple seeds or at least supported by careful result variance discussion. | Treat results as single-run evidence and reduce claim strength. |
 | Literature gate | Recent UAV/YOLO small-object methods are cited and compared fairly. | The paper may look isolated from current IEEE literature. |
+| T-ITS application gate | The final manuscript explicitly connects small-object detection to UAV-assisted traffic monitoring, road-user perception, and deployment constraints. | Do not submit to T-ITS; target a more general computer-vision or engineering venue instead. |
 
 ## Practical Recommendation
 

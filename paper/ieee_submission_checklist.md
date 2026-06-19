@@ -5,6 +5,10 @@
 | Item | Status | Evidence / Action |
 | --- | --- | --- |
 | Target IEEE journal selected | Pending | Compare T-ITS and TGRS after advisor input |
+| T-ITS transportation application fit | Partial | `paper/ieee_tits_scope_fit_checklist.md`; final manuscript must make UAV-assisted traffic sensing load-bearing |
+| T-ITS regular-paper page planning | Pending | If T-ITS is selected, plan around a 10-page IEEE double-column regular paper unless the advisor chooses another article type |
+| T-ITS abstract format | Pending | Final abstract should be 150-250 words, one paragraph, self-contained, with no references, footnotes, displayed equations, or tables |
+| T-ITS index terms | Pending | Choose methodology and application terms after final target and contribution are fixed |
 | Duplicate-submission risk checked | Pending | CEA route is paused; do not submit both versions simultaneously |
 | Original contribution defined | Pending | TOFC or another stronger method must be validated |
 | All claims evidence-backed | Pending | Future `paper/ieee_claim_audit.md` |

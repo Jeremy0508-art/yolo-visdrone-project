@@ -209,6 +209,7 @@ paper/README.md
 paper/IEEE_TRANS_SUBMISSION_PLAN.md
 paper/ieee_submission_dashboard.md
 paper/ieee_target_journal_analysis.md
+paper/ieee_tits_scope_fit_checklist.md
 paper/ieee_method_selection_protocol.md
 paper/ieee_reviewer_risk_register.md
 paper/ieee_scale_result_interpretation.md

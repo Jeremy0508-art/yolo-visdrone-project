@@ -111,6 +111,7 @@ def audit() -> list[Check]:
             ("YOLO11s capacity reference", "YOLO11s-960"),
             ("IEEE route", "IEEE Transactions"),
             ("IEEE dashboard link", "paper/ieee_submission_dashboard.md"),
+            ("T-ITS scope-fit checklist link", "paper/ieee_tits_scope_fit_checklist.md"),
             ("Method selection protocol link", "paper/ieee_method_selection_protocol.md"),
             ("Reviewer risk register link", "paper/ieee_reviewer_risk_register.md"),
             ("Scale AP interpretation link", "paper/ieee_scale_ap_interpretation.md"),
@@ -153,6 +154,10 @@ def audit() -> list[Check]:
         (
             "IEEE dashboard raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_submission_dashboard.md",
+        ),
+        (
+            "T-ITS scope-fit checklist raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_tits_scope_fit_checklist.md",
         ),
         (
             "IEEE workspace README raw",

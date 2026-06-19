@@ -35,7 +35,7 @@ Use the final title only after the final method is selected from real results.
 | CoordAttention analysis | Can be discussed as an ablation, not a primary gain source | Completed P2-CA results and honest interpretation |
 | TOFC as a method contribution | Locked | Full TOFC training, validation, speed, complexity, and scale-wise metrics |
 | Cross-dataset validation | Locked | UAVDT converted dataset and completed baseline/method results |
-| Small-object-specific improvement claim | Locked | Scale-wise AP/Recall or equivalent size-bin results |
+| Small-object-specific improvement claim | Partially ready | Current VisDrone scale-wise recall/precision and local scale-bin AP are ready; final-method and cross-dataset evidence remain pending |
 | IEEE-level generalization claim | Locked | At least one complete second dataset and consistent interpretation |
 
 ## Abstract Blueprint
@@ -134,7 +134,7 @@ Keep concise and evidence-bounded:
 | Cross-dataset comparison | Future UAVDT results | Locked |
 | Ablation study | Existing VisDrone rows plus TOFC if valid | Partially ready |
 | Scale-wise recall/precision | `paper/tables/ieee_scale_results_visdrone.csv` | Ready for completed VisDrone models |
-| Scale-wise AP | Future AP-small/AP-medium/AP-large computation if needed | Locked |
+| Local scale-bin AP | `paper/tables/ieee_scale_ap_results_visdrone.csv` | Ready for completed VisDrone models; do not describe as official AP-small/AP-medium/AP-large |
 | Speed and complexity | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Ready for existing models |
 
 ## Minimum Figures for IEEE Draft
@@ -145,7 +145,7 @@ Keep concise and evidence-bounded:
 | Training/validation curves | Existing completed runs | Ready for existing models |
 | Accuracy-speed-complexity plot | Existing tables, plus new final method later | Partially ready |
 | Scale-wise recall plot | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` | Ready for completed VisDrone models |
-| Scale-wise AP plot | Future AP-specific evaluation if needed | Locked |
+| Local scale-bin AP plot | `paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png` | Ready for completed VisDrone models; label as local scale-bin AP |
 | Qualitative comparison | Existing visualizations, may need English captions | Partially ready |
 | Failure case taxonomy | Existing failure cases plus English labels | Partially ready |
 
