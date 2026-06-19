@@ -6,8 +6,8 @@ It is an automated public-link check, not a substitute for manual browser review
 
 ## Summary
 
-- Total checks: 36
-- Ready: 36
+- Total checks: 37
+- Ready: 37
 - Partial: 0
 - Missing: 0
 
@@ -41,6 +41,7 @@ It is an automated public-link check, not a substitute for manual browser review
 | T-ITS author requirements audit raw | READY | `HTTP 200` |  |
 | IEEE workspace README raw | READY | `HTTP 200` |  |
 | IEEE title/abstract workbench raw | READY | `HTTP 200` |  |
+| IEEE front matter audit raw | READY | `HTTP 200` |  |
 | IEEE submission metadata workbench raw | READY | `HTTP 200` |  |
 | IEEE page budget plan raw | READY | `HTTP 200` |  |
 | IEEE reviewer response plan raw | READY | `HTTP 200` |  |
