@@ -47,6 +47,7 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_trans/README.md` | Navigation for the IEEE manuscript workspace |
 | `ieee_trans/title_abstract_index_terms_workbench.md` | T-ITS title, abstract, and index terms planning |
 | `ieee_trans/submission_metadata_workbench.md` | Author, funding, code/data, and submission metadata worksheet |
+| `ieee_front_matter_audit.md` | Generated audit for T-ITS title, abstract, index terms, and metadata guards |
 | `ieee_trans/cover_letter_workbench.md` | IEEE cover-letter planning skeleton |
 | `ieee_trans/section_draft_pack.md` | Evidence-bounded English section drafts |
 | `ieee_trans/manuscript_assembly_checklist.md` | Gates and order for assembling a future IEEE manuscript |

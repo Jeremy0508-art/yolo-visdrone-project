@@ -25,6 +25,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `abstract_contribution_workbench.md` | Ready | Safe abstract skeleton and locked placeholders |
 | `title_abstract_index_terms_workbench.md` | Ready | T-ITS front-matter constraints and locked title/index-term options |
 | `submission_metadata_workbench.md` | Ready | Author, funding, code/data, and submission-system metadata checklist |
+| `../ieee_front_matter_audit.md` | Ready with one pending final-length item | T-ITS title, abstract, index-term, and metadata guard |
 | `cover_letter_workbench.md` | Ready | Cover letter skeleton and ethics/claim boundaries |
 | `related_work_outline.md` | Ready | Related-work structure |
 | `page_budget_plan.md` | Ready | T-ITS Regular Paper page budget and main-paper table/figure selection |
@@ -80,6 +81,7 @@ Create `paper/ieee_trans/main.tex` only when all of the following are true:
 | --- | --- | --- |
 | Target IEEE Transactions journal selected | Pending | Advisor confirms T-ITS, TGRS, or another exact journal |
 | Page budget plan reviewed | Ready as planning | `page_budget_plan.md`; update after final TOFC/UAVDT result selection |
+| Front matter audit passes | Ready as planning | Final abstract length remains pending until final evidence exists |
 | Final main method selected | Pending | TOFC or fallback route chosen from real metrics |
 | VisDrone final result table complete | Ready for current evidence | Existing generated table, refreshed after final model |
 | Cross-dataset evidence available | Pending | UAVDT conversion and completed runs |
@@ -115,6 +117,7 @@ Use this sequence when resuming after an interruption:
 1. `git status --short`
 2. `python tools/run_ieee_audits.py`
 3. Inspect `paper/ieee_submission_dashboard.md`
-4. Inspect `paper/ieee_number_trace_audit.md` before moving any numerical paragraph
-5. Check server status only if SSH access is stable
-6. Integrate complete results only through `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`
+4. Inspect `paper/ieee_front_matter_audit.md` before moving title/abstract/index terms
+5. Inspect `paper/ieee_number_trace_audit.md` before moving any numerical paragraph
+6. Check server status only if SSH access is stable
+7. Integrate complete results only through `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`

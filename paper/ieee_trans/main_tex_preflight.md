@@ -13,6 +13,7 @@ Create `main.tex` only when these items are satisfied:
 | Exact IEEE Transactions target selected | Pending | Advisor confirms T-ITS, TGRS, or another exact journal |
 | Target author requirements checked | Ready for T-ITS | `paper/ieee_tits_author_requirements_audit.md`; re-check before final submission |
 | Page budget plan reviewed | Ready as planning | `paper/ieee_trans/page_budget_plan.md`; revise after final table/figure selection |
+| Front matter audit ready | Ready as planning | `paper/ieee_front_matter_audit.md`; final abstract length remains pending until evidence is complete |
 | Final method route selected | Pending | `paper/ieee_method_selection_protocol.md` updated after TOFC or fallback decision |
 | TOFC decision complete | Pending | Complete run or explicit decision not to use TOFC |
 | Cross-dataset plan resolved | Pending | UAVDT results complete, or manuscript scope downgraded to VisDrone-only analysis |
@@ -64,6 +65,7 @@ Run these before sharing with the advisor:
 ```powershell
 python tools\run_ieee_audits.py
 python tools\check_ieee_claims.py
+python tools\check_ieee_front_matter.py
 python tools\build_ieee_number_trace_audit.py
 python tools\check_ieee_tables.py
 python tools\check_ieee_figures.py

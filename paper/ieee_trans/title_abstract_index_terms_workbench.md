@@ -53,7 +53,7 @@ This template is safe for internal discussion only and should not be submitted a
 
 > Detecting small road users in unmanned aerial vehicle (UAV) traffic imagery is challenging because objects often appear at tiny scales, in dense layouts, and under occlusion or viewpoint variation. This study investigates lightweight YOLO-based detection for UAV-assisted traffic perception, focusing on how input resolution and high-resolution prediction branches affect the accuracy-efficiency trade-off of YOLO11n variants. Completed VisDrone2019-DET experiments are traced to local training logs, validation outputs, and model artifacts. Current evidence indicates that 960-pixel input and a P2 high-resolution prediction branch provide the most defensible gains among the completed nano-scale variants, while CoordAttention should be interpreted as an auxiliary ablation and a larger YOLO11s model remains stronger in absolute accuracy. The final manuscript will report only audited metrics and will add cross-dataset or TOFC claims only if the corresponding evidence gates are satisfied.
 
-Approximate length: 119 words. This is intentionally short because final numeric results and the final method decision are still locked.
+Approximate length: 133 words by the current audit script. This is intentionally short because final numeric results and the final method decision are still locked.
 
 ## Locked Final Abstract Template
 
