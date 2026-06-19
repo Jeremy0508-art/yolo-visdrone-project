@@ -36,6 +36,7 @@ REQUIRED_FILES = [
     ("Planning", "Submission checklist", "paper/ieee_submission_checklist.md"),
     ("Planning", "IEEE workspace README", "paper/ieee_trans/README.md"),
     ("Planning", "IEEE manuscript blueprint", "paper/ieee_trans/manuscript_blueprint.md"),
+    ("Planning", "IEEE abstract/contribution workbench", "paper/ieee_trans/abstract_contribution_workbench.md"),
     ("Planning", "IEEE related-work outline", "paper/ieee_trans/related_work_outline.md"),
     ("Planning", "IEEE seed bibliography", "paper/ieee_trans/references_seed.bib"),
     ("Planning", "IEEE citation plan", "paper/ieee_trans/citation_plan.md"),
