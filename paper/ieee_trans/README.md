@@ -46,6 +46,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `../ieee_result_interpretation_matrix.md` | Evidence-bounded result-reading matrix for IEEE manuscript wording |
 | `../ieee_result_interpretation_matrix_audit.md` | Generated check for the IEEE result interpretation matrix |
 | `../ieee_evidence_map_audit.md` | Generated check for the IEEE evidence-to-section map |
+| `../ieee_manuscript_assembly_audit.md` | Generated check for IEEE manuscript assembly inputs and final-source locks |
 | `../ieee_dataset_license_audit.md` | Dataset license, citation, and repository-release boundary notes |
 | `../ieee_dataset_compliance_audit.md` | Generated check for dataset boundary, seed citations, and submission-metadata wording |
 | `../datasets/uavdt_conversion_readiness_audit.md` | Generated local audit and synthetic conversion smoke test for UAVDT preparation |

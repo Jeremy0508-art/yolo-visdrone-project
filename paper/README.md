@@ -57,6 +57,7 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_trans/cover_letter_workbench.md` | IEEE cover-letter planning skeleton |
 | `ieee_trans/section_draft_pack.md` | Evidence-bounded English section drafts |
 | `ieee_trans/manuscript_assembly_checklist.md` | Gates and order for assembling a future IEEE manuscript |
+| `ieee_manuscript_assembly_audit.md` | Generated check for IEEE manuscript assembly inputs and final-source locks |
 | `ieee_trans/page_budget_plan.md` | T-ITS Regular Paper page budget and table/figure selection plan |
 | `ieee_trans/main_tex_preflight.md` | Preflight checklist before creating final-facing `main.tex` |
 | `ieee_trans/tables/` | Generated IEEE LaTeX table drafts |

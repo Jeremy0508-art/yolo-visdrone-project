@@ -29,6 +29,7 @@ STEPS = [
     AuditStep("build number trace audit", [sys.executable, "tools/build_ieee_number_trace_audit.py"]),
     AuditStep("check result interpretation matrix", [sys.executable, "tools/check_ieee_result_interpretation_matrix.py"]),
     AuditStep("check evidence-to-section map", [sys.executable, "tools/check_ieee_evidence_map.py"]),
+    AuditStep("check manuscript assembly", [sys.executable, "tools/check_ieee_manuscript_assembly.py"]),
     AuditStep("check IEEE references", [sys.executable, "tools/check_ieee_references.py"]),
     AuditStep("check dataset compliance", [sys.executable, "tools/check_ieee_dataset_compliance.py"]),
     AuditStep("build server progress report", [sys.executable, "tools/build_ieee_server_progress_report.py"]),

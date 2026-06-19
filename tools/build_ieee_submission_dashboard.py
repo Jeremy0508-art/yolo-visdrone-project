@@ -75,6 +75,7 @@ def build_dashboard() -> str:
     interpretation_text = read_text("paper/ieee_result_interpretation_matrix_audit.md")
     uavdt_text = read_text("paper/datasets/uavdt_conversion_readiness_audit.md")
     evidence_map_text = read_text("paper/ieee_evidence_map_audit.md")
+    assembly_text = read_text("paper/ieee_manuscript_assembly_audit.md")
     phase = parse_summary(phase_text)
     claim = parse_summary(claim_text)
     server = parse_summary(server_text)
@@ -88,6 +89,7 @@ def build_dashboard() -> str:
     interpretation = parse_summary(interpretation_text)
     uavdt = parse_summary(uavdt_text)
     evidence_map = parse_summary(evidence_map_text)
+    assembly = parse_summary(assembly_text)
     related_rows = count_csv_rows("paper/ieee_related_work_matrix.csv")
     section_rows = count_csv_rows("paper/ieee_trans/evidence_to_sections.csv")
 
@@ -163,6 +165,10 @@ def build_dashboard() -> str:
             f"| Evidence-to-section map | {evidence_map.get('Ready', 'n/a')} | n/a | "
             f"{status_badge(evidence_map.get('Missing', 'n/a'))} | `paper/ieee_evidence_map_audit.md` |"
         ),
+        (
+            f"| Manuscript assembly audit | {assembly.get('Ready', 'n/a')} | {assembly.get('Pending', 'n/a')} | "
+            f"{status_badge(assembly.get('Missing', 'n/a'))} | `paper/ieee_manuscript_assembly_audit.md` |"
+        ),
         f"| Related-work matrix | {related_rows} rows | n/a | n/a | `paper/ieee_related_work_matrix.csv` |",
         f"| Evidence-to-section CSV | {section_rows} rows | n/a | n/a | `paper/ieee_trans/evidence_to_sections.csv` |",
         "",
@@ -180,6 +186,7 @@ def build_dashboard() -> str:
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
         "- Reviewer risk register and response-prep plan: `paper/ieee_reviewer_risk_register.md`, `paper/ieee_trans_response_plan.md`",
         "- Manuscript blueprint, front-matter/submission workbenches, section draft pack, assembly checklist, page budget plan, and main.tex preflight: `paper/ieee_trans/manuscript_blueprint.md`, `paper/ieee_trans/abstract_contribution_workbench.md`, `paper/ieee_trans/title_abstract_index_terms_workbench.md`, `paper/ieee_trans/submission_metadata_workbench.md`, `paper/ieee_trans/cover_letter_workbench.md`, `paper/ieee_trans/section_draft_pack.md`, `paper/ieee_trans/manuscript_assembly_checklist.md`, `paper/ieee_trans/page_budget_plan.md`, `paper/ieee_trans/main_tex_preflight.md`",
+        "- Manuscript assembly audit: `paper/ieee_manuscript_assembly_audit.md`",
         "- Related-work outline and literature comparison protocol: `paper/ieee_trans/related_work_outline.md`, `paper/ieee_literature_comparison_protocol.md`, `paper/tables/ieee_literature_context.csv`",
         "- Seed bibliography, citation plan, and reference-gap report: `paper/ieee_trans/references_seed.bib`, `paper/ieee_trans/citation_plan.md`, `paper/ieee_reference_gap_report.md`",
         "- Table/figure plan: `paper/ieee_trans/table_figure_plan.md`",
