@@ -30,6 +30,7 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_submission_dashboard.md` | One-page readiness dashboard for the IEEE route |
 | `ieee_target_journal_analysis.md` | Target-journal fit analysis, with T-ITS as the leading direction |
 | `ieee_tits_scope_fit_checklist.md` | T-ITS-specific scope and manuscript-framing checklist |
+| `ieee_tits_author_requirements_audit.md` | Official-source T-ITS submission, abstract, keyword, and page-format checklist |
 | `ieee_required_experiment_gap.md` | Experiment and evidence gaps for an IEEE-level paper |
 | `ieee_method_design_notes.md` | Candidate method notes, including TOFC |
 | `ieee_method_selection_protocol.md` | Decision protocol for selecting the final method after real results arrive |

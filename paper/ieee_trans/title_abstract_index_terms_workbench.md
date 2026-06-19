@@ -13,9 +13,10 @@ Primary source: `https://ieee-itss.org/pub/t-its/`
 | Article type | Plan as a Regular Paper unless the advisor selects another article type. |
 | Length target | Keep the future manuscript close to the suggested 10 IEEE double-column pages. |
 | Abstract length | 150-250 words. |
-| Abstract form | One paragraph, self-contained, no displayed equations, no tables, no references, and no unsupported abbreviations. |
-| Keywords / index terms | Select from both methodology-oriented terms and application-oriented terms where required by T-ITS. |
+| Abstract form | 150-250 words, one paragraph, self-contained, no displayed equations, no tables, no references, and no unsupported abbreviations. |
+| Keywords / index terms | Maximum six; select from both methodology-oriented terms and application-oriented terms where required by T-ITS. |
 | Application fit | The title and abstract should make UAV-assisted traffic perception visible if T-ITS remains the target. |
+| Official source | Use `paper/ieee_tits_author_requirements_audit.md` before finalizing front matter. |
 
 ## Current Safe Title Candidates
 
@@ -64,7 +65,7 @@ Do not fill any bracketed placeholder without a traceable table or run artifact.
 
 ## Candidate Index Terms
 
-Final index terms should be selected after the target journal is confirmed. Keep the total within the target journal requirements.
+Final index terms should be selected after the target journal is confirmed. For T-ITS, keep the total at no more than six, with one to two methodology terms, one to two application terms, and no more than two optional free keywords.
 
 Methodology candidates:
 

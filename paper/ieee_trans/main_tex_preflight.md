@@ -11,6 +11,7 @@ Create `main.tex` only when these items are satisfied:
 | Gate | Current Status | Required Evidence |
 | --- | --- | --- |
 | Exact IEEE Transactions target selected | Pending | Advisor confirms T-ITS, TGRS, or another exact journal |
+| Target author requirements checked | Ready for T-ITS | `paper/ieee_tits_author_requirements_audit.md`; re-check before final submission |
 | Final method route selected | Pending | `paper/ieee_method_selection_protocol.md` updated after TOFC or fallback decision |
 | TOFC decision complete | Pending | Complete run or explicit decision not to use TOFC |
 | Cross-dataset plan resolved | Pending | UAVDT results complete, or manuscript scope downgraded to VisDrone-only analysis |

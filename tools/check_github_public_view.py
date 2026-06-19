@@ -160,6 +160,10 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_tits_scope_fit_checklist.md",
         ),
         (
+            "T-ITS author requirements audit raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_tits_author_requirements_audit.md",
+        ),
+        (
             "IEEE workspace README raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/README.md",
         ),

@@ -141,6 +141,7 @@ def build_dashboard() -> str:
         "- IEEE route master plan: `paper/IEEE_TRANS_SUBMISSION_PLAN.md`",
         "- Target journal analysis: `paper/ieee_target_journal_analysis.md`",
         "- T-ITS scope-fit checklist: `paper/ieee_tits_scope_fit_checklist.md`",
+        "- T-ITS author requirements audit: `paper/ieee_tits_author_requirements_audit.md`",
         "- Experiment gap matrix: `paper/ieee_required_experiment_gap.md`",
         "- Experiment registry: `paper/tables/ieee_experiment_registry.csv`, `paper/ieee_experiment_registry_audit.md`",
         "- Dataset strategy: `paper/ieee_dataset_strategy.md`",

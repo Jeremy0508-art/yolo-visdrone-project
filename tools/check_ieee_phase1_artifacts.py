@@ -24,6 +24,7 @@ REQUIRED_FILES = [
     ("Planning", "IEEE master plan", "paper/IEEE_TRANS_SUBMISSION_PLAN.md"),
     ("Planning", "Target journal analysis", "paper/ieee_target_journal_analysis.md"),
     ("Planning", "T-ITS scope-fit checklist", "paper/ieee_tits_scope_fit_checklist.md"),
+    ("Planning", "T-ITS author requirements audit", "paper/ieee_tits_author_requirements_audit.md"),
     ("Planning", "Experiment gap matrix", "paper/ieee_required_experiment_gap.md"),
     ("Planning", "IEEE experiment registry", "paper/tables/ieee_experiment_registry.csv"),
     ("Planning", "IEEE experiment registry audit", "paper/ieee_experiment_registry_audit.md"),

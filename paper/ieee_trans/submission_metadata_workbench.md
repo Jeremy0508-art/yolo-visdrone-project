@@ -11,7 +11,9 @@ This file records the non-experimental information that will be needed when prep
 | Target journal | IEEE Transactions on Intelligent Transportation Systems is the leading working target | Advisor confirmation required |
 | Backup journal | IEEE Transactions on Geoscience and Remote Sensing or another IEEE venue | Advisor confirmation required |
 | Article type | Regular Paper, tentatively | Advisor confirmation required |
-| Submission system | IEEE Author Portal / target-journal submission site | Verify after target journal is final |
+| Submission system | IEEE Author Portal for T-ITS: `https://ieee.atyponrex.com/journal/t-its` | Re-check before final submission |
+| Official requirement audit | `paper/ieee_tits_author_requirements_audit.md` | Re-check official pages before final submission |
+| Suggested length | Regular Paper: 10 IEEE-style pages; extra pages have limits/charges | Estimate after final figures/tables are selected |
 | Open access choice | Undecided | User/advisor/budget confirmation required |
 
 ## Author Metadata
@@ -85,6 +87,7 @@ Only fill with advisor approval and after checking conflict-of-interest rules.
 | Main PDF | Future IEEEtran build | Pending |
 | `main.tex` | Future `paper/ieee_trans/main.tex` | Pending |
 | `references.bib` | Verified entries from `references_seed.bib` | Pending |
+| 150-250 word abstract and max-six index terms | `paper/ieee_trans/title_abstract_index_terms_workbench.md` | Pending final evidence |
 | Figures | `paper/ieee_trans/figure_source_manifest.md` | Partially ready |
 | Generated LaTeX tables | `paper/ieee_trans/tables/` | Ready for current evidence; refresh after final results |
 | Cover letter | `paper/ieee_trans/cover_letter_workbench.md` -> final draft | Pending |
