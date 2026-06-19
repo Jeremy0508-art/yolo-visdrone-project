@@ -11,6 +11,7 @@ This document defines what can and cannot be claimed during the IEEE Transaction
 | 960 input improves the completed YOLO11n/P2 setting on VisDrone validation metrics | Allowed only with exact table values and matching run evidence | `paper/tables/main_comparison_for_paper.csv`, corresponding `runs/detect/*/results.csv` |
 | P2 adds a high-resolution prediction branch and changes model complexity | Allowed as a structural statement | `configs/models/yolo11n_p2.yaml`, `paper/tables/model_complexity.csv` |
 | Completed VisDrone models have full scale-wise recall/precision evidence | Allowed only as recall/precision wording, not AP wording | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |
+| Completed VisDrone models have local scale-bin AP evidence | Allowed only as local scale-bin AP wording, not official COCO/VisDrone AP-small wording | `paper/tables/ieee_scale_ap_results_visdrone.csv`, `paper/ieee_scale_ap_interpretation.md` |
 | TOFC is a candidate module whose model YAML can be instantiated | Allowed as a design/prototype statement only | `src/models/attention/tiny_object_feature_calibration.py`, `configs/models/yolo11n_p2_tofc.yaml`, `paper/ieee_phase1_artifact_audit.md` |
 | The IEEE route requires stronger evidence than the paused CEA route | Allowed as a planning statement | `paper/IEEE_TRANS_SUBMISSION_PLAN.md`, `paper/ieee_required_experiment_gap.md` |
 
@@ -24,7 +25,7 @@ This document defines what can and cannot be claimed during the IEEE Transaction
 | The method outperforms larger models | Existing YOLO11s-960 is stronger in absolute accuracy | A clearly defined accuracy-speed-complexity claim, not an absolute superiority claim |
 | Official VisDrone test-dev performance is available | The previous official platform workflow was blocked | Official returned metrics and submission archive evidence |
 | Multi-seed robustness is demonstrated | Most current results are single-seed runs | Mean/std over repeated seeds for key baseline and final model |
-| Small-object AP improvement is proven directly | Current full scale-wise evidence reports recall/precision, not AP | Add AP-small/AP-medium/AP-large or explicitly limit wording to scale-wise recall/precision |
+| Official AP-small improvement is proven directly | Current AP-style evidence is local scale-bin AP, not official COCO/VisDrone AP-small | Use an official or fully compatible evaluator, or explicitly limit wording to local scale-bin AP |
 
 ## Wording Rules
 
@@ -35,7 +36,8 @@ Use these safer formulations before all locked evidence is available:
 - When comparing with YOLO11s or other larger models, state that larger-capacity models can achieve higher absolute accuracy and frame the project around lightweight trade-offs.
 - When discussing CoordAttention, describe the observed result honestly and avoid making it the central contribution unless later evidence supports it.
 - When using literature-only results, mark them as reported results and do not merge them into directly reproduced experiment tables.
-- When using the completed scale-wise VisDrone output, describe it as scale-wise recall/precision evidence. Do not call it AP-small evidence.
+- When using the completed scale-wise VisDrone output, describe it as scale-wise recall/precision evidence.
+- When using the completed local AP diagnostic, describe it as local scale-bin AP. Do not call it official AP-small evidence.
 
 ## Evidence Trace Required for Every IEEE Table Row
 

@@ -25,6 +25,7 @@ Completed evidence:
 - YOLO11n-P2-CA-SmallObjAug.
 - YOLOv5n, YOLOv8n, YOLOv8n-960, YOLO11s, YOLO11s-960 reference baselines.
 - Speed, complexity, per-class, scale-distribution, and qualitative analysis materials.
+- Full VisDrone scale-wise recall/precision and local scale-bin AP diagnostics for completed 960-input models.
 
 Important interpretation:
 
@@ -72,6 +73,8 @@ Risk:
 | TOFC candidate module | `src/models/attention/tiny_object_feature_calibration.py` |
 | TOFC model/training config | `configs/models/yolo11n_p2_tofc.yaml`, `configs/train/yolo11n_p2_tofc_960.yaml` |
 | Scale-evaluation target list | `paper/tables/ieee_scale_eval_targets.csv` |
+| Full VisDrone scale-wise recall/precision output | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |
+| Full VisDrone local scale-bin AP output | `paper/tables/ieee_scale_ap_results_visdrone.csv`, `paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png` |
 | Guarded server queue | `tools/run_ieee_server_queue.sh` |
 
 ## Proposed New Method Direction
@@ -101,12 +104,12 @@ TOFC adds only about 2,090 parameters over YOLO11n-P2. This is a structural fact
 Minimum next queue:
 
 1. Train YOLO11n-P2-TOFC-960 on VisDrone.
-2. Run full VisDrone scale-wise evaluation for completed models.
-3. Download and convert UAVDT.
-4. Train UAVDT YOLO11n-960 baseline.
-5. Train UAVDT YOLO11n-P2-960.
-6. Train UAVDT YOLOv8n-960 reference.
-7. If TOFC works on VisDrone, train TOFC on UAVDT.
+2. Download and convert UAVDT.
+3. Train UAVDT YOLO11n-960 baseline.
+4. Train UAVDT YOLO11n-P2-960.
+5. Train UAVDT YOLOv8n-960 reference.
+6. If TOFC works on VisDrone, train TOFC on UAVDT.
+7. Re-run scale-wise recall/precision and local scale-bin AP only after new final-model weights arrive.
 
 The guarded queue script is:
 
@@ -135,7 +138,6 @@ The script is dry-run by default to prevent accidental GPU spending.
 Do not start writing the final IEEE manuscript yet. First obtain:
 
 - TOFC VisDrone result,
-- full scale-wise results,
 - UAVDT conversion and at least two UAVDT baseline runs.
 
 After that, decide whether the project is strong enough for IEEE Transactions or should target a slightly less competitive English journal.

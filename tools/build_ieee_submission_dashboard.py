@@ -132,6 +132,7 @@ def build_dashboard() -> str:
         "- Dataset strategy: `paper/ieee_dataset_strategy.md`",
         "- UAVDT setup and operational checklist: `paper/datasets/uavdt_setup.md`, `paper/datasets/uavdt_operational_checklist.md`",
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
+        "- Reviewer risk register: `paper/ieee_reviewer_risk_register.md`",
         "- Manuscript blueprint, abstract workbench, section draft pack, and assembly checklist: `paper/ieee_trans/manuscript_blueprint.md`, `paper/ieee_trans/abstract_contribution_workbench.md`, `paper/ieee_trans/section_draft_pack.md`, `paper/ieee_trans/manuscript_assembly_checklist.md`",
         "- Related-work outline: `paper/ieee_trans/related_work_outline.md`",
         "- Seed bibliography and citation plan: `paper/ieee_trans/references_seed.bib`, `paper/ieee_trans/citation_plan.md`",
