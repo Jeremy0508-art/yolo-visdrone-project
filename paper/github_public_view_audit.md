@@ -6,8 +6,8 @@ It is an automated public-link check, not a substitute for manual browser review
 
 ## Summary
 
-- Total checks: 24
-- Ready: 24
+- Total checks: 26
+- Ready: 26
 - Partial: 0
 - Missing: 0
 
@@ -19,12 +19,13 @@ It is an automated public-link check, not a substitute for manual browser review
 | Repository owner/name | READY | `Jeremy0508-art/yolo-visdrone-project` |  |
 | Public repository marker | READY | `Public` |  |
 | README area | READY | `README` |  |
-| Raw README reachable | READY | `HTTP 200, 7634 characters` |  |
+| Raw README reachable | READY | `HTTP 200, 7673 characters` |  |
 | Current lightweight conclusion | READY | `YOLO11n-P2-960` |  |
 | Best nano mAP50 | READY | `0.42361` |  |
 | YOLO11s capacity reference | READY | `YOLO11s-960` |  |
 | IEEE route | READY | `IEEE Transactions` |  |
 | IEEE dashboard link | READY | `paper/ieee_submission_dashboard.md` |  |
+| T-ITS scope-fit checklist link | READY | `paper/ieee_tits_scope_fit_checklist.md` |  |
 | Method selection protocol link | READY | `paper/ieee_method_selection_protocol.md` |  |
 | Reviewer risk register link | READY | `paper/ieee_reviewer_risk_register.md` |  |
 | Scale AP interpretation link | READY | `paper/ieee_scale_ap_interpretation.md` |  |
@@ -36,6 +37,7 @@ It is an automated public-link check, not a substitute for manual browser review
 | Old future-experiment wording | READY | ``后续建议实验` not found` |  |
 | Paper README raw | READY | `HTTP 200` |  |
 | IEEE dashboard raw | READY | `HTTP 200` |  |
+| T-ITS scope-fit checklist raw | READY | `HTTP 200` |  |
 | IEEE workspace README raw | READY | `HTTP 200` |  |
 | IEEE scale AP interpretation raw | READY | `HTTP 200` |  |
 | IEEE scale AP figure raw | READY | `HTTP 200` |  |
