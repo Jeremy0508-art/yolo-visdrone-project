@@ -1,0 +1,106 @@
+# IEEE Submission Metadata Workbench
+
+Status: planning workbench. User/advisor confirmation required before submission.
+
+This file records the non-experimental information that will be needed when preparing an IEEE Transactions submission package. It intentionally leaves personal, institutional, funding, and reviewer information blank until confirmed by the user and advisor.
+
+## Target and Article Type
+
+| Field | Current Value | Confirmation Needed |
+| --- | --- | --- |
+| Target journal | IEEE Transactions on Intelligent Transportation Systems is the leading working target | Advisor confirmation required |
+| Backup journal | IEEE Transactions on Geoscience and Remote Sensing or another IEEE venue | Advisor confirmation required |
+| Article type | Regular Paper, tentatively | Advisor confirmation required |
+| Submission system | IEEE Author Portal / target-journal submission site | Verify after target journal is final |
+| Open access choice | Undecided | User/advisor/budget confirmation required |
+
+## Author Metadata
+
+Fill only after advisor confirmation.
+
+| Field | Value |
+| --- | --- |
+| Author 1 name |  |
+| Author 1 affiliation |  |
+| Author 1 ORCID |  |
+| Author 1 email |  |
+| Author 2 name |  |
+| Author 2 affiliation |  |
+| Author 2 ORCID |  |
+| Author 2 email |  |
+| Additional authors |  |
+| Corresponding author |  |
+| Author order confirmed by all authors | No |
+
+## Funding and Acknowledgment
+
+| Field | Value / Action |
+| --- | --- |
+| Funding agency | User/advisor confirmation required |
+| Grant number | User/advisor confirmation required |
+| Institutional support | User/advisor confirmation required |
+| Acknowledgment text | Draft only after funding and contribution details are confirmed |
+
+## Data, Code, and Reproducibility Statement
+
+Current project status:
+
+- Public repository: `https://github.com/Jeremy0508-art/yolo-visdrone-project`
+- Primary dataset: VisDrone2019-DET, distributed by its original dataset providers.
+- Planned second dataset: UAVDT, pending raw dataset placement and conversion.
+- Training/evaluation commands: `paper/commands.md`
+- Evidence tables: `paper/tables/`
+
+Possible final wording, to revise after advisor approval:
+
+> The implementation code, configuration files, reproducibility commands, and result-summary scripts are maintained in a public repository. Dataset download and use follow the licenses and terms of the original dataset providers. Trained weights and additional artifacts will be released according to the authors' institutional and dataset-license constraints.
+
+Do not promise release of weights or private server logs until the advisor approves.
+
+## Ethics and Originality Checks
+
+| Check | Current Status | Action |
+| --- | --- | --- |
+| Simultaneous submission | CEA route paused | Do not submit CEA and IEEE versions at the same time |
+| Prior dissemination | Repository is public; CEA draft materials exist locally | Disclose any public preprint/report if created later |
+| Overlap risk | Not yet checked on final IEEE text | Run overlap/plagiarism self-check after final manuscript is assembled |
+| AI/tool assistance disclosure | User/advisor decision required | Follow target journal and institution policy |
+| Dataset license compliance | Pending final dataset list | Confirm VisDrone/UAVDT license terms before submission |
+
+## Suggested Reviewers / Opposed Reviewers
+
+Only fill with advisor approval and after checking conflict-of-interest rules.
+
+| Role | Name | Institution | Email | Reason / Expertise | Conflict Checked |
+| --- | --- | --- | --- | --- | --- |
+| Suggested reviewer 1 |  |  |  |  | No |
+| Suggested reviewer 2 |  |  |  |  | No |
+| Suggested reviewer 3 |  |  |  |  | No |
+| Opposed reviewer, if any |  |  |  |  | No |
+
+## Files Expected in Final Submission Package
+
+| File / Item | Source | Status |
+| --- | --- | --- |
+| Main PDF | Future IEEEtran build | Pending |
+| `main.tex` | Future `paper/ieee_trans/main.tex` | Pending |
+| `references.bib` | Verified entries from `references_seed.bib` | Pending |
+| Figures | `paper/ieee_trans/figure_source_manifest.md` | Partially ready |
+| Generated LaTeX tables | `paper/ieee_trans/tables/` | Ready for current evidence; refresh after final results |
+| Cover letter | `paper/ieee_trans/cover_letter_workbench.md` -> final draft | Pending |
+| Response-prep risk register | `paper/ieee_reviewer_risk_register.md` | Ready |
+| Code/data statement | This workbench | Pending advisor confirmation |
+
+## Manual Confirmation Checklist
+
+Before final submission, the user/advisor must confirm:
+
+1. Exact IEEE journal.
+2. Article type.
+3. Author list, order, affiliations, emails, and ORCID IDs.
+4. Corresponding author.
+5. Funding and acknowledgments.
+6. Code/data/weights release policy.
+7. Open access or traditional publication choice.
+8. Suggested/opposed reviewers, if requested by the submission system.
+9. Whether any public preprint, report, or repository material must be disclosed.

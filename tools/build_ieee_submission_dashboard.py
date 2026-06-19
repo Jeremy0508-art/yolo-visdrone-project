@@ -137,7 +137,7 @@ def build_dashboard() -> str:
         "- UAVDT setup and operational checklist: `paper/datasets/uavdt_setup.md`, `paper/datasets/uavdt_operational_checklist.md`",
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
         "- Reviewer risk register: `paper/ieee_reviewer_risk_register.md`",
-        "- Manuscript blueprint, front-matter workbenches, section draft pack, assembly checklist, and main.tex preflight: `paper/ieee_trans/manuscript_blueprint.md`, `paper/ieee_trans/abstract_contribution_workbench.md`, `paper/ieee_trans/title_abstract_index_terms_workbench.md`, `paper/ieee_trans/cover_letter_workbench.md`, `paper/ieee_trans/section_draft_pack.md`, `paper/ieee_trans/manuscript_assembly_checklist.md`, `paper/ieee_trans/main_tex_preflight.md`",
+        "- Manuscript blueprint, front-matter/submission workbenches, section draft pack, assembly checklist, and main.tex preflight: `paper/ieee_trans/manuscript_blueprint.md`, `paper/ieee_trans/abstract_contribution_workbench.md`, `paper/ieee_trans/title_abstract_index_terms_workbench.md`, `paper/ieee_trans/submission_metadata_workbench.md`, `paper/ieee_trans/cover_letter_workbench.md`, `paper/ieee_trans/section_draft_pack.md`, `paper/ieee_trans/manuscript_assembly_checklist.md`, `paper/ieee_trans/main_tex_preflight.md`",
         "- Related-work outline: `paper/ieee_trans/related_work_outline.md`",
         "- Seed bibliography and citation plan: `paper/ieee_trans/references_seed.bib`, `paper/ieee_trans/citation_plan.md`",
         "- Table/figure plan: `paper/ieee_trans/table_figure_plan.md`",

@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 82
-- Ready: 77
+- Total checks: 83
+- Ready: 78
 - Pending: 5
 - Missing: 0
 
@@ -38,6 +38,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE manuscript blueprint | READY | `paper/ieee_trans/manuscript_blueprint.md` |  |
 | Planning | IEEE abstract/contribution workbench | READY | `paper/ieee_trans/abstract_contribution_workbench.md` |  |
 | Planning | IEEE title/abstract/index terms workbench | READY | `paper/ieee_trans/title_abstract_index_terms_workbench.md` |  |
+| Planning | IEEE submission metadata workbench | READY | `paper/ieee_trans/submission_metadata_workbench.md` |  |
 | Planning | IEEE related-work outline | READY | `paper/ieee_trans/related_work_outline.md` |  |
 | Planning | IEEE section draft pack | READY | `paper/ieee_trans/section_draft_pack.md` |  |
 | Planning | IEEE manuscript assembly checklist | READY | `paper/ieee_trans/manuscript_assembly_checklist.md` |  |

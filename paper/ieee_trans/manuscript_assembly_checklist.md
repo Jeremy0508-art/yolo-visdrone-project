@@ -24,6 +24,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `section_draft_pack.md` | Ready | Evidence-bounded English paragraphs |
 | `abstract_contribution_workbench.md` | Ready | Safe abstract skeleton and locked placeholders |
 | `title_abstract_index_terms_workbench.md` | Ready | T-ITS front-matter constraints and locked title/index-term options |
+| `submission_metadata_workbench.md` | Ready | Author, funding, code/data, and submission-system metadata checklist |
 | `cover_letter_workbench.md` | Ready | Cover letter skeleton and ethics/claim boundaries |
 | `related_work_outline.md` | Ready | Related-work structure |
 | `references_seed.bib` | Ready for planning | Seed citations only; verify metadata before final BibTeX |

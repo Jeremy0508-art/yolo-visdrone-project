@@ -44,6 +44,7 @@ REQUIRED_FILES = [
     ("Planning", "IEEE manuscript blueprint", "paper/ieee_trans/manuscript_blueprint.md"),
     ("Planning", "IEEE abstract/contribution workbench", "paper/ieee_trans/abstract_contribution_workbench.md"),
     ("Planning", "IEEE title/abstract/index terms workbench", "paper/ieee_trans/title_abstract_index_terms_workbench.md"),
+    ("Planning", "IEEE submission metadata workbench", "paper/ieee_trans/submission_metadata_workbench.md"),
     ("Planning", "IEEE related-work outline", "paper/ieee_trans/related_work_outline.md"),
     ("Planning", "IEEE section draft pack", "paper/ieee_trans/section_draft_pack.md"),
     ("Planning", "IEEE manuscript assembly checklist", "paper/ieee_trans/manuscript_assembly_checklist.md"),
