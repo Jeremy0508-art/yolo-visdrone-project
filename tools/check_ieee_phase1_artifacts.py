@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     ("Planning", "Dataset strategy", "paper/ieee_dataset_strategy.md"),
     ("Planning", "IEEE dataset license audit", "paper/ieee_dataset_license_audit.md"),
     ("Planning", "IEEE dataset compliance audit", "paper/ieee_dataset_compliance_audit.md"),
+    ("Planning", "IEEE server resume runbook", "paper/ieee_server_resume_runbook.md"),
     ("Planning", "Method design notes", "paper/ieee_method_design_notes.md"),
     ("Planning", "IEEE method selection protocol", "paper/ieee_method_selection_protocol.md"),
     ("Planning", "Claim boundary rules", "paper/ieee_claim_boundary.md"),
@@ -123,6 +124,18 @@ RESULT_GATES = [
         "Training Evidence",
         "UAVDT YOLO11n-P2 result",
         "runs/detect/yolo11n_p2_960_uavdt/weights/best.pt",
+        "Convert and validate UAVDT before launching this run.",
+    ),
+    (
+        "Training Evidence",
+        "UAVDT YOLOv8n baseline result",
+        "runs/detect/baseline_yolov8n_960_uavdt/weights/best.pt",
+        "Convert and validate UAVDT before launching this run.",
+    ),
+    (
+        "Training Evidence",
+        "UAVDT YOLO11s capacity reference result",
+        "runs/detect/baseline_yolo11s_960_uavdt/weights/best.pt",
         "Convert and validate UAVDT before launching this run.",
     ),
     (

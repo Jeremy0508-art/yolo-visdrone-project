@@ -29,6 +29,12 @@ If any condition fails, the item remains a progress item and must not be used as
 
 ## Status Check
 
+Use the server resume runbook for the complete open-check-launch-sync sequence:
+
+```text
+paper/ieee_server_resume_runbook.md
+```
+
 Use the status script to inspect remote progress without copying partial data:
 
 ```powershell
@@ -61,9 +67,7 @@ The script checks each remote run before copying. Runs marked `PARTIAL` or `MISS
 After synchronization, run:
 
 ```powershell
-python tools\check_ieee_claims.py
-python tools\check_ieee_phase1_artifacts.py
-python tools\build_ieee_server_progress_report.py
+python tools\run_ieee_audits.py
 ```
 
 If new final-model weights arrive, regenerate speed and complexity tables before writing final IEEE results. Re-run scale-wise recall/precision evaluation for any new final-method candidate.

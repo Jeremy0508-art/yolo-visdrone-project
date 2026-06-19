@@ -6,9 +6,9 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 96
-- Ready: 91
-- Pending: 5
+- Total checks: 99
+- Ready: 92
+- Pending: 7
 - Missing: 0
 
 ## Checks
@@ -28,6 +28,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | Dataset strategy | READY | `paper/ieee_dataset_strategy.md` |  |
 | Planning | IEEE dataset license audit | READY | `paper/ieee_dataset_license_audit.md` |  |
 | Planning | IEEE dataset compliance audit | READY | `paper/ieee_dataset_compliance_audit.md` |  |
+| Planning | IEEE server resume runbook | READY | `paper/ieee_server_resume_runbook.md` |  |
 | Planning | Method design notes | READY | `paper/ieee_method_design_notes.md` |  |
 | Planning | IEEE method selection protocol | READY | `paper/ieee_method_selection_protocol.md` |  |
 | Planning | Claim boundary rules | READY | `paper/ieee_claim_boundary.md` |  |
@@ -105,6 +106,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Training Evidence | TOFC VisDrone result | PENDING | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt` | Run the guarded server queue only after GPU availability is confirmed. |
 | Training Evidence | UAVDT YOLO11n baseline result | PENDING | `runs/detect/baseline_yolo11n_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
 | Training Evidence | UAVDT YOLO11n-P2 result | PENDING | `runs/detect/yolo11n_p2_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
+| Training Evidence | UAVDT YOLOv8n baseline result | PENDING | `runs/detect/baseline_yolov8n_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
+| Training Evidence | UAVDT YOLO11s capacity reference result | PENDING | `runs/detect/baseline_yolo11s_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
 | Analysis | Full VisDrone scale-wise results | READY | `paper/tables/ieee_scale_results_visdrone.csv` |  |
 | Analysis | Full VisDrone scale-wise figure | READY | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |  |
 | Analysis | Full VisDrone local scale-bin AP output | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv` |  |

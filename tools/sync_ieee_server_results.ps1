@@ -127,8 +127,6 @@ Sync-RemoteFileIfExists "$RemoteRoot/paper/tables/ieee_scale_results_visdrone.cs
 Sync-RemoteFileIfExists "$RemoteRoot/paper/figures/scale_analysis/ieee_scale_recall_visdrone.png" "paper\figures\scale_analysis\"
 
 Write-Host "Refresh IEEE status and audits."
-Invoke-Checked @("python", "tools\check_ieee_claims.py")
-Invoke-Checked @("python", "tools\check_ieee_phase1_artifacts.py")
-Invoke-Checked @("python", "tools\build_ieee_server_progress_report.py")
+Invoke-Checked @("python", "tools\run_ieee_audits.py")
 
 Write-Host "Done."
