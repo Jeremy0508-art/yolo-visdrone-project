@@ -24,7 +24,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `main.tex` | IEEEtran manuscript source | Pending |
 | `references.bib` | IEEE-style bibliography | Pending |
 | `figures/` | English manuscript figures | Pending |
-| `tables/` | Generated LaTeX tables | Pending |
+| `tables/` | Generated LaTeX table drafts and source manifest | Ready |
 | `cover_letter_draft.md` | Cover letter draft | Pending |
 
 ## Current Rule
