@@ -64,8 +64,11 @@ Risk:
 | --- | --- |
 | IEEE master plan | `paper/IEEE_TRANS_SUBMISSION_PLAN.md` |
 | Target journal analysis | `paper/ieee_target_journal_analysis.md` |
+| T-ITS scope-fit checklist | `paper/ieee_tits_scope_fit_checklist.md` |
 | Experiment gap matrix | `paper/ieee_required_experiment_gap.md` |
 | Related-work seed table | `paper/ieee_related_work_matrix.csv` |
+| Recent UAV YOLO seed references and gap report | `paper/ieee_trans/references_seed.bib`, `paper/ieee_reference_gap_report.md` |
+| Literature-only comparison protocol and context table | `paper/ieee_literature_comparison_protocol.md`, `paper/tables/ieee_literature_context.csv` |
 | UAVDT dataset config | `configs/dataset/uavdt.yaml` |
 | UAVDT conversion notes | `paper/datasets/uavdt_setup.md` |
 | UAVDT conversion script | `scripts/convert_uavdt_to_yolo.py` |
@@ -75,6 +78,9 @@ Risk:
 | Scale-evaluation target list | `paper/tables/ieee_scale_eval_targets.csv` |
 | Full VisDrone scale-wise recall/precision output | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |
 | Full VisDrone local scale-bin AP output | `paper/tables/ieee_scale_ap_results_visdrone.csv`, `paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png` |
+| Evidence-bounded English section drafts | `paper/ieee_trans/section_draft_pack.md` |
+| IEEE front-matter and submission workbenches | `paper/ieee_trans/title_abstract_index_terms_workbench.md`, `paper/ieee_trans/submission_metadata_workbench.md`, `paper/ieee_trans/cover_letter_workbench.md` |
+| Number trace audit for English draft values | `paper/ieee_number_trace_audit.md` |
 | Guarded server queue | `tools/run_ieee_server_queue.sh` |
 
 ## Proposed New Method Direction
@@ -125,6 +131,8 @@ RUN_TRAINING=1 RUN_UAVDT=1 RUN_SCALE=1 ./tools/run_ieee_server_queue.sh
 
 The script is dry-run by default to prevent accidental GPU spending.
 
+Current server note: do not start new training until the rented server is available again and the user explicitly opens it. The next server-side action should be an environment/status check before any queued training is launched.
+
 ## Advisor Decisions Needed
 
 1. Confirm the preferred target: T-ITS, TGRS, or another IEEE Transactions journal.
@@ -141,3 +149,5 @@ Do not start writing the final IEEE manuscript yet. First obtain:
 - UAVDT conversion and at least two UAVDT baseline runs.
 
 After that, decide whether the project is strong enough for IEEE Transactions or should target a slightly less competitive English journal.
+
+The current local materials are ready for advisor discussion: the project now has a target-journal rationale, claim-boundary rules, literature context, generated IEEE table drafts, and a numerical trace audit showing that the current English draft-pack numbers are source-backed. The remaining decisive gap is experimental evidence, not document organization.
