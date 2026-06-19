@@ -125,7 +125,7 @@ def build_dashboard() -> str:
         "- Seed bibliography and citation plan: `paper/ieee_trans/references_seed.bib`, `paper/ieee_trans/citation_plan.md`",
         "- Table/figure plan: `paper/ieee_trans/table_figure_plan.md`",
         "- Server integration protocol: `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`",
-        "- Scale-wise evaluation protocol and audit: `paper/ieee_scale_evaluation_protocol.md`, `paper/ieee_scale_output_audit.md`",
+        "- Scale-wise evaluation protocol, audit, and interpretation: `paper/ieee_scale_evaluation_protocol.md`, `paper/ieee_scale_output_audit.md`, `paper/ieee_scale_result_interpretation.md`",
         "- Guarded server queue: `tools/run_ieee_server_queue.sh`",
         "- Guarded server sync/status tools: `tools/check_ieee_server_status.ps1`, `tools/sync_ieee_server_results.ps1`",
         "",

@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 56
-- Ready: 51
+- Total checks: 58
+- Ready: 53
 - Pending: 5
 - Missing: 0
 
@@ -26,6 +26,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | Claim boundary rules | READY | `paper/ieee_claim_boundary.md` |  |
 | Planning | IEEE result integration protocol | READY | `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md` |  |
 | Planning | IEEE scale evaluation protocol | READY | `paper/ieee_scale_evaluation_protocol.md` |  |
+| Planning | IEEE scale result interpretation | READY | `paper/ieee_scale_result_interpretation.md` |  |
 | Planning | Next actions | READY | `paper/ieee_phase1_next_actions.md` |  |
 | Planning | Submission checklist | READY | `paper/ieee_submission_checklist.md` |  |
 | Planning | IEEE workspace README | READY | `paper/ieee_trans/README.md` |  |
@@ -54,6 +55,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Execution | IEEE claim scanner | READY | `tools/check_ieee_claims.py` |  |
 | Execution | IEEE reference checker | READY | `tools/check_ieee_references.py` |  |
 | Execution | IEEE scale output checker | READY | `tools/check_ieee_scale_outputs.py` |  |
+| Execution | IEEE scale interpretation builder | READY | `tools/build_ieee_scale_interpretation.py` |  |
 | Execution | IEEE server status checker | READY | `tools/check_ieee_server_status.ps1` |  |
 | Execution | IEEE server sync script | READY | `tools/sync_ieee_server_results.ps1` |  |
 | Execution | IEEE server progress reporter | READY | `tools/build_ieee_server_progress_report.py` |  |
