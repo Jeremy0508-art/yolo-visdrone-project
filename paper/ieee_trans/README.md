@@ -43,6 +43,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `../ieee_tits_author_requirements_audit.md` | Official-source T-ITS submission, abstract, keyword, and page-format requirements |
 | `../ieee_front_matter_audit.md` | Generated guard for T-ITS title, abstract, index terms, and metadata workbenches |
 | `../ieee_number_trace_audit.md` | Numeric trace audit for values in `section_draft_pack.md` |
+| `../ieee_reference_metadata_readiness_audit.md` | Stricter planning-stage check for seed BibTeX metadata readiness |
 | `../ieee_result_interpretation_matrix.md` | Evidence-bounded result-reading matrix for IEEE manuscript wording |
 | `../ieee_result_interpretation_matrix_audit.md` | Generated check for the IEEE result interpretation matrix |
 | `../ieee_evidence_map_audit.md` | Generated check for the IEEE evidence-to-section map |

@@ -10,7 +10,7 @@ from ultralytics import YOLO
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from src.models.register import register_custom_modules
-from src.utils.paths import resolve_project_path
+from src.utils.paths import materialize_absolute_dataset_yaml, resolve_project_path
 
 
 def parse_args() -> argparse.Namespace:
@@ -137,6 +137,8 @@ def main() -> None:
     for path_key in ("data", "project"):
         if path_key in config and config[path_key] is not None:
             config[path_key] = str(resolve_project_path(config[path_key]))
+    if "data" in config and config["data"] is not None:
+        config["data"] = str(materialize_absolute_dataset_yaml(config["data"]))
 
     model_name = config.pop("model", "yolo11n.pt")
     model = YOLO(model_name)

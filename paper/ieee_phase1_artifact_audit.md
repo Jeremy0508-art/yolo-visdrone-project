@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 108
-- Ready: 101
+- Total checks: 110
+- Ready: 103
 - Pending: 7
 - Missing: 0
 
@@ -57,6 +57,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE page budget plan | READY | `paper/ieee_trans/page_budget_plan.md` |  |
 | Planning | IEEE seed bibliography | READY | `paper/ieee_trans/references_seed.bib` |  |
 | Planning | IEEE citation plan | READY | `paper/ieee_trans/citation_plan.md` |  |
+| Planning | IEEE reference metadata readiness audit | READY | `paper/ieee_reference_metadata_readiness_audit.md` |  |
 | Planning | IEEE evidence-to-section map | READY | `paper/ieee_trans/evidence_to_sections.csv` |  |
 | Planning | IEEE evidence-to-section map audit | READY | `paper/ieee_evidence_map_audit.md` |  |
 | Planning | IEEE table and figure plan | READY | `paper/ieee_trans/table_figure_plan.md` |  |
@@ -92,6 +93,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Execution | IEEE evidence map checker | READY | `tools/check_ieee_evidence_map.py` |  |
 | Execution | IEEE manuscript assembly checker | READY | `tools/check_ieee_manuscript_assembly.py` |  |
 | Execution | IEEE reference checker | READY | `tools/check_ieee_references.py` |  |
+| Execution | IEEE reference metadata readiness checker | READY | `tools/check_ieee_reference_metadata_readiness.py` |  |
 | Execution | IEEE dataset compliance checker | READY | `tools/check_ieee_dataset_compliance.py` |  |
 | Execution | IEEE scale output checker | READY | `tools/check_ieee_scale_outputs.py` |  |
 | Execution | IEEE scale interpretation builder | READY | `tools/build_ieee_scale_interpretation.py` |  |

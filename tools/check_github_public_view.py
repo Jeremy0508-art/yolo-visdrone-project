@@ -192,6 +192,10 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_reference_gap_report.md",
         ),
         (
+            "IEEE reference metadata readiness audit raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_reference_metadata_readiness_audit.md",
+        ),
+        (
             "IEEE literature comparison protocol raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_literature_comparison_protocol.md",
         ),

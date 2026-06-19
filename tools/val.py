@@ -9,7 +9,7 @@ from ultralytics import YOLO
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from src.models.register import register_custom_modules
-from src.utils.paths import resolve_project_path
+from src.utils.paths import materialize_absolute_dataset_yaml, resolve_project_path
 
 
 def parse_args() -> argparse.Namespace:
@@ -30,7 +30,7 @@ def main() -> None:
     args = parse_args()
     model = YOLO(str(resolve_project_path(args.weights)))
     model.val(
-        data=str(resolve_project_path(args.data)),
+        data=str(materialize_absolute_dataset_yaml(args.data)),
         imgsz=args.imgsz,
         batch=args.batch,
         device=args.device,
