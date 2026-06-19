@@ -52,7 +52,7 @@ class Box:
         raise ValueError(f"Unhandled area: {area}")
 
 
-TARGETS = [
+DEFAULT_TARGETS = [
     EvalTarget(
         model="YOLO11n baseline",
         weights="runs/detect/baseline_yolo11n_visdrone/weights/best.pt",
@@ -69,7 +69,13 @@ TARGETS = [
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Evaluate validation detections by GT object scale groups.")
     parser.add_argument("--dataset-root", default="data/processed/visdrone_yolo", help="YOLO-format dataset root.")
+    parser.add_argument("--dataset-name", default=None, help="Dataset name written to the output CSV.")
     parser.add_argument("--split", default="val", help="Dataset split to evaluate.")
+    parser.add_argument(
+        "--targets-csv",
+        default=None,
+        help="Optional CSV with model,weights,imgsz columns. Rows with enabled=false are skipped.",
+    )
     parser.add_argument("--output", default="paper/tables/scale_group_results.csv", help="Output CSV path.")
     parser.add_argument(
         "--plot-output",
@@ -80,7 +86,32 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--iou", type=float, default=0.5, help="IoU threshold for a true positive match.")
     parser.add_argument("--device", default=None, help="Device passed to Ultralytics, for example 0 or cpu.")
     parser.add_argument("--max-det", type=int, default=300, help="Maximum detections per image.")
+    parser.add_argument("--limit-images", type=int, default=None, help="Optional image limit for smoke checks.")
     return parser.parse_args()
+
+
+def load_targets(targets_csv: str | None) -> list[EvalTarget]:
+    if targets_csv is None:
+        return list(DEFAULT_TARGETS)
+
+    csv_path = resolve_project_path(targets_csv)
+    targets: list[EvalTarget] = []
+    with csv_path.open("r", newline="", encoding="utf-8") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            enabled = row.get("enabled", "true").strip().lower()
+            if enabled in {"0", "false", "no", "n"}:
+                continue
+            targets.append(
+                EvalTarget(
+                    model=row["model"],
+                    weights=row["weights"],
+                    imgsz=int(row["imgsz"]),
+                )
+            )
+    if not targets:
+        raise ValueError(f"No enabled targets found in {csv_path}")
+    return targets
 
 
 def image_size(image_path: Path) -> tuple[int, int]:
@@ -164,6 +195,8 @@ def evaluate_target(args: argparse.Namespace, target: EvalTarget) -> list[dict[s
     class_matched_counts: dict[str, Counter[int]] = defaultdict(Counter)
 
     label_paths = sorted(labels_dir.glob("*.txt"))
+    if args.limit_images is not None:
+        label_paths = label_paths[: args.limit_images]
     for label_path in label_paths:
         image_path = find_image(images_dir, label_path.stem)
         if image_path is None:
@@ -213,6 +246,7 @@ def evaluate_target(args: argparse.Namespace, target: EvalTarget) -> list[dict[s
         rows.append(
             {
                 "model": target.model,
+                "dataset": args.dataset_name or dataset_root.name,
                 "weights": target.weights,
                 "split": args.split,
                 "imgsz": target.imgsz,
@@ -275,13 +309,15 @@ def main() -> None:
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     rows: list[dict[str, str]] = []
-    for target in TARGETS:
+    targets = load_targets(args.targets_csv)
+    for target in targets:
         rows.extend(evaluate_target(args, target))
         if args.device not in (None, "cpu") and torch.cuda.is_available():
             torch.cuda.empty_cache()
 
     fieldnames = [
         "model",
+        "dataset",
         "weights",
         "split",
         "imgsz",

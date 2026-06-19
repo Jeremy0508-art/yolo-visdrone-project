@@ -81,7 +81,7 @@ No experiment result should enter the English manuscript until its run directory
 
 | ID | Analysis | Implementation Needed | Required for IEEE? | Status |
 | --- | --- | --- | --- | --- |
-| A1 | COCO-style AP-small/AP-medium/AP-large or VisDrone-specific scale AP/Recall | Extend existing scale analysis script | Yes |
+| A1 | COCO-style AP-small/AP-medium/AP-large or VisDrone-specific scale AP/Recall | `tools/evaluate_scale_groups.py` now supports `--targets-csv`; full validation run still pending | Yes |
 | A2 | Density-wise performance | Count objects per image and group validation images | Recommended |
 | A3 | Per-class AP table | Existing partial material can be reused | Yes |
 | A4 | Speed/latency/FPS | Existing benchmark script; repeat for new models | Yes |
@@ -129,3 +129,26 @@ The following queue is intentionally conservative. It avoids launching expensive
 2. Design UAVDT conversion and dataset config.
 3. Draft `paper/ieee_method_design_notes.md` with 1-2 candidate modules.
 4. Decide with advisor whether to invest in route B new-module experiments.
+
+## Scale Evaluation Command
+
+The current IEEE target list is recorded at:
+
+```text
+paper/tables/ieee_scale_eval_targets.csv
+```
+
+Full VisDrone scale-wise evaluation command:
+
+```powershell
+python tools/evaluate_scale_groups.py `
+  --dataset-root data/processed/visdrone_yolo `
+  --dataset-name VisDrone2019-DET `
+  --split val `
+  --targets-csv paper/tables/ieee_scale_eval_targets.csv `
+  --output paper/tables/ieee_scale_results_visdrone.csv `
+  --plot-output paper/figures/scale_analysis/ieee_scale_recall_visdrone.png `
+  --device 0
+```
+
+A one-image CPU smoke check has passed and wrote ignored files under `runs/scale_group_smoke/`. Those smoke values are not valid paper results.

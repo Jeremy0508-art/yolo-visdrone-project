@@ -19,6 +19,8 @@ The project has switched from the CEA route to the IEEE Transactions route. Phas
 | Method design notes | Done | `paper/ieee_method_design_notes.md` |
 | TOFC candidate module | Structure implemented; not trained | `src/models/attention/tiny_object_feature_calibration.py`, `configs/models/yolo11n_p2_tofc.yaml` |
 | TOFC structure audit | Done | `paper/ieee_phase1_artifact_audit.md` |
+| IEEE scale-evaluation target list | Done | `paper/tables/ieee_scale_eval_targets.csv` |
+| Scale evaluation target-CSV support | Done | `tools/evaluate_scale_groups.py` |
 
 ## Immediate Technical Tasks
 
@@ -27,7 +29,7 @@ The project has switched from the CEA route to the IEEE Transactions route. Phas
 3. Run `scripts/check_dataset.py --data-yaml configs/dataset/uavdt.yaml` with preview images.
 4. Fix any raw-layout assumptions in the converter after seeing the actual downloaded structure.
 5. Run the first TOFC full training only after GPU/server availability is confirmed.
-6. Add scale-wise AP/Recall tooling suitable for both VisDrone and UAVDT.
+6. Run the full scale-wise evaluation on completed VisDrone models when compute time is available.
 
 ## Immediate Research Tasks
 

@@ -17,6 +17,9 @@ This audit records the first set of local artifacts created for the IEEE Transac
 | TOFC module exists | READY | `src/models/attention/tiny_object_feature_calibration.py` |
 | TOFC model config builds | READY | `configs/models/yolo11n_p2_tofc.yaml` instantiated as a DetectionModel |
 | TOFC training config exists | READY | `configs/train/yolo11n_p2_tofc_960.yaml` |
+| IEEE scale target list exists | READY | `paper/tables/ieee_scale_eval_targets.csv` |
+| Scale evaluation script accepts target CSV | READY | `tools/evaluate_scale_groups.py --targets-csv ...` |
+| Scale evaluation smoke check | READY | One-image CPU smoke output under ignored `runs/scale_group_smoke/` |
 | TOFC training result exists | MISSING | No training has been launched yet |
 | UAVDT converted dataset exists | MISSING | Raw UAVDT has not been placed under `data/raw/UAVDT/` yet |
 
@@ -35,6 +38,16 @@ Interpretation:
 - TOFC adds about 2,090 parameters over YOLO11n-P2.
 - TOFC remains lighter than the existing CoordAttention variant.
 - These are structural facts only, not detection-performance results.
+
+## Scale-Evaluation Tool Check
+
+The scale-evaluation script has been generalized for IEEE experiments:
+
+```text
+tools/evaluate_scale_groups.py --targets-csv paper/tables/ieee_scale_eval_targets.csv
+```
+
+A one-image CPU smoke check completed successfully. The generated smoke metrics are intentionally kept under ignored `runs/` paths and must not be used as paper evidence.
 
 ## Remaining Phase 1 Gates
 
