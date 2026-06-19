@@ -89,6 +89,7 @@ Only fill with advisor approval and after checking conflict-of-interest rules.
 | Generated LaTeX tables | `paper/ieee_trans/tables/` | Ready for current evidence; refresh after final results |
 | Cover letter | `paper/ieee_trans/cover_letter_workbench.md` -> final draft | Pending |
 | Response-prep risk register | `paper/ieee_reviewer_risk_register.md` | Ready |
+| Response-prep plan | `paper/ieee_trans_response_plan.md` | Ready |
 | Code/data statement | This workbench | Pending advisor confirmation |
 
 ## Manual Confirmation Checklist

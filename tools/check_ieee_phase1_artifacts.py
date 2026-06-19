@@ -33,6 +33,7 @@ REQUIRED_FILES = [
     ("Planning", "IEEE method selection protocol", "paper/ieee_method_selection_protocol.md"),
     ("Planning", "Claim boundary rules", "paper/ieee_claim_boundary.md"),
     ("Planning", "IEEE reviewer risk register", "paper/ieee_reviewer_risk_register.md"),
+    ("Planning", "IEEE reviewer response plan", "paper/ieee_trans_response_plan.md"),
     ("Planning", "IEEE result integration protocol", "paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md"),
     ("Planning", "IEEE scale evaluation protocol", "paper/ieee_scale_evaluation_protocol.md"),
     ("Planning", "IEEE local scale-bin AP protocol", "paper/ieee_scale_ap_protocol.md"),

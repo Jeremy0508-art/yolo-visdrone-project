@@ -35,6 +35,7 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_method_selection_protocol.md` | Decision protocol for selecting the final method after real results arrive |
 | `ieee_claim_boundary.md` | Claim rules and locked/allowed wording |
 | `ieee_reviewer_risk_register.md` | Reviewer-risk register and mitigation plan |
+| `ieee_trans_response_plan.md` | Preparatory response plan for likely IEEE reviewer concerns |
 | `IEEE_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing complete server-side results |
 | `ieee_scale_result_interpretation.md` | Scale-wise recall/precision interpretation |
 | `ieee_scale_ap_interpretation.md` | Local scale-bin AP diagnostic interpretation |
