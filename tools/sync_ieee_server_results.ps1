@@ -66,6 +66,7 @@ $sshBase = @(
     "-p", "$Port",
     "-o", "StrictHostKeyChecking=no",
     "-o", "ConnectTimeout=10",
+    "-o", "BatchMode=yes",
     $sshTarget
 )
 $scpBase = @(
@@ -73,7 +74,8 @@ $scpBase = @(
     "-i", $IdentityFile,
     "-P", "$Port",
     "-o", "StrictHostKeyChecking=no",
-    "-o", "ConnectTimeout=10"
+    "-o", "ConnectTimeout=10",
+    "-o", "BatchMode=yes"
 )
 
 New-Item -ItemType Directory -Force -Path "runs\detect" | Out-Null

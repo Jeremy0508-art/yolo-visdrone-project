@@ -24,13 +24,15 @@ $sshArgs = @(
     "-p", "$Port",
     "-o", "StrictHostKeyChecking=no",
     "-o", "ConnectTimeout=10",
+    "-o", "BatchMode=yes",
     $sshTarget
 )
 $scpArgs = @(
     "-i", $IdentityFile,
     "-P", "$Port",
     "-o", "StrictHostKeyChecking=no",
-    "-o", "ConnectTimeout=10"
+    "-o", "ConnectTimeout=10",
+    "-o", "BatchMode=yes"
 )
 
 $remoteScript = @'
