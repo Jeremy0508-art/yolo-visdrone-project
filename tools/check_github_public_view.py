@@ -176,6 +176,10 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans_response_plan.md",
         ),
         (
+            "IEEE reference gap report raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_reference_gap_report.md",
+        ),
+        (
             "IEEE cover letter workbench raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/cover_letter_workbench.md",
         ),
