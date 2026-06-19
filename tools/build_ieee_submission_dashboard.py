@@ -96,6 +96,7 @@ def build_dashboard() -> str:
         "- Target journal analysis: `paper/ieee_target_journal_analysis.md`",
         "- Experiment gap matrix: `paper/ieee_required_experiment_gap.md`",
         "- Dataset strategy: `paper/ieee_dataset_strategy.md`",
+        "- UAVDT setup and operational checklist: `paper/datasets/uavdt_setup.md`, `paper/datasets/uavdt_operational_checklist.md`",
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
         "- Manuscript blueprint: `paper/ieee_trans/manuscript_blueprint.md`",
         "- Related-work outline: `paper/ieee_trans/related_work_outline.md`",

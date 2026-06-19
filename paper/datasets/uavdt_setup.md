@@ -6,6 +6,8 @@ UAVDT is the recommended second dataset for the IEEE Transactions route, especia
 
 This document records the intended local dataset layout and conversion flow. No UAVDT result should enter the paper until the converted dataset has passed integrity checks and the corresponding training logs exist.
 
+For the step-by-step acquisition, conversion, preview, troubleshooting, and sync checklist, see `paper/datasets/uavdt_operational_checklist.md`.
+
 ## Sources
 
 - Official UAVDT project page: `https://sites.google.com/view/grli-uavdt`

@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 48
-- Ready: 41
+- Total checks: 49
+- Ready: 42
 - Pending: 7
 - Missing: 0
 
@@ -39,6 +39,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | Advisor transition brief | READY | `paper/ieee_advisor_transition_brief.md` |  |
 | Dataset | UAVDT data YAML | READY | `configs/dataset/uavdt.yaml` |  |
 | Dataset | UAVDT setup notes | READY | `paper/datasets/uavdt_setup.md` |  |
+| Dataset | UAVDT operational checklist | READY | `paper/datasets/uavdt_operational_checklist.md` |  |
 | Dataset | UAVDT converter | READY | `scripts/convert_uavdt_to_yolo.py` |  |
 | Method | TOFC source module | READY | `src/models/attention/tiny_object_feature_calibration.py` |  |
 | Method | TOFC model YAML | READY | `configs/models/yolo11n_p2_tofc.yaml` |  |

@@ -45,6 +45,7 @@ REQUIRED_FILES = [
     ("Planning", "Advisor transition brief", "paper/ieee_advisor_transition_brief.md"),
     ("Dataset", "UAVDT data YAML", "configs/dataset/uavdt.yaml"),
     ("Dataset", "UAVDT setup notes", "paper/datasets/uavdt_setup.md"),
+    ("Dataset", "UAVDT operational checklist", "paper/datasets/uavdt_operational_checklist.md"),
     ("Dataset", "UAVDT converter", "scripts/convert_uavdt_to_yolo.py"),
     ("Method", "TOFC source module", "src/models/attention/tiny_object_feature_calibration.py"),
     ("Method", "TOFC model YAML", "configs/models/yolo11n_p2_tofc.yaml"),
