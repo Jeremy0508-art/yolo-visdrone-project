@@ -36,6 +36,7 @@ Thumbs.db
 .idea/
 .vscode/
 ~$*.docx
+paper/cea_template_migration/_generated_word_figures/
 
 # LaTeX generated intermediates
 *.aux

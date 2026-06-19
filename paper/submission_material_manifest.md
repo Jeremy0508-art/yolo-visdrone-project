@@ -16,9 +16,9 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | --- | --- | --- | --- | --- |
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.9 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
-| Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.62 MB |
-| Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.3 KB |
-| Core Documents | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.1 KB |
+| Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.64 MB |
+| Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.5 KB |
+| Core Documents | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.2 KB |
 | Core Documents | Paper workspace README | READY | `paper/README.md` | 12.3 KB |
 | Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
 | Core Documents | CEA result interpretation matrix | READY | `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` | 6.6 KB |
@@ -45,7 +45,7 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | GitHub public view audit | READY | `paper/github_public_view_audit.md` | 2.1 KB |
 | Core Documents | CEA template migration record | READY | `paper/CEA_TEMPLATE_MIGRATION_RECORD.md` | 5.3 KB |
 | Core Documents | Advisor review package manifest | READY | `paper/advisor_review_package_manifest.md` | 4.8 KB |
-| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 5.04 MB |
+| Core Documents | Advisor review package zip | READY | `paper/advisor_review_package.zip` | 5.05 MB |
 | Core Documents | Advisor review note | READY | `paper/advisor_review_note.md` | 5.9 KB |
 | Core Documents | Advisor progress brief | READY | `paper/advisor_progress_brief.md` | 5.8 KB |
 | Core Documents | Execution log | READY | `paper/CEA_EXECUTION_LOG.md` | 49.8 KB |

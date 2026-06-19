@@ -17,8 +17,10 @@ TEX_PATH = ROOT / "paper/manuscript_submission_candidate.tex"
 OUTPUT_DIR = ROOT / "paper/cea_template_migration"
 OUTPUT_DOCX = OUTPUT_DIR / "manuscript_cea_template_draft.docx"
 REPORT_PATH = OUTPUT_DIR / "cea_word_migration_audit.md"
-SAFE_COLUMN_IMAGE_WIDTH_IN = 3.15
-SAFE_PAGE_IMAGE_HEIGHT_IN = 6.6
+GENERATED_FIGURE_DIR = OUTPUT_DIR / "_generated_word_figures"
+SAFE_SINGLE_IMAGE_WIDTH_IN = 6.35
+SAFE_PAGE_IMAGE_HEIGHT_IN = 8.15
+FULL_TABLE_WIDTH_DXA = 10000
 
 
 MACROS = {
@@ -418,12 +420,21 @@ def paragraph_xml(text: str, style: str = "Normal", align: str | None = None, bo
     )
 
 
+def spacer_xml(points: int = 6) -> str:
+    twips = points * 20
+    return (
+        "<w:p>"
+        f'<w:pPr><w:spacing w:before="0" w:after="{twips}" w:line="{twips}" w:lineRule="exact"/></w:pPr>'
+        "</w:p>"
+    )
+
+
 def image_display_size(width_px: int, height_px: int) -> tuple[float, float, float]:
     dpi = 96
     width_in = width_px / dpi
     height_in = height_px / dpi
     scale = min(
-        SAFE_COLUMN_IMAGE_WIDTH_IN / width_in if width_in else 1.0,
+        SAFE_SINGLE_IMAGE_WIDTH_IN / width_in if width_in else 1.0,
         SAFE_PAGE_IMAGE_HEIGHT_IN / height_in if height_in else 1.0,
         1.0,
     )
@@ -471,32 +482,103 @@ def image_xml(rel_id: str, name: str, width_px: int, height_px: int) -> str:
 """
 
 
+def word_image_sources(image_path: Path) -> list[Path]:
+    if image_path.name != "p2_case_contact_sheet.jpg":
+        return [image_path]
+
+    GENERATED_FIGURE_DIR.mkdir(parents=True, exist_ok=True)
+    outputs: list[Path] = []
+    with Image.open(image_path) as img:
+        width, height = img.size
+        part_height = height // 3
+        for idx in range(3):
+            top = idx * part_height
+            bottom = height if idx == 2 else (idx + 1) * part_height
+            crop = img.crop((0, top, width, bottom))
+            output = GENERATED_FIGURE_DIR / f"{image_path.stem}_word_part{idx + 1}.jpg"
+            crop.save(output, quality=92)
+            outputs.append(output)
+    return outputs
+
+
+def text_units(text: str) -> int:
+    return sum(2 if "\u4e00" <= ch <= "\u9fff" else 1 for ch in text)
+
+
+def column_widths(rows: list[list[str]], total_width: int = FULL_TABLE_WIDTH_DXA) -> list[int]:
+    max_cols = max(len(row) for row in rows)
+    weights: list[int] = []
+    for col in range(max_cols):
+        values = [row[col] for row in rows if col < len(row)]
+        max_units = max((text_units(value) for value in values), default=4)
+        weights.append(max(4, min(max_units, 18)))
+
+    if max_cols == 2:
+        return [3200, total_width - 3200]
+    if max_cols == 3:
+        return [2400, 3200, total_width - 5600]
+
+    min_width = 760 if max_cols >= 7 else 900
+    available = total_width - min_width * max_cols
+    if available <= 0:
+        return [total_width // max_cols for _ in range(max_cols)]
+    weight_sum = sum(weights) or 1
+    widths = [min_width + int(available * weight / weight_sum) for weight in weights]
+    widths[-1] += total_width - sum(widths)
+    return widths
+
+
+def cell_paragraph_xml(text: str, size: int, align: str = "center") -> str:
+    return (
+        "<w:p>"
+        f'<w:pPr><w:jc w:val="{align}"/><w:spacing w:before="0" w:after="0" w:line="220" w:lineRule="auto"/></w:pPr>'
+        "<w:r><w:rPr>"
+        '<w:rFonts w:ascii="Times New Roman" w:eastAsia="SimSun" w:hAnsi="Times New Roman"/>'
+        f'<w:sz w:val="{size}"/><w:szCs w:val="{size}"/>'
+        "</w:rPr>"
+        f'<w:t xml:space="preserve">{escape(text)}</w:t>'
+        "</w:r></w:p>"
+    )
+
+
+def no_wrap_cell(text: str) -> bool:
+    return bool(re.fullmatch(r"[A-Za-z0-9@.+/%_\\-]+", text)) and len(text) <= 18
+
+
 def table_xml(rows: list[list[str]]) -> str:
     if not rows:
         return paragraph_xml("表格内容未能从 LaTeX 源文件解析。", align=None)
     max_cols = max(len(row) for row in rows)
-    width = max(1200, int(9000 / max_cols))
-    grid = "".join(f'<w:gridCol w:w="{width}"/>' for _ in range(max_cols))
+    widths = column_widths(rows)
+    grid = "".join(f'<w:gridCol w:w="{width}"/>' for width in widths)
+    font_size = 15 if max_cols >= 7 else 17
     row_xml_parts: list[str] = []
     for ridx, row in enumerate(rows):
         row = row + [""] * (max_cols - len(row))
         cells = []
-        for cell in row:
+        for cidx, cell in enumerate(row):
+            nowrap = "<w:noWrap/>" if no_wrap_cell(cell) else ""
             cells.append(
                 "<w:tc>"
-                f'<w:tcPr><w:tcW w:w="{width}" w:type="dxa"/></w:tcPr>'
-                + paragraph_xml(cell, style="", size=18)
+                f'<w:tcPr><w:tcW w:w="{widths[cidx]}" w:type="dxa"/>{nowrap}'
+                '<w:tcMar><w:top w:w="40" w:type="dxa"/><w:left w:w="55" w:type="dxa"/>'
+                '<w:bottom w:w="40" w:type="dxa"/><w:right w:w="55" w:type="dxa"/></w:tcMar></w:tcPr>'
+                + cell_paragraph_xml(cell, size=font_size)
                 + "</w:tc>"
             )
         tr_pr = "<w:trPr><w:tblHeader/></w:trPr>" if ridx == 0 else ""
         row_xml_parts.append(f"<w:tr>{tr_pr}{''.join(cells)}</w:tr>")
     return (
         "<w:tbl>"
-        "<w:tblPr><w:tblStyle w:val=\"TableGrid\"/><w:tblW w:w=\"0\" w:type=\"auto\"/>"
+        f'<w:tblPr><w:tblStyle w:val="TableGrid"/><w:tblW w:w="{FULL_TABLE_WIDTH_DXA}" w:type="dxa"/>'
+        '<w:tblLayout w:type="fixed"/><w:jc w:val="center"/>'
         "<w:tblBorders>"
         "<w:top w:val=\"single\" w:sz=\"8\" w:space=\"0\" w:color=\"000000\"/>"
         "<w:bottom w:val=\"single\" w:sz=\"8\" w:space=\"0\" w:color=\"000000\"/>"
+        "<w:left w:val=\"single\" w:sz=\"2\" w:space=\"0\" w:color=\"BFBFBF\"/>"
+        "<w:right w:val=\"single\" w:sz=\"2\" w:space=\"0\" w:color=\"BFBFBF\"/>"
         "<w:insideH w:val=\"single\" w:sz=\"4\" w:space=\"0\" w:color=\"808080\"/>"
+        "<w:insideV w:val=\"single\" w:sz=\"2\" w:space=\"0\" w:color=\"BFBFBF\"/>"
         "</w:tblBorders></w:tblPr>"
         f"<w:tblGrid>{grid}</w:tblGrid>"
         + "".join(row_xml_parts)
@@ -509,6 +591,7 @@ def section_break_xml(columns: int) -> str:
     return (
         "<w:p><w:pPr>"
         "<w:sectPr>"
+        '<w:type w:val="continuous"/>'
         '<w:pgSz w:w="11906" w:h="16838"/>'
         '<w:pgMar w:top="1440" w:right="900" w:bottom="900" w:left="900" w:header="720" w:footer="720" w:gutter="0"/>'
         f"{cols}"
@@ -552,6 +635,7 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
     fig_idx = 0
     rel_counter = 100
     missing_images: list[str] = []
+    two_col_dirty = False
 
     for block in blocks:
         if isinstance(block, ParagraphBlock):
@@ -563,30 +647,42 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
                 body.append(paragraph_xml(block.text, size=20))
             else:
                 body.append(paragraph_xml(block.text, size=20))
+            two_col_dirty = True
         elif isinstance(block, TableBlock):
+            if two_col_dirty:
+                body.append(section_break_xml(columns=2))
+                two_col_dirty = False
             table_idx += 1
             en = EN_TABLE_CAPTIONS.get(block.caption, block.caption)
+            body.append(spacer_xml(4))
             body.append(paragraph_xml(f"表{table_idx} {block.caption}", align="center", bold=True, size=18))
             body.append(paragraph_xml(f"Table {table_idx} {en}", align="center", size=18))
             body.append(table_xml(block.rows))
+            body.append(spacer_xml(8))
+            body.append(section_break_xml(columns=1))
         elif isinstance(block, FigureBlock):
+            if two_col_dirty:
+                body.append(section_break_xml(columns=2))
+                two_col_dirty = False
             fig_idx += 1
+            body.append(spacer_xml(4))
             if block.image_path:
                 image_path = ROOT / "paper" / block.image_path
                 if image_path.exists():
-                    rel_counter += 1
-                    ext = image_path.suffix.lower().lstrip(".")
-                    target_name = f"image{rel_counter}.{ext}"
-                    rel_id = f"rIdCeaImage{rel_counter}"
-                    with Image.open(image_path) as img:
-                        width, height = img.size
-                    display_width, display_height, scale = image_display_size(width, height)
-                    image_notes.append(
-                        f"{image_path.name}: {width}x{height}px -> {display_width:.2f}x{display_height:.2f}in, scale={scale:.3f}"
-                    )
-                    body.append(image_xml(rel_id, image_path.name, width, height))
-                    image_rels[rel_id] = (target_name, ext)
-                    media.append((target_name, image_path))
+                    for source_path in word_image_sources(image_path):
+                        rel_counter += 1
+                        ext = source_path.suffix.lower().lstrip(".")
+                        target_name = f"image{rel_counter}.{ext}"
+                        rel_id = f"rIdCeaImage{rel_counter}"
+                        with Image.open(source_path) as img:
+                            width, height = img.size
+                        display_width, display_height, scale = image_display_size(width, height)
+                        image_notes.append(
+                            f"{source_path.name}: {width}x{height}px -> {display_width:.2f}x{display_height:.2f}in, scale={scale:.3f}"
+                        )
+                        body.append(image_xml(rel_id, source_path.name, width, height))
+                        image_rels[rel_id] = (target_name, ext)
+                        media.append((target_name, source_path))
                 else:
                     missing_images.append(block.image_path)
                     body.append(paragraph_xml(f"[图像文件缺失：{block.image_path}]", align="center", size=18))
@@ -596,7 +692,12 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
             en = EN_FIGURE_CAPTIONS.get(block.caption, block.caption)
             body.append(paragraph_xml(f"图{fig_idx} {block.caption}", align="center", bold=True, size=18))
             body.append(paragraph_xml(f"Fig.{fig_idx} {en}", align="center", size=18))
+            body.append(spacer_xml(8))
+            body.append(section_break_xml(columns=1))
 
+    if two_col_dirty:
+        body.append(section_break_xml(columns=2))
+        two_col_dirty = False
     body.append(paragraph_xml("参考文献:", style="Heading1", bold=True, size=24))
     for number, ref in references:
         body.append(paragraph_xml(f"[{number}] {ref}", size=18))
@@ -669,6 +770,8 @@ def update_content_types(xml_bytes: bytes) -> bytes:
 
 def build_docx() -> dict[str, int | str]:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    if GENERATED_FIGURE_DIR.exists():
+        shutil.rmtree(GENERATED_FIGURE_DIR)
     tex = strip_comments(TEX_PATH.read_text(encoding="utf-8"))
     citation_map, references = extract_bibliography(tex)
     label_map = first_pass_label_map(tex)
@@ -692,6 +795,8 @@ def build_docx() -> dict[str, int | str]:
             zout.writestr(item, data)
         for target_name, path in media:
             zout.write(path, f"word/media/{target_name}")
+    if GENERATED_FIGURE_DIR.exists():
+        shutil.rmtree(GENERATED_FIGURE_DIR)
 
     return {
         "blocks": len(blocks),
@@ -723,8 +828,8 @@ def write_report(stats: dict[str, int | str]) -> None:
         f"- Embedded images: {stats['images']}",
         f"- References: {stats['references']}",
         f"- Missing images: {missing_images if missing_images else 'none'}",
-        f"- Image fit: all embedded figures are scaled within {SAFE_COLUMN_IMAGE_WIDTH_IN:.2f} in width and {SAFE_PAGE_IMAGE_HEIGHT_IN:.2f} in height to avoid two-column cropping.",
-        "- Layout: front matter is generated as a single-column section; the main text section is generated as two columns.",
+        f"- Image fit: all embedded figures are scaled within {SAFE_SINGLE_IMAGE_WIDTH_IN:.2f} in width and {SAFE_PAGE_IMAGE_HEIGHT_IN:.2f} in height.",
+        "- Layout: front matter is single-column; body text is two-column; figures and tables are emitted as full-width single-column sections to avoid crowding and table wrapping.",
         "",
         "## Embedded Image Sizes",
         "",

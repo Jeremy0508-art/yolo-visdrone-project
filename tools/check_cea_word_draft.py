@@ -24,13 +24,14 @@ def status_symbol(status: str) -> str:
     return {"ready": "READY", "partial": "PARTIAL", "pending": "PENDING", "missing": "MISSING"}[status]
 
 
-SAFE_IMAGE_WIDTH_IN = 3.16
-SAFE_IMAGE_HEIGHT_IN = 6.61
+SAFE_IMAGE_WIDTH_IN = 6.36
+SAFE_IMAGE_HEIGHT_IN = 8.16
+SAFE_TABLE_WIDTH_DXA = 9500
 
 
-def read_docx_text() -> tuple[str, int, int, list[int], list[tuple[float, float]], bool]:
+def read_docx_text() -> tuple[str, int, int, list[int], list[tuple[float, float]], list[int], int, bool]:
     if not DOCX_PATH.exists():
-        return "", 0, 0, [], [], False
+        return "", 0, 0, [], [], [], 0, False
     try:
         with zipfile.ZipFile(DOCX_PATH) as archive:
             document = archive.read("word/document.xml")
@@ -46,6 +47,21 @@ def read_docx_text() -> tuple[str, int, int, list[int], list[tuple[float, float]
                     paragraphs.append("".join(parts))
             table_count = len(root.findall(".//w:tbl", ns))
             media_count = len([name for name in archive.namelist() if name.startswith("word/media/")])
+            table_widths: list[int] = []
+            fixed_table_count = 0
+            for table in root.findall(".//w:tbl", ns):
+                tbl_pr = table.find("w:tblPr", ns)
+                if tbl_pr is None:
+                    table_widths.append(0)
+                    continue
+                tbl_w = tbl_pr.find("w:tblW", ns)
+                if tbl_w is not None:
+                    table_widths.append(int(tbl_w.attrib.get(f"{{{ns['w']}}}w", "0")))
+                else:
+                    table_widths.append(0)
+                layout = tbl_pr.find("w:tblLayout", ns)
+                if layout is not None and layout.attrib.get(f"{{{ns['w']}}}type") == "fixed":
+                    fixed_table_count += 1
             section_cols: list[int] = []
             for sect in root.findall(".//w:sectPr", ns):
                 cols = sect.find("w:cols", ns)
@@ -59,9 +75,9 @@ def read_docx_text() -> tuple[str, int, int, list[int], list[tuple[float, float]
                 cx = int(extent.attrib.get("cx", "0"))
                 cy = int(extent.attrib.get("cy", "0"))
                 image_extents.append((cx / 914400, cy / 914400))
-        return "\n".join(paragraphs), table_count, media_count, section_cols, image_extents, True
+        return "\n".join(paragraphs), table_count, media_count, section_cols, image_extents, table_widths, fixed_table_count, True
     except Exception as exc:  # pragma: no cover - report generation path
-        return f"ERROR: {exc}", 0, 0, [], [], False
+        return f"ERROR: {exc}", 0, 0, [], [], [], 0, False
 
 
 def count_cjk(text: str) -> int:
@@ -80,7 +96,7 @@ def extract_between(text: str, start: str, end: str) -> str:
 
 
 def audit() -> list[Check]:
-    text, table_count, media_count, section_cols, image_extents, valid = read_docx_text()
+    text, table_count, media_count, section_cols, image_extents, table_widths, fixed_table_count, valid = read_docx_text()
     checks: list[Check] = [
         Check(
             "CEA Word draft exists",
@@ -113,9 +129,9 @@ def audit() -> list[Check]:
     checks.append(
         Check(
             "CEA section layout",
-            "ready" if section_cols[:2] == [1, 2] else "partial",
+            "ready" if section_cols and section_cols[0] == 1 and 2 in section_cols else "partial",
             f"section columns={section_cols}",
-            "" if section_cols[:2] == [1, 2] else "Use single-column front matter and two-column main text.",
+            "" if section_cols and section_cols[0] == 1 and 2 in section_cols else "Use single-column front matter and two-column body text.",
         )
     )
 
@@ -159,6 +175,24 @@ def audit() -> list[Check]:
             "ready" if chinese_tables >= 10 and english_tables >= 10 and table_count == 10 else "partial",
             f"{chinese_tables} Chinese table captions, {english_tables} English table captions, {table_count} Word tables",
             "" if chinese_tables >= 10 and english_tables >= 10 and table_count == 10 else "Check table captions and parsed Word tables.",
+        )
+    )
+
+    narrow_tables = [
+        f"{idx}: {width}"
+        for idx, width in enumerate(table_widths, 1)
+        if width < SAFE_TABLE_WIDTH_DXA
+    ]
+    checks.append(
+        Check(
+            "Full-width fixed tables",
+            "ready" if table_widths and not narrow_tables and fixed_table_count == table_count else "partial",
+            f"{table_count} tables; min width={min(table_widths) if table_widths else 0} dxa; fixed={fixed_table_count}/{table_count}"
+            if not narrow_tables
+            else "; ".join(narrow_tables),
+            ""
+            if table_widths and not narrow_tables and fixed_table_count == table_count
+            else "Regenerate the Word draft with full-width fixed table layout.",
         )
     )
 
