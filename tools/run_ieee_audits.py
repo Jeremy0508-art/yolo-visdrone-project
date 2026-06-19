@@ -26,6 +26,7 @@ STEPS = [
     AuditStep("check IEEE claims", [sys.executable, "tools/check_ieee_claims.py"]),
     AuditStep("check IEEE front matter", [sys.executable, "tools/check_ieee_front_matter.py"]),
     AuditStep("build number trace audit", [sys.executable, "tools/build_ieee_number_trace_audit.py"]),
+    AuditStep("check result interpretation matrix", [sys.executable, "tools/check_ieee_result_interpretation_matrix.py"]),
     AuditStep("check IEEE references", [sys.executable, "tools/check_ieee_references.py"]),
     AuditStep("check dataset compliance", [sys.executable, "tools/check_ieee_dataset_compliance.py"]),
     AuditStep("build server progress report", [sys.executable, "tools/build_ieee_server_progress_report.py"]),

@@ -72,6 +72,7 @@ def build_dashboard() -> str:
     front_text = read_text("paper/ieee_front_matter_audit.md")
     number_text = read_text("paper/ieee_number_trace_audit.md")
     dataset_text = read_text("paper/ieee_dataset_compliance_audit.md")
+    interpretation_text = read_text("paper/ieee_result_interpretation_matrix_audit.md")
     phase = parse_summary(phase_text)
     claim = parse_summary(claim_text)
     server = parse_summary(server_text)
@@ -82,6 +83,7 @@ def build_dashboard() -> str:
     front = parse_summary(front_text)
     number = parse_summary(number_text)
     dataset = parse_summary(dataset_text)
+    interpretation = parse_summary(interpretation_text)
     related_rows = count_csv_rows("paper/ieee_related_work_matrix.csv")
     section_rows = count_csv_rows("paper/ieee_trans/evidence_to_sections.csv")
 
@@ -145,6 +147,10 @@ def build_dashboard() -> str:
             f"| Dataset compliance audit | {dataset.get('Ready', 'n/a')} | {dataset.get('Pending', 'n/a')} | "
             f"{status_badge(dataset.get('Missing', 'n/a'))} | `paper/ieee_dataset_compliance_audit.md` |"
         ),
+        (
+            f"| Result interpretation matrix | {interpretation.get('Ready', 'n/a')} | n/a | "
+            f"{status_badge(interpretation.get('Missing', 'n/a'))} | `paper/ieee_result_interpretation_matrix_audit.md` |"
+        ),
         f"| Related-work matrix | {related_rows} rows | n/a | n/a | `paper/ieee_related_work_matrix.csv` |",
         f"| Evidence-to-section map | {section_rows} rows | n/a | n/a | `paper/ieee_trans/evidence_to_sections.csv` |",
         "",
@@ -169,6 +175,7 @@ def build_dashboard() -> str:
         "- Figure source manifest and audit: `paper/ieee_trans/figure_source_manifest.md`, `paper/ieee_figure_audit.md`",
         "- Front-matter audit for T-ITS title, abstract, index terms, and metadata: `paper/ieee_front_matter_audit.md`",
         "- Number trace audit for draft paragraphs: `paper/ieee_number_trace_audit.md`",
+        "- Result interpretation matrix and audit: `paper/ieee_result_interpretation_matrix.md`, `paper/ieee_result_interpretation_matrix_audit.md`",
         "- Dataset license and compliance audits: `paper/ieee_dataset_license_audit.md`, `paper/ieee_dataset_compliance_audit.md`",
         "- Server resume runbook: `paper/ieee_server_resume_runbook.md`",
         "- Server integration protocol: `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`",

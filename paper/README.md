@@ -34,6 +34,8 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_required_experiment_gap.md` | Experiment and evidence gaps for an IEEE-level paper |
 | `ieee_method_design_notes.md` | Candidate method notes, including TOFC |
 | `ieee_method_selection_protocol.md` | Decision protocol for selecting the final method after real results arrive |
+| `ieee_result_interpretation_matrix.md` | Evidence-bounded result-reading matrix for IEEE manuscript wording |
+| `ieee_result_interpretation_matrix_audit.md` | Generated check for the IEEE result interpretation matrix |
 | `ieee_claim_boundary.md` | Claim rules and locked/allowed wording |
 | `ieee_reviewer_risk_register.md` | Reviewer-risk register and mitigation plan |
 | `ieee_trans_response_plan.md` | Preparatory response plan for likely IEEE reviewer concerns |
