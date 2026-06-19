@@ -6,8 +6,8 @@ It is an automated public-link check, not a substitute for manual browser review
 
 ## Summary
 
-- Total checks: 42
-- Ready: 42
+- Total checks: 43
+- Ready: 43
 - Partial: 0
 - Missing: 0
 
@@ -53,6 +53,7 @@ It is an automated public-link check, not a substitute for manual browser review
 | IEEE result interpretation audit raw | READY | `HTTP 200` |  |
 | IEEE dataset license audit raw | READY | `HTTP 200` |  |
 | IEEE dataset compliance audit raw | READY | `HTTP 200` |  |
+| UAVDT conversion readiness audit raw | READY | `HTTP 200` |  |
 | IEEE server resume runbook raw | READY | `HTTP 200` |  |
 | IEEE cover letter workbench raw | READY | `HTTP 200` |  |
 | IEEE scale AP interpretation raw | READY | `HTTP 200` |  |
