@@ -180,6 +180,14 @@ def audit() -> list[Check]:
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_reference_gap_report.md",
         ),
         (
+            "IEEE literature comparison protocol raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_literature_comparison_protocol.md",
+        ),
+        (
+            "IEEE literature context CSV raw",
+            "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/tables/ieee_literature_context.csv",
+        ),
+        (
             "IEEE cover letter workbench raw",
             "https://raw.githubusercontent.com/Jeremy0508-art/yolo-visdrone-project/main/paper/ieee_trans/cover_letter_workbench.md",
         ),

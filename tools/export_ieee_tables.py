@@ -12,6 +12,7 @@ SPEED_RESULTS = ROOT / "paper/tables/speed_results.csv"
 MODEL_COMPLEXITY = ROOT / "paper/tables/model_complexity.csv"
 SCALE_RESULTS = ROOT / "paper/tables/ieee_scale_results_visdrone.csv"
 SCALE_AP_RESULTS = ROOT / "paper/tables/ieee_scale_ap_results_visdrone.csv"
+LITERATURE_CONTEXT = ROOT / "paper/tables/ieee_literature_context.csv"
 
 
 MAIN_MODELS = [
@@ -228,6 +229,38 @@ def export_scale_ap_results() -> None:
     (OUT_DIR / "scale_bin_ap.tex").write_text(content, encoding="utf-8")
 
 
+def export_literature_context() -> None:
+    rows = read_csv(LITERATURE_CONTEXT)
+    if not rows:
+        return
+    tex_rows: list[str] = []
+    for row in rows:
+        tex_rows.append(
+            " & ".join(
+                [
+                    tex_escape(row["work"]),
+                    tex_escape(row["seed_key"]),
+                    row["year"],
+                    tex_escape(row["base_or_focus"]),
+                    tex_escape(row["current_use"]),
+                ]
+            )
+            + " \\\\"
+        )
+    content = table_env(
+        caption="Literature context for recent UAV small-object YOLO methods.",
+        label="tab:ieee_literature_context",
+        columns="llrp{0.28\\linewidth}p{0.28\\linewidth}",
+        header="Work & Key & Year & Focus & Use",
+        rows=tex_rows,
+        note=(
+            "This table is for related-work context only. "
+            "It does not contain reproduced performance values or a direct ranking."
+        ),
+    )
+    (OUT_DIR / "literature_context.tex").write_text(content, encoding="utf-8")
+
+
 def export_manifest() -> None:
     lines = [
         "# IEEE Table Source Manifest",
@@ -240,6 +273,7 @@ def export_manifest() -> None:
         "| `speed_complexity.tex` | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Completed local speed/complexity evidence only |",
         "| `scale_recall_precision.tex` | `paper/tables/ieee_scale_results_visdrone.csv` | Scale-wise recall/precision only; not AP-small |",
         "| `scale_bin_ap.tex` | `paper/tables/ieee_scale_ap_results_visdrone.csv` | Local scale-bin AP diagnostic; not official COCO/VisDrone AP-small |",
+        "| `literature_context.tex` | `paper/tables/ieee_literature_context.csv` | Related-work context only; no reproduced performance ranking |",
         "",
         "Regenerate these files after any final-model, speed, or scale-wise result changes.",
     ]
@@ -252,6 +286,7 @@ def main() -> None:
     export_speed_complexity()
     export_scale_results()
     export_scale_ap_results()
+    export_literature_context()
     export_manifest()
     print(f"Wrote IEEE tables to {OUT_DIR.relative_to(ROOT)}")
 

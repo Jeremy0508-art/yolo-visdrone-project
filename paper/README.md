@@ -37,6 +37,7 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_reviewer_risk_register.md` | Reviewer-risk register and mitigation plan |
 | `ieee_trans_response_plan.md` | Preparatory response plan for likely IEEE reviewer concerns |
 | `ieee_reference_gap_report.md` | Reference coverage and pending recent-method citation gaps |
+| `ieee_literature_comparison_protocol.md` | Rules for separating reproduced and reported-only literature comparisons |
 | `IEEE_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing complete server-side results |
 | `ieee_scale_result_interpretation.md` | Scale-wise recall/precision interpretation |
 | `ieee_scale_ap_interpretation.md` | Local scale-bin AP diagnostic interpretation |
@@ -59,6 +60,7 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `tables/speed_results.csv` | Wall-clock speed and Ultralytics timing results |
 | `tables/ieee_scale_results_visdrone.csv` | Scale-wise recall/precision for completed VisDrone models |
 | `tables/ieee_scale_ap_results_visdrone.csv` | Local scale-bin AP diagnostics for completed VisDrone models |
+| `tables/ieee_literature_context.csv` | Reported-literature context table without performance ranking |
 | `figures/scale_analysis/ieee_scale_recall_visdrone.png` | Scale-wise recall figure |
 | `figures/scale_analysis/ieee_scale_ap50_visdrone.png` | Local scale-bin AP50 figure |
 | `commands.md` | Reproducibility commands |

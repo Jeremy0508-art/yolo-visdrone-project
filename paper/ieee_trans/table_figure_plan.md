@@ -14,7 +14,7 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 | T6 | Scale-wise recall/precision metrics | `paper/tables/ieee_scale_results_visdrone.csv` | Ready for completed VisDrone models | Use recall/precision wording; do not call this AP-small. |
 | T6b | Local scale-bin AP diagnostics | `paper/tables/ieee_scale_ap_results_visdrone.csv` | Ready for completed VisDrone models | Local diagnostic only; do not call this official COCO/VisDrone AP-small. |
 | T7 | Speed and complexity | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Ready for existing models | Must be refreshed after any new final model. |
-| T8 | Literature comparison | `paper/ieee_related_work_matrix.csv` plus verified papers | Pending | Keep reproduced and reported-only results separate. |
+| T8 | Literature context comparison | `paper/tables/ieee_literature_context.csv`, `paper/ieee_literature_comparison_protocol.md` | Ready as context | Contains no performance ranking; keep reproduced and reported-only results separate. |
 
 ## Figures
 

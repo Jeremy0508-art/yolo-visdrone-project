@@ -14,6 +14,7 @@ REQUIRED_TABLES = [
     "speed_complexity.tex",
     "scale_recall_precision.tex",
     "scale_bin_ap.tex",
+    "literature_context.tex",
     "README.md",
 ]
 

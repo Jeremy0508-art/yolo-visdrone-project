@@ -28,6 +28,8 @@ REQUIRED_FILES = [
     ("Planning", "IEEE experiment registry", "paper/tables/ieee_experiment_registry.csv"),
     ("Planning", "IEEE experiment registry audit", "paper/ieee_experiment_registry_audit.md"),
     ("Planning", "Related-work seed matrix", "paper/ieee_related_work_matrix.csv"),
+    ("Planning", "IEEE literature comparison protocol", "paper/ieee_literature_comparison_protocol.md"),
+    ("Planning", "IEEE literature context table", "paper/tables/ieee_literature_context.csv"),
     ("Planning", "Dataset strategy", "paper/ieee_dataset_strategy.md"),
     ("Planning", "Method design notes", "paper/ieee_method_design_notes.md"),
     ("Planning", "IEEE method selection protocol", "paper/ieee_method_selection_protocol.md"),

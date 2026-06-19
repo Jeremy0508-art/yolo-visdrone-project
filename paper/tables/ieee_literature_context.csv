@@ -1,0 +1,7 @@
+work,seed_key,year,base_or_focus,primary_dataset_context,current_use,comparison_status,allowed_manuscript_location
+TPH-YOLOv5,zhu2021tph_yolov5,2021,"YOLOv5 with extra detection heads and Transformer prediction head","VisDrone","High-resolution/head-design prior","literature-only until reproduced","Related Work"
+SOD-YOLO,li2024sod_yolo,2024,"Improved YOLOv8 for UAV small objects","VisDrone","Recent UAV YOLOv8 prior","literature-only until reproduced","Related Work"
+SOD-YOLOv8,khalili2024sod_yolov8,2024,"YOLOv8 for aerial imagery and traffic small objects","Aerial/traffic scenes","T-ITS-relevant traffic/aerial prior","literature-only until reproduced","Related Work"
+SMA-YOLO,qu2025sma_yolo,2025,"YOLOv8 with parameter-free attention and multi-scale fusion","VisDrone/UAV small-object context","Recent multi-scale UAV YOLOv8 prior","literature-only until reproduced","Related Work"
+MASF-YOLO,lu2025masf_yolo,2025,"YOLO11-based multi-scale aggregation and adaptive fusion","VisDrone","Close YOLO11 novelty-pressure prior; preprint","literature-only until reproduced","Related Work / Novelty Discussion"
+SRTSOD-YOLO,xu2025srtsod_yolo,2025,"YOLO11-based real-time UAV small-object detection","VisDrone and UAVDT","Strong recent YOLO11 prior","literature-only until reproduced","Related Work / Novelty Discussion"

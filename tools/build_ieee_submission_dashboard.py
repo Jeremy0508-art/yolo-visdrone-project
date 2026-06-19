@@ -138,7 +138,7 @@ def build_dashboard() -> str:
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
         "- Reviewer risk register and response-prep plan: `paper/ieee_reviewer_risk_register.md`, `paper/ieee_trans_response_plan.md`",
         "- Manuscript blueprint, front-matter/submission workbenches, section draft pack, assembly checklist, and main.tex preflight: `paper/ieee_trans/manuscript_blueprint.md`, `paper/ieee_trans/abstract_contribution_workbench.md`, `paper/ieee_trans/title_abstract_index_terms_workbench.md`, `paper/ieee_trans/submission_metadata_workbench.md`, `paper/ieee_trans/cover_letter_workbench.md`, `paper/ieee_trans/section_draft_pack.md`, `paper/ieee_trans/manuscript_assembly_checklist.md`, `paper/ieee_trans/main_tex_preflight.md`",
-        "- Related-work outline: `paper/ieee_trans/related_work_outline.md`",
+        "- Related-work outline and literature comparison protocol: `paper/ieee_trans/related_work_outline.md`, `paper/ieee_literature_comparison_protocol.md`, `paper/tables/ieee_literature_context.csv`",
         "- Seed bibliography, citation plan, and reference-gap report: `paper/ieee_trans/references_seed.bib`, `paper/ieee_trans/citation_plan.md`, `paper/ieee_reference_gap_report.md`",
         "- Table/figure plan: `paper/ieee_trans/table_figure_plan.md`",
         "- Generated IEEE table drafts and audit: `paper/ieee_trans/tables/`, `paper/ieee_table_audit.md`",
