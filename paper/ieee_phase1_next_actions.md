@@ -21,6 +21,8 @@ The project has switched from the CEA route to the IEEE Transactions route. Phas
 | TOFC structure audit | Done | `paper/ieee_phase1_artifact_audit.md` |
 | IEEE scale-evaluation target list | Done | `paper/tables/ieee_scale_eval_targets.csv` |
 | Scale evaluation target-CSV support | Done | `tools/evaluate_scale_groups.py` |
+| Full VisDrone scale-wise recall/precision evaluation | Done | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/ieee_scale_result_interpretation.md` |
+| Evidence-bounded IEEE section draft pack | Done | `paper/ieee_trans/section_draft_pack.md` |
 | Safe IEEE server queue draft | Done | `tools/run_ieee_server_queue.sh` |
 
 ## Immediate Technical Tasks
@@ -30,7 +32,7 @@ The project has switched from the CEA route to the IEEE Transactions route. Phas
 3. Run `scripts/check_dataset.py --data-yaml configs/dataset/uavdt.yaml` with preview images.
 4. Fix any raw-layout assumptions in the converter after seeing the actual downloaded structure.
 5. Run the first TOFC full training only after GPU/server availability is confirmed.
-6. Run the full scale-wise evaluation on completed VisDrone models when compute time is available.
+6. Re-run the full scale-wise evaluation only after adding new final-model weights.
 
 The server queue is intentionally guarded. It exits as a dry run unless `RUN_TRAINING=1` is set.
 
@@ -47,7 +49,7 @@ The server queue is intentionally guarded. It exits as a dry run unless `RUN_TRA
 ## Do Not Do Yet
 
 - Do not launch a long training queue before UAVDT conversion is verified.
-- Do not start writing final IEEE claims before scale-wise metrics exist.
+- Do not start writing final IEEE claims before TOFC and cross-dataset evidence exists.
 - Do not claim CoordAttention as a primary improvement unless new evidence supports it.
 - Do not claim official VisDrone test-dev results unless the platform returns real metrics.
 

@@ -17,6 +17,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `manuscript_blueprint.md` | Evidence-bounded IEEE manuscript plan | Ready |
 | `abstract_contribution_workbench.md` | Safe and locked abstract/contribution wording | Ready |
 | `related_work_outline.md` | IEEE related-work section outline and citation logic | Ready |
+| `section_draft_pack.md` | Evidence-bounded English section drafts for future IEEE manuscript assembly | Ready |
 | `references_seed.bib` | Seed bibliography for IEEE planning | Ready |
 | `citation_plan.md` | Citation role mapping and verification notes | Ready |
 | `evidence_to_sections.csv` | Claim/content-to-evidence mapping for sections | Ready |
