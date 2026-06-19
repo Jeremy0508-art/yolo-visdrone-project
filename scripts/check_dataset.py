@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 import cv2
+import yaml
 
 sys.path.append(str(Path(__file__).resolve().parents[1]))
 
@@ -17,11 +18,16 @@ from src.utils.visualization import draw_yolo_labels
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Check a YOLO-format VisDrone dataset.")
+    parser = argparse.ArgumentParser(description="Check a YOLO-format detection dataset.")
     parser.add_argument("--dataset-root", default="data/processed/visdrone_yolo", help="YOLO dataset root.")
     parser.add_argument("--splits", nargs="+", default=["train", "val", "test"], help="Dataset splits to check.")
     parser.add_argument("--preview-count", type=int, default=0, help="Number of labeled images to preview per split.")
     parser.add_argument("--preview-dir", default="runs/dataset_checks", help="Directory for preview images.")
+    parser.add_argument(
+        "--data-yaml",
+        default=None,
+        help="Optional YOLO data YAML. When provided, class names are loaded from this file.",
+    )
     return parser.parse_args()
 
 
@@ -31,7 +37,20 @@ def list_images(image_dir: Path) -> list[Path]:
     return sorted(path for path in image_dir.iterdir() if path.suffix.lower() in IMAGE_EXTENSIONS)
 
 
-def validate_label_file(label_path: Path) -> tuple[int, int]:
+def load_class_names(data_yaml: str | None) -> list[str]:
+    if not data_yaml:
+        return VISDRONE_CLASS_NAMES
+    yaml_path = resolve_project_path(data_yaml)
+    data = yaml.safe_load(yaml_path.read_text(encoding="utf-8"))
+    names = data.get("names", [])
+    if isinstance(names, dict):
+        return [str(names[index]) for index in sorted(names, key=lambda key: int(key))]
+    if isinstance(names, list):
+        return [str(name) for name in names]
+    raise ValueError(f"Unsupported names format in {yaml_path}")
+
+
+def validate_label_file(label_path: Path, class_count: int) -> tuple[int, int]:
     invalid = 0
     boxes = 0
 
@@ -51,7 +70,7 @@ def validate_label_file(label_path: Path) -> tuple[int, int]:
             invalid += 1
             continue
 
-        if class_id < 0 or class_id >= len(VISDRONE_CLASS_NAMES) or any(value < 0 or value > 1 for value in values):
+        if class_id < 0 or class_id >= class_count or any(value < 0 or value > 1 for value in values):
             invalid += 1
             continue
 
@@ -60,7 +79,13 @@ def validate_label_file(label_path: Path) -> tuple[int, int]:
     return boxes, invalid
 
 
-def check_split(dataset_root: Path, split: str, preview_count: int, preview_root: Path) -> dict[str, int]:
+def check_split(
+    dataset_root: Path,
+    split: str,
+    preview_count: int,
+    preview_root: Path,
+    class_names: list[str],
+) -> dict[str, int]:
     image_dir = dataset_root / "images" / split
     label_dir = dataset_root / "labels" / split
     images = list_images(image_dir)
@@ -80,7 +105,7 @@ def check_split(dataset_root: Path, split: str, preview_count: int, preview_root
             stats["missing_labels"] += 1
             continue
 
-        boxes, invalid = validate_label_file(label_path)
+        boxes, invalid = validate_label_file(label_path, len(class_names))
         stats["boxes"] += boxes
         stats["invalid_lines"] += invalid
 
@@ -93,7 +118,7 @@ def check_split(dataset_root: Path, split: str, preview_count: int, preview_root
         split_preview_dir = ensure_dir(preview_root / split)
         for image_path in random.sample(labeled_images, min(preview_count, len(labeled_images))):
             label_path = label_dir / f"{image_path.stem}.txt"
-            preview = draw_yolo_labels(image_path, label_path, VISDRONE_CLASS_NAMES)
+            preview = draw_yolo_labels(image_path, label_path, class_names)
             cv2.imwrite(str(split_preview_dir / image_path.name), preview)
 
     return stats
@@ -108,8 +133,9 @@ def main() -> None:
     if not dataset_root.exists():
         raise FileNotFoundError(f"Dataset root does not exist: {dataset_root}")
 
+    class_names = load_class_names(args.data_yaml)
     for split in args.splits:
-        stats = check_split(dataset_root, split, args.preview_count, preview_root)
+        stats = check_split(dataset_root, split, args.preview_count, preview_root, class_names)
         logging.info(
             "%s | images=%d boxes=%d missing_labels=%d empty_labels=%d invalid_lines=%d",
             split,
@@ -123,4 +149,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

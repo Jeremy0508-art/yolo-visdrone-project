@@ -1,8 +1,20 @@
-# YOLO VisDrone Journal Submission Roadmap
+# YOLO VisDrone Submission Roadmap
 
 ## Goal
 
-Prepare this YOLO VisDrone project for a Chinese journal submission, with 《计算机工程与应用》 as the target journal. The work should remain reproducible, evidence-based, and compatible with the existing training, validation, inference, and web demo workflows.
+Prepare this YOLO VisDrone project for a paper submission while keeping all experiments reproducible, evidence-based, and compatible with the existing training, validation, inference, and web demo workflows.
+
+## Current Main Route
+
+- Active route: IEEE Transactions English-journal upgrade.
+- Paused route: 《计算机工程与应用》 Chinese-journal submission. Existing CEA Word/LaTeX/PDF materials remain preserved under `paper/`, but they are no longer the active writing target.
+- Active control plan: `paper/IEEE_TRANS_SUBMISSION_PLAN.md`.
+- First IEEE planning artifacts:
+  - `paper/ieee_target_journal_analysis.md`.
+  - `paper/ieee_required_experiment_gap.md`.
+  - `paper/ieee_related_work_matrix.csv`.
+
+The IEEE route must not reuse the Chinese manuscript as a direct translation. It requires stronger novelty, cross-dataset evidence, scale-wise small-object analysis, stronger related work, and an IEEEtran English manuscript.
 
 ## Non-Negotiable Rules
 
@@ -13,7 +25,8 @@ Prepare this YOLO VisDrone project for a Chinese journal submission, with 《计
 
 ## Confirmed Paper Direction
 
-- Target: 《计算机工程与应用》 journal submission.
+- Previous target: 《计算机工程与应用》 journal submission. Status: paused.
+- New target family: IEEE Transactions. Initial priority candidates are IEEE Transactions on Intelligent Transportation Systems and IEEE Transactions on Geoscience and Remote Sensing.
 - Dataset: VisDrone2019-DET.
 - Base model: Ultralytics YOLO11n.
 - Main task: UAV aerial small-object detection.
