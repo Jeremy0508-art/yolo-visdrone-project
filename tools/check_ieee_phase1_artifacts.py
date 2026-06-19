@@ -28,6 +28,7 @@ REQUIRED_FILES = [
     ("Planning", "Dataset strategy", "paper/ieee_dataset_strategy.md"),
     ("Planning", "Method design notes", "paper/ieee_method_design_notes.md"),
     ("Planning", "Claim boundary rules", "paper/ieee_claim_boundary.md"),
+    ("Planning", "IEEE result integration protocol", "paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md"),
     ("Planning", "Next actions", "paper/ieee_phase1_next_actions.md"),
     ("Planning", "Submission checklist", "paper/ieee_submission_checklist.md"),
     ("Planning", "IEEE workspace README", "paper/ieee_trans/README.md"),
@@ -36,6 +37,7 @@ REQUIRED_FILES = [
     ("Planning", "IEEE evidence-to-section map", "paper/ieee_trans/evidence_to_sections.csv"),
     ("Planning", "IEEE table and figure plan", "paper/ieee_trans/table_figure_plan.md"),
     ("Planning", "IEEE claim audit report", "paper/ieee_claim_audit.md"),
+    ("Planning", "IEEE server progress report", "paper/ieee_server_progress_report.md"),
     ("Planning", "Advisor transition brief", "paper/ieee_advisor_transition_brief.md"),
     ("Dataset", "UAVDT data YAML", "configs/dataset/uavdt.yaml"),
     ("Dataset", "UAVDT setup notes", "paper/datasets/uavdt_setup.md"),
@@ -46,6 +48,9 @@ REQUIRED_FILES = [
     ("Analysis", "Scale target list", "paper/tables/ieee_scale_eval_targets.csv"),
     ("Execution", "Guarded server queue", "tools/run_ieee_server_queue.sh"),
     ("Execution", "IEEE claim scanner", "tools/check_ieee_claims.py"),
+    ("Execution", "IEEE server status checker", "tools/check_ieee_server_status.ps1"),
+    ("Execution", "IEEE server sync script", "tools/sync_ieee_server_results.ps1"),
+    ("Execution", "IEEE server progress reporter", "tools/build_ieee_server_progress_report.py"),
 ]
 
 
