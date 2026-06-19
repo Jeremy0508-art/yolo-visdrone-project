@@ -4,123 +4,72 @@ This directory contains the paper-facing materials for the YOLO VisDrone project
 
 The repository-level overview is maintained in `../README.md`. Use this file for paper-specific navigation, evidence rules, and rebuild commands.
 
-## Where to Read the Current Paper
+## Current Route
 
-Main LaTeX submission candidate:
+The active paper route is IEEE Transactions preparation. The earlier CEA Chinese-journal route is paused and retained as historical material.
 
-```text
-paper/manuscript_submission_candidate.tex
-```
-
-Compiled PDF:
+Current IEEE dashboard:
 
 ```text
-paper/manuscript_submission_candidate.pdf
+paper/ieee_submission_dashboard.md
 ```
 
-Recommended ways to read it:
+Current IEEE manuscript workspace:
 
-1. Open `paper/manuscript_submission_candidate.pdf` for the current paper preview.
-2. Edit `paper/manuscript_submission_candidate.tex` for the LaTeX source.
-3. Keep the Markdown drafts as earlier writing material and use the LaTeX file as the current submission-oriented baseline.
+```text
+paper/ieee_trans/
+```
 
-## Important Files
+Do not treat the old CEA PDF or Word draft as the current submission manuscript. A final IEEE `main.tex` should be created only after the gates in `paper/ieee_trans/main_tex_preflight.md` pass.
+
+## IEEE Route Files
 
 | File | Purpose |
 | --- | --- |
-| `CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | Highest-priority execution plan for pushing the project to formal 《计算机工程与应用》 submission readiness |
-| `CEA_RESULT_INTERPRETATION_MATRIX.md` | Decision matrix for rewriting claims after fair-comparison results are complete |
-| `CEA_SECTION_EVIDENCE_MAP.md` | Section-level claim and evidence map for journal manuscript rewriting |
-| `CEA_SUBMISSION_RISK_REGISTER.md` | Submission risk register for CEA-facing reviewer questions and mitigation actions |
-| `CEA_REVIEWER_RESPONSE_PREP.md` | Reviewer-question preparation matrix for CEA-facing manuscript revision and response planning |
-| `CEA_POST_RESULT_REWRITE_PLAYBOOK.md` | Section-by-section rewrite playbook for after completed fair-comparison results are synced |
-| `CEA_OFFICIAL_REQUIREMENTS_TRACKER.md` | Source tracker for official template, upload-format, and manual journal-system requirements |
-| `CEA_TEMPLATE_REQUIREMENTS_SUMMARY.md` | Extracted requirement summary from the local CEA Word template |
-| `GOAL_COMPLETION_AUDIT.md` | Requirement-to-evidence audit for the active project objective and remaining gates |
-| `CEA_SUBMISSION_PACKAGE_CHECKLIST.md` | Generated checklist for the local CEA-oriented manuscript package and remaining submission gates |
-| `CEA_MANUAL_SUBMISSION_PREFLIGHT.md` | Generated manual preflight checklist for final journal-system and package verification |
-| `CEA_FINAL_HANDOFF_CHECKLIST.md` | Final advisor/submission handoff checklist for local materials, manual gates, and claim boundaries |
-| `CEA_COVER_LETTER_DRAFT.md` | Draft cover letter / editor-facing submission note for advisor revision |
-| `CEA_PDF_VISUAL_REVIEW_FORM.md` | Page-by-page manual PDF inspection form |
-| `CEA_WORD_VISUAL_REVIEW_FORM.md` | Manual Word/WPS inspection form for the CEA Word draft |
-| `CEA_GITHUB_PUBLIC_VIEW_CHECKLIST.md` | Manual checklist for verifying GitHub rendering before sharing the repository |
-| `github_public_view_audit.md` | Automated public GitHub reachability and raw README audit |
-| `CEA_TEMPLATE_MIGRATION_RECORD.md` | Record sheet for migrating the current LaTeX/PDF candidate into the official CEA template |
-| `templates/计算机工程与应用论文模版.docx` | Local copy of the CEA Word manuscript template |
-| `CEA_SUBMISSION_METADATA_WORKSHEET.md` | Worksheet for author, affiliation, funding, declaration, and upload metadata |
-| `advisor_review_package_manifest.md` | Manifest for the lightweight advisor-review zip package |
-| `advisor_review_package.zip` | Lightweight advisor-review bundle excluding datasets, runs, and weights |
-| `advisor_review_note.md` | Cover note for sending the current paper package to an advisor |
-| `pdf_visual_contact_sheet.md` | Generated report for the PDF visual-review contact sheet |
-| `CEA_SUBMISSION_READINESS_100_PLAN.md` | Acceptance-oriented execution plan for reaching formal CEA submission readiness |
-| `CEA_FULL_SUBMISSION_EXECUTION_PLAN.md` | Execution plan for reaching 《计算机工程与应用》 journal-submission readiness |
-| `CEA_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing completed server experiments into paper evidence |
-| `CEA_MANUSCRIPT_UPDATE_QUEUE.md` | Ordered manuscript update queue after fair-comparison results finish |
-| `post_sync_update_checklist.md` | Generated checklist for manuscript/table updates after completed server-result sync |
-| `CEA_MANUSCRIPT_REWRITE_BLUEPRINT.md` | Section-by-section blueprint for expanding the LaTeX candidate into a journal manuscript |
-| `cea_server_status_snapshot.md` | Generated read-only snapshot of server fair-comparison progress |
-| `cea_server_progress_report.md` | Generated progress summary from the server status history table |
-| `CEA_JOURNAL_MASTER_PLAN.md` | Master plan for the 《计算机工程与应用》 journal submission track |
-| `CEA_REVIEW_GAP_ANALYSIS.md` | Gap analysis against Chinese YOLO journal-paper writing patterns |
-| `CEA_JOURNAL_STYLE_BENCHMARK.md` | Journal-style benchmark checklist for CEA YOLO small-object papers |
-| `CEA_JOURNAL_MANUSCRIPT_OUTLINE.md` | Section-by-section outline for expanding the paper into a journal manuscript |
-| `advisor_progress_brief.md` | Short Chinese progress brief for advisor communication |
-| `advisor_progress_brief_audit.md` | Generated audit for advisor brief freshness and evidence-boundary statements |
-| `failure_case_taxonomy.md` | Failure-mode taxonomy for qualitative manuscript discussion |
-| `reference_verification_matrix.md` | Candidate reference matrix with verification status and manuscript use |
-| `reference_verification_audit.md` | Generated audit linking the reference verification matrix to the LaTeX bibliography |
-| `PROJECT_ROADMAP.md` | Main project-to-paper roadmap and current status |
-| `CEA_SUBMISSION_PLAN.md` | Earlier journal-strengthening plan and experiment matrix |
-| `manuscript_polished.md` | Earlier polished Markdown manuscript draft |
-| `manuscript_polished.html` | Browser preview of the polished manuscript |
-| `manuscript_submission_candidate.md` | Shorter submission-oriented candidate draft |
-| `manuscript_submission_candidate.tex` | Generic LaTeX version of the submission candidate |
-| `manuscript_submission_candidate.pdf` | Compiled PDF generated from the LaTeX candidate |
-| `cea_template_migration/manuscript_cea_template_draft.docx` | First-pass CEA Word-template migration draft |
-| `cea_template_migration/cea_word_migration_audit.md` | Audit report for the CEA Word-template migration draft |
-| `cea_template_migration/cea_word_draft_quality_audit.md` | Mechanical quality audit for the CEA Word-template draft |
-| `draft_journal_intro_related_work.md` | Expanded journal-style introduction and related-work draft |
-| `latex_notes.md` | LaTeX compilation and template migration notes |
-| `manuscript_tables.md` | Paper-ready Markdown and LaTeX table drafts |
-| `selected_figures.md` | Recommended figures for the manuscript body |
-| `figure_index.md` | Full figure provenance index |
-| `evidence_audit.md` | Paper-facing number and evidence audit |
-| `manuscript_number_trace_audit.md` | Generated trace audit for decimal values in the LaTeX manuscript |
-| `manuscript_length_audit.md` | Generated audit for journal-oriented manuscript length and structural density |
-| `submission_checklist.md` | Pre-submission checklist and template migration notes |
-| `submission_readiness_audit.md` | Generated local readiness audit for paper-facing artifacts and remaining manual submission gates |
-| `paper_consistency_audit.md` | Generated consistency audit for manuscript-facing text and paper tables |
-| `claim_boundary_audit.md` | Generated audit for unsupported overclaims and partial-result leakage in paper-facing text |
-| `result_interpretation_matrix_audit.md` | Generated audit for post-sync result interpretation branches and writing boundaries |
-| `manuscript_journal_gap_audit.md` | Generated structural gap audit between the LaTeX candidate and journal manuscript blueprint |
-| `tex_reference_audit.md` | Generated LaTeX citation and bibliography consistency audit |
-| `tex_figure_audit.md` | Generated LaTeX figure path and float-layout audit |
-| `tex_cross_reference_audit.md` | Generated LaTeX figure/table label and body-reference audit |
-| `tex_table_source_audit.md` | Generated LaTeX table label and source-provenance audit |
-| `section_evidence_map_audit.md` | Generated audit for section-level claim-to-evidence mapping |
-| `submission_risk_register_audit.md` | Generated audit for submission risk IDs, evidence paths, and mitigation coverage |
-| `cea_reviewer_response_prep_audit.md` | Generated audit for reviewer-question coverage, evidence paths, and response boundaries |
-| `cea_post_result_rewrite_playbook_audit.md` | Generated audit for post-result rewrite-section coverage and claim boundaries |
-| `cea_official_requirements_tracker_audit.md` | Generated audit for official-requirement source rows and manual verification fields |
-| `synced_fair_experiment_artifacts_audit.md` | Generated audit for local artifacts required by completed fair-comparison experiments |
-| `repro_commands_audit.md` | Generated audit for reproducibility command coverage |
-| `config_inventory_audit.md` | Generated audit for dataset/model/train/server configuration files |
-| `text_hygiene_audit.md` | Generated audit for hidden characters and common mojibake fragments in reader-facing text |
-| `project_readme_presentation_audit.md` | Generated audit for repository-level README presentation quality |
-| `github_public_view_audit.md` | Generated audit for public GitHub reachability, raw README content, and key paper links |
-| `pdf_text_readability_audit.md` | Generated audit for compiled PDF text extraction and basic readability tokens |
-| `pdf_layout_health_audit.md` | Generated audit for compiled PDF page count, page size, blank pages, and figure-heavy pages |
-| `figures/pdf_review/manuscript_pages_contact_sheet.jpg` | Contact sheet of all current manuscript PDF pages for visual review |
-| `submission_material_manifest.md` | Generated index of current submission-facing documents, tables, figures, and audits |
-| `submission_audit_dashboard.md` | Generated one-page dashboard summarizing paper-facing audits |
-| `GOAL_COMPLETION_AUDIT.md` | Generated audit mapping the full project objective to evidence and remaining manual/external gates |
-| `references.md` | Reference list draft |
+| `IEEE_TRANS_SUBMISSION_PLAN.md` | Master plan for the IEEE Transactions route |
+| `ieee_submission_dashboard.md` | One-page readiness dashboard for the IEEE route |
+| `ieee_target_journal_analysis.md` | Target-journal fit analysis, with T-ITS as the leading direction |
+| `ieee_required_experiment_gap.md` | Experiment and evidence gaps for an IEEE-level paper |
+| `ieee_method_design_notes.md` | Candidate method notes, including TOFC |
+| `ieee_method_selection_protocol.md` | Decision protocol for selecting the final method after real results arrive |
+| `ieee_claim_boundary.md` | Claim rules and locked/allowed wording |
+| `ieee_reviewer_risk_register.md` | Reviewer-risk register and mitigation plan |
+| `IEEE_RESULT_INTEGRATION_PROTOCOL.md` | Rules for syncing complete server-side results |
+| `ieee_scale_result_interpretation.md` | Scale-wise recall/precision interpretation |
+| `ieee_scale_ap_interpretation.md` | Local scale-bin AP diagnostic interpretation |
+| `ieee_phase1_artifact_audit.md` | Generated audit for IEEE planning and evidence artifacts |
+| `ieee_trans/README.md` | Navigation for the IEEE manuscript workspace |
+| `ieee_trans/section_draft_pack.md` | Evidence-bounded English section drafts |
+| `ieee_trans/manuscript_assembly_checklist.md` | Gates and order for assembling a future IEEE manuscript |
+| `ieee_trans/main_tex_preflight.md` | Preflight checklist before creating final-facing `main.tex` |
+| `ieee_trans/tables/` | Generated IEEE LaTeX table drafts |
+
+## Current Evidence Artifacts
+
+| Artifact | Purpose |
+| --- | --- |
+| `tables/main_comparison_for_paper.csv` | Main VisDrone validation results and completed baselines |
+| `tables/model_complexity.csv` | Parameters, GFLOPs, and weight size |
+| `tables/speed_results.csv` | Wall-clock speed and Ultralytics timing results |
+| `tables/ieee_scale_results_visdrone.csv` | Scale-wise recall/precision for completed VisDrone models |
+| `tables/ieee_scale_ap_results_visdrone.csv` | Local scale-bin AP diagnostics for completed VisDrone models |
+| `figures/scale_analysis/ieee_scale_recall_visdrone.png` | Scale-wise recall figure |
+| `figures/scale_analysis/ieee_scale_ap50_visdrone.png` | Local scale-bin AP50 figure |
 | `commands.md` | Reproducibility commands |
-| `experiment_protocol.md` | Experimental protocol and evidence rules |
-| `testdev_submission.md` | VisDrone local submission package notes |
-| `tables/object_scale_distribution.csv` | Object scale distribution from YOLO-format VisDrone labels |
-| `tables/scale_group_results.csv` | Thresholded scale-group validation matching results |
-| `tables/accuracy_speed_tradeoff.csv` | Source table for the accuracy-speed-parameter trade-off figure |
+
+## Legacy CEA Materials
+
+The CEA route materials remain available for reference, formatting history, and earlier Chinese writing drafts:
+
+```text
+paper/manuscript_submission_candidate.tex
+paper/manuscript_submission_candidate.pdf
+paper/cea_template_migration/
+paper/CEA_*.md
+paper/submission_audit_dashboard.md
+```
+
+They should not be used as the current IEEE submission source.
 
 ## Evidence Rule
 
@@ -131,39 +80,34 @@ Paper-facing numbers should be traceable to one of:
 - `runs/logs/`
 - an official VisDrone result returned by the evaluation server
 
-The current manuscript is organized around validation-set metrics, speed/complexity measurements, scale-group analysis, per-class analysis, and qualitative figures.
+The current IEEE planning materials are organized around validation-set metrics, speed/complexity measurements, scale-wise recall/precision, local scale-bin AP diagnostics, per-class analysis, and qualitative figures.
 
 Additional baseline workflows such as YOLOv8n/YOLO11s are recorded in the project configs and command notes. Paper tables are updated from audited logs and exported result files.
 
-## Regenerate HTML Preview
+## IEEE Audit and Table Refresh
 
 ```powershell
-python tools/render_markdown_preview.py --input paper/manuscript_polished.md --output paper/manuscript_polished.html
+python tools/run_ieee_audits.py
 ```
 
-The current polished manuscript embeds the recommended figures with relative paths under `paper/figures/`, so the HTML preview should show both tables and images.
+This command refreshes IEEE planning audits, generated table drafts, scale-wise interpretations, and the IEEE submission dashboard. It does not launch training and does not connect to the server.
 
-To preview the shorter submission candidate:
+Generated IEEE table drafts are stored in:
 
-```powershell
-python tools/render_markdown_preview.py --input paper/manuscript_submission_candidate.md --output paper/manuscript_submission_candidate.html
+```text
+paper/ieee_trans/tables/
 ```
 
-## LaTeX Draft
+## Legacy LaTeX Preview
 
-Generic LaTeX source:
+The generic LaTeX draft below belongs to the earlier non-IEEE/CEA preparation route:
 
 ```text
 paper/manuscript_submission_candidate.tex
-```
-
-Compiled PDF:
-
-```text
 paper/manuscript_submission_candidate.pdf
 ```
 
-Recommended build command if TeX Live or MiKTeX is installed:
+It can still be rebuilt for historical reference:
 
 ```powershell
 cd paper
@@ -171,27 +115,14 @@ xelatex manuscript_submission_candidate.tex
 xelatex manuscript_submission_candidate.tex
 ```
 
-Project build helper:
+For the IEEE route, do not create or compile `paper/ieee_trans/main.tex` until `paper/ieee_trans/main_tex_preflight.md` passes.
+
+## Optional Legacy Helpers
+
+Legacy paper-preview helpers are still available:
 
 ```powershell
 .\tools\build_paper_pdf.ps1
-```
-
-Run the full paper-facing audit sequence:
-
-```powershell
 python tools/run_paper_audits.py
-```
-
-Build the lightweight advisor-review package:
-
-```powershell
 python tools/build_advisor_review_package.py
-```
-
-Local lightweight build command if `.tools/tectonic/tectonic.exe` exists:
-
-```powershell
-cd paper
-..\.tools\tectonic\tectonic.exe manuscript_submission_candidate.tex
 ```
