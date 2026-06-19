@@ -77,7 +77,7 @@ Purpose in manuscript:
 Key sources to cite:
 - Ultralytics YOLO documentation only for implementation context.
 - YOLOv5n/YOLOv8n/YOLO11n/YOLO11s local baseline results.
-- Recent UAV YOLO papers such as SOD-YOLO, SOD-YOLOv8, MASF-YOLO, and SRTSOD-YOLO after citation verification.
+- Recent UAV YOLO papers such as SOD-YOLO, SMA-YOLO, SOD-YOLOv8, MASF-YOLO, and SRTSOD-YOLO. Seed BibTeX entries have been added, but metadata should be rechecked before final submission.
 
 Draft logic:
 1. YOLO-family detectors are widely used where inference speed matters.
@@ -121,7 +121,7 @@ When preparing the final IEEE literature comparison:
 
 ## Next Citation Tasks
 
-1. Convert high-priority rows in `paper/ieee_related_work_matrix.csv` to BibTeX.
-2. Verify recent UAV YOLO papers through primary paper pages or publisher pages.
-3. Identify which methods have public code and can realistically be reproduced.
-4. Create a separate reproduced-vs-reported comparison table before writing the final IEEE Results section.
+1. Recheck recently added UAV YOLO BibTeX entries against publisher/arXiv metadata before final `references.bib`.
+2. Identify which recent methods have public code and can realistically be reproduced.
+3. Create a separate reproduced-vs-reported comparison table before writing the final IEEE Results section.
+4. Keep literature-only reported values out of the main reproduced-results table.

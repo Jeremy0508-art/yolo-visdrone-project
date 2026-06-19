@@ -16,6 +16,6 @@ It does not certify final bibliographic correctness. Publisher metadata should b
 | Item | Status | Evidence | Action |
 | --- | --- | --- | --- |
 | Seed bibliography exists | READY | `paper\ieee_trans\references_seed.bib` |  |
-| Reference entry count | READY | `17 entries; types={'inproceedings': 9, 'misc': 5, 'article': 3}` |  |
+| Reference entry count | READY | `22 entries; types={'inproceedings': 9, 'misc': 6, 'article': 7}` |  |
 | Duplicate BibTeX keys | READY | `none` |  |
-| Common fields present | READY | `author, booktitle, doi, howpublished, journal, note, number, pages, title, volume, year` |  |
+| Common fields present | READY | `archivePrefix, author, booktitle, doi, eprint, howpublished, journal, note, number, pages, primaryClass, title, volume, year` |  |

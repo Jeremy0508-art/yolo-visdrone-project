@@ -20,7 +20,7 @@ This report compares the current related-work matrix with the seed BibTeX file a
 | Feature pyramid and fusion background | Covered | FPN, PANet, and EfficientDet are represented. |
 | Attention background | Covered | Coordinate Attention is represented. |
 | Drone-specific high-resolution YOLO prior | Covered at seed level | TPH-YOLOv5 is represented and should be used carefully as a close prior. |
-| Recent 2024-2025 UAV/YOLO small-object papers | Pending metadata verification | Several rows exist in the related-work matrix, but their BibTeX entries are not yet verified. |
+| Recent 2024-2025 UAV/YOLO small-object papers | Seed BibTeX added; final verification still needed | SOD-YOLO, SMA-YOLO, MASF-YOLO, SRTSOD-YOLO, and SOD-YOLOv8 are now represented in the seed bibliography. |
 | Target-journal official pages | Not final bibliography items by default | These are planning sources and should usually remain in planning documents, not the manuscript references. |
 
 ## Seed Bibliography Items Already Available
@@ -41,18 +41,23 @@ This report compares the current related-work matrix with the seed BibTeX file a
 | AU-AIR | `bozcan2020auair` | Traffic UAV dataset background |
 | TinyPerson / Scale Match | `yu2020tinyperson` | Tiny-person scale mismatch background |
 | HIT-UAV | `suo2023hituav` | Adjacent UAV detection dataset background |
+| SOD-YOLO | `li2024sod_yolo` | Recent UAV small-object YOLOv8 prior |
+| SMA-YOLO | `qu2025sma_yolo` | Recent UAV small-object multi-scale YOLOv8 prior |
+| MASF-YOLO | `lu2025masf_yolo` | Recent YOLO11-based drone small-object preprint / novelty risk |
+| SRTSOD-YOLO | `xu2025srtsod_yolo` | Recent YOLO11-based real-time UAV small-object prior |
+| SOD-YOLOv8 | `khalili2024sod_yolov8` | Traffic/aerial small-object YOLOv8 prior |
 
-## Pending Recent-Method References
+## Recently Added Method References
 
-The following related-work matrix rows should be converted to verified BibTeX entries only after checking publisher metadata, DOI, page/article number, and official title spelling.
+The following related-work matrix rows now have seed BibTeX entries. They should still be rechecked against publisher metadata before the final `references.bib` is created.
 
-| Paper / Resource | Year | Current Source URL | Planned Use | Needed Action |
+| Paper / Resource | Year | BibTeX Key | Current Source URL | Remaining Action |
 | --- | ---: | --- | --- | --- |
-| SOD-YOLO | 2024 | `https://www.mdpi.com/2072-4292/16/16/3057` | Recent UAV small-object YOLO prior | Verify title, authors, DOI, article number, and add BibTeX if used. |
-| SMA-YOLO | 2025 | `https://www.mdpi.com/2072-4292/17/14/2421` | Recent multi-scale UAV small-object method | Verify publisher metadata and decide whether it is central enough to cite. |
-| MASF-YOLO | 2025 | `https://arxiv.org/abs/2504.18136` | Very close YOLO11-based prior / novelty risk | Treat as preprint unless a peer-reviewed version exists; cite only with clear status. |
-| SRTSOD-YOLO | 2025 | `https://www.mdpi.com/2072-4292/17/20/3414` | Recent real-time UAV small-object method | Verify publication metadata before final bibliography. |
-| SOD-YOLOv8 | 2024 | `https://pmc.ncbi.nlm.nih.gov/articles/PMC11478522/` | Aerial/traffic small-object YOLOv8 prior | Verify original journal citation and DOI, not only PMC page. |
+| SOD-YOLO | 2024 | `li2024sod_yolo` | `https://www.mdpi.com/2072-4292/16/16/3057` | Recheck MDPI metadata before final bibliography. |
+| SMA-YOLO | 2025 | `qu2025sma_yolo` | `https://www.mdpi.com/2072-4292/17/14/2421` | Recheck MDPI metadata before final bibliography. |
+| MASF-YOLO | 2025 | `lu2025masf_yolo` | `https://arxiv.org/abs/2504.18136` | Treat as an arXiv preprint unless a peer-reviewed version appears. |
+| SRTSOD-YOLO | 2025 | `xu2025srtsod_yolo` | `https://www.mdpi.com/2072-4292/17/20/3414` | Recheck MDPI metadata before final bibliography. |
+| SOD-YOLOv8 | 2024 | `khalili2024sod_yolov8` | `https://www.mdpi.com/1424-8220/24/19/6209` | Recheck Sensors metadata before final bibliography. |
 
 ## Citation Strategy for the IEEE Manuscript
 
@@ -66,7 +71,7 @@ Do not use recent-method papers as direct numerical comparisons unless the datas
 
 ## Next Actions
 
-1. Verify the five pending recent-method references from publisher or official paper pages.
-2. Add BibTeX entries only after metadata is confirmed.
-3. Update `paper/ieee_trans/citation_plan.md` with citation roles after new entries are added.
+1. Recheck all five recently added method references before creating final `references.bib`.
+2. Update `paper/ieee_trans/citation_plan.md` with where each recent method will be cited.
+3. Keep reproduced local comparisons separate from literature-only comparisons.
 4. Re-run `python tools/check_ieee_references.py` and `python tools/run_ieee_audits.py`.
