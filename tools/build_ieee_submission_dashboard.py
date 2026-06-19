@@ -63,12 +63,14 @@ def build_dashboard() -> str:
     scale_text = read_text("paper/ieee_scale_output_audit.md")
     registry_text = read_text("paper/ieee_experiment_registry_audit.md")
     table_text = read_text("paper/ieee_table_audit.md")
+    figure_text = read_text("paper/ieee_figure_audit.md")
     phase = parse_summary(phase_text)
     claim = parse_summary(claim_text)
     server = parse_summary(server_text)
     scale = parse_summary(scale_text)
     registry = parse_summary(registry_text)
     table = parse_summary(table_text)
+    figure = parse_summary(figure_text)
     related_rows = count_csv_rows("paper/ieee_related_work_matrix.csv")
     section_rows = count_csv_rows("paper/ieee_trans/evidence_to_sections.csv")
 
@@ -114,6 +116,10 @@ def build_dashboard() -> str:
             f"| IEEE table drafts | {table.get('Ready', 'n/a')} | {table.get('Pending', 'n/a')} | "
             f"{status_badge(table.get('Missing', 'n/a'))} | `paper/ieee_table_audit.md` |"
         ),
+        (
+            f"| IEEE figure manifest | {figure.get('Ready', 'n/a')} | {figure.get('Pending', 'n/a')} | "
+            f"{status_badge(figure.get('Missing', 'n/a'))} | `paper/ieee_figure_audit.md` |"
+        ),
         f"| Related-work matrix | {related_rows} rows | n/a | n/a | `paper/ieee_related_work_matrix.csv` |",
         f"| Evidence-to-section map | {section_rows} rows | n/a | n/a | `paper/ieee_trans/evidence_to_sections.csv` |",
         "",
@@ -131,6 +137,7 @@ def build_dashboard() -> str:
         "- Seed bibliography and citation plan: `paper/ieee_trans/references_seed.bib`, `paper/ieee_trans/citation_plan.md`",
         "- Table/figure plan: `paper/ieee_trans/table_figure_plan.md`",
         "- Generated IEEE table drafts and audit: `paper/ieee_trans/tables/`, `paper/ieee_table_audit.md`",
+        "- Figure source manifest and audit: `paper/ieee_trans/figure_source_manifest.md`, `paper/ieee_figure_audit.md`",
         "- Server integration protocol: `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md`",
         "- Scale-wise evaluation protocol, audit, and interpretation: `paper/ieee_scale_evaluation_protocol.md`, `paper/ieee_scale_output_audit.md`, `paper/ieee_scale_result_interpretation.md`",
         "- Guarded server queue: `tools/run_ieee_server_queue.sh`",

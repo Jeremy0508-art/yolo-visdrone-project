@@ -37,6 +37,6 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 
 ## Immediate Next Actions
 
-1. Generate `figure_source_manifest.md` after selecting final figures.
+1. Keep `paper/ieee_trans/figure_source_manifest.md` updated after selecting or regenerating IEEE figures.
 2. Use `tools/export_ieee_tables.py` to regenerate current evidence-backed LaTeX table drafts after any source CSV changes.
 3. Leave locked tables out of `main.tex` until their evidence exists.
