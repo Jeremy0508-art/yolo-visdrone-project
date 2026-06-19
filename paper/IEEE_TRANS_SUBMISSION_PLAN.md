@@ -19,6 +19,20 @@
 - IEEE Template Selector: `https://template-selector.ieee.org/`
 - IEEE submission and peer review policies: `https://journals.ieeeauthorcenter.ieee.org/become-an-ieee-journal-author/publishing-ethics/guidelines-and-policies/submission-and-peer-review-policies/`
 
+## Evidence Boundary / Do Not Claim Gates
+
+Before the IEEE manuscript is drafted or revised, every major claim must be mapped to local evidence in `runs/`, `runs/logs/`, `paper/tables/`, validation outputs, or official benchmark results.
+
+Do not claim the following until the required evidence exists:
+- TOFC improves detection accuracy, small-object recall, or generalization.
+- The method generalizes beyond VisDrone.
+- The method outperforms SOTA or larger-capacity detectors.
+- VisDrone test-dev official results are available.
+- Multi-seed stability has been demonstrated.
+- A result is ready for an IEEE Transactions submission table without a traceable run directory, command/configuration, log, weight file, and metric table.
+
+The current safe wording is limited to completed VisDrone experiments, structural model facts, and planned IEEE validation work. See `paper/ieee_claim_boundary.md` for the working claim-to-evidence rules.
+
 ## 候选目标期刊
 
 IEEE Transactions 级别期刊必须先确定目标刊物，因为不同刊物关注点不同。当前项目围绕无人机航拍、小目标检测、轻量 YOLO 改进和交通/城市监控场景，初步候选如下。
