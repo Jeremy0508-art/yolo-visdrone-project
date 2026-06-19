@@ -26,6 +26,7 @@ def status_symbol(status: str) -> str:
 
 SAFE_IMAGE_WIDTH_IN = 6.36
 SAFE_IMAGE_HEIGHT_IN = 8.16
+NARROW_IMAGE_WIDTH_IN = 3.40
 SAFE_TABLE_WIDTH_DXA = 9500
 
 
@@ -224,6 +225,40 @@ def audit() -> list[Check]:
             ""
             if image_extents and not oversize
             else "Regenerate the Word draft with column-safe image scaling.",
+        )
+    )
+
+    narrow_images = [
+        f"{idx}: {width:.2f}x{height:.2f}in"
+        for idx, (width, height) in enumerate(image_extents, 1)
+        if width <= NARROW_IMAGE_WIDTH_IN
+    ]
+    checks.append(
+        Check(
+            "CEA-style mixed figure widths",
+            "ready" if len(narrow_images) >= 2 else "partial",
+            f"{len(narrow_images)} column-width figures: {'; '.join(narrow_images[:4])}"
+            if narrow_images
+            else "no column-width figures detected",
+            ""
+            if len(narrow_images) >= 2
+            else "Keep simple scale-analysis figures at column width when visual readability allows.",
+        )
+    )
+
+    residual_text_tokens = [
+        token
+        for token in ["\u3001\u3001", "\u548c \u3002", "\u5f85\u8865\u5145", "TODO"]
+        if token in text
+    ]
+    checks.append(
+        Check(
+            "Residual placeholder punctuation",
+            "ready" if not residual_text_tokens else "missing",
+            "none" if not residual_text_tokens else ", ".join(residual_text_tokens),
+            ""
+            if not residual_text_tokens
+            else "Fix the source LaTeX-to-Word conversion or manuscript text before submission.",
         )
     )
 

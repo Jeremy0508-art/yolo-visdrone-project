@@ -17,8 +17,8 @@ It is a material index, not a claim that the manuscript is final-submission-read
 | Core Documents | LaTeX source | READY | `paper/manuscript_submission_candidate.tex` | 43.9 KB |
 | Core Documents | Compiled PDF | READY | `paper/manuscript_submission_candidate.pdf` | 1.65 MB |
 | Core Documents | CEA Word migration draft | READY | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.64 MB |
-| Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.5 KB |
-| Core Documents | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.2 KB |
+| Core Documents | CEA Word migration audit | READY | `paper/cea_template_migration/cea_word_migration_audit.md` | 2.7 KB |
+| Core Documents | CEA Word draft quality audit | READY | `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.4 KB |
 | Core Documents | Paper workspace README | READY | `paper/README.md` | 12.3 KB |
 | Core Documents | Final CEA submission execution plan | READY | `paper/CEA_FINAL_SUBMISSION_EXECUTION_PLAN.md` | 10.0 KB |
 | Core Documents | CEA result interpretation matrix | READY | `paper/CEA_RESULT_INTERPRETATION_MATRIX.md` | 6.6 KB |

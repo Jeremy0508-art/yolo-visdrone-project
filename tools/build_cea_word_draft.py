@@ -18,9 +18,19 @@ OUTPUT_DIR = ROOT / "paper/cea_template_migration"
 OUTPUT_DOCX = OUTPUT_DIR / "manuscript_cea_template_draft.docx"
 REPORT_PATH = OUTPUT_DIR / "cea_word_migration_audit.md"
 GENERATED_FIGURE_DIR = OUTPUT_DIR / "_generated_word_figures"
-SAFE_SINGLE_IMAGE_WIDTH_IN = 6.35
+SAFE_FULL_IMAGE_WIDTH_IN = 6.35
+SAFE_MEDIUM_IMAGE_WIDTH_IN = 5.45
+SAFE_COLUMN_IMAGE_WIDTH_IN = 3.20
 SAFE_PAGE_IMAGE_HEIGHT_IN = 8.15
 FULL_TABLE_WIDTH_DXA = 10000
+COLUMN_FIGURE_NAMES = {
+    "object_scale_distribution.png",
+    "scale_group_recall.png",
+}
+MEDIUM_FULL_FIGURE_NAMES = {
+    "hrpca_yolo11n_overview.png",
+    "p2_coordatt_960_results.png",
+}
 
 
 MACROS = {
@@ -153,6 +163,8 @@ def clean_latex(text: str, citation_map: dict[str, int] | None = None, label_map
     text = re.sub(r"\\mbox\{([^{}]*)\}", r"\1", text)
     text = re.sub(r"\\heiti\s*", "", text)
     text = re.sub(r"\\textbf\{([^{}]*)\}", r"\1", text)
+    text = re.sub(r"\\texttt\{([^{}]*)\}", r"\1", text)
+    text = re.sub(r"\\textit\{([^{}]*)\}", r"\1", text)
     text = re.sub(r"\\emph\{([^{}]*)\}", r"\1", text)
     text = re.sub(r"\\url\{([^{}]*)\}", r"\1", text)
     text = re.sub(r"\\Delta", "Δ", text)
@@ -429,21 +441,37 @@ def spacer_xml(points: int = 6) -> str:
     )
 
 
-def image_display_size(width_px: int, height_px: int) -> tuple[float, float, float]:
+def figure_layout(image_path: str | None) -> tuple[str, float]:
+    if not image_path:
+        return "full", SAFE_FULL_IMAGE_WIDTH_IN
+    name = Path(image_path).name
+    if name in COLUMN_FIGURE_NAMES:
+        return "column", SAFE_COLUMN_IMAGE_WIDTH_IN
+    if name in MEDIUM_FULL_FIGURE_NAMES:
+        return "full", SAFE_MEDIUM_IMAGE_WIDTH_IN
+    return "full", SAFE_FULL_IMAGE_WIDTH_IN
+
+
+def image_display_size(
+    width_px: int,
+    height_px: int,
+    max_width_in: float = SAFE_FULL_IMAGE_WIDTH_IN,
+    max_height_in: float = SAFE_PAGE_IMAGE_HEIGHT_IN,
+) -> tuple[float, float, float]:
     dpi = 96
     width_in = width_px / dpi
     height_in = height_px / dpi
     scale = min(
-        SAFE_SINGLE_IMAGE_WIDTH_IN / width_in if width_in else 1.0,
-        SAFE_PAGE_IMAGE_HEIGHT_IN / height_in if height_in else 1.0,
+        max_width_in / width_in if width_in else 1.0,
+        max_height_in / height_in if height_in else 1.0,
         1.0,
     )
     return width_in * scale, height_in * scale, scale
 
 
-def image_xml(rel_id: str, name: str, width_px: int, height_px: int) -> str:
+def image_xml(rel_id: str, name: str, width_px: int, height_px: int, max_width_in: float) -> str:
     emu_per_in = 914400
-    width_in, height_in, _ = image_display_size(width_px, height_px)
+    width_in, height_in, _ = image_display_size(width_px, height_px, max_width_in=max_width_in)
     cx = int(width_in * emu_per_in)
     cy = int(height_in * emu_per_in)
     doc_pr_id = abs(hash((rel_id, name))) % 100000 + 1000
@@ -575,10 +603,10 @@ def table_xml(rows: list[list[str]]) -> str:
         "<w:tblBorders>"
         "<w:top w:val=\"single\" w:sz=\"8\" w:space=\"0\" w:color=\"000000\"/>"
         "<w:bottom w:val=\"single\" w:sz=\"8\" w:space=\"0\" w:color=\"000000\"/>"
-        "<w:left w:val=\"single\" w:sz=\"2\" w:space=\"0\" w:color=\"BFBFBF\"/>"
-        "<w:right w:val=\"single\" w:sz=\"2\" w:space=\"0\" w:color=\"BFBFBF\"/>"
+        "<w:left w:val=\"nil\"/>"
+        "<w:right w:val=\"nil\"/>"
         "<w:insideH w:val=\"single\" w:sz=\"4\" w:space=\"0\" w:color=\"808080\"/>"
-        "<w:insideV w:val=\"single\" w:sz=\"2\" w:space=\"0\" w:color=\"BFBFBF\"/>"
+        "<w:insideV w:val=\"nil\"/>"
         "</w:tblBorders></w:tblPr>"
         f"<w:tblGrid>{grid}</w:tblGrid>"
         + "".join(row_xml_parts)
@@ -661,7 +689,8 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
             body.append(spacer_xml(8))
             body.append(section_break_xml(columns=1))
         elif isinstance(block, FigureBlock):
-            if two_col_dirty:
+            layout, max_image_width = figure_layout(block.image_path)
+            if layout == "full" and two_col_dirty:
                 body.append(section_break_xml(columns=2))
                 two_col_dirty = False
             fig_idx += 1
@@ -676,11 +705,16 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
                         rel_id = f"rIdCeaImage{rel_counter}"
                         with Image.open(source_path) as img:
                             width, height = img.size
-                        display_width, display_height, scale = image_display_size(width, height)
-                        image_notes.append(
-                            f"{source_path.name}: {width}x{height}px -> {display_width:.2f}x{display_height:.2f}in, scale={scale:.3f}"
+                        display_width, display_height, scale = image_display_size(
+                            width,
+                            height,
+                            max_width_in=max_image_width,
                         )
-                        body.append(image_xml(rel_id, source_path.name, width, height))
+                        image_notes.append(
+                            f"{source_path.name}: {width}x{height}px -> {display_width:.2f}x{display_height:.2f}in, "
+                            f"layout={layout}, scale={scale:.3f}"
+                        )
+                        body.append(image_xml(rel_id, source_path.name, width, height, max_width_in=max_image_width))
                         image_rels[rel_id] = (target_name, ext)
                         media.append((target_name, source_path))
                 else:
@@ -690,10 +724,14 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
                 for item in block.fallback_text:
                     body.append(paragraph_xml(item, align="center", size=18))
             en = EN_FIGURE_CAPTIONS.get(block.caption, block.caption)
-            body.append(paragraph_xml(f"图{fig_idx} {block.caption}", align="center", bold=True, size=18))
-            body.append(paragraph_xml(f"Fig.{fig_idx} {en}", align="center", size=18))
+            caption_size = 17 if layout == "column" else 18
+            body.append(paragraph_xml(f"图{fig_idx} {block.caption}", align="center", bold=True, size=caption_size))
+            body.append(paragraph_xml(f"Fig.{fig_idx} {en}", align="center", size=caption_size))
             body.append(spacer_xml(8))
-            body.append(section_break_xml(columns=1))
+            if layout == "full":
+                body.append(section_break_xml(columns=1))
+            else:
+                two_col_dirty = True
 
     if two_col_dirty:
         body.append(section_break_xml(columns=2))
@@ -828,8 +866,9 @@ def write_report(stats: dict[str, int | str]) -> None:
         f"- Embedded images: {stats['images']}",
         f"- References: {stats['references']}",
         f"- Missing images: {missing_images if missing_images else 'none'}",
-        f"- Image fit: all embedded figures are scaled within {SAFE_SINGLE_IMAGE_WIDTH_IN:.2f} in width and {SAFE_PAGE_IMAGE_HEIGHT_IN:.2f} in height.",
-        "- Layout: front matter is single-column; body text is two-column; figures and tables are emitted as full-width single-column sections to avoid crowding and table wrapping.",
+        f"- Image fit: embedded figures are scaled within {SAFE_FULL_IMAGE_WIDTH_IN:.2f} in full width, "
+        f"{SAFE_COLUMN_IMAGE_WIDTH_IN:.2f} in column width, and {SAFE_PAGE_IMAGE_HEIGHT_IN:.2f} in height.",
+        "- Layout: front matter is single-column; body text is two-column; wide tables are emitted as full-width sections; simple scale-analysis figures remain column-width to better match CEA page style.",
         "",
         "## Embedded Image Sizes",
         "",
