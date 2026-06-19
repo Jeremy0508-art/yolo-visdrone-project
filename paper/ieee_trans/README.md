@@ -19,6 +19,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `related_work_outline.md` | IEEE related-work section outline and citation logic | Ready |
 | `section_draft_pack.md` | Evidence-bounded English section drafts for future IEEE manuscript assembly | Ready |
 | `manuscript_assembly_checklist.md` | Gates and order for assembling a future IEEEtran manuscript | Ready |
+| `main_tex_preflight.md` | Preflight checklist before creating final-facing IEEEtran `main.tex` | Ready |
 | `references_seed.bib` | Seed bibliography for IEEE planning | Ready |
 | `citation_plan.md` | Citation role mapping and verification notes | Ready |
 | `evidence_to_sections.csv` | Claim/content-to-evidence mapping for sections | Ready |
