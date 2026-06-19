@@ -13,12 +13,13 @@ REQUIRED_TABLES = [
     "visdrone_main_results.tex",
     "speed_complexity.tex",
     "scale_recall_precision.tex",
+    "scale_bin_ap.tex",
     "README.md",
 ]
 
 FORBIDDEN_PATTERNS = [
     re.compile(r"TODO", re.I),
-    re.compile(r"待补充"),
+    re.compile("\u5f85\u8865\u5145"),
     re.compile(r"AP-small", re.I),
 ]
 

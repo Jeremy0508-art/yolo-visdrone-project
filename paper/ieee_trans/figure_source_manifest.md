@@ -7,6 +7,7 @@ Status: planning draft. This manifest records figure candidates for the IEEE Tra
 | ID | Figure | Status | Source | Intended Use | Boundary |
 | --- | --- | --- | --- | --- | --- |
 | F-scale-1 | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` | Ready | `paper/tables/ieee_scale_results_visdrone.csv`; `tools/evaluate_scale_groups.py` | Scale-wise recall comparison | Recall/precision only, not AP-small |
+| F-scale-ap-1 | `paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png` | Ready | `paper/tables/ieee_scale_ap_results_visdrone.csv`; `tools/evaluate_scale_ap.py` | Local scale-bin AP50 comparison | Diagnostic only, not official AP-small |
 | F-scale-2 | `paper/figures/scale_analysis/object_scale_distribution.png` | Ready | `paper/tables/object_scale_distribution.csv`; `tools/analyze_object_scales.py` | Dataset scale distribution | VisDrone only unless UAVDT stats are added |
 | F-train-1 | `paper/figures/training_curves/p2_coordatt_960_results.png` | Ready | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/results.png` | Training and validation curves | Existing P2-CA-960 run only |
 | F-pr-1 | `paper/figures/training_curves/p2_coordatt_960_pr_curve.png` | Ready | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/BoxPR_curve.png` | PR curve | Existing P2-CA-960 run only |

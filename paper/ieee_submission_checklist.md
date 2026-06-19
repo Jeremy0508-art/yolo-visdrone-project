@@ -17,7 +17,8 @@
 | UAVDT dataset converted | Missing | `data/raw/UAVDT/` not available yet |
 | UAVDT baseline experiments | Missing | Required for cross-dataset validation |
 | New method experiment | Missing | TOFC structure exists but no training result |
-| Scale-wise recall/precision | Ready | `paper/tables/ieee_scale_results_visdrone.csv`; AP-small remains missing |
+| Scale-wise recall/precision | Ready | `paper/tables/ieee_scale_results_visdrone.csv`; official AP-small remains unavailable |
+| Local scale-bin AP evaluator and output | Ready | `tools/evaluate_scale_ap.py`, `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | Multi-seed stability | Missing | Needed for strong Transactions claims |
 | Speed/complexity | Ready for existing models | Must repeat for new models |
 

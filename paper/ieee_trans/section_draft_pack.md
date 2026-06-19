@@ -6,11 +6,11 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 
 ## Evidence Rules for This Draft Pack
 
-- Use only values traced to `paper/tables/main_comparison_for_paper.csv`, `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv`, and `paper/tables/ieee_scale_results_visdrone.csv`.
+- Use only values traced to `paper/tables/main_comparison_for_paper.csv`, `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv`, `paper/tables/ieee_scale_results_visdrone.csv`, and `paper/tables/ieee_scale_ap_results_visdrone.csv`.
 - Do not claim best published performance.
 - Do not claim cross-dataset generalization until UAVDT or another second dataset has complete converted data and completed runs.
 - Do not present TOFC as the final method until TOFC training, validation, speed, complexity, and scale-wise outputs exist.
-- Discuss scale-wise results as recall/precision only, not AP-small/AP-medium/AP-large.
+- Discuss AP-style scale results as local scale-bin AP only, not official COCO or VisDrone AP-small/AP-medium/AP-large.
 - Acknowledge that YOLO11s-960 remains the strongest completed reference in absolute VisDrone accuracy.
 
 ## Current Evidence Snapshot
@@ -20,6 +20,7 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 | VisDrone main comparison | Ready | `paper/tables/main_comparison_for_paper.csv` |
 | Speed and complexity | Ready | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` |
 | Scale-wise recall/precision | Ready | `paper/tables/ieee_scale_results_visdrone.csv` |
+| Local scale-bin AP | Ready | `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | TOFC final result | Locked | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt` pending |
 | UAVDT cross-dataset result | Locked | `data/processed/uavdt_yolo/images/train` and UAVDT runs pending |
 
@@ -53,14 +54,14 @@ The current completed experiments show that high-resolution input and P2 predict
 The current validated contributions can be written as follows:
 
 1. A reproducible VisDrone2019-DET evaluation of lightweight YOLO baselines and YOLO11n variants under traced training logs, speed measurements, and complexity statistics.
-2. An analysis of high-resolution prediction for YOLO11n, showing how a P2 branch and 960 input resolution affect detection accuracy, efficiency, and scale-wise recall/precision.
+2. An analysis of high-resolution prediction for YOLO11n, showing how a P2 branch and 960 input resolution affect detection accuracy, efficiency, scale-wise recall/precision, and local scale-bin AP.
 3. An evidence-bounded discussion of CoordAttention as an auxiliary ablation, where gains are interpreted cautiously rather than treated as a universally positive module.
 
 The following contribution statements are locked until additional evidence is available:
 
 1. TOFC as the final proposed module.
 2. UAVDT or other cross-dataset generalization claims.
-3. AP-small/AP-medium/AP-large claims.
+3. Official AP-small/AP-medium/AP-large claims.
 
 ## Related Work Draft
 
@@ -106,7 +107,7 @@ Tiny Object Feature Calibration is a candidate module for the IEEE route. At the
 
 ### Dataset
 
-The completed experiments use the VisDrone2019-DET validation split. Scale-wise analysis groups ground-truth boxes by area into small objects below 32 x 32 pixels, medium objects from 32 x 32 to below 96 x 96 pixels, and large objects at 96 x 96 pixels or above. This grouping is used for recall/precision analysis only.
+The completed experiments use the VisDrone2019-DET validation split. Scale-wise analysis groups ground-truth boxes by area into small objects below 32 x 32 pixels, medium objects from 32 x 32 to below 96 x 96 pixels, and large objects at 96 x 96 pixels or above. The recall/precision table is computed by GT scale groups, while the local scale-bin AP diagnostic filters both ground-truth and predicted boxes by the configured scale bin. The latter should not be described as an official COCO or VisDrone AP-small metric.
 
 ### Implementation Details
 
@@ -136,13 +137,21 @@ The same table also shows trade-offs on other scales. YOLO11n-P2-960 has medium-
 
 YOLO11s-960 remains the strongest completed reference in scale-wise recall, with small-object recall of 0.492703, medium-object recall of 0.827555, and large-object recall of 0.899813. The final manuscript should use this result to present an honest trade-off narrative.
 
+### Local Scale-Bin AP Diagnostic
+
+The local scale-bin AP output provides an additional AP-style diagnostic for the same completed VisDrone models. This evaluation should be described as local scale-bin AP because it is computed from YOLO-format labels and prediction scale bins, not from an official COCO or VisDrone AP-small evaluator.
+
+For the small-object bin, YOLO11n-960 obtains AP50 of 0.229995 and mAP50-95 of 0.116295. YOLO11n-P2-960 increases these values to 0.247659 and 0.131540, respectively. YOLO11n-P2-CA-960 obtains 0.239473 AP50 and 0.126067 mAP50-95. YOLOv8n-960 obtains 0.237713 AP50 and 0.122135 mAP50-95, while YOLO11s-960 remains the strongest completed small-bin reference with 0.302540 AP50 and 0.159421 mAP50-95.
+
+The AP-style diagnostic supports the same cautious interpretation as the recall/precision analysis: the P2 branch improves the small-bin behavior of YOLO11n, but the benefit is not uniform across all scales. In the medium bin, YOLO11n-960 records 0.452575 AP50 and 0.309690 mAP50-95, while YOLO11n-P2-960 records 0.438392 and 0.300511. In the large bin, YOLO11n-960 records 0.577546 AP50 and 0.459221 mAP50-95, while YOLO11n-P2-960 records 0.456420 and 0.368950. Therefore, the manuscript should present P2 as improving small-object diagnostics at the cost of some medium/large-bin trade-offs.
+
 ## Discussion Draft
 
 The completed VisDrone results suggest that increasing input resolution and adding a high-resolution P2 prediction branch help a compact YOLO11n detector recover more small objects. This observation is consistent with the intuition that shallow features preserve spatial detail that can be lost in deeper low-resolution maps. However, the measured gains are modest in aggregate mAP, and the scale-wise analysis shows that improvements concentrate mainly on the small-object group.
 
 CoordAttention changes the feature calibration behavior of the P2 model. The 960-input P2-CA model records a higher final recall than P2-only in the main comparison table, and it records the highest small-object recall among the completed nano-scale YOLO11n variants in the scale-wise table. At the same time, P2-only has a slightly higher best mAP50 and mAP50-95. The method discussion should therefore avoid claiming that attention universally improves detection; instead, it should explain that the attention module shifts the precision-recall and scale-wise behavior.
 
-The comparison with YOLO11s-960 is important for an IEEE-level manuscript. The larger model provides a stronger accuracy reference, which means the paper should not be built on an absolute best-performance claim. A stronger and safer contribution is to analyze how lightweight high-resolution prediction affects small-object detection and deployment cost under a reproducible experimental protocol.
+The comparison with YOLO11s-960 is important for an IEEE-level manuscript. The larger model provides a stronger accuracy reference in aggregate accuracy, small-object recall, and local small-bin AP. This means the paper should not be built on an absolute best-performance claim. A stronger and safer contribution is to analyze how lightweight high-resolution prediction affects small-object detection and deployment cost under a reproducible experimental protocol.
 
 ## Locked Paragraphs for Future Results
 
@@ -158,15 +167,15 @@ Locked until UAVDT is converted and at least the baseline and final selected met
 
 When evidence exists, report exact UAVDT validation metrics and discuss whether the VisDrone finding transfers to UAVDT. If the effect is inconsistent, write it as a limitation and dataset-specific observation.
 
-### AP-Small Paragraph
+### Official AP-Small Paragraph
 
-Locked until an AP-small/AP-medium/AP-large evaluator is implemented or an official evaluator provides these metrics.
+Locked until an official COCO-style or VisDrone-compatible AP-small/AP-medium/AP-large evaluator is used and documented.
 
-The current scale-wise output reports recall and precision only. Do not convert these values into AP claims.
+The current project now has a local scale-bin AP diagnostic, but this must not be converted into official AP-small wording. If used, state the local metric definition clearly.
 
 ## Conclusion Draft
 
-The completed VisDrone experiments show that a high-resolution P2 prediction branch can improve the small-object recall of YOLO11n under a traceable validation protocol. At 960 input resolution, YOLO11n-P2-960 improves best mAP50-95 from 0.25067 to 0.25552 compared with YOLO11n-960, and improves small-object recall by 0.029865. Adding CoordAttention further increases small-object recall to 0.455089, but does not uniformly improve all aggregate metrics. These results support an accuracy-efficiency trade-off view of lightweight UAV object detection.
+The completed VisDrone experiments show that a high-resolution P2 prediction branch can improve the small-object diagnostics of YOLO11n under traceable validation protocols. At 960 input resolution, YOLO11n-P2-960 improves best mAP50-95 from 0.25067 to 0.25552 compared with YOLO11n-960, improves small-object recall by 0.029865, and improves local small-bin AP50 from 0.229995 to 0.247659. Adding CoordAttention further increases small-object recall to 0.455089, but does not uniformly improve all aggregate or scale-bin AP metrics. These results support an accuracy-efficiency trade-off view of lightweight UAV object detection.
 
 The current manuscript should remain incomplete until the final method decision, TOFC result, and cross-dataset validation are available. The final conclusion must reflect the full evidence rather than the current planning state.
 
@@ -178,5 +187,6 @@ The current manuscript should remain incomplete until the final method decision,
 | Speed values | `paper/tables/speed_results.csv` |
 | Complexity values | `paper/tables/model_complexity.csv` |
 | Scale-wise recall/precision | `paper/tables/ieee_scale_results_visdrone.csv` |
+| Local scale-bin AP | `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | Scale-wise interpretation | `paper/ieee_scale_result_interpretation.md` |
 | Locked evidence gates | `paper/ieee_submission_dashboard.md` |

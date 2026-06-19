@@ -10,6 +10,7 @@ Method,TOFC model structure builds,ready,model YAML and audit,"configs/models/yo
 Experiments,VisDrone main comparison,ready,completed run dirs and table,"paper/tables/main_comparison_for_paper.csv","Use exact values only"
 Experiments,UAVDT cross-dataset comparison,locked,converted dataset and completed runs,"data/processed/uavdt_yolo/images/train missing","Convert dataset and run baselines/method"
 Experiments,Scale-wise small-object recall/precision,ready,scale-wise evaluation table,"paper/tables/ieee_scale_results_visdrone.csv; paper/ieee_scale_result_interpretation.md","Use as recall/precision evidence only; do not describe as AP-small"
+Experiments,Local scale-bin AP diagnostics,ready,local AP-style scale table,"paper/tables/ieee_scale_ap_results_visdrone.csv; paper/ieee_scale_ap_protocol.md","Use as local scale-bin AP only; do not describe as official COCO or VisDrone AP-small"
 Experiments,Speed and complexity for existing models,ready,benchmark and complexity tables,"paper/tables/speed_results.csv; paper/tables/model_complexity.csv","Update after any new final model"
 Discussion,Larger YOLO11s can have higher absolute accuracy,ready,main comparison table,"paper/tables/main_comparison_for_paper.csv","Frame around lightweight trade-off"
 Discussion,Generalization beyond VisDrone,locked,second dataset results,"UAVDT results missing","Do not claim until complete"

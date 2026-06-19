@@ -28,6 +28,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `tables/visdrone_main_results.tex` | Ready for current evidence route | Main VisDrone table |
 | `tables/speed_complexity.tex` | Ready for existing models | Refresh after final model |
 | `tables/scale_recall_precision.tex` | Ready for completed VisDrone models | Recall/precision only |
+| `tools/evaluate_scale_ap.py` | Ready as optional evaluator | Full local scale-bin AP output is available |
 | `figure_source_manifest.md` | Ready | Candidate figure source tracking |
 
 ## Section Unlock Matrix
@@ -46,6 +47,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | VisDrone Results | `section_draft_pack.md`, generated tables | Ready for existing evidence | Copy exact values from generated tables only |
 | UAVDT Results | none | Locked | Converted dataset plus completed baseline/method runs |
 | Scale-wise Analysis | `section_draft_pack.md`, `scale_recall_precision.tex` | Ready for recall/precision | Do not call this AP-small unless AP evaluator is added |
+| Local Scale-Bin AP Analysis | `tools/evaluate_scale_ap.py`, `scale_bin_ap.tex` | Ready as local diagnostic | Do not describe as official COCO or VisDrone AP-small |
 | Efficiency Analysis | `section_draft_pack.md`, `speed_complexity.tex` | Ready for existing models | Refresh after final method weights arrive |
 | Discussion | `section_draft_pack.md` | Partially ready | Add TOFC/UAVDT outcomes and limitations |
 | Conclusion | `section_draft_pack.md` | Locked | Write last after all accepted evidence is known |

@@ -11,6 +11,7 @@ MAIN_RESULTS = ROOT / "paper/tables/main_comparison_for_paper.csv"
 SPEED_RESULTS = ROOT / "paper/tables/speed_results.csv"
 MODEL_COMPLEXITY = ROOT / "paper/tables/model_complexity.csv"
 SCALE_RESULTS = ROOT / "paper/tables/ieee_scale_results_visdrone.csv"
+SCALE_AP_RESULTS = ROOT / "paper/tables/ieee_scale_ap_results_visdrone.csv"
 
 
 MAIN_MODELS = [
@@ -197,6 +198,36 @@ def export_scale_results() -> None:
     (OUT_DIR / "scale_recall_precision.tex").write_text(content, encoding="utf-8")
 
 
+def export_scale_ap_results() -> None:
+    rows = read_csv(SCALE_AP_RESULTS)
+    if not rows:
+        return
+    models: list[str] = []
+    for row in rows:
+        if row["model"] not in models:
+            models.append(row["model"])
+    lookup = {(row["model"], row["scale"]): row for row in rows}
+    tex_rows: list[str] = []
+    for model in models:
+        values = [tex_escape(display_name(model))]
+        for scale in ["small", "medium", "large"]:
+            row = lookup.get((model, scale))
+            values.extend([fmt(row["ap50"]) if row else "--", fmt(row["map50_95"]) if row else "--"])
+        tex_rows.append(" & ".join(values) + " \\\\")
+    content = table_env(
+        caption="Local scale-bin AP on the VisDrone2019-DET validation set.",
+        label="tab:ieee_scale_bin_ap",
+        columns="lrrrrrr",
+        header="Model & S-AP50 & S-mAP & M-AP50 & M-mAP & L-AP50 & L-mAP",
+        rows=tex_rows,
+        note=(
+            "S/M/L denote small, medium, and large object groups. "
+            "This diagnostic uses local scale-bin filtering and is not an official COCO or VisDrone small-object AP metric."
+        ),
+    )
+    (OUT_DIR / "scale_bin_ap.tex").write_text(content, encoding="utf-8")
+
+
 def export_manifest() -> None:
     lines = [
         "# IEEE Table Source Manifest",
@@ -208,6 +239,7 @@ def export_manifest() -> None:
         "| `visdrone_main_results.tex` | `paper/tables/main_comparison_for_paper.csv` | Completed VisDrone validation results only |",
         "| `speed_complexity.tex` | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Completed local speed/complexity evidence only |",
         "| `scale_recall_precision.tex` | `paper/tables/ieee_scale_results_visdrone.csv` | Scale-wise recall/precision only; not AP-small |",
+        "| `scale_bin_ap.tex` | `paper/tables/ieee_scale_ap_results_visdrone.csv` | Local scale-bin AP diagnostic; not official COCO/VisDrone AP-small |",
         "",
         "Regenerate these files after any final-model, speed, or scale-wise result changes.",
     ]
@@ -219,6 +251,7 @@ def main() -> None:
     export_main_results()
     export_speed_complexity()
     export_scale_results()
+    export_scale_ap_results()
     export_manifest()
     print(f"Wrote IEEE tables to {OUT_DIR.relative_to(ROOT)}")
 

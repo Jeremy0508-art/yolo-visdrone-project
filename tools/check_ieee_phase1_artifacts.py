@@ -32,7 +32,9 @@ REQUIRED_FILES = [
     ("Planning", "Claim boundary rules", "paper/ieee_claim_boundary.md"),
     ("Planning", "IEEE result integration protocol", "paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md"),
     ("Planning", "IEEE scale evaluation protocol", "paper/ieee_scale_evaluation_protocol.md"),
+    ("Planning", "IEEE local scale-bin AP protocol", "paper/ieee_scale_ap_protocol.md"),
     ("Planning", "IEEE scale result interpretation", "paper/ieee_scale_result_interpretation.md"),
+    ("Planning", "IEEE local scale-bin AP interpretation", "paper/ieee_scale_ap_interpretation.md"),
     ("Planning", "Next actions", "paper/ieee_phase1_next_actions.md"),
     ("Planning", "Submission checklist", "paper/ieee_submission_checklist.md"),
     ("Planning", "IEEE workspace README", "paper/ieee_trans/README.md"),
@@ -68,6 +70,8 @@ REQUIRED_FILES = [
     ("Execution", "IEEE reference checker", "tools/check_ieee_references.py"),
     ("Execution", "IEEE scale output checker", "tools/check_ieee_scale_outputs.py"),
     ("Execution", "IEEE scale interpretation builder", "tools/build_ieee_scale_interpretation.py"),
+    ("Execution", "IEEE scale AP interpretation builder", "tools/build_ieee_scale_ap_interpretation.py"),
+    ("Execution", "IEEE local scale-bin AP evaluator", "tools/evaluate_scale_ap.py"),
     ("Execution", "IEEE table exporter", "tools/export_ieee_tables.py"),
     ("Execution", "IEEE table checker", "tools/check_ieee_tables.py"),
     ("Execution", "IEEE figure checker", "tools/check_ieee_figures.py"),
@@ -110,6 +114,18 @@ RESULT_GATES = [
         "Full VisDrone scale-wise figure",
         "paper/figures/scale_analysis/ieee_scale_recall_visdrone.png",
         "Generate after full scale-wise evaluation.",
+    ),
+    (
+        "Analysis",
+        "Full VisDrone local scale-bin AP output",
+        "paper/tables/ieee_scale_ap_results_visdrone.csv",
+        "Run tools/evaluate_scale_ap.py on the full VisDrone validation split.",
+    ),
+    (
+        "Analysis",
+        "Full VisDrone local scale-bin AP figure",
+        "paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png",
+        "Generate with tools/evaluate_scale_ap.py --plot-output.",
     ),
 ]
 
@@ -384,7 +400,7 @@ def write_report(checks: list[Check]) -> None:
             "",
             "## Current Claim Gate",
             "",
-            "At this stage, the TOFC module can only be described as a candidate design whose structure builds successfully. Accuracy, generalization, and small-object improvements remain locked until full training, validation, and scale-wise analysis are complete.",
+            "At this stage, the TOFC module can only be described as a candidate design whose structure builds successfully. Existing VisDrone scale-wise recall/precision and local scale-bin AP evidence can be used for completed models, but TOFC accuracy and cross-dataset generalization remain locked until full training, validation, and synchronization are complete.",
         ]
     )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

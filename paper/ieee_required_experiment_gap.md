@@ -20,6 +20,8 @@ No experiment result should enter the English manuscript until its run directory
 | SmallObjAug ablation | Complete | `runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone` |
 | YOLOv5n / YOLOv8n / YOLO11s reference baselines | Complete | `paper/tables/main_comparison_for_paper.csv` |
 | Speed and complexity tables | Complete | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` |
+| Scale-wise recall/precision for completed VisDrone models | Complete | `paper/tables/ieee_scale_results_visdrone.csv` |
+| Local scale-bin AP evaluator and output | Complete for current VisDrone models | `tools/evaluate_scale_ap.py`, `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | Visual examples and failure cases | Complete for current manuscript | `paper/figures/` |
 
 ## Critical Gaps
@@ -29,7 +31,7 @@ No experiment result should enter the English manuscript until its run directory
 | P0 | Target journal not finalized | Determines framing, datasets, and required comparisons | `paper/ieee_target_journal_analysis.md` |
 | P0 | No second dataset | Single-dataset VisDrone validation is weak for Transactions-level generalization | UAVDT dataset config, converted labels, baseline/main results |
 | P0 | No strong new method beyond P2/CA/960 | Current method may look like module stacking and input-size tuning | New module proposal or a more modest paper target |
-| P0 | No scale-wise AP/Recall audit suitable for IEEE claims | Small-object paper must prove small-object improvement directly | `paper/tables/ieee_scale_results.csv` |
+| P0 | Official AP-small/AP-medium/AP-large evidence not generated | Local scale-bin AP is available, but official AP wording still needs a compatible evaluator | Official evaluator output if official AP-small wording is required |
 | P1 | No multi-seed stability | Single-run improvements can be dismissed as variance | 3-seed results for key baseline and main model |
 | P1 | Limited SOTA comparison | Current comparisons are mostly local YOLO baselines | Related work matrix and reproducible/quoted SOTA table |
 | P1 | No UAVDT speed/complexity comparison | Deployment claim should hold outside VisDrone | Cross-dataset speed/accuracy matrix |
@@ -81,7 +83,7 @@ No experiment result should enter the English manuscript until its run directory
 
 | ID | Analysis | Implementation Needed | Required for IEEE? | Status |
 | --- | --- | --- | --- | --- |
-| A1 | COCO-style AP-small/AP-medium/AP-large or VisDrone-specific scale AP/Recall | `tools/evaluate_scale_groups.py` now supports `--targets-csv`; full validation run still pending | Yes |
+| A1 | Scale-wise recall/precision plus local scale-bin AP | Complete for current VisDrone models; official AP-small remains unavailable | Yes |
 | A2 | Density-wise performance | Count objects per image and group validation images | Recommended |
 | A3 | Per-class AP table | Existing partial material can be reused | Yes |
 | A4 | Speed/latency/FPS | Existing benchmark script; repeat for new models | Yes |
@@ -130,7 +132,7 @@ The following queue is intentionally conservative. It avoids launching expensive
 3. Draft `paper/ieee_method_design_notes.md` with 1-2 candidate modules.
 4. Decide with advisor whether to invest in route B new-module experiments.
 
-## Scale Evaluation Command
+## Scale Evaluation Commands
 
 The current IEEE target list is recorded at:
 
@@ -151,7 +153,22 @@ python tools/evaluate_scale_groups.py `
   --device 0
 ```
 
-A one-image CPU smoke check has passed and wrote ignored files under `runs/scale_group_smoke/`. Those smoke values are not valid paper results.
+A one-image CPU smoke check has passed for the recall/precision path. Smoke values are not valid paper results.
+
+Optional local scale-bin AP command:
+
+```powershell
+python tools/evaluate_scale_ap.py `
+  --dataset-root data/processed/visdrone_yolo `
+  --dataset-name VisDrone2019-DET `
+  --split val `
+  --targets-csv paper/tables/ieee_scale_eval_targets.csv `
+  --output paper/tables/ieee_scale_ap_results_visdrone.csv `
+  --plot-output paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png `
+  --device 0
+```
+
+This output must be described as local scale-bin AP, not official COCO or VisDrone AP-small.
 
 ## Server Queue
 

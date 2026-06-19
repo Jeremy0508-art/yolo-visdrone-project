@@ -12,6 +12,7 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 | T4 | UAVDT cross-dataset comparison | Future UAVDT run outputs | Locked | Required for generalization claims. |
 | T5 | Ablation study | Existing P2/CA/960/SmallObjAug rows plus future TOFC | Partially ready | Current evidence supports P2/input-size discussion; TOFC locked. |
 | T6 | Scale-wise recall/precision metrics | `paper/tables/ieee_scale_results_visdrone.csv` | Ready for completed VisDrone models | Use recall/precision wording; do not call this AP-small. |
+| T6b | Local scale-bin AP diagnostics | `paper/tables/ieee_scale_ap_results_visdrone.csv` | Ready for completed VisDrone models | Local diagnostic only; do not call this official COCO/VisDrone AP-small. |
 | T7 | Speed and complexity | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Ready for existing models | Must be refreshed after any new final model. |
 | T8 | Literature comparison | `paper/ieee_related_work_matrix.csv` plus verified papers | Pending | Keep reproduced and reported-only results separate. |
 
@@ -24,6 +25,7 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 | F3 | Training curves | Existing completed run figures | Ready for existing models | Use clear English caption and source run path. |
 | F4 | Accuracy-speed trade-off | Existing tables plus future final method | Partially ready | Refresh after TOFC/UAVDT if used. |
 | F5 | Scale-wise recall plot | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` | Ready for completed VisDrone models | Generated from full validation, not smoke tests. |
+| F5b | Local scale-bin AP50 plot | `paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png` | Ready for completed VisDrone models | Local diagnostic only; not official AP-small. |
 | F6 | Qualitative comparison | Existing qualitative images | Partially ready | Captions and class labels should be English and readable. |
 | F7 | Failure case taxonomy | Existing failure-case contact sheets | Partially ready | Should highlight dense occlusion, tiny distant objects, and class ambiguity. |
 

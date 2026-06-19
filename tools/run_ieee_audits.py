@@ -19,6 +19,7 @@ STEPS = [
     AuditStep("build experiment registry", [sys.executable, "tools/build_ieee_experiment_registry.py"]),
     AuditStep("check scale outputs", [sys.executable, "tools/check_ieee_scale_outputs.py"]),
     AuditStep("build scale interpretation", [sys.executable, "tools/build_ieee_scale_interpretation.py"]),
+    AuditStep("build scale AP interpretation", [sys.executable, "tools/build_ieee_scale_ap_interpretation.py"]),
     AuditStep("export IEEE tables", [sys.executable, "tools/export_ieee_tables.py"]),
     AuditStep("check IEEE tables", [sys.executable, "tools/check_ieee_tables.py"]),
     AuditStep("check IEEE figures", [sys.executable, "tools/check_ieee_figures.py"]),

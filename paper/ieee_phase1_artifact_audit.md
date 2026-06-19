@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 68
-- Ready: 63
+- Total checks: 74
+- Ready: 69
 - Pending: 5
 - Missing: 0
 
@@ -26,7 +26,9 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | Claim boundary rules | READY | `paper/ieee_claim_boundary.md` |  |
 | Planning | IEEE result integration protocol | READY | `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md` |  |
 | Planning | IEEE scale evaluation protocol | READY | `paper/ieee_scale_evaluation_protocol.md` |  |
+| Planning | IEEE local scale-bin AP protocol | READY | `paper/ieee_scale_ap_protocol.md` |  |
 | Planning | IEEE scale result interpretation | READY | `paper/ieee_scale_result_interpretation.md` |  |
+| Planning | IEEE local scale-bin AP interpretation | READY | `paper/ieee_scale_ap_interpretation.md` |  |
 | Planning | Next actions | READY | `paper/ieee_phase1_next_actions.md` |  |
 | Planning | Submission checklist | READY | `paper/ieee_submission_checklist.md` |  |
 | Planning | IEEE workspace README | READY | `paper/ieee_trans/README.md` |  |
@@ -62,6 +64,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Execution | IEEE reference checker | READY | `tools/check_ieee_references.py` |  |
 | Execution | IEEE scale output checker | READY | `tools/check_ieee_scale_outputs.py` |  |
 | Execution | IEEE scale interpretation builder | READY | `tools/build_ieee_scale_interpretation.py` |  |
+| Execution | IEEE scale AP interpretation builder | READY | `tools/build_ieee_scale_ap_interpretation.py` |  |
+| Execution | IEEE local scale-bin AP evaluator | READY | `tools/evaluate_scale_ap.py` |  |
 | Execution | IEEE table exporter | READY | `tools/export_ieee_tables.py` |  |
 | Execution | IEEE table checker | READY | `tools/check_ieee_tables.py` |  |
 | Execution | IEEE figure checker | READY | `tools/check_ieee_figures.py` |  |
@@ -81,6 +85,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Training Evidence | UAVDT YOLO11n-P2 result | PENDING | `runs/detect/yolo11n_p2_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
 | Analysis | Full VisDrone scale-wise results | READY | `paper/tables/ieee_scale_results_visdrone.csv` |  |
 | Analysis | Full VisDrone scale-wise figure | READY | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |  |
+| Analysis | Full VisDrone local scale-bin AP output | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv` |  |
+| Analysis | Full VisDrone local scale-bin AP figure | READY | `paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png` |  |
 | Claim Boundary | Boundary text in paper/IEEE_TRANS_SUBMISSION_PLAN.md | READY | `searched phrase: Do not claim` |  |
 | Claim Boundary | Boundary text in paper/ieee_required_experiment_gap.md | READY | `searched phrase: Claim Rules` |  |
 
@@ -92,4 +98,4 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Current Claim Gate
 
-At this stage, the TOFC module can only be described as a candidate design whose structure builds successfully. Accuracy, generalization, and small-object improvements remain locked until full training, validation, and scale-wise analysis are complete.
+At this stage, the TOFC module can only be described as a candidate design whose structure builds successfully. Existing VisDrone scale-wise recall/precision and local scale-bin AP evidence can be used for completed models, but TOFC accuracy and cross-dataset generalization remain locked until full training, validation, and synchronization are complete.
