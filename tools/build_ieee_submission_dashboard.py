@@ -165,7 +165,7 @@ def build_dashboard() -> str:
             "",
             "1. Check server status with `tools/check_ieee_server_status.ps1` when SSH key access is available.",
             "2. If TOFC or UAVDT runs are complete, sync only complete artifacts with `tools/sync_ieee_server_results.ps1 -MinEpochs 100`.",
-            "3. Run `python tools/check_ieee_claims.py` and `python tools/check_ieee_phase1_artifacts.py` after every sync.",
+            "3. Run `python tools/run_ieee_audits.py` after every result sync or table/figure update.",
             "4. Use the completed VisDrone scale-wise recall/precision output for small-object discussion; rerun it only after adding new final-model weights.",
             "5. Convert and validate UAVDT before writing generalization claims.",
             "6. Draft final IEEE `main.tex` only after the main method and evidence gates are settled.",

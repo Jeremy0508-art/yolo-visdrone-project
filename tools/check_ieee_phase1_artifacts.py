@@ -74,6 +74,7 @@ REQUIRED_FILES = [
     ("Execution", "IEEE server progress reporter", "tools/build_ieee_server_progress_report.py"),
     ("Execution", "IEEE dashboard builder", "tools/build_ieee_submission_dashboard.py"),
     ("Execution", "IEEE experiment registry builder", "tools/build_ieee_experiment_registry.py"),
+    ("Execution", "IEEE audit runner", "tools/run_ieee_audits.py"),
 ]
 
 
