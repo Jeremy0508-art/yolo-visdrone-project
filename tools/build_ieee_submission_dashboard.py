@@ -130,6 +130,7 @@ def build_dashboard() -> str:
         "- Experiment gap matrix: `paper/ieee_required_experiment_gap.md`",
         "- Experiment registry: `paper/tables/ieee_experiment_registry.csv`, `paper/ieee_experiment_registry_audit.md`",
         "- Dataset strategy: `paper/ieee_dataset_strategy.md`",
+        "- Method design and selection protocol: `paper/ieee_method_design_notes.md`, `paper/ieee_method_selection_protocol.md`",
         "- UAVDT setup and operational checklist: `paper/datasets/uavdt_setup.md`, `paper/datasets/uavdt_operational_checklist.md`",
         "- Claim boundary rules: `paper/ieee_claim_boundary.md`",
         "- Reviewer risk register: `paper/ieee_reviewer_risk_register.md`",

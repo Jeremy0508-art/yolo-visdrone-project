@@ -29,6 +29,7 @@ REQUIRED_FILES = [
     ("Planning", "Related-work seed matrix", "paper/ieee_related_work_matrix.csv"),
     ("Planning", "Dataset strategy", "paper/ieee_dataset_strategy.md"),
     ("Planning", "Method design notes", "paper/ieee_method_design_notes.md"),
+    ("Planning", "IEEE method selection protocol", "paper/ieee_method_selection_protocol.md"),
     ("Planning", "Claim boundary rules", "paper/ieee_claim_boundary.md"),
     ("Planning", "IEEE reviewer risk register", "paper/ieee_reviewer_risk_register.md"),
     ("Planning", "IEEE result integration protocol", "paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md"),
