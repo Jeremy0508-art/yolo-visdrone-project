@@ -133,7 +133,8 @@ Keep concise and evidence-bounded:
 | Main comparison on VisDrone | `paper/tables/main_comparison_for_paper.csv` | Ready for current evidence route |
 | Cross-dataset comparison | Future UAVDT results | Locked |
 | Ablation study | Existing VisDrone rows plus TOFC if valid | Partially ready |
-| Scale-wise AP/Recall | Future `paper/tables/ieee_scale_results_visdrone.csv` | Locked |
+| Scale-wise recall/precision | `paper/tables/ieee_scale_results_visdrone.csv` | Ready for completed VisDrone models |
+| Scale-wise AP | Future AP-small/AP-medium/AP-large computation if needed | Locked |
 | Speed and complexity | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Ready for existing models |
 
 ## Minimum Figures for IEEE Draft
@@ -143,7 +144,8 @@ Keep concise and evidence-bounded:
 | Method overview | Existing overview can be redrawn in English | Pending final method |
 | Training/validation curves | Existing completed runs | Ready for existing models |
 | Accuracy-speed-complexity plot | Existing tables, plus new final method later | Partially ready |
-| Scale-wise recall/AP plot | Future scale analysis | Locked |
+| Scale-wise recall plot | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` | Ready for completed VisDrone models |
+| Scale-wise AP plot | Future AP-specific evaluation if needed | Locked |
 | Qualitative comparison | Existing visualizations, may need English captions | Partially ready |
 | Failure case taxonomy | Existing failure cases plus English labels | Partially ready |
 

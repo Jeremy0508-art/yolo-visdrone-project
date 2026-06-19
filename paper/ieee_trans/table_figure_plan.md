@@ -11,7 +11,7 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 | T3 | Main VisDrone comparison | `paper/tables/main_comparison_for_paper.csv` | Ready for existing models | Use exact values only. |
 | T4 | UAVDT cross-dataset comparison | Future UAVDT run outputs | Locked | Required for generalization claims. |
 | T5 | Ablation study | Existing P2/CA/960/SmallObjAug rows plus future TOFC | Partially ready | Current evidence supports P2/input-size discussion; TOFC locked. |
-| T6 | Scale-wise small-object metrics | `paper/tables/ieee_scale_results_visdrone.csv` | Locked | Required before claiming direct small-object improvement. |
+| T6 | Scale-wise recall/precision metrics | `paper/tables/ieee_scale_results_visdrone.csv` | Ready for completed VisDrone models | Use recall/precision wording; do not call this AP-small. |
 | T7 | Speed and complexity | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Ready for existing models | Must be refreshed after any new final model. |
 | T8 | Literature comparison | `paper/ieee_related_work_matrix.csv` plus verified papers | Pending | Keep reproduced and reported-only results separate. |
 
@@ -23,7 +23,7 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 | F2 | P2/high-resolution branch schematic | Model YAML and existing diagrams | Ready as structural figure | Can be used without claiming accuracy gain beyond evidence. |
 | F3 | Training curves | Existing completed run figures | Ready for existing models | Use clear English caption and source run path. |
 | F4 | Accuracy-speed trade-off | Existing tables plus future final method | Partially ready | Refresh after TOFC/UAVDT if used. |
-| F5 | Scale-wise AP/Recall plot | Future scale-evaluation output | Locked | Must be generated from full validation, not smoke tests. |
+| F5 | Scale-wise recall plot | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` | Ready for completed VisDrone models | Generated from full validation, not smoke tests. |
 | F6 | Qualitative comparison | Existing qualitative images | Partially ready | Captions and class labels should be English and readable. |
 | F7 | Failure case taxonomy | Existing failure-case contact sheets | Partially ready | Should highlight dense occlusion, tiny distant objects, and class ambiguity. |
 

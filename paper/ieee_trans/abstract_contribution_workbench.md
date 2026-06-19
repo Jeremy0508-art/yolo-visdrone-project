@@ -26,7 +26,7 @@ Locked placeholders:
 | `[VALIDATED MODULE]` | TOFC or another module has complete training and ablation evidence. |
 | `[SECOND DATASET]` | UAVDT or another dataset is converted, validated, trained, and audited. |
 | `[REAL METRIC]` | Exact value from audited result tables. |
-| `[REAL SCALE-WISE METRIC]` | `paper/tables/ieee_scale_results_visdrone.csv`. |
+| `[REAL SCALE-WISE METRIC]` | `paper/tables/ieee_scale_results_visdrone.csv`; wording must be recall/precision unless AP-specific evaluation is added. |
 | `[REAL FPS/PARAMETER TRADE-OFF]` | Refreshed speed and complexity table for the final model. |
 
 ## Current Contribution Candidates
@@ -38,7 +38,7 @@ Locked placeholders:
 | CoordAttention in P2 fusion | Usable as ablation | "CoordAttention is evaluated as an auxiliary attention component; current evidence does not make it the primary gain source." |
 | TOFC module | Locked | Do not state as a validated contribution until full results exist. |
 | UAVDT cross-dataset validation | Locked | Do not state as generalization evidence until conversion and training complete. |
-| Scale-wise small-object claim | Locked | Do not claim direct small-object improvement until full scale-wise results exist. |
+| Scale-wise small-object recall/precision claim | Usable for completed VisDrone models | Use exact recall/precision values from `paper/tables/ieee_scale_results_visdrone.csv`; do not call them AP. |
 
 ## Suggested Final Contribution Format
 

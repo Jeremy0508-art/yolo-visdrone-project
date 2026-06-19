@@ -116,4 +116,6 @@ Before scale-wise evidence enters the IEEE manuscript:
 
 ## Current Boundary
 
-The existing two-model `scale_group_results.csv` can inform planning and discussion, but the IEEE manuscript should wait for the full target-list output before making central small-object claims.
+The full target-list output now exists at `paper/tables/ieee_scale_results_visdrone.csv`, with the corresponding figure at `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png`.
+
+This unlocks scale-wise recall/precision discussion for completed VisDrone models. It does not unlock AP-small/AP-medium/AP-large wording, and it does not unlock TOFC or UAVDT claims.

@@ -6,9 +6,9 @@ The existing legacy `scale_group_results.csv` is preliminary. The full IEEE evid
 
 ## Summary
 
-- Total checks: 4
-- Ready: 2
-- Pending: 2
+- Total checks: 6
+- Ready: 6
+- Pending: 0
 - Missing: 0
 
 ## Checks
@@ -17,8 +17,10 @@ The existing legacy `scale_group_results.csv` is preliminary. The full IEEE evid
 | --- | --- | --- | --- |
 | Scale target list | READY | `5 enabled targets in paper\tables\ieee_scale_eval_targets.csv` |  |
 | Legacy preliminary scale output | READY | `6 rows in paper\tables\scale_group_results.csv` |  |
-| Full IEEE scale output | PENDING | `paper\tables\ieee_scale_results_visdrone.csv` | Run tools/evaluate_scale_groups.py with paper/tables/ieee_scale_eval_targets.csv. |
-| Full IEEE scale figure | PENDING | `paper\figures\scale_analysis\ieee_scale_recall_visdrone.png` | Generate figure with --plot-output. |
+| Full IEEE scale output | READY | `15 rows in paper\tables\ieee_scale_results_visdrone.csv` |  |
+| Enabled targets covered | READY | `all enabled targets present` |  |
+| Required scales covered | READY | `small/medium/large present for every enabled target` |  |
+| Full IEEE scale figure | READY | `paper\figures\scale_analysis\ieee_scale_recall_visdrone.png` |  |
 
 ## Interpretation
 
