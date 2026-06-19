@@ -6,8 +6,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 31
-- Ready: 24
+- Total checks: 37
+- Ready: 30
 - Pending: 7
 - Missing: 0
 
@@ -25,6 +25,11 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | Next actions | READY | `paper/ieee_phase1_next_actions.md` |  |
 | Planning | Submission checklist | READY | `paper/ieee_submission_checklist.md` |  |
 | Planning | IEEE workspace README | READY | `paper/ieee_trans/README.md` |  |
+| Planning | IEEE manuscript blueprint | READY | `paper/ieee_trans/manuscript_blueprint.md` |  |
+| Planning | IEEE related-work outline | READY | `paper/ieee_trans/related_work_outline.md` |  |
+| Planning | IEEE evidence-to-section map | READY | `paper/ieee_trans/evidence_to_sections.csv` |  |
+| Planning | IEEE table and figure plan | READY | `paper/ieee_trans/table_figure_plan.md` |  |
+| Planning | IEEE claim audit report | READY | `paper/ieee_claim_audit.md` |  |
 | Planning | Advisor transition brief | READY | `paper/ieee_advisor_transition_brief.md` |  |
 | Dataset | UAVDT data YAML | READY | `configs/dataset/uavdt.yaml` |  |
 | Dataset | UAVDT setup notes | READY | `paper/datasets/uavdt_setup.md` |  |
@@ -34,6 +39,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Method | TOFC train config | READY | `configs/train/yolo11n_p2_tofc_960.yaml` |  |
 | Analysis | Scale target list | READY | `paper/tables/ieee_scale_eval_targets.csv` |  |
 | Execution | Guarded server queue | READY | `tools/run_ieee_server_queue.sh` |  |
+| Execution | IEEE claim scanner | READY | `tools/check_ieee_claims.py` |  |
 | Literature | Related-work seed coverage | READY | `25 rows in paper/ieee_related_work_matrix.csv` |  |
 | Dataset | Raw UAVDT dataset placement | PENDING | `data/raw/UAVDT` | Place raw UAVDT files under data/raw/UAVDT/. |
 | Dataset | Converted UAVDT YOLO train images | PENDING | `data/processed/uavdt_yolo/images/train` | Run scripts/convert_uavdt_to_yolo.py after raw data is available. |
