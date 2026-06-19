@@ -35,6 +35,7 @@ web/static/results/*
 Thumbs.db
 .idea/
 .vscode/
+~$*.docx
 
 # LaTeX generated intermediates
 *.aux

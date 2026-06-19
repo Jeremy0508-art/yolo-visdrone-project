@@ -17,6 +17,8 @@ TEX_PATH = ROOT / "paper/manuscript_submission_candidate.tex"
 OUTPUT_DIR = ROOT / "paper/cea_template_migration"
 OUTPUT_DOCX = OUTPUT_DIR / "manuscript_cea_template_draft.docx"
 REPORT_PATH = OUTPUT_DIR / "cea_word_migration_audit.md"
+SAFE_COLUMN_IMAGE_WIDTH_IN = 3.15
+SAFE_PAGE_IMAGE_HEIGHT_IN = 6.6
 
 
 MACROS = {
@@ -416,15 +418,21 @@ def paragraph_xml(text: str, style: str = "Normal", align: str | None = None, bo
     )
 
 
-def image_xml(rel_id: str, name: str, width_px: int, height_px: int, max_width_in: float = 5.8) -> str:
-    emu_per_in = 914400
+def image_display_size(width_px: int, height_px: int) -> tuple[float, float, float]:
     dpi = 96
     width_in = width_px / dpi
     height_in = height_px / dpi
-    if width_in > max_width_in:
-        scale = max_width_in / width_in
-        width_in *= scale
-        height_in *= scale
+    scale = min(
+        SAFE_COLUMN_IMAGE_WIDTH_IN / width_in if width_in else 1.0,
+        SAFE_PAGE_IMAGE_HEIGHT_IN / height_in if height_in else 1.0,
+        1.0,
+    )
+    return width_in * scale, height_in * scale, scale
+
+
+def image_xml(rel_id: str, name: str, width_px: int, height_px: int) -> str:
+    emu_per_in = 914400
+    width_in, height_in, _ = image_display_size(width_px, height_px)
     cx = int(width_in * emu_per_in)
     cy = int(height_in * emu_per_in)
     doc_pr_id = abs(hash((rel_id, name))) % 100000 + 1000
@@ -525,6 +533,7 @@ def final_section_xml(columns: int) -> str:
 def build_document_xml(title: str, abstract: str, blocks: list[Block], references: list[tuple[int, str]], image_rels: dict[str, tuple[str, str]]) -> tuple[str, list[tuple[str, Path]]]:
     body: list[str] = []
     media: list[tuple[str, Path]] = []
+    image_notes: list[str] = []
     body.append(paragraph_xml(title, style="Title", align="center", bold=True, size=32))
     body.append(paragraph_xml("作者名1，作者名2+，作者名3（待导师确认）", align="center", size=21))
     body.append(paragraph_xml("1. 单位全名 部门全名，省 市 邮政编码（待确认）", align="center", size=18))
@@ -571,6 +580,10 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
                     rel_id = f"rIdCeaImage{rel_counter}"
                     with Image.open(image_path) as img:
                         width, height = img.size
+                    display_width, display_height, scale = image_display_size(width, height)
+                    image_notes.append(
+                        f"{image_path.name}: {width}x{height}px -> {display_width:.2f}x{display_height:.2f}in, scale={scale:.3f}"
+                    )
                     body.append(image_xml(rel_id, image_path.name, width, height))
                     image_rels[rel_id] = (target_name, ext)
                     media.append((target_name, image_path))
@@ -619,6 +632,8 @@ def build_document_xml(title: str, abstract: str, blocks: list[Block], reference
     )
     if missing_images:
         image_rels["__missing__"] = ("; ".join(missing_images), "")
+    if image_notes:
+        image_rels["__image_notes__"] = ("; ".join(image_notes), "")
     return document, media
 
 
@@ -685,11 +700,13 @@ def build_docx() -> dict[str, int | str]:
         "images": len(media),
         "references": len(references),
         "missing_images": image_rels.get("__missing__", ("", ""))[0],
+        "image_notes": image_rels.get("__image_notes__", ("", ""))[0],
     }
 
 
 def write_report(stats: dict[str, int | str]) -> None:
     missing_images = str(stats.get("missing_images") or "")
+    image_notes = str(stats.get("image_notes") or "")
     lines = [
         "# CEA Word Migration Audit",
         "",
@@ -706,7 +723,12 @@ def write_report(stats: dict[str, int | str]) -> None:
         f"- Embedded images: {stats['images']}",
         f"- References: {stats['references']}",
         f"- Missing images: {missing_images if missing_images else 'none'}",
+        f"- Image fit: all embedded figures are scaled within {SAFE_COLUMN_IMAGE_WIDTH_IN:.2f} in width and {SAFE_PAGE_IMAGE_HEIGHT_IN:.2f} in height to avoid two-column cropping.",
         "- Layout: front matter is generated as a single-column section; the main text section is generated as two columns.",
+        "",
+        "## Embedded Image Sizes",
+        "",
+        image_notes if image_notes else "none",
         "",
         "## Manual Gates Remaining",
         "",

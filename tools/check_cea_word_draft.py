@@ -24,14 +24,21 @@ def status_symbol(status: str) -> str:
     return {"ready": "READY", "partial": "PARTIAL", "pending": "PENDING", "missing": "MISSING"}[status]
 
 
-def read_docx_text() -> tuple[str, int, int, list[int], bool]:
+SAFE_IMAGE_WIDTH_IN = 3.16
+SAFE_IMAGE_HEIGHT_IN = 6.61
+
+
+def read_docx_text() -> tuple[str, int, int, list[int], list[tuple[float, float]], bool]:
     if not DOCX_PATH.exists():
-        return "", 0, 0, [], False
+        return "", 0, 0, [], [], False
     try:
         with zipfile.ZipFile(DOCX_PATH) as archive:
             document = archive.read("word/document.xml")
             root = ET.fromstring(document)
-            ns = {"w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main"}
+            ns = {
+                "w": "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+                "wp": "http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing",
+            }
             paragraphs: list[str] = []
             for para in root.findall(".//w:p", ns):
                 parts = [node.text for node in para.findall(".//w:t", ns) if node.text]
@@ -47,9 +54,14 @@ def read_docx_text() -> tuple[str, int, int, list[int], bool]:
                     continue
                 raw = cols.attrib.get(f"{{{ns['w']}}}num")
                 section_cols.append(int(raw) if raw else 1)
-        return "\n".join(paragraphs), table_count, media_count, section_cols, True
+            image_extents: list[tuple[float, float]] = []
+            for extent in root.findall(".//wp:extent", ns):
+                cx = int(extent.attrib.get("cx", "0"))
+                cy = int(extent.attrib.get("cy", "0"))
+                image_extents.append((cx / 914400, cy / 914400))
+        return "\n".join(paragraphs), table_count, media_count, section_cols, image_extents, True
     except Exception as exc:  # pragma: no cover - report generation path
-        return f"ERROR: {exc}", 0, 0, [], False
+        return f"ERROR: {exc}", 0, 0, [], [], False
 
 
 def count_cjk(text: str) -> int:
@@ -68,7 +80,7 @@ def extract_between(text: str, start: str, end: str) -> str:
 
 
 def audit() -> list[Check]:
-    text, table_count, media_count, section_cols, valid = read_docx_text()
+    text, table_count, media_count, section_cols, image_extents, valid = read_docx_text()
     checks: list[Check] = [
         Check(
             "CEA Word draft exists",
@@ -158,6 +170,26 @@ def audit() -> list[Check]:
             "ready" if chinese_figures >= 6 and english_figures >= 6 else "partial",
             f"{chinese_figures} Chinese figure captions, {english_figures} English figure captions, {media_count} media files",
             "" if chinese_figures >= 6 and english_figures >= 6 else "Check figure captions and embedded images.",
+        )
+    )
+
+    max_width = max((width for width, _ in image_extents), default=0.0)
+    max_height = max((height for _, height in image_extents), default=0.0)
+    oversize = [
+        f"{idx}: {width:.2f}x{height:.2f}in"
+        for idx, (width, height) in enumerate(image_extents, 1)
+        if width > SAFE_IMAGE_WIDTH_IN or height > SAFE_IMAGE_HEIGHT_IN
+    ]
+    checks.append(
+        Check(
+            "Figure display extents",
+            "ready" if image_extents and not oversize else "partial",
+            f"{len(image_extents)} figures; max={max_width:.2f}x{max_height:.2f}in"
+            if not oversize
+            else "; ".join(oversize),
+            ""
+            if image_extents and not oversize
+            else "Regenerate the Word draft with column-safe image scaling.",
         )
     )
 

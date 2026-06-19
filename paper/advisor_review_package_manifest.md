@@ -9,7 +9,7 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 - Zip file: `paper/advisor_review_package.zip`
 - Ready files: 41
 - Missing files: 0
-- Zip size: 5.03 MB
+- Zip size: 5.04 MB
 
 ## Included Files
 
@@ -20,8 +20,8 @@ The zip package is intended for advisor review only. It contains manuscript-faci
 | `paper/manuscript_submission_candidate.pdf` | 1.65 MB | Current PDF manuscript preview. |
 | `paper/manuscript_submission_candidate.tex` | 43.9 KB | Current LaTeX source. |
 | `paper/cea_template_migration/manuscript_cea_template_draft.docx` | 1.62 MB | First-pass CEA Word-template migration draft. |
-| `paper/cea_template_migration/cea_word_migration_audit.md` | 1.8 KB | Audit report for the CEA Word migration draft. |
-| `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.0 KB | Mechanical quality audit for the CEA Word draft. |
+| `paper/cea_template_migration/cea_word_migration_audit.md` | 2.3 KB | Audit report for the CEA Word migration draft. |
+| `paper/cea_template_migration/cea_word_draft_quality_audit.md` | 2.1 KB | Mechanical quality audit for the CEA Word draft. |
 | `paper/advisor_review_note.md` | 5.9 KB | Short cover note for advisor review. |
 | `paper/advisor_progress_brief.md` | 5.8 KB | Short advisor-facing progress brief. |
 | `paper/CEA_FINAL_HANDOFF_CHECKLIST.md` | 6.2 KB | Final handoff checklist and claim boundaries. |
