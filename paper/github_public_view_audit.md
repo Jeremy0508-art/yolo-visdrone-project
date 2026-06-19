@@ -6,8 +6,8 @@ It is an automated public-link check, not a substitute for manual browser review
 
 ## Summary
 
-- Total checks: 45
-- Ready: 45
+- Total checks: 46
+- Ready: 46
 - Partial: 0
 - Missing: 0
 
@@ -46,6 +46,7 @@ It is an automated public-link check, not a substitute for manual browser review
 | IEEE page budget plan raw | READY | `HTTP 200` |  |
 | IEEE reviewer response plan raw | READY | `HTTP 200` |  |
 | IEEE reference gap report raw | READY | `HTTP 200` |  |
+| IEEE reference metadata readiness audit raw | READY | `HTTP 200` |  |
 | IEEE literature comparison protocol raw | READY | `HTTP 200` |  |
 | IEEE literature context CSV raw | READY | `HTTP 200` |  |
 | IEEE number trace audit raw | READY | `HTTP 200` |  |
