@@ -9,7 +9,7 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 - Use only values traced to `paper/tables/main_comparison_for_paper.csv`, `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv`, `paper/tables/ieee_scale_results_visdrone.csv`, and `paper/tables/ieee_scale_ap_results_visdrone.csv`.
 - Do not claim best published performance.
 - Do not claim cross-dataset generalization until UAVDT or another second dataset has complete converted data and completed runs.
-- Do not present TOFC as the final method until TOFC training, validation, speed, complexity, and scale-wise outputs exist.
+- Do not present TOFC as a proven small-object improvement over YOLO11n-P2-960; current evidence supports only aggregate-mAP improvement with weaker small-object diagnostics.
 - Discuss AP-style scale results as local scale-bin AP only, not official COCO or VisDrone AP-small/AP-medium/AP-large.
 - Acknowledge that YOLO11s-960 remains the strongest completed reference in absolute VisDrone accuracy.
 
@@ -21,7 +21,7 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 | Speed and complexity | Ready | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` |
 | Scale-wise recall/precision | Ready | `paper/tables/ieee_scale_results_visdrone.csv` |
 | Local scale-bin AP | Ready | `paper/tables/ieee_scale_ap_results_visdrone.csv` |
-| TOFC final result | Locked | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt` pending |
+| TOFC aggregate result | Ready with caveat | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt`, `paper/tables/main_comparison_for_paper.csv`, and scale diagnostic CSVs |
 | UAVDT cross-dataset result | Locked | `data/processed/uavdt_yolo/images/train` and UAVDT runs pending |
 
 ## Working Title Options
@@ -32,7 +32,7 @@ Use a title only after the final method is selected from real results.
 2. Revisiting High-Resolution Prediction Branches for Lightweight UAV Object Detection
 3. TOFC-YOLO11n: Tiny-Object Feature Calibration for Lightweight UAV Traffic Object Detection
 
-Title 3 is locked until TOFC results exist.
+Title 3 is not recommended under the current small-object diagnostic evidence.
 
 ## Abstract Draft Boundary
 
@@ -59,7 +59,7 @@ The current validated contributions can be written as follows:
 
 The following contribution statements are locked until additional evidence is available:
 
-1. TOFC as the final proposed module.
+1. TOFC as a proven small-object improvement over YOLO11n-P2-960.
 2. UAVDT or other cross-dataset generalization claims.
 3. Official AP-small/AP-medium/AP-large claims.
 
@@ -101,7 +101,7 @@ CoordAttention is added after feature fusion as an auxiliary attention ablation.
 
 ### TOFC Candidate Module
 
-Tiny Object Feature Calibration is a candidate module for the IEEE route. At the current stage, its source code and model construction are available, but final training and validation evidence are pending. It must remain outside the final method claim until complete TOFC results are synchronized and audited.
+Tiny Object Feature Calibration is a candidate module for the IEEE route. Its completed VisDrone run gives higher aggregate best mAP than YOLO11n-P2-960, but the current small-object diagnostic metrics are weaker than P2-960. It should therefore be described as an aggregate calibration ablation or candidate, not as a proven small-object diagnostic improvement.
 
 ## Experimental Setup Draft
 
@@ -119,21 +119,21 @@ Any final manuscript should report hardware and software exactly as recorded in 
 
 ### Main VisDrone Results
 
-At 960 input resolution, YOLO11n-960 obtains a best mAP50 of 0.42136 and best mAP50-95 of 0.25067 on the VisDrone validation split. Adding the P2 high-resolution branch gives YOLO11n-P2-960 a best mAP50 of 0.42361 and best mAP50-95 of 0.25552. The P2-CA-960 variant obtains a best mAP50 of 0.41996 and best mAP50-95 of 0.25174. These values indicate that the P2 branch provides a modest improvement over the resolution-matched YOLO11n baseline, while CoordAttention changes the precision-recall balance rather than uniformly improving all aggregate metrics.
+At 960 input resolution, YOLO11n-960 obtains a best mAP50 of 0.42136 and best mAP50-95 of 0.25067 on the VisDrone validation split. Adding the P2 high-resolution branch gives YOLO11n-P2-960 a best mAP50 of 0.42361 and best mAP50-95 of 0.25552. The P2-CA-960 variant obtains a best mAP50 of 0.41996 and best mAP50-95 of 0.25174. YOLO11n-P2-TOFC-960 obtains the strongest completed nano-scale aggregate metrics in the current table, with best mAP50 of 0.42837 and best mAP50-95 of 0.26054. These values indicate that P2 provides a modest improvement over the resolution-matched YOLO11n baseline, while TOFC improves aggregate mAP but must still be interpreted together with scale-wise diagnostics.
 
 The larger YOLO11s-960 reference obtains a best mAP50 of 0.48901 and best mAP50-95 of 0.29812. This result should be explicitly acknowledged: the current nano-scale variants do not outperform the larger model in absolute accuracy. Their value lies in a smaller model footprint and a lightweight trade-off analysis.
 
 ### Speed and Complexity
 
-YOLO11n-960 has 2.592 M parameters, 6.5 GFLOPs, a 5.25 MB weight file, and 16.37 ms wall-clock latency in the recorded speed test. YOLO11n-P2-960 increases complexity to 2.894 M parameters and 10.7 GFLOPs, with a 6.06 MB weight file and 17.96 ms latency. YOLO11n-P2-CA-960 has 2.904 M parameters, 10.7 GFLOPs, a 6.09 MB weight file, and 19.00 ms latency. These results show that the P2 and P2-CA variants add measurable computational cost, so their accuracy gains should be interpreted together with efficiency.
+YOLO11n-960 has 2.592 M parameters, 6.5 GFLOPs, a 5.25 MB weight file, and 21.31 ms wall-clock latency in the recorded speed test. YOLO11n-P2-960 increases complexity to 2.894 M parameters and 10.7 GFLOPs, with a 6.06 MB weight file and 22.88 ms latency. YOLO11n-P2-CA-960 has 2.904 M parameters, 10.7 GFLOPs, a 6.09 MB weight file, and 23.36 ms latency. YOLO11n-P2-TOFC-960 has 2.896 M parameters, 10.8 GFLOPs, a 6.07 MB weight file, and 22.61 ms latency. These results show that the P2-family variants add measurable computational cost, so their accuracy gains should be interpreted together with efficiency.
 
-YOLO11s-960 has 9.432 M parameters, 21.6 GFLOPs, and an 18.32 MB weight file. Although its measured latency is 16.10 ms in the current single-image timing table, the much larger parameter count and file size should be discussed as a deployment trade-off rather than ignored.
+YOLO11s-960 has 9.432 M parameters, 21.6 GFLOPs, an 18.32 MB weight file, and 24.02 ms measured latency in the current single-image timing table. The much larger parameter count and file size should be discussed as a deployment trade-off rather than ignored.
 
 ### Scale-Wise Recall and Precision
 
-Scale-wise analysis gives more direct evidence for the small-object motivation. Compared with YOLO11n-960, YOLO11n-P2-960 improves small-object recall from 0.420259 to 0.450124, a gain of 0.029865. YOLO11n-P2-CA-960 further reaches 0.455089 small-object recall, a gain of 0.034830 over YOLO11n-960. The small-object precision values are 0.661952 for YOLO11n-960, 0.674799 for YOLO11n-P2-960, and 0.666036 for YOLO11n-P2-CA-960.
+Scale-wise analysis gives more direct evidence for the small-object motivation. Compared with YOLO11n-960, YOLO11n-P2-960 improves small-object recall from 0.420259 to 0.450124, a gain of 0.029865. YOLO11n-P2-CA-960 further reaches 0.455089 small-object recall, a gain of 0.034830 over YOLO11n-960. YOLO11n-P2-TOFC-960 records small-object recall of 0.430828, which is above YOLO11n-960 but below YOLO11n-P2-960. The small-object precision values are 0.661952 for YOLO11n-960, 0.674799 for YOLO11n-P2-960, 0.666036 for YOLO11n-P2-CA-960, and 0.677857 for YOLO11n-P2-TOFC-960.
 
-The same table also shows trade-offs on other scales. YOLO11n-P2-960 has medium-object recall of 0.778928 and large-object recall of 0.887640, both slightly below the YOLO11n-960 values of 0.789464 and 0.890449. YOLO11n-P2-CA-960 shows medium-object recall of 0.781450 and large-object recall of 0.882022. Therefore, the appropriate interpretation is that high-resolution prediction improves small-object recall in the completed VisDrone analysis, while gains are not uniform across all object scales.
+The same table also shows trade-offs on other scales. YOLO11n-P2-960 has medium-object recall of 0.778928 and large-object recall of 0.887640, both slightly below the YOLO11n-960 values of 0.789464 and 0.890449. YOLO11n-P2-CA-960 shows medium-object recall of 0.781450 and large-object recall of 0.882022. YOLO11n-P2-TOFC-960 records medium-object recall of 0.765421 and large-object recall of 0.874532. Therefore, the appropriate interpretation is that high-resolution prediction improves small-object recall in the completed VisDrone analysis, while gains are not uniform across all object scales.
 
 YOLO11s-960 remains the strongest completed reference in scale-wise recall, with small-object recall of 0.492703, medium-object recall of 0.827555, and large-object recall of 0.899813. The final manuscript should use this result to present an honest trade-off narrative.
 
@@ -141,7 +141,7 @@ YOLO11s-960 remains the strongest completed reference in scale-wise recall, with
 
 The local scale-bin AP output provides an additional AP-style diagnostic for the same completed VisDrone models. This evaluation should be described as local scale-bin AP because it is computed from YOLO-format labels and prediction scale bins, not from an official COCO or VisDrone AP-small evaluator.
 
-For the small-object bin, YOLO11n-960 obtains AP50 of 0.229995 and mAP50-95 of 0.116295. YOLO11n-P2-960 increases these values to 0.247659 and 0.131540, respectively. YOLO11n-P2-CA-960 obtains 0.239473 AP50 and 0.126067 mAP50-95. YOLOv8n-960 obtains 0.237713 AP50 and 0.122135 mAP50-95, while YOLO11s-960 remains the strongest completed small-bin reference with 0.302540 AP50 and 0.159421 mAP50-95.
+For the small-object bin, YOLO11n-960 obtains AP50 of 0.229995 and mAP50-95 of 0.116295. YOLO11n-P2-960 increases these values to 0.247659 and 0.131540, respectively. YOLO11n-P2-CA-960 obtains 0.239473 AP50 and 0.126067 mAP50-95. YOLO11n-P2-TOFC-960 obtains 0.229853 AP50 and 0.120661 mAP50-95, which confirms that its aggregate mAP gain does not translate into a small-bin AP50 gain over P2-960. YOLOv8n-960 obtains 0.237713 AP50 and 0.122135 mAP50-95, while YOLO11s-960 remains the strongest completed small-bin reference with 0.302540 AP50 and 0.159421 mAP50-95.
 
 The AP-style diagnostic supports the same cautious interpretation as the recall/precision analysis: the P2 branch improves the small-bin behavior of YOLO11n, but the benefit is not uniform across all scales. In the medium bin, YOLO11n-960 records 0.452575 AP50 and 0.309690 mAP50-95, while YOLO11n-P2-960 records 0.438392 and 0.300511. In the large bin, YOLO11n-960 records 0.577546 AP50 and 0.459221 mAP50-95, while YOLO11n-P2-960 records 0.456420 and 0.368950. Therefore, the manuscript should present P2 as improving small-object diagnostics at the cost of some medium/large-bin trade-offs.
 

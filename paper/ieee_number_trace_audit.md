@@ -6,9 +6,9 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 
 ## Summary
 
-- Direct claims checked: 57
+- Direct claims checked: 69
 - Derived claims checked: 2
-- Ready in draft: 59
+- Ready in draft: 71
 - Source-only matches: 0
 - Non-ready numeric claims: 0
 - Untracked decimal tokens in draft: 0
@@ -23,6 +23,8 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 | Main results | YOLO11n-P2-960 best mAP50-95 | `0.25552` | READY | `paper/tables/main_comparison_for_paper.csv: YOLO11n-P2-960  best_map50_95=0.25552` |
 | Main results | YOLO11n-P2-CA-960 best mAP50 | `0.41996` | READY | `paper/tables/main_comparison_for_paper.csv: YOLO11n-P2-CoordAttention-960  best_map50=0.41996` |
 | Main results | YOLO11n-P2-CA-960 best mAP50-95 | `0.25174` | READY | `paper/tables/main_comparison_for_paper.csv: YOLO11n-P2-CoordAttention-960  best_map50_95=0.25174` |
+| Main results | YOLO11n-P2-TOFC-960 best mAP50 | `0.42837` | READY | `paper/tables/main_comparison_for_paper.csv: YOLO11n-P2-TOFC-960  best_map50=0.42837` |
+| Main results | YOLO11n-P2-TOFC-960 best mAP50-95 | `0.26054` | READY | `paper/tables/main_comparison_for_paper.csv: YOLO11n-P2-TOFC-960  best_map50_95=0.26054` |
 | Main results | YOLO11s-960 best mAP50 | `0.48901` | READY | `paper/tables/main_comparison_for_paper.csv: YOLO11s baseline 960  best_map50=0.48901` |
 | Main results | YOLO11s-960 best mAP50-95 | `0.29812` | READY | `paper/tables/main_comparison_for_paper.csv: YOLO11s baseline 960  best_map50_95=0.29812` |
 | Complexity | YOLO11n-960 params/M | `2.592` | READY | `paper/tables/model_complexity.csv: YOLO11n baseline 960  parameters=2591790` |
@@ -31,28 +33,36 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 | Complexity | YOLO11n-P2-960 GFLOPs | `10.7` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-960  gflops=10.7` |
 | Complexity | YOLO11n-P2-CA-960 params/M | `2.904` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-CoordAttention-960  parameters=2903704` |
 | Complexity | YOLO11n-P2-CA-960 GFLOPs | `10.7` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-CoordAttention-960  gflops=10.7` |
+| Complexity | YOLO11n-P2-TOFC-960 params/M | `2.896` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  parameters=2895762` |
+| Complexity | YOLO11n-P2-TOFC-960 GFLOPs | `10.8` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  gflops=10.8` |
 | Speed | YOLO11n-960 weight size | `5.25` | READY | `paper/tables/model_complexity.csv: YOLO11n baseline 960  weight_size_mb=5.25` |
-| Speed | YOLO11n-960 latency | `16.37` | READY | `paper/tables/speed_results.csv: YOLO11n baseline 960  mean_latency_ms_wall=16.370` |
+| Speed | YOLO11n-960 latency | `21.31` | READY | `paper/tables/speed_results.csv: YOLO11n baseline 960  mean_latency_ms_wall=21.311` |
 | Speed | YOLO11n-P2-960 weight size | `6.06` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-960  weight_size_mb=6.06` |
-| Speed | YOLO11n-P2-960 latency | `17.96` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-960  mean_latency_ms_wall=17.960` |
+| Speed | YOLO11n-P2-960 latency | `22.88` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-960  mean_latency_ms_wall=22.878` |
 | Speed | YOLO11n-P2-CA-960 weight size | `6.09` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-CoordAttention-960  weight_size_mb=6.09` |
-| Speed | YOLO11n-P2-CA-960 latency | `19.00` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-CoordAttention-960  mean_latency_ms_wall=19.000` |
+| Speed | YOLO11n-P2-CA-960 latency | `23.36` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-CoordAttention-960  mean_latency_ms_wall=23.355` |
+| Speed | YOLO11n-P2-TOFC-960 weight size | `6.07` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  weight_size_mb=6.07` |
+| Speed | YOLO11n-P2-TOFC-960 latency | `22.61` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-TOFC-960  mean_latency_ms_wall=22.610` |
 | Speed | YOLO11s-960 params/M | `9.432` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  parameters=9431662` |
 | Speed | YOLO11s-960 GFLOPs | `21.6` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  gflops=21.6` |
 | Speed | YOLO11s-960 weight size | `18.32` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  weight_size_mb=18.32` |
-| Speed | YOLO11s-960 latency | `16.10` | READY | `paper/tables/speed_results.csv: YOLO11s baseline 960  mean_latency_ms_wall=16.096` |
+| Speed | YOLO11s-960 latency | `24.02` | READY | `paper/tables/speed_results.csv: YOLO11s baseline 960  mean_latency_ms_wall=24.024` |
 | Scale recall | YOLO11n-960 small recall | `0.420259` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-960 small recall=0.420259` |
 | Scale recall | YOLO11n-P2-960 small recall | `0.450124` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-960 small recall=0.450124` |
 | Scale recall | YOLO11n-P2-CA-960 small recall | `0.455089` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-CA-960 small recall=0.455089` |
+| Scale recall | YOLO11n-P2-TOFC-960 small recall | `0.430828` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-TOFC-960 small recall=0.430828` |
 | Scale precision | YOLO11n-960 small precision | `0.661952` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-960 small precision=0.661952` |
 | Scale precision | YOLO11n-P2-960 small precision | `0.674799` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-960 small precision=0.674799` |
 | Scale precision | YOLO11n-P2-CA-960 small precision | `0.666036` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-CA-960 small precision=0.666036` |
+| Scale precision | YOLO11n-P2-TOFC-960 small precision | `0.677857` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-TOFC-960 small precision=0.677857` |
 | Scale recall | YOLO11n-960 medium recall | `0.789464` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-960 medium recall=0.789464` |
 | Scale recall | YOLO11n-P2-960 medium recall | `0.778928` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-960 medium recall=0.778928` |
 | Scale recall | YOLO11n-960 large recall | `0.890449` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-960 large recall=0.890449` |
 | Scale recall | YOLO11n-P2-960 large recall | `0.887640` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-960 large recall=0.887640` |
 | Scale recall | YOLO11n-P2-CA-960 medium recall | `0.781450` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-CA-960 medium recall=0.781450` |
 | Scale recall | YOLO11n-P2-CA-960 large recall | `0.882022` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-CA-960 large recall=0.882022` |
+| Scale recall | YOLO11n-P2-TOFC-960 medium recall | `0.765421` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-TOFC-960 medium recall=0.765421` |
+| Scale recall | YOLO11n-P2-TOFC-960 large recall | `0.874532` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-TOFC-960 large recall=0.874532` |
 | Scale recall | YOLO11s-960 small recall | `0.492703` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11s-960 small recall=0.492703` |
 | Scale recall | YOLO11s-960 medium recall | `0.827555` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11s-960 medium recall=0.827555` |
 | Scale recall | YOLO11s-960 large recall | `0.899813` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11s-960 large recall=0.899813` |
@@ -62,6 +72,8 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 | Local AP | YOLO11n-P2-960 small mAP50-95 | `0.131540` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLO11n-P2-960 small map50_95=0.131540` |
 | Local AP | YOLO11n-P2-CA-960 small AP50 | `0.239473` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLO11n-P2-CA-960 small ap50=0.239473` |
 | Local AP | YOLO11n-P2-CA-960 small mAP50-95 | `0.126067` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLO11n-P2-CA-960 small map50_95=0.126067` |
+| Local AP | YOLO11n-P2-TOFC-960 small AP50 | `0.229853` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLO11n-P2-TOFC-960 small ap50=0.229853` |
+| Local AP | YOLO11n-P2-TOFC-960 small mAP50-95 | `0.120661` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLO11n-P2-TOFC-960 small map50_95=0.120661` |
 | Local AP | YOLOv8n-960 small AP50 | `0.237713` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLOv8n-960 small ap50=0.237713` |
 | Local AP | YOLOv8n-960 small mAP50-95 | `0.122135` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLOv8n-960 small map50_95=0.122135` |
 | Local AP | YOLO11s-960 small AP50 | `0.302540` | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv: YOLO11s-960 small ap50=0.302540` |

@@ -23,6 +23,7 @@ MAIN_MODELS = [
     "YOLO11n baseline 960",
     "YOLO11n-P2-960",
     "YOLO11n-P2-CoordAttention-960",
+    "YOLO11n-P2-TOFC-960",
     "YOLO11s baseline 960",
 ]
 
@@ -30,6 +31,7 @@ SPEED_MODELS = [
     "YOLO11n baseline 960",
     "YOLO11n-P2-960",
     "YOLO11n-P2-CoordAttention-960",
+    "YOLO11n-P2-TOFC-960",
     "YOLOv8n baseline 960",
     "YOLO11s baseline 960",
 ]
@@ -45,6 +47,7 @@ DISPLAY_NAMES = {
     "YOLO11n-P2-CoordAttention": "YOLO11n-P2-CA",
     "YOLO11n-P2-CoordAttention-960": "YOLO11n-P2-CA-960",
     "YOLO11n-P2-CoordAttention-SmallObjAug": "YOLO11n-P2-CA-Aug",
+    "YOLO11n-P2-TOFC-960": "YOLO11n-P2-TOFC-960",
 }
 
 

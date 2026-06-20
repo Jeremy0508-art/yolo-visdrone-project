@@ -7,8 +7,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 ## Summary
 
 - Total checks: 110
-- Ready: 103
-- Pending: 7
+- Ready: 104
+- Pending: 6
 - Missing: 0
 
 ## Checks
@@ -114,7 +114,7 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Dataset | Converted UAVDT YOLO train images | PENDING | `data/processed/uavdt_yolo/images/train` | Run scripts/convert_uavdt_to_yolo.py after raw data is available. |
 | Method | TOFC model construction | READY | `configs/models/yolo11n_p2_tofc.yaml,31,2895762` |  |
 | Execution | Server queue safety guard | READY | `RUN_TRAINING dry-run guard and RUN_UAVDT dataset gate found` |  |
-| Training Evidence | TOFC VisDrone result | PENDING | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt` | Run the guarded server queue only after GPU availability is confirmed. |
+| Training Evidence | TOFC VisDrone result | READY | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt` |  |
 | Training Evidence | UAVDT YOLO11n baseline result | PENDING | `runs/detect/baseline_yolo11n_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
 | Training Evidence | UAVDT YOLO11n-P2 result | PENDING | `runs/detect/yolo11n_p2_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
 | Training Evidence | UAVDT YOLOv8n baseline result | PENDING | `runs/detect/baseline_yolov8n_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |

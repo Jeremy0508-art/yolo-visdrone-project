@@ -12,14 +12,14 @@ This document defines what can and cannot be claimed during the IEEE Transaction
 | P2 adds a high-resolution prediction branch and changes model complexity | Allowed as a structural statement | `configs/models/yolo11n_p2.yaml`, `paper/tables/model_complexity.csv` |
 | Completed VisDrone models have full scale-wise recall/precision evidence | Allowed only as recall/precision wording, not AP wording | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |
 | Completed VisDrone models have local scale-bin AP evidence | Allowed only as local scale-bin AP wording, not official COCO/VisDrone AP-small wording | `paper/tables/ieee_scale_ap_results_visdrone.csv`, `paper/ieee_scale_ap_interpretation.md` |
-| TOFC is a candidate module whose model YAML can be instantiated | Allowed as a design/prototype statement only | `src/models/attention/tiny_object_feature_calibration.py`, `configs/models/yolo11n_p2_tofc.yaml`, `paper/ieee_phase1_artifact_audit.md` |
+| TOFC is a completed VisDrone aggregate-mAP candidate | Allowed only with exact VisDrone validation values and the small-object diagnostic caveat | `runs/detect/yolo11n_p2_tofc_960_visdrone/results.csv`, `paper/tables/main_comparison_for_paper.csv`, `paper/tables/ieee_scale_results_visdrone.csv`, `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | The IEEE route requires stronger evidence than the paused CEA route | Allowed as a planning statement | `paper/IEEE_TRANS_SUBMISSION_PLAN.md`, `paper/ieee_required_experiment_gap.md` |
 
 ## Locked Claims
 
 | Do Not Claim Yet | Why It Is Locked | Evidence Needed to Unlock |
 | --- | --- | --- |
-| TOFC improves mAP, recall, AP-small, or FPS | No TOFC training result exists locally | Full TOFC run directory, log, weights, validation metrics, speed/complexity rows |
+| TOFC improves small-object recall or local small-bin AP over YOLO11n-P2-960 | Current synced evidence contradicts this: TOFC has lower small recall and local small-bin AP50 than YOLO11n-P2-960 | New completed evidence with the same evaluation protocol |
 | The method generalizes beyond VisDrone | No second dataset results are complete | Converted UAVDT dataset plus baseline/main-model results and integrity audit |
 | The method is SOTA | Current comparisons are local YOLO-family baselines and literature seed notes | Same-split reproduced or directly comparable literature/SOTA results |
 | The method outperforms larger models | Existing YOLO11s-960 is stronger in absolute accuracy | A clearly defined accuracy-speed-complexity claim, not an absolute superiority claim |

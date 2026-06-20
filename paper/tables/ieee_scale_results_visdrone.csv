@@ -14,3 +14,6 @@ YOLOv8n-960,VisDrone2019-DET,runs/detect/baseline_yolov8n_960_visdrone/weights/b
 YOLO11s-960,VisDrone2019-DET,runs/detect/baseline_yolo11s_960_visdrone/weights/best.pt,val,960,0.25,0.5,small,26586,13099,0.492703,19099,13008,0.681083
 YOLO11s-960,VisDrone2019-DET,runs/detect/baseline_yolo11s_960_visdrone/weights/best.pt,val,960,0.25,0.5,medium,11105,9190,0.827555,11610,9277,0.799053
 YOLO11s-960,VisDrone2019-DET,runs/detect/baseline_yolo11s_960_visdrone/weights/best.pt,val,960,0.25,0.5,large,1068,961,0.899813,1100,965,0.877273
+YOLO11n-P2-TOFC-960,VisDrone2019-DET,runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt,val,960,0.25,0.5,small,26586,11454,0.430828,16741,11348,0.677857
+YOLO11n-P2-TOFC-960,VisDrone2019-DET,runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt,val,960,0.25,0.5,medium,11105,8500,0.765421,10862,8616,0.793224
+YOLO11n-P2-TOFC-960,VisDrone2019-DET,runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt,val,960,0.25,0.5,large,1068,934,0.874532,1082,924,0.853974

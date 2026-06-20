@@ -30,6 +30,9 @@ It interprets scale-wise recall/precision only. It does not report AP-small/AP-m
 | YOLO11s-960 | small | 26586 | 0.492703 | 0.681083 |
 | YOLO11s-960 | medium | 11105 | 0.827555 | 0.799053 |
 | YOLO11s-960 | large | 1068 | 0.899813 | 0.877273 |
+| YOLO11n-P2-TOFC-960 | small | 26586 | 0.430828 | 0.677857 |
+| YOLO11n-P2-TOFC-960 | medium | 11105 | 0.765421 | 0.793224 |
+| YOLO11n-P2-TOFC-960 | large | 1068 | 0.874532 | 0.853974 |
 
 ## Delta vs YOLO11n-960
 
@@ -40,6 +43,7 @@ It interprets scale-wise recall/precision only. It does not report AP-small/AP-m
 | YOLO11n-P2-CA-960 | 0.034830 | 0.004084 | -0.008014 | -0.008427 |
 | YOLOv8n-960 | 0.002257 | -0.000847 | -0.003782 | -0.003745 |
 | YOLO11s-960 | 0.072444 | 0.019131 | 0.038091 | 0.009364 |
+| YOLO11n-P2-TOFC-960 | 0.010569 | 0.015905 | -0.024043 | -0.015917 |
 
 ## Evidence-Bounded Interpretation
 

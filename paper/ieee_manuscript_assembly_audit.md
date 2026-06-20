@@ -44,7 +44,7 @@ The audit does not compile LaTeX and does not create final manuscript files. `PE
 | Guardrail | YOLO11s boundary retained | READY | `Both routes require honest comparison against YOLO11s-960` |  |
 | Guardrail | main.tex preflight says not to create final source yet | READY | `Do not create `main.tex` yet` |  |
 | Guardrail | Claim audit remains pending until final-facing files exist | READY | `Claim audit ready | Pending final-facing files` |  |
-| Final-source gate | Final manuscript creation is still gated | READY | `Phase 1 pending checks: 7` |  |
+| Final-source gate | Final manuscript creation is still gated | READY | `Phase 1 pending checks: 6` |  |
 | Final-source gate | `paper/ieee_trans/main.tex` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/references.bib` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/cover_letter_draft.md` absent while gates are pending | READY | `absent` |  |

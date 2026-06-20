@@ -100,7 +100,7 @@ def audit() -> list[Check]:
         )
 
     safe_phrases = [
-        ("TOFC remains locked", "Do not claim TOFC improves any metric"),
+        ("TOFC small-object claim remains locked", "Do not claim TOFC improves small-object diagnostics over YOLO11n-P2-960"),
         ("Generalization remains locked", "Do not claim generalization beyond VisDrone"),
         ("Official test-dev remains locked", "No official returned test-dev metrics are available"),
     ]

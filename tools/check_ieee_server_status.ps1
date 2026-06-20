@@ -45,6 +45,16 @@ cd "$remote_root" || exit 1
 printf "REMOTE_ROOT|%s\n" "$remote_root"
 printf "MIN_EPOCHS|%s\n" "$min_epochs"
 
+metric_field() {
+  metric_name="$1"
+  header_line="$2"
+  value_line="$3"
+  field_index=$(printf "%s\n" "$header_line" | tr ',' '\n' | nl -ba | awk -v name="$metric_name" '$2 == name {print $1; exit}')
+  if [ -n "$field_index" ]; then
+    printf "%s" "$value_line" | cut -d, -f"$field_index"
+  fi
+}
+
 for run_name in "$@"; do
   run_dir="runs/detect/$run_name"
   results="$run_dir/results.csv"
@@ -58,10 +68,11 @@ for run_name in "$@"; do
 
   lines=$(wc -l < "$results")
   epochs=$((lines - 1))
+  header=$(head -1 "$results")
   last=$(tail -1 "$results")
   last_epoch=$(printf "%s" "$last" | cut -d, -f1)
-  final_map50=$(printf "%s" "$last" | cut -d, -f13)
-  final_map5095=$(printf "%s" "$last" | cut -d, -f14)
+  final_map50=$(metric_field "metrics/mAP50(B)" "$header" "$last")
+  final_map5095=$(metric_field "metrics/mAP50-95(B)" "$header" "$last")
   if [ "$epochs" -ge "$min_epochs" ]; then
     status="READY"
   else

@@ -13,12 +13,13 @@ The current completed VisDrone evidence supports the following interpretation:
 | YOLO11n-960 | Best mAP50 0.42136, best mAP50-95 0.25067 | Small recall 0.420259; local small-bin AP50 0.229995 | 2.592 M params, 6.5 GFLOPs | Resolution-matched nano baseline |
 | YOLO11n-P2-960 | Best mAP50 0.42361, best mAP50-95 0.25552 | Small recall 0.450124; local small-bin AP50 0.247659 | 2.894 M params, 10.7 GFLOPs | Current best nano-scale trade-off |
 | YOLO11n-P2-CA-960 | Best mAP50 0.41996, best mAP50-95 0.25174 | Small recall 0.455089; local small-bin AP50 0.239473 | 2.904 M params, 10.7 GFLOPs | Attention ablation, not current main method |
+| YOLO11n-P2-TOFC-960 | Best mAP50 0.42837, best mAP50-95 0.26054 | Small recall 0.430828; local small-bin AP50 0.229853 | 2.896 M params, 10.8 GFLOPs, 44.23 FPS | Aggregate-accuracy candidate; not a small-object diagnostic winner |
 | YOLOv8n-960 | Best mAP50 0.42016, best mAP50-95 0.25121 | Small recall 0.422516; local small-bin AP50 0.237713 | 3.013 M params, 8.2 GFLOPs | External lightweight reference |
 | YOLO11s-960 | Best mAP50 0.48901, best mAP50-95 0.29812 | Small recall 0.492703; local small-bin AP50 0.302540 | 9.432 M params, 21.6 GFLOPs | Larger-capacity upper reference |
 
-Current fallback route:
+Current route after TOFC:
 
-> Use YOLO11n-P2-960 as the main completed lightweight variant and frame the paper as a high-resolution lightweight YOLO study, unless TOFC produces a stronger evidence-backed trade-off.
+> TOFC gives the best completed nano-scale aggregate mAP on VisDrone, but YOLO11n-P2-960 remains stronger on the current small-object diagnostic metrics. The IEEE manuscript should not present TOFC as a clear small-object enhancement. A defensible route is to discuss TOFC as an aggregate calibration ablation while keeping the main claim centered on high-resolution lightweight trade-offs.
 
 ## Primary Comparison Baseline
 
@@ -33,6 +34,7 @@ Reason:
 - It is stronger than YOLO11n-960 on best mAP50 and best mAP50-95.
 - It is stronger than YOLOv8n-960 on best mAP50 and best mAP50-95.
 - It is stronger than YOLO11n-P2-CA-960 on best mAP50, best mAP50-95, and local small-bin AP50.
+- It remains stronger than TOFC on small-object recall and local small-bin AP50, even though TOFC has higher aggregate best mAP.
 
 Comparing a new method only against YOLO11n-960 would be too weak for IEEE.
 
@@ -59,6 +61,13 @@ TOFC can become the final proposed method only if the completed run satisfies on
 | C: efficiency gain | TOFC matches P2 accuracy closely while keeping lower complexity than P2-CA and acceptable latency | TOFC can be framed as a lightweight calibration alternative |
 
 If none of these routes is supported, TOFC should remain a failed or negative ablation and must not be forced into the paper title.
+
+Current TOFC reading:
+
+- Aggregate evidence is positive: best mAP50-95 improves from 0.25552 for YOLO11n-P2-960 to 0.26054 for YOLO11n-P2-TOFC-960.
+- Small-object diagnostic evidence is negative relative to P2-960: small recall drops from 0.450124 to 0.430828, and local small-bin AP50 drops from 0.247659 to 0.229853.
+- Efficiency evidence is mixed but acceptable for an ablation: TOFC records 2.896 M parameters, 10.8 GFLOPs, and 44.23 FPS under the current local speed protocol.
+- Therefore, TOFC does not pass the small-object Route B and should not be titled as the small-object improvement. It can be retained as an aggregate-accuracy calibration ablation or secondary candidate while the manuscript avoids overclaiming.
 
 ## CoordAttention Decision
 
@@ -94,7 +103,7 @@ Therefore, the final paper must not claim that the nano-scale method outperforms
 
 ## Required Update After TOFC
 
-After a complete TOFC run is synced:
+Completed after syncing the TOFC run:
 
 1. Add TOFC to `paper/tables/main_comparison_for_paper.csv`.
 2. Refresh speed and complexity rows.
@@ -102,10 +111,13 @@ After a complete TOFC run is synced:
 4. Re-run local scale-bin AP for TOFC.
 5. Run `python tools/run_ieee_audits.py`.
 6. Update this protocol with exact TOFC values.
-7. Decide whether TOFC enters the title, abstract, method name, and contribution list.
+
+Remaining decision:
+
+7. Decide whether TOFC enters the title, abstract, method name, and contribution list. Under the current evidence, TOFC should not be the small-object claim in the title.
 
 ## Current Decision
 
-Current decision before TOFC result:
+Current decision after TOFC result:
 
-> The main completed lightweight candidate is YOLO11n-P2-960. TOFC remains a candidate method and must not appear as the final proposed contribution until the acceptance rules above are satisfied by real logs and output files.
+> YOLO11n-P2-TOFC-960 is the best completed nano-scale aggregate-mAP candidate on VisDrone, but YOLO11n-P2-960 remains stronger on the current small-object diagnostic metrics. The manuscript should frame TOFC cautiously as a calibration ablation or aggregate-accuracy candidate, not as a proven small-object superiority module.

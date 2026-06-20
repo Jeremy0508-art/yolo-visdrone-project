@@ -84,6 +84,11 @@ TARGETS = [
         weights="runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best.pt",
         imgsz=960,
     ),
+    BenchmarkTarget(
+        model="YOLO11n-P2-TOFC-960",
+        weights="runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt",
+        imgsz=960,
+    ),
 ]
 
 

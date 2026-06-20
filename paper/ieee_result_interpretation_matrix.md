@@ -28,7 +28,7 @@ This document defines how the current and future experiment results should affec
 | YOLO11n-P2-960 vs YOLO11s-960 | YOLO11s-960 remains much stronger in absolute accuracy: best mAP50-95 `0.29812` vs `0.25552`. | Frame the paper around lightweight accuracy-speed-complexity trade-off. | Do not claim the nano model outperforms larger-capacity detectors. |
 | Scale-wise recall/precision | YOLO11n-P2-960 improves small-object recall over YOLO11n-960 by `0.029865`, while medium/large bins show trade-offs. | Say P2 improves scale-wise small-object recall in the local VisDrone analysis. | Do not say all scales improve. |
 | Local scale-bin AP | YOLO11n-P2-960 improves local small-bin AP50 over YOLO11n-960 by `0.017664` and local small-bin mAP50-95 by `0.015245`. | Use as local scale-bin AP diagnostic evidence. | Do not call this official AP-small, COCO AP-small, or VisDrone official AP-small. |
-| TOFC candidate | TOFC currently has structural/model-build evidence but no complete training result. | Describe TOFC only as a candidate module or planned validation until the run completes. | Do not claim TOFC improves any metric. |
+| TOFC candidate | TOFC now has a complete VisDrone run. It improves aggregate best metrics over YOLO11n-P2-960: best mAP50 `0.42837` vs `0.42361`, best mAP50-95 `0.26054` vs `0.25552`. However, it is weaker than P2-960 on the current small-object diagnostics: small recall `0.430828` vs `0.450124`, local small-bin AP50 `0.229853` vs `0.247659`. | Use TOFC as an aggregate-accuracy and efficiency trade-off candidate or ablation. It should not replace P2-960 as a small-object diagnostic winner unless later evidence changes. | Do not claim TOFC improves small-object diagnostics over YOLO11n-P2-960. |
 | UAVDT cross-dataset route | UAVDT config, setup notes, and converter exist, but raw data/conversion/results are pending. | Mention UAVDT only as a planned cross-dataset validation gate. | Do not claim generalization beyond VisDrone. |
 | VisDrone test-dev | No official returned test-dev metrics are available. | Keep all current quantitative claims on validation-set evidence. | Do not imply official challenge ranking or official test-dev performance. |
 
@@ -36,8 +36,8 @@ This document defines how the current and future experiment results should affec
 
 | Branch | Trigger | Manuscript Route |
 | --- | --- | --- |
-| TOFC passes Route A/B in `ieee_method_selection_protocol.md` | Complete TOFC run improves balanced or small-object evidence over YOLO11n-P2-960 | TOFC-centered lightweight UAV small-object detector |
-| TOFC does not pass | TOFC is neutral or negative under the protocol | P2 high-resolution lightweight analysis paper; TOFC remains a negative or exploratory ablation |
+| TOFC aggregate route | TOFC improves aggregate best mAP50/mAP50-95 over YOLO11n-P2-960 but does not improve small-object diagnostics | TOFC can be discussed as an aggregate-accuracy calibration ablation; title/abstract should avoid claiming small-object diagnostic superiority |
+| TOFC small-object route fails | TOFC small recall and local small-bin AP50 are below YOLO11n-P2-960 | Keep P2-960 as the stronger small-object diagnostic variant |
 | UAVDT trends agree with VisDrone | UAVDT YOLO11n-P2 improves over UAVDT YOLO11n under the same protocol | Limited cross-dataset support for P2-style design |
 | UAVDT trends contradict VisDrone | UAVDT results do not support the same trend | Use UAVDT as limitation/negative evidence; remove generalization claims |
 | YOLO11s remains dominant | Larger model has higher accuracy and small-object diagnostics | Keep deployment/trade-off framing; avoid best-performance framing |
