@@ -9,3 +9,5 @@ YOLO11n-P2-960,Add P2 high-resolution detection head at 960 input,960,0.42361,+0
 YOLO11n-P2-CoordAttention,Add CoordAttention to the P2 model,640,0.33073,+0.00920,+0.00060,0.19044,+0.00806,+0.00032,runs/detect/yolo11n_p2_coordatt_visdrone
 YOLO11n-P2-CoordAttention-960,Increase input size to 960,960,0.41996,+0.09843,+0.08983,0.25174,+0.06936,+0.06162,runs/detect/yolo11n_p2_coordatt_960_visdrone_full
 YOLO11n-P2-CoordAttention-SmallObjAug,"Earlier mosaic closing, smaller scale range, light copy-paste, no erasing",640,0.32780,+0.00627,-0.00233,0.18699,+0.00461,-0.00313,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone
+YOLO11n-P2-TOFC-960,Add task-oriented feature calibration at 960 input,960,0.42837,+0.10684,+0.09824,0.26054,+0.07816,+0.07042,runs/detect/yolo11n_p2_tofc_960_visdrone
+YOLO11n-P2-ScaleGate-960,Add identity-initialized scale-aware adaptive gate for P2 features at 960 input,960,0.42897,+0.10744,+0.09884,0.26148,+0.07910,+0.07136,runs/detect/yolo11n_p2_scalegate_960_visdrone

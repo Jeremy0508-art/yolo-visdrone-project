@@ -4,9 +4,14 @@ This directory contains the paper-facing materials for the YOLO VisDrone project
 
 The repository-level overview is maintained in `../README.md`. Use this file for paper-specific navigation, evidence rules, and rebuild commands.
 
-## Current Route
+## Current Paper Routes
 
-The active paper route is IEEE Transactions preparation. The earlier CEA Chinese-journal route is paused and retained as historical material.
+This project currently keeps two active paper routes:
+
+1. A Chinese-journal route for venues such as 《计算机工程与应用》.
+2. An IEEE Transactions English-journal route.
+
+The two routes share the same reproducible experiment evidence, but they are maintained as separate manuscripts because their audience, language, template, narrative structure, and submission requirements differ.
 
 Current IEEE dashboard:
 
@@ -20,7 +25,28 @@ Current IEEE manuscript workspace:
 paper/ieee_trans/
 ```
 
-Do not treat the old CEA PDF or Word draft as the current submission manuscript. A final IEEE `main.tex` should be created only after the gates in `paper/ieee_trans/main_tex_preflight.md` pass.
+Do not treat the CEA PDF or Word draft as the IEEE submission manuscript. A final IEEE `main.tex` should be created only after the gates in `paper/ieee_trans/main_tex_preflight.md` pass.
+
+Do not treat the CEA materials as abandoned or merely historical. They remain part of the Chinese-journal submission route and should be updated when the Chinese submission package is resumed.
+
+## Major-Revision Framing
+
+The current manuscript direction has been reframed from a progress-report style module comparison into a paper-style study of high-resolution prediction for lightweight UAV small-object detection. The shared core argument is:
+
+```text
+High-resolution input and shallow P2 prediction can improve lightweight YOLO small-object diagnostics, but the benefit must be discussed together with computational cost, object scale, model capacity, and cross-dataset validity boundaries.
+```
+
+The major-revision control files are:
+
+| File | Purpose |
+| --- | --- |
+| `MAJOR_REVISION_ROADMAP.md` | Why the old report-style manuscript must be rewritten and how the new paper structure works |
+| `reframed_core_argument.md` | Shared central claim for the Chinese-journal and English-extension manuscripts |
+| `dual_track_reframed_manuscript_strategy.md` | How the Chinese and English routes share evidence while keeping different manuscript narratives |
+| `tables/reframed_evidence_matrix.csv` | Maps completed experiments to supported claims, unsupported claims, and manuscript roles |
+| `major_revision_completion_audit.md` | Records the completed design-layer rewrite, PDF build check, and remaining UAVDT integration gates |
+| `ieee_uavdt_integration_audit.md` | Records synced UAVDT evidence, paper-facing values, validity-boundary interpretation, and PDF checks |
 
 ## IEEE Route Files
 
@@ -63,6 +89,12 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `ieee_trans/main_tex_preflight.md` | Preflight checklist before creating final-facing `main.tex` |
 | `ieee_trans/tables/` | Generated IEEE LaTeX table drafts |
 
+## Dual-Route Coordination
+
+| File | Purpose |
+| --- | --- |
+| `DUAL_SUBMISSION_STRATEGY.md` | Boundary document for keeping the Chinese-journal route and IEEE English-journal route active without mixing manuscripts or inventing evidence |
+
 ## Current Evidence Artifacts
 
 | Artifact | Purpose |
@@ -85,9 +117,9 @@ Do not treat the old CEA PDF or Word draft as the current submission manuscript.
 | `datasets/uavdt_operational_checklist.md` | Step-by-step UAVDT placement, conversion, preview, training, and sync checklist |
 | `datasets/uavdt_conversion_readiness_audit.md` | Generated local audit and synthetic conversion smoke test for the UAVDT conversion chain |
 
-## Legacy CEA Materials
+## Chinese-Journal / CEA Materials
 
-The CEA route materials remain available for reference, formatting history, and earlier Chinese writing drafts:
+The CEA route materials remain available for the Chinese-journal manuscript, template migration, manual formatting review, and submission preparation:
 
 ```text
 paper/manuscript_submission_candidate.tex
@@ -97,7 +129,7 @@ paper/CEA_*.md
 paper/submission_audit_dashboard.md
 ```
 
-They should not be used as the current IEEE submission source.
+They should not be used as the IEEE submission source, but they are still valid for the Chinese-journal submission track.
 
 ## Evidence Rule
 
@@ -126,28 +158,26 @@ Generated IEEE table drafts are stored in:
 paper/ieee_trans/tables/
 ```
 
-## Legacy LaTeX Preview
+## Chinese LaTeX/PDF Preview
 
-The generic LaTeX draft below belongs to the earlier non-IEEE/CEA preparation route:
+The generic LaTeX draft below belongs to the Chinese-journal preparation route:
 
 ```text
 paper/manuscript_submission_candidate.tex
 paper/manuscript_submission_candidate.pdf
 ```
 
-It can still be rebuilt for historical reference:
+It can be rebuilt with the project-local Tectonic helper:
 
 ```powershell
-cd paper
-xelatex manuscript_submission_candidate.tex
-xelatex manuscript_submission_candidate.tex
+.\tools\build_paper_pdf.ps1
 ```
 
 For the IEEE route, do not create or compile `paper/ieee_trans/main.tex` until `paper/ieee_trans/main_tex_preflight.md` passes.
 
-## Optional Legacy Helpers
+## Additional Paper Helpers
 
-Legacy paper-preview helpers are still available:
+Paper-preview and audit helpers are available:
 
 ```powershell
 .\tools\build_paper_pdf.ps1

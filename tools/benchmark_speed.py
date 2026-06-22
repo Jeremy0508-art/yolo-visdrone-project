@@ -21,6 +21,7 @@ class BenchmarkTarget:
     model: str
     weights: str
     imgsz: int
+    optional: bool = False
 
 
 TARGETS = [
@@ -88,6 +89,18 @@ TARGETS = [
         model="YOLO11n-P2-TOFC-960",
         weights="runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt",
         imgsz=960,
+    ),
+    BenchmarkTarget(
+        model="YOLO11n-P2-ScaleGate-960",
+        weights="runs/detect/yolo11n_p2_scalegate_960_visdrone/weights/best.pt",
+        imgsz=960,
+        optional=True,
+    ),
+    BenchmarkTarget(
+        model="YOLO11n-P2-CSGate-960",
+        weights="runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt",
+        imgsz=960,
+        optional=True,
     ),
 ]
 
@@ -217,6 +230,10 @@ def main() -> None:
 
     rows = []
     for target in TARGETS:
+        weights_path = resolve_project_path(target.weights)
+        if target.optional and not weights_path.exists():
+            print(f"Skipping optional target without weights: {target.model} ({target.weights})")
+            continue
         print(f"Benchmarking {target.model} at imgsz={target.imgsz}...")
         rows.append(benchmark_target(target, images, warmup_images, args.device, args.conf))
 

@@ -1,0 +1,38 @@
+{
+  "source_root": "/root/autodl-tmp/yolo-visdrone-project/data/raw/UAVDT",
+  "output_root": "/root/autodl-tmp/yolo-visdrone-project/data/processed/uavdt_yolo",
+  "splits": {
+    "test": "/root/autodl-tmp/yolo-visdrone-project/data/raw/UAVDT/UAVDT/test",
+    "train": "/root/autodl-tmp/yolo-visdrone-project/data/raw/UAVDT/UAVDT/train",
+    "val": "/root/autodl-tmp/yolo-visdrone-project/data/raw/UAVDT/UAVDT/val"
+  },
+  "stats": {
+    "test": {
+      "images": 272,
+      "labels": 272,
+      "boxes": 7957,
+      "missing_labels": 0,
+      "labels_without_images": 0,
+      "empty_labels": 0,
+      "invalid_lines": 0
+    },
+    "train": {
+      "images": 1266,
+      "labels": 1266,
+      "boxes": 35007,
+      "missing_labels": 0,
+      "labels_without_images": 0,
+      "empty_labels": 0,
+      "invalid_lines": 0
+    },
+    "val": {
+      "images": 271,
+      "labels": 271,
+      "boxes": 7046,
+      "missing_labels": 0,
+      "labels_without_images": 0,
+      "empty_labels": 0,
+      "invalid_lines": 0
+    }
+  }
+}

@@ -6,6 +6,8 @@ PYTHON_BIN="${PYTHON_BIN:-/root/miniconda3/bin/python}"
 RUN_TRAINING="${RUN_TRAINING:-0}"
 RUN_UAVDT="${RUN_UAVDT:-0}"
 RUN_SCALE="${RUN_SCALE:-1}"
+RUN_SCALEGATE="${RUN_SCALEGATE:-0}"
+RUN_CSGATE="${RUN_CSGATE:-0}"
 
 if [[ ! -d "$PROJECT_ROOT" && -f "tools/run_ieee_server_queue.sh" ]]; then
     PROJECT_ROOT="$(pwd)"
@@ -19,6 +21,10 @@ if [[ "$RUN_TRAINING" != "1" ]]; then
     echo "Available actions:"
     echo "  RUN_TRAINING=1 RUN_SCALE=1 ./tools/run_ieee_server_queue.sh"
     echo "  RUN_TRAINING=1 RUN_UAVDT=1 RUN_SCALE=1 ./tools/run_ieee_server_queue.sh"
+    echo "  RUN_TRAINING=1 RUN_SCALEGATE=1 ./tools/run_ieee_server_queue.sh"
+    echo "  RUN_TRAINING=1 RUN_SCALEGATE=1 RUN_UAVDT=1 ./tools/run_ieee_server_queue.sh"
+    echo "  RUN_TRAINING=1 RUN_CSGATE=1 ./tools/run_ieee_server_queue.sh"
+    echo "  RUN_TRAINING=1 RUN_CSGATE=1 RUN_UAVDT=1 ./tools/run_ieee_server_queue.sh"
     exit 0
 fi
 
@@ -80,6 +86,26 @@ run_train \
 
 run_scale_eval || exit $?
 
+if [[ "$RUN_SCALEGATE" == "1" ]]; then
+    run_train \
+        "yolo11n_p2_scalegate_960_visdrone" \
+        "configs/train/yolo11n_p2_scalegate_960.yaml" \
+        "runs/detect/yolo11n_p2_scalegate_960_visdrone/weights/best.pt" \
+        --pretrained-weights yolo11n.pt \
+        --pretrained-mode p2 \
+        --init-output weights/yolo11n_p2_scalegate_960_pretrained_init.pt || exit $?
+fi
+
+if [[ "$RUN_CSGATE" == "1" ]]; then
+    run_train \
+        "yolo11n_p2_csgate_960_visdrone" \
+        "configs/train/yolo11n_p2_csgate_960.yaml" \
+        "runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt" \
+        --pretrained-weights yolo11n.pt \
+        --pretrained-mode p2 \
+        --init-output weights/yolo11n_p2_csgate_960_pretrained_init.pt || exit $?
+fi
+
 if [[ "$RUN_UAVDT" == "1" ]]; then
     if [[ ! -d "data/processed/uavdt_yolo/images/train" ]]; then
         echo "Missing converted UAVDT dataset. Run scripts/convert_uavdt_to_yolo.py first."
@@ -98,6 +124,26 @@ if [[ "$RUN_UAVDT" == "1" ]]; then
         --pretrained-weights yolo11n.pt \
         --pretrained-mode p2 \
         --init-output weights/yolo11n_p2_960_uavdt_pretrained_init.pt || exit $?
+
+    if [[ "$RUN_SCALEGATE" == "1" ]]; then
+        run_train \
+            "yolo11n_p2_scalegate_960_uavdt" \
+            "configs/train/yolo11n_p2_scalegate_960_uavdt.yaml" \
+            "runs/detect/yolo11n_p2_scalegate_960_uavdt/weights/best.pt" \
+            --pretrained-weights yolo11n.pt \
+            --pretrained-mode p2 \
+            --init-output weights/yolo11n_p2_scalegate_960_uavdt_pretrained_init.pt || exit $?
+    fi
+
+    if [[ "$RUN_CSGATE" == "1" ]]; then
+        run_train \
+            "yolo11n_p2_csgate_960_uavdt" \
+            "configs/train/yolo11n_p2_csgate_960_uavdt.yaml" \
+            "runs/detect/yolo11n_p2_csgate_960_uavdt/weights/best.pt" \
+            --pretrained-weights yolo11n.pt \
+            --pretrained-mode p2 \
+            --init-output weights/yolo11n_p2_csgate_960_uavdt_pretrained_init.pt || exit $?
+    fi
 
     run_train \
         "baseline_yolov8n_960_uavdt" \

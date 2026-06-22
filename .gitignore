@@ -40,7 +40,10 @@ paper/cea_template_migration/_generated_word_figures/
 
 # LaTeX generated intermediates
 *.aux
+*.blg
 *.log
 *.out
 *.toc
 *.synctex.gz
+paper/ieee_trans/TS1cmr.fd
+paper/ieee_trans/cmsy7.pfb

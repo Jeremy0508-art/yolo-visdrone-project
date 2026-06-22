@@ -66,6 +66,9 @@ def check_required_inputs() -> list[Check]:
     required = [
         ("Planning input", "Manuscript blueprint", "paper/ieee_trans/manuscript_blueprint.md"),
         ("Planning input", "Section draft pack", "paper/ieee_trans/section_draft_pack.md"),
+        ("Planning input", "ScaleGate method section draft", "paper/ieee_trans/scalegate_method_section_draft.md"),
+        ("Planning input", "CSGate method section draft", "paper/ieee_trans/csgate_method_section_draft.md"),
+        ("Planning input", "Novelty positioning workbench", "paper/ieee_trans/novelty_positioning_workbench.md"),
         ("Planning input", "Assembly checklist", "paper/ieee_trans/manuscript_assembly_checklist.md"),
         ("Planning input", "main.tex preflight checklist", "paper/ieee_trans/main_tex_preflight.md"),
         ("Planning input", "Page budget plan", "paper/ieee_trans/page_budget_plan.md"),
@@ -77,10 +80,13 @@ def check_required_inputs() -> list[Check]:
         ("Planning input", "Seed bibliography", "paper/ieee_trans/references_seed.bib"),
         ("Audit input", "Front matter audit", "paper/ieee_front_matter_audit.md"),
         ("Audit input", "Number trace audit", "paper/ieee_number_trace_audit.md"),
+        ("Audit input", "Main draft number audit", "paper/ieee_main_draft_number_audit.md"),
         ("Audit input", "Claim audit", "paper/ieee_claim_audit.md"),
         ("Audit input", "Evidence map audit", "paper/ieee_evidence_map_audit.md"),
         ("Audit input", "Result interpretation matrix audit", "paper/ieee_result_interpretation_matrix_audit.md"),
         ("Audit input", "Dataset compliance audit", "paper/ieee_dataset_compliance_audit.md"),
+        ("Audit input", "Draft shareability audit", "paper/ieee_draft_shareability_audit.md"),
+        ("Audit input", "ScaleGate method decision audit", "paper/ieee_scalegate_method_decision_audit.md"),
     ]
     return [file_check(area, item, rel_path) for area, item, rel_path in required]
 
@@ -91,6 +97,7 @@ def check_generated_tables() -> list[Check]:
         "paper/ieee_trans/tables/speed_complexity.tex",
         "paper/ieee_trans/tables/scale_recall_precision.tex",
         "paper/ieee_trans/tables/scale_bin_ap.tex",
+        "paper/ieee_trans/tables/uavdt_results.tex",
         "paper/ieee_trans/tables/literature_context.tex",
         "paper/ieee_trans/tables/README.md",
     ]
@@ -108,17 +115,38 @@ def check_guardrails() -> list[Check]:
         ),
         token_check(
             "Guardrail",
-            "TOFC remains locked",
+            "TOFC remains bounded",
             "paper/ieee_trans/manuscript_assembly_checklist.md",
-            "TOFC Description | `section_draft_pack.md` | Locked",
-            "Keep TOFC locked until complete training evidence exists.",
+            "TOFC Description | `section_draft_pack.md` | Ready as ablation with caveat",
+            "Keep TOFC as a bounded ablation rather than the final cross-dataset method.",
         ),
         token_check(
             "Guardrail",
-            "UAVDT results remain locked",
+            "ScaleGate remains mixed/negative evidence",
             "paper/ieee_trans/manuscript_assembly_checklist.md",
-            "UAVDT Results | none | Locked",
-            "Keep UAVDT result claims locked until conversion and runs are complete.",
+            "ScaleAwareP2Gate Description | `scalegate_method_section_draft.md` | Ready as completed mixed/negative evidence",
+            "Keep ScaleGate as an ablation/failure-mode discussion rather than the proposed method.",
+        ),
+        token_check(
+            "Guardrail",
+            "ScaleGate method decision rejects main-method promotion",
+            "paper/ieee_trans/manuscript_assembly_checklist.md",
+            "ScaleGate method-decision audit | Ready; rejected as main method",
+            "Keep the ScaleGate method-decision audit explicit.",
+        ),
+        token_check(
+            "Guardrail",
+            "CSGate remains result-locked",
+            "paper/ieee_trans/manuscript_assembly_checklist.md",
+            "CSGate Description | `csgate_method_section_draft.md` | Ready as structure; result-locked",
+            "Keep CSGate performance wording locked until complete evidence exists.",
+        ),
+        token_check(
+            "Guardrail",
+            "UAVDT validity boundary retained",
+            "paper/ieee_trans/manuscript_assembly_checklist.md",
+            "UAVDT Results | `tables/uavdt_results.tex` | Ready as validity-boundary evidence",
+            "Keep UAVDT result claims framed as validity-boundary evidence.",
         ),
         token_check(
             "Guardrail",
@@ -140,6 +168,20 @@ def check_guardrails() -> list[Check]:
             "paper/ieee_trans/main_tex_preflight.md",
             "Claim audit ready | Pending final-facing files",
             "Keep claim audit expectations tied to final-facing files.",
+        ),
+        token_check(
+            "Guardrail",
+            "Advisor draft shareability checked before sharing",
+            "paper/ieee_trans/manuscript_assembly_checklist.md",
+            "Inspect `paper/ieee_draft_shareability_audit.md` before sharing `main_draft.pdf`",
+            "Keep the advisor-review shareability audit in the resume procedure.",
+        ),
+        token_check(
+            "Guardrail",
+            "Main draft numbers checked before sharing",
+            "paper/ieee_trans/manuscript_assembly_checklist.md",
+            "Inspect `paper/ieee_main_draft_number_audit.md` before sharing `main_draft.pdf`",
+            "Keep the main-draft numeric trace audit in the resume procedure.",
         ),
     ]
     return checks
@@ -195,41 +237,46 @@ def check_manual_pending_gates() -> list[Check]:
             "Target journal final confirmation",
             "paper/ieee_trans/main_tex_preflight.md",
             "Exact IEEE Transactions target selected | Pending",
+            "pending",
             "Advisor confirms T-ITS, TGRS, or another exact journal.",
         ),
         (
             "Final method route selected",
             "paper/ieee_trans/main_tex_preflight.md",
-            "Final method route selected | Pending",
-            "Select TOFC or fallback route only after real result evidence arrives.",
+            "Final method route selected | Pending CSGate evidence",
+            "pending",
+            "Select the final route only after completed CSGate evidence is audited.",
         ),
         (
             "Cross-dataset plan resolved",
             "paper/ieee_trans/main_tex_preflight.md",
-            "Cross-dataset plan resolved | Pending",
-            "Resolve after UAVDT conversion and runs or explicitly downgrade scope.",
+            "Cross-dataset plan resolved | Ready as validity-boundary evidence",
+            "ready",
+            "Keep UAVDT framed as validity-boundary evidence unless a new method is designed and rerun.",
         ),
         (
             "Reference metadata verified",
             "paper/ieee_trans/main_tex_preflight.md",
             "Reference metadata verified | Pending",
+            "pending",
             "Verify final BibTeX entries against publisher metadata before references.bib.",
         ),
         (
             "Dataset/code release boundary final confirmation",
             "paper/ieee_trans/manuscript_assembly_checklist.md",
             "Dataset/code release boundary verified | Pending final human confirmation",
+            "pending",
             "Confirm release policy with advisor/institution before final package.",
         ),
     ]
     checks: list[Check] = []
-    for item, rel_path, token, action in gate_items:
+    for item, rel_path, token, expected_status, action in gate_items:
         found = token in read_text(rel_path)
         checks.append(
             Check(
                 "Manual pending gate",
                 item,
-                "pending" if found else "missing",
+                expected_status if found else "missing",
                 token if found else "not found",
                 action,
             )

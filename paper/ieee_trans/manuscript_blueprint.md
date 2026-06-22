@@ -2,7 +2,7 @@
 
 Status: planning draft, not a submission manuscript.
 
-This blueprint converts the current YOLO-VisDrone project into an IEEE Transactions narrative without inventing missing results. It should be revised after TOFC, UAVDT, and scale-wise experiments are complete.
+This blueprint converts the current YOLO-VisDrone project into an IEEE Transactions narrative without inventing missing results. It should be revised after ScaleGate and any later second-cycle method experiments are complete.
 
 ## Target Framing
 
@@ -16,6 +16,8 @@ The paper should not be framed as "a lightweight model beats all larger detector
 
 > A systematic lightweight YOLO study and method upgrade for UAV aerial small-object detection, emphasizing high-resolution prediction, scale-aware feature calibration, and accuracy-speed-complexity trade-offs.
 
+After the completed UAVDT boundary result, the preferred IEEE route is no longer to package a static P2 result. The active method route is to test an adaptive high-resolution P2 mechanism, currently ScaleAwareP2Gate.
+
 ## Candidate Titles
 
 Use the final title only after the final method is selected from real results.
@@ -24,6 +26,7 @@ Use the final title only after the final method is selected from real results.
 | --- | --- | --- |
 | Current evidence route | High-Resolution Lightweight YOLO for Small Object Detection in UAV Traffic Scenes | Use only if no new module becomes the final contribution. |
 | TOFC route | TOFC-YOLO11n: Tiny-Object Feature Calibration for Lightweight UAV Traffic Object Detection | Use only if TOFC improves validated metrics and speed/complexity remains acceptable. |
+| Adaptive P2 route | Scale-Aware High-Resolution Prediction for Lightweight UAV Object Detection | Use only if ScaleGate or a later adaptive method passes the VisDrone/UAVDT gates. |
 | Conservative analysis route | Revisiting High-Resolution Feature Branches for Lightweight UAV Object Detection | Use if method gains are modest but analysis is strong. |
 
 ## Contribution Boundary
@@ -33,10 +36,11 @@ Use the final title only after the final method is selected from real results.
 | A reproducible YOLO11n/YOLOv5n/YOLOv8n/YOLO11s comparison on VisDrone | Can be used now with exact audited values | `paper/tables/main_comparison_for_paper.csv`, run directories |
 | P2 and 960-input analysis for lightweight YOLO11n | Can be used now with careful wording | Completed VisDrone runs and complexity/speed tables |
 | CoordAttention analysis | Can be discussed as an ablation, not a primary gain source | Completed P2-CA results and honest interpretation |
-| TOFC as a method contribution | Locked | Full TOFC training, validation, speed, complexity, and scale-wise metrics |
-| Cross-dataset validation | Locked | UAVDT converted dataset and completed baseline/method results |
-| Small-object-specific improvement claim | Partially ready | Current VisDrone scale-wise recall/precision and local scale-bin AP are ready; final-method and cross-dataset evidence remain pending |
-| IEEE-level generalization claim | Locked | At least one complete second dataset and consistent interpretation |
+| TOFC as a method contribution | Not selected under current evidence | Completed VisDrone evidence exists, but small-object diagnostics and cross-dataset evidence do not support it as the final method |
+| ScaleAwareP2Gate as a method contribution | Locked until completed runs | Complete VisDrone and UAVDT ScaleGate runs, refreshed speed, complexity, and scale diagnostics |
+| Cross-dataset validation for static P2 | Ready as boundary evidence | Completed UAVDT rows in `paper/tables/ieee_uavdt_results_for_paper.csv` |
+| Small-object-specific improvement claim | Partially ready | Current VisDrone scale-wise recall/precision and local scale-bin AP are ready for completed models; final-method evidence remains pending |
+| IEEE-level generalization claim | Locked | Complete second-dataset evidence that supports a positive final-method claim |
 
 ## Abstract Blueprint
 
@@ -63,9 +67,9 @@ Purpose:
 
 Expected contribution list after full experiments:
 
-1. A lightweight high-resolution detection architecture or TOFC-enhanced architecture for UAV small-object detection.
+1. A lightweight high-resolution detection architecture or adaptive P2 mechanism for UAV small-object detection.
 2. A systematic study of P2 branch, input resolution, attention/fusion, and small-object augmentation under matched settings.
-3. Cross-dataset validation on VisDrone and UAVDT.
+3. Cross-dataset validation on VisDrone and UAVDT, used either as positive support or as a documented validity boundary.
 4. Efficiency and scale-wise analysis linking accuracy gains to small-object behavior.
 
 Until locked evidence is complete, mark contributions 3 and 4 as planned, not final.
@@ -89,13 +93,14 @@ Input material:
 Possible structure:
 - Overview of baseline YOLO11n and lightweight constraints.
 - High-resolution P2 prediction branch.
-- Tiny Object Feature Calibration, if validated.
+- CoordAttention and TOFC as calibration ablations.
+- ScaleAwareP2Gate or later adaptive-P2 method, if validated.
 - Training/inference pipeline.
 - Complexity discussion.
 
 Current safe rule:
-- TOFC may be described as a candidate design in planning notes.
-- TOFC should not appear as the final method in `main.tex` until training evidence exists.
+- TOFC may be described as a completed VisDrone calibration ablation, not as the final method.
+- ScaleAwareP2Gate may be described as a candidate design and formula-level method, but not as a result-bearing method until completed runs exist.
 
 ### 4. Experiments
 
@@ -129,10 +134,10 @@ Keep concise and evidence-bounded:
 
 | Table | Source | Status |
 | --- | --- | --- |
-| Dataset statistics | Existing VisDrone stats plus UAVDT after conversion | Pending UAVDT |
+| Dataset statistics | Existing VisDrone stats plus UAVDT conversion evidence | Partially ready |
 | Main comparison on VisDrone | `paper/tables/main_comparison_for_paper.csv` | Ready for current evidence route |
-| Cross-dataset comparison | Future UAVDT results | Locked |
-| Ablation study | Existing VisDrone rows plus TOFC if valid | Partially ready |
+| Cross-dataset comparison | `paper/tables/ieee_uavdt_results_for_paper.csv` | Ready for completed baselines; ScaleGate locked |
+| Ablation study | Existing VisDrone rows plus TOFC and future ScaleGate | Partially ready |
 | Scale-wise recall/precision | `paper/tables/ieee_scale_results_visdrone.csv` | Ready for completed VisDrone models |
 | Local scale-bin AP | `paper/tables/ieee_scale_ap_results_visdrone.csv` | Ready for completed VisDrone models; do not describe as official AP-small/AP-medium/AP-large |
 | Speed and complexity | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Ready for existing models |
@@ -142,6 +147,7 @@ Keep concise and evidence-bounded:
 | Figure | Source | Status |
 | --- | --- | --- |
 | Method overview | Existing overview can be redrawn in English | Pending final method |
+| ScaleAwareP2Gate schematic | `paper/figures/method/scalegate_schematic.png` | Design-ready, result-locked |
 | Training/validation curves | Existing completed runs | Ready for existing models |
 | Accuracy-speed-complexity plot | Existing tables, plus new final method later | Partially ready |
 | Scale-wise recall plot | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` | Ready for completed VisDrone models |
@@ -154,4 +160,4 @@ Keep concise and evidence-bounded:
 1. Convert this blueprint into a non-final IEEE outline after the target journal is confirmed.
 2. Add `paper/ieee_trans/evidence_to_sections.csv`.
 3. Add a table/figure plan with source files and status.
-4. Wait for TOFC and UAVDT evidence before drafting a final-looking `main.tex`.
+4. Wait for completed ScaleGate evidence and method-selection review before drafting a final-looking `main.tex`.

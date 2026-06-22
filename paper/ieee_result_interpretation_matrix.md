@@ -13,6 +13,7 @@ This document defines how the current and future experiment results should affec
 | Experiment registry | `paper/tables/ieee_experiment_registry.csv`, `paper/ieee_experiment_registry_audit.md` |
 | Scale-wise recall/precision | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/ieee_scale_result_interpretation.md` |
 | Local scale-bin AP | `paper/tables/ieee_scale_ap_results_visdrone.csv`, `paper/ieee_scale_ap_interpretation.md` |
+| UAVDT validation metrics | `paper/tables/ieee_uavdt_results_for_paper.csv`, `paper/ieee_uavdt_integration_audit.md` |
 | Claim boundary | `paper/ieee_claim_boundary.md` |
 | Method decision rules | `paper/ieee_method_selection_protocol.md` |
 
@@ -29,7 +30,9 @@ This document defines how the current and future experiment results should affec
 | Scale-wise recall/precision | YOLO11n-P2-960 improves small-object recall over YOLO11n-960 by `0.029865`, while medium/large bins show trade-offs. | Say P2 improves scale-wise small-object recall in the local VisDrone analysis. | Do not say all scales improve. |
 | Local scale-bin AP | YOLO11n-P2-960 improves local small-bin AP50 over YOLO11n-960 by `0.017664` and local small-bin mAP50-95 by `0.015245`. | Use as local scale-bin AP diagnostic evidence. | Do not call this official AP-small, COCO AP-small, or VisDrone official AP-small. |
 | TOFC candidate | TOFC now has a complete VisDrone run. It improves aggregate best metrics over YOLO11n-P2-960: best mAP50 `0.42837` vs `0.42361`, best mAP50-95 `0.26054` vs `0.25552`. However, it is weaker than P2-960 on the current small-object diagnostics: small recall `0.430828` vs `0.450124`, local small-bin AP50 `0.229853` vs `0.247659`. | Use TOFC as an aggregate-accuracy and efficiency trade-off candidate or ablation. It should not replace P2-960 as a small-object diagnostic winner unless later evidence changes. | Do not claim TOFC improves small-object diagnostics over YOLO11n-P2-960. |
-| UAVDT cross-dataset route | UAVDT config, setup notes, and converter exist, but raw data/conversion/results are pending. | Mention UAVDT only as a planned cross-dataset validation gate. | Do not claim generalization beyond VisDrone. |
+| UAVDT cross-dataset route | The completed UAVDT runs contradict the static P2 trend: YOLO11n-P2-960 best mAP50/mAP50-95 is `0.83711`/`0.53905`, below YOLO11n-960 `0.88444`/`0.59081`, YOLOv8n-960 `0.88983`/`0.59487`, and YOLO11s-960 `0.89756`/`0.60819`. | Use UAVDT as evidence that static P2 is dataset-dependent and cannot support a transferable superiority claim. | Do not hide the negative transfer result or claim cross-dataset robustness. |
+| ScaleGate candidate | ScaleAwareP2Gate is complete and audited. On VisDrone it gives best mAP50/mAP50-95 `0.42897`/`0.26148`, but small recall `0.426578` and local small-bin AP50 `0.224719` are lower than static P2 `0.450124` and `0.247659`. On UAVDT, best mAP50-95 `0.53758` is below static P2 `0.53905` and YOLO11n-960 `0.59081`. | Use as mixed/negative adaptive-gate ablation evidence and as motivation for cross-scale second-cycle design. | Do not promote ScaleGate as the title/abstract/contribution method. |
+| CSGate candidate | CrossScaleP2P3ConsistencyGate is implemented and builds locally, but no completed VisDrone or UAVDT training result exists yet. | Mention only as the selected second-cycle candidate in planning/manuscript workbench text; keep all performance wording locked. | Do not put CSGate into result tables, abstract, conclusion, or contribution claims until complete runs are synced and audited. |
 | VisDrone test-dev | No official returned test-dev metrics are available. | Keep all current quantitative claims on validation-set evidence. | Do not imply official challenge ranking or official test-dev performance. |
 
 ## Manuscript Narrative Branches
@@ -38,8 +41,11 @@ This document defines how the current and future experiment results should affec
 | --- | --- | --- |
 | TOFC aggregate route | TOFC improves aggregate best mAP50/mAP50-95 over YOLO11n-P2-960 but does not improve small-object diagnostics | TOFC can be discussed as an aggregate-accuracy calibration ablation; title/abstract should avoid claiming small-object diagnostic superiority |
 | TOFC small-object route fails | TOFC small recall and local small-bin AP50 are below YOLO11n-P2-960 | Keep P2-960 as the stronger small-object diagnostic variant |
-| UAVDT trends agree with VisDrone | UAVDT YOLO11n-P2 improves over UAVDT YOLO11n under the same protocol | Limited cross-dataset support for P2-style design |
-| UAVDT trends contradict VisDrone | UAVDT results do not support the same trend | Use UAVDT as limitation/negative evidence; remove generalization claims |
+| UAVDT trends agree with VisDrone | Future adaptive method improves over matched UAVDT baselines under the same protocol | Limited cross-dataset support for the adaptive method |
+| Static P2 UAVDT trend contradicts VisDrone | Completed UAVDT results do not support the same static P2 trend | Use UAVDT as redesign motivation and limitation; remove static-P2 generalization claims |
+| ScaleGate trends are mixed or negative | Completed ScaleGate runs fail the method-selection gates | Keep ScaleGate as exploratory/negative ablation and move to CSGate |
+| CSGate trends improve both datasets | Future completed CSGate runs pass a method-selection gate | Consider a CSGate-centered method paper |
+| CSGate trends are mixed or negative | Future completed CSGate runs fail the method-selection gates | Keep the paper as mechanism/boundary analysis or redesign again |
 | YOLO11s remains dominant | Larger model has higher accuracy and small-object diagnostics | Keep deployment/trade-off framing; avoid best-performance framing |
 
 ## Abstract and Conclusion Rules
@@ -59,3 +65,4 @@ Update abstract and conclusion only after:
 - Do not mix reproduced local results and literature-only reported numbers in the same fairness table.
 - Do not use "state-of-the-art" unless same-split comparable evidence is available.
 - Do not describe local scale-bin AP as official AP-small.
+- Do not claim generalization beyond VisDrone unless a completed and audited cross-dataset method result supports it.

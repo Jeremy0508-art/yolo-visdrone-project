@@ -5,3 +5,5 @@ YOLO11n-P2-CA-960,runs/detect/yolo11n_p2_coordatt_960_visdrone_full/weights/best
 YOLOv8n-960,runs/detect/baseline_yolov8n_960_visdrone/weights/best.pt,960,true,completed YOLOv8n 960 reference
 YOLO11s-960,runs/detect/baseline_yolo11s_960_visdrone/weights/best.pt,960,true,completed capacity reference
 YOLO11n-P2-TOFC-960,runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt,960,true,completed TOFC VisDrone 960
+YOLO11n-P2-ScaleGate-960,runs/detect/yolo11n_p2_scalegate_960_visdrone/weights/best.pt,960,true,enabled after completed ScaleGate VisDrone weights were synced
+YOLO11n-P2-CSGate-960,runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt,960,false,pending second-cycle CSGate VisDrone weights

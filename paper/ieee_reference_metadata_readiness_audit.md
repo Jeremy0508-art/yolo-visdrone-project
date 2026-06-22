@@ -7,8 +7,8 @@ This report does not certify final IEEE bibliography correctness. The final `ref
 ## Summary
 
 - Total checks: 19
-- Ready: 18
-- Pending: 1
+- Ready: 19
+- Pending: 0
 - Missing: 0
 
 ## Checks
@@ -22,7 +22,7 @@ This report does not certify final IEEE bibliography correctness. The final `ref
 | Fields | article entries have journal | READY | `none` |  |
 | Fields | inproceedings entries have booktitle | READY | `none` |  |
 | Fields | misc entries have note or durable identifier | READY | `none` |  |
-| Fields | Entries have DOI, arXiv eprint, or URL where available | PENDING | `du2018uavdt, zhu2021tph_yolov5, hou2021coordinate_attention, wang2021aitod, bozcan2020auair, yu2020tinyperson` | Before final references.bib, check publisher metadata and add DOI/URL/eprint where available. |
+| Fields | Entries have DOI, arXiv eprint, or URL where available | READY | `none` |  |
 | Coverage | Primary datasets | READY | `all required keys present` |  |
 | Coverage | Feature pyramid/fusion | READY | `all required keys present` |  |
 | Coverage | Attention | READY | `all required keys present` |  |

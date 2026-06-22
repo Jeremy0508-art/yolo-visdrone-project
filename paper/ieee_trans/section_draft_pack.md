@@ -8,8 +8,9 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 
 - Use only values traced to `paper/tables/main_comparison_for_paper.csv`, `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv`, `paper/tables/ieee_scale_results_visdrone.csv`, and `paper/tables/ieee_scale_ap_results_visdrone.csv`.
 - Do not claim best published performance.
-- Do not claim cross-dataset generalization until UAVDT or another second dataset has complete converted data and completed runs.
+- Do not claim cross-dataset generalization from the completed UAVDT runs; the audited UAVDT evidence currently shows a static-P2 validity boundary.
 - Do not present TOFC as a proven small-object improvement over YOLO11n-P2-960; current evidence supports only aggregate-mAP improvement with weaker small-object diagnostics.
+- Do not present ScaleAwareP2Gate as a result-bearing method until its VisDrone and UAVDT runs are complete, synced, and audited.
 - Discuss AP-style scale results as local scale-bin AP only, not official COCO or VisDrone AP-small/AP-medium/AP-large.
 - Acknowledge that YOLO11s-960 remains the strongest completed reference in absolute VisDrone accuracy.
 
@@ -22,26 +23,29 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 | Scale-wise recall/precision | Ready | `paper/tables/ieee_scale_results_visdrone.csv` |
 | Local scale-bin AP | Ready | `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | TOFC aggregate result | Ready with caveat | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt`, `paper/tables/main_comparison_for_paper.csv`, and scale diagnostic CSVs |
-| UAVDT cross-dataset result | Locked | `data/processed/uavdt_yolo/images/train` and UAVDT runs pending |
+| UAVDT cross-dataset result | Ready with negative-transfer caveat | `paper/tables/ieee_uavdt_results_for_paper.csv` |
+| ScaleAwareP2Gate candidate | Build-ready, result-locked | `configs/models/yolo11n_p2_scalegate.yaml`, `paper/IEEE_TRANS_METHOD_REDESIGN_PLAN.md` |
 
 ## Working Title Options
 
 Use a title only after the final method is selected from real results.
 
-1. High-Resolution Lightweight YOLO for Small Object Detection in UAV Traffic Scenes
-2. Revisiting High-Resolution Prediction Branches for Lightweight UAV Object Detection
-3. TOFC-YOLO11n: Tiny-Object Feature Calibration for Lightweight UAV Traffic Object Detection
+1. Scale-Aware High-Resolution Prediction for Lightweight UAV Small-Object Detection
+2. ScaleGate-YOLO11n: Adaptive High-Resolution Prediction for UAV Traffic Object Detection
+3. Revisiting High-Resolution Prediction Branches for Lightweight UAV Object Detection
 
-Title 3 is not recommended under the current small-object diagnostic evidence.
+Titles 1 and 2 are locked until ScaleGate or a later adaptive-P2 method passes
+the VisDrone/UAVDT evidence gates. Title 3 is the conservative fallback if the
+new method evidence is mixed.
 
 ## Abstract Draft Boundary
 
-Do not finalize the abstract yet. A safe abstract can be assembled after TOFC and UAVDT decisions are complete. The final abstract should include:
+Do not finalize the abstract yet. A safe abstract can be assembled after the ScaleGate decision is complete. The final abstract should include:
 
 1. UAV traffic small-object detection problem.
-2. The selected final method only.
+2. Static P2 boundary evidence and the selected adaptive method, if validated.
 3. Exact VisDrone and cross-dataset values from audited tables only.
-4. A conclusion framed as an accuracy-efficiency trade-off, not universal superiority.
+4. A conclusion framed as an accuracy-efficiency-scale trade-off, not universal superiority.
 
 ## Introduction Draft
 
@@ -49,19 +53,21 @@ Unmanned aerial vehicles provide flexible viewpoints for traffic monitoring, eme
 
 Lightweight detectors are attractive for UAV-assisted perception because they reduce model size and inference cost. Nevertheless, compact YOLO models may lose fine spatial details when small objects are represented mainly by deep low-resolution features. A direct way to reduce this limitation is to strengthen shallow high-resolution prediction while preserving the efficiency advantage of a nano-scale detector. This motivates an evidence-bounded study of YOLO11n variants with a P2 high-resolution prediction branch, input-resolution adjustment, and feature attention calibration.
 
-The current completed experiments show that high-resolution input and P2 prediction can improve the small-object behavior of YOLO11n on the VisDrone validation split, but the results also show clear capacity trade-offs. In particular, larger YOLO11s-960 remains stronger in absolute validation accuracy. Therefore, the paper should be framed around lightweight accuracy-efficiency trade-offs and small-object analysis, rather than a claim that the nano model dominates larger detectors.
+The current completed experiments show that high-resolution input and P2 prediction can improve the small-object behavior of YOLO11n on the VisDrone validation split, but the results also show clear capacity and cross-dataset trade-offs. In particular, larger YOLO11s-960 remains stronger in absolute validation accuracy, and UAVDT does not support a static-P2 transfer claim. Therefore, the paper should be framed around lightweight accuracy-efficiency trade-offs, small-object analysis, and adaptive-method validation rather than a claim that the nano model dominates larger detectors.
 
-The current validated contributions can be written as follows:
+The current validated and result-locked contributions should be separated as follows:
 
 1. A reproducible VisDrone2019-DET evaluation of lightweight YOLO baselines and YOLO11n variants under traced training logs, speed measurements, and complexity statistics.
-2. An analysis of high-resolution prediction for YOLO11n, showing how a P2 branch and 960 input resolution affect detection accuracy, efficiency, scale-wise recall/precision, and local scale-bin AP.
-3. An evidence-bounded discussion of CoordAttention as an auxiliary ablation, where gains are interpreted cautiously rather than treated as a universally positive module.
+2. An analysis of high-resolution prediction for YOLO11n, showing how a P2 branch and 960 input resolution affect detection accuracy, efficiency, scale-wise recall/precision, local scale-bin AP, and UAVDT transfer behavior.
+3. An evidence-bounded discussion of CoordAttention and TOFC as auxiliary ablations, where gains are interpreted cautiously rather than treated as universally positive modules.
+4. A result-locked adaptive P2 design, ScaleAwareP2Gate, motivated by the completed UAVDT boundary and described structurally before performance claims are allowed.
 
 The following contribution statements are locked until additional evidence is available:
 
 1. TOFC as a proven small-object improvement over YOLO11n-P2-960.
-2. UAVDT or other cross-dataset generalization claims.
-3. Official AP-small/AP-medium/AP-large claims.
+2. ScaleAwareP2Gate as a final method before completed runs.
+3. Cross-dataset generalization claims.
+4. Official AP-small/AP-medium/AP-large claims.
 
 ## Related Work Draft
 
@@ -69,7 +75,7 @@ The following contribution statements are locked until additional evidence is av
 
 UAV object detection benchmarks provide the evaluation basis for aerial traffic perception and small-object analysis. VisDrone2019-DET contains diverse UAV-captured scenes with dense object distributions and has been widely used to evaluate detection methods under aerial viewpoints \cite{du2019visdrone_det}. UAVDT further emphasizes vehicle detection and tracking in UAV traffic scenes \cite{du2018uavdt}. Other aerial or UAV-related datasets, including AI-TOD, AU-AIR, TinyPerson, and HIT-UAV, highlight the difficulty of tiny objects, low-altitude traffic surveillance, and modality variation \cite{wang2021aitod,xu2022aitodv2_nwd,bozcan2020auair,yu2020tinyperson,suo2023hituav}.
 
-For the current manuscript, VisDrone is the completed evidence source. UAVDT should be discussed as a planned or future validation source until local conversion and experiments are complete.
+For the current manuscript, VisDrone is the main completed evidence source and UAVDT is the completed cross-dataset boundary source. The UAVDT results currently weaken a static-P2 generalization claim and should be used as motivation for adaptive high-resolution design rather than ignored.
 
 ### Feature Pyramids and High-Resolution Prediction
 
@@ -102,6 +108,18 @@ CoordAttention is added after feature fusion as an auxiliary attention ablation.
 ### TOFC Candidate Module
 
 Tiny Object Feature Calibration is a candidate module for the IEEE route. Its completed VisDrone run gives higher aggregate best mAP than YOLO11n-P2-960, but the current small-object diagnostic metrics are weaker than P2-960. It should therefore be described as an aggregate calibration ablation or candidate, not as a proven small-object diagnostic improvement.
+
+### ScaleAwareP2Gate Candidate
+
+ScaleAwareP2Gate is the current post-UAVDT redesign candidate. It inserts an identity-initialized gate after the P2 high-resolution feature block. The motivation is to keep the useful shallow detail pathway while allowing the P2 response to be adapted rather than statically amplified on every dataset.
+
+Let \(F_2\) denote the fused P2 feature map. The gate computes local context \(L_2\), channel gate \(G_c\), spatial gate \(G_s\), and modulation \(M_2=G_s\odot G_c\). The output is:
+
+\[
+\hat{F}_2 = F_2 + \Delta_{\max}\tanh(\gamma) L_2 \odot M_2,
+\]
+
+where \(\gamma\) is initialized to zero. Therefore, the module starts as the static P2 path and learns only a bounded residual modulation. At present, this module has structural build evidence only. It must not be described as improving accuracy or robustness until its VisDrone and UAVDT runs are complete and audited.
 
 ## Experimental Setup Draft
 
@@ -161,11 +179,11 @@ Locked until `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt` and its 
 
 When evidence exists, report exact mAP50, mAP50-95, precision, recall, parameters, GFLOPs, weight size, latency, FPS, and scale-wise recall/precision. Compare TOFC against YOLO11n-960, YOLO11n-P2-960, YOLO11n-P2-CA-960, and YOLO11s-960. If TOFC does not improve the target trade-off, do not present it as the main method.
 
-### UAVDT Generalization Paragraph
+### UAVDT Boundary Paragraph
 
-Locked until UAVDT is converted and at least the baseline and final selected method have complete runs.
+Unlocked as boundary evidence for static P2. The completed UAVDT rows should be used to state that YOLO11n-P2-960 is weaker than the matched YOLO11n-960 baseline and other completed references under the current setting. This prevents a static-P2 generalization claim and motivates the ScaleAwareP2Gate candidate.
 
-When evidence exists, report exact UAVDT validation metrics and discuss whether the VisDrone finding transfers to UAVDT. If the effect is inconsistent, write it as a limitation and dataset-specific observation.
+Locked for ScaleGate until the ScaleGate UAVDT run is complete. When evidence exists, report exact UAVDT validation metrics and discuss whether the adaptive P2 design repairs, reduces, or fails to repair the static-P2 degradation.
 
 ### Official AP-Small Paragraph
 
@@ -177,7 +195,7 @@ The current project now has a local scale-bin AP diagnostic, but this must not b
 
 The completed VisDrone experiments show that a high-resolution P2 prediction branch can improve the small-object diagnostics of YOLO11n under traceable validation protocols. At 960 input resolution, YOLO11n-P2-960 improves best mAP50-95 from 0.25067 to 0.25552 compared with YOLO11n-960, improves small-object recall by 0.029865, and improves local small-bin AP50 from 0.229995 to 0.247659. Adding CoordAttention further increases small-object recall to 0.455089, but does not uniformly improve all aggregate or scale-bin AP metrics. These results support an accuracy-efficiency trade-off view of lightweight UAV object detection.
 
-The current manuscript should remain incomplete until the final method decision, TOFC result, and cross-dataset validation are available. The final conclusion must reflect the full evidence rather than the current planning state.
+The current manuscript should remain incomplete until the ScaleGate result and final method decision are available. The final conclusion must reflect the full evidence rather than the current planning state. If ScaleGate passes the gates, the conclusion should explain whether adaptive P2 improves the small-object/efficiency/cross-dataset trade-off. If it fails, the conclusion should not hide the failure; the paper should either become a boundary study or move to a second-cycle method design.
 
 ## Source Traceability
 
@@ -188,5 +206,7 @@ The current manuscript should remain incomplete until the final method decision,
 | Complexity values | `paper/tables/model_complexity.csv` |
 | Scale-wise recall/precision | `paper/tables/ieee_scale_results_visdrone.csv` |
 | Local scale-bin AP | `paper/tables/ieee_scale_ap_results_visdrone.csv` |
+| UAVDT cross-dataset boundary | `paper/tables/ieee_uavdt_results_for_paper.csv` |
+| ScaleGate redesign plan | `paper/IEEE_TRANS_METHOD_REDESIGN_PLAN.md` |
 | Scale-wise interpretation | `paper/ieee_scale_result_interpretation.md` |
 | Locked evidence gates | `paper/ieee_submission_dashboard.md` |

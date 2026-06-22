@@ -1,72 +1,81 @@
 # IEEE Transactions 路线导师汇报简版
 
+更新时间：2026-06-21
+
 ## 当前定位
 
-项目已从《计算机工程与应用》中文期刊路线暂时切换到 IEEE Transactions 英文期刊准备路线。当前更合理的论文定位不是直接宣称某个模块全面超过所有模型，而是围绕无人机交通场景中的轻量小目标检测，系统分析高分辨率输入、P2 浅层检测分支、注意力/特征校准模块对精度、速度、复杂度和尺度分组指标的影响。
+项目目前保留中文期刊和英文 IEEE Transactions 两条路线。中文路线没有放弃；英文路线单独面向更高质量的投稿目标推进。
 
-建议当前题目方向：
+英文稿已经不再按“静态 P2 一定有效”来包装，而是根据 VisDrone 与 UAVDT 的真实结果重新组织主线：
 
-> High-Resolution Lightweight YOLO for Small Object Detection in UAV Traffic Scenes
+> 轻量 YOLO 在无人机航拍小目标检测中需要浅层高分辨率特征，但静态 P2 分支是否稳定有效、计算代价如何、能否跨数据集成立，需要用完整实验验证。
 
-TOFC 不建议现在放进题目作为“小目标增强主方法”，因为它虽然提升了整体 mAP，但当前小目标诊断指标不如 YOLO11n-P2-960。
+因此，当前英文路线已经从“整理现有 P2 结果”转向“基于 VisDrone 和 UAVDT 证据重新设计自适应 P2 方法并验证”。
 
-## 已完成的主要工作
+## 已完成工作
 
-1. 完成 VisDrone2019-DET 上的 YOLO11n 系列、公平 960 输入对比、YOLOv5n/YOLOv8n/YOLO11s 参考模型对比。
-2. 新增并完成 YOLO11n-P2-TOFC-960 训练，训练轮数为 100 epochs，结果已同步到本地证据链。
-3. 补充了主结果表、复杂度表、速度测试表、尺度分组 recall/precision、local scale-bin AP 诊断表。
-4. 建立 IEEE 投稿准备材料目录 `paper/ieee_trans/`，包含英文段落草稿、表格草稿、证据映射、审计报告和投稿准备清单。
-5. 建立自动审计脚本，确保论文中的数字来自真实 CSV、日志或运行结果，不手动编造数值。
+1. 完成 VisDrone2019-DET 上 YOLO11n、YOLO11n-P2、YOLO11n-P2-CA、YOLO11n-P2-TOFC、YOLOv5n、YOLOv8n、YOLO11s 等模型的主结果、速度、复杂度和尺度诊断整理。
+2. 完成 UAVDT 数据集准备、转换和四组公平对照实验同步：YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960。
+3. 生成 IEEE 英文工作区 `paper/ieee_trans/`，包括 draft PDF、表格、图表计划、证据映射、审计脚本和投稿前检查清单。
+4. 根据 UAVDT 结果确认：静态 P2 在 VisDrone 上有小目标诊断收益，但在 UAVDT 上不具备稳定迁移优势。
+5. 新设计并实现了 `ScaleAwareP2Gate` 自适应 P2 候选模块，并已在服务器启动 VisDrone 与 UAVDT 队列实验。
 
-## 当前关键实验结果
+## 关键实验结论
 
-VisDrone 验证集主要结果如下，数值来自 `paper/tables/main_comparison_for_paper.csv`。
+VisDrone 上，YOLO11n-P2-960 相比 YOLO11n-960 有小幅提升：
 
-| 模型 | 输入 | Params/M | mAP50 | mAP50-95 | 说明 |
-| --- | ---: | ---: | ---: | ---: | --- |
-| YOLO11n-960 | 960 | 2.592 | 0.42136 | 0.25067 | 分辨率公平 baseline |
-| YOLO11n-P2-960 | 960 | 2.894 | 0.42361 | 0.25552 | 小目标诊断更强的轻量方案 |
-| YOLO11n-P2-CA-960 | 960 | 2.904 | 0.41996 | 0.25174 | 注意力消融，整体指标未超过 P2 |
-| YOLO11n-P2-TOFC-960 | 960 | 2.896 | 0.42837 | 0.26054 | 当前 nano 级整体 mAP 最好 |
-| YOLO11s-960 | 960 | 9.432 | 0.48901 | 0.29812 | 大容量参考上界 |
+| 模型 | 输入 | Params/M | VisDrone mAP50 | VisDrone mAP50-95 |
+| --- | ---: | ---: | ---: | ---: |
+| YOLO11n-960 | 960 | 2.592 | 0.42136 | 0.25067 |
+| YOLO11n-P2-960 | 960 | 2.894 | 0.42361 | 0.25552 |
+| YOLO11n-P2-CA-960 | 960 | 2.904 | 0.41996 | 0.25174 |
+| YOLO11n-P2-TOFC-960 | 960 | 2.896 | 0.42837 | 0.26054 |
+| YOLO11s-960 | 960 | 9.432 | 0.48901 | 0.29812 |
 
-当前结论需要谨慎：
+UAVDT 上，静态 P2 没有保持优势：
 
-- TOFC 的整体 mAP50 和 mAP50-95 优于 YOLO11n-P2-960。
-- 但 TOFC 的小目标 recall 为 0.430828，低于 YOLO11n-P2-960 的 0.450124。
-- TOFC 的 local small-bin AP50 为 0.229853，低于 YOLO11n-P2-960 的 0.247659。
-- 因此 TOFC 不能写成“小目标检测全面增强模块”，更适合写成整体精度校准候选或消融结果。
-- YOLO11s-960 仍然显著强于 nano 模型，论文必须强调轻量化折中，而不是绝对 SOTA。
+| 模型 | UAVDT mAP50 | UAVDT mAP50-95 |
+| --- | ---: | ---: |
+| YOLO11n-960 | 0.88444 | 0.59081 |
+| YOLO11n-P2-960 | 0.83711 | 0.53905 |
+| YOLOv8n-960 | 0.88983 | 0.59487 |
+| YOLO11s-960 | 0.89756 | 0.60819 |
 
-## 当前有没有论文初版
+这说明当前论文不能写成“P2 普遍提升”或“轻量模型超过更大模型”。更合理的主线是：高分辨率预测对 VisDrone 小目标诊断有帮助，但存在计算代价和数据集适用边界，因此需要设计自适应高分辨率机制。
 
-有材料级初版，但还不是正式 IEEE 投稿稿。
+## 新方法进展
 
-可以给导师看的文件：
+当前新方法候选为 `ScaleAwareP2Gate`：
 
-1. `paper/ieee_advisor_progress_brief.md`：当前这份导师汇报简版。
-2. `paper/ieee_trans/section_draft_pack.md`：英文论文各章节的 evidence-bounded 草稿，可视为 IEEE 英文稿雏形。
-3. `paper/ieee_trans/tables/visdrone_main_results.tex`：IEEE 主结果表草稿。
-4. `paper/ieee_trans/tables/speed_complexity.tex`：速度与复杂度表草稿。
-5. `paper/ieee_submission_dashboard.md`：当前投稿准备状态总览。
-6. `paper/IEEE_TRANS_SUBMISSION_PLAN.md`：完整 IEEE 路线计划。
+- 插入位置：P2 高分辨率特征融合之后；
+- 设计思想：不固定增强 P2，而是通过局部上下文、通道门控、空间门控和有界残差增益，让 P2 特征自适应调制；
+- 初始化方式：增益参数初始化为 0，因此初始输出等同于普通 P2，降低训练不稳定风险；
+- 当前状态：代码、模型 YAML、训练配置和结构图已完成；服务器实验正在运行。
 
-不建议现在把它称为“可投稿初稿”，因为 `paper/ieee_trans/main.tex` 还没有生成，UAVDT 第二数据集实验也未完成。
+截至最近一次状态检查：
 
-## 当前最大短板
+- `yolo11n_p2_scalegate_960_visdrone`：4/100 epoch，训练中；
+- `yolo11n_p2_scalegate_960_uavdt`：排队中；
+- 早期 epoch 结果只作为训练进度，不进入论文结论。
 
-IEEE Transactions 级别目前最大的短板是泛化证据不足。当前结果主要来自 VisDrone 验证集，UAVDT 或其他第二数据集尚未完成转换与训练，因此还不能宣称方法具有跨数据集泛化能力。
+## 当前可给导师查看的材料
 
-下一步优先级：
+建议优先查看：
 
-1. 准备 UAVDT 原始数据并完成 YOLO 格式转换。
-2. 在 UAVDT 上跑 YOLO11n-960、YOLO11n-P2-960、YOLOv8n-960、YOLO11s-960。
-3. 如果资源允许，再决定是否补 TOFC-UAVDT 或多 seed 稳定性实验。
-4. 根据第二数据集结果决定最终主方法和英文论文标题。
+1. `paper/ieee_trans/main_draft.pdf`：当前英文 evidence-bounded draft；
+2. `paper/ieee_trans/scalegate_method_section_draft.md`：ScaleAwareP2Gate 方法小节草稿；
+3. `paper/figures/method/scalegate_schematic.png`：ScaleGate 模块结构图；
+4. `paper/ieee_submission_dashboard.md`：IEEE 路线总体状态；
+5. `paper/IEEE_TRANS_METHOD_REDESIGN_PLAN.md`：从静态 P2 转向自适应 P2 的方法重设计计划；
+6. `paper/IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md`：ScaleGate 完成后如何同步、测速、做尺度诊断和写入论文的协议。
 
-## 建议给导师的汇报口径
+## 下一步计划
 
-可以这样说：
-
-> 目前已经完成 VisDrone 上的系统实验和 IEEE 投稿准备框架。结果显示，960 输入和 P2 高分辨率分支对轻量 YOLO 的小目标诊断有较明确作用；新尝试的 TOFC 在整体 mAP 上超过 P2-960，但小目标尺度诊断不如 P2-960，因此暂不把 TOFC 作为小目标增强主结论，而作为整体精度校准消融来处理。当前距离 IEEE Transactions 投稿还缺第二数据集 UAVDT 验证和最终英文稿整合。
-
+1. 等待 ScaleGate 的 VisDrone 和 UAVDT 两个完整 100 epoch 实验完成。
+2. 同步完整运行目录，并只把 100 epoch 完成结果纳入论文表格。
+3. 补测 ScaleGate 的速度、复杂度、尺度召回/精度和本地 scale-bin AP。
+4. 根据真实结果决定最终路线：
+   - 如果 ScaleGate 同时改善 VisDrone 与 UAVDT，转为自适应 P2 方法论文；
+   - 如果只改善 VisDrone，不改善 UAVDT，写成方法加适用边界；
+   - 如果 ScaleGate 不改善，则继续第二轮方法设计，不强行包装结果。
+5. 在最终路线确定后，再重写摘要、贡献点、结论和投稿版 `main.tex`。

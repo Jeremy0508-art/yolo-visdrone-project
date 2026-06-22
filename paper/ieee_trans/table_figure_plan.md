@@ -9,8 +9,8 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 | T1 | Dataset statistics for VisDrone and UAVDT | VisDrone existing metadata; UAVDT conversion statistics | Locked | UAVDT must be converted and audited first. |
 | T2 | Implementation details | Existing configs, args, hardware notes | Partially ready | Needs final method and server environment details. |
 | T3 | Main VisDrone comparison | `paper/tables/main_comparison_for_paper.csv` | Ready for existing models | Use exact values only. |
-| T4 | UAVDT cross-dataset comparison | Future UAVDT run outputs | Locked | Required for generalization claims. |
-| T5 | Ablation study | Existing P2/CA/960/SmallObjAug rows plus future TOFC | Partially ready | Current evidence supports P2/input-size discussion; TOFC locked. |
+| T4 | UAVDT cross-dataset comparison | `paper/tables/ieee_uavdt_results_for_paper.csv`; `paper/tables/ieee_uavdt_results_status.csv` | Ready for completed baselines; ScaleGate locked | Four completed UAVDT rows are usable as boundary evidence; ScaleGate enters only after 100 epochs and sync. |
+| T5 | Ablation study | Existing P2/CA/960/SmallObjAug/TOFC rows plus future ScaleGate | Partially ready | Current evidence supports P2/input-size/TOFC boundary discussion; ScaleGate locked until complete runs. |
 | T6 | Scale-wise recall/precision metrics | `paper/tables/ieee_scale_results_visdrone.csv` | Ready for completed VisDrone models | Use recall/precision wording; do not call this AP-small. |
 | T6b | Local scale-bin AP diagnostics | `paper/tables/ieee_scale_ap_results_visdrone.csv` | Ready for completed VisDrone models | Local diagnostic only; do not call this official COCO/VisDrone AP-small. |
 | T7 | Speed and complexity | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` | Ready for existing models | Must be refreshed after any new final model. |
@@ -20,7 +20,8 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 
 | ID | Planned Figure | Source | Status | Notes |
 | --- | --- | --- | --- | --- |
-| F1 | Method overview | Existing CEA overview redrawn in English, or new TOFC overview | Pending final method | Do not finalize before choosing final architecture. |
+| F1 | Method overview | English architecture figure for the final selected route | Pending final method | If ScaleGate passes the gates, show the P2 adaptive gate and four-scale detection flow; otherwise keep a boundary-study overview. |
+| F1b | ScaleAwareP2Gate module schematic | `src/models/attention/scale_aware_p2_gate.py`; `paper/ieee_trans/scalegate_method_section_draft.md` | Design-ready; result-locked | Can show local context, channel gate, spatial gate, and bounded residual gain without claiming performance. |
 | F2 | P2/high-resolution branch schematic | Model YAML and existing diagrams | Ready as structural figure | Can be used without claiming accuracy gain beyond evidence. |
 | F3 | Training curves | Existing completed run figures | Ready for existing models | Use clear English caption and source run path. |
 | F4 | Accuracy-speed trade-off | Existing tables plus future final method | Partially ready | Refresh after TOFC/UAVDT if used. |

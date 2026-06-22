@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT_PATH = ROOT / "paper/ieee_phase1_artifact_audit.md"
+SERVER_HISTORY_PATH = ROOT / "paper/tables/ieee_server_status_history.csv"
 
 
 @dataclass
@@ -37,12 +38,15 @@ REQUIRED_FILES = [
     ("Planning", "IEEE server resume runbook", "paper/ieee_server_resume_runbook.md"),
     ("Planning", "Method design notes", "paper/ieee_method_design_notes.md"),
     ("Planning", "IEEE method selection protocol", "paper/ieee_method_selection_protocol.md"),
+    ("Planning", "IEEE second-cycle method backlog", "paper/IEEE_SECOND_CYCLE_METHOD_BACKLOG.md"),
     ("Planning", "IEEE result interpretation matrix", "paper/ieee_result_interpretation_matrix.md"),
     ("Planning", "IEEE result interpretation matrix audit", "paper/ieee_result_interpretation_matrix_audit.md"),
     ("Planning", "Claim boundary rules", "paper/ieee_claim_boundary.md"),
     ("Planning", "IEEE reviewer risk register", "paper/ieee_reviewer_risk_register.md"),
     ("Planning", "IEEE reviewer response plan", "paper/ieee_trans_response_plan.md"),
     ("Planning", "IEEE result integration protocol", "paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md"),
+    ("Planning", "ScaleGate post-result integration protocol", "paper/IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md"),
+    ("Planning", "CSGate post-result integration protocol", "paper/IEEE_CSGATE_POST_RESULT_PROTOCOL.md"),
     ("Planning", "IEEE scale evaluation protocol", "paper/ieee_scale_evaluation_protocol.md"),
     ("Planning", "IEEE local scale-bin AP protocol", "paper/ieee_scale_ap_protocol.md"),
     ("Planning", "IEEE scale result interpretation", "paper/ieee_scale_result_interpretation.md"),
@@ -57,8 +61,10 @@ REQUIRED_FILES = [
     ("Planning", "IEEE front matter audit", "paper/ieee_front_matter_audit.md"),
     ("Planning", "IEEE related-work outline", "paper/ieee_trans/related_work_outline.md"),
     ("Planning", "IEEE section draft pack", "paper/ieee_trans/section_draft_pack.md"),
+    ("Planning", "ScaleGate method section draft", "paper/ieee_trans/scalegate_method_section_draft.md"),
     ("Planning", "IEEE manuscript assembly checklist", "paper/ieee_trans/manuscript_assembly_checklist.md"),
     ("Planning", "IEEE manuscript assembly audit", "paper/ieee_manuscript_assembly_audit.md"),
+    ("Planning", "IEEE draft shareability audit", "paper/ieee_draft_shareability_audit.md"),
     ("Planning", "IEEE main.tex preflight checklist", "paper/ieee_trans/main_tex_preflight.md"),
     ("Planning", "IEEE page budget plan", "paper/ieee_trans/page_budget_plan.md"),
     ("Planning", "IEEE seed bibliography", "paper/ieee_trans/references_seed.bib"),
@@ -66,15 +72,27 @@ REQUIRED_FILES = [
     ("Planning", "IEEE reference metadata readiness audit", "paper/ieee_reference_metadata_readiness_audit.md"),
     ("Planning", "IEEE evidence-to-section map", "paper/ieee_trans/evidence_to_sections.csv"),
     ("Planning", "IEEE evidence-to-section map audit", "paper/ieee_evidence_map_audit.md"),
+    ("Planning", "IEEE novelty positioning workbench", "paper/ieee_trans/novelty_positioning_workbench.md"),
     ("Planning", "IEEE table and figure plan", "paper/ieee_trans/table_figure_plan.md"),
     ("Planning", "IEEE figure source manifest", "paper/ieee_trans/figure_source_manifest.md"),
     ("Planning", "IEEE cover letter workbench", "paper/ieee_trans/cover_letter_workbench.md"),
     ("Planning", "IEEE generated table directory", "paper/ieee_trans/tables/README.md"),
     ("Planning", "IEEE claim audit report", "paper/ieee_claim_audit.md"),
     ("Planning", "IEEE number trace audit", "paper/ieee_number_trace_audit.md"),
+    ("Planning", "IEEE main draft number audit", "paper/ieee_main_draft_number_audit.md"),
     ("Planning", "IEEE server progress report", "paper/ieee_server_progress_report.md"),
     ("Planning", "IEEE server status snapshot", "paper/ieee_server_status_snapshot.md"),
     ("Planning", "IEEE server status history", "paper/tables/ieee_server_status_history.csv"),
+    ("Planning", "ScaleGate server launch audit", "paper/ieee_scalegate_server_launch_audit.md"),
+    ("Planning", "CSGate server launch audit", "paper/ieee_csgate_server_launch_audit.md"),
+    ("Planning", "ScaleGate result gate audit", "paper/ieee_scalegate_result_gate_audit.md"),
+    ("Planning", "ScaleGate method decision audit", "paper/ieee_scalegate_method_decision_audit.md"),
+    ("Planning", "CSGate result gate audit", "paper/ieee_csgate_result_gate_audit.md"),
+    ("Planning", "CSGate method decision audit", "paper/ieee_csgate_method_decision_audit.md"),
+    ("Planning", "ScaleGate post-result dynamic runbook", "paper/ieee_scalegate_post_result_runbook.md"),
+    ("Planning", "ScaleGate post-result runbook audit", "paper/ieee_scalegate_post_result_runbook_audit.md"),
+    ("Planning", "IEEE non-result closure audit", "paper/ieee_non_result_closure_audit.md"),
+    ("Planning", "IEEE goal readiness audit", "paper/ieee_goal_readiness_audit.md"),
     ("Planning", "IEEE submission dashboard", "paper/ieee_submission_dashboard.md"),
     ("Planning", "IEEE reference audit", "paper/ieee_reference_audit.md"),
     ("Planning", "IEEE reference gap report", "paper/ieee_reference_gap_report.md"),
@@ -90,14 +108,26 @@ REQUIRED_FILES = [
     ("Method", "TOFC source module", "src/models/attention/tiny_object_feature_calibration.py"),
     ("Method", "TOFC model YAML", "configs/models/yolo11n_p2_tofc.yaml"),
     ("Method", "TOFC train config", "configs/train/yolo11n_p2_tofc_960.yaml"),
+    ("Method", "ScaleGate source module", "src/models/attention/scale_aware_p2_gate.py"),
+    ("Method", "ScaleGate model YAML", "configs/models/yolo11n_p2_scalegate.yaml"),
+    ("Method", "ScaleGate VisDrone train config", "configs/train/yolo11n_p2_scalegate_960.yaml"),
+    ("Method", "ScaleGate UAVDT train config", "configs/train/yolo11n_p2_scalegate_960_uavdt.yaml"),
+    ("Method", "CSGate source module", "src/models/attention/cross_scale_p2_p3_gate.py"),
+    ("Method", "CSGate model YAML", "configs/models/yolo11n_p2_csgate.yaml"),
+    ("Method", "CSGate VisDrone train config", "configs/train/yolo11n_p2_csgate_960.yaml"),
+    ("Method", "CSGate UAVDT train config", "configs/train/yolo11n_p2_csgate_960_uavdt.yaml"),
     ("Analysis", "Scale target list", "paper/tables/ieee_scale_eval_targets.csv"),
     ("Execution", "Guarded server queue", "tools/run_ieee_server_queue.sh"),
+    ("Execution", "ScaleGate server queue", "tools/start_ieee_scalegate_queue.sh"),
+    ("Execution", "CSGate server queue", "tools/start_ieee_csgate_queue.sh"),
     ("Execution", "IEEE claim scanner", "tools/check_ieee_claims.py"),
     ("Execution", "IEEE front matter checker", "tools/check_ieee_front_matter.py"),
     ("Execution", "IEEE number trace audit builder", "tools/build_ieee_number_trace_audit.py"),
+    ("Execution", "IEEE main draft number checker", "tools/check_ieee_main_draft_numbers.py"),
     ("Execution", "IEEE result interpretation checker", "tools/check_ieee_result_interpretation_matrix.py"),
     ("Execution", "IEEE evidence map checker", "tools/check_ieee_evidence_map.py"),
     ("Execution", "IEEE manuscript assembly checker", "tools/check_ieee_manuscript_assembly.py"),
+    ("Execution", "IEEE draft shareability checker", "tools/check_ieee_draft_shareability.py"),
     ("Execution", "IEEE reference checker", "tools/check_ieee_references.py"),
     ("Execution", "IEEE reference metadata readiness checker", "tools/check_ieee_reference_metadata_readiness.py"),
     ("Execution", "IEEE dataset compliance checker", "tools/check_ieee_dataset_compliance.py"),
@@ -111,6 +141,18 @@ REQUIRED_FILES = [
     ("Execution", "IEEE server status checker", "tools/check_ieee_server_status.ps1"),
     ("Execution", "IEEE server sync script", "tools/sync_ieee_server_results.ps1"),
     ("Execution", "IEEE server progress reporter", "tools/build_ieee_server_progress_report.py"),
+    ("Execution", "IEEE ScaleGate guarded intake script", "tools/intake_ieee_scalegate_results.ps1"),
+    ("Execution", "IEEE CSGate guarded intake script", "tools/intake_ieee_csgate_results.ps1"),
+    ("Execution", "IEEE ScaleGate result gate checker", "tools/check_ieee_scalegate_result_gate.py"),
+    ("Execution", "IEEE ScaleGate method decision checker", "tools/check_ieee_scalegate_method_decision.py"),
+    ("Execution", "IEEE CSGate result gate checker", "tools/check_ieee_csgate_result_gate.py"),
+    ("Execution", "IEEE CSGate method decision checker", "tools/check_ieee_csgate_method_decision.py"),
+    ("Execution", "IEEE ScaleGate post-result runbook builder", "tools/build_ieee_scalegate_post_result_runbook.py"),
+    ("Execution", "IEEE ScaleGate post-result runbook checker", "tools/check_ieee_scalegate_post_result_runbook.py"),
+    ("Execution", "IEEE ScaleGate scale target enabler", "tools/set_ieee_scalegate_scale_target.py"),
+    ("Execution", "IEEE generic scale target enabler", "tools/set_ieee_scale_target.py"),
+    ("Execution", "IEEE non-result closure checker", "tools/check_ieee_non_result_closure.py"),
+    ("Execution", "IEEE goal readiness checker", "tools/check_ieee_goal_readiness.py"),
     ("Execution", "IEEE dashboard builder", "tools/build_ieee_submission_dashboard.py"),
     ("Execution", "IEEE experiment registry builder", "tools/build_ieee_experiment_registry.py"),
     ("Execution", "IEEE audit runner", "tools/run_ieee_audits.py"),
@@ -148,6 +190,30 @@ RESULT_GATES = [
         "UAVDT YOLO11s capacity reference result",
         "runs/detect/baseline_yolo11s_960_uavdt/weights/best.pt",
         "Convert and validate UAVDT before launching this run.",
+    ),
+    (
+        "Training Evidence",
+        "ScaleGate VisDrone result",
+        "runs/detect/yolo11n_p2_scalegate_960_visdrone/weights/best.pt",
+        "Run tools/start_ieee_scalegate_queue.sh after server authentication and code sync are confirmed.",
+    ),
+    (
+        "Training Evidence",
+        "ScaleGate UAVDT result",
+        "runs/detect/yolo11n_p2_scalegate_960_uavdt/weights/best.pt",
+        "Run tools/start_ieee_scalegate_queue.sh after server authentication and code sync are confirmed.",
+    ),
+    (
+        "Training Evidence",
+        "CSGate VisDrone result",
+        "runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt",
+        "Run tools/start_ieee_csgate_queue.sh only after CSGate code/config sync and smoke test are confirmed.",
+    ),
+    (
+        "Training Evidence",
+        "CSGate UAVDT result",
+        "runs/detect/yolo11n_p2_csgate_960_uavdt/weights/best.pt",
+        "Run tools/start_ieee_csgate_queue.sh only after CSGate code/config sync and smoke test are confirmed.",
     ),
     (
         "Analysis",
@@ -202,6 +268,63 @@ def count_csv_rows(rel_path: str) -> int:
         return sum(1 for _ in csv.DictReader(f))
 
 
+def count_run_epochs(run_dir: Path) -> int:
+    results = run_dir / "results.csv"
+    if not results.exists():
+        return 0
+    with results.open(encoding="utf-8-sig", errors="ignore") as f:
+        lines = [line for line in f if line.strip()]
+    return max(len(lines) - 1, 0)
+
+
+def latest_server_run_status(run_name: str) -> dict[str, str] | None:
+    if not SERVER_HISTORY_PATH.exists():
+        return None
+    latest: dict[str, str] | None = None
+    with SERVER_HISTORY_PATH.open(newline="", encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            if row.get("run") == run_name:
+                latest = row
+    return latest
+
+
+def training_run_check(area: str, item: str, weight_rel_path: str, action: str) -> Check:
+    weight = ROOT / weight_rel_path
+    run_dir = weight.parents[1]
+    results = run_dir / "results.csv"
+    args = run_dir / "args.yaml"
+    epochs = count_run_epochs(run_dir)
+    missing = [
+        str(path.relative_to(ROOT)).replace("\\", "/")
+        for path in [results, args, weight]
+        if not path.exists()
+    ]
+    if epochs >= 100 and not missing:
+        return Check(
+            area,
+            item,
+            "ready",
+            f"{run_dir.relative_to(ROOT).as_posix()}; epochs={epochs}; core artifacts present",
+        )
+    evidence = f"{run_dir.relative_to(ROOT).as_posix()}; epochs={epochs}/100"
+    if missing:
+        evidence += f"; missing: {', '.join(missing)}"
+    server_row = latest_server_run_status(run_dir.name)
+    if server_row:
+        server_bits = [
+            f"server={server_row.get('status', '')}",
+            f"{server_row.get('epochs', '0')}/100",
+            f"timestamp={server_row.get('timestamp', '')}",
+        ]
+        last_map50 = server_row.get("last_map50", "")
+        last_map5095 = server_row.get("last_map50_95", "")
+        if last_map50 or last_map5095:
+            server_bits.append(f"progress mAP50={last_map50}")
+            server_bits.append(f"progress mAP50-95={last_map5095}")
+        evidence += "; " + "; ".join(server_bits)
+    return Check(area, item, "pending", evidence, action)
+
+
 def check_required_files() -> list[Check]:
     return [
         exists_check(area, item, path, f"Create or restore `{path}`.")
@@ -248,12 +371,12 @@ def check_uavdt_dataset() -> list[Check]:
     return checks
 
 
-def check_tofc_model_build() -> list[Check]:
+def check_candidate_model_build() -> list[Check]:
     code = (
         "from src.models.register import register_custom_modules\n"
         "register_custom_modules()\n"
         "from ultralytics.nn.tasks import DetectionModel\n"
-        "for p in ['configs/models/yolo11n_p2_tofc.yaml']:\n"
+        "for p in ['configs/models/yolo11n_p2_tofc.yaml', 'configs/models/yolo11n_p2_scalegate.yaml']:\n"
         "    m=DetectionModel(p, nc=10)\n"
         "    params=sum(x.numel() for x in m.parameters())\n"
         "    print(f'{p},{len(m.model)},{params}')\n"
@@ -271,10 +394,10 @@ def check_tofc_model_build() -> list[Check]:
         return [
             Check(
                 "Method",
-                "TOFC model construction",
+                "Candidate model construction",
                 "missing",
                 f"{type(exc).__name__}: {exc}",
-                "Fix the custom-module registration or model YAML before launching TOFC training.",
+                "Fix the custom-module registration or model YAML before launching candidate training.",
             )
         ]
 
@@ -283,7 +406,7 @@ def check_tofc_model_build() -> list[Check]:
         return [
             Check(
                 "Method",
-                "TOFC model construction",
+                "Candidate model construction",
                 "ready",
                 output.splitlines()[-1] if output else "DetectionModel construction succeeded",
             )
@@ -292,10 +415,10 @@ def check_tofc_model_build() -> list[Check]:
     return [
         Check(
             "Method",
-            "TOFC model construction",
+            "Candidate model construction",
             "missing",
             output or f"python exited with status {result.returncode}",
-            "Fix the custom-module registration or model YAML before launching TOFC training.",
+            "Fix the custom-module registration or model YAML before launching candidate training.",
         )
     ]
 
@@ -337,17 +460,26 @@ def check_server_queue_guard() -> list[Check]:
 
 def check_result_gates() -> list[Check]:
     checks: list[Check] = []
+    scalegate_launched = (ROOT / "paper/ieee_scalegate_server_launch_audit.md").exists()
     for area, item, path, action in RESULT_GATES:
         artifact = ROOT / path
-        checks.append(
-            Check(
-                area,
-                item,
-                "ready" if artifact.exists() else "pending",
-                path,
-                "" if artifact.exists() else action,
+        pending_action = action
+        if "ScaleGate" in item and scalegate_launched:
+            pending_action = (
+                "Server queue has been launched; monitor progress and sync only after the completed run reaches 100 epochs."
             )
-        )
+        if path.startswith("runs/detect/") and path.endswith("weights/best.pt"):
+            checks.append(training_run_check(area, item, path, pending_action))
+        else:
+            checks.append(
+                Check(
+                    area,
+                    item,
+                    "ready" if artifact.exists() else "pending",
+                    path,
+                    "" if artifact.exists() else pending_action,
+                )
+            )
     return checks
 
 
@@ -389,7 +521,7 @@ def audit() -> list[Check]:
     checks.extend(check_required_files())
     checks.extend(check_related_work_matrix())
     checks.extend(check_uavdt_dataset())
-    checks.extend(check_tofc_model_build())
+    checks.extend(check_candidate_model_build())
     checks.extend(check_server_queue_guard())
     checks.extend(check_result_gates())
     checks.extend(check_text_boundaries())
@@ -446,7 +578,7 @@ def write_report(checks: list[Check]) -> None:
             "",
             "## Current Claim Gate",
             "",
-            "At this stage, the TOFC module can only be described as a candidate design whose structure builds successfully. Existing VisDrone scale-wise recall/precision and local scale-bin AP evidence can be used for completed models, but TOFC accuracy and cross-dataset generalization remain locked until full training, validation, and synchronization are complete.",
+            "At this stage, TOFC can be described only according to its completed audited VisDrone evidence, and ScaleGate can be described only as a candidate design whose structure builds successfully. Existing VisDrone scale-wise recall/precision, local scale-bin AP, and UAVDT boundary evidence can be used for completed models, but ScaleGate accuracy and cross-dataset claims remain locked until full training, validation, and synchronization are complete.",
         ]
     )
     REPORT_PATH.write_text("\n".join(lines) + "\n", encoding="utf-8")

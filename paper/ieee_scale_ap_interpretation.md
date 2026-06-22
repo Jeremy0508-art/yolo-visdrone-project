@@ -33,6 +33,9 @@ It reports local scale-bin AP diagnostics only. It is not an official COCO or Vi
 | YOLO11n-P2-TOFC-960 | small | 26586 | 0.229853 | 0.120661 |
 | YOLO11n-P2-TOFC-960 | medium | 11105 | 0.424698 | 0.287858 |
 | YOLO11n-P2-TOFC-960 | large | 1068 | 0.421751 | 0.334091 |
+| YOLO11n-P2-ScaleGate-960 | small | 26586 | 0.224719 | 0.118803 |
+| YOLO11n-P2-ScaleGate-960 | medium | 11105 | 0.426671 | 0.288362 |
+| YOLO11n-P2-ScaleGate-960 | large | 1068 | 0.445686 | 0.356981 |
 
 ## Delta vs YOLO11n-960
 
@@ -44,6 +47,7 @@ It reports local scale-bin AP diagnostics only. It is not an official COCO or Vi
 | YOLOv8n-960 | 0.007718 | 0.005840 | 0.006086 | -0.049651 |
 | YOLO11s-960 | 0.072545 | 0.043126 | 0.071218 | -0.015727 |
 | YOLO11n-P2-TOFC-960 | -0.000142 | 0.004366 | -0.027877 | -0.155795 |
+| YOLO11n-P2-ScaleGate-960 | -0.005276 | 0.002508 | -0.025904 | -0.131860 |
 
 ## Evidence-Bounded Interpretation
 

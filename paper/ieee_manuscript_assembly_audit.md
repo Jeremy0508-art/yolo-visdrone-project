@@ -6,9 +6,9 @@ The audit does not compile LaTeX and does not create final manuscript files. `PE
 
 ## Summary
 
-- Total checks: 39
-- Ready: 34
-- Pending: 5
+- Total checks: 51
+- Ready: 47
+- Pending: 4
 - Missing: 0
 
 ## Checks
@@ -17,6 +17,9 @@ The audit does not compile LaTeX and does not create final manuscript files. `PE
 | --- | --- | --- | --- | --- |
 | Planning input | Manuscript blueprint | READY | `paper/ieee_trans/manuscript_blueprint.md` |  |
 | Planning input | Section draft pack | READY | `paper/ieee_trans/section_draft_pack.md` |  |
+| Planning input | ScaleGate method section draft | READY | `paper/ieee_trans/scalegate_method_section_draft.md` |  |
+| Planning input | CSGate method section draft | READY | `paper/ieee_trans/csgate_method_section_draft.md` |  |
+| Planning input | Novelty positioning workbench | READY | `paper/ieee_trans/novelty_positioning_workbench.md` |  |
 | Planning input | Assembly checklist | READY | `paper/ieee_trans/manuscript_assembly_checklist.md` |  |
 | Planning input | main.tex preflight checklist | READY | `paper/ieee_trans/main_tex_preflight.md` |  |
 | Planning input | Page budget plan | READY | `paper/ieee_trans/page_budget_plan.md` |  |
@@ -28,30 +31,39 @@ The audit does not compile LaTeX and does not create final manuscript files. `PE
 | Planning input | Seed bibliography | READY | `paper/ieee_trans/references_seed.bib` |  |
 | Audit input | Front matter audit | READY | `paper/ieee_front_matter_audit.md` |  |
 | Audit input | Number trace audit | READY | `paper/ieee_number_trace_audit.md` |  |
+| Audit input | Main draft number audit | READY | `paper/ieee_main_draft_number_audit.md` |  |
 | Audit input | Claim audit | READY | `paper/ieee_claim_audit.md` |  |
 | Audit input | Evidence map audit | READY | `paper/ieee_evidence_map_audit.md` |  |
 | Audit input | Result interpretation matrix audit | READY | `paper/ieee_result_interpretation_matrix_audit.md` |  |
 | Audit input | Dataset compliance audit | READY | `paper/ieee_dataset_compliance_audit.md` |  |
+| Audit input | Draft shareability audit | READY | `paper/ieee_draft_shareability_audit.md` |  |
+| Audit input | ScaleGate method decision audit | READY | `paper/ieee_scalegate_method_decision_audit.md` |  |
 | Generated tables | visdrone_main_results.tex | READY | `paper/ieee_trans/tables/visdrone_main_results.tex` |  |
 | Generated tables | speed_complexity.tex | READY | `paper/ieee_trans/tables/speed_complexity.tex` |  |
 | Generated tables | scale_recall_precision.tex | READY | `paper/ieee_trans/tables/scale_recall_precision.tex` |  |
 | Generated tables | scale_bin_ap.tex | READY | `paper/ieee_trans/tables/scale_bin_ap.tex` |  |
+| Generated tables | uavdt_results.tex | READY | `paper/ieee_trans/tables/uavdt_results.tex` |  |
 | Generated tables | literature_context.tex | READY | `paper/ieee_trans/tables/literature_context.tex` |  |
 | Generated tables | README.md | READY | `paper/ieee_trans/tables/README.md` |  |
 | Guardrail | Abstract/title/conclusion written last | READY | `The abstract, title, and conclusion must be written last` |  |
-| Guardrail | TOFC remains locked | READY | `TOFC Description | `section_draft_pack.md` | Locked` |  |
-| Guardrail | UAVDT results remain locked | READY | `UAVDT Results | none | Locked` |  |
+| Guardrail | TOFC remains bounded | READY | `TOFC Description | `section_draft_pack.md` | Ready as ablation with caveat` |  |
+| Guardrail | ScaleGate remains mixed/negative evidence | READY | `ScaleAwareP2Gate Description | `scalegate_method_section_draft.md` | Ready as completed mixed/negative evidence` |  |
+| Guardrail | ScaleGate method decision rejects main-method promotion | READY | `ScaleGate method-decision audit | Ready; rejected as main method` |  |
+| Guardrail | CSGate remains result-locked | READY | `CSGate Description | `csgate_method_section_draft.md` | Ready as structure; result-locked` |  |
+| Guardrail | UAVDT validity boundary retained | READY | `UAVDT Results | `tables/uavdt_results.tex` | Ready as validity-boundary evidence` |  |
 | Guardrail | YOLO11s boundary retained | READY | `Both routes require honest comparison against YOLO11s-960` |  |
 | Guardrail | main.tex preflight says not to create final source yet | READY | `Do not create `main.tex` yet` |  |
 | Guardrail | Claim audit remains pending until final-facing files exist | READY | `Claim audit ready | Pending final-facing files` |  |
-| Final-source gate | Final manuscript creation is still gated | READY | `Phase 1 pending checks: 6` |  |
+| Guardrail | Advisor draft shareability checked before sharing | READY | `Inspect `paper/ieee_draft_shareability_audit.md` before sharing `main_draft.pdf`` |  |
+| Guardrail | Main draft numbers checked before sharing | READY | `Inspect `paper/ieee_main_draft_number_audit.md` before sharing `main_draft.pdf`` |  |
+| Final-source gate | Final manuscript creation is still gated | READY | `Phase 1 pending checks: 4` |  |
 | Final-source gate | `paper/ieee_trans/main.tex` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/references.bib` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/cover_letter_draft.md` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/abstract.md` absent while gates are pending | READY | `absent` |  |
 | Manual pending gate | Target journal final confirmation | PENDING | `Exact IEEE Transactions target selected | Pending` | Advisor confirms T-ITS, TGRS, or another exact journal. |
-| Manual pending gate | Final method route selected | PENDING | `Final method route selected | Pending` | Select TOFC or fallback route only after real result evidence arrives. |
-| Manual pending gate | Cross-dataset plan resolved | PENDING | `Cross-dataset plan resolved | Pending` | Resolve after UAVDT conversion and runs or explicitly downgrade scope. |
+| Manual pending gate | Final method route selected | PENDING | `Final method route selected | Pending CSGate evidence` | Select the final route only after completed CSGate evidence is audited. |
+| Manual pending gate | Cross-dataset plan resolved | READY | `Cross-dataset plan resolved | Ready as validity-boundary evidence` | Keep UAVDT framed as validity-boundary evidence unless a new method is designed and rerun. |
 | Manual pending gate | Reference metadata verified | PENDING | `Reference metadata verified | Pending` | Verify final BibTeX entries against publisher metadata before references.bib. |
 | Manual pending gate | Dataset/code release boundary final confirmation | PENDING | `Dataset/code release boundary verified | Pending final human confirmation` | Confirm release policy with advisor/institution before final package. |
 

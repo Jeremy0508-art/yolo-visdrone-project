@@ -88,7 +88,7 @@ def audit() -> list[Check]:
         )
 
     statuses = {row.get("status", "") for row in rows}
-    for required_status in ["ready", "partially_ready", "locked"]:
+    for required_status in ["ready", "ready_with_caveat", "locked", "result_locked"]:
         checks.append(
             Check(
                 f"Status category present: {required_status}",
@@ -100,7 +100,7 @@ def audit() -> list[Check]:
 
     locked_expectations = [
         ("TOFC is the final proposed contribution", "TOFC final method claim"),
-        ("UAVDT cross-dataset comparison", "UAVDT cross-dataset claim"),
+        ("ScaleAwareP2Gate is the final proposed contribution", "ScaleGate final method claim"),
         ("Generalization beyond VisDrone", "Generalization claim"),
     ]
     for phrase, item in locked_expectations:
@@ -112,6 +112,36 @@ def audit() -> list[Check]:
                 "ready" if locked else "missing",
                 phrase if matches else "not found",
                 "" if locked else "Keep this claim locked until complete evidence exists.",
+            )
+        )
+
+    caveat_expectations = [
+        ("ScaleGate VisDrone and UAVDT results", "ScaleGate mixed/negative result evidence"),
+    ]
+    for phrase, item in caveat_expectations:
+        matches = [row for row in rows if phrase in row.get("claim_or_content", "")]
+        ready_with_caveat = bool(matches) and all(row.get("status") == "ready_with_caveat" for row in matches)
+        checks.append(
+            Check(
+                f"Caveated evidence gate: {item}",
+                "ready" if ready_with_caveat else "missing",
+                phrase if matches else "not found",
+                "" if ready_with_caveat else "Mark completed negative/mixed evidence as ready_with_caveat, not as a positive method claim.",
+            )
+        )
+
+    ready_expectations = [
+        ("UAVDT cross-dataset comparison", "UAVDT cross-dataset comparison"),
+    ]
+    for phrase, item in ready_expectations:
+        matches = [row for row in rows if phrase in row.get("claim_or_content", "")]
+        ready = bool(matches) and all(row.get("status") == "ready" for row in matches)
+        checks.append(
+            Check(
+                f"Ready evidence gate: {item}",
+                "ready" if ready else "missing",
+                phrase if matches else "not found",
+                "" if ready else "Mark this evidence ready only after complete synced and audited results exist.",
             )
         )
 

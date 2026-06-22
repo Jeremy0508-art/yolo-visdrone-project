@@ -4,17 +4,36 @@
 
 Prepare this YOLO VisDrone project for a paper submission while keeping all experiments reproducible, evidence-based, and compatible with the existing training, validation, inference, and web demo workflows.
 
-## Current Main Route
+## Current Main Routes
 
-- Active route: IEEE Transactions English-journal upgrade.
-- Paused route: 《计算机工程与应用》 Chinese-journal submission. Existing CEA Word/LaTeX/PDF materials remain preserved under `paper/`, but they are no longer the active writing target.
-- Active control plan: `paper/IEEE_TRANS_SUBMISSION_PLAN.md`.
+- Active Chinese route: 《计算机工程与应用》 or another suitable Chinese-journal submission.
+- Active English route: IEEE Transactions English-journal upgrade.
+- The two routes share the same reproducible experiment evidence, but they require separate manuscripts, templates, wording, and submission packages.
+- Control plans: `paper/CEA_JOURNAL_MASTER_PLAN.md` for the Chinese route and `paper/IEEE_TRANS_SUBMISSION_PLAN.md` for the English route.
 - First IEEE planning artifacts:
   - `paper/ieee_target_journal_analysis.md`.
   - `paper/ieee_required_experiment_gap.md`.
   - `paper/ieee_related_work_matrix.csv`.
 
-The IEEE route must not reuse the Chinese manuscript as a direct translation. It requires stronger novelty, cross-dataset evidence, scale-wise small-object analysis, stronger related work, and an IEEEtran English manuscript.
+The IEEE route must not reuse the Chinese manuscript as a direct translation. It requires stronger novelty, cross-dataset evidence, scale-wise small-object analysis, stronger related work, and an IEEEtran English manuscript. The Chinese route remains active, but it should be revised with the same audited evidence and kept clearly distinct from the IEEE manuscript to avoid duplicate-submission risk.
+
+## Major Revision Control
+
+The current paper line has been reframed from a model-progress report into a study of high-resolution prediction for lightweight UAV small-object detection. The shared argument for both the Chinese-journal route and the English-extension route is:
+
+```text
+High-resolution input and shallow P2 prediction can improve lightweight YOLO small-object diagnostics, but the benefit must be discussed together with computational cost, object scale, model capacity, and cross-dataset validity boundaries.
+```
+
+This reframing changes how existing experiments should be used:
+
+- YOLO11n-960 separates the contribution of input resolution from architectural changes.
+- YOLO11n-P2-960 tests whether a shallow high-resolution prediction branch still helps after input resolution is matched.
+- CoordAttention, TOFC, and SmallObjAug are evidence for calibration or training-strategy boundaries, not unconditional main-method claims.
+- YOLO11s-960 is a capacity reference and should not be treated as a same-class nano-model ablation.
+- UAVDT is the cross-dataset validity gate. The completed four-run UAVDT comparison shows that the current P2 trend should be written as dataset-dependent boundary evidence rather than transferable behavior.
+
+Control files for this revision are `paper/MAJOR_REVISION_ROADMAP.md`, `paper/reframed_core_argument.md`, `paper/dual_track_reframed_manuscript_strategy.md`, and `paper/tables/reframed_evidence_matrix.csv`.
 
 ## Non-Negotiable Rules
 
@@ -25,8 +44,8 @@ The IEEE route must not reuse the Chinese manuscript as a direct translation. It
 
 ## Confirmed Paper Direction
 
-- Previous target: 《计算机工程与应用》 journal submission. Status: paused.
-- New target family: IEEE Transactions. Initial priority candidates are IEEE Transactions on Intelligent Transportation Systems and IEEE Transactions on Geoscience and Remote Sensing.
+- Chinese target: 《计算机工程与应用》 journal submission remains active as the Chinese-paper track.
+- English target family: IEEE Transactions. Initial priority candidates are IEEE Transactions on Intelligent Transportation Systems and IEEE Transactions on Geoscience and Remote Sensing.
 - Dataset: VisDrone2019-DET.
 - Base model: Ultralytics YOLO11n.
 - Main task: UAV aerial small-object detection.
@@ -144,10 +163,10 @@ The IEEE route must not reuse the Chinese manuscript as a direct translation. It
 ## Immediate Next Actions
 
 1. Follow the master journal plan in `paper/CEA_JOURNAL_MASTER_PLAN.md`.
-2. Monitor the server queue and sync only complete 100-epoch fair-comparison results.
+2. Keep the synced UAVDT results in the manuscript only as audited validity-boundary evidence.
 3. Audit how YOLOv8n, YOLO11s, YOLO11n-960, and YOLO11n-P2-960 should be discussed fairly against the YOLO11n mainline experiments.
 4. Update the manuscript comparison/discussion only with completed and audited results.
-5. Expand `paper/manuscript_submission_candidate.tex` into a journal-length submission draft after the fair-comparison results are available.
+5. Decide with the advisor whether the next paper iteration remains a mechanism/boundary-analysis paper or requires a new method redesign before final submission packaging.
 
 ## Current Run Notes
 

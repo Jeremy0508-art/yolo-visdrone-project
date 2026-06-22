@@ -115,3 +115,23 @@ Before manuscript use:
 - `results.csv`, `args.yaml`, `weights/best.pt`, `weights/last.pt`, and training log exist.
 - Metrics are exported to an IEEE-specific table.
 - Scale-wise metrics are computed for UAVDT or the limitation is explicitly stated.
+
+## Server Preparation Record
+
+The 2026-06-20 server preparation used a YOLO-layout UAVDT mirror rather than the original MOT-style annotation package. The archive was checked by MD5 and then reorganized with:
+
+```bash
+python tools/prepare_uavdt_yolo_layout.py \
+  --source-root data/raw/UAVDT \
+  --output-root data/processed/uavdt_yolo \
+  --overwrite
+```
+
+The resulting split statistics and queue status are recorded in:
+
+```text
+paper/datasets/uavdt_preparation_report.md
+paper/datasets/uavdt_prepare_summary.json
+```
+
+For this YOLO-layout mirror, do not run `scripts/convert_uavdt_to_yolo.py` again; that converter remains reserved for raw MOT-style UAVDT annotations.

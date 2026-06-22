@@ -6,9 +6,9 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Summary
 
-- Total checks: 110
-- Ready: 104
-- Pending: 6
+- Total checks: 155
+- Ready: 151
+- Pending: 4
 - Missing: 0
 
 ## Checks
@@ -31,12 +31,15 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE server resume runbook | READY | `paper/ieee_server_resume_runbook.md` |  |
 | Planning | Method design notes | READY | `paper/ieee_method_design_notes.md` |  |
 | Planning | IEEE method selection protocol | READY | `paper/ieee_method_selection_protocol.md` |  |
+| Planning | IEEE second-cycle method backlog | READY | `paper/IEEE_SECOND_CYCLE_METHOD_BACKLOG.md` |  |
 | Planning | IEEE result interpretation matrix | READY | `paper/ieee_result_interpretation_matrix.md` |  |
 | Planning | IEEE result interpretation matrix audit | READY | `paper/ieee_result_interpretation_matrix_audit.md` |  |
 | Planning | Claim boundary rules | READY | `paper/ieee_claim_boundary.md` |  |
 | Planning | IEEE reviewer risk register | READY | `paper/ieee_reviewer_risk_register.md` |  |
 | Planning | IEEE reviewer response plan | READY | `paper/ieee_trans_response_plan.md` |  |
 | Planning | IEEE result integration protocol | READY | `paper/IEEE_RESULT_INTEGRATION_PROTOCOL.md` |  |
+| Planning | ScaleGate post-result integration protocol | READY | `paper/IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md` |  |
+| Planning | CSGate post-result integration protocol | READY | `paper/IEEE_CSGATE_POST_RESULT_PROTOCOL.md` |  |
 | Planning | IEEE scale evaluation protocol | READY | `paper/ieee_scale_evaluation_protocol.md` |  |
 | Planning | IEEE local scale-bin AP protocol | READY | `paper/ieee_scale_ap_protocol.md` |  |
 | Planning | IEEE scale result interpretation | READY | `paper/ieee_scale_result_interpretation.md` |  |
@@ -51,8 +54,10 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE front matter audit | READY | `paper/ieee_front_matter_audit.md` |  |
 | Planning | IEEE related-work outline | READY | `paper/ieee_trans/related_work_outline.md` |  |
 | Planning | IEEE section draft pack | READY | `paper/ieee_trans/section_draft_pack.md` |  |
+| Planning | ScaleGate method section draft | READY | `paper/ieee_trans/scalegate_method_section_draft.md` |  |
 | Planning | IEEE manuscript assembly checklist | READY | `paper/ieee_trans/manuscript_assembly_checklist.md` |  |
 | Planning | IEEE manuscript assembly audit | READY | `paper/ieee_manuscript_assembly_audit.md` |  |
+| Planning | IEEE draft shareability audit | READY | `paper/ieee_draft_shareability_audit.md` |  |
 | Planning | IEEE main.tex preflight checklist | READY | `paper/ieee_trans/main_tex_preflight.md` |  |
 | Planning | IEEE page budget plan | READY | `paper/ieee_trans/page_budget_plan.md` |  |
 | Planning | IEEE seed bibliography | READY | `paper/ieee_trans/references_seed.bib` |  |
@@ -60,15 +65,27 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Planning | IEEE reference metadata readiness audit | READY | `paper/ieee_reference_metadata_readiness_audit.md` |  |
 | Planning | IEEE evidence-to-section map | READY | `paper/ieee_trans/evidence_to_sections.csv` |  |
 | Planning | IEEE evidence-to-section map audit | READY | `paper/ieee_evidence_map_audit.md` |  |
+| Planning | IEEE novelty positioning workbench | READY | `paper/ieee_trans/novelty_positioning_workbench.md` |  |
 | Planning | IEEE table and figure plan | READY | `paper/ieee_trans/table_figure_plan.md` |  |
 | Planning | IEEE figure source manifest | READY | `paper/ieee_trans/figure_source_manifest.md` |  |
 | Planning | IEEE cover letter workbench | READY | `paper/ieee_trans/cover_letter_workbench.md` |  |
 | Planning | IEEE generated table directory | READY | `paper/ieee_trans/tables/README.md` |  |
 | Planning | IEEE claim audit report | READY | `paper/ieee_claim_audit.md` |  |
 | Planning | IEEE number trace audit | READY | `paper/ieee_number_trace_audit.md` |  |
+| Planning | IEEE main draft number audit | READY | `paper/ieee_main_draft_number_audit.md` |  |
 | Planning | IEEE server progress report | READY | `paper/ieee_server_progress_report.md` |  |
 | Planning | IEEE server status snapshot | READY | `paper/ieee_server_status_snapshot.md` |  |
 | Planning | IEEE server status history | READY | `paper/tables/ieee_server_status_history.csv` |  |
+| Planning | ScaleGate server launch audit | READY | `paper/ieee_scalegate_server_launch_audit.md` |  |
+| Planning | CSGate server launch audit | READY | `paper/ieee_csgate_server_launch_audit.md` |  |
+| Planning | ScaleGate result gate audit | READY | `paper/ieee_scalegate_result_gate_audit.md` |  |
+| Planning | ScaleGate method decision audit | READY | `paper/ieee_scalegate_method_decision_audit.md` |  |
+| Planning | CSGate result gate audit | READY | `paper/ieee_csgate_result_gate_audit.md` |  |
+| Planning | CSGate method decision audit | READY | `paper/ieee_csgate_method_decision_audit.md` |  |
+| Planning | ScaleGate post-result dynamic runbook | READY | `paper/ieee_scalegate_post_result_runbook.md` |  |
+| Planning | ScaleGate post-result runbook audit | READY | `paper/ieee_scalegate_post_result_runbook_audit.md` |  |
+| Planning | IEEE non-result closure audit | READY | `paper/ieee_non_result_closure_audit.md` |  |
+| Planning | IEEE goal readiness audit | READY | `paper/ieee_goal_readiness_audit.md` |  |
 | Planning | IEEE submission dashboard | READY | `paper/ieee_submission_dashboard.md` |  |
 | Planning | IEEE reference audit | READY | `paper/ieee_reference_audit.md` |  |
 | Planning | IEEE reference gap report | READY | `paper/ieee_reference_gap_report.md` |  |
@@ -84,14 +101,26 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Method | TOFC source module | READY | `src/models/attention/tiny_object_feature_calibration.py` |  |
 | Method | TOFC model YAML | READY | `configs/models/yolo11n_p2_tofc.yaml` |  |
 | Method | TOFC train config | READY | `configs/train/yolo11n_p2_tofc_960.yaml` |  |
+| Method | ScaleGate source module | READY | `src/models/attention/scale_aware_p2_gate.py` |  |
+| Method | ScaleGate model YAML | READY | `configs/models/yolo11n_p2_scalegate.yaml` |  |
+| Method | ScaleGate VisDrone train config | READY | `configs/train/yolo11n_p2_scalegate_960.yaml` |  |
+| Method | ScaleGate UAVDT train config | READY | `configs/train/yolo11n_p2_scalegate_960_uavdt.yaml` |  |
+| Method | CSGate source module | READY | `src/models/attention/cross_scale_p2_p3_gate.py` |  |
+| Method | CSGate model YAML | READY | `configs/models/yolo11n_p2_csgate.yaml` |  |
+| Method | CSGate VisDrone train config | READY | `configs/train/yolo11n_p2_csgate_960.yaml` |  |
+| Method | CSGate UAVDT train config | READY | `configs/train/yolo11n_p2_csgate_960_uavdt.yaml` |  |
 | Analysis | Scale target list | READY | `paper/tables/ieee_scale_eval_targets.csv` |  |
 | Execution | Guarded server queue | READY | `tools/run_ieee_server_queue.sh` |  |
+| Execution | ScaleGate server queue | READY | `tools/start_ieee_scalegate_queue.sh` |  |
+| Execution | CSGate server queue | READY | `tools/start_ieee_csgate_queue.sh` |  |
 | Execution | IEEE claim scanner | READY | `tools/check_ieee_claims.py` |  |
 | Execution | IEEE front matter checker | READY | `tools/check_ieee_front_matter.py` |  |
 | Execution | IEEE number trace audit builder | READY | `tools/build_ieee_number_trace_audit.py` |  |
+| Execution | IEEE main draft number checker | READY | `tools/check_ieee_main_draft_numbers.py` |  |
 | Execution | IEEE result interpretation checker | READY | `tools/check_ieee_result_interpretation_matrix.py` |  |
 | Execution | IEEE evidence map checker | READY | `tools/check_ieee_evidence_map.py` |  |
 | Execution | IEEE manuscript assembly checker | READY | `tools/check_ieee_manuscript_assembly.py` |  |
+| Execution | IEEE draft shareability checker | READY | `tools/check_ieee_draft_shareability.py` |  |
 | Execution | IEEE reference checker | READY | `tools/check_ieee_references.py` |  |
 | Execution | IEEE reference metadata readiness checker | READY | `tools/check_ieee_reference_metadata_readiness.py` |  |
 | Execution | IEEE dataset compliance checker | READY | `tools/check_ieee_dataset_compliance.py` |  |
@@ -105,6 +134,18 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Execution | IEEE server status checker | READY | `tools/check_ieee_server_status.ps1` |  |
 | Execution | IEEE server sync script | READY | `tools/sync_ieee_server_results.ps1` |  |
 | Execution | IEEE server progress reporter | READY | `tools/build_ieee_server_progress_report.py` |  |
+| Execution | IEEE ScaleGate guarded intake script | READY | `tools/intake_ieee_scalegate_results.ps1` |  |
+| Execution | IEEE CSGate guarded intake script | READY | `tools/intake_ieee_csgate_results.ps1` |  |
+| Execution | IEEE ScaleGate result gate checker | READY | `tools/check_ieee_scalegate_result_gate.py` |  |
+| Execution | IEEE ScaleGate method decision checker | READY | `tools/check_ieee_scalegate_method_decision.py` |  |
+| Execution | IEEE CSGate result gate checker | READY | `tools/check_ieee_csgate_result_gate.py` |  |
+| Execution | IEEE CSGate method decision checker | READY | `tools/check_ieee_csgate_method_decision.py` |  |
+| Execution | IEEE ScaleGate post-result runbook builder | READY | `tools/build_ieee_scalegate_post_result_runbook.py` |  |
+| Execution | IEEE ScaleGate post-result runbook checker | READY | `tools/check_ieee_scalegate_post_result_runbook.py` |  |
+| Execution | IEEE ScaleGate scale target enabler | READY | `tools/set_ieee_scalegate_scale_target.py` |  |
+| Execution | IEEE generic scale target enabler | READY | `tools/set_ieee_scale_target.py` |  |
+| Execution | IEEE non-result closure checker | READY | `tools/check_ieee_non_result_closure.py` |  |
+| Execution | IEEE goal readiness checker | READY | `tools/check_ieee_goal_readiness.py` |  |
 | Execution | IEEE dashboard builder | READY | `tools/build_ieee_submission_dashboard.py` |  |
 | Execution | IEEE experiment registry builder | READY | `tools/build_ieee_experiment_registry.py` |  |
 | Execution | IEEE audit runner | READY | `tools/run_ieee_audits.py` |  |
@@ -112,13 +153,17 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Literature | Related-work seed coverage | READY | `25 rows in paper/ieee_related_work_matrix.csv` |  |
 | Dataset | Raw UAVDT dataset placement | PENDING | `data/raw/UAVDT` | Place raw UAVDT files under data/raw/UAVDT/. |
 | Dataset | Converted UAVDT YOLO train images | PENDING | `data/processed/uavdt_yolo/images/train` | Run scripts/convert_uavdt_to_yolo.py after raw data is available. |
-| Method | TOFC model construction | READY | `configs/models/yolo11n_p2_tofc.yaml,31,2895762` |  |
+| Method | Candidate model construction | READY | `configs/models/yolo11n_p2_scalegate.yaml,31,2895715` |  |
 | Execution | Server queue safety guard | READY | `RUN_TRAINING dry-run guard and RUN_UAVDT dataset gate found` |  |
-| Training Evidence | TOFC VisDrone result | READY | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt` |  |
-| Training Evidence | UAVDT YOLO11n baseline result | PENDING | `runs/detect/baseline_yolo11n_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
-| Training Evidence | UAVDT YOLO11n-P2 result | PENDING | `runs/detect/yolo11n_p2_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
-| Training Evidence | UAVDT YOLOv8n baseline result | PENDING | `runs/detect/baseline_yolov8n_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
-| Training Evidence | UAVDT YOLO11s capacity reference result | PENDING | `runs/detect/baseline_yolo11s_960_uavdt/weights/best.pt` | Convert and validate UAVDT before launching this run. |
+| Training Evidence | TOFC VisDrone result | READY | `runs/detect/yolo11n_p2_tofc_960_visdrone; epochs=100; core artifacts present` |  |
+| Training Evidence | UAVDT YOLO11n baseline result | READY | `runs/detect/baseline_yolo11n_960_uavdt; epochs=100; core artifacts present` |  |
+| Training Evidence | UAVDT YOLO11n-P2 result | READY | `runs/detect/yolo11n_p2_960_uavdt; epochs=100; core artifacts present` |  |
+| Training Evidence | UAVDT YOLOv8n baseline result | READY | `runs/detect/baseline_yolov8n_960_uavdt; epochs=100; core artifacts present` |  |
+| Training Evidence | UAVDT YOLO11s capacity reference result | READY | `runs/detect/baseline_yolo11s_960_uavdt; epochs=100; core artifacts present` |  |
+| Training Evidence | ScaleGate VisDrone result | READY | `runs/detect/yolo11n_p2_scalegate_960_visdrone; epochs=100; core artifacts present` |  |
+| Training Evidence | ScaleGate UAVDT result | READY | `runs/detect/yolo11n_p2_scalegate_960_uavdt; epochs=100; core artifacts present` |  |
+| Training Evidence | CSGate VisDrone result | PENDING | `runs/detect/yolo11n_p2_csgate_960_visdrone; epochs=0/100; missing: runs/detect/yolo11n_p2_csgate_960_visdrone/results.csv, runs/detect/yolo11n_p2_csgate_960_visdrone/args.yaml, runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt; server=PARTIAL; 3/100; timestamp=2026-06-22 15:54:16 +08:00; progress mAP50=0.22411; progress mAP50-95=0.12285` | Run tools/start_ieee_csgate_queue.sh only after CSGate code/config sync and smoke test are confirmed. |
+| Training Evidence | CSGate UAVDT result | PENDING | `runs/detect/yolo11n_p2_csgate_960_uavdt; epochs=0/100; missing: runs/detect/yolo11n_p2_csgate_960_uavdt/results.csv, runs/detect/yolo11n_p2_csgate_960_uavdt/args.yaml, runs/detect/yolo11n_p2_csgate_960_uavdt/weights/best.pt; server=MISSING; 0/100; timestamp=2026-06-22 15:54:16 +08:00` | Run tools/start_ieee_csgate_queue.sh only after CSGate code/config sync and smoke test are confirmed. |
 | Analysis | Full VisDrone scale-wise results | READY | `paper/tables/ieee_scale_results_visdrone.csv` |  |
 | Analysis | Full VisDrone scale-wise figure | READY | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |  |
 | Analysis | Full VisDrone local scale-bin AP output | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv` |  |
@@ -134,4 +179,4 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 
 ## Current Claim Gate
 
-At this stage, the TOFC module can only be described as a candidate design whose structure builds successfully. Existing VisDrone scale-wise recall/precision and local scale-bin AP evidence can be used for completed models, but TOFC accuracy and cross-dataset generalization remain locked until full training, validation, and synchronization are complete.
+At this stage, TOFC can be described only according to its completed audited VisDrone evidence, and ScaleGate can be described only as a candidate design whose structure builds successfully. Existing VisDrone scale-wise recall/precision, local scale-bin AP, and UAVDT boundary evidence can be used for completed models, but ScaleGate accuracy and cross-dataset claims remain locked until full training, validation, and synchronization are complete.

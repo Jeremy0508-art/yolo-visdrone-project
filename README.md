@@ -6,7 +6,7 @@
 
 系统完成了 VisDrone2019-DET 数据转换、YOLO 格式数据校验、baseline 训练、改进模型训练、消融实验、模型复杂度统计、推理速度测试、图片/视频推理、Flask Web 可视化检测页面和论文材料整理。当前数据集包含 6,471 张训练图像、548 张验证图像和 343,204 个训练标注框，覆盖 pedestrian、people、car、motor 等 10 类航拍目标。
 
-在 100 epoch 训练设置下，YOLO11n-P2-960 在 nano 级轻量模型中取得较好的精度-速度折中，Best mAP50 达到 `0.42361`，Best mAP50-95 达到 `0.25552`，高于 YOLO11n-960 的 `0.42136` / `0.25067` 和 YOLO11n-P2-CoordAttention-960 的 `0.41996` / `0.25174`，单图 wall-clock 推理速度为 `55.68 FPS`。更大容量的 YOLO11s-960 达到 `0.48901` / `0.29812`，说明模型容量仍是提升检测精度的重要因素。当前结果表明，960 输入分辨率是主要增益来源，P2 高分辨率检测分支在高分辨率设置下仍能带来额外提升，CoordAttention 在当前设置下更适合作为辅助设计而不是主要性能来源。项目最终形成了一个可复现、可评估、可展示，并可支撑 IEEE Transactions 英文论文准备的无人机航拍小目标检测实验闭环。
+在 100 epoch 训练设置下，YOLO11n-P2-960 在 nano 级轻量模型中取得较好的精度-速度折中，Best mAP50 达到 `0.42361`，Best mAP50-95 达到 `0.25552`，高于 YOLO11n-960 的 `0.42136` / `0.25067` 和 YOLO11n-P2-CoordAttention-960 的 `0.41996` / `0.25174`，单图 wall-clock 推理速度为 `55.68 FPS`。更大容量的 YOLO11s-960 达到 `0.48901` / `0.29812`，说明模型容量仍是提升检测精度的重要因素。当前结果表明，960 输入分辨率是主要增益来源，P2 高分辨率检测分支在高分辨率设置下仍能带来额外提升，CoordAttention 在当前设置下更适合作为辅助设计而不是主要性能来源。项目最终形成了一个可复现、可评估、可展示，并可同时支撑中文期刊论文与 IEEE Transactions 英文论文准备的无人机航拍小目标检测实验闭环。
 
 ## 方法思路
 
@@ -202,10 +202,13 @@ paper/tables/scale_group_results.csv
 
 ## 论文材料
 
-论文相关材料集中整理在 `paper/` 目录。当前英文投稿路线的核心材料包括：
+论文相关材料集中整理在 `paper/` 目录。本项目采用中文期刊与英文期刊双轨准备：中文稿面向《计算机工程与应用》等中文期刊投稿要求，英文稿面向 IEEE Transactions 路线，两条路线共享真实实验结果、图表、日志和复现脚本，但稿件结构、写作语言、目标期刊要求和投稿材料分别维护。
+
+当前英文投稿路线的核心材料包括：
 
 ```text
 paper/README.md
+paper/DUAL_SUBMISSION_STRATEGY.md
 paper/IEEE_TRANS_SUBMISSION_PLAN.md
 paper/ieee_submission_dashboard.md
 paper/ieee_target_journal_analysis.md
@@ -220,14 +223,12 @@ paper/figures/
 paper/tables/
 ```
 
-其中 `paper/ieee_trans/` 保存 IEEE 英文稿规划、章节草稿、表格草稿和 `main.tex` 创建前检查清单；`paper/ieee_submission_dashboard.md` 汇总当前证据状态和未完成门槛；`paper/ieee_scale_result_interpretation.md` 与 `paper/ieee_scale_ap_interpretation.md` 分别记录尺度召回/精度和本地 scale-bin AP 诊断结果。早期中文期刊路线材料仍保留在 `paper/` 中，作为历史写作和格式迁移资料。
+其中 `paper/ieee_trans/` 保存 IEEE 英文稿规划、章节草稿、表格草稿和 `main.tex` 创建前检查清单；`paper/ieee_submission_dashboard.md` 汇总当前证据状态和未完成门槛；`paper/ieee_scale_result_interpretation.md` 与 `paper/ieee_scale_ap_interpretation.md` 分别记录尺度召回/精度和本地 scale-bin AP 诊断结果。中文期刊稿件、CEA 模板迁移、Word/PDF 预览和投稿前审计材料也保留在 `paper/` 中，作为当前中文投稿路线的一部分继续维护。
 
 编译 LaTeX PDF：
 
 ```powershell
-cd paper
-xelatex manuscript_submission_candidate.tex
-xelatex manuscript_submission_candidate.tex
+.\tools\build_paper_pdf.ps1
 ```
 
 ## 结果可复现说明

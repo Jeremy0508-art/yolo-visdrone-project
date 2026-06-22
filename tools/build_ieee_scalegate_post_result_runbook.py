@@ -1,0 +1,201 @@
+from __future__ import annotations
+
+import csv
+import re
+from dataclasses import dataclass
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+REPORT_PATH = ROOT / "paper/ieee_scalegate_post_result_runbook.md"
+SERVER_HISTORY_PATH = ROOT / "paper/tables/ieee_server_status_history.csv"
+RESULT_GATE_PATH = ROOT / "paper/ieee_scalegate_result_gate_audit.md"
+METHOD_DECISION_PATH = ROOT / "paper/ieee_scalegate_method_decision_audit.md"
+
+MIN_EPOCHS = 100
+SCALEGATE_RUNS = [
+    "yolo11n_p2_scalegate_960_visdrone",
+    "yolo11n_p2_scalegate_960_uavdt",
+]
+
+
+@dataclass(frozen=True)
+class RunStatus:
+    name: str
+    status: str = "UNKNOWN"
+    epochs: int = 0
+    last_map50: str = ""
+    last_map50_95: str = ""
+    timestamp: str = ""
+
+    @property
+    def is_remote_complete(self) -> bool:
+        return self.status == "READY" and self.epochs >= MIN_EPOCHS
+
+
+def read_text(path: Path) -> str:
+    if not path.exists():
+        return ""
+    return path.read_text(encoding="utf-8", errors="ignore")
+
+
+def parse_summary_value(path: Path, key: str, default: str = "n/a") -> str:
+    text = read_text(path)
+    match = re.search(rf"- {re.escape(key)}: ([^\n]+)", text)
+    return match.group(1).strip() if match else default
+
+
+def parse_int(value: str | None) -> int:
+    if not value:
+        return 0
+    try:
+        return int(float(value))
+    except ValueError:
+        return 0
+
+
+def latest_server_rows() -> dict[str, RunStatus]:
+    latest: dict[str, RunStatus] = {name: RunStatus(name=name) for name in SCALEGATE_RUNS}
+    if not SERVER_HISTORY_PATH.exists():
+        return latest
+    with SERVER_HISTORY_PATH.open(newline="", encoding="utf-8-sig") as f:
+        for row in csv.DictReader(f):
+            name = row.get("run", "")
+            if name not in latest:
+                continue
+            latest[name] = RunStatus(
+                name=name,
+                status=row.get("status", "UNKNOWN"),
+                epochs=parse_int(row.get("epochs")),
+                last_map50=row.get("last_map50", ""),
+                last_map50_95=row.get("last_map50_95", ""),
+                timestamp=row.get("timestamp", ""),
+            )
+    return latest
+
+
+def code_block(command: str) -> str:
+    return f"```powershell\n{command.strip()}\n```"
+
+
+def build_report() -> str:
+    runs = latest_server_rows()
+    remote_complete = sum(1 for status in runs.values() if status.is_remote_complete)
+    result_gate = parse_summary_value(RESULT_GATE_PATH, "Gate status")
+    complete_local = parse_summary_value(RESULT_GATE_PATH, "Complete ScaleGate runs", "0/2")
+    method_decision = parse_summary_value(METHOD_DECISION_PATH, "Decision status")
+    accepted_routes = parse_summary_value(METHOD_DECISION_PATH, "Accepted routes", "none")
+
+    if remote_complete < len(SCALEGATE_RUNS):
+        intake_status = "WAITING_FOR_REMOTE_COMPLETION"
+        next_action = "Refresh server status later; do not sync partial ScaleGate runs."
+    elif result_gate != "OPEN_FOR_POST_RESULT_INTEGRATION":
+        intake_status = "REMOTE_COMPLETE_READY_TO_SYNC"
+        next_action = "Run the guarded sync script, then refresh audits."
+    elif method_decision.startswith("LOCKED") or method_decision.startswith("PENDING"):
+        intake_status = "LOCAL_RESULTS_READY_FOR_DIAGNOSTICS"
+        next_action = "Refresh diagnostics, speed/complexity, and method-decision audit."
+    else:
+        intake_status = "READY_FOR_MANUSCRIPT_DECISION"
+        next_action = "Apply the method-selection result before editing title, abstract, or contributions."
+
+    status_rows = []
+    for name in SCALEGATE_RUNS:
+        status = runs[name]
+        status_rows.append(
+            "| "
+            + " | ".join(
+                [
+                    name,
+                    status.status,
+                    f"{status.epochs}/{MIN_EPOCHS}",
+                    status.last_map50 or "",
+                    status.last_map50_95 or "",
+                    status.timestamp or "",
+                    "yes" if status.is_remote_complete else "no",
+                ]
+            )
+            + " |"
+        )
+
+    monitor_command = r"""
+powershell -ExecutionPolicy Bypass -File .\tools\check_ieee_server_status.ps1
+python tools\run_ieee_audits.py
+"""
+    intake_command = r"""
+powershell -ExecutionPolicy Bypass -File .\tools\intake_ieee_scalegate_results.ps1 -CheckOnly
+"""
+    sync_command = r"""
+powershell -ExecutionPolicy Bypass -File .\tools\intake_ieee_scalegate_results.ps1
+"""
+    diagnostics_command = r"""
+powershell -ExecutionPolicy Bypass -File .\tools\intake_ieee_scalegate_results.ps1 -RunDiagnostics
+"""
+    decision_command = r"""
+python tools\check_ieee_scalegate_result_gate.py
+python tools\check_ieee_scalegate_method_decision.py
+python tools\run_ieee_audits.py
+"""
+
+    lines = [
+        "# IEEE ScaleGate Post-Result Runbook",
+        "",
+        "This runbook is generated by `tools/build_ieee_scalegate_post_result_runbook.py`. It turns the static post-result protocol into a current-state checklist.",
+        "",
+        "It does not launch training, does not copy files, and does not make paper claims. It only records whether the next ScaleGate intake step is allowed.",
+        "",
+        "## Summary",
+        "",
+        f"- Intake status: {intake_status}",
+        f"- Remote complete ScaleGate runs: {remote_complete}/{len(SCALEGATE_RUNS)}",
+        f"- Local result gate: {result_gate}",
+        f"- Local complete ScaleGate runs: {complete_local}",
+        f"- Method decision: {method_decision}",
+        f"- Accepted routes: {accepted_routes}",
+        f"- Next action: {next_action}",
+        "",
+        "## Remote Status",
+        "",
+        "| Run | Remote status | Epochs | Progress mAP50 | Progress mAP50-95 | Timestamp | Remote complete |",
+        "| --- | --- | ---: | ---: | ---: | --- | --- |",
+        *status_rows,
+        "",
+        "## Allowed Commands",
+        "",
+        "### While Waiting",
+        "",
+        code_block(monitor_command),
+        "",
+        "### Current-State Intake Check",
+        "",
+        code_block(intake_command),
+        "",
+        "### After Both Remote Runs Are READY",
+        "",
+        code_block(sync_command),
+        "",
+        "### After Local Result Gate Opens",
+        "",
+        code_block(diagnostics_command),
+        "",
+        "### Before Manuscript Edits",
+        "",
+        code_block(decision_command),
+        "",
+        "## Claim Locks",
+        "",
+        "- Do not manually copy partial ScaleGate run directories into `runs/detect/`.",
+        "- Do not add ScaleGate rows to paper-facing tables before `paper/ieee_scalegate_result_gate_audit.md` opens.",
+        "- Do not promote ScaleGate in the title, abstract, contribution list, conclusion, or cover letter unless `paper/ieee_scalegate_method_decision_audit.md` accepts at least one route.",
+        "- Treat progress mAP values in this file as monitoring only, not manuscript evidence.",
+    ]
+    return "\n".join(lines) + "\n"
+
+
+def main() -> None:
+    REPORT_PATH.write_text(build_report(), encoding="utf-8")
+    print(f"Wrote {REPORT_PATH.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()

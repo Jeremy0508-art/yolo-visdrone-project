@@ -129,6 +129,30 @@ EXPERIMENTS = [
         imgsz=640,
         paper_role="ablation",
     ),
+    Experiment(
+        model="YOLO11n-P2-TOFC-960",
+        change="Add task-oriented feature calibration at 960 input",
+        config="configs/train/yolo11n_p2_tofc_960.yaml",
+        run_dir="runs/detect/yolo11n_p2_tofc_960_visdrone",
+        imgsz=960,
+        paper_role="candidate_method_boundary",
+    ),
+    Experiment(
+        model="YOLO11n-P2-ScaleGate-960",
+        change="Add identity-initialized scale-aware adaptive gate for P2 features at 960 input",
+        config="configs/train/yolo11n_p2_scalegate_960.yaml",
+        run_dir="runs/detect/yolo11n_p2_scalegate_960_visdrone",
+        imgsz=960,
+        paper_role="adaptive_method_candidate",
+    ),
+    Experiment(
+        model="YOLO11n-P2-CSGate-960",
+        change="Add cross-scale P2/P3 consistency gate after mixed ScaleGate evidence",
+        config="configs/train/yolo11n_p2_csgate_960.yaml",
+        run_dir="runs/detect/yolo11n_p2_csgate_960_visdrone",
+        imgsz=960,
+        paper_role="second_cycle_candidate_pending",
+    ),
 ]
 
 
@@ -203,6 +227,12 @@ def find_model_summary(run_name: str, model_name: str) -> tuple[str, str, str]:
         search_terms.append("yolo11n_p2_pretrained_visdrone")
     if lowered_model == "yolo11n-p2-960":
         search_terms.append("yolo11n_p2_960")
+    if "tofc" in lowered_model:
+        search_terms.append("yolo11n_p2_tofc_960")
+    if "scalegate" in lowered_model:
+        search_terms.append("yolo11n_p2_scalegate_960")
+    if "csgate" in lowered_model:
+        search_terms.append("yolo11n_p2_csgate_960")
 
     candidates = []
     for term in search_terms:

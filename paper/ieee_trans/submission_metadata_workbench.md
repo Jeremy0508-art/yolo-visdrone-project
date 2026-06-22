@@ -49,7 +49,7 @@ Current project status:
 
 - Public repository: `https://github.com/Jeremy0508-art/yolo-visdrone-project`
 - Primary dataset: VisDrone2019-DET, distributed by its original dataset providers.
-- Planned second dataset: UAVDT, pending raw dataset placement and conversion.
+- Second dataset: UAVDT, converted and audited for the current baseline/static-P2 boundary set; ScaleGate UAVDT remains queued until the running server sequence reaches it.
 - Training/evaluation commands: `paper/commands.md`
 - Evidence tables: `paper/tables/`
 - Dataset license audit: `paper/ieee_dataset_license_audit.md`

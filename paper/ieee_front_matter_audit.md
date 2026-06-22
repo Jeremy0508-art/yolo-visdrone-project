@@ -19,16 +19,16 @@ The audit does not launch training and does not turn planning placeholders into 
 | Source | T-ITS author requirements audit | READY | `paper/ieee_tits_author_requirements_audit.md` |  |
 | Rules | Workbench records T-ITS abstract and keyword limits | READY | `150-250 words / maximum six / traffic perception` |  |
 | Rules | Official-source requirements contain front-matter constraints | READY | `author requirements audit tokens` |  |
-| Abstract | Current safe abstract exists | READY | `133 words` |  |
+| Abstract | Current safe abstract exists | READY | `120 words` |  |
 | Abstract | Current safe abstract is one paragraph | READY | `single blockquote paragraph` |  |
-| Abstract | Final abstract length compliance | PENDING | `133 words; final requirement is 150-250` | Current safe abstract is internal only; rewrite the final abstract after final evidence is available. |
+| Abstract | Final abstract length compliance | PENDING | `120 words; final requirement is 150-250` | Current safe abstract is internal only; rewrite the final abstract after final evidence is available. |
 | Abstract | T-ITS traffic-sensing framing appears in safe abstract | READY | `UAV plus traffic/road-user wording` |  |
 | Abstract | Safe abstract avoids references, displayed equations, and tables | READY | `no citation/equation/table markers` |  |
-| Abstract | Final abstract template remains locked with placeholders | READY | `12 placeholders` |  |
+| Abstract | Final abstract template remains locked with placeholders | READY | `10 placeholders` |  |
 | Abstract | Placeholder evidence guard is present | READY | `guard sentence found` |  |
 | Index Terms | Methodology candidate terms exist | READY | `4 methodology candidates` |  |
 | Index Terms | Application candidate terms exist | READY | `4 application candidates` |  |
-| Index Terms | Free-keyword pool is available | READY | `4 free-keyword candidates; final can use at most two` |  |
+| Index Terms | Free-keyword pool is available | READY | `5 free-keyword candidates; final can use at most two` |  |
 | Index Terms | Final keyword-count guard is present | READY | `max-six and max-two-free guard` |  |
 | Submission Metadata | T-ITS submission portal recorded | READY | `IEEE Author Portal URL` |  |
 | Submission Metadata | Manual metadata fields remain explicit | READY | `author/funding/OA fields present` |  |

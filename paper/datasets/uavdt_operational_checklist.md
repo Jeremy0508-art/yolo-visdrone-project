@@ -60,6 +60,17 @@ Do not use `--include-unknown-classes` by default. The current IEEE plan maps of
 
 If a downloaded variant includes `van`, `other_vehicle`, or non-vehicle classes, document the mapping before training.
 
+If the downloaded archive already contains a YOLO-style layout such as `train/images`, `train/labels`, `val/images`, and `val/labels`, do not run the MOT-style converter. Use the layout preparation script instead:
+
+```powershell
+python tools\prepare_uavdt_yolo_layout.py `
+  --source-root data/raw/UAVDT `
+  --output-root data/processed/uavdt_yolo `
+  --overwrite
+```
+
+The 2026-06-20 server preparation followed this YOLO-layout branch. See `paper/datasets/uavdt_preparation_report.md` for the source archive, MD5, split statistics, dataset-check output, and queue log path.
+
 ## Stage 3: Dataset Integrity Check
 
 Run:

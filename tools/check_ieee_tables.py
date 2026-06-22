@@ -18,6 +18,10 @@ REQUIRED_TABLES = [
     "README.md",
 ]
 
+OPTIONAL_TABLES = [
+    "uavdt_results.tex",
+]
+
 FORBIDDEN_PATTERNS = [
     re.compile(r"TODO", re.I),
     re.compile("\u5f85\u8865\u5145"),
@@ -45,11 +49,18 @@ def count_columns(line: str) -> int:
     return line.count("&") + 1
 
 
-def check_table_columns(path: Path) -> TableCheck:
+def check_table_columns(path: Path, optional: bool = False) -> TableCheck:
     text = path.read_text(encoding="utf-8", errors="ignore")
     lines = [line.strip() for line in text.splitlines()]
     content_rows = [line for line in lines if "&" in line and line.endswith(r"\\")]
     if not content_rows:
+        if optional:
+            return TableCheck(
+                path.name,
+                "pending",
+                "no tabular rows found; optional table is not ready",
+                "Run tools/export_ieee_uavdt_results.py after complete UAVDT runs are synced.",
+            )
         return TableCheck(path.name, "missing", "no tabular rows found", "Regenerate IEEE tables.")
 
     expected = count_columns(content_rows[0])
@@ -95,6 +106,30 @@ def audit() -> list[TableCheck]:
                     "" if not hits else "Remove placeholder or AP-small wording from generated table.",
                 )
             )
+    for name in OPTIONAL_TABLES:
+        path = TABLE_DIR / name
+        if not path.exists():
+            checks.append(
+                TableCheck(
+                    f"Optional file: {name}",
+                    "pending",
+                    str(path.relative_to(ROOT)),
+                    "Generate after the optional evidence source is available.",
+                )
+            )
+            continue
+        checks.append(TableCheck(f"Optional file exists: {name}", "ready", str(path.relative_to(ROOT))))
+        checks.append(check_table_columns(path, optional=True))
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        hits = [pattern.pattern for pattern in FORBIDDEN_PATTERNS if pattern.search(text)]
+        checks.append(
+            TableCheck(
+                f"Forbidden markers: {name}",
+                "ready" if not hits else "missing",
+                "none" if not hits else ", ".join(hits),
+                "" if not hits else "Remove placeholder or AP-small wording from generated table.",
+            )
+        )
     return checks
 
 

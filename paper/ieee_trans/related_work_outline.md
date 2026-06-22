@@ -24,7 +24,8 @@ Draft logic:
 4. These datasets motivate lightweight, scale-aware models that can handle dense small objects under deployment constraints.
 
 Evidence boundary:
-- Do not claim cross-dataset generalization until UAVDT experiments are complete.
+- UAVDT experiments are complete for the current baseline/static-P2 boundary set. They should be used as validity-boundary evidence, not as a positive generalization claim for static P2.
+- Do not claim cross-dataset robustness for ScaleAwareP2Gate or any later method until the corresponding complete UAVDT run is synced and audited.
 
 ## 2. Tiny and Small Object Detection
 
@@ -45,7 +46,8 @@ Draft logic:
 4. Therefore, this project must report scale-wise metrics before making small-object improvement claims.
 
 Evidence boundary:
-- Do not say the proposed model improves tiny-object detection directly until `paper/tables/ieee_scale_results_visdrone.csv` exists.
+- The completed VisDrone scale-wise recall/precision and local scale-bin AP tables support small-object diagnostic discussion for completed models.
+- Do not transfer those findings to ScaleAwareP2Gate until its own scale-wise diagnostics are generated from complete weights.
 
 ## 3. Multi-Scale Feature Fusion and High-Resolution Prediction
 
@@ -64,9 +66,11 @@ Draft logic:
 2. Bottom-up and bidirectional fusion designs show that the path of information flow matters, especially when shallow spatial details are needed.
 3. UAV small-object detectors often add or strengthen high-resolution prediction heads to reduce feature loss for tiny targets.
 4. The current P2 branch should be positioned as a lightweight high-resolution prediction adaptation, not as a brand-new concept by itself.
+5. The novelty pressure from existing P2/head-enhanced UAV YOLO papers motivates an adaptive P2 mechanism rather than another static high-resolution branch.
 
 Evidence boundary:
 - The P2 branch can be discussed structurally now; quantitative claims must use exact completed VisDrone values.
+- ScaleAwareP2Gate can be discussed as a design response to the static-P2 boundary, but performance wording remains locked until complete runs exist.
 
 ## 4. Lightweight YOLO Detectors for UAV Scenes
 
@@ -89,11 +93,12 @@ Evidence boundary:
 - Do not compare YOLOv8n and YOLO11n-P2-CA-960 as if they are a controlled ablation.
 - Do not claim the nano model beats larger-capacity models.
 
-## 5. Attention and Feature Calibration
+## 5. Attention, Feature Calibration, and Adaptive P2 Modulation
 
 Purpose in manuscript:
 - Give the background for CoordAttention and TOFC-like calibration.
 - Avoid over-centering CoordAttention when the completed evidence does not support it as the primary gain source.
+- Position ScaleAwareP2Gate as task-driven adaptive modulation rather than a generic attention add-on.
 
 Key sources to cite:
 - CoordAttention.
@@ -104,10 +109,12 @@ Draft logic:
 1. Attention mechanisms can improve feature selectivity and encode spatial or positional cues.
 2. CoordAttention is relevant because it preserves directional position information while keeping low overhead.
 3. In the current completed VisDrone evidence, CoordAttention should be treated as an ablation component rather than a decisive improvement source.
-4. A stronger IEEE contribution may require a task-specific feature calibration module that is validated through full training and scale-wise analysis.
+4. TOFC should be treated as a completed VisDrone calibration ablation with mixed diagnostic behavior, not as the final method under the current evidence.
+5. ScaleAwareP2Gate is the current task-driven adaptive-P2 route, motivated by the completed UAVDT boundary, and must be validated through full training and scale-wise analysis before final claims.
 
 Evidence boundary:
-- Do not make TOFC a final method claim until its full result evidence exists.
+- Do not make TOFC a final method claim under the current evidence.
+- Do not make ScaleAwareP2Gate a final method claim until complete VisDrone/UAVDT, speed, and scale-wise evidence exists.
 
 ## Literature Table Rules
 
@@ -122,6 +129,7 @@ When preparing the final IEEE literature comparison:
 ## Next Citation Tasks
 
 1. Recheck recently added UAV YOLO BibTeX entries against publisher/arXiv metadata before final `references.bib`.
-2. Identify which recent methods have public code and can realistically be reproduced.
+2. Identify which recent methods have public code and can realistically be reproduced after the ScaleGate gate.
 3. Create a separate reproduced-vs-reported comparison table before writing the final IEEE Results section.
 4. Keep literature-only reported values out of the main reproduced-results table.
+5. In the related-work text, make clear that the method contribution is adaptive P2 use under a lightweight UAV setting, not merely adding a P2 head or a generic attention block.

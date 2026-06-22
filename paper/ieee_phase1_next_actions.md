@@ -1,60 +1,62 @@
-# IEEE Phase 1 Next Actions
+# IEEE Route Next Actions
+
+Status: current planning note. This file tracks the English IEEE route without treating the Chinese CEA route as abandoned. The two manuscript routes are parallel: the CEA route remains available for Chinese-journal submission, while the IEEE route requires a stronger method, broader evidence, and stricter claim control.
 
 ## Current Status
 
-The project has switched from the CEA route to the IEEE Transactions route. Phase 1 is about narrowing the target journal, preparing a second dataset, and deciding whether a new method module is worth implementing.
+The English route has moved beyond packaging the static P2 result. Completed VisDrone and UAVDT evidence shows that high-resolution P2 prediction is useful in some VisDrone small-object diagnostics, but the static P2 trend does not transfer cleanly to UAVDT. The current method candidate is `ScaleAwareP2Gate`, which is implemented and running on the server but remains result-locked.
 
-## Completed in Phase 1 So Far
+## Completed So Far
 
 | Item | Status | Artifact |
 | --- | --- | --- |
-| IEEE master plan | Done | `paper/IEEE_TRANS_SUBMISSION_PLAN.md` |
-| Target journal analysis | Done | `paper/ieee_target_journal_analysis.md` |
-| Experiment gap matrix | Done | `paper/ieee_required_experiment_gap.md` |
-| Related work seed matrix | Done | `paper/ieee_related_work_matrix.csv` |
-| UAVDT data config | Done | `configs/dataset/uavdt.yaml` |
-| UAVDT setup notes | Done | `paper/datasets/uavdt_setup.md` |
-| UAVDT conversion script | Done, untested without raw data | `scripts/convert_uavdt_to_yolo.py` |
-| Dataset checker generalized for YAML class names | Done | `scripts/check_dataset.py` |
-| Method design notes | Done | `paper/ieee_method_design_notes.md` |
-| TOFC candidate module | Structure implemented; not trained | `src/models/attention/tiny_object_feature_calibration.py`, `configs/models/yolo11n_p2_tofc.yaml` |
-| TOFC structure audit | Done | `paper/ieee_phase1_artifact_audit.md` |
-| IEEE scale-evaluation target list | Done | `paper/tables/ieee_scale_eval_targets.csv` |
-| Scale evaluation target-CSV support | Done | `tools/evaluate_scale_groups.py` |
-| Full VisDrone scale-wise recall/precision evaluation | Done | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/ieee_scale_result_interpretation.md` |
-| Full VisDrone local scale-bin AP evaluation | Done | `paper/tables/ieee_scale_ap_results_visdrone.csv`, `paper/figures/scale_analysis/ieee_scale_ap50_visdrone.png` |
-| Evidence-bounded IEEE section draft pack | Done | `paper/ieee_trans/section_draft_pack.md` |
-| IEEE manuscript assembly checklist | Done | `paper/ieee_trans/manuscript_assembly_checklist.md` |
-| Safe IEEE server queue draft | Done | `tools/run_ieee_server_queue.sh` |
+| IEEE master plan and target analysis | Done | `paper/IEEE_TRANS_SUBMISSION_PLAN.md`, `paper/ieee_target_journal_analysis.md` |
+| Major-revision roadmap and core argument | Done | `paper/MAJOR_REVISION_ROADMAP.md`, `paper/reframed_core_argument.md` |
+| VisDrone baseline/ablation evidence | Done | `paper/tables/main_comparison_for_paper.csv` |
+| VisDrone speed/complexity evidence | Done for completed models | `paper/tables/speed_results.csv`, `paper/tables/model_complexity.csv` |
+| VisDrone scale-wise diagnostics | Done for completed models | `paper/tables/ieee_scale_results_visdrone.csv`, `paper/tables/ieee_scale_ap_results_visdrone.csv` |
+| UAVDT conversion and four comparison runs | Done | `paper/tables/ieee_uavdt_results_for_paper.csv` |
+| Static-P2 validity-boundary interpretation | Done | `paper/ieee_result_interpretation_matrix.md` |
+| ScaleAwareP2Gate implementation | Done structurally | `src/models/attention/scale_aware_p2_gate.py`, `configs/models/yolo11n_p2_scalegate.yaml` |
+| ScaleGate server queue | Launched | `paper/ieee_scalegate_server_launch_audit.md` |
+| ScaleGate paper-use gate | Active, locked | `paper/ieee_scalegate_result_gate_audit.md` |
+| ScaleGate method-decision gate | Active, locked | `paper/ieee_scalegate_method_decision_audit.md` |
+| ScaleGate post-result dynamic runbook | Ready | `paper/ieee_scalegate_post_result_runbook.md` |
+| ScaleGate guarded intake script | Ready | `tools/intake_ieee_scalegate_results.ps1` |
+| IEEE advisor-review draft | Compiled, not final | `paper/ieee_trans/main_draft.tex`, `paper/ieee_trans/main_draft.pdf` |
+| Advisor-draft shareability audit | Ready with author placeholders pending | `paper/ieee_draft_shareability_audit.md` |
+| Non-result task closure audit | Ready | `paper/ieee_non_result_closure_audit.md` |
+| IEEE goal readiness audit | Ready | `paper/ieee_goal_readiness_audit.md` |
+| Audit/dashboard system | Active | `tools/run_ieee_audits.py`, `paper/ieee_submission_dashboard.md` |
 
-## Immediate Technical Tasks
+## Tasks Not Waiting For New Results
 
-1. Obtain the raw UAVDT dataset and place it under `data/raw/UAVDT/`.
-2. Run `scripts/convert_uavdt_to_yolo.py` and inspect conversion statistics.
-3. Run `scripts/check_dataset.py --data-yaml configs/dataset/uavdt.yaml` with preview images.
-4. Fix any raw-layout assumptions in the converter after seeing the actual downloaded structure.
-5. Run the first TOFC full training only after GPU/server availability is confirmed.
-6. Re-run the full scale-wise evaluation only after adding new final-model weights.
+1. Keep the IEEE draft wording evidence-bounded and avoid ScaleGate performance claims.
+2. Keep target-journal, front-matter, citation, and metadata workbenches current.
+3. Expand and verify related work only from reliable publisher/arXiv metadata.
+4. Maintain the result-gate scripts and dashboard after any table or manuscript edit.
+5. Preserve the CEA route as a parallel manuscript route, not as an old or abandoned project.
+6. Run `python tools/check_ieee_draft_shareability.py` before sharing `paper/ieee_trans/main_draft.pdf`.
+7. Run `python tools/check_ieee_non_result_closure.py` after non-result manuscript or audit edits; it should report zero missing items before pausing local work.
+8. Run `python tools/check_ieee_goal_readiness.py` to confirm the local rest status is separated from true submission readiness.
 
-The server queue is intentionally guarded. It exits as a dry run unless `RUN_TRAINING=1` is set.
+## Tasks Waiting For ScaleGate Results
 
-## Immediate Research Tasks
-
-1. Expand `paper/ieee_related_work_matrix.csv` with 20-30 recent papers.
-2. Separate papers into:
-   - directly reproducible comparisons,
-   - literature-only comparisons,
-   - method-background citations.
-3. Check whether T-ITS recent papers emphasize traffic UAV datasets such as UAVDT or AU-AIR.
-4. Check whether TGRS recent papers require remote-sensing-specific datasets beyond VisDrone/UAVDT.
+1. Wait for `yolo11n_p2_scalegate_960_visdrone` and `yolo11n_p2_scalegate_960_uavdt` to reach 100 epochs.
+2. Prefer `tools/intake_ieee_scalegate_results.ps1` for guarded sync; it exits without copying if remote runs are incomplete.
+3. Refresh `paper/ieee_scalegate_post_result_runbook.md` and follow only the allowed next command block.
+4. Run `python tools/check_ieee_scalegate_result_gate.py`.
+5. Refresh ScaleGate speed, complexity, scale-wise recall/precision, and local scale-bin AP.
+6. Run `python tools/check_ieee_scalegate_method_decision.py`.
+7. Apply `paper/ieee_method_selection_protocol.md` before changing title, abstract, contributions, conclusion, or cover letter.
 
 ## Do Not Do Yet
 
-- Do not launch a long training queue before UAVDT conversion is verified.
-- Do not start writing final IEEE claims before TOFC and cross-dataset evidence exists.
-- Do not claim CoordAttention as a primary improvement unless new evidence supports it.
-- Do not claim official VisDrone test-dev results unless the platform returns real metrics.
+- Do not use partial ScaleGate metrics in any paper-facing result table.
+- Do not claim ScaleGate improves VisDrone or fixes UAVDT before the result gate opens.
+- Do not create final `paper/ieee_trans/main.tex` before target journal, final method route, references, and metadata are confirmed.
+- Do not launch a second-cycle method from partial ScaleGate trends.
 
-## Next Recommended Step
+## Current Rest Point
 
-Prepare the UAVDT raw dataset and run conversion/integrity checks. In parallel, queue a VisDrone TOFC training experiment for the next available GPU window, but do not use TOFC in the manuscript until real training metrics exist.
+The result-independent local package is now guarded by `paper/ieee_non_result_closure_audit.md` and `paper/ieee_goal_readiness_audit.md`. If they report `CLOSED_EXCEPT_RESULT_AND_MANUAL_GATES` and `RESTABLE_WAITING_FOR_EXPERIMENT_RESULTS`, the remaining work is intentionally limited to ScaleGate completion plus advisor/manual metadata confirmation. While the server is running, do not introduce new paper claims from partial results.

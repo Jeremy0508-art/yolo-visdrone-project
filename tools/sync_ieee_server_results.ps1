@@ -1,6 +1,6 @@
 param(
-    [string]$HostName = "connect.bjb2.seetacloud.com",
-    [int]$Port = 44733,
+    [string]$HostName = "connect.bjb3.seetacloud.com",
+    [int]$Port = 24476,
     [string]$User = "root",
     [string]$IdentityFile = "$env:USERPROFILE\.ssh\autodl_yolo_visdrone",
     [string]$RemoteRoot = "/root/autodl-tmp/yolo-visdrone-project",
@@ -9,6 +9,10 @@ param(
         "yolo11n_p2_tofc_960_visdrone",
         "baseline_yolo11n_960_uavdt",
         "yolo11n_p2_960_uavdt",
+        "yolo11n_p2_scalegate_960_visdrone",
+        "yolo11n_p2_scalegate_960_uavdt",
+        "yolo11n_p2_csgate_960_visdrone",
+        "yolo11n_p2_csgate_960_uavdt",
         "baseline_yolov8n_960_uavdt",
         "baseline_yolo11s_960_uavdt"
     )
@@ -118,6 +122,8 @@ fi
 
 Write-Host "Sync IEEE server logs."
 Sync-RemoteGlob "$RemoteRoot/runs/logs/train_yolo11n_p2_tofc_960_visdrone*.log" "runs\logs\"
+Sync-RemoteGlob "$RemoteRoot/runs/logs/train_yolo11n_p2_scalegate_960*.log" "runs\logs\"
+Sync-RemoteGlob "$RemoteRoot/runs/logs/train_yolo11n_p2_csgate_960*.log" "runs\logs\"
 Sync-RemoteGlob "$RemoteRoot/runs/logs/train_*_uavdt*.log" "runs\logs\"
 Sync-RemoteGlob "$RemoteRoot/runs/logs/*ieee*queue*.log" "runs\logs\"
 Sync-RemoteGlob "$RemoteRoot/runs/logs/*evaluate_scale*.log" "runs\logs\"

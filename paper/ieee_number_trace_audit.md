@@ -8,9 +8,9 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 
 - Direct claims checked: 69
 - Derived claims checked: 2
-- Ready in draft: 71
+- Ready in draft: 66
 - Source-only matches: 0
-- Non-ready numeric claims: 0
+- Non-ready numeric claims: 5
 - Untracked decimal tokens in draft: 0
 
 ## Direct Claim Trace
@@ -36,17 +36,17 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 | Complexity | YOLO11n-P2-TOFC-960 params/M | `2.896` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  parameters=2895762` |
 | Complexity | YOLO11n-P2-TOFC-960 GFLOPs | `10.8` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  gflops=10.8` |
 | Speed | YOLO11n-960 weight size | `5.25` | READY | `paper/tables/model_complexity.csv: YOLO11n baseline 960  weight_size_mb=5.25` |
-| Speed | YOLO11n-960 latency | `21.31` | READY | `paper/tables/speed_results.csv: YOLO11n baseline 960  mean_latency_ms_wall=21.311` |
+| Speed | YOLO11n-960 latency | `21.31` | MISMATCH | `source value `16.38`` |
 | Speed | YOLO11n-P2-960 weight size | `6.06` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-960  weight_size_mb=6.06` |
-| Speed | YOLO11n-P2-960 latency | `22.88` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-960  mean_latency_ms_wall=22.878` |
+| Speed | YOLO11n-P2-960 latency | `22.88` | MISMATCH | `source value `17.38`` |
 | Speed | YOLO11n-P2-CA-960 weight size | `6.09` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-CoordAttention-960  weight_size_mb=6.09` |
-| Speed | YOLO11n-P2-CA-960 latency | `23.36` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-CoordAttention-960  mean_latency_ms_wall=23.355` |
+| Speed | YOLO11n-P2-CA-960 latency | `23.36` | MISMATCH | `source value `18.34`` |
 | Speed | YOLO11n-P2-TOFC-960 weight size | `6.07` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  weight_size_mb=6.07` |
-| Speed | YOLO11n-P2-TOFC-960 latency | `22.61` | READY | `paper/tables/speed_results.csv: YOLO11n-P2-TOFC-960  mean_latency_ms_wall=22.610` |
+| Speed | YOLO11n-P2-TOFC-960 latency | `22.61` | MISMATCH | `source value `17.32`` |
 | Speed | YOLO11s-960 params/M | `9.432` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  parameters=9431662` |
 | Speed | YOLO11s-960 GFLOPs | `21.6` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  gflops=21.6` |
 | Speed | YOLO11s-960 weight size | `18.32` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  weight_size_mb=18.32` |
-| Speed | YOLO11s-960 latency | `24.02` | READY | `paper/tables/speed_results.csv: YOLO11s baseline 960  mean_latency_ms_wall=24.024` |
+| Speed | YOLO11s-960 latency | `24.02` | MISMATCH | `source value `16.28`` |
 | Scale recall | YOLO11n-960 small recall | `0.420259` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-960 small recall=0.420259` |
 | Scale recall | YOLO11n-P2-960 small recall | `0.450124` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-960 small recall=0.450124` |
 | Scale recall | YOLO11n-P2-CA-960 small recall | `0.455089` | READY | `paper/tables/ieee_scale_results_visdrone.csv: YOLO11n-P2-CA-960 small recall=0.455089` |
