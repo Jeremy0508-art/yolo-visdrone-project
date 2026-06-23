@@ -22,7 +22,7 @@
         and~Third~Author}
 
 \markboth{IEEE Transactions,~Vol.~XX, No.~XX, 2026}%
-{Scale-Aware High-Resolution Prediction for Lightweight UAV Detection}
+{High-Resolution Prediction for Lightweight UAV Small-Object Detection}
 
 \maketitle
 
@@ -75,7 +75,7 @@ YOLO-family detectors are widely used when real-time or near-real-time detection
 
 \input{tables/literature_context}
 
-\section{Scale-Aware High-Resolution Prediction Framework}
+\section{Evidence-Bounded Cross-Scale High-Resolution Prediction}
 
 \subsection{Problem Formulation}
 
@@ -91,6 +91,20 @@ M_{\mathrm{all}}^{D}(f_{\theta}(x;640,\mathcal{H}_{0})),
 M_{\mathrm{all}}^{D}(f_{\theta}(x;960,\mathcal{H}_{0})).
 \end{equation}
 The corresponding diagnostic effect \(\Delta_{\mathrm{S}}^{D}\) is computed by replacing \(M_{\mathrm{all}}^{D}\) with \(M_{\mathrm{S}}^{D}\). The efficiency cost is measured by parameter count, GFLOPs, weight size, latency, and FPS. A candidate module is promoted only if its aggregate behavior, small-object diagnostics, efficiency cost, and cross-dataset evidence support the same interpretation. This formulation prevents a high-resolution branch from being accepted solely because it improves one table entry.
+
+\subsection{Evidence-Bounded Method Selection}
+
+The completed experiments are used not only to rank variants, but also to decide how strong the method claim can be. Let \(b\) denote the static high-resolution P2 model, \(r\) denote the resolution-matched baseline without P2, and \(g\) denote an adaptive P2 candidate. On a validation dataset \(D\), the cross-dataset repair behavior is summarized as
+\begin{equation}
+\rho_{\mathrm{repair}}^{D}(g)=
+\frac{M_{\mathrm{all}}^{D}(g)-M_{\mathrm{all}}^{D}(b)}
+{M_{\mathrm{all}}^{D}(r)-M_{\mathrm{all}}^{D}(b)} ,
+\end{equation}
+when the denominator is positive. A useful adaptive branch should also preserve the primary VisDrone evidence and improve at least one small-object diagnostic:
+\begin{equation}
+\Delta_{\mathrm{S}}^{D}(g,b)=M_{\mathrm{S}}^{D}(g)-M_{\mathrm{S}}^{D}(b).
+\end{equation}
+These quantities are not optimized directly during training; they are used as post-training evidence gates. This distinction is important for the manuscript: the paper does not select a module because it is visually appealing or because it improves one aggregate number, but because its accepted evidence route is consistent with the stated small-object and cross-dataset hypotheses.
 
 \subsection{Design Overview}
 
