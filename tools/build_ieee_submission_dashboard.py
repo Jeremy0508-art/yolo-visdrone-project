@@ -44,6 +44,7 @@ def parse_summary(text: str) -> dict[str, str]:
         "Ignored layout/design-free tokens",
         "Gate status",
         "Complete ScaleGate runs",
+        "Complete CSGate runs",
         "Required epochs per run",
         "Decision status",
         "Accepted routes",
@@ -149,12 +150,18 @@ def build_dashboard() -> str:
     )
     csgate_launch_text = read_text("paper/ieee_csgate_server_launch_audit.md")
     csgate_launched = bool(csgate_launch_text.strip())
-    csgate_status = "RUNNING / RESULT-LOCKED" if csgate_launched else "PENDING REAL RUNS"
-    csgate_action = (
-        "Monitor the guarded server queue; sync and cite only complete 100-epoch runs."
-        if csgate_launched
-        else "Sync the CSGate code/configs to the server, run a smoke test, then launch VisDrone and UAVDT only through the guarded queue."
-    )
+    csgate_decision_status = csgate_decision.get("Decision status", "")
+    csgate_gate_open = csgate_gate.get("Gate status", "") == "OPEN_FOR_POST_RESULT_INTEGRATION"
+    csgate_candidate = csgate_decision_status == "CSGATE_CAN_BE_METHOD_CANDIDATE"
+    if csgate_gate_open and csgate_candidate:
+        csgate_status = "COMPLETED / BOUNDED METHOD CANDIDATE"
+        csgate_action = "Use only as a bounded partial-repair method claim; keep limitations explicit and avoid SOTA or universal-transfer wording."
+    elif csgate_launched:
+        csgate_status = "RUNNING / RESULT-LOCKED"
+        csgate_action = "Monitor the guarded server queue; sync and cite only complete 100-epoch runs."
+    else:
+        csgate_status = "PENDING REAL RUNS"
+        csgate_action = "Sync the CSGate code/configs to the server, run a smoke test, then launch VisDrone and UAVDT only through the guarded queue."
 
     pending_rows = extract_pending_rows(phase_text)
 
@@ -373,8 +380,8 @@ def build_dashboard() -> str:
             f"| Second-cycle method evidence | YOLO11n-P2-CSGate on VisDrone and UAVDT | {csgate_status} | `configs/models/yolo11n_p2_csgate.yaml` | {csgate_action} |",
             f"| ScaleGate paper-use gate | ScaleGate rows, diagnostics, speed, and manuscript claims | {scalegate_gate.get('Gate status', 'PENDING AUDIT')} | `paper/ieee_scalegate_result_gate_audit.md` | Use ScaleGate only after this gate opens and the post-result protocol is executed. |",
             f"| ScaleGate method decision | Acceptance routes A/B/C | {scalegate_decision.get('Decision status', 'PENDING AUDIT')} | `paper/ieee_scalegate_method_decision_audit.md` | Do not promote ScaleGate to the title, abstract, or contribution list unless an acceptance route passes. |",
-            f"| CSGate paper-use gate | CSGate rows, diagnostics, speed, and manuscript claims | {csgate_gate.get('Gate status', 'PENDING AUDIT')} | `paper/ieee_csgate_result_gate_audit.md` | Do not sync or cite partial CSGate metrics. |",
-            f"| CSGate method decision | Acceptance routes A/B/C | {csgate_decision.get('Decision status', 'PENDING AUDIT')} | `paper/ieee_csgate_method_decision_audit.md` | Do not promote CSGate unless an acceptance route passes after complete results. |",
+            f"| CSGate paper-use gate | CSGate rows, diagnostics, speed, and manuscript claims | {csgate_gate.get('Gate status', 'PENDING AUDIT')} | `paper/ieee_csgate_result_gate_audit.md` | Gate is open only for completed audited CSGate evidence; never cite partial future runs. |",
+            f"| CSGate method decision | Acceptance routes A/B/C | {csgate_decision.get('Decision status', 'PENDING AUDIT')} | `paper/ieee_csgate_method_decision_audit.md` | Use CSGate only according to accepted Route B/C and keep Route A failure explicit. |",
             "| Submission metadata | Authors, affiliations, funding, code/data statements | MANUAL | `paper/ieee_trans/submission_metadata_workbench.md` | Fill after advisor confirmation. |",
         ]
     )
@@ -387,18 +394,17 @@ def build_dashboard() -> str:
             "1. Keep `main_draft.tex` as the advisor-review draft and do not rename it to `main.tex` yet.",
             "2. Treat completed UAVDT results as the reason for redesigning the method, not as a result to hide.",
             "3. Treat completed ScaleGate as a failed main-method candidate and use it only to motivate second-cycle design.",
-            "4. Monitor the guarded CSGate VisDrone/UAVDT queue without using partial metrics.",
-            "5. After CSGate completes, sync only complete runs and regenerate speed, complexity, scale recall/precision, and local scale-bin AP.",
-            "6. Re-check target-journal fit, author metadata, funding, and code/data statements before final packaging.",
-            "7. Run `python tools/run_ieee_audits.py` after every table, figure, or manuscript update.",
-            "8. Compile and visually inspect `paper/ieee_trans/main_draft.pdf` before sharing.",
-            "9. Create final IEEE `main.tex` only after the gates in `paper/ieee_trans/main_tex_preflight.md` pass.",
+            "4. Use completed CSGate only as a bounded partial-repair method candidate, with Route B/C support and Route A failure stated honestly.",
+            "5. Re-check target-journal fit, author metadata, funding, and code/data statements before final packaging.",
+            "6. Run `python tools/run_ieee_audits.py` after every table, figure, or manuscript update.",
+            "7. Compile and visually inspect `paper/ieee_trans/main_draft.pdf` before sharing.",
+            "8. Create final IEEE `main.tex` only after the gates in `paper/ieee_trans/main_tex_preflight.md` pass.",
             "",
             "## Claim Discipline",
             "",
             "- TOFC is a VisDrone calibration candidate/ablation, not a validated cross-dataset final method.",
             "- ScaleGate is completed but failed the predeclared main-method acceptance routes; it must not be promoted as the proposed method.",
-            "- CSGate has code/config evidence only; it has no accuracy, robustness, or SOTA claim until complete real runs are synced and audited.",
+            "- CSGate has complete VisDrone/UAVDT evidence and may be used only as a bounded partial-repair method candidate, not as a SOTA or universal-transfer claim.",
             "- UAVDT is complete and shows a validity boundary: the current P2 trend does not transfer under the audited setting.",
             "- Existing VisDrone results can be discussed only with exact values from audited tables.",
             "- Larger YOLO11s accuracy must be acknowledged; the safe current narrative is lightweight trade-off, not universal superiority.",

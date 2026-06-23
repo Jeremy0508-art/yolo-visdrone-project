@@ -98,7 +98,7 @@ FINAL_GATES = [
         "Final assembly",
         "Final IEEE source package",
         "paper/ieee_trans/main.tex",
-        "Create only after completed CSGate evidence or a fallback route decision, target journal, metadata, and references are ready.",
+        "Create only after target journal, author metadata, release policy, and final references are confirmed.",
     ),
     (
         "Final assembly",
@@ -368,10 +368,10 @@ def render_report(checks: list[Check]) -> str:
         [
             "| Blocker | Why it remains open | Safe next action |",
             "| --- | --- | --- |",
-            "| CSGate VisDrone and UAVDT complete runs | The second-cycle route has code/config evidence and a running queue, but no completed metrics yet. | Monitor `tools/intake_ieee_csgate_results.ps1 -CheckOnly`; sync only complete 100-epoch runs. |",
-            "| Post-CSGate diagnostics | Speed, complexity, scale recall/precision, and local scale-bin AP must be regenerated after complete CSGate weights sync. | Use the same guarded exporter/audit path; do not hand-copy values. |",
-            "| Method-decision route | ScaleGate failed the predeclared routes and must not be promoted as the main method. | Treat ScaleGate as mixed/negative ablation evidence and evaluate CSGate only after complete runs. |",
-            "| Final IEEE manuscript package | `main.tex`, final BibTeX, figures, cover letter, and metadata depend on final method, journal, author, and release decisions. | Use `paper/ieee_trans/main_tex_preflight.md` after evidence and manual gates close. |",
+            "| Exact IEEE Transactions venue | T-ITS is the leading route, but the advisor must confirm the final journal before final IEEE packaging. | Confirm T-ITS, TGRS, or another exact venue, then update `paper/ieee_trans/submission_metadata_workbench.md`. |",
+            "| Reference metadata verification | `references_seed.bib` is ready, but final `references.bib` should only be created after publisher metadata is checked. | Verify DOI, title, venue, year, and page/article fields for the final citation set. |",
+            "| Author, funding, and code/data release metadata | These require advisor/institution confirmation and should not be guessed. | Fill the metadata workbench, including affiliations, acknowledgments, funding, and release boundary. |",
+            "| Final IEEE manuscript package | `main.tex`, final BibTeX, figures, cover letter, and metadata depend on the manual gates above. | Use `paper/ieee_trans/main_tex_preflight.md` after manual gates close. |",
         ]
     )
     lines.extend([""])
@@ -381,8 +381,8 @@ def render_report(checks: list[Check]) -> str:
             "",
             "## Interpretation",
             "",
-            "- `Local rest status` answers whether the current non-result package is coherent while second-cycle experiments continue.",
-            "- `Submission status` answers whether the paper can be submitted now; it must remain not ready while experiment and manual gates are pending.",
+            "- `Local rest status` answers whether the current evidence, manuscript draft, and guardrail package are coherent before final manual packaging.",
+            "- `Submission status` answers whether the paper can be submitted now; it must remain not ready while manual final gates are pending.",
             "- `READY` means the relevant artifact or guardrail exists and passed a zero-missing audit where applicable.",
             "- `PENDING` means the item is intentionally waiting for complete experiments or human confirmation.",
             "- `MISSING` means a local non-result item still needs repair before resting.",

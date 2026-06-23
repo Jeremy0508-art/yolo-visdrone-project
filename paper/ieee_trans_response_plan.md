@@ -2,7 +2,7 @@
 
 Status: response-preparation workbench, not a rebuttal.
 
-This document prepares likely IEEE reviewer questions and evidence-bounded response strategies. It should be updated after the final manuscript, ScaleGate or later adaptive-method result, and exact target journal are settled.
+This document prepares likely IEEE reviewer questions and evidence-bounded response strategies. It has been updated after the completed ScaleGate and CSGate evidence; final wording still waits for the final manuscript and exact target journal.
 
 ## Response Principles
 
@@ -17,10 +17,10 @@ This document prepares likely IEEE reviewer questions and evidence-bounded respo
 | Reviewer Question | Evidence to Use | Possible Response Direction | Additional Work If Needed |
 | --- | --- | --- | --- |
 | Why is this suitable for T-ITS rather than a generic computer-vision venue? | `paper/ieee_tits_scope_fit_checklist.md`, traffic-scene qualitative figures, VisDrone/UAVDT framing | Emphasize UAV-assisted traffic sensing, road users, dense traffic-like scenes, and deployment constraints. | Add clearer traffic-scene examples and strengthen the introduction/application discussion. |
-| What is the real novelty beyond P2, 960 input, and common attention modules? | ScaleGate evidence if complete; method-selection protocol; ablation tables | If ScaleGate passes the gates, present adaptive P2 modulation as the validated contribution; if not, frame as boundary analysis or redesign. | Complete ScaleGate VisDrone/UAVDT runs; if weak, launch a second-cycle adaptive design instead of overclaiming. |
+| What is the real novelty beyond P2, 960 input, and common attention modules? | ScaleGate rejection audit; CSGate method-decision audit; ablation tables | Present CSGate as a bounded cross-scale P2/P3 consistency mechanism and acknowledge that it is partial repair, not SOTA. | Add more seeds or stronger cross-dataset experiments only if advisor wants to strengthen the claim. |
 | Why does CoordAttention not consistently improve the 960-input P2 model? | `main_comparison_for_paper.csv`, scale-wise tables | Acknowledge that CoordAttention shifts recall/precision behavior and is an ablation, not the primary improvement. | Add a concise failure/interpretation paragraph instead of claiming universal CA benefit. |
 | Are improvements meaningful or just random seed variation? | Existing seed 42 logs; future multi-seed runs if available | State current evidence is single-run unless repeated; use cautious wording. | Run seeds 43/44 for YOLO11n-960 and final method if compute allows. |
-| Does the method generalize beyond VisDrone? | Completed UAVDT baseline/static-P2 table; ScaleGate UAVDT only after complete | State that static P2 does not transfer under current UAVDT evidence. Claim adaptive-method robustness only if ScaleGate or later method supports it. | Complete ScaleGate UAVDT run and apply the post-result protocol. |
+| Does the method generalize beyond VisDrone? | Completed UAVDT baseline/static-P2/ScaleGate/CSGate table | State that static P2 does not transfer under current UAVDT evidence and that CSGate partially repairs the degradation while remaining below stronger references. | Add another dataset or multi-seed verification only if the final journal route requires stronger evidence. |
 | Why not compare with more recent UAV small-object methods? | `paper/ieee_related_work_matrix.csv`, final fair comparison table | Separate reproduced baselines from literature-only reported methods and explain evaluation mismatch. | Add reproducible methods where code/data are stable, or make a literature-only context table. |
 | How is small-object improvement measured? | `ieee_scale_results_visdrone.csv`, `ieee_scale_ap_results_visdrone.csv`, protocols | Explain GT scale grouping and local scale-bin AP definition; avoid calling it official AP-small. | Add an official-compatible AP-small evaluator if required. |
 | Why does YOLO11s-960 outperform the lightweight model? | Main results, speed/complexity tables | Present YOLO11s as a capacity reference; argue lightweight trade-off, not absolute superiority. | Add a clearer deployment-cost discussion and maybe memory measurement. |
@@ -61,11 +61,11 @@ Use only if consistent with the final manuscript.
 
 ### Generalization Boundary
 
-> We have limited the generalization claim to the datasets for which complete evidence is available. The completed UAVDT results show that the static P2 branch does not provide a transferable improvement under the current setting, so we use UAVDT as a validity-boundary test and only make adaptive-method claims when the corresponding complete results support them.
+> We have limited the generalization claim to the datasets for which complete evidence is available. The completed UAVDT results show that the static P2 branch does not provide a transferable improvement under the current setting. CSGate partially repairs this degradation, but the manuscript does not claim universal cross-dataset superiority.
 
 ### Adaptive P2 Novelty Boundary
 
-> We agree that a static P2 head and generic attention modules alone are incremental. The adaptive component is therefore evaluated under a separate evidence gate. We present ScaleAwareP2Gate as the final contribution only if it improves the matched baselines under aggregate, scale-wise, efficiency, and UAVDT checks; otherwise it remains an exploratory ablation and the manuscript claims are revised downward.
+> We agree that a static P2 head and generic attention modules alone are incremental. ScaleAwareP2Gate is therefore retained as a failed/mixed adaptive-gate ablation. The final adaptive claim is limited to CSGate, which is supported as a bounded partial repair by the completed decision audit rather than as a universal detector.
 
 ## Revision Package Checklist
 
@@ -82,4 +82,4 @@ When reviewer comments arrive:
 
 ## Current Limitation
 
-This response plan is preparatory. It cannot replace missing evidence for ScaleGate or any later adaptive method, official AP-small, or multi-seed stability.
+This response plan is preparatory. It cannot replace missing evidence for official AP-small, multi-seed stability, final target-journal requirements, or any stronger claim beyond the completed CSGate partial-repair evidence.

@@ -58,7 +58,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `../../tools/set_ieee_scale_target.py` | Generic helper for enabling scale diagnostics after complete local sync | Ready |
 | `main.tex` | IEEEtran manuscript source | Pending |
 | `references.bib` | IEEE-style bibliography | Pending |
-| `figures/` | English manuscript figures | Pending |
+| `figures/` | Final copied/curated English manuscript figures | Pending final package |
 | `tables/` | Generated LaTeX table drafts and source manifest | Ready |
 | `cover_letter_workbench.md` | Evidence-bounded cover letter planning skeleton | Ready |
 | `cover_letter_draft.md` | Final cover letter draft | Pending |
@@ -104,7 +104,7 @@ The files `IEEEtran.cls`, `IEEEtran.bst`, `cite.sty`, `TS1cmr.fd`, and `cmsy7.pf
 | `../../tools/intake_ieee_scalegate_results.ps1` | Safe wrapper for status refresh, guarded sync, optional diagnostics, and audit refresh |
 | `../../tools/intake_ieee_csgate_results.ps1` | Safe wrapper for CSGate status refresh, guarded sync, optional diagnostics, and audit refresh |
 | `../../tools/set_ieee_scale_target.py` | Generic scale-diagnostic target enabler for post-result model rows |
-| `../IEEE_SECOND_CYCLE_METHOD_BACKLOG.md` | Failure-mode-driven second-cycle method backlog after ScaleGate |
+| `../IEEE_SECOND_CYCLE_METHOD_BACKLOG.md` | Failure-mode-driven second-cycle method backlog created after ScaleGate |
 | `../ieee_goal_readiness_audit.md` | High-level rest/submission readiness audit for the IEEE objective |
 | `../ieee_submission_dashboard.md` | Current IEEE readiness dashboard |
 

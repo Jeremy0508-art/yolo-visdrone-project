@@ -10,7 +10,8 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 - Do not claim best published performance.
 - Do not claim cross-dataset generalization from the completed UAVDT runs; the audited UAVDT evidence currently shows a static-P2 validity boundary.
 - Do not present TOFC as a proven small-object improvement over YOLO11n-P2-960; current evidence supports only aggregate-mAP improvement with weaker small-object diagnostics.
-- Do not present ScaleAwareP2Gate as a result-bearing method until its VisDrone and UAVDT runs are complete, synced, and audited.
+- Present ScaleAwareP2Gate only as completed mixed/negative adaptive-gate evidence; it failed the predeclared main-method routes.
+- Present CSGate only as a bounded partial-repair method candidate supported by completed VisDrone/UAVDT evidence; do not claim SOTA or universal transfer.
 - Discuss AP-style scale results as local scale-bin AP only, not official COCO or VisDrone AP-small/AP-medium/AP-large.
 - Acknowledge that YOLO11s-960 remains the strongest completed reference in absolute VisDrone accuracy.
 
@@ -24,7 +25,8 @@ This file collects evidence-bounded English section drafts for the IEEE Transact
 | Local scale-bin AP | Ready | `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | TOFC aggregate result | Ready with caveat | `runs/detect/yolo11n_p2_tofc_960_visdrone/weights/best.pt`, `paper/tables/main_comparison_for_paper.csv`, and scale diagnostic CSVs |
 | UAVDT cross-dataset result | Ready with negative-transfer caveat | `paper/tables/ieee_uavdt_results_for_paper.csv` |
-| ScaleAwareP2Gate candidate | Build-ready, result-locked | `configs/models/yolo11n_p2_scalegate.yaml`, `paper/IEEE_TRANS_METHOD_REDESIGN_PLAN.md` |
+| ScaleAwareP2Gate evidence | Complete; rejected as main method | `paper/ieee_scalegate_method_decision_audit.md`, `paper/tables/main_comparison_for_paper.csv`, `paper/tables/ieee_uavdt_results_for_paper.csv` |
+| CSGate evidence | Complete; bounded method candidate | `paper/ieee_csgate_method_decision_audit.md`, `paper/tables/main_comparison_for_paper.csv`, `paper/tables/ieee_uavdt_results_for_paper.csv` |
 
 ## Working Title Options
 
@@ -34,16 +36,16 @@ Use a title only after the final method is selected from real results.
 2. ScaleGate-YOLO11n: Adaptive High-Resolution Prediction for UAV Traffic Object Detection
 3. Revisiting High-Resolution Prediction Branches for Lightweight UAV Object Detection
 
-Titles 1 and 2 are locked until ScaleGate or a later adaptive-P2 method passes
-the VisDrone/UAVDT evidence gates. Title 3 is the conservative fallback if the
-new method evidence is mixed.
+Titles 1 and 2 can be considered only if the wording remains bounded around
+CSGate's partial-repair evidence. Title 3 is the conservative fallback if the
+advisor prefers a mechanism-analysis paper rather than a method-named paper.
 
 ## Abstract Draft Boundary
 
-Do not finalize the abstract yet. A safe abstract can be assembled after the ScaleGate decision is complete. The final abstract should include:
+Do not finalize the abstract yet. A safe abstract can be assembled from the current CSGate-bounded draft after target-journal and metadata gates close. The final abstract should include:
 
 1. UAV traffic small-object detection problem.
-2. Static P2 boundary evidence and the selected adaptive method, if validated.
+2. Static P2 boundary evidence, failed ScaleGate evidence, and the bounded CSGate method route.
 3. Exact VisDrone and cross-dataset values from audited tables only.
 4. A conclusion framed as an accuracy-efficiency-scale trade-off, not universal superiority.
 
@@ -55,17 +57,17 @@ Lightweight detectors are attractive for UAV-assisted perception because they re
 
 The current completed experiments show that high-resolution input and P2 prediction can improve the small-object behavior of YOLO11n on the VisDrone validation split, but the results also show clear capacity and cross-dataset trade-offs. In particular, larger YOLO11s-960 remains stronger in absolute validation accuracy, and UAVDT does not support a static-P2 transfer claim. Therefore, the paper should be framed around lightweight accuracy-efficiency trade-offs, small-object analysis, and adaptive-method validation rather than a claim that the nano model dominates larger detectors.
 
-The current validated and result-locked contributions should be separated as follows:
+The current validated and evidence-bounded contributions should be separated as follows:
 
 1. A reproducible VisDrone2019-DET evaluation of lightweight YOLO baselines and YOLO11n variants under traced training logs, speed measurements, and complexity statistics.
 2. An analysis of high-resolution prediction for YOLO11n, showing how a P2 branch and 960 input resolution affect detection accuracy, efficiency, scale-wise recall/precision, local scale-bin AP, and UAVDT transfer behavior.
 3. An evidence-bounded discussion of CoordAttention and TOFC as auxiliary ablations, where gains are interpreted cautiously rather than treated as universally positive modules.
-4. A result-locked adaptive P2 design, ScaleAwareP2Gate, motivated by the completed UAVDT boundary and described structurally before performance claims are allowed.
+4. A bounded CSGate design that conditions P2 detail on adjacent P3 semantics and is supported only as a partial repair, not as universal superiority.
 
 The following contribution statements are locked until additional evidence is available:
 
 1. TOFC as a proven small-object improvement over YOLO11n-P2-960.
-2. ScaleAwareP2Gate as a final method before completed runs.
+2. ScaleAwareP2Gate as a final method.
 3. Cross-dataset generalization claims.
 4. Official AP-small/AP-medium/AP-large claims.
 
@@ -111,7 +113,7 @@ Tiny Object Feature Calibration is a candidate module for the IEEE route. Its co
 
 ### ScaleAwareP2Gate Candidate
 
-ScaleAwareP2Gate is the current post-UAVDT redesign candidate. It inserts an identity-initialized gate after the P2 high-resolution feature block. The motivation is to keep the useful shallow detail pathway while allowing the P2 response to be adapted rather than statically amplified on every dataset.
+ScaleAwareP2Gate is a completed post-UAVDT redesign candidate that is retained as mixed/negative evidence. It inserts an identity-initialized gate after the P2 high-resolution feature block. The motivation was to keep the useful shallow detail pathway while allowing the P2 response to be adapted rather than statically amplified on every dataset.
 
 Let \(F_2\) denote the fused P2 feature map. The gate computes local context \(L_2\), channel gate \(G_c\), spatial gate \(G_s\), and modulation \(M_2=G_s\odot G_c\). The output is:
 
@@ -119,7 +121,13 @@ Let \(F_2\) denote the fused P2 feature map. The gate computes local context \(L
 \hat{F}_2 = F_2 + \Delta_{\max}\tanh(\gamma) L_2 \odot M_2,
 \]
 
-where \(\gamma\) is initialized to zero. Therefore, the module starts as the static P2 path and learns only a bounded residual modulation. At present, this module has structural build evidence only. It must not be described as improving accuracy or robustness until its VisDrone and UAVDT runs are complete and audited.
+where \(\gamma\) is initialized to zero. Therefore, the module starts as the static P2 path and learns only a bounded residual modulation. The completed ScaleGate evidence does not pass the predeclared method-selection routes, so it must be discussed as an informative failed/mixed ablation rather than the final method.
+
+### CrossScaleP2P3ConsistencyGate Candidate
+
+CrossScaleP2P3ConsistencyGate (CSGate) is the current bounded method candidate. It was introduced after ScaleGate showed that self-gating P2 detail was insufficient. CSGate conditions shallow P2 detail using adjacent P3 semantic context, so the high-resolution branch is modulated by a cross-scale consistency signal rather than only by local P2 saliency.
+
+The completed method-decision audit accepts CSGate through the cross-dataset repair route and the small-object diagnostic route, but not through the stricter balanced-gain route. Therefore, the manuscript may describe CSGate as a partial repair of static-P2 degradation and a small-object recall improvement, while explicitly stating that it does not dominate all diagnostics and does not beat the larger YOLO11s reference.
 
 ## Experimental Setup Draft
 
@@ -137,7 +145,7 @@ Any final manuscript should report hardware and software exactly as recorded in 
 
 ### Main VisDrone Results
 
-At 960 input resolution, YOLO11n-960 obtains a best mAP50 of 0.42136 and best mAP50-95 of 0.25067 on the VisDrone validation split. Adding the P2 high-resolution branch gives YOLO11n-P2-960 a best mAP50 of 0.42361 and best mAP50-95 of 0.25552. The P2-CA-960 variant obtains a best mAP50 of 0.41996 and best mAP50-95 of 0.25174. YOLO11n-P2-TOFC-960 obtains the strongest completed nano-scale aggregate metrics in the current table, with best mAP50 of 0.42837 and best mAP50-95 of 0.26054. These values indicate that P2 provides a modest improvement over the resolution-matched YOLO11n baseline, while TOFC improves aggregate mAP but must still be interpreted together with scale-wise diagnostics.
+At 960 input resolution, YOLO11n-960 obtains a best mAP50 of 0.42136 and best mAP50-95 of 0.25067 on the VisDrone validation split. Adding the P2 high-resolution branch gives YOLO11n-P2-960 a best mAP50 of 0.42361 and best mAP50-95 of 0.25552. The P2-CA-960 variant obtains a best mAP50 of 0.41996 and best mAP50-95 of 0.25174. YOLO11n-P2-TOFC-960 obtains a best mAP50 of 0.42837 and best mAP50-95 of 0.26054. ScaleGate reaches a best mAP50-95 of 0.26148 but weakens small-object diagnostics. CSGate reaches a best mAP50 of 0.44603 and best mAP50-95 of 0.27207, which supports the bounded method-candidate route while still requiring scale-wise and cross-dataset caveats.
 
 The larger YOLO11s-960 reference obtains a best mAP50 of 0.48901 and best mAP50-95 of 0.29812. This result should be explicitly acknowledged: the current nano-scale variants do not outperform the larger model in absolute accuracy. Their value lies in a smaller model footprint and a lightweight trade-off analysis.
 
@@ -195,7 +203,7 @@ The current project now has a local scale-bin AP diagnostic, but this must not b
 
 The completed VisDrone experiments show that a high-resolution P2 prediction branch can improve the small-object diagnostics of YOLO11n under traceable validation protocols. At 960 input resolution, YOLO11n-P2-960 improves best mAP50-95 from 0.25067 to 0.25552 compared with YOLO11n-960, improves small-object recall by 0.029865, and improves local small-bin AP50 from 0.229995 to 0.247659. Adding CoordAttention further increases small-object recall to 0.455089, but does not uniformly improve all aggregate or scale-bin AP metrics. These results support an accuracy-efficiency trade-off view of lightweight UAV object detection.
 
-The current manuscript should remain incomplete until the ScaleGate result and final method decision are available. The final conclusion must reflect the full evidence rather than the current planning state. If ScaleGate passes the gates, the conclusion should explain whether adaptive P2 improves the small-object/efficiency/cross-dataset trade-off. If it fails, the conclusion should not hide the failure; the paper should either become a boundary study or move to a second-cycle method design.
+The current manuscript should remain non-final until the target journal, author/funding metadata, verified references, page budget, and release policy are settled. The final conclusion must reflect the full evidence: ScaleGate failed as a main method, CSGate is a bounded partial-repair candidate, and neither route supports a state-of-the-art or universal-transfer claim.
 
 ## Source Traceability
 
@@ -207,6 +215,6 @@ The current manuscript should remain incomplete until the ScaleGate result and f
 | Scale-wise recall/precision | `paper/tables/ieee_scale_results_visdrone.csv` |
 | Local scale-bin AP | `paper/tables/ieee_scale_ap_results_visdrone.csv` |
 | UAVDT cross-dataset boundary | `paper/tables/ieee_uavdt_results_for_paper.csv` |
-| ScaleGate redesign plan | `paper/IEEE_TRANS_METHOD_REDESIGN_PLAN.md` |
+| ScaleGate and CSGate redesign plans | `paper/IEEE_TRANS_METHOD_REDESIGN_PLAN.md`, `paper/IEEE_CSGATE_POST_RESULT_PROTOCOL.md` |
 | Scale-wise interpretation | `paper/ieee_scale_result_interpretation.md` |
 | Locked evidence gates | `paper/ieee_submission_dashboard.md` |

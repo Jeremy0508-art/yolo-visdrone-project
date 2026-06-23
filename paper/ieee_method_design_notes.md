@@ -268,16 +268,15 @@ it does not solve the UAVDT static-P2 boundary. It should therefore stay out of
 the title and final contribution list unless later evidence changes the
 decision protocol.
 
-If ScaleGate passes the method-selection gates, a defensible method name can
-become:
+The completed ScaleGate decision did not pass the method-selection gates, so
+it must not become the final method name. The defensible second-cycle method
+name is now tied to CSGate rather than ScaleGate:
 
-> ScaleGate-YOLO11n: Adaptive High-Resolution Prediction for Lightweight UAV
+> CSGate-YOLO11n: Cross-Scale High-Resolution Prediction for Lightweight UAV
 > Object Detection
 
-If ScaleGate only improves VisDrone but not UAVDT, the paper should be framed
-as a VisDrone-centered method with explicit cross-dataset limitations, or
-redirected to a lower-risk venue. If ScaleGate fails the VisDrone and UAVDT
-gates, do not force a module paper. Use the completed evidence to design a
-second-cycle adaptive high-resolution module, such as cross-scale P2/P3
-consistency or explicit scale-conditioned feature selection, and keep the
-current manuscript as the evidence foundation rather than the final claim.
+ScaleGate should remain a mixed/negative ablation. CSGate has completed
+VisDrone and UAVDT evidence and passes the predeclared Route B/C checks, but
+it also fails the stricter balanced-gain route. The final paper should
+therefore frame CSGate as a bounded partial-repair method rather than a
+universal detector.

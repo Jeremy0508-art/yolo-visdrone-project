@@ -44,7 +44,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `tables/scale_recall_precision.tex` | Ready for completed VisDrone models | Recall/precision only |
 | `tools/evaluate_scale_ap.py` | Ready as optional evaluator | Full local scale-bin AP output is available |
 | `figure_source_manifest.md` | Ready | Candidate figure source tracking |
-| `../IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md` | Ready | Required sync, speed, scale-diagnostic, and manuscript-update steps after ScaleGate finishes |
+| `../IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md` | Ready | Historical post-result integration steps used for completed ScaleGate evidence |
 | `../ieee_scalegate_post_result_runbook.md` | Ready | Current-state command gate for ScaleGate result intake |
 | `../../tools/intake_ieee_scalegate_results.ps1` | Ready | Safe single entry point for ScaleGate status refresh, guarded sync, optional diagnostics, and audit refresh |
 | `../../tools/set_ieee_scalegate_scale_target.py` | Ready | Enables ScaleGate scale diagnostics only after local complete-run artifacts exist |
@@ -71,8 +71,8 @@ The abstract, title, and conclusion must be written last because they are the mo
 | Scale-wise Analysis | `section_draft_pack.md`, `scale_recall_precision.tex` | Ready for recall/precision | Do not call this AP-small unless AP evaluator is added |
 | Local Scale-Bin AP Analysis | `tools/evaluate_scale_ap.py`, `scale_bin_ap.tex` | Ready as local diagnostic | Do not describe as official COCO or VisDrone AP-small |
 | Efficiency Analysis | `section_draft_pack.md`, `speed_complexity.tex` | Ready for existing models | Refresh after final method weights arrive |
-| Discussion | `main_draft.tex` | Ready for current draft | UAVDT outcome added as dataset-validity boundary; revise again after ScaleGate result |
-| Conclusion | `main_draft.tex` | Ready for current draft | Keep cautious; final wording depends on ScaleGate result, target journal, and advisor route |
+| Discussion | `main_draft.tex` | Ready for current draft | UAVDT outcome and CSGate bounded repair route are integrated; keep limitations explicit |
+| Conclusion | `main_draft.tex` | Ready for current draft | Keep cautious; final wording depends on target journal, metadata, references, and advisor route |
 | Cover Letter | `cover_letter_workbench.md` | Locked | Target journal, article type, author metadata, and final evidence are confirmed |
 
 ## Result Intake Checklist
@@ -104,7 +104,7 @@ Create `paper/ieee_trans/main.tex` only when all of the following are true:
 | Gate | Current Status | Evidence Needed |
 | --- | --- | --- |
 | Target IEEE Transactions journal selected | Pending | Advisor confirms T-ITS, TGRS, or another exact journal |
-| Page budget plan reviewed | Ready as planning | `page_budget_plan.md`; update after final ScaleGate/result selection |
+| Page budget plan reviewed | Ready as planning | `page_budget_plan.md`; update after final table/figure selection |
 | Front matter audit passes | Ready as planning | Final abstract length remains pending until final evidence exists |
 | Final main method selected | Ready as bounded CSGate route | Use CSGate only with the partial-repair limitations in `../ieee_csgate_method_decision_audit.md` |
 | ScaleGate paper-use gate | Ready for mixed/negative evidence | `../ieee_scalegate_result_gate_audit.md` reports `OPEN_FOR_POST_RESULT_INTEGRATION` |
@@ -130,13 +130,9 @@ Create `paper/ieee_trans/main.tex` only when all of the following are true:
 
 ## Safe Current Manuscript Route
 
-Given the current UAVDT evidence, the safe IEEE route before ScaleGate completion is:
+Given the current completed VisDrone/UAVDT evidence, the safe IEEE route is:
 
-> A reproducible high-resolution lightweight YOLO study for UAV small-object detection, centered on P2 prediction, input resolution, scale-wise recall/precision, accuracy-efficiency trade-offs, and dataset-validity boundaries.
-
-If ScaleGate or a later adaptive method is validated, the stronger route can be reconsidered:
-
-> An adaptive high-resolution lightweight YOLO detector for UAV traffic small-object detection, validated through VisDrone, UAVDT, scale-wise analysis, and efficiency measurements.
+> A reproducible high-resolution lightweight YOLO study and bounded CSGate method candidate for UAV small-object detection, centered on P2 prediction, cross-scale P2/P3 consistency, scale-wise diagnostics, accuracy-efficiency trade-offs, and dataset-validity boundaries.
 
 Both routes require honest comparison against YOLO11s-960.
 

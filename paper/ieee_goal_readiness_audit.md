@@ -79,7 +79,7 @@ The audit does not launch training, does not connect to the server, does not syn
 | ScaleGate experiment | UAVDT ScaleGate complete result | READY | `yolo11n_p2_scalegate_960_uavdt; server=READY; epochs=100/100; timestamp=2026-06-23 20:57:04 +08:00; progress mAP50=0.82665, mAP50-95=0.53183` |  |
 | CSGate experiment | VisDrone CSGate complete result | READY | `yolo11n_p2_csgate_960_visdrone; server=READY; epochs=100/100; timestamp=2026-06-23 20:57:04 +08:00; progress mAP50=0.44323, mAP50-95=0.26915` |  |
 | CSGate experiment | UAVDT CSGate strict 100-epoch complete result | READY | `yolo11n_p2_csgate_960_uavdt_full100; server=READY; epochs=100/100; timestamp=2026-06-23 20:57:04 +08:00; progress mAP50=0.86541, mAP50-95=0.56743` |  |
-| Final assembly | Final IEEE source package | PENDING | `paper/ieee_trans/main.tex; intentionally absent` | Create only after completed CSGate evidence or a fallback route decision, target journal, metadata, and references are ready. |
+| Final assembly | Final IEEE source package | PENDING | `paper/ieee_trans/main.tex; intentionally absent` | Create only after target journal, author metadata, release policy, and final references are confirmed. |
 | Final assembly | Final IEEE bibliography | PENDING | `paper/ieee_trans/references.bib; intentionally absent` | Create only after publisher metadata and final citation set are verified. |
 | Manual confirmation | Exact IEEE Transactions target | PENDING | `paper/ieee_trans/submission_metadata_workbench.md` | Advisor must confirm T-ITS, TGRS, or another exact journal before final packaging. |
 | Manual confirmation | Author, affiliation, funding, and code/data release metadata | PENDING | `paper/ieee_trans/submission_metadata_workbench.md` | Requires advisor/institution confirmation before submission. |
@@ -88,10 +88,10 @@ The audit does not launch training, does not connect to the server, does not syn
 
 | Blocker | Why it remains open | Safe next action |
 | --- | --- | --- |
-| CSGate VisDrone and UAVDT complete runs | The second-cycle route has code/config evidence and a running queue, but no completed metrics yet. | Monitor `tools/intake_ieee_csgate_results.ps1 -CheckOnly`; sync only complete 100-epoch runs. |
-| Post-CSGate diagnostics | Speed, complexity, scale recall/precision, and local scale-bin AP must be regenerated after complete CSGate weights sync. | Use the same guarded exporter/audit path; do not hand-copy values. |
-| Method-decision route | ScaleGate failed the predeclared routes and must not be promoted as the main method. | Treat ScaleGate as mixed/negative ablation evidence and evaluate CSGate only after complete runs. |
-| Final IEEE manuscript package | `main.tex`, final BibTeX, figures, cover letter, and metadata depend on final method, journal, author, and release decisions. | Use `paper/ieee_trans/main_tex_preflight.md` after evidence and manual gates close. |
+| Exact IEEE Transactions venue | T-ITS is the leading route, but the advisor must confirm the final journal before final IEEE packaging. | Confirm T-ITS, TGRS, or another exact venue, then update `paper/ieee_trans/submission_metadata_workbench.md`. |
+| Reference metadata verification | `references_seed.bib` is ready, but final `references.bib` should only be created after publisher metadata is checked. | Verify DOI, title, venue, year, and page/article fields for the final citation set. |
+| Author, funding, and code/data release metadata | These require advisor/institution confirmation and should not be guessed. | Fill the metadata workbench, including affiliations, acknowledgments, funding, and release boundary. |
+| Final IEEE manuscript package | `main.tex`, final BibTeX, figures, cover letter, and metadata depend on the manual gates above. | Use `paper/ieee_trans/main_tex_preflight.md` after manual gates close. |
 
 ## Latest Server Snapshot
 
@@ -109,8 +109,8 @@ The audit does not launch training, does not connect to the server, does not syn
 
 ## Interpretation
 
-- `Local rest status` answers whether the current non-result package is coherent while second-cycle experiments continue.
-- `Submission status` answers whether the paper can be submitted now; it must remain not ready while experiment and manual gates are pending.
+- `Local rest status` answers whether the current evidence, manuscript draft, and guardrail package are coherent before final manual packaging.
+- `Submission status` answers whether the paper can be submitted now; it must remain not ready while manual final gates are pending.
 - `READY` means the relevant artifact or guardrail exists and passed a zero-missing audit where applicable.
 - `PENDING` means the item is intentionally waiting for complete experiments or human confirmation.
 - `MISSING` means a local non-result item still needs repair before resting.

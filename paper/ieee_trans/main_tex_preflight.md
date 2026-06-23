@@ -17,7 +17,7 @@ Create `main.tex` only when these items are satisfied:
 | Dataset compliance audit ready | Ready as planning | `paper/ieee_dataset_compliance_audit.md`; final human license confirmation remains pending |
 | Final method route selected | Ready as bounded CSGate route | `paper/ieee_csgate_method_decision_audit.md`; CSGate can be used as a method candidate with explicit limitations |
 | Major-revision core argument locked | Ready as design layer | `paper/reframed_core_argument.md`, `paper/MAJOR_REVISION_ROADMAP.md` |
-| Evidence matrix aligned with claims | Needs post-CSGate wording review | `paper/tables/reframed_evidence_matrix.csv`; update to include bounded CSGate evidence |
+| Evidence matrix aligned with claims | Ready for advisor draft | `paper/tables/reframed_evidence_matrix.csv`; includes bounded CSGate evidence |
 | TOFC decision complete | Ready for current draft | TOFC is retained as a VisDrone calibration candidate/ablation, not as the final cross-dataset method |
 | ScaleGate decision complete | Ready; rejected as main method | `paper/ieee_scalegate_method_decision_audit.md` reports `DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD` |
 | CSGate decision complete | Ready; bounded method candidate | `paper/ieee_csgate_result_gate_audit.md` is open and `paper/ieee_csgate_method_decision_audit.md` accepts routes B and C |
@@ -77,7 +77,7 @@ Do not use CEA Word screenshots or PDF review contact sheets as IEEE figures.
 | Abstract | `abstract_contribution_workbench.md`, `title_abstract_index_terms_workbench.md` | Exact final metrics and limitations |
 | Index Terms | `title_abstract_index_terms_workbench.md` | Target journal and contribution category |
 | Introduction | `section_draft_pack.md` | Final contributions and target-specific framing |
-| Core claim framing | `../reframed_core_argument.md`, `../MAJOR_REVISION_ROADMAP.md`, `../IEEE_TRANS_METHOD_REDESIGN_PLAN.md` | Update after ScaleGate and method-selection decision |
+| Core claim framing | `../reframed_core_argument.md`, `../MAJOR_REVISION_ROADMAP.md`, `../IEEE_TRANS_METHOD_REDESIGN_PLAN.md` | Keep updated around bounded CSGate partial-repair wording |
 | Related Work | `related_work_outline.md`, `references_seed.bib` | Verified citations and recent literature |
 | Method | `section_draft_pack.md`, `scalegate_method_section_draft.md`, `csgate_method_section_draft.md`, method YAMLs, `../ieee_scalegate_method_decision_audit.md`, `../ieee_csgate_method_decision_audit.md` | ScaleGate only as mixed/negative evidence; CSGate is the bounded method-candidate route |
 | Experiments | `section_draft_pack.md`, generated tables, `post_uavdt_rewrite_checklist.md`, `../IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md`, `../ieee_scalegate_result_gate_audit.md`, `../ieee_csgate_result_gate_audit.md` | ScaleGate is integrated as mixed/negative evidence; CSGate rows are integrated as bounded method evidence |

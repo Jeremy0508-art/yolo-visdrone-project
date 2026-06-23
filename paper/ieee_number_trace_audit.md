@@ -11,7 +11,7 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 - Ready in draft: 66
 - Source-only matches: 0
 - Non-ready numeric claims: 5
-- Untracked decimal tokens in draft: 0
+- Untracked decimal tokens in draft: 3
 
 ## Direct Claim Trace
 
@@ -96,7 +96,11 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 
 ## Untracked Decimal Tokens
 
-No untracked decimal tokens found in the current section draft.
+These decimal tokens appear in the section draft but are not part of the audited claim list above. They should be reviewed before moving the text into `main.tex`.
+
+- `0.26148`
+- `0.27207`
+- `0.44603`
 
 ## Interpretation
 

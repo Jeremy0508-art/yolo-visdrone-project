@@ -8,8 +8,10 @@ Current execution status: the ScaleGate VisDrone and UAVDT runs are complete,
 synced, and audited. The predeclared method-decision audit reports
 `DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD`, so ScaleGate must remain a mixed or
 negative adaptive-gate ablation. The active second-cycle method route is
-`CrossScaleP2P3ConsistencyGate` (CSGate), which has code/config evidence only
-and must not receive performance claims until complete real runs exist.
+`CrossScaleP2P3ConsistencyGate` (CSGate), which now has complete VisDrone and
+UAVDT evidence. The predeclared method-decision audit permits only a bounded
+partial-repair claim through Route B/C and explicitly does not support a
+balanced-dominance or SOTA claim.
 
 ## 1. Evidence Diagnosis
 

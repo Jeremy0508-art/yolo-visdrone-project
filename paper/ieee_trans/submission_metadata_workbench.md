@@ -93,7 +93,7 @@ Only fill with advisor approval and after checking conflict-of-interest rules.
 | Main PDF | Future IEEEtran build | Pending |
 | `main.tex` | Future `paper/ieee_trans/main.tex` | Pending |
 | `references.bib` | Verified entries from `references_seed.bib` | Pending |
-| 150-250 word abstract and max-six index terms | `paper/ieee_trans/title_abstract_index_terms_workbench.md` | Pending final evidence |
+| 150-250 word abstract and max-six index terms | `paper/ieee_trans/title_abstract_index_terms_workbench.md` | Pending final target-journal and metadata review |
 | Figures | `paper/ieee_trans/figure_source_manifest.md` | Partially ready |
 | Generated LaTeX tables | `paper/ieee_trans/tables/` | Ready for current evidence; refresh after final results |
 | Cover letter | `paper/ieee_trans/cover_letter_workbench.md` -> final draft | Pending |

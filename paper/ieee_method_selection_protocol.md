@@ -116,8 +116,9 @@ Therefore, the final paper must not claim that the nano-scale method outperforms
 | TOFC passes Route C only | Efficiency or complexity benefit without clear accuracy gain | Lightweight calibration analysis, not strong method claim |
 | TOFC fails all routes | No defensible gain over P2-960 | P2 high-resolution analysis paper or lower-risk venue |
 | UAVDT trend contradicts VisDrone | No cross-dataset consistency for static P2 | Remove static-P2 generalization claim; treat UAVDT as redesign motivation |
-| ScaleGate passes VisDrone and UAVDT gates | Adaptive P2 evidence is positive | ScaleGate-centered method paper |
-| ScaleGate fails VisDrone or UAVDT gates | Adaptive P2 evidence is negative or mixed | Do not force a method-paper claim; return to mechanism/boundary study or redesign again |
+| ScaleGate passes VisDrone and UAVDT gates | Adaptive P2 evidence is positive | Historical rule; not selected under completed evidence |
+| ScaleGate fails VisDrone or UAVDT gates | Adaptive P2 evidence is negative or mixed | Completed outcome; keep ScaleGate as mixed/negative ablation |
+| CSGate passes Route B/C but fails Route A | Cross-scale P2/P3 consistency gives partial repair but not balanced dominance | Bounded CSGate method-candidate paper with explicit limitations |
 
 ## Required Update After TOFC And UAVDT
 
@@ -151,6 +152,6 @@ exploratory or negative ablation even if one isolated metric looks favorable.
 
 ## Current Decision
 
-Current decision after TOFC and UAVDT:
+Current decision after TOFC, ScaleGate, CSGate, and UAVDT:
 
-> YOLO11n-P2-TOFC-960 is the best completed nano-scale aggregate-mAP candidate on VisDrone, but YOLO11n-P2-960 remains stronger on the current small-object diagnostic metrics. UAVDT blocks a static P2 generalization claim. ScaleAwareP2Gate has now completed VisDrone and UAVDT, but `paper/ieee_scalegate_method_decision_audit.md` reports `DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD`. Therefore, ScaleGate remains mixed/negative ablation evidence, and the next IEEE method candidate is CrossScaleP2P3ConsistencyGate, which has code/config evidence only and no performance claim until complete VisDrone and UAVDT runs are synced and audited.
+> YOLO11n-P2-TOFC-960 improves VisDrone aggregate mAP but is not the final small-object method claim. UAVDT blocks a static P2 generalization claim. ScaleAwareP2Gate has completed VisDrone and UAVDT, but `paper/ieee_scalegate_method_decision_audit.md` reports `DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD`. CrossScaleP2P3ConsistencyGate has completed VisDrone and UAVDT, and `paper/ieee_csgate_method_decision_audit.md` reports `CSGATE_CAN_BE_METHOD_CANDIDATE` through Route B/C. Therefore, CSGate may be used only as a bounded partial-repair method candidate with explicit limitations.

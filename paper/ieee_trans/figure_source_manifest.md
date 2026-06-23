@@ -15,13 +15,13 @@ Status: planning draft. This manifest records figure candidates for the IEEE Tra
 | F-qual-1 | `paper/figures/qualitative/p2_coordatt_960_val_batch0_pred.jpg` | Ready | `runs/detect/yolo11n_p2_coordatt_960_visdrone_full/val_batch0_pred.jpg` | Representative detection visualization | Must not imply official test-dev result |
 | F-fail-1 | `paper/figures/failure_cases/p2_case_contact_sheet.jpg` | Usable with caution | Existing curated failure-case visual asset | Failure-case discussion | Qualitative only; not a metric |
 | F-trade-1 | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | Usable with caution | `paper/tables/accuracy_speed_tradeoff.csv`; `tools/plot_accuracy_speed_tradeoff.py` | Accuracy-speed trade-off | Refresh if final TOFC/UAVDT model is added |
-| F-scalegate-design | `paper/figures/method/scalegate_schematic.png` | Design-ready, result-locked | User-provided fixed v2 PNG; `src/models/attention/scale_aware_p2_gate.py`; `paper/ieee_trans/scalegate_method_section_draft.md` | Method explanation and mixed/negative ScaleGate evidence discussion | Structural figure only; no performance claim |
+| F-scalegate-design | `paper/figures/method/scalegate_schematic.png` | Ready as negative/mixed ablation | User-provided fixed v2 PNG; `src/models/attention/scale_aware_p2_gate.py`; `paper/ieee_trans/scalegate_method_section_draft.md`; `paper/ieee_scalegate_method_decision_audit.md` | Method explanation and mixed/negative ScaleGate evidence discussion | Structural figure only; do not promote ScaleGate as final method |
 
 ## Pending or Locked Figures
 
 | ID | Figure | Status | Required Evidence |
 | --- | --- | --- | --- |
-| F-method-final | Final method overview | Pending final method | Final method must be selected after ScaleGate and method-selection gates |
+| F-method-final | Bounded CSGate method overview | Ready for advisor draft | Completed CSGate VisDrone/UAVDT runs and `paper/ieee_csgate_method_decision_audit.md` |
 | F-uavdt-qual | UAVDT qualitative detection results | Locked | Converted UAVDT dataset and completed model weights |
 | F-uavdt-scale | UAVDT scale or density analysis | Locked | Converted UAVDT labels and evaluation outputs |
 | F-tofc-ablation | TOFC ablation visualization | Locked | Completed TOFC training and validation evidence |
@@ -41,4 +41,4 @@ Status: planning draft. This manifest records figure candidates for the IEEE Tra
 - Scale-wise captions must say recall/precision, not AP-small.
 - Qualitative figures should not use words such as "best", "superior", or "state-of-the-art" unless supported by tables.
 - Any figure generated from a pending run must remain out of final `main.tex`.
-- Update this manifest after ScaleGate, TOFC, or UAVDT artifacts are synced.
+- Update this manifest after any new final-facing figure is selected or regenerated.

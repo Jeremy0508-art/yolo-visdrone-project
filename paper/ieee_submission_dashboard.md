@@ -35,7 +35,7 @@ The first adaptive P2 route, `ScaleAwareP2Gate`, is complete on VisDrone and UAV
 | IEEE table drafts | 19 | 0 | OK | `paper/ieee_table_audit.md` |
 | IEEE figure manifest | 12 | 0 | OK | `paper/ieee_figure_audit.md` |
 | Front matter audit | 16 | 1 | OK | `paper/ieee_front_matter_audit.md` |
-| Number trace audit | 66 | 5 | 0 untracked | `paper/ieee_number_trace_audit.md` |
+| Number trace audit | 66 | 5 | 3 untracked | `paper/ieee_number_trace_audit.md` |
 | Main draft number audit | 43 | 1 ignored | OK | `paper/ieee_main_draft_number_audit.md` |
 | Dataset compliance audit | 16 | 1 | OK | `paper/ieee_dataset_compliance_audit.md` |
 | UAVDT conversion readiness | 32 | 2 | OK | `paper/datasets/uavdt_conversion_readiness_audit.md` |
@@ -46,7 +46,7 @@ The first adaptive P2 route, `ScaleAwareP2Gate`, is complete on VisDrone and UAV
 | Reference metadata readiness | 19 | 0 | OK | `paper/ieee_reference_metadata_readiness_audit.md` |
 | ScaleGate result gate | 11 | 0 | OK | OPEN_FOR_POST_RESULT_INTEGRATION; complete runs 2/2 |
 | ScaleGate method decision | 9 | 3 | OK | DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD; accepted routes none |
-| CSGate result gate | 11 | 0 | OK | OPEN_FOR_POST_RESULT_INTEGRATION; complete runs n/a |
+| CSGate result gate | 11 | 0 | OK | OPEN_FOR_POST_RESULT_INTEGRATION; complete runs 2/2 |
 | CSGate method decision | 12 | 1 | OK | CSGATE_CAN_BE_METHOD_CANDIDATE; accepted routes B_CROSS_DATASET_REPAIR, C_SMALL_OBJECT_DIAGNOSTIC_GAIN |
 | ScaleGate post-result runbook | 2/2 remote complete | n/a | n/a | READY_FOR_MANUSCRIPT_DECISION; `paper/ieee_scalegate_post_result_runbook.md` |
 | ScaleGate runbook audit | 14 | n/a | OK | `paper/ieee_scalegate_post_result_runbook_audit.md` |
@@ -121,11 +121,11 @@ The first adaptive P2 route, `ScaleAwareP2Gate`, is complete on VisDrone and UAV
 | Target journal | Exact IEEE Transactions venue | PENDING ADVISOR CONFIRMATION | `paper/ieee_target_journal_analysis.md` | Confirm T-ITS, TGRS, or another exact journal before final packaging. |
 | Final claims | Cross-dataset robustness / superiority | BLOCKED BY EVIDENCE | `paper/tables/ieee_uavdt_results_for_paper.csv` | Keep validity-boundary wording; do not claim transferable P2 improvement. |
 | New method evidence | YOLO11n-P2-ScaleGate on VisDrone and UAVDT | COMPLETED / REJECTED AS MAIN METHOD | `paper/IEEE_TRANS_METHOD_REDESIGN_PLAN.md` | Use as mixed/negative adaptive-gate evidence; do not promote it in the title, abstract, contributions, or conclusion. |
-| Second-cycle method evidence | YOLO11n-P2-CSGate on VisDrone and UAVDT | RUNNING / RESULT-LOCKED | `configs/models/yolo11n_p2_csgate.yaml` | Monitor the guarded server queue; sync and cite only complete 100-epoch runs. |
+| Second-cycle method evidence | YOLO11n-P2-CSGate on VisDrone and UAVDT | COMPLETED / BOUNDED METHOD CANDIDATE | `configs/models/yolo11n_p2_csgate.yaml` | Use only as a bounded partial-repair method claim; keep limitations explicit and avoid SOTA or universal-transfer wording. |
 | ScaleGate paper-use gate | ScaleGate rows, diagnostics, speed, and manuscript claims | OPEN_FOR_POST_RESULT_INTEGRATION | `paper/ieee_scalegate_result_gate_audit.md` | Use ScaleGate only after this gate opens and the post-result protocol is executed. |
 | ScaleGate method decision | Acceptance routes A/B/C | DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD | `paper/ieee_scalegate_method_decision_audit.md` | Do not promote ScaleGate to the title, abstract, or contribution list unless an acceptance route passes. |
-| CSGate paper-use gate | CSGate rows, diagnostics, speed, and manuscript claims | OPEN_FOR_POST_RESULT_INTEGRATION | `paper/ieee_csgate_result_gate_audit.md` | Do not sync or cite partial CSGate metrics. |
-| CSGate method decision | Acceptance routes A/B/C | CSGATE_CAN_BE_METHOD_CANDIDATE | `paper/ieee_csgate_method_decision_audit.md` | Do not promote CSGate unless an acceptance route passes after complete results. |
+| CSGate paper-use gate | CSGate rows, diagnostics, speed, and manuscript claims | OPEN_FOR_POST_RESULT_INTEGRATION | `paper/ieee_csgate_result_gate_audit.md` | Gate is open only for completed audited CSGate evidence; never cite partial future runs. |
+| CSGate method decision | Acceptance routes A/B/C | CSGATE_CAN_BE_METHOD_CANDIDATE | `paper/ieee_csgate_method_decision_audit.md` | Use CSGate only according to accepted Route B/C and keep Route A failure explicit. |
 | Submission metadata | Authors, affiliations, funding, code/data statements | MANUAL | `paper/ieee_trans/submission_metadata_workbench.md` | Fill after advisor confirmation. |
 
 ## Next Execution Order
@@ -133,18 +133,17 @@ The first adaptive P2 route, `ScaleAwareP2Gate`, is complete on VisDrone and UAV
 1. Keep `main_draft.tex` as the advisor-review draft and do not rename it to `main.tex` yet.
 2. Treat completed UAVDT results as the reason for redesigning the method, not as a result to hide.
 3. Treat completed ScaleGate as a failed main-method candidate and use it only to motivate second-cycle design.
-4. Monitor the guarded CSGate VisDrone/UAVDT queue without using partial metrics.
-5. After CSGate completes, sync only complete runs and regenerate speed, complexity, scale recall/precision, and local scale-bin AP.
-6. Re-check target-journal fit, author metadata, funding, and code/data statements before final packaging.
-7. Run `python tools/run_ieee_audits.py` after every table, figure, or manuscript update.
-8. Compile and visually inspect `paper/ieee_trans/main_draft.pdf` before sharing.
-9. Create final IEEE `main.tex` only after the gates in `paper/ieee_trans/main_tex_preflight.md` pass.
+4. Use completed CSGate only as a bounded partial-repair method candidate, with Route B/C support and Route A failure stated honestly.
+5. Re-check target-journal fit, author metadata, funding, and code/data statements before final packaging.
+6. Run `python tools/run_ieee_audits.py` after every table, figure, or manuscript update.
+7. Compile and visually inspect `paper/ieee_trans/main_draft.pdf` before sharing.
+8. Create final IEEE `main.tex` only after the gates in `paper/ieee_trans/main_tex_preflight.md` pass.
 
 ## Claim Discipline
 
 - TOFC is a VisDrone calibration candidate/ablation, not a validated cross-dataset final method.
 - ScaleGate is completed but failed the predeclared main-method acceptance routes; it must not be promoted as the proposed method.
-- CSGate has code/config evidence only; it has no accuracy, robustness, or SOTA claim until complete real runs are synced and audited.
+- CSGate has complete VisDrone/UAVDT evidence and may be used only as a bounded partial-repair method candidate, not as a SOTA or universal-transfer claim.
 - UAVDT is complete and shows a validity boundary: the current P2 trend does not transfer under the audited setting.
 - Existing VisDrone results can be discussed only with exact values from audited tables.
 - Larger YOLO11s accuracy must be acknowledged; the safe current narrative is lightweight trade-off, not universal superiority.
