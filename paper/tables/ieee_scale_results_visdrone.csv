@@ -20,3 +20,6 @@ YOLO11n-P2-TOFC-960,visdrone_yolo,runs/detect/yolo11n_p2_tofc_960_visdrone/weigh
 YOLO11n-P2-ScaleGate-960,visdrone_yolo,runs/detect/yolo11n_p2_scalegate_960_visdrone/weights/best.pt,val,960,0.25,0.5,small,26586,11341,0.426578,16727,11198,0.669457
 YOLO11n-P2-ScaleGate-960,visdrone_yolo,runs/detect/yolo11n_p2_scalegate_960_visdrone/weights/best.pt,val,960,0.25,0.5,medium,11105,8499,0.765331,10920,8654,0.792491
 YOLO11n-P2-ScaleGate-960,visdrone_yolo,runs/detect/yolo11n_p2_scalegate_960_visdrone/weights/best.pt,val,960,0.25,0.5,large,1068,937,0.877341,1095,925,0.844749
+YOLO11n-P2-CSGate-960,visdrone_yolo,runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt,val,960,0.25,0.5,small,26586,12113,0.455616,17817,12008,0.673963
+YOLO11n-P2-CSGate-960,visdrone_yolo,runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt,val,960,0.25,0.5,medium,11105,8629,0.777037,11013,8741,0.793698
+YOLO11n-P2-CSGate-960,visdrone_yolo,runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt,val,960,0.25,0.5,large,1068,928,0.868914,1078,921,0.854360

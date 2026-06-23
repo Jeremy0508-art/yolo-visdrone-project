@@ -14,7 +14,7 @@ param(
         "yolo11n_p2_scalegate_960_visdrone",
         "yolo11n_p2_scalegate_960_uavdt",
         "yolo11n_p2_csgate_960_visdrone",
-        "yolo11n_p2_csgate_960_uavdt",
+        "yolo11n_p2_csgate_960_uavdt_full100",
         "baseline_yolov8n_960_uavdt",
         "baseline_yolo11s_960_uavdt"
     )

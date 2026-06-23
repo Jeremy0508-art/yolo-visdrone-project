@@ -13,4 +13,4 @@ YOLO11n-P2-CoordAttention-960,completed,runs/detect/yolo11n_p2_coordatt_960_visd
 YOLO11n-P2-CoordAttention-SmallObjAug,completed,runs/detect/yolo11n_p2_coordatt_smallobj_aug_visdrone,233,2903704,10.7,5.94,runs/logs and weights/best.pt
 YOLO11n-P2-TOFC-960,completed,runs/detect/yolo11n_p2_tofc_960_visdrone,396,2895762,10.8,6.07,runs/logs and weights/best.pt
 YOLO11n-P2-ScaleGate-960,completed,runs/detect/yolo11n_p2_scalegate_960_visdrone,396,2895715,10.8,6.07,runs/logs and weights/best.pt
-YOLO11n-P2-CSGate-960,missing,runs/detect/yolo11n_p2_csgate_960_visdrone,,,,,
+YOLO11n-P2-CSGate-960,completed,runs/detect/yolo11n_p2_csgate_960_visdrone,399,3036185,14.6,6.34,runs/logs and weights/best.pt

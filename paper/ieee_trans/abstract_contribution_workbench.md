@@ -6,11 +6,11 @@ This workbench keeps the English abstract and contribution statements aligned wi
 
 ## Current Evidence-Bounded Abstract Skeleton
 
-Use this structure only for advisor discussion before the CSGate evidence gate is complete.
+Use this structure for advisor discussion after the completed CSGate evidence gate. It remains non-final because the exact IEEE target, author metadata, and final submission package are not confirmed.
 
-> Object detection in unmanned aerial vehicle (UAV) traffic imagery is challenging for lightweight detectors because small road users and vehicles are easily weakened by repeated feature downsampling, dense occlusion, and scale variation. This work first audits high-resolution prediction in YOLO11n-family detectors on VisDrone2019-DET and UAVDT under traceable training, validation, speed, and scale-diagnostic protocols. The completed evidence shows that high-resolution input and a static P2 branch can improve VisDrone small-object diagnostics, but UAVDT exposes a cross-dataset validity boundary: the same static P2 design is weaker than the resolution-matched YOLO11n baseline and other completed references. A first adaptive candidate, ScaleAwareP2Gate, is completed but remains mixed/negative evidence under the predeclared decision audit. Motivated by that failure mode, the current second-cycle route tests CrossScaleP2P3ConsistencyGate, which conditions P2 detail on adjacent P3 semantics. This abstract remains result-locked: CSGate can enter the final contribution only after complete VisDrone and UAVDT runs, speed/complexity measurements, and scale-wise audits support the claim.
+> Object detection in unmanned aerial vehicle (UAV) traffic imagery is challenging for lightweight detectors because small road users and vehicles are easily weakened by repeated feature downsampling, dense occlusion, and scale variation. This work audits high-resolution prediction in YOLO11n-family detectors on VisDrone2019-DET and UAVDT under traceable training, validation, speed, and scale-diagnostic protocols. The completed evidence shows that high-resolution input and a static P2 branch can improve VisDrone small-object diagnostics, but UAVDT exposes a cross-dataset validity boundary: the same static P2 design is weaker than the resolution-matched YOLO11n baseline and other completed references. A first adaptive candidate, ScaleAwareP2Gate, is completed but remains mixed/negative evidence under the predeclared decision audit. Motivated by that failure mode, CrossScaleP2P3ConsistencyGate conditions P2 detail on adjacent P3 semantics. The completed CSGate evidence improves VisDrone aggregate accuracy and small-object recall and repairs part of the UAVDT static-P2 degradation, but remains below the strongest UAVDT baselines and does not dominate every small-object diagnostic. The final claim should therefore be a bounded cross-scale adaptation method rather than a state-of-the-art or cross-dataset superiority claim.
 
-Do not submit this as-is. It is a safe pre-result skeleton for advisor discussion while the running CSGate experiments are incomplete.
+Do not submit this as-is. It is a safe post-CSGate advisor skeleton; final wording still needs target-journal, author, reference, and page-budget confirmation.
 
 ## Locked Final Abstract Skeleton
 
@@ -38,7 +38,7 @@ Locked placeholders:
 | TOFC module | Usable only as caveated ablation | "TOFC improves aggregate VisDrone nano-scale metrics but does not beat P2-only on the current small-object diagnostics." |
 | UAVDT cross-dataset validation | Usable as boundary evidence | "UAVDT shows that the static P2 trend does not transfer under the completed setting." |
 | ScaleAwareP2Gate module | Completed mixed/negative evidence | "ScaleAwareP2Gate is an identity-initialized adaptive P2 gate that did not pass the predeclared main-method acceptance routes." |
-| CrossScaleP2P3ConsistencyGate module | Structure ready, result-locked | "CSGate conditions P2 detail on adjacent P3 semantics; no performance claim is allowed until complete audited runs exist." |
+| CrossScaleP2P3ConsistencyGate module | Completed bounded method-candidate evidence | "CSGate conditions P2 detail on adjacent P3 semantics, improves VisDrone aggregate accuracy/small recall, and partially repairs UAVDT static-P2 degradation, but it is not a universal superiority claim." |
 | Scale-wise small-object recall/precision claim | Usable for completed VisDrone models | Use exact recall/precision values from `paper/tables/ieee_scale_results_visdrone.csv`; do not call them AP. |
 
 ## Suggested Final Contribution Format
@@ -50,7 +50,7 @@ After locked evidence is complete, the final IEEE introduction should use three 
 3. A multi-dataset validation on VisDrone and UAVDT with speed, complexity, and scale-wise metrics.
 4. An evidence-bounded analysis of lightweight trade-offs and failure cases in dense UAV traffic scenes.
 
-If ScaleGate does not pass the gates, contribution 1 should be reframed as a systematic high-resolution lightweight YOLO analysis or replaced by a second-cycle adaptive design supported by new complete evidence.
+ScaleGate did not pass the gates; contribution 1 can now be framed around CSGate only with the bounded evidence in `paper/ieee_csgate_method_decision_audit.md`.
 
 ## Forbidden Abstract Wording Before Evidence
 
@@ -63,12 +63,12 @@ Avoid these phrases until the corresponding gates are complete:
 - "robust across datasets"
 - "TOFC improves detection performance"
 - "ScaleGate is the proposed method"
-- "CSGate improves detection performance"
-- "CSGate improves cross-dataset robustness"
+- "CSGate is state-of-the-art"
+- "CSGate is robust across datasets"
 - "official VisDrone test-dev result"
 
 ## Current Best Narrative
 
 The current safest narrative is:
 
-> The project is moving from a reproducible high-resolution YOLO study into an adaptive high-resolution method paper. Completed VisDrone and UAVDT results provide the evidence foundation and expose the weakness of static P2. ScaleAwareP2Gate is completed but rejected as the main method under the predeclared audit, so CSGate is the current second-cycle candidate designed from that failure mode. The final abstract and contribution list must wait for complete audited CSGate results.
+> The project has moved from a reproducible high-resolution YOLO study into a bounded adaptive high-resolution method paper. Completed VisDrone and UAVDT results expose the weakness of static P2. ScaleAwareP2Gate is completed but rejected as the main method, while CSGate passes the predeclared cross-dataset repair and small-object diagnostic routes. The final abstract and contribution list should present CSGate as a partial cross-scale repair mechanism, with explicit limitations against YOLO11n-960, YOLOv8n-960, and YOLO11s-960 on UAVDT.

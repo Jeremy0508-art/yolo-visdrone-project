@@ -17,7 +17,7 @@ This is stricter than a build check but lighter than final submission review. Au
 | --- | --- | --- | --- | --- |
 | Build artifact | main_draft.tex exists | READY | `paper/ieee_trans/main_draft.tex` |  |
 | Build artifact | main_draft.pdf exists | READY | `paper/ieee_trans/main_draft.pdf` |  |
-| Build artifact | PDF is available and not older than source | READY | `pdf_time=1782117799139581100; tex_time=1782115067040388900` |  |
+| Build artifact | PDF is available and not older than source | READY | `pdf_time=1782221642113117100; tex_time=1782220875763030500` |  |
 | Build artifact | LaTeX fatal errors absent | READY | `none` |  |
 | Build artifact | Undefined references/citations absent | READY | `none` |  |
 | Draft boundary | Draft source declares non-final status | READY | `Evidence-bounded IEEE draft` |  |

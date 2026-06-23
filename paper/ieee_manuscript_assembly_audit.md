@@ -7,8 +7,8 @@ The audit does not compile LaTeX and does not create final manuscript files. `PE
 ## Summary
 
 - Total checks: 51
-- Ready: 47
-- Pending: 4
+- Ready: 48
+- Pending: 3
 - Missing: 0
 
 ## Checks
@@ -49,20 +49,20 @@ The audit does not compile LaTeX and does not create final manuscript files. `PE
 | Guardrail | TOFC remains bounded | READY | `TOFC Description | `section_draft_pack.md` | Ready as ablation with caveat` |  |
 | Guardrail | ScaleGate remains mixed/negative evidence | READY | `ScaleAwareP2Gate Description | `scalegate_method_section_draft.md` | Ready as completed mixed/negative evidence` |  |
 | Guardrail | ScaleGate method decision rejects main-method promotion | READY | `ScaleGate method-decision audit | Ready; rejected as main method` |  |
-| Guardrail | CSGate remains result-locked | READY | `CSGate Description | `csgate_method_section_draft.md` | Ready as structure; result-locked` |  |
+| Guardrail | CSGate bounded method route is explicit | READY | `CSGate Description | `csgate_method_section_draft.md` | Ready as bounded method candidate` |  |
 | Guardrail | UAVDT validity boundary retained | READY | `UAVDT Results | `tables/uavdt_results.tex` | Ready as validity-boundary evidence` |  |
 | Guardrail | YOLO11s boundary retained | READY | `Both routes require honest comparison against YOLO11s-960` |  |
 | Guardrail | main.tex preflight says not to create final source yet | READY | `Do not create `main.tex` yet` |  |
 | Guardrail | Claim audit remains pending until final-facing files exist | READY | `Claim audit ready | Pending final-facing files` |  |
 | Guardrail | Advisor draft shareability checked before sharing | READY | `Inspect `paper/ieee_draft_shareability_audit.md` before sharing `main_draft.pdf`` |  |
 | Guardrail | Main draft numbers checked before sharing | READY | `Inspect `paper/ieee_main_draft_number_audit.md` before sharing `main_draft.pdf`` |  |
-| Final-source gate | Final manuscript creation is still gated | READY | `Phase 1 pending checks: 4` |  |
+| Final-source gate | Final manuscript creation is still gated | READY | `Phase 1 pending checks: 2` |  |
 | Final-source gate | `paper/ieee_trans/main.tex` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/references.bib` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/cover_letter_draft.md` absent while gates are pending | READY | `absent` |  |
 | Final-source gate | `paper/ieee_trans/abstract.md` absent while gates are pending | READY | `absent` |  |
 | Manual pending gate | Target journal final confirmation | PENDING | `Exact IEEE Transactions target selected | Pending` | Advisor confirms T-ITS, TGRS, or another exact journal. |
-| Manual pending gate | Final method route selected | PENDING | `Final method route selected | Pending CSGate evidence` | Select the final route only after completed CSGate evidence is audited. |
+| Manual pending gate | Final method route selected | READY | `Final method route selected | Ready as bounded CSGate route` | Keep final method wording bounded to partial repair and explicit limitations. |
 | Manual pending gate | Cross-dataset plan resolved | READY | `Cross-dataset plan resolved | Ready as validity-boundary evidence` | Keep UAVDT framed as validity-boundary evidence unless a new method is designed and rerun. |
 | Manual pending gate | Reference metadata verified | PENDING | `Reference metadata verified | Pending` | Verify final BibTeX entries against publisher metadata before references.bib. |
 | Manual pending gate | Dataset/code release boundary final confirmation | PENDING | `Dataset/code release boundary verified | Pending final human confirmation` | Confirm release policy with advisor/institution before final package. |

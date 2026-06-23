@@ -136,10 +136,10 @@ def check_guardrails() -> list[Check]:
         ),
         token_check(
             "Guardrail",
-            "CSGate remains result-locked",
+            "CSGate bounded method route is explicit",
             "paper/ieee_trans/manuscript_assembly_checklist.md",
-            "CSGate Description | `csgate_method_section_draft.md` | Ready as structure; result-locked",
-            "Keep CSGate performance wording locked until complete evidence exists.",
+            "CSGate Description | `csgate_method_section_draft.md` | Ready as bounded method candidate",
+            "Keep CSGate wording bounded to partial repair and explicit limitations.",
         ),
         token_check(
             "Guardrail",
@@ -243,9 +243,9 @@ def check_manual_pending_gates() -> list[Check]:
         (
             "Final method route selected",
             "paper/ieee_trans/main_tex_preflight.md",
-            "Final method route selected | Pending CSGate evidence",
-            "pending",
-            "Select the final route only after completed CSGate evidence is audited.",
+            "Final method route selected | Ready as bounded CSGate route",
+            "ready",
+            "Keep final method wording bounded to partial repair and explicit limitations.",
         ),
         (
             "Cross-dataset plan resolved",

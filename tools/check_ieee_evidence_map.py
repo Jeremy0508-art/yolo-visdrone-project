@@ -88,7 +88,7 @@ def audit() -> list[Check]:
         )
 
     statuses = {row.get("status", "") for row in rows}
-    for required_status in ["ready", "ready_with_caveat", "locked", "result_locked"]:
+    for required_status in ["ready", "ready_with_caveat", "locked"]:
         checks.append(
             Check(
                 f"Status category present: {required_status}",

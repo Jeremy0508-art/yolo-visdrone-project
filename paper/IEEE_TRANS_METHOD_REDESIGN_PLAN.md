@@ -90,8 +90,8 @@ Design:
   self-conditioned P2 gate.
 - Initialize the learnable gain to zero, keeping the branch identity-like at
   epoch 0.
-- Keep CSGate result-locked until complete 100-epoch VisDrone and UAVDT runs,
-  refreshed speed/complexity, and scale diagnostics exist.
+- Keep CSGate wording bounded by the completed 100-epoch VisDrone/UAVDT runs,
+  refreshed speed/complexity, scale diagnostics, and method-decision audit.
 
 ## 4. Required Experiment Matrix
 
@@ -102,11 +102,11 @@ Core matched experiments:
 | vis_yolo11n_960 | VisDrone | YOLO11n | 960 | matched baseline | complete |
 | vis_yolo11n_p2_960 | VisDrone | YOLO11n-P2 | 960 | static P2 baseline | complete |
 | vis_yolo11n_p2_scalegate_960 | VisDrone | YOLO11n-P2-ScaleGate | 960 | first adaptive candidate | complete, rejected as main method |
-| vis_yolo11n_p2_csgate_960 | VisDrone | YOLO11n-P2-CSGate | 960 | second-cycle method candidate | pending real run |
+| vis_yolo11n_p2_csgate_960 | VisDrone | YOLO11n-P2-CSGate | 960 | second-cycle method candidate | complete, bounded method evidence |
 | uavdt_yolo11n_960 | UAVDT | YOLO11n | 960 | matched baseline | complete |
 | uavdt_yolo11n_p2_960 | UAVDT | YOLO11n-P2 | 960 | static P2 boundary | complete |
 | uavdt_yolo11n_p2_scalegate_960 | UAVDT | YOLO11n-P2-ScaleGate | 960 | first adaptive cross-dataset test | complete, rejected as main method |
-| uavdt_yolo11n_p2_csgate_960 | UAVDT | YOLO11n-P2-CSGate | 960 | second-cycle cross-dataset test | pending real run |
+| uavdt_yolo11n_p2_csgate_960_full100 | UAVDT | YOLO11n-P2-CSGate | 960 | strict 100-epoch second-cycle cross-dataset test | complete, bounded partial-repair evidence |
 
 Secondary experiments after the first two runs:
 
@@ -121,23 +121,24 @@ Secondary experiments after the first two runs:
 
 No claim is allowed until all required evidence exists.
 
-Allowed now:
+Allowed now after completed CSGate integration:
 
 - The completed evidence shows a dataset boundary for static P2.
 - `ScaleAwareP2Gate` is a completed mixed/negative ablation motivated by that
   boundary.
-- `CrossScaleP2P3ConsistencyGate` is a second-cycle candidate motivated by the
-  ScaleGate failure mode.
-- CSGate builds locally and remains result-locked.
+- `CrossScaleP2P3ConsistencyGate` is a completed bounded method candidate
+  motivated by the ScaleGate failure mode.
+- CSGate improves VisDrone aggregate accuracy and small recall and partially
+  repairs the UAVDT static-P2 degradation.
 
 Locked:
 
 - Do not claim ScaleGate is the proposed method.
-- Do not claim CSGate improves VisDrone.
-- Do not claim CSGate fixes UAVDT.
 - Do not claim cross-dataset robustness.
 - Do not claim IEEE Transactions readiness.
 - Do not claim SOTA.
+- Do not claim CSGate outperforms YOLO11n-960, YOLOv8n-960, or YOLO11s-960 on
+  UAVDT.
 
 ## 6. Paper Rewrite Direction
 
@@ -147,9 +148,11 @@ Current ScaleGate decision:
   predeclared acceptance routes.
 - It can remain in the manuscript only as a completed ablation that motivates
   stronger cross-scale adaptation.
-- The next paper rewrite should center on CSGate only if complete CSGate
-  evidence supports it. Otherwise, the honest route is a mechanism/boundary
-  study or a lower-risk venue.
+- The next paper rewrite can center on CSGate as a bounded cross-scale
+  adaptation method because the completed audit accepts the cross-dataset
+  repair and small-object diagnostic routes. It must still retain the
+  mechanism/boundary framing because CSGate does not dominate the strongest
+  UAVDT baselines or all local small-object diagnostics.
 
 ## 7. Second-Cycle Design Rules
 
@@ -168,8 +171,8 @@ desire to preserve the current module.
 
 The selected second-cycle direction is CSGate, because ScaleGate did not repair
 the UAVDT boundary and weakened the VisDrone small-object diagnostics relative
-to static P2. The goal is an IEEE-level method supported by evidence, not a
-sequence of unconnected module trials.
+to static P2. The completed CSGate evidence supports this direction as a
+bounded partial-repair route, not as an unqualified superiority claim.
 
 ## 8. Immediate Commands
 
@@ -185,25 +188,27 @@ print(sum(p.numel() for p in m.parameters()))
 '@ | python -
 ```
 
-Training commands for the server, wrapped by `tools/start_ieee_csgate_queue.sh`:
+Completed training commands used for the server route, wrapped by the guarded
+queue and followed by the strict UAVDT full-100 rerun:
 
 ```bash
 cd /root/autodl-tmp/yolo-visdrone-project
 python tools/train_baseline.py --config configs/train/yolo11n_p2_csgate_960.yaml
 python tools/train_baseline.py --config configs/train/yolo11n_p2_csgate_960_uavdt.yaml
+python tools/train_baseline.py --config runs/generated_configs/yolo11n_p2_csgate_960_uavdt_full100.yaml
 ```
 
-These commands should be run only through the guarded queue after the server
-has the current code, datasets, and dependencies.
+The reproducible local equivalent for the strict rerun is
+`configs/train/yolo11n_p2_csgate_960_uavdt_full100.yaml`.
 
 ## 9. Next Engineering Tasks
 
-1. Sync CSGate code/config/scripts to the server.
-2. Run a remote CSGate build smoke test.
-3. Launch `tools/start_ieee_csgate_queue.sh` only after the smoke test passes.
-4. Monitor with `tools/check_ieee_server_status.ps1`.
-5. Sync only complete CSGate runs with `tools/sync_ieee_server_results.ps1`.
-6. Refresh speed, complexity, scale-wise recall/precision, and local scale-bin
-   AP before writing any CSGate manuscript text.
-7. Apply a CSGate-specific method decision before editing the title, abstract,
-   contribution list, or conclusion.
+1. Keep CSGate manuscript wording bounded by
+   `paper/ieee_csgate_method_decision_audit.md`.
+2. Update the final abstract, contribution list, and conclusion around
+   partial cross-scale repair, not SOTA.
+3. Add reviewer-facing limitations: UAVDT baselines remain stronger and local
+   small-bin AP50 does not exceed static P2.
+4. Decide with the advisor whether this bounded method route is strong enough
+   for the selected IEEE Transactions target or whether another method cycle is
+   required.

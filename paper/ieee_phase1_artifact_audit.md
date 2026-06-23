@@ -7,8 +7,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 ## Summary
 
 - Total checks: 155
-- Ready: 151
-- Pending: 4
+- Ready: 153
+- Pending: 2
 - Missing: 0
 
 ## Checks
@@ -162,8 +162,8 @@ The audit does not launch training. `PENDING` means a planned result or dataset 
 | Training Evidence | UAVDT YOLO11s capacity reference result | READY | `runs/detect/baseline_yolo11s_960_uavdt; epochs=100; core artifacts present` |  |
 | Training Evidence | ScaleGate VisDrone result | READY | `runs/detect/yolo11n_p2_scalegate_960_visdrone; epochs=100; core artifacts present` |  |
 | Training Evidence | ScaleGate UAVDT result | READY | `runs/detect/yolo11n_p2_scalegate_960_uavdt; epochs=100; core artifacts present` |  |
-| Training Evidence | CSGate VisDrone result | PENDING | `runs/detect/yolo11n_p2_csgate_960_visdrone; epochs=0/100; missing: runs/detect/yolo11n_p2_csgate_960_visdrone/results.csv, runs/detect/yolo11n_p2_csgate_960_visdrone/args.yaml, runs/detect/yolo11n_p2_csgate_960_visdrone/weights/best.pt; server=PARTIAL; 3/100; timestamp=2026-06-22 15:54:16 +08:00; progress mAP50=0.22411; progress mAP50-95=0.12285` | Run tools/start_ieee_csgate_queue.sh only after CSGate code/config sync and smoke test are confirmed. |
-| Training Evidence | CSGate UAVDT result | PENDING | `runs/detect/yolo11n_p2_csgate_960_uavdt; epochs=0/100; missing: runs/detect/yolo11n_p2_csgate_960_uavdt/results.csv, runs/detect/yolo11n_p2_csgate_960_uavdt/args.yaml, runs/detect/yolo11n_p2_csgate_960_uavdt/weights/best.pt; server=MISSING; 0/100; timestamp=2026-06-22 15:54:16 +08:00` | Run tools/start_ieee_csgate_queue.sh only after CSGate code/config sync and smoke test are confirmed. |
+| Training Evidence | CSGate VisDrone result | READY | `runs/detect/yolo11n_p2_csgate_960_visdrone; epochs=100; core artifacts present` |  |
+| Training Evidence | CSGate UAVDT result | READY | `runs/detect/yolo11n_p2_csgate_960_uavdt_full100; epochs=100; core artifacts present` |  |
 | Analysis | Full VisDrone scale-wise results | READY | `paper/tables/ieee_scale_results_visdrone.csv` |  |
 | Analysis | Full VisDrone scale-wise figure | READY | `paper/figures/scale_analysis/ieee_scale_recall_visdrone.png` |  |
 | Analysis | Full VisDrone local scale-bin AP output | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv` |  |

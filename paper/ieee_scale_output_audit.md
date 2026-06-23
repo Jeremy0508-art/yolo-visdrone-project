@@ -15,9 +15,9 @@ The existing legacy `scale_group_results.csv` is preliminary. The full IEEE evid
 
 | Item | Status | Evidence | Action |
 | --- | --- | --- | --- |
-| Scale target list | READY | `7 enabled targets in paper\tables\ieee_scale_eval_targets.csv` |  |
+| Scale target list | READY | `8 enabled targets in paper\tables\ieee_scale_eval_targets.csv` |  |
 | Legacy preliminary scale output | READY | `6 rows in paper\tables\scale_group_results.csv` |  |
-| Full IEEE scale output | READY | `21 rows in paper\tables\ieee_scale_results_visdrone.csv` |  |
+| Full IEEE scale output | READY | `24 rows in paper\tables\ieee_scale_results_visdrone.csv` |  |
 | Enabled targets covered | READY | `all enabled targets present` |  |
 | Required scales covered | READY | `small/medium/large present for every enabled target` |  |
 | Full IEEE scale figure | READY | `paper\figures\scale_analysis\ieee_scale_recall_visdrone.png` |  |

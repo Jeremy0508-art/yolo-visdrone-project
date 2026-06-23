@@ -36,13 +36,13 @@ It does not launch training and does not validate pending TOFC or UAVDT results.
 | Complexity | YOLO11n-P2-TOFC-960 params/M | `2.896` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  parameters=2895762` |
 | Complexity | YOLO11n-P2-TOFC-960 GFLOPs | `10.8` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  gflops=10.8` |
 | Speed | YOLO11n-960 weight size | `5.25` | READY | `paper/tables/model_complexity.csv: YOLO11n baseline 960  weight_size_mb=5.25` |
-| Speed | YOLO11n-960 latency | `21.31` | MISMATCH | `source value `16.38`` |
+| Speed | YOLO11n-960 latency | `21.31` | MISMATCH | `source value `16.22`` |
 | Speed | YOLO11n-P2-960 weight size | `6.06` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-960  weight_size_mb=6.06` |
-| Speed | YOLO11n-P2-960 latency | `22.88` | MISMATCH | `source value `17.38`` |
+| Speed | YOLO11n-P2-960 latency | `22.88` | MISMATCH | `source value `17.57`` |
 | Speed | YOLO11n-P2-CA-960 weight size | `6.09` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-CoordAttention-960  weight_size_mb=6.09` |
-| Speed | YOLO11n-P2-CA-960 latency | `23.36` | MISMATCH | `source value `18.34`` |
+| Speed | YOLO11n-P2-CA-960 latency | `23.36` | MISMATCH | `source value `18.11`` |
 | Speed | YOLO11n-P2-TOFC-960 weight size | `6.07` | READY | `paper/tables/model_complexity.csv: YOLO11n-P2-TOFC-960  weight_size_mb=6.07` |
-| Speed | YOLO11n-P2-TOFC-960 latency | `22.61` | MISMATCH | `source value `17.32`` |
+| Speed | YOLO11n-P2-TOFC-960 latency | `22.61` | MISMATCH | `source value `17.40`` |
 | Speed | YOLO11s-960 params/M | `9.432` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  parameters=9431662` |
 | Speed | YOLO11s-960 GFLOPs | `21.6` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  gflops=21.6` |
 | Speed | YOLO11s-960 weight size | `18.32` | READY | `paper/tables/model_complexity.csv: YOLO11s baseline 960  weight_size_mb=18.32` |

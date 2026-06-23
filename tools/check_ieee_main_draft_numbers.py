@@ -70,6 +70,22 @@ def build_value_index() -> dict[str, list[str]]:
                     f"paper/tables/ieee_uavdt_results_for_paper.csv::{model}.{field} rounded to {decimals}",
                 )
 
+    uavdt_rows = {row.get("model", ""): row for row in read_rows("paper/tables/ieee_uavdt_results_for_paper.csv")}
+    try:
+        yolo11n = Decimal(uavdt_rows["YOLO11n-960"]["best_map50_95"])
+        static_p2 = Decimal(uavdt_rows["YOLO11n-P2-960"]["best_map50_95"])
+        csgate = Decimal(uavdt_rows["YOLO11n-P2-CSGate-960"]["best_map50_95"])
+        repair_pct = (csgate - static_p2) / (yolo11n - static_p2) * Decimal("100")
+    except (KeyError, InvalidOperation, ZeroDivisionError):
+        repair_pct = None
+    if repair_pct is not None:
+        for decimals in [1, 3]:
+            add_value(
+                index,
+                quantize(str(repair_pct), decimals),
+                "derived from paper/tables/ieee_uavdt_results_for_paper.csv::(CSGate-P2)/(YOLO11n-P2) best_map50_95 gap",
+            )
+
     for row in read_rows("paper/tables/model_complexity.csv"):
         model = row.get("model", "unknown")
         for field, decimals_list in {

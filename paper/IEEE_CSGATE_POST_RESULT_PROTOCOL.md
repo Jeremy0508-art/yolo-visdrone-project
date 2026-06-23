@@ -1,37 +1,39 @@
 # IEEE CSGate Post-Result Protocol
 
-Status: result-locked protocol for the second-cycle CSGate route. This file
-does not contain experimental results and must not be cited as evidence.
+Status: completed post-result protocol for the second-cycle CSGate route. This
+file records the safe intake path; paper-facing evidence is in the generated
+tables and audits, not in this protocol.
 
 ## Purpose
 
 CSGate is the current second-cycle adaptive high-resolution candidate after
 the completed ScaleGate evidence failed the predeclared main-method decision
-routes. This protocol defines the only safe path for moving CSGate from a
-running server experiment into paper-facing tables and manuscript claims.
+routes. This protocol defines the safe path used to move CSGate from server
+experiments into paper-facing tables and bounded manuscript claims.
 
 ## Completion Gate
 
-Do not sync, export, or cite CSGate metrics until both runs satisfy all local
-and remote completion requirements:
+CSGate metrics may be synced, exported, and cited only because both runs now
+satisfy the local completion requirements:
 
 | Run | Required directory | Completion rule |
 | --- | --- | --- |
 | VisDrone CSGate | `runs/detect/yolo11n_p2_csgate_960_visdrone` | 100 epochs, `results.csv`, `args.yaml`, `weights/best.pt` |
-| UAVDT CSGate | `runs/detect/yolo11n_p2_csgate_960_uavdt` | 100 epochs, `results.csv`, `args.yaml`, `weights/best.pt` |
+| UAVDT CSGate | `runs/detect/yolo11n_p2_csgate_960_uavdt_full100` | 100 epochs, `results.csv`, `args.yaml`, `weights/best.pt` |
 
-Partial epoch values are progress signals only. They must not enter the
-manuscript, tables, abstract, conclusion, or README.
+Partial epoch values, including the earlier 95-epoch early-stopped UAVDT run,
+are progress signals only. They must not enter the manuscript, tables,
+abstract, conclusion, or README.
 
 ## Monitoring Command
 
-Use this command while the server is still running:
+Use this command only if future CSGate reruns are launched:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\tools\intake_ieee_csgate_results.ps1 -CheckOnly
 ```
 
-Expected incomplete state:
+Expected incomplete state for a future run:
 
 ```text
 CSGate intake status: WAITING_FOR_REMOTE_COMPLETION
@@ -42,7 +44,8 @@ diagnostics, or compile the manuscript.
 
 ## Complete-Result Intake
 
-After both CSGate runs are `READY` at 100 epochs:
+After both CSGate runs are `READY` at 100 epochs, or to refresh the current
+completed status:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\tools\intake_ieee_csgate_results.ps1 -RequireReady
@@ -109,4 +112,3 @@ Until this protocol is completed, do not write:
 - CSGate fixes UAVDT.
 - CSGate is robust across datasets.
 - CSGate is the final proposed method.
-

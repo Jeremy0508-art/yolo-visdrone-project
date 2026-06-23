@@ -15,12 +15,12 @@ Create `main.tex` only when these items are satisfied:
 | Page budget plan reviewed | Ready as planning | `paper/ieee_trans/page_budget_plan.md`; revise after final table/figure selection |
 | Front matter audit ready | Ready as planning | `paper/ieee_front_matter_audit.md`; final abstract length remains pending until evidence is complete |
 | Dataset compliance audit ready | Ready as planning | `paper/ieee_dataset_compliance_audit.md`; final human license confirmation remains pending |
-| Final method route selected | Pending CSGate evidence | Choose CSGate, a later adaptive method, or boundary-analysis route only after completed audited results |
+| Final method route selected | Ready as bounded CSGate route | `paper/ieee_csgate_method_decision_audit.md`; CSGate can be used as a method candidate with explicit limitations |
 | Major-revision core argument locked | Ready as design layer | `paper/reframed_core_argument.md`, `paper/MAJOR_REVISION_ROADMAP.md` |
-| Evidence matrix aligned with claims | Ready for current evidence | `paper/tables/reframed_evidence_matrix.csv`; update after CSGate sync |
+| Evidence matrix aligned with claims | Needs post-CSGate wording review | `paper/tables/reframed_evidence_matrix.csv`; update to include bounded CSGate evidence |
 | TOFC decision complete | Ready for current draft | TOFC is retained as a VisDrone calibration candidate/ablation, not as the final cross-dataset method |
 | ScaleGate decision complete | Ready; rejected as main method | `paper/ieee_scalegate_method_decision_audit.md` reports `DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD` |
-| CSGate decision complete | Pending training | Wait for complete CSGate VisDrone/UAVDT runs, diagnostics, and method-decision review |
+| CSGate decision complete | Ready; bounded method candidate | `paper/ieee_csgate_result_gate_audit.md` is open and `paper/ieee_csgate_method_decision_audit.md` accepts routes B and C |
 | ScaleGate post-result runbook ready | Ready as current-state gate | `paper/ieee_scalegate_post_result_runbook.md` identifies the next allowed command block |
 | ScaleGate guarded intake script ready | Ready | `tools/intake_ieee_scalegate_results.ps1` used for completed ScaleGate integration |
 | ScaleGate scale-target enabler ready | Ready | `tools/set_ieee_scalegate_scale_target.py` prevents manually enabling diagnostics before local complete sync |
@@ -79,8 +79,8 @@ Do not use CEA Word screenshots or PDF review contact sheets as IEEE figures.
 | Introduction | `section_draft_pack.md` | Final contributions and target-specific framing |
 | Core claim framing | `../reframed_core_argument.md`, `../MAJOR_REVISION_ROADMAP.md`, `../IEEE_TRANS_METHOD_REDESIGN_PLAN.md` | Update after ScaleGate and method-selection decision |
 | Related Work | `related_work_outline.md`, `references_seed.bib` | Verified citations and recent literature |
-| Method | `section_draft_pack.md`, `scalegate_method_section_draft.md`, `csgate_method_section_draft.md`, method YAMLs, `../ieee_scalegate_method_decision_audit.md` | Final method decision; ScaleGate only as mixed/negative evidence; CSGate remains result-locked |
-| Experiments | `section_draft_pack.md`, generated tables, `post_uavdt_rewrite_checklist.md`, `../IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md`, `../ieee_scalegate_result_gate_audit.md` | ScaleGate is integrated as mixed/negative evidence; CSGate updates only after complete audited evidence |
+| Method | `section_draft_pack.md`, `scalegate_method_section_draft.md`, `csgate_method_section_draft.md`, method YAMLs, `../ieee_scalegate_method_decision_audit.md`, `../ieee_csgate_method_decision_audit.md` | ScaleGate only as mixed/negative evidence; CSGate is the bounded method-candidate route |
+| Experiments | `section_draft_pack.md`, generated tables, `post_uavdt_rewrite_checklist.md`, `../IEEE_SCALEGATE_POST_RESULT_PROTOCOL.md`, `../ieee_scalegate_result_gate_audit.md`, `../ieee_csgate_result_gate_audit.md` | ScaleGate is integrated as mixed/negative evidence; CSGate rows are integrated as bounded method evidence |
 | Discussion | `section_draft_pack.md`, `ieee_reviewer_risk_register.md` | Risks, limitations, YOLO11s boundary |
 | Conclusion | Write last | No unsupported generalization or best-performance claims |
 | Cover Letter | `cover_letter_workbench.md` | Target, title, authors, and evidence confirmed |
@@ -123,7 +123,7 @@ Before compiling a shareable PDF, verify:
 | Official AP-small | Must not appear unless official-compatible evaluator is added |
 | TOFC improvement | Must be framed as completed VisDrone ablation, not final cross-dataset method |
 | ScaleGate improvement | Must not appear as a positive method claim; completed evidence is mixed/negative |
-| CSGate improvement | Must not appear unless completed VisDrone/UAVDT runs, speed, and scale diagnostics are audited |
+| CSGate improvement | May appear only as bounded partial-repair evidence from completed VisDrone/UAVDT, speed, and scale diagnostics |
 | Cross-dataset generalization | Must not appear unless the final method has positive cross-dataset evidence |
 | Larger-model comparison | Must acknowledge YOLO11s-960 as stronger in absolute accuracy |
 | Real-time/lightweight | Must cite speed, params, FLOPs, and hardware/protocol |
@@ -141,4 +141,4 @@ The eventual submission package should include:
 
 ## Current Decision
 
-Do not create `main.tex` yet. The project has strong planning, VisDrone evidence, static-P2 UAVDT boundary artifacts, and completed ScaleGate mixed/negative evidence, but the final IEEE method route depends on the running CSGate experiments and the target journal still needs to be settled.
+Do not create `main.tex` yet. The project now has a bounded CSGate method route from completed VisDrone/UAVDT evidence, but the exact IEEE target, author/funding metadata, verified bibliography, page budget, and final submission package still need to be settled.

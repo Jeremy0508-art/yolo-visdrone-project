@@ -13,7 +13,7 @@ MIN_EPOCHS = 100
 
 CSGATE_MODEL = "YOLO11n-P2-CSGate-960"
 VISDRONE_RUN = ROOT / "runs/detect/yolo11n_p2_csgate_960_visdrone"
-UAVDT_RUN = ROOT / "runs/detect/yolo11n_p2_csgate_960_uavdt"
+UAVDT_RUN = ROOT / "runs/detect/yolo11n_p2_csgate_960_uavdt_full100"
 
 
 @dataclass(frozen=True)

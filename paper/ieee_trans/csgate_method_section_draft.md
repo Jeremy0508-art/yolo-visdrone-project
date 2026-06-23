@@ -1,7 +1,7 @@
 # CrossScaleP2P3ConsistencyGate Method Section Draft
 
-Status: second-cycle method-text draft only. This file defines the CSGate
-candidate and its claim boundary. It contains no performance claim.
+Status: completed bounded method-candidate draft. This file defines the CSGate
+candidate and records the claim boundary supported by the audited results.
 
 ## Motivation
 
@@ -54,24 +54,26 @@ The current implementation is defined in
 - `configs/train/yolo11n_p2_csgate_960.yaml`
 - `configs/train/yolo11n_p2_csgate_960_uavdt.yaml`
 
-The server launcher is `tools/start_ieee_csgate_queue.sh`.
+The server launcher is `tools/start_ieee_csgate_queue.sh`. The strict UAVDT
+100-epoch rerun is represented locally by
+`configs/train/yolo11n_p2_csgate_960_uavdt_full100.yaml`.
 
 ## Claim Boundary
 
-Do not write any of the following statements until complete VisDrone and UAVDT
-CSGate runs are synced and audited:
+The completed audit permits bounded CSGate claims, but still forbids:
 
-- CSGate improves VisDrone detection.
-- CSGate improves small-object AP or recall.
-- CSGate repairs the UAVDT degradation of static P2.
 - CSGate improves cross-dataset robustness.
-- CSGate is the final proposed method.
+- CSGate is state-of-the-art.
+- CSGate outperforms YOLO11n-960, YOLOv8n-960, or YOLO11s-960 on UAVDT.
+- CSGate dominates every small-object diagnostic.
 
-The allowed pre-result statement is:
+The allowed post-result statement is:
 
-> CSGate is a second-cycle adaptive high-resolution candidate that conditions
-> P2 detail on adjacent P3 semantic context. It is result-locked until complete
-> audited VisDrone and UAVDT runs are available.
+> CSGate is a bounded cross-scale adaptation candidate that conditions P2 detail
+> on adjacent P3 semantic context. It improves VisDrone aggregate accuracy and
+> small-object recall and partially repairs the UAVDT static-P2 degradation, but
+> it remains below the strongest UAVDT baselines and cannot support a
+> cross-dataset superiority claim.
 
 ## Required Evidence Before Manuscript Use
 
@@ -79,9 +81,8 @@ The allowed pre-result statement is:
 | --- | --- |
 | Model builds | `configs/models/yolo11n_p2_csgate.yaml`; server smoke test |
 | VisDrone accuracy | `runs/detect/yolo11n_p2_csgate_960_visdrone/results.csv` after 100 epochs |
-| UAVDT accuracy | `runs/detect/yolo11n_p2_csgate_960_uavdt/results.csv` after 100 epochs |
+| UAVDT accuracy | `runs/detect/yolo11n_p2_csgate_960_uavdt_full100/results.csv` after 100 epochs |
 | Complexity | `paper/tables/model_complexity.csv` after CSGate export |
 | Speed | `paper/tables/speed_results.csv` after CSGate benchmark |
 | Scale diagnostics | Refreshed VisDrone scale recall/precision and local scale-bin AP outputs |
-| Method decision | Future CSGate decision audit or manually reviewed gate derived from the same acceptance discipline |
-
+| Method decision | `paper/ieee_csgate_method_decision_audit.md`; accepted routes B and C, route A not accepted |

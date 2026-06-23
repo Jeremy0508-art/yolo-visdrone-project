@@ -22,7 +22,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | `novelty_positioning_workbench.md` | Novelty pressure and contribution-positioning guardrail | Ready |
 | `section_draft_pack.md` | Evidence-bounded English section drafts for future IEEE manuscript assembly | Ready |
 | `scalegate_method_section_draft.md` | Formula-level ScaleAwareP2Gate description with completed mixed/negative claim lock | Ready |
-| `csgate_method_section_draft.md` | Formula-level CSGate second-cycle method description with result lock | Ready |
+| `csgate_method_section_draft.md` | Formula-level CSGate method-candidate description with bounded audited claim | Ready |
 | `manuscript_assembly_checklist.md` | Gates and order for assembling a future IEEEtran manuscript | Ready |
 | `main_tex_preflight.md` | Preflight checklist before creating final-facing IEEEtran `main.tex` | Ready |
 | `page_budget_plan.md` | T-ITS Regular Paper page budget and main-paper table/figure selection plan | Ready |
@@ -112,7 +112,7 @@ The files `IEEEtran.cls`, `IEEEtran.bst`, `cite.sty`, `TS1cmr.fd`, and `cmsy7.pf
 
 Do not add a final-looking IEEE manuscript until experiments support the main claims. Placeholder drafts are allowed only if clearly marked as planning drafts.
 
-`main_draft.tex` is the current advisor-review draft. It must not be renamed to `main.tex` until the CSGate result gate, target-journal metadata, and final method route are resolved through `main_tex_preflight.md`.
+`main_draft.tex` is the current advisor-review draft. It must not be renamed to `main.tex` until target-journal metadata, author/funding information, reference metadata, page budget, and final package checks are resolved through `main_tex_preflight.md`.
 
 ## Local Audit Command
 
@@ -124,4 +124,4 @@ python tools\run_ieee_audits.py
 
 This command does not launch training and does not connect to the server.
 
-After result-independent edits, check `../ieee_non_result_closure_audit.md` and `../ieee_goal_readiness_audit.md`. A `CLOSED_EXCEPT_RESULT_AND_MANUAL_GATES` closure plus `OPEN_SECOND_CYCLE_EXPERIMENTS` status means the local non-result work can pause cleanly while CSGate results and advisor/manual metadata remain pending.
+After result-independent edits, check `../ieee_non_result_closure_audit.md` and `../ieee_goal_readiness_audit.md`. CSGate is now complete and may be used only as a bounded method-candidate route; remaining final-package blockers are mainly target journal, metadata, references, and submission-format decisions.

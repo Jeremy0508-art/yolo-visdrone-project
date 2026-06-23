@@ -23,7 +23,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | `manuscript_blueprint.md` | Ready | Section structure and contribution boundary |
 | `section_draft_pack.md` | Ready | Evidence-bounded English paragraphs |
 | `scalegate_method_section_draft.md` | Ready as mixed/negative ablation text | Formula-level ScaleAwareP2Gate description with completed rejection boundary |
-| `csgate_method_section_draft.md` | Ready as result-locked design text | Formula-level CSGate description; no performance claim |
+| `csgate_method_section_draft.md` | Ready as bounded method-candidate text | Formula-level CSGate description with audited partial-repair claim boundary |
 | `novelty_positioning_workbench.md` | Ready | Contribution positioning against recent UAV YOLO work |
 | `abstract_contribution_workbench.md` | Ready | Safe abstract skeleton and locked placeholders |
 | `title_abstract_index_terms_workbench.md` | Ready | T-ITS front-matter constraints and locked title/index-term options |
@@ -64,7 +64,7 @@ The abstract, title, and conclusion must be written last because they are the mo
 | CoordAttention Description | `section_draft_pack.md` | Ready as ablation | Keep wording auxiliary unless later evidence changes |
 | TOFC Description | `section_draft_pack.md` | Ready as ablation with caveat | Keep as completed VisDrone calibration candidate, not final method |
 | ScaleAwareP2Gate Description | `scalegate_method_section_draft.md` | Ready as completed mixed/negative evidence | Use only as an ablation/failure-mode discussion, not as the proposed method |
-| CSGate Description | `csgate_method_section_draft.md` | Ready as structure; result-locked | Use structure and formula only until completed VisDrone/UAVDT runs are synced and audited |
+| CSGate Description | `csgate_method_section_draft.md` | Ready as bounded method candidate | Use structure, formula, and audited partial-repair evidence; do not claim cross-dataset superiority |
 | Dataset/Implementation | `section_draft_pack.md` | Partially ready | Add verified server environment and UAVDT conversion statistics |
 | VisDrone Results | `section_draft_pack.md`, generated tables | Ready for existing evidence | Copy exact values from generated tables only |
 | UAVDT Results | `tables/uavdt_results.tex` | Ready as validity-boundary evidence | Do not claim transferable P2 improvement |
@@ -93,9 +93,9 @@ When a new completed run arrives from the server:
 
 For ScaleGate specifically, the result gate is open but the method-decision
 audit rejects it as the main method. ScaleGate metrics may be used only as
-mixed/negative ablation evidence. For CSGate, wait for complete VisDrone and
-UAVDT runs before exporting rows, regenerating diagnostics, refreshing speed,
-or changing the title, abstract, contribution list, or conclusion.
+mixed/negative ablation evidence. For CSGate, complete VisDrone and UAVDT runs
+have been synced, diagnostics and speed have been refreshed, and the method
+decision audit permits a bounded method-candidate route.
 
 ## Final `main.tex` Creation Gate
 
@@ -106,12 +106,12 @@ Create `paper/ieee_trans/main.tex` only when all of the following are true:
 | Target IEEE Transactions journal selected | Pending | Advisor confirms T-ITS, TGRS, or another exact journal |
 | Page budget plan reviewed | Ready as planning | `page_budget_plan.md`; update after final ScaleGate/result selection |
 | Front matter audit passes | Ready as planning | Final abstract length remains pending until final evidence exists |
-| Final main method selected | Pending CSGate evidence | Choose CSGate, a later method, or boundary-analysis route from real metrics |
+| Final main method selected | Ready as bounded CSGate route | Use CSGate only with the partial-repair limitations in `../ieee_csgate_method_decision_audit.md` |
 | ScaleGate paper-use gate | Ready for mixed/negative evidence | `../ieee_scalegate_result_gate_audit.md` reports `OPEN_FOR_POST_RESULT_INTEGRATION` |
 | ScaleGate method-decision audit | Ready; rejected as main method | `../ieee_scalegate_method_decision_audit.md` reports no accepted route |
 | VisDrone final result table complete | Ready for current evidence | Existing generated table, refreshed after final model |
-| Cross-dataset evidence available | Ready for static-P2 and ScaleGate boundary; pending for CSGate | UAVDT completed rows exported for existing routes; CSGate UAVDT queued |
-| Speed/complexity refreshed for final model | Pending CSGate evidence | Refresh after final method weights arrive |
+| Cross-dataset evidence available | Ready for static-P2, ScaleGate, and CSGate boundary/repair evidence | UAVDT completed rows exported for all six paper-facing routes |
+| Speed/complexity refreshed for final model | Ready for CSGate candidate | `paper/tables/speed_results.csv` and `paper/tables/model_complexity.csv` include CSGate |
 | Number trace audit passes | Ready for current draft pack | Zero non-ready numeric claims before moving draft text into `main.tex` |
 | Main draft number audit passes | Ready for current advisor draft | `../ieee_main_draft_number_audit.md` has zero missing decimal traces |
 | Advisor-draft shareability check passes | Ready with author placeholders pending | `../ieee_draft_shareability_audit.md` has no missing issues |

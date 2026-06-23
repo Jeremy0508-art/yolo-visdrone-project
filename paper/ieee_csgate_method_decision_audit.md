@@ -6,12 +6,12 @@ The thresholds below are decision guardrails only; they are not manuscript metri
 
 ## Summary
 
-- Total checks: 11
-- Ready: 6
-- Pending: 5
+- Total checks: 13
+- Ready: 12
+- Pending: 1
 - Missing: 0
-- Decision status: LOCKED_WAITING_FOR_COMPLETE_CSGATE_RESULTS
-- Accepted routes: none
+- Decision status: CSGATE_CAN_BE_METHOD_CANDIDATE
+- Accepted routes: B_CROSS_DATASET_REPAIR, C_SMALL_OBJECT_DIAGNOSTIC_GAIN
 - Preservation ratio: 0.98
 - Cross-dataset repair ratio: 0.50
 
@@ -21,15 +21,17 @@ The thresholds below are decision guardrails only; they are not manuscript metri
 | --- | --- | --- | --- | --- |
 | Input evidence | VisDrone static P2 baseline row | READY | `paper/tables/main_comparison_for_paper.csv; row found` |  |
 | Input evidence | VisDrone ScaleGate row | READY | `paper/tables/main_comparison_for_paper.csv; row found` |  |
-| Input evidence | VisDrone CSGate row | PENDING | `paper/tables/main_comparison_for_paper.csv; row not found` | Generate this row only after complete audited CSGate evidence exists. |
+| Input evidence | VisDrone CSGate row | READY | `paper/tables/main_comparison_for_paper.csv; row found` |  |
 | Input evidence | UAVDT YOLO11n baseline row | READY | `paper/tables/ieee_uavdt_results_for_paper.csv; row found` |  |
 | Input evidence | UAVDT static P2 row | READY | `paper/tables/ieee_uavdt_results_for_paper.csv; row found` |  |
-| Input evidence | UAVDT CSGate row | PENDING | `paper/tables/ieee_uavdt_results_for_paper.csv; row not found` | Generate this row only after complete audited CSGate evidence exists. |
+| Input evidence | UAVDT CSGate row | READY | `paper/tables/ieee_uavdt_results_for_paper.csv; row found` |  |
 | Input evidence | VisDrone static P2 small recall row | READY | `paper/tables/ieee_scale_results_visdrone.csv; row found` |  |
-| Input evidence | VisDrone CSGate small recall row | PENDING | `paper/tables/ieee_scale_results_visdrone.csv; row not found` | Generate this row only after complete audited CSGate evidence exists. |
+| Input evidence | VisDrone CSGate small recall row | READY | `paper/tables/ieee_scale_results_visdrone.csv; row found` |  |
 | Input evidence | VisDrone static P2 small AP row | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv; row found` |  |
-| Input evidence | VisDrone CSGate small AP row | PENDING | `paper/tables/ieee_scale_ap_results_visdrone.csv; row not found` | Generate this row only after complete audited CSGate evidence exists. |
-| Decision gate | CSGate post-result integration gate | PENDING | `paper/ieee_csgate_result_gate_audit.md is not open` | Wait for both complete CSGate runs and post-result diagnostics. |
+| Input evidence | VisDrone CSGate small AP row | READY | `paper/tables/ieee_scale_ap_results_visdrone.csv; row found` |  |
+| Route A | VisDrone balanced gain over static P2 and ScaleGate | PENDING | `CSGate mAP50-95 0.272070 vs reference 0.261480; small AP50 0.242680 vs preserve floor 0.242706; small recall 0.455616 vs preserve floor 0.441122` | Route A does not pass under the fixed pre-result thresholds. |
+| Route B | Cross-dataset static-P2 repair | READY | `UAVDT CSGate 0.567430 vs static P2 0.539050; repair fraction 0.548 vs required 0.500; VisDrone preservation 0.272070 vs floor 0.250410` |  |
+| Route C | Small-object diagnostic gain | READY | `small AP50 0.242680 vs 0.247659; small recall 0.455616 vs 0.450124; VisDrone preservation 0.272070 vs floor 0.250410` |  |
 
 ## Decision Rules
 

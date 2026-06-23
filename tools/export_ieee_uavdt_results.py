@@ -58,8 +58,8 @@ RUNS = [
     ),
     UavdtRun(
         "YOLO11n-P2-CSGate-960",
-        "yolo11n_p2_csgate_960_uavdt",
-        "configs/train/yolo11n_p2_csgate_960_uavdt.yaml",
+        "yolo11n_p2_csgate_960_uavdt_full100",
+        "configs/train/yolo11n_p2_csgate_960_uavdt_full100.yaml",
         "second-cycle cross-scale consistency gate candidate",
     ),
 ]

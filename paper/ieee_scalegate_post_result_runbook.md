@@ -18,8 +18,8 @@ It does not launch training, does not copy files, and does not make paper claims
 
 | Run | Remote status | Epochs | Progress mAP50 | Progress mAP50-95 | Timestamp | Remote complete |
 | --- | --- | ---: | ---: | ---: | --- | --- |
-| yolo11n_p2_scalegate_960_visdrone | READY | 100/100 | 0.42609 | 0.25947 | 2026-06-22 15:54:16 +08:00 | yes |
-| yolo11n_p2_scalegate_960_uavdt | READY | 100/100 | 0.82665 | 0.53183 | 2026-06-22 15:54:16 +08:00 | yes |
+| yolo11n_p2_scalegate_960_visdrone | READY | 100/100 | 0.42609 | 0.25947 | 2026-06-23 20:57:04 +08:00 | yes |
+| yolo11n_p2_scalegate_960_uavdt | READY | 100/100 | 0.82665 | 0.53183 | 2026-06-23 20:57:04 +08:00 | yes |
 
 ## Allowed Commands
 

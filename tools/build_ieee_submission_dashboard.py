@@ -182,7 +182,7 @@ def build_dashboard() -> str:
         "",
         "The four required UAVDT runs have been synced and exported into manuscript-safe tables. The current UAVDT result narrows the claim: YOLO11n-P2-960 is weaker than YOLO11n-960, YOLOv8n-960, and YOLO11s-960 on UAVDT, so the IEEE draft should be framed as mechanism analysis and validity-boundary evidence rather than a transferable P2 superiority claim.",
         "",
-        "The first adaptive P2 route, `ScaleAwareP2Gate`, is now complete on VisDrone and UAVDT, but the method-decision audit rejects it as the main method. It may be used only as mixed/negative ablation evidence. A second-cycle route, `CrossScaleP2P3ConsistencyGate`, is implemented at code/config level and remains result-locked until complete real runs exist.",
+        "The first adaptive P2 route, `ScaleAwareP2Gate`, is complete on VisDrone and UAVDT, but the method-decision audit rejects it as the main method. It may be used only as mixed/negative ablation evidence. The second-cycle route, `CrossScaleP2P3ConsistencyGate`, now has complete VisDrone/UAVDT runs, refreshed diagnostics, speed/complexity rows, and a method-decision audit that permits only a bounded partial-repair claim.",
         "",
         "## Readiness Snapshot",
         "",

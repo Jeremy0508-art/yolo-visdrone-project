@@ -15,7 +15,7 @@ param(
 $ErrorActionPreference = "Stop"
 
 $VisRun = "yolo11n_p2_csgate_960_visdrone"
-$UavdtRun = "yolo11n_p2_csgate_960_uavdt"
+$UavdtRun = "yolo11n_p2_csgate_960_uavdt_full100"
 
 function Invoke-Checked {
     param([string[]]$Command)

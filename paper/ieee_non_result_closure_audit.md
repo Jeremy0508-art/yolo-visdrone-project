@@ -63,8 +63,8 @@ It does not launch training, does not sync partial server runs, and does not pro
 | Allowed pending gate | ScaleGate result gate | READY | `OPEN_FOR_POST_RESULT_INTEGRATION` |  |
 | Allowed pending gate | ScaleGate method decision | READY | `DO_NOT_USE_SCALEGATE_AS_MAIN_METHOD` |  |
 | Allowed pending gate | CSGate second-cycle evidence | READY | `YOLO11n-P2-CSGate` |  |
-| Allowed pending gate | CSGate result gate | READY | `WAITING_FOR_COMPLETE_CSGATE_RESULTS` |  |
-| Allowed pending gate | CSGate method decision | READY | `LOCKED_WAITING_FOR_COMPLETE_CSGATE_RESULTS` |  |
+| Allowed pending gate | CSGate result gate | READY | `OPEN_FOR_POST_RESULT_INTEGRATION` |  |
+| Allowed pending gate | CSGate method decision | READY | `CSGATE_CAN_BE_METHOD_CANDIDATE` |  |
 | Allowed pending gate | Advisor authors | READY | `First/Second/Third Author placeholders found` |  |
 | Allowed pending gate | Final target journal | READY | `Exact IEEE Transactions target selected` |  |
 | Allowed pending gate | Final method route | READY | `CSGate` |  |
@@ -77,9 +77,9 @@ It does not launch training, does not sync partial server runs, and does not pro
 
 | Gate | Why it remains locked | Next action |
 | --- | --- | --- |
-| CSGate VisDrone/UAVDT evidence | The second-cycle route has code/config evidence but no completed metrics yet. | Launch and sync only through the guarded queue after remote smoke test. |
-| Final method route | ScaleGate has been rejected as the main method, and CSGate still needs complete evidence. | Keep ScaleGate as mixed/negative evidence; evaluate CSGate only after complete results are synced. |
-| Final IEEE `main.tex` | The final manuscript should not be assembled before the method route, target journal, author metadata, references, and release boundary are fixed. | Keep using `main_draft.tex` for advisor review. |
+| CSGate VisDrone/UAVDT evidence | Completed and integrated as bounded partial-repair evidence. | Keep wording aligned with `paper/ieee_csgate_method_decision_audit.md`. |
+| Final method route | CSGate is usable only as a bounded method candidate; it is not a cross-dataset superiority claim. | Keep ScaleGate as mixed/negative evidence and CSGate as partial repair unless advisor requests another method cycle. |
+| Final IEEE `main.tex` | The final manuscript should not be assembled before target journal, author metadata, references, page budget, and release boundary are fixed. | Keep using `main_draft.tex` for advisor review. |
 | Author and submission metadata | Author order, affiliations, funding, OA choice, and release policy require advisor/institution confirmation. | Fill `paper/ieee_trans/submission_metadata_workbench.md` after confirmation. |
 
 ## Interpretation

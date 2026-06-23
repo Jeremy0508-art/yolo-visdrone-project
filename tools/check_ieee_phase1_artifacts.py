@@ -212,7 +212,7 @@ RESULT_GATES = [
     (
         "Training Evidence",
         "CSGate UAVDT result",
-        "runs/detect/yolo11n_p2_csgate_960_uavdt/weights/best.pt",
+        "runs/detect/yolo11n_p2_csgate_960_uavdt_full100/weights/best.pt",
         "Run tools/start_ieee_csgate_queue.sh only after CSGate code/config sync and smoke test are confirmed.",
     ),
     (
