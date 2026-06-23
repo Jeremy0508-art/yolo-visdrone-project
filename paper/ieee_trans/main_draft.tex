@@ -48,6 +48,8 @@ This paper studies that question using YOLO11n as the nano-scale reference. Inst
   \item \emph{Validity boundary:} do attention and feature-calibration variants provide consistent gains, or are their effects metric- and dataset-dependent?
 \end{itemize}
 
+The same logic also guides the adaptive-gate redesign. A static P2 branch is useful only if its shallow spatial detail remains compatible with the target data distribution. If the branch improves one dataset but degrades another, the method question becomes more specific: how should a lightweight detector retain P2 detail without allowing local shallow cues to dominate when the dataset favors different scale statistics? ScaleAwareP2Gate and CSGate are evaluated under this question rather than introduced as isolated architectural additions.
+
 The completed VisDrone2019-DET evidence suggests that high-resolution input is the dominant gain source for YOLO11n, and that the P2 branch provides additional small-object diagnostic improvement under matched 960 input. The completed UAVDT comparison, however, shows that this P2 trend does not transfer under the current setting. Together, the results show clear boundaries: the VisDrone gain is modest in aggregate mAP, the P2 branch increases GFLOPs, CoordAttention and TOFC behave differently across metrics, and larger or alternative lightweight baselines remain stronger on UAVDT. These observations motivate a study framed around benefits, costs, and validity boundaries, not an overstated best-performance claim.
 
 The contributions are:
@@ -72,6 +74,10 @@ Feature pyramid designs improve multi-scale representation by combining semantic
 \subsection{Lightweight YOLO Detectors and Attention}
 
 YOLO-family detectors are widely used when real-time or near-real-time detection is required. Compact models reduce parameters and storage, but dense small-object scenes remain challenging. Attention modules can recalibrate feature responses with limited overhead. Coordinate Attention encodes positional information into lightweight attention maps \cite{hou2021coordinate_attention}, but its empirical contribution must be interpreted from measured results rather than assumed. For this reason, this study treats attention and feature-calibration modules as ablations unless both aggregate and scale-wise diagnostics support their role.
+
+\subsection{Position of This Study}
+
+The related methods in Table~\ref{tab:ieee_literature_context} show that recent UAV small-object detectors commonly strengthen high-resolution heads, multi-scale fusion, attention, or lightweight YOLO backbones. This creates two requirements for the present work. First, the manuscript should not claim novelty from the mere presence of an extra shallow prediction head or an attention block. Second, any adaptive high-resolution design must be justified by diagnostic evidence that separates input resolution, prediction scale, model capacity, and cross-dataset behavior. The contribution is therefore positioned as an evidence-bounded study and method refinement: static P2 is analyzed as a measured design choice, ScaleAwareP2Gate is retained as a negative/mixed adaptive-gate case, and CSGate is promoted only to the extent supported by the accepted repair and small-object diagnostic routes.
 
 \input{tables/literature_context}
 
