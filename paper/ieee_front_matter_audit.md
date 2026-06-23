@@ -7,8 +7,8 @@ The audit does not launch training and does not turn planning placeholders into 
 ## Summary
 
 - Total checks: 17
-- Ready: 16
-- Pending: 1
+- Ready: 17
+- Pending: 0
 - Missing: 0
 
 ## Checks
@@ -19,9 +19,9 @@ The audit does not launch training and does not turn planning placeholders into 
 | Source | T-ITS author requirements audit | READY | `paper/ieee_tits_author_requirements_audit.md` |  |
 | Rules | Workbench records T-ITS abstract and keyword limits | READY | `150-250 words / maximum six / traffic perception` |  |
 | Rules | Official-source requirements contain front-matter constraints | READY | `author requirements audit tokens` |  |
-| Abstract | Current safe abstract exists | READY | `120 words` |  |
+| Abstract | Current safe abstract exists | READY | `187 words` |  |
 | Abstract | Current safe abstract is one paragraph | READY | `single blockquote paragraph` |  |
-| Abstract | Final abstract length compliance | PENDING | `120 words; final requirement is 150-250` | Current safe abstract is internal only; rewrite the final abstract after final evidence is available. |
+| Abstract | Final abstract length compliance | READY | `187 words; final requirement is 150-250` |  |
 | Abstract | T-ITS traffic-sensing framing appears in safe abstract | READY | `UAV plus traffic/road-user wording` |  |
 | Abstract | Safe abstract avoids references, displayed equations, and tables | READY | `no citation/equation/table markers` |  |
 | Abstract | Final abstract template remains locked with placeholders | READY | `10 placeholders` |  |

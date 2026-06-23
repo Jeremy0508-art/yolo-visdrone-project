@@ -20,11 +20,19 @@ Primary source: `https://ieee-itss.org/pub/t-its/`
 
 ## Current Safe Title Candidates
 
-Use one of these only if no adaptive module passes the final evidence gate:
+Use one of these if the advisor prefers a conservative mechanism-analysis title:
 
 1. High-Resolution Lightweight YOLO for Small Object Detection in UAV Traffic Scenes
 2. Revisiting High-Resolution Prediction Branches for Lightweight UAV Traffic Object Detection
 3. Boundary-Aware High-Resolution Prediction for Lightweight UAV Traffic Object Detection
+
+## Current Bounded CSGate Title Candidate
+
+Use this only if the advisor accepts the bounded partial-repair framing:
+
+| Candidate Title | Boundary |
+| --- | --- |
+| CSGate-YOLO11n: Cross-Scale High-Resolution Prediction for UAV Traffic Object Detection | CSGate may be presented only as a partial-repair method candidate; no SOTA or universal-transfer claim. |
 
 ## Retired Stronger Title Candidate
 
@@ -41,7 +49,6 @@ Use these only after the corresponding evidence exists:
 
 | Candidate Title | Unlock Condition |
 | --- | --- |
-| CSGate-YOLO11n: Cross-Scale High-Resolution Prediction for UAV Traffic Object Detection | CSGate passes the complete VisDrone/UAVDT method-selection gates and has refreshed speed and scale-wise audits. |
 | Scale-Aware High-Resolution Prediction for Lightweight UAV-Assisted Traffic Perception | A later adaptive-P2 module is selected as the final method, with speed and scale-wise audits complete. |
 | Adaptive P2 Feature Gating for Lightweight UAV Small-Object Detection | The final method evidence supports an adaptive high-resolution mechanism rather than only a boundary-study route. |
 
@@ -58,11 +65,11 @@ The final abstract should use this order:
 
 ## Current Safe Abstract Template
 
-This template is safe for internal discussion only and should not be submitted as final text.
+This template is safe for advisor review only and should be finalized after the target journal, author metadata, and page budget are confirmed.
 
-> Detecting small road users in unmanned aerial vehicle (UAV) traffic imagery is challenging because objects often appear at tiny scales, in dense layouts, and under occlusion or viewpoint variation. This study investigates lightweight YOLO-based detection for UAV-assisted traffic perception, focusing on how input resolution, high-resolution P2 prediction, and adaptive feature gating affect YOLO11n variants. Completed VisDrone2019-DET and UAVDT experiments are traced to local training logs, validation outputs, and model artifacts. Current evidence indicates that static P2 prediction improves some VisDrone small-object diagnostics but does not transfer to UAVDT under the completed setting. The completed ScaleAwareP2Gate experiment remains mixed/negative evidence rather than the final method, motivating a second-cycle CrossScaleP2P3ConsistencyGate candidate whose performance must remain locked until complete audited runs exist.
+> Lightweight detectors are attractive for unmanned aerial vehicle (UAV) traffic perception, but dense small road users are easily weakened by repeated downsampling. This paper studies high-resolution prediction for YOLO11n-family UAV small-object detection under a traceable VisDrone2019-DET/UAVDT protocol. We first separate input-resolution and prediction-scale effects. On VisDrone, increasing YOLO11n input from 640 to 960 improves mAP50--95 from 0.182 to 0.251. With matched 960 input, a static P2 branch raises mAP50--95 from 0.251 to 0.256 and small-object recall from 0.420 to 0.450, but increases computation from 6.5 to 10.7 GFLOPs and does not dominate all scale bins. Cross-dataset evaluation further shows a validity boundary: YOLO11n-P2-960 obtains 0.539 mAP50--95 on UAVDT, below YOLO11n-960, YOLOv8n-960, and YOLO11s-960. ScaleAwareP2Gate remains mixed/negative evidence. Motivated by this failure, CrossScaleP2P3ConsistencyGate conditions P2 detail on adjacent P3 semantics. CSGate reaches 0.272 mAP50--95 and 0.456 small-object recall on VisDrone, and 0.567 mAP50--95 on UAVDT, repairing 54.8% of the static-P2 degradation. The claim is therefore a bounded cross-scale adaptation method, not a state-of-the-art or universal-transfer assertion.
 
-Approximate length: 132 words by manual count. This is intentionally short because final numeric CSGate results and the final method decision are still locked.
+Approximate length: 187 words by local audit count. This is suitable for advisor review but still requires target-journal, author, reference, and page-budget confirmation before final submission.
 
 ## Locked Final Abstract Template
 
