@@ -47,6 +47,7 @@ experimental discipline the paper should reach.
 
 | Role | Target Article / Resource | Why It Matters | How We Imitate It |
 | --- | --- | --- | --- |
+| Primary top-conference structure benchmark | YOLO-World, CVPR 2024 | It is a top-tier YOLO-family real-time detection paper with mature method figures, efficiency-aware experiments, and a clear paper-level narrative. | Use it as the main template for section order, figure roles, method overview, ablation logic, and speed/accuracy presentation; do not imitate its open-vocabulary claims. |
 | Journal-scope reference | IEEE T-ITS author/scope page | Confirms that the manuscript must emphasize transportation-system sensing and technical contribution. | Keep traffic perception visible in title, abstract, introduction, datasets, qualitative cases, and conclusion. |
 | Backup-scope reference | IEEE TGRS author/scope page | Confirms remote-sensing backup direction. | Use only if the paper pivots to remote-sensing interpretation rather than ITS. |
 | Drone small-object structure benchmark | TPH-YOLOv5 | Uses drone-captured scenarios and high-resolution/tiny-object head logic. | Imitate the section logic: motivation, module overview, training setup, ablation, comparison, qualitative cases. |
@@ -56,7 +57,8 @@ experimental discipline the paper should reach.
 
 ## Structure to Imitate
 
-The upgraded manuscript should follow this structure:
+Following the YOLO-World-style paper logic, the upgraded manuscript should
+follow this structure:
 
 1. Abstract
    - One paragraph.
@@ -110,7 +112,8 @@ The paper should move from ordinary generated plots to a coherent figure system:
 
 ## Immediate Execution Order
 
-1. Add a visual style guide and figure-upgrade backlog.
+1. Use `yoloworld_cvpr2024_benchmark_study.md` as the primary structural and
+   figure-role guide.
 2. Redraw method overview and CSGate module using a unified palette.
 3. Regenerate scale and trade-off plots using the same style.
 4. Replace raw qualitative YOLO batch images with curated panels if source
@@ -120,6 +123,8 @@ The paper should move from ordinary generated plots to a coherent figure system:
 
 ## Source Links
 
+- YOLO-World CVPR 2024 page: `https://openaccess.thecvf.com/content/CVPR2024/html/Cheng_YOLO-World_Real-Time_Open-Vocabulary_Object_Detection_CVPR_2024_paper.html`
+- YOLO-World CVPR 2024 PDF: `https://openaccess.thecvf.com/content/CVPR2024/papers/Cheng_YOLO-World_Real-Time_Open-Vocabulary_Object_Detection_CVPR_2024_paper.pdf`
 - IEEE T-ITS: `https://ieee-itss.org/pub/t-its/`
 - IEEE TGRS: `https://www.grss-ieee.org/publications/author-resources/tgrs-information-for-authors/`
 - IEEE TCSVT: `https://ieee-cas.org/publication/tcsvt`

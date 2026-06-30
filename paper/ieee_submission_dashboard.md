@@ -33,7 +33,7 @@ The first adaptive P2 route, `ScaleAwareP2Gate`, is complete on VisDrone and UAV
 | Scale-wise outputs | 6 | 0 | OK | `paper/ieee_scale_output_audit.md` |
 | Experiment registry | 22 complete | 0 | 0 partial | `paper/ieee_experiment_registry_audit.md` |
 | IEEE table drafts | 19 | 0 | OK | `paper/ieee_table_audit.md` |
-| IEEE figure manifest | 12 | 0 | OK | `paper/ieee_figure_audit.md` |
+| IEEE figure manifest | 13 | 0 | OK | `paper/ieee_figure_audit.md` |
 | Front matter audit | 17 | 0 | OK | `paper/ieee_front_matter_audit.md` |
 | Number trace audit | 66 | 5 | 3 untracked | `paper/ieee_number_trace_audit.md` |
 | Main draft number audit | 39 | 2 ignored | OK | `paper/ieee_main_draft_number_audit.md` |

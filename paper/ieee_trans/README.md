@@ -16,6 +16,7 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | --- | --- | --- |
 | `manuscript_blueprint.md` | Evidence-bounded IEEE manuscript plan | Ready |
 | `target_journal_article_benchmark_plan.md` | Target journal, benchmark article, and structure-imitation execution plan | Ready |
+| `yoloworld_cvpr2024_benchmark_study.md` | Primary top-conference benchmark study for paper structure and figure redesign | Ready |
 | `visual_style_guide.md` | Shared visual style guide for upgraded IEEE figures | Ready |
 | `figure_upgrade_backlog.csv` | Figure-by-figure upgrade backlog and evidence boundaries | Ready |
 | `abstract_contribution_workbench.md` | Safe and locked abstract/contribution wording | Ready |
@@ -110,6 +111,15 @@ The files `IEEEtran.cls`, `IEEEtran.bst`, `cite.sty`, `TS1cmr.fd`, and `cmsy7.pf
 | `../IEEE_SECOND_CYCLE_METHOD_BACKLOG.md` | Failure-mode-driven second-cycle method backlog created after ScaleGate |
 | `../ieee_goal_readiness_audit.md` | High-level rest/submission readiness audit for the IEEE objective |
 | `../ieee_submission_dashboard.md` | Current IEEE readiness dashboard |
+
+## Primary Top-Conference Benchmark
+
+The IEEE redesign now uses YOLO-World (CVPR 2024) as the primary
+top-conference structure and figure-system benchmark. This benchmark is used to
+learn paper organization, figure roles, visual hierarchy, ablation order, and
+efficiency-aware presentation. It is not used as a source for our experimental
+numbers or claims. The concrete imitation rules are recorded in
+`yoloworld_cvpr2024_benchmark_study.md`.
 
 ## Current Rule
 
