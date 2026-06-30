@@ -15,6 +15,9 @@ The manuscript should not be drafted as a direct translation of the CEA Chinese 
 | File | Purpose | Status |
 | --- | --- | --- |
 | `manuscript_blueprint.md` | Evidence-bounded IEEE manuscript plan | Ready |
+| `target_journal_article_benchmark_plan.md` | Target journal, benchmark article, and structure-imitation execution plan | Ready |
+| `visual_style_guide.md` | Shared visual style guide for upgraded IEEE figures | Ready |
+| `figure_upgrade_backlog.csv` | Figure-by-figure upgrade backlog and evidence boundaries | Ready |
 | `abstract_contribution_workbench.md` | Safe and locked abstract/contribution wording | Ready |
 | `title_abstract_index_terms_workbench.md` | T-ITS title, abstract, and index terms workbench | Ready |
 | `submission_metadata_workbench.md` | Author, funding, code/data, and submission metadata worksheet | Ready |

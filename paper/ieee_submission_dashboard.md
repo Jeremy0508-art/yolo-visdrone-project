@@ -36,7 +36,7 @@ The first adaptive P2 route, `ScaleAwareP2Gate`, is complete on VisDrone and UAV
 | IEEE figure manifest | 12 | 0 | OK | `paper/ieee_figure_audit.md` |
 | Front matter audit | 17 | 0 | OK | `paper/ieee_front_matter_audit.md` |
 | Number trace audit | 66 | 5 | 3 untracked | `paper/ieee_number_trace_audit.md` |
-| Main draft number audit | 39 | 1 ignored | OK | `paper/ieee_main_draft_number_audit.md` |
+| Main draft number audit | 39 | 2 ignored | OK | `paper/ieee_main_draft_number_audit.md` |
 | Dataset compliance audit | 16 | 1 | OK | `paper/ieee_dataset_compliance_audit.md` |
 | UAVDT conversion readiness | 32 | 2 | OK | `paper/datasets/uavdt_conversion_readiness_audit.md` |
 | Result interpretation matrix | 24 | n/a | OK | `paper/ieee_result_interpretation_matrix_audit.md` |

@@ -180,6 +180,13 @@ and the adapted P2 feature is
 \end{equation}
 Here \(\eta\) is initialized to zero, so the candidate starts from the static P2 path and learns a bounded correction. The module is therefore a controlled hypothesis derived from the ScaleGate failure mode: shallow detail should be modulated with neighboring semantic context rather than with P2-local saliency alone. The completed CSGate evidence is interpreted under this bounded hypothesis: it can be discussed as a cross-scale adaptation candidate because it repairs part of the UAVDT static-P2 degradation and improves VisDrone small-object recall, but it cannot be described as a universally stronger detector.
 
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=0.98\textwidth]{csgate_schematic.png}
+  \caption{CrossScaleP2P3ConsistencyGate (CSGate) schematic. The module aligns adjacent P3 semantic context with P2 detail, estimates a consistency gate, and applies an identity-initialized bounded residual correction to the P2 feature. The figure is structural and encodes no performance value.}
+  \label{fig:csgate_schematic}
+\end{figure*}
+
 \subsection{Claim-Bounded Evaluation Protocol}
 
 The framework is intentionally claim-bounded. The implemented variants may support statements about prediction hierarchy, input resolution, feature calibration, and measured efficiency. They do not support cross-dataset robustness, state-of-the-art performance, or universal attention-module improvement unless those statements are supported by complete audited results. This boundary is important because the contribution should be judged not only by the presence of a model change, but by whether the change is consistently supported by fair comparisons and diagnostic metrics.

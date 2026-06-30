@@ -22,6 +22,7 @@ Status: planning draft. Do not treat locked items as finished manuscript evidenc
 | --- | --- | --- | --- | --- |
 | F1 | Method overview | English architecture figure for the bounded CSGate route | Ready for advisor draft | Show P2/P3 cross-scale conditioning and keep the caption clear that CSGate is a partial-repair method candidate. |
 | F1b | ScaleAwareP2Gate module schematic | `src/models/attention/scale_aware_p2_gate.py`; `paper/ieee_trans/scalegate_method_section_draft.md` | Ready as negative/mixed ablation | Can show local context, channel gate, spatial gate, and bounded residual gain without promoting ScaleGate as the proposed method. |
+| F1c | CSGate module schematic | `tools/plot_csgate_schematic.py`; `src/models/attention/cross_scale_p2_p3_gate.py`; `paper/figures/method/csgate_schematic.png` | Ready for advisor draft | Structural figure only; shows cross-scale P2/P3 consistency and bounded residual correction without encoding performance values. |
 | F2 | P2/high-resolution branch schematic | Model YAML and existing diagrams | Ready as structural figure | Can be used without claiming accuracy gain beyond evidence. |
 | F3 | Training curves | Existing completed run figures | Ready for existing models | Use clear English caption and source run path. |
 | F4 | Accuracy-speed trade-off | Existing tables including TOFC, ScaleGate, and CSGate | Ready for advisor draft | Keep YOLO11s as the absolute-accuracy boundary and CSGate as the bounded lightweight repair candidate. |

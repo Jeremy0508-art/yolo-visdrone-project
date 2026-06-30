@@ -16,12 +16,15 @@ Status: planning draft. This manifest records figure candidates for the IEEE Tra
 | F-fail-1 | `paper/figures/failure_cases/p2_case_contact_sheet.jpg` | Usable with caution | Existing curated failure-case visual asset | Failure-case discussion | Qualitative only; not a metric |
 | F-trade-1 | `paper/figures/tradeoff/accuracy_speed_tradeoff.png` | Usable with caution | `paper/tables/accuracy_speed_tradeoff.csv`; `tools/plot_accuracy_speed_tradeoff.py` | Accuracy-speed trade-off | Refresh if final TOFC/UAVDT model is added |
 | F-scalegate-design | `paper/figures/method/scalegate_schematic.png` | Ready as negative/mixed ablation | User-provided fixed v2 PNG; `src/models/attention/scale_aware_p2_gate.py`; `paper/ieee_trans/scalegate_method_section_draft.md`; `paper/ieee_scalegate_method_decision_audit.md` | Method explanation and mixed/negative ScaleGate evidence discussion | Structural figure only; do not promote ScaleGate as final method |
+| F-csgate-schematic | `paper/figures/method/csgate_schematic.png` | Ready for advisor draft | `tools/plot_csgate_schematic.py`, `src/models/attention/cross_scale_p2_p3_gate.py`, equations in `main_draft.tex`, and `paper/ieee_csgate_method_decision_audit.md` | CSGate method explanation | Structural figure only; no performance value encoded |
 
 ## Pending or Locked Figures
 
 | ID | Figure | Status | Required Evidence |
 | --- | --- | --- | --- |
 | F-method-final | Bounded CSGate method overview | Ready for advisor draft | Completed CSGate VisDrone/UAVDT runs and `paper/ieee_csgate_method_decision_audit.md` |
+| F-method-upgrade | Upgraded CSGate-centered graphical overview | Planned | `paper/ieee_trans/visual_style_guide.md`, `paper/ieee_trans/figure_upgrade_backlog.csv`, and implemented CSGate source |
+| F-evidence-flow | Evidence and claim-boundary flow | Planned | `paper/ieee_csgate_method_decision_audit.md`, `paper/ieee_scalegate_method_decision_audit.md`, and audited result tables |
 | F-uavdt-qual | UAVDT qualitative detection results | Locked | Converted UAVDT dataset and completed model weights |
 | F-uavdt-scale | UAVDT scale or density analysis | Locked | Converted UAVDT labels and evaluation outputs |
 | F-tofc-ablation | TOFC ablation visualization | Locked | Completed TOFC training and validation evidence |
